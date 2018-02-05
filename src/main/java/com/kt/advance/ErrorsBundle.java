@@ -1,0 +1,52 @@
+package com.kt.advance;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class ErrorsBundle {
+
+    static final Logger LOG = LoggerFactory.getLogger(ErrorsBundle.class.getName());
+
+    public String file;
+
+    private final Map<String, List<String>> errors = new HashMap<>();
+    private int errorsCount = 0;
+
+    public void addError(String key, String error) {
+
+        List<String> list = this.errors.get(key);
+        if (list == null) {
+            list = new ArrayList<>();
+            this.errors.put(key, list);
+        }
+        errorsCount++;
+        list.add(error);
+    }
+
+    public int getErrorsCount() {
+        return errorsCount;
+    }
+
+    public int getErrorsKeysCount() {
+        return this.errors.size();
+    }
+
+    public void print() {
+        int cnt = 1;
+        for (final String key : errors.keySet()) {
+            final List<String> list = errors.get(key);
+            LOG.error(cnt + "\t" + key + " \t errors: " + list.size());
+
+            for (final String e : list) {
+                LOG.error("\t\t - " + e);
+            }
+
+            cnt++;
+        }
+    }
+}

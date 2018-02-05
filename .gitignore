@@ -1,0 +1,10 @@
+
+target/**
+
+XmlValidator/**
+ 
+.settings/**
+
+ppos.json
+
+src/test/java/com/kt/advance/tests/ApiXmlReadingTests.java
