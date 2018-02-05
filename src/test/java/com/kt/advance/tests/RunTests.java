@@ -21,7 +21,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02
  * -------------------------------------------------------------------
  */
-package com.kt.advance.test;
+package com.kt.advance.tests;
 
 import java.io.File;
 import java.util.List;
@@ -33,7 +33,6 @@ import org.junit.runner.notification.Failure;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.kt.advance.tests.XmlValidator;
 import com.kt.advance.xml.model.FsAbstractionImpl;
 
 public class RunTests {
