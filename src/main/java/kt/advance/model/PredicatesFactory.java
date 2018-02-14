@@ -249,9 +249,6 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         @Override
         public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
 
-            // def get_type(self): return self.cd.dictionary.get_typ(self.args[0])
-            // def get_exp(self): return self.cd.dictionary.get_exp(self.args[1])
-
             exp = cfile.getExression(args[1]);
             ctype = cfile.getType(args[0]);
         }

@@ -33,6 +33,33 @@ import kt.advance.model.CTypeFactory.CType;
 
 public class CTypeFactory extends AbstractFactory<CType> {
 
+    public static class CTypComp extends CType {
+        Integer ckey;
+        boolean isStruct;
+        String struct;
+        String structName;
+
+        public CTypComp(IndexedTableNode node) {
+            super(node);
+        }
+
+        @Override
+        public String toString() {
+            return isStruct ? "struct " + structName + Util.bra(ckey.toString())
+                    : "union " + structName + Util.bra(ckey.toString());
+        }
+
+        @Override
+        void bindImpl(CFile cfile, Integer[] args, String[] tags) {
+            ckey = args[0];
+            struct = cfile.getStruct(ckey);
+            structName = cfile.getStructName(ckey);
+            isStruct = cfile.isStruct(ckey);
+
+        }
+
+    }
+
     public static abstract class CType extends Indexed implements Bindable {
         private Integer[] args;
         private String[] tags;
@@ -57,33 +84,6 @@ public class CTypeFactory extends AbstractFactory<CType> {
         public abstract String toString();
 
         abstract void bindImpl(CFile cfile, Integer[] args, String[] tags);
-
-    }
-
-    public static class CTypComp extends CType {
-        Integer ckey;
-        String struct;
-        String structName;
-        boolean isStruct;
-
-        public CTypComp(IndexedTableNode node) {
-            super(node);
-        }
-
-        @Override
-        public String toString() {
-            return isStruct ? "struct " + structName + Util.bra(ckey.toString())
-                    : "union " + structName + Util.bra(ckey.toString());
-        }
-
-        @Override
-        void bindImpl(CFile cfile, Integer[] args, String[] tags) {
-            ckey = args[0];
-            struct = cfile.getStruct(ckey);
-            structName = cfile.getStructName(ckey);
-            isStruct = cfile.isStruct(ckey);
-
-        }
 
     }
 
@@ -126,23 +126,24 @@ public class CTypeFactory extends AbstractFactory<CType> {
 
     }
 
-    static final Map<String, String> integernames = new ImmutableMap.Builder<String, String>()
-            .put("ichar", "char")
-            .put("ischar", "signed char")
-            .put("iuchar", "unsigned char")
-            .put("ibool", "bool")
-            .put("iint", "int")
-            .put("iuint", "unsigned int")
-            .put("ishort", "short")
-            .put("iushort", "unsigned short")
-            .put("ilong", "long")
-            .put("iulong", "unsigned long")
-            .put("ilonglong", "long long")
-            .put("iulonglong", "unsigned long long")
-
-            .build();
-
     public static class CTypInt extends CType {
+
+        static final Map<String, String> integernames = new ImmutableMap.Builder<String, String>()
+                .put("ichar", "char")
+                .put("ischar", "signed char")
+                .put("iuchar", "unsigned char")
+                .put("ibool", "bool")
+                .put("iint", "int")
+                .put("iuint", "unsigned int")
+                .put("ishort", "short")
+                .put("iushort", "unsigned short")
+                .put("ilong", "long")
+                .put("iulong", "unsigned long")
+                .put("ilonglong", "long long")
+                .put("iulonglong", "unsigned long long")
+
+                .build();
+
         String kind;
 
         public CTypInt(IndexedTableNode node) {
@@ -159,6 +160,61 @@ public class CTypeFactory extends AbstractFactory<CType> {
         void bindImpl(CFile cfile, Integer[] args, String[] tags) {
             final String kindKey = tags[1];
             this.kind = integernames.get(kindKey);
+        }
+
+    }
+
+    public static class CTypFloat extends CType {
+
+        static final Map<String, String> floatnames = new ImmutableMap.Builder<String, String>()
+                .put("fdouble", "fdouble")
+                .put("float", "float")
+                .put("flongdouble", "long double")
+
+                .build();
+
+        String kind;
+
+        public CTypFloat(IndexedTableNode node) {
+            super(node);
+        }
+
+        @Override
+        public String toString() {
+            // TODO add attributes
+            return kind;//(integernames[self.get_kind()] + '[' + str(self.get_attributes()) + ']')
+        }
+
+        @Override
+        void bindImpl(CFile cfile, Integer[] args, String[] tags) {
+            final String kindKey = tags[1];
+            this.kind = floatnames.get(kindKey);
+        }
+
+    }
+
+    /**
+     * tnamed
+     *
+     * @author artem
+     *
+     */
+    public static class CTypNamed extends CType {
+        String name;
+
+        public CTypNamed(IndexedTableNode node) {
+            super(node);
+        }
+
+        @Override
+        public String toString() {
+            // TODO add attributes
+            return name;
+        }
+
+        @Override
+        void bindImpl(CFile cfile, Integer[] args, String[] tags) {
+            this.name = tags[1];
         }
 
     }
@@ -188,7 +244,11 @@ public class CTypeFactory extends AbstractFactory<CType> {
         reg("tvoid", node -> new CTypVoid(node));
         reg("tptr", node -> new CTypePtr(node));
         reg("tcomp", node -> new CTypComp(node));
+
         reg("tint", node -> new CTypInt(node));
+        reg("tfloat", node -> new CTypFloat(node));
+
+        reg("tnamed", node -> new CTypNamed(node));
 
     }
 
