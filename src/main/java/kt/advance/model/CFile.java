@@ -179,9 +179,10 @@ public class CFile {
                 throw new XmlReadFailedException(prdXml.getOrigin(), pk + " is already in the map ");
             }
 
-            final CPOPredicate prd = pf.build(node, this);
+            final CPOPredicate prd = pf.build(node);
             predicates.put(pk, prd);
         }
+        bind(predicates.values());
 
     }
 

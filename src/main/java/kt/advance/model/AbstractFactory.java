@@ -49,6 +49,7 @@ public abstract class AbstractFactory<T> {
     public abstract T build(IndexedTableNode node);
 
     public T buildImpl(IndexedTableNode node, String type, T fallBackValueSingleton) {
+
         final Builder<? extends T> builder = map.get(type);
 
         if (builder == null) {

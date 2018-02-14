@@ -23,34 +23,40 @@
  */
 package kt.advance.model;
 
-import java.util.HashMap;
-
-import com.google.common.base.Preconditions;
 import com.kt.advance.Util;
 import com.kt.advance.xml.model.IndexedTableNode;
 
 import kt.advance.model.CTypeFactory.CType;
 import kt.advance.model.ExpFactory.CExpression;
+import kt.advance.model.PredicatesFactory.CPOPredicate;
 
-public class PredicatesFactory {
-    public static abstract class CPOPredicate {
-
-        public final Integer index;
+public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
+    public static abstract class CPOPredicate extends Indexed implements Bindable {
+        Integer[] args;
+        String[] tags;
         public final PredicateType type;
 
-        public CPOPredicate(IndexedTableNode node, CFile cfile) {
+        public CPOPredicate(IndexedTableNode node) {
+            super(node);
 
-            this.index = node.index;
-
-            final String[] tags = node.getTagsSplit();
+            tags = node.getTagsSplit();
 
             type = PredicateType.valueOf("_" + tags[0]);
-            init(tags, node.getArguments(), cfile);
+            args = node.getArguments();
+
         }
 
         public abstract String express();
 
-        public abstract void init(String[] tags, Integer[] args, CFile cfile);
+        @Override
+        public void bind(CFile cfile) {
+            this.bindImpl(cfile, tags, args);
+
+            tags = null;
+            args = null;
+        }
+
+        public abstract void bindImpl(CFile cfile, String[] tags, Integer[] args);
 
         @Override
         public final String toString() {
@@ -153,8 +159,8 @@ public class PredicatesFactory {
         public CExpression exp2;
         public CType typ;
 
-        public _CPOBinOp(IndexedTableNode node, CFile cfile) {
-            super(node, cfile);
+        public _CPOBinOp(IndexedTableNode node) {
+            super(node);
         }
 
         @Override
@@ -164,7 +170,7 @@ public class PredicatesFactory {
         }
 
         @Override
-        public void init(String[] tags, Integer[] args, CFile cfile) {
+        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
             this.exp1 = cfile.getExression(args[1]);
             this.exp2 = cfile.getExression(args[2]);
 
@@ -179,8 +185,8 @@ public class PredicatesFactory {
         public CExpression exp;
         public CType fromType, targetType;
 
-        public _CPOCast(IndexedTableNode node, CFile cfile) {
-            super(node, cfile);
+        public _CPOCast(IndexedTableNode node) {
+            super(node);
         }
 
         @Override
@@ -191,7 +197,7 @@ public class PredicatesFactory {
         }
 
         @Override
-        public void init(final String[] tags, Integer[] args, final CFile cfile) {
+        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
             this.exp = Util.requireValue(cfile.expressions, args[2], "exp");
 
             this.fromType = cfile.getType(args[0]);
@@ -204,8 +210,8 @@ public class PredicatesFactory {
         public CExpression exp1;
         public CExpression exp2;
 
-        public _CPOTwoExpressions(IndexedTableNode node, CFile cfile) {
-            super(node, cfile);
+        public _CPOTwoExpressions(IndexedTableNode node) {
+            super(node);
         }
 
         @Override
@@ -214,7 +220,7 @@ public class PredicatesFactory {
         }
 
         @Override
-        public void init(String[] tags, Integer[] args, CFile cfile) {
+        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
             this.exp1 = cfile.getExression(args[0]);
             this.exp2 = cfile.getExression(args[1]);
 
@@ -226,8 +232,8 @@ public class PredicatesFactory {
 
         CExpression exp;
 
-        public _CPOTypeAndExp(IndexedTableNode node, CFile cfile) {
-            super(node, cfile);
+        public _CPOTypeAndExp(IndexedTableNode node) {
+            super(node);
         }
 
         @Override
@@ -241,7 +247,7 @@ public class PredicatesFactory {
         }
 
         @Override
-        public void init(String[] tags, Integer[] args, CFile cfile) {
+        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
 
             // def get_type(self): return self.cd.dictionary.get_typ(self.args[0])
             // def get_exp(self): return self.cd.dictionary.get_exp(self.args[1])
@@ -259,8 +265,8 @@ public class PredicatesFactory {
     static class CPOExp0 extends CPOPredicate {
         public CExpression exp;
 
-        public CPOExp0(IndexedTableNode node, CFile cfile) {
-            super(node, cfile);
+        public CPOExp0(IndexedTableNode node) {
+            super(node);
         }
 
         @Override
@@ -269,7 +275,7 @@ public class PredicatesFactory {
         }
 
         @Override
-        public void init(String[] tags, Integer[] args, CFile cfile) {
+        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
             this.exp = Util.requireValue(cfile.expressions, args[0], "exp " + Util.bra(this.type.toString()));
 
         }
@@ -278,8 +284,8 @@ public class PredicatesFactory {
     static class CPOInitialized extends CPOPredicate {
         public CLval lvalue;
 
-        public CPOInitialized(IndexedTableNode node, CFile cfile) {
-            super(node, cfile);
+        public CPOInitialized(IndexedTableNode node) {
+            super(node);
         }
 
         @Override
@@ -288,7 +294,7 @@ public class PredicatesFactory {
         }
 
         @Override
-        public void init(String[] tags, Integer[] args, CFile cfile) {
+        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
             this.lvalue = cfile.getLValue(args[0]);
 
         }
@@ -298,8 +304,8 @@ public class PredicatesFactory {
         CExpression exp;
         CExpression len;
 
-        public CPOInitializedRange(IndexedTableNode node, CFile cfile) {
-            super(node, cfile);
+        public CPOInitializedRange(IndexedTableNode node) {
+            super(node);
         }
 
         @Override
@@ -311,7 +317,7 @@ public class PredicatesFactory {
         }
 
         @Override
-        public void init(String[] tags, Integer[] args, CFile cfile) {
+        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
             // def get_exp(self): return self.cd.dictionary.get_exp(self.args[0])
             // def get_length(self): return self.cd.dictionary.get_exp(self.args[1])
             this.exp = cfile.getExression(args[0]);
@@ -326,8 +332,8 @@ public class PredicatesFactory {
 
         String kind, binop;
 
-        public CPOIntOverflow(IndexedTableNode node, CFile cfile) {
-            super(node, cfile);
+        public CPOIntOverflow(IndexedTableNode node) {
+            super(node);
         }
 
         @Override
@@ -343,7 +349,7 @@ public class PredicatesFactory {
         }
 
         @Override
-        public void init(String[] tags, Integer[] args, CFile cfile) {
+        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
             //        def get_binop(self): return self.tags[1]
             //
             //                def get_ikind(self): return self.tags[2]
@@ -361,42 +367,42 @@ public class PredicatesFactory {
     }
 
     static class CPOIntUnderflow extends CPOIntOverflow {
-        public CPOIntUnderflow(IndexedTableNode node, CFile cfile) {
-            super(node, cfile);
+        public CPOIntUnderflow(IndexedTableNode node) {
+            super(node);
         }
     }
 
     static class CPOPtrLowerBound extends _CPOBinOp {
-        public CPOPtrLowerBound(IndexedTableNode node, CFile cfile) {
-            super(node, cfile);
+        public CPOPtrLowerBound(IndexedTableNode node) {
+            super(node);
         }
 
     }
 
     static class CPOPtrUpperBound extends _CPOBinOp {
-        public CPOPtrUpperBound(IndexedTableNode node, CFile cfile) {
-            super(node, cfile);
+        public CPOPtrUpperBound(IndexedTableNode node) {
+            super(node);
         }
     }
 
     static class CPOPtrUpperBoundDeref extends _CPOBinOp {
-        public CPOPtrUpperBoundDeref(IndexedTableNode node, CFile cfile) {
-            super(node, cfile);
+        public CPOPtrUpperBoundDeref(IndexedTableNode node) {
+            super(node);
         }
     }
 
     static class CPOSignedToUnsignedCast extends CPOUnsignedToSignedCast {
 
-        public CPOSignedToUnsignedCast(IndexedTableNode node, CFile cfile) {
-            super(node, cfile);
+        public CPOSignedToUnsignedCast(IndexedTableNode node) {
+            super(node);
         }
 
     }
 
     static class CPOSimpleExpression extends CPOExp0 {
 
-        public CPOSimpleExpression(IndexedTableNode node, CFile cfile) {
-            super(node, cfile);
+        public CPOSimpleExpression(IndexedTableNode node) {
+            super(node);
         }
 
         @Override
@@ -409,8 +415,8 @@ public class PredicatesFactory {
         public CExpression exp;
         String fromKind, targetKind;
 
-        public CPOUnsignedToSignedCast(IndexedTableNode node, CFile cfile) {
-            super(node, cfile);
+        public CPOUnsignedToSignedCast(IndexedTableNode node) {
+            super(node);
         }
 
         @Override
@@ -421,7 +427,7 @@ public class PredicatesFactory {
         }
 
         @Override
-        public void init(String[] tags, Integer[] args, CFile cfile) {
+        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
             this.exp = cfile.getExression(args[0]);
             fromKind = tags[1];
             targetKind = tags[2];
@@ -430,8 +436,8 @@ public class PredicatesFactory {
 
     static class CPOValueConstraint extends CPOSimpleExpression {
 
-        public CPOValueConstraint(IndexedTableNode node, CFile cfile) {
-            super(node, cfile);
+        public CPOValueConstraint(IndexedTableNode node) {
+            super(node);
         }
 
     }
@@ -440,8 +446,8 @@ public class PredicatesFactory {
         public CExpression exp;
         public String kind;
 
-        public CPOWidthOverflow(IndexedTableNode node, CFile cfile) {
-            super(node, cfile);
+        public CPOWidthOverflow(IndexedTableNode node) {
+            super(node);
         }
 
         @Override
@@ -450,7 +456,7 @@ public class PredicatesFactory {
         }
 
         @Override
-        public void init(String[] tags, Integer[] args, CFile cfile) {
+        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
             this.exp = cfile.getExression(args[0]);
             this.kind = tags[1];
 
@@ -459,73 +465,63 @@ public class PredicatesFactory {
 
     public ExpFactory expressionsFactory = new ExpFactory();
 
-    private final HashMap<String, Builder<? extends CPOPredicate>> map;
-
     public PredicatesFactory() {
-        map = new HashMap<>();
+        super();
 
-        reg("null", (node, cfile) -> new CPOSimpleExpression(node, cfile));
-        reg("nn", (node, cfile) -> new CPOSimpleExpression(node, cfile));
+        reg("null", node -> new CPOSimpleExpression(node));
+        reg("nn", node -> new CPOSimpleExpression(node));
 
-        reg("vm", (node, cfile) -> new CPOSimpleExpression(node, cfile));
-        reg("gm", (node, cfile) -> new CPOSimpleExpression(node, cfile));
+        reg("vm", node -> new CPOSimpleExpression(node));
+        reg("gm", node -> new CPOSimpleExpression(node));
 
-        reg("ab", (node, cfile) -> new CPOSimpleExpression(node, cfile));
+        reg("ab", node -> new CPOSimpleExpression(node));
 
-        reg("tao", (node, cfile) -> new _CPOTypeAndExp(node, cfile));
-        reg("lb", (node, cfile) -> new _CPOTypeAndExp(node, cfile));
-        reg("ub", (node, cfile) -> new _CPOTypeAndExp(node, cfile));
+        reg("tao", node -> new _CPOTypeAndExp(node));
+        reg("lb", node -> new _CPOTypeAndExp(node));
+        reg("ub", node -> new _CPOTypeAndExp(node));
 
-        reg("ilb", (node, cfile) -> new CPOSimpleExpression(node, cfile));
-        reg("iub", (node, cfile) -> new CPOSimpleExpression(node, cfile));
+        reg("ilb", node -> new CPOSimpleExpression(node));
+        reg("iub", node -> new CPOSimpleExpression(node));
 
-        reg("ir", (node, cfile) -> new CPOInitializedRange(node, cfile));
-        reg("i", (node, cfile) -> new CPOInitialized(node, cfile));
+        reg("ir", node -> new CPOInitializedRange(node));
+        reg("i", node -> new CPOInitialized(node));
 
-        reg("c", (node, cfile) -> new _CPOCast(node, cfile));
-        reg("pc", (node, cfile) -> new _CPOCast(node, cfile));
+        reg("c", node -> new _CPOCast(node));
+        reg("pc", node -> new _CPOCast(node));
 
-        reg("csu", (node, cfile) -> new CPOSignedToUnsignedCast(node, cfile));
-        reg("cus", (node, cfile) -> new CPOUnsignedToSignedCast(node, cfile));
+        reg("csu", node -> new CPOSignedToUnsignedCast(node));
+        reg("cus", node -> new CPOUnsignedToSignedCast(node));
 
-        reg("z", (node, cfile) -> new CPOSimpleExpression(node, cfile));
+        reg("z", node -> new CPOSimpleExpression(node));
 
-        reg("nt", (node, cfile) -> new CPOSimpleExpression(node, cfile));
-        reg("nneg", (node, cfile) -> new CPOSimpleExpression(node, cfile));
+        reg("nt", node -> new CPOSimpleExpression(node));
+        reg("nneg", node -> new CPOSimpleExpression(node));
 
-        reg("iu", (node, cfile) -> new CPOIntOverflow(node, cfile));
-        reg("io", (node, cfile) -> new CPOIntUnderflow(node, cfile));
+        reg("iu", node -> new CPOIntOverflow(node));
+        reg("io", node -> new CPOIntUnderflow(node));
 
-        reg("w", (node, cfile) -> new CPOWidthOverflow(node, cfile));
+        reg("w", node -> new CPOWidthOverflow(node));
 
-        reg("plb", (node, cfile) -> new CPOPtrLowerBound(node, cfile));
-        reg("pub", (node, cfile) -> new CPOPtrUpperBound(node, cfile));
+        reg("plb", node -> new CPOPtrLowerBound(node));
+        reg("pub", node -> new CPOPtrUpperBound(node));
 
-        reg("pubd", (node, cfile) -> new CPOPtrUpperBoundDeref(node, cfile));
+        reg("pubd", node -> new CPOPtrUpperBoundDeref(node));
 
-        reg("cb", (node, cfile) -> new _CPOTwoExpressions(node, cfile));
-        reg("cbt", (node, cfile) -> new _CPOTwoExpressions(node, cfile));
+        reg("cb", node -> new _CPOTwoExpressions(node));
+        reg("cbt", node -> new _CPOTwoExpressions(node));
 
-        reg("ft", (node, cfile) -> new CPOSimpleExpression(node, cfile));
+        reg("ft", node -> new CPOSimpleExpression(node));
 
-        reg("vc", (node, cfile) -> new CPOValueConstraint(node, cfile));
-        reg("pre", (node, cfile) -> new CPOExp0(node, cfile));
-        reg("no", (node, cfile) -> new _CPOTwoExpressions(node, cfile));
+        reg("vc", node -> new CPOValueConstraint(node));
+        reg("pre", node -> new CPOExp0(node));
+        reg("no", node -> new _CPOTwoExpressions(node));
 
     }
 
-    public CPOPredicate build(IndexedTableNode node, CFile cfile) {
-        final String type = node.getTagsSplit()[0];
-        final Builder<? extends CPOPredicate> builder = map.get(type);
-        Preconditions.checkNotNull(builder, "no predicate builder for type " + type);
-        final CPOPredicate predicate = builder.build(node, cfile);
-        return predicate;
-    }
+    @Override
+    public CPOPredicate build(IndexedTableNode node) {
+        return super.buildImpl(node, node.getTagsSplit()[0], null);
 
-    private <X> void reg(String name, Builder<? extends CPOPredicate> b) {
-
-        Preconditions.checkState(!map.containsKey(name));
-        map.put(name, b);
     }
 
 }
