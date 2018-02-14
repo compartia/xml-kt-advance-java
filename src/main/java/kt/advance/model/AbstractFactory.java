@@ -23,20 +23,39 @@
  */
 package kt.advance.model;
 
+import java.util.HashMap;
+
+import com.google.common.base.Preconditions;
 import com.kt.advance.xml.model.IndexedTableNode;
 
-public class CType extends Indexed {
-
-    private final String label;
-
-    public CType(IndexedTableNode node) {
-        super(node);
-        this.label = node.getTagsSplit()[0];
+public abstract class AbstractFactory<T> {
+    @FunctionalInterface
+    protected interface Builder<X> {
+        X build(IndexedTableNode node);
     }
 
-    @Override
-    public String toString() {
-        return label;
+    protected final HashMap<String, Builder<? extends T>> map;
+
+    public AbstractFactory() {
+        map = new HashMap<>();
     }
 
+    protected <X> void reg(String name, Builder<? extends T> b) {
+
+        Preconditions.checkState(!map.containsKey(name));
+        map.put(name, b);
+    }
+
+    public abstract T build(IndexedTableNode node);
+
+    public T buildImpl(IndexedTableNode node, String type, T fallBackValueSingleton) {
+
+        final Builder<? extends T> builder = map.get(type);
+
+        if (builder == null) {
+            return fallBackValueSingleton;
+        }
+        final T exp = builder.build(node);
+        return exp;
+    }
 }

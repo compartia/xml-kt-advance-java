@@ -16,6 +16,7 @@ import com.kt.advance.xml.model.CdictXml;
 import com.kt.advance.xml.model.IndexedTableNode;
 import com.kt.advance.xml.model.PrdXml;
 
+import kt.advance.model.CTypeFactory.CType;
 import kt.advance.model.ExpFactory.CExpression;
 import kt.advance.model.PredicatesFactory.CPOPredicate;
 
@@ -35,6 +36,21 @@ public class CFile {
 
     Map<Integer, CString> strings;
     Map<Integer, CType> types;
+
+    public String getStruct(Integer key) {
+        LOG.warn("getStruct is not implemented");
+        return "-struct-";
+    }
+
+    public String getStructName(Integer key) {
+        LOG.warn("getStructName is not implemented");
+        return "-struct_name-";
+    }
+
+    public boolean isStruct(Integer key) {
+        LOG.warn("isStruct is not implemented");
+        return true;
+    }
 
     public CFile(String name) {
         this.name = name;
@@ -96,11 +112,13 @@ public class CFile {
     }
 
     public void readCDictFile(CdictXml cdict, ExpFactory ef) {
+
         LOG.debug("parsing " + cdict.getOrigin());
+        final CTypeFactory cTypeFactory = new CTypeFactory();
 
         types = cdict.cfile.cDictionary.types
                 .stream()
-                .map(node -> new CType(node))
+                .map(node -> cTypeFactory.build(node))
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         offsets = cdict.cfile.cDictionary.offsets
@@ -134,7 +152,7 @@ public class CFile {
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         //        binding
-
+        bind(types.values());
         bind(constants.values());
         bind(offsets.values());
         bind(lvalues.values());
@@ -161,9 +179,10 @@ public class CFile {
                 throw new XmlReadFailedException(prdXml.getOrigin(), pk + " is already in the map ");
             }
 
-            final CPOPredicate prd = pf.build(node, this);
+            final CPOPredicate prd = pf.build(node);
             predicates.put(pk, prd);
         }
+        bind(predicates.values());
 
     }
 
