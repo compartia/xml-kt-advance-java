@@ -23,6 +23,9 @@
  */
 package kt.advance.model;
 
+import java.util.Map;
+
+import com.google.common.collect.ImmutableMap;
 import com.kt.advance.Util;
 import com.kt.advance.xml.model.IndexedTableNode;
 
@@ -123,6 +126,43 @@ public class CTypeFactory extends AbstractFactory<CType> {
 
     }
 
+    static final Map<String, String> integernames = new ImmutableMap.Builder<String, String>()
+            .put("ichar", "char")
+            .put("ischar", "signed char")
+            .put("iuchar", "unsigned char")
+            .put("ibool", "bool")
+            .put("iint", "int")
+            .put("iuint", "unsigned int")
+            .put("ishort", "short")
+            .put("iushort", "unsigned short")
+            .put("ilong", "long")
+            .put("iulong", "unsigned long")
+            .put("ilonglong", "long long")
+            .put("iulonglong", "unsigned long long")
+
+            .build();
+
+    public static class CTypInt extends CType {
+        String kind;
+
+        public CTypInt(IndexedTableNode node) {
+            super(node);
+        }
+
+        @Override
+        public String toString() {
+            // TODO add attributes
+            return kind;//(integernames[self.get_kind()] + '[' + str(self.get_attributes()) + ']')
+        }
+
+        @Override
+        void bindImpl(CFile cfile, Integer[] args, String[] tags) {
+            final String kindKey = tags[1];
+            this.kind = integernames.get(kindKey);
+        }
+
+    }
+
     public static class CTypVoid extends CType {
 
         public CTypVoid(IndexedTableNode node) {
@@ -148,6 +188,7 @@ public class CTypeFactory extends AbstractFactory<CType> {
         reg("tvoid", node -> new CTypVoid(node));
         reg("tptr", node -> new CTypePtr(node));
         reg("tcomp", node -> new CTypComp(node));
+        reg("tint", node -> new CTypInt(node));
 
     }
 
