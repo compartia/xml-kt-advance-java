@@ -29,7 +29,7 @@ import com.google.common.base.Preconditions;
 import com.kt.advance.xml.model.IndexedTableNode;
 
 public abstract class AbstractFactory<T> {
-
+    @FunctionalInterface
     protected interface Builder<X> {
         X build(IndexedTableNode node);
     }

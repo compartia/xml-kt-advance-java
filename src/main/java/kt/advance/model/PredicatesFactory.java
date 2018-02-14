@@ -258,10 +258,6 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
     }
 
-    interface Builder<X extends CPOPredicate> {
-        X build(IndexedTableNode node, CFile cfile);
-    }
-
     static class CPOExp0 extends CPOPredicate {
         public CExpression exp;
 
