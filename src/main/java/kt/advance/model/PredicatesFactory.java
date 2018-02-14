@@ -29,6 +29,7 @@ import com.google.common.base.Preconditions;
 import com.kt.advance.Util;
 import com.kt.advance.xml.model.IndexedTableNode;
 
+import kt.advance.model.CTypeFactory.CType;
 import kt.advance.model.ExpFactory.CExpression;
 
 public class PredicatesFactory {

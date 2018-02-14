@@ -23,17 +23,18 @@
  */
 package kt.advance.model;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
 
-import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.kt.advance.Util;
 import com.kt.advance.xml.model.IndexedTableNode;
 
-public class ExpFactory {
+import kt.advance.model.CTypeFactory.CType;
+import kt.advance.model.ExpFactory.CExpression;
+
+public class ExpFactory extends AbstractFactory<CExpression> {
 
     public static class BinOp extends CExpression {
         public String binop;
@@ -129,26 +130,10 @@ public class ExpFactory {
     }
 
     public static class CExpCnApp extends CExpression {
-
         CType ctype;
-        //        CLval lvalue;
         CExpression[] exps;
         String name;
 
-        //        def __init__(self,cd,index,tags,args):
-        //            CExpBase.__init__(self,cd,index,tags,args)
-        //
-        //        def get_name(self): return self.tags[1]
-        //
-        //        def get_type(self): return self.cd.get_typ(int(self.args[0]))
-        //
-        //        def get_args(self): return [ self.cd.get_exp(int(i)) for i in self.args[1:] ]
-        //
-        //        def has_variable(self,vid):
-        //            return any([ a.has_variable(vid) for a in self.get_args()])
-        //
-        //        def __str__(self):
-        //            return self.get_name() + '(' + ','.join([str(a) for a in self.get_args()]) + ')'
         public CExpCnApp(IndexedTableNode node) {
             super(node);
 
@@ -305,29 +290,6 @@ public class ExpFactory {
         }
 
     }
-    //    class CExpCastE(CExpBase):
-    //        '''
-    //        tags:
-    //            0: 'caste'
-    //
-    //        args:
-    //            0: target typ
-    //            1: exp
-    //        '''
-    //
-    //        def __init__(self,cd,index,tags,args):
-    //            CExpBase.__init__(self,cd,index,tags,args)
-    //
-    //        def get_exp(self): return self.cd.get_exp(self.args[1])
-    //
-    //        def get_type(self): return self.cd.get_typ(self.args[0])
-    //
-    //        def is_caste(self): return True
-    //
-    //        def has_variable(self,vid): return self.get_exp().has_variable(vid)
-    //
-    //        def __str__(self):
-    //            return 'caste(' + str(self.get_type()) + ',' + str(self.get_exp()) + ')'
 
     public static class DefaultCExpression extends CExpression {
         @Deprecated
@@ -344,6 +306,7 @@ public class ExpFactory {
 
         @Override
         public String toString() {
+            //XXX: warn to LOG
             return "-=EXPR " + nameaa + "=-";
         }
 
@@ -370,30 +333,6 @@ public class ExpFactory {
         public abstract void bindImpl(Integer[] args, String[] tags, CFile cfile);
 
     }
-
-    interface Builder<X extends CExpression> {
-        X build(IndexedTableNode node);
-    }
-
-    //    class CExpLval(CExpBase):
-    //        '''
-    //        tags:
-    //            0: 'lval'
-    //
-    //        args:
-    //            0: lval
-    //        '''
-    //
-    //        def __init__(self,cd,index,tags,args):
-    //            CExpBase.__init__(self,cd,index,tags,args)
-    //
-    //        def     get_lval(self): return self.cd.get_lval(self.args[0])
-    //
-    //        def is_lval(self): return True
-    //
-    //        def has_variable(self,vid): return self.get_lval().has_variable(vid)
-    //
-    //        def __str__(self): return str(self.get_lval())
 
     static final Map<String, String> OP_MAP = new ImmutableMap.Builder<String, String>()
             .put("div", "%s / %s")
@@ -424,10 +363,9 @@ public class ExpFactory {
             .put("lnot", "!%s")
 
             .build();
-    private final HashMap<String, Builder<? extends CExpression>> map;
 
     public ExpFactory() {
-        map = new HashMap<>();
+        super();
 
         /* 1 */ reg("binop", (node) -> new BinOp(node));
         /* 2 */ reg("const", (node) -> new Const(node));
@@ -450,21 +388,8 @@ public class ExpFactory {
 
     }
 
+    @Override
     public CExpression build(IndexedTableNode node) {
-        final String type = node.getTagsSplit()[0];
-        final Builder<? extends CExpression> builder = map.get(type);
-
-        //        Preconditions.checkNotNull(builder, "no EXP builder for type " + type);
-        if (builder == null) {
-            return new DefaultCExpression(node);
-        }
-        final CExpression exp = builder.build(node);
-        return exp;
-    }
-
-    private <X> void reg(String name, Builder<? extends CExpression> b) {
-
-        Preconditions.checkState(!map.containsKey(name));
-        map.put(name, b);
+        return super.buildImpl(node, node.getTagsSplit()[0], new DefaultCExpression(node));
     }
 }
