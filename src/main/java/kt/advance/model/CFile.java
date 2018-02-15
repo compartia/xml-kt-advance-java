@@ -16,6 +16,7 @@ import com.kt.advance.xml.model.CdictXml;
 import com.kt.advance.xml.model.IndexedTableNode;
 import com.kt.advance.xml.model.PrdXml;
 
+import kt.advance.model.CFunArgs.CFunArg;
 import kt.advance.model.CTypeFactory.CType;
 import kt.advance.model.ExpFactory.CExpression;
 import kt.advance.model.PredicatesFactory.CPOPredicate;
@@ -36,6 +37,19 @@ public class CFile {
 
     Map<Integer, CString> strings;
     Map<Integer, CType> types;
+
+    Map<Integer, CFunArg> funArg;
+    Map<Integer, CFunArgs> funArgs;
+
+    public CFunArgs getCFunArgs(Integer key) {
+        Preconditions.checkState(this.funArgs != null, this.getName() + " has null or borken funArgs map");
+        return requireValue(funArgs, key, "funArgs");
+    }
+
+    public CFunArg getCFunArg(Integer key) {
+        Preconditions.checkState(this.funArg != null, this.getName() + " has null or borken CFunArg map");
+        return requireValue(funArg, key, "CFunArg");
+    }
 
     public String getStruct(Integer key) {
         LOG.warn("getStruct is not implemented");
@@ -119,6 +133,16 @@ public class CFile {
         types = cdict.cfile.cDictionary.types
                 .stream()
                 .map(node -> cTypeFactory.build(node))
+                .collect(Collectors.toMap(node -> node.id, node -> node));
+
+        funArg = cdict.cfile.cDictionary.funArg
+                .stream()
+                .map(node -> new CFunArg(node))
+                .collect(Collectors.toMap(node -> node.id, node -> node));
+
+        funArgs = cdict.cfile.cDictionary.funArgs
+                .stream()
+                .map(node -> new CFunArgs(node))
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         offsets = cdict.cfile.cDictionary.offsets

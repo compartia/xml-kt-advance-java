@@ -107,6 +107,33 @@ public class CTypeFactory extends AbstractFactory<CType> {
 
     }
 
+    /**
+     *
+     * tfun
+     *
+     */
+    public static class CTypFun extends CType {
+
+        CType returnType;
+        CFunArgs funArgs;
+
+        public CTypFun(IndexedTableNode node) {
+            super(node);
+        }
+
+        @Override
+        public String toString() {
+            return Util.bra(funArgs.toString()) + ":" + returnType.toString();
+        }
+
+        @Override
+        void bindImpl(CFile cfile, Integer[] args, String[] tags) {
+            this.returnType = cfile.getType(args[0]);
+            this.funArgs = cfile.getCFunArgs(args[1]);
+        }
+
+    }
+
     public static class CTypeUnknown extends CType {
         String kind;
 

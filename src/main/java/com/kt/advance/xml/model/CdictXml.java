@@ -63,6 +63,14 @@ public class CdictXml extends FileLevelAnalysisXml {
         @XmlElement(name = "n")
         public List<IndexedTableNode> lvals = new ArrayList<>();
 
+        @XmlElementWrapper(name = "funarg-table")
+        @XmlElement(name = "n")
+        public List<IndexedTableNode> funArg = new ArrayList<>();
+
+        @XmlElementWrapper(name = "funargs-table")
+        @XmlElement(name = "n")
+        public List<IndexedTableNode> funArgs = new ArrayList<>();
+
         @XmlElementWrapper(name = "offset-table")
         @XmlElement(name = "n")
         public List<IndexedTableNode> offsets = new ArrayList<>();
