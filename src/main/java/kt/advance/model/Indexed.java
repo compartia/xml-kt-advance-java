@@ -31,7 +31,10 @@ public abstract class Indexed {
 
     public Indexed(IndexedTableNode node) {
         this.id = node.index;
+        this.init(node.getArguments(), node.getTagsSplit());
+    }
 
+    protected void init(Integer[] args, String[] tags) {
     }
 
 }
