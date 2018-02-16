@@ -52,10 +52,13 @@ import com.kt.advance.xml.model.SpoXml;
 
 public class CApplication {
 
+    private static final String SOURCEFILES_DIR_NAME = "sourcefiles";
+
+    private static final String SEMANTICS_DIR_NAME = "semantics";
+
     @FunctionalInterface
     interface UnsafeProc {
         void run();
-
     }
 
     static final Logger LOG = LoggerFactory.getLogger(CApplication.class.getName());
@@ -71,12 +74,28 @@ public class CApplication {
     public final PredicatesFactory predicatesFactory = new PredicatesFactory();
 
     private List<String> targetFiles;
+    private File sourceDir;
 
     public CApplication(FsAbstraction fs) {
-        Preconditions.checkNotNull(fs);
+        Preconditions.checkNotNull(fs, "FileSystemAbstraction is required");
+        Preconditions.checkNotNull(fs.getBaseDir(), "base dir is required");
+
+        final String path = fs.getBaseDir().getAbsolutePath();
+        final int semanticsIndex = path.lastIndexOf(SEMANTICS_DIR_NAME);
+        if (semanticsIndex >= 0) {
+            sourceDir = new File(path.substring(0, semanticsIndex + SEMANTICS_DIR_NAME.length()));
+            sourceDir = new File(sourceDir, SOURCEFILES_DIR_NAME);
+        } else {
+            sourceDir = null;
+            LOG.error("no " + SEMANTICS_DIR_NAME + " in path " + path);
+        }
 
         filesStats = new MapCounterInt<>(4);
         this.fs = fs;
+    }
+
+    public File getSourceDir() {
+        return sourceDir;
     }
 
     public CFile getCFileOrMakeNew(String name) {
