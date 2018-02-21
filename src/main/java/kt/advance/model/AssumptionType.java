@@ -32,25 +32,30 @@ import kt.advance.model.PredicatesFactory.CPOPredicate;
 //    'ua': lambda x:AT.ATUserAssumptionType(*x),
 //    'pc': lambda x:AT.ATPostconditionType(*x)
 //    }
-public class Assumption extends Indexed {
-    public enum AssumptionType {
+public class AssumptionType extends Indexed {
+    public enum AssumptionTypeCode {
         aa, pc, ua
     }
 
     public Integer postRequestIndex;
     public CPOPredicate predicate;
 
-    public final AssumptionType type;
+    public Integer apiId;
 
-    public Assumption(IndexedTableNode node, CFile cfile) {
+    public final AssumptionTypeCode type;
+
+    public AssumptionType(IndexedTableNode node, CFile cfile) {
+
         super(node);
+
         final Integer[] args = node.getArguments();
         final String[] tags = node.getTagsSplit();
 
-        this.type = AssumptionType.valueOf(tags[0]);
+        this.type = AssumptionTypeCode.valueOf(tags[0]);
         switch (type) {
         case aa:
         case ua:
+            this.apiId = args[0];
             final Integer predicateIndex = args[0];
             this.predicate = cfile.getPredicate(predicateIndex);
             break;
@@ -59,5 +64,11 @@ public class Assumption extends Indexed {
             break;
         }
 
+    }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return predicate.toString() + " :" + type;
     }
 }

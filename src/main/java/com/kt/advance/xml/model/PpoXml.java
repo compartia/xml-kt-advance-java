@@ -110,7 +110,7 @@ public class PpoXml extends FunctionLevelAnalysisXml {
         public String invsString;
 
         @XmlAttribute(name = "ippo", required = true)
-        public Integer ippo;;
+        public Integer ippo;
 
         @XmlAttribute(name = "deps", required = true)
         public String level;

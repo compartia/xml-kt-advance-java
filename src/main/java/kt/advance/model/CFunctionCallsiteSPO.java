@@ -25,7 +25,9 @@ package kt.advance.model;
 
 import static com.kt.advance.Util.putUniq;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
@@ -45,15 +47,19 @@ public class CFunctionCallsiteSPO {
     //        'x': dead code
 
     public static class CProofDependencies {
-        public final Integer[] ids;
+        public final List<Integer> ids;
 
         public final Integer[] invs;
 
         public final Definitions.DepsLevel level;
 
+        public boolean hasExternalDependencies() {
+            return this.level == Definitions.DepsLevel.a;
+        }
+
         public CProofDependencies(Integer[] ids, Integer[] invs, String level) {
             super();
-            this.ids = ids;
+            this.ids = Arrays.asList(ids);
             this.invs = invs;
             if (level != null) {
                 this.level = Definitions.DepsLevel.valueOf(level);

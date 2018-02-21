@@ -23,8 +23,13 @@
  */
 package kt.advance.model;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import com.kt.advance.xml.model.PpoXml.PPONode;
 
+import kt.advance.model.AssumptionType.AssumptionTypeCode;
 import kt.advance.model.Definitions.POLevel;
 
 public class PPO extends PO {
@@ -35,6 +40,33 @@ public class PPO extends PO {
     @Override
     public POLevel getLevel() {
         return POLevel.PRIMARY;
+    }
+
+    public Set<SPO> getAssociatedSpos(CFunction cfun) {
+        final Set<SPO> collected = new HashSet<>();
+
+        final Set<Integer> assumptionTypeIds = deps.ids
+                .stream()
+                .map(id -> cfun.getAssumptionType(id))
+                .filter(assumptionType -> assumptionType.type == AssumptionTypeCode.aa)
+                .map(assumptionType -> assumptionType.apiId)
+                .collect(Collectors.toSet());
+
+        for (final CFunctionCallsiteSPO callsite : cfun.getSPOs()) {
+
+            final Set<SPO> collect2 = callsite.spos.values()
+                    .stream()
+                    .filter(spo -> assumptionTypeIds.contains(spo.type.getExternalId()))
+                    .collect(Collectors.toSet());
+
+            if (!collect2.isEmpty()) {
+                //this condition is for debugging only
+                collected.addAll(collect2);
+            }
+        }
+
+        return collected;
+
     }
 
 }

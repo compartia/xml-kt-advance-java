@@ -26,12 +26,10 @@ package kt.advance.model;
 import static com.kt.advance.Util.requireValue;
 
 import java.io.File;
-import java.net.URI;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -147,28 +145,6 @@ public class CApplication {
         this.errors = errors;
     }
 
-    @Deprecated
-    private void readAllTargetFilesXmls(Collection<File> xmls) {
-
-        LOG.info(String.format("listing %d TARGET_FILES files", xmls.size()));
-
-        //        final XMLType<TargetFile> reader = FsAbstraction.getReader(TargetFile.class);
-        final URI baseUri = fs.getBaseDir().toURI();
-        targetFiles = xmls.stream()
-                .map((x) -> baseUri.relativize(x.getParentFile().toURI()).getPath())
-                .collect(Collectors.toList());
-
-        //        this.targetFiles = xmls.parallelStream()
-        //                .map((xml) -> reader.readXml(xml, fs.getBaseDir()))
-        //                .collect(Collectors.toList());
-
-        for (final String tf : targetFiles) {
-
-            System.out.println(tf);
-        }
-
-    }
-
     private void runInHandler(UnsafeProc proc, AnalysisXml ppos) {
 
         try {
@@ -195,10 +171,10 @@ public class CApplication {
                 .map((xml) -> reader.readXml(xml, fs.getBaseDir()))
                 .sequential()
                 .forEach((xmlObj) -> runInHandler(() -> {
-                    final CFile cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                    //                    final CFile cfile = getCFileStrictly(xmlObj.getSourceFilename());
                     final CFunction cFunction = getCFunctionOrMake(xmlObj);
 
-                    cFunction.readApiFile(xmlObj, cfile);
+                    cFunction.readApiFile(xmlObj);
                 }, xmlObj));
 
     }

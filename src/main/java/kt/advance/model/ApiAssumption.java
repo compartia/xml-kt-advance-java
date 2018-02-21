@@ -11,11 +11,13 @@ public class ApiAssumption {
     public final CPOPredicate predicate;
     public final Integer[] spos;
 
-    public ApiAssumption(ApiAssumptionNode node, CPOPredicate predicate) {
+    public ApiAssumption(ApiAssumptionNode node, CFunction fun) {
+
         this.ppos = Util.splitStringIntoIntegers(node.ppos);
         this.spos = Util.splitStringIntoIntegers(node.spos);
-        this.predicate = predicate;
+        this.predicate = fun.getCfile().getPredicate(node.predicateIndex);
 
         this.index = node.predicateIndex;
+
     }
 }
