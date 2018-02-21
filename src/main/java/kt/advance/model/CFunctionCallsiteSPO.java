@@ -86,11 +86,11 @@ public class CFunctionCallsiteSPO {
     }
 
     public final CExpression exp;
-    public final CLocation locaction;
+    public final CLocation location;
     public Map<Integer, SPO> spos = new HashMap<>();
 
     public CFunctionCallsiteSPO(SPOCall call, CFunction cfunc) {
-        this.locaction = cfunc.getCfile().getLocation(call.iloc);
+        this.location = cfunc.getCfile().getLocation(call.iloc);
         if (call.iexp != null) {
             exp = cfunc.getCfile().getExression(call.iexp);
         } else {
@@ -102,8 +102,8 @@ public class CFunctionCallsiteSPO {
             final SPO spo = new SPO(apiCondition, cfunc);
             putUniq(spos, apiCondition.iapi, spo);
 
-            Preconditions.checkState(spo.getLocation().equals(locaction), "" + spo.getLocation().toString(cfunc)
-                    + " vs " + locaction.toString(cfunc));
+            Preconditions.checkState(spo.getLocation().equals(location), "" + spo.getLocation().toString(cfunc)
+                    + " vs " + location.toString(cfunc));
 
         }
     }
