@@ -13,7 +13,6 @@ import com.google.common.base.Preconditions;
 import com.kt.advance.ErrorsBundle;
 import com.kt.advance.xml.model.ApiXml;
 import com.kt.advance.xml.model.CFunXml;
-import com.kt.advance.xml.model.CFunXml.SVar;
 import com.kt.advance.xml.model.PodXml;
 import com.kt.advance.xml.model.PpoXml;
 import com.kt.advance.xml.model.SpoXml;
@@ -38,15 +37,15 @@ public class CFunction {
 
     private final CFile cfile;
     private final String name;
-    private final SVar svar;
+    public final CVarInfo varInfo;
 
     public CFunction(CFunXml cfunXml, CFile cfile) {
         Preconditions.checkNotNull(cfunXml, "cfunXml is null");
         Preconditions.checkNotNull(cfunXml.getFunctionName(), "funcName is null");
         Preconditions.checkNotNull(cfunXml.function.svar, "svar is null");
 
+        this.varInfo = cfile.getVarInfo(cfunXml.function.svar.ivinfo);
         this.name = cfunXml.getFunctionName();
-        this.svar = cfunXml.function.svar;
 
         this.cfile = cfile;
     }
