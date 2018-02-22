@@ -42,7 +42,7 @@ public class PodXml extends FunctionLevelAnalysisXml {
 
         @XmlElementWrapper(name = "assumption-table")
         @XmlElement(name = "n")
-        public List<IndexedTableNode> assumptions = new ArrayList<>();
+        public List<IndexedTableNode> assumptionTypeTable = new ArrayList<>();
 
         @XmlAttribute(name = "fname")
         public String fname;

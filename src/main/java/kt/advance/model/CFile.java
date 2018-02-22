@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Preconditions;
 import com.kt.advance.xml.XmlReadFailedException;
+import com.kt.advance.xml.model.CFunXml;
 import com.kt.advance.xml.model.CdictXml;
 import com.kt.advance.xml.model.IndexedTableNode;
 import com.kt.advance.xml.model.PrdXml;
@@ -37,6 +38,7 @@ public class CFile {
 
     Map<Integer, CString> strings;
     Map<Integer, CType> types;
+    Map<Integer, CVarInfo> varinfos;
 
     Map<Integer, CFunArg> funArg;
     Map<Integer, CFunArgs> funArgs;
@@ -52,13 +54,13 @@ public class CFile {
     }
 
     public String getStruct(Integer key) {
-        LOG.warn("getStruct is not implemented");
-        return "-struct-";
+        //        LOG.warn("getStruct is not implemented");
+        return " #struct# ";
     }
 
     public String getStructName(Integer key) {
-        LOG.warn("getStructName is not implemented");
-        return "-struct_name-";
+        //        LOG.warn("getStructName is not implemented");
+        return " #struct name# ";
     }
 
     public boolean isStruct(Integer key) {
@@ -70,11 +72,13 @@ public class CFile {
         this.name = name;
     }
 
-    public CFunction getCFunctionOrMakeNew(String name) {
-        CFunction f = cfunctions.get(name);
+    public CFunction getCFunctionOrMakeNew(CFunXml node) {
+
+        final String functionName = node.getFunctionName();
+        CFunction f = cfunctions.get(functionName);
         if (f == null) {
-            f = new CFunction(name, this);
-            cfunctions.put(name, f);
+            f = new CFunction(node, this);
+            cfunctions.put(f.getName(), f);
         }
         return f;
     }
@@ -99,6 +103,10 @@ public class CFile {
 
     public CLocation getLocation(Integer key) {
         return requireValue(locations, key, "location");
+    }
+
+    public CVarInfo getVarInfo(Integer key) {
+        return requireValue(varinfos, key, "location");
     }
 
     public CLval getLValue(Integer key) {
@@ -129,6 +137,11 @@ public class CFile {
 
         LOG.debug("parsing " + cdict.getOrigin());
         final CTypeFactory cTypeFactory = new CTypeFactory();
+
+        varinfos = cdict.cfile.cDeclarations.varinfos
+                .stream()
+                .map(node -> new CVarInfo(node))
+                .collect(Collectors.toMap(node -> node.id, node -> node));
 
         types = cdict.cfile.cDictionary.types
                 .stream()

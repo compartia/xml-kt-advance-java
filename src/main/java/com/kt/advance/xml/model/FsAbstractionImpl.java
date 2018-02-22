@@ -99,6 +99,11 @@ public class FsAbstractionImpl implements FsAbstraction {
     }
 
     @Override
+    public Collection<File> listCFuns() {
+        return listXMLs(CFUN_SUFFIX);
+    }
+
+    @Override
     public Collection<File> listPODs() {
         return listXMLs(POD_SUFFIX);
     }

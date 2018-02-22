@@ -21,43 +21,40 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02
  * -------------------------------------------------------------------
  */
-package kt.advance.model;
+package com.kt.advance.xml.model;
 
-import com.kt.advance.xml.model.IndexedTableNode;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
-import kt.advance.model.PredicatesFactory.CPOPredicate;
+@XmlRootElement(name = "c-analysis")
+public class CFunXml extends FunctionLevelAnalysisXml {
 
-//assumption_type_constructors = {
-//    'aa': lambda x:AT.ATApiAssumptionType(*x),
-//    'ua': lambda x:AT.ATUserAssumptionType(*x),
-//    'pc': lambda x:AT.ATPostconditionType(*x)
-//    }
-public class Assumption extends Indexed {
-    public enum AssumptionType {
-        aa, pc, ua
+    public static class SVar {
+        @XmlAttribute(name = "ivinfo")
+        public Integer ivinfo;
     }
 
-    public Integer postRequestIndex;
-    public CPOPredicate predicate;
+    public static class CFunXmlFunction {
+        @XmlElement(name = "svar")
+        public SVar svar;
 
-    public final AssumptionType type;
+        @XmlAttribute(name = "filename")
+        public String filename;
+    }
 
-    public Assumption(IndexedTableNode node, CFile cfile) {
-        super(node);
-        final Integer[] args = node.getArguments();
-        final String[] tags = node.getTagsSplit();
+    @XmlElement(name = "function")
+    public CFunXmlFunction function;
 
-        this.type = AssumptionType.valueOf(tags[0]);
-        switch (type) {
-        case aa:
-        case ua:
-            final Integer predicateIndex = args[0];
-            this.predicate = cfile.getPredicate(predicateIndex);
-            break;
-        case pc:
-            this.postRequestIndex = args[0];
-            break;
+    @Override
+    public String getSourceFilename() {
+        final String fname = this.function.filename;
+        if (fname.endsWith(".c")) {
+            return fname;
+        } else {
+            return fname + ".c";
         }
 
     }
+
 }

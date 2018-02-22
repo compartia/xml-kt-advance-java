@@ -8,3 +8,5 @@ XmlValidator/**
 ppos.json
 
 src/test/java/com/kt/advance/tests/ApiXmlReadingTests.java
+
+kt-ch_analysis.log

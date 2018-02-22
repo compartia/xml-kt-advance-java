@@ -42,12 +42,19 @@ public abstract class PO {
 
     public PoTypeRef type;
 
-    public PO(PPONode ppoNode, PoTypeRef type) {
+    public boolean isDelegated() {
+        if (this.isSafe() && this.deps != null) {
+            return deps.hasExternalDependencies();
+        }
+        return false;
+    }
 
+    public PO(PPONode ppoNode, PoTypeRef type) {
         Preconditions.checkNotNull(type, "PO type must not be null");
 
         this.id = ppoNode.id;
         this.type = type;
+
         this.status = Definitions.POStatus.forString(ppoNode.status);
 
         final ENode explNode = ppoNode.explaination;
@@ -66,7 +73,7 @@ public abstract class PO {
 
             deps = new CProofDependencies(ids, invs, level);
         } catch (final Throwable ee) {
-
+            //TODO: handle this
             ee.printStackTrace();
         }
     }

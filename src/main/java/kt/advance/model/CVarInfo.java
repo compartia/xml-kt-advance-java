@@ -21,23 +21,15 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02
  * -------------------------------------------------------------------
  */
+
 package kt.advance.model;
 
-import com.kt.advance.xml.model.SpoXml.ApiCondition;
+import com.kt.advance.xml.model.IndexedTableNode;
 
-import kt.advance.model.Definitions.POLevel;
+public class CVarInfo extends Indexed {
 
-public class SPO extends PO {
-
-    public final Integer id;
-
-    public SPO(ApiCondition call, CFunction host) {
-        super(call.proofObligation, host.getSPOTypeRef(call.proofObligation.id));
-        this.id = call.iapi;
+    public CVarInfo(IndexedTableNode node) {
+        super(node);
     }
 
-    @Override
-    public POLevel getLevel() {
-        return POLevel.SECONDARY;
-    }
 }

@@ -53,7 +53,11 @@ public class PoTypeRef extends Indexed {
 
     public final CLocation location;
 
-    public Integer preconditionId, postconditionId, externalId, contexId;
+    public Integer preconditionId, postconditionId;
+
+    private Integer externalId;
+
+    public Integer contexId;
 
     public final CPOPredicate predicate;
     public Definitions.POType proofObligationType;
@@ -82,6 +86,10 @@ public class PoTypeRef extends Indexed {
 
     public CPOPredicate getPredicate() {
         return this.predicate;
+    }
+
+    public Integer getExternalId() {
+        return externalId;
     }
 
 }

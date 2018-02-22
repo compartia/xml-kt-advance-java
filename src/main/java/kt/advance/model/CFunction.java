@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 import com.google.common.base.Preconditions;
 import com.kt.advance.ErrorsBundle;
 import com.kt.advance.xml.model.ApiXml;
+import com.kt.advance.xml.model.CFunXml;
 import com.kt.advance.xml.model.PodXml;
 import com.kt.advance.xml.model.PpoXml;
 import com.kt.advance.xml.model.SpoXml;
@@ -20,9 +21,13 @@ import com.kt.advance.xml.model.SpoXml.SPOCall;
 
 public class CFunction {
     public Map<Integer, ApiAssumption> apiAssumptions;
-    public Map<Integer, Assumption> assumptions;
+    public Map<Integer, AssumptionType> assumptionsTypesMap;
 
-    public final List<CFunctionCallsiteSPO> calls = new ArrayList<>();
+    public AssumptionType getAssumptionType(int typeKey) {
+        return requireValue(assumptionsTypesMap, typeKey, "AssumptionType ");
+    }
+
+    public List<CFunctionCallsiteSPO> calls = new ArrayList<>();
 
     public Map<Integer, PPO> ppos = new HashMap<>();
 
@@ -32,9 +37,16 @@ public class CFunction {
 
     private final CFile cfile;
     private final String name;
+    public final CVarInfo varInfo;
 
-    public CFunction(String name, CFile cfile) {
-        this.name = name;
+    public CFunction(CFunXml cfunXml, CFile cfile) {
+        Preconditions.checkNotNull(cfunXml, "cfunXml is null");
+        Preconditions.checkNotNull(cfunXml.getFunctionName(), "funcName is null");
+        Preconditions.checkNotNull(cfunXml.function.svar, "svar is null");
+
+        this.varInfo = cfile.getVarInfo(cfunXml.function.svar.ivinfo);
+        this.name = cfunXml.getFunctionName();
+
         this.cfile = cfile;
     }
 
@@ -50,11 +62,15 @@ public class CFunction {
         return this.ppos.values();
     }
 
+    public PPO getPPO(Integer ppoId) {
+        return requireValue(ppos, ppoId, "PPO");
+    }
+
     public PoTypeRef getPPOTypeRef(int typeKey) {
         return requireValue(ppoTypes, typeKey, "ppo type ref");
     }
 
-    public Collection<CFunctionCallsiteSPO> getSPOs() {
+    public Collection<CFunctionCallsiteSPO> getCallsites() {
         return this.calls;
     }
 
@@ -62,17 +78,13 @@ public class CFunction {
         return requireValue(spoTypes, typeKey, "spo type ref");
     }
 
-    public void readApiFile(final ApiXml apiXml, CFile cfile) {
-        Preconditions.checkState(cfile.predicates != null, "predicates map is null");
+    public void readApiFile(final ApiXml apiXml) {
+        Preconditions.checkState(this.getCfile().predicates != null, "predicates map is not inited");
 
-        apiAssumptions = new HashMap<>();
-
-        apiXml.getAssumptions().stream()
-                .map(aapiNode -> new ApiAssumption(aapiNode, cfile.getPredicate(aapiNode.predicateIndex)))
-                .forEach(
-                    apiAssumption -> {
-                        apiAssumptions.put(apiAssumption.index, apiAssumption);
-                    });
+        apiAssumptions = apiXml.getAssumptions()
+                .stream()
+                .map(apiNode -> new ApiAssumption(apiNode, this))
+                .collect(Collectors.toMap(aa -> aa.index, aa -> aa));
 
     }
 
@@ -80,16 +92,19 @@ public class CFunction {
         Preconditions.checkState(null != cfile.locations, "locations map is null");
         Preconditions.checkState(null != cfile.predicates, "predicates map is null");
 
-        ppoTypes = dict.function.ppoTypes.parallelStream()
+        ppoTypes = dict.function.ppoTypes
+                .parallelStream()
                 .map((x) -> new PoTypeRef(x, cfile))
                 .collect(Collectors.toConcurrentMap(node -> node.id, node -> node));
 
-        spoTypes = dict.function.spoTypes.parallelStream()
+        spoTypes = dict.function.spoTypes
+                .parallelStream()
                 .map((x) -> new PoTypeRef(x, cfile))
                 .collect(Collectors.toConcurrentMap(node -> node.id, node -> node));
 
-        assumptions = dict.function.assumptions.parallelStream()
-                .map((x) -> new Assumption(x, cfile))
+        assumptionsTypesMap = dict.function.assumptionTypeTable
+                .parallelStream()
+                .map((x) -> new AssumptionType(x, cfile))
                 .collect(Collectors.toConcurrentMap(node -> node.id, node -> node));
 
     }
@@ -100,7 +115,7 @@ public class CFunction {
 
         ppos = pposXml.function.proofObligations
                 .parallelStream()
-                .map(x -> new PPO(x, getPPOTypeRef(x.id)))
+                .map(x -> new PPO(x, this))
                 .collect(Collectors.toConcurrentMap(node -> node.id, node -> node));
 
     }
@@ -118,6 +133,8 @@ public class CFunction {
 
         final CallsitesWrapper callsites = pposXml.getCallsites();
 
+        //        List<CFunctionCallsiteSPO>
+
         addCalls(callsites.directCalls);
         addCalls(callsites.indirectCalls);
         addCalls(callsites.returnSites);
@@ -132,7 +149,9 @@ public class CFunction {
                 .map(x -> new CFunctionCallsiteSPO(x, this))
                 .collect(Collectors.toList());
 
-        calls.addAll(c);
+        if (!c.isEmpty()) {
+            calls.addAll(c);
+        }
 
     }
 

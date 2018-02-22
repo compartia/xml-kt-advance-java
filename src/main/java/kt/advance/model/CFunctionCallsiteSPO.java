@@ -25,7 +25,9 @@ package kt.advance.model;
 
 import static com.kt.advance.Util.putUniq;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
@@ -45,15 +47,19 @@ public class CFunctionCallsiteSPO {
     //        'x': dead code
 
     public static class CProofDependencies {
-        public final Integer[] ids;
+        public final List<Integer> ids;
 
         public final Integer[] invs;
 
         public final Definitions.DepsLevel level;
 
+        public boolean hasExternalDependencies() {
+            return this.level == Definitions.DepsLevel.a;
+        }
+
         public CProofDependencies(Integer[] ids, Integer[] invs, String level) {
             super();
-            this.ids = ids;
+            this.ids = Arrays.asList(ids);
             this.invs = invs;
             if (level != null) {
                 this.level = Definitions.DepsLevel.valueOf(level);
@@ -80,11 +86,11 @@ public class CFunctionCallsiteSPO {
     }
 
     public final CExpression exp;
-    public final CLocation locaction;
+    public final CLocation location;
     public Map<Integer, SPO> spos = new HashMap<>();
 
     public CFunctionCallsiteSPO(SPOCall call, CFunction cfunc) {
-        this.locaction = cfunc.getCfile().getLocation(call.iloc);
+        this.location = cfunc.getCfile().getLocation(call.iloc);
         if (call.iexp != null) {
             exp = cfunc.getCfile().getExression(call.iexp);
         } else {
@@ -96,8 +102,8 @@ public class CFunctionCallsiteSPO {
             final SPO spo = new SPO(apiCondition, cfunc);
             putUniq(spos, apiCondition.iapi, spo);
 
-            Preconditions.checkState(spo.getLocation().equals(locaction), "" + spo.getLocation().toString(cfunc)
-                    + " vs " + locaction.toString(cfunc));
+            Preconditions.checkState(spo.getLocation().equals(location), "" + spo.getLocation().toString(cfunc)
+                    + " vs " + location.toString(cfunc));
 
         }
     }
