@@ -233,15 +233,12 @@ public class CApplication {
         LOG.info(String.format("reading %d CFUN files", files.size()));
         final XMLFileType<CFunXml> reader = XMLFileType.getReader(CFunXml.class);
 
-        files.stream()
+        files.parallelStream()
                 .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                //                        .sequential()
-                .forEach((xmlObj) -> runInHandler(() -> {
+                .forEach(xmlObj -> runInHandler(() -> {
 
                     final CFile cfile = getCFileStrictly(xmlObj.getSourceFilename());
                     cfile.getCFunctionOrMakeNew(xmlObj);
-
-                    //TODO:
 
                 }, xmlObj));
 
@@ -256,7 +253,7 @@ public class CApplication {
         predicatesFiles.parallelStream()
                 .map(xml -> reader.readXml(xml, fs.getBaseDir()))
                 .sequential()
-                .forEach((xmlObj) -> runInHandler(() -> {
+                .forEach(xmlObj -> runInHandler(() -> {
                     final CFile cfile = getCFileStrictly(xmlObj.getSourceFilename());
                     cfile.readPrdFile(xmlObj, predicatesFactory);
                 }, xmlObj));

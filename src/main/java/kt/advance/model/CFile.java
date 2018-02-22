@@ -54,13 +54,13 @@ public class CFile {
     }
 
     public String getStruct(Integer key) {
-        LOG.warn("getStruct is not implemented");
-        return "-struct-";
+        //        LOG.warn("getStruct is not implemented");
+        return " #struct# ";
     }
 
     public String getStructName(Integer key) {
-        LOG.warn("getStructName is not implemented");
-        return "-struct_name-";
+        //        LOG.warn("getStructName is not implemented");
+        return " #struct name# ";
     }
 
     public boolean isStruct(Integer key) {

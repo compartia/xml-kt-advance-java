@@ -79,18 +79,12 @@ public class CFunction {
     }
 
     public void readApiFile(final ApiXml apiXml) {
-        Preconditions.checkState(this.getCfile().predicates != null, "predicates map is null");
+        Preconditions.checkState(this.getCfile().predicates != null, "predicates map is not inited");
 
         apiAssumptions = apiXml.getAssumptions()
                 .stream()
                 .map(apiNode -> new ApiAssumption(apiNode, this))
                 .collect(Collectors.toMap(aa -> aa.index, aa -> aa));
-
-        for (final PPO ppo : ppos.values()) {
-            ppo.getAssociatedSpos(this)
-                    .stream()
-                    .forEach(a -> System.out.println(a));
-        }
 
     }
 
