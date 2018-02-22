@@ -12,6 +12,8 @@ import java.util.stream.Collectors;
 import com.google.common.base.Preconditions;
 import com.kt.advance.ErrorsBundle;
 import com.kt.advance.xml.model.ApiXml;
+import com.kt.advance.xml.model.CFunXml;
+import com.kt.advance.xml.model.CFunXml.SVar;
 import com.kt.advance.xml.model.PodXml;
 import com.kt.advance.xml.model.PpoXml;
 import com.kt.advance.xml.model.SpoXml;
@@ -26,7 +28,7 @@ public class CFunction {
         return requireValue(assumptionsTypesMap, typeKey, "AssumptionType ");
     }
 
-    public List<CFunctionCallsiteSPO> calls;
+    public List<CFunctionCallsiteSPO> calls = new ArrayList<>();
 
     public Map<Integer, PPO> ppos = new HashMap<>();
 
@@ -36,9 +38,16 @@ public class CFunction {
 
     private final CFile cfile;
     private final String name;
+    private final SVar svar;
 
-    public CFunction(String name, CFile cfile) {
-        this.name = name;
+    public CFunction(CFunXml cfunXml, CFile cfile) {
+        Preconditions.checkNotNull(cfunXml, "cfunXml is null");
+        Preconditions.checkNotNull(cfunXml.getFunctionName(), "funcName is null");
+        Preconditions.checkNotNull(cfunXml.function.svar, "svar is null");
+
+        this.name = cfunXml.getFunctionName();
+        this.svar = cfunXml.function.svar;
+
         this.cfile = cfile;
     }
 
@@ -62,7 +71,7 @@ public class CFunction {
         return requireValue(ppoTypes, typeKey, "ppo type ref");
     }
 
-    public Collection<CFunctionCallsiteSPO> getSPOs() {
+    public Collection<CFunctionCallsiteSPO> getCallsites() {
         return this.calls;
     }
 
@@ -77,6 +86,12 @@ public class CFunction {
                 .stream()
                 .map(apiNode -> new ApiAssumption(apiNode, this))
                 .collect(Collectors.toMap(aa -> aa.index, aa -> aa));
+
+        for (final PPO ppo : ppos.values()) {
+            ppo.getAssociatedSpos(this)
+                    .stream()
+                    .forEach(a -> System.out.println(a));
+        }
 
     }
 
@@ -107,7 +122,7 @@ public class CFunction {
 
         ppos = pposXml.function.proofObligations
                 .parallelStream()
-                .map(x -> new PPO(x, getPPOTypeRef(x.id)))
+                .map(x -> new PPO(x, this))
                 .collect(Collectors.toConcurrentMap(node -> node.id, node -> node));
 
     }
@@ -126,7 +141,6 @@ public class CFunction {
         final CallsitesWrapper callsites = pposXml.getCallsites();
 
         //        List<CFunctionCallsiteSPO>
-        calls = new ArrayList<>();
 
         addCalls(callsites.directCalls);
         addCalls(callsites.indirectCalls);

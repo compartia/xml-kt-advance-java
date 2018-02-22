@@ -33,8 +33,9 @@ import kt.advance.model.AssumptionType.AssumptionTypeCode;
 import kt.advance.model.Definitions.POLevel;
 
 public class PPO extends PO {
-    public PPO(PPONode ppoNode, PoTypeRef type) {
-        super(ppoNode, type);
+
+    public PPO(PPONode ppoNode, CFunction cfun) {
+        super(ppoNode, cfun.getPPOTypeRef(ppoNode.id));
     }
 
     @Override
@@ -45,25 +46,25 @@ public class PPO extends PO {
     public Set<SPO> getAssociatedSpos(CFunction cfun) {
         final Set<SPO> collected = new HashSet<>();
 
-        final Set<Integer> assumptionTypeIds = deps.ids
+        final Set<Integer> assumptionTypeIds = this.deps.ids
                 .stream()
                 .map(id -> cfun.getAssumptionType(id))
                 .filter(assumptionType -> assumptionType.type == AssumptionTypeCode.aa)
                 .map(assumptionType -> assumptionType.apiId)
                 .collect(Collectors.toSet());
 
-        for (final CFunctionCallsiteSPO callsite : cfun.getSPOs()) {
+        cfun.getCallsites()        //TODO: probably missing deps from other functions
+                .stream()
+                .forEach(
+                    callsite -> {
+                        final Set<SPO> associatedSpos = callsite.spos.values()
+                                .stream()
+                                .filter(spo -> assumptionTypeIds.contains(spo.type.getExternalId()))
+                                .collect(Collectors.toSet());
 
-            final Set<SPO> collect2 = callsite.spos.values()
-                    .stream()
-                    .filter(spo -> assumptionTypeIds.contains(spo.type.getExternalId()))
-                    .collect(Collectors.toSet());
+                        collected.addAll(associatedSpos);
 
-            if (!collect2.isEmpty()) {
-                //this condition is for debugging only
-                collected.addAll(collect2);
-            }
-        }
+                    });
 
         return collected;
 

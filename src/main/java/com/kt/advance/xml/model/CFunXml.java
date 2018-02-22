@@ -21,23 +21,40 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02
  * -------------------------------------------------------------------
  */
-package kt.advance.model;
+package com.kt.advance.xml.model;
 
-import com.kt.advance.xml.model.SpoXml.ApiCondition;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
-import kt.advance.model.Definitions.POLevel;
+@XmlRootElement(name = "c-analysis")
+public class CFunXml extends FunctionLevelAnalysisXml {
 
-public class SPO extends PO {
-
-    public final Integer id;
-
-    public SPO(ApiCondition call, CFunction host) {
-        super(call.proofObligation, host.getSPOTypeRef(call.proofObligation.id));
-        this.id = call.iapi;
+    public static class SVar {
+        @XmlAttribute(name = "ivinfo")
+        public Integer ivinfo;
     }
+
+    public static class CFunXmlFunction {
+        @XmlElement(name = "svar")
+        public SVar svar;
+
+        @XmlAttribute(name = "filename")
+        public String filename;
+    }
+
+    @XmlElement(name = "function")
+    public CFunXmlFunction function;
 
     @Override
-    public POLevel getLevel() {
-        return POLevel.SECONDARY;
+    public String getSourceFilename() {
+        final String fname = this.function.filename;
+        if (fname.endsWith(".c")) {
+            return fname;
+        } else {
+            return fname + ".c";
+        }
+
     }
+
 }

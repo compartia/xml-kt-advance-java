@@ -49,4 +49,15 @@ public abstract class FunctionLevelAnalysisXml extends AnalysisXml implements Ha
         return n + ".c";
     }
 
+    @Override
+    public String getFunctionName() {
+        final File f = new File(getSourceFilename());
+        final String nameNoExt = f.getName().substring(0, f.getName().lastIndexOf("."));
+
+        final String relativeOrigin = new File(this.getRelativeOrigin()).getName();
+
+        final String name = relativeOrigin.substring(nameNoExt.length() + 1, relativeOrigin.lastIndexOf("_"));
+        return name;
+    }
+
 }

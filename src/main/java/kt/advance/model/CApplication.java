@@ -41,6 +41,7 @@ import com.kt.advance.xml.FsAbstraction;
 import com.kt.advance.xml.XMLFileType;
 import com.kt.advance.xml.model.AnalysisXml;
 import com.kt.advance.xml.model.ApiXml;
+import com.kt.advance.xml.model.CFunXml;
 import com.kt.advance.xml.model.CdictXml;
 import com.kt.advance.xml.model.FunctionLevelAnalysisXml;
 import com.kt.advance.xml.model.PodXml;
@@ -109,12 +110,6 @@ public class CApplication {
         return requireValue(cfiles, name, "cfile");
     }
 
-    public CFunction getCFunctionOrMake(FunctionLevelAnalysisXml f) {
-        final CFile cfile = getCFileOrMakeNew(f.getSourceFilename());
-        final CFunction cFunction = cfile.getCFunctionOrMakeNew(f.getFunctionName());
-        return cFunction;
-    }
-
     public CFunction getCFunctionStrictly(FunctionLevelAnalysisXml f) {
         final CFile cfile = getCFileOrMakeNew(f.getSourceFilename());
         return cfile.getCFunctionStrictly(f.getFunctionName());
@@ -129,6 +124,9 @@ public class CApplication {
         LOG.info("reading " + fs.getBaseDir());
 
         readAllCdictXmls(fs.listCDICTs());
+
+        readAllCfuncsXmls(fs.listCFuns());
+
         readAllPrdXmls(fs.listPRDs());
         readAllPodXmls(fs.listPODs());
         readAllPpoXmls(fs.listPPOs());
@@ -172,7 +170,7 @@ public class CApplication {
                 .sequential()
                 .forEach((xmlObj) -> runInHandler(() -> {
                     //                    final CFile cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                    final CFunction cFunction = getCFunctionOrMake(xmlObj);
+                    final CFunction cFunction = getCFunctionStrictly(xmlObj);
 
                     cFunction.readApiFile(xmlObj);
                 }, xmlObj));
@@ -209,7 +207,7 @@ public class CApplication {
                 .sequential()
                 .forEach((xmlObj) -> runInHandler(() -> {
                     final CFile cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                    final CFunction cFunction = getCFunctionOrMake(xmlObj);
+                    final CFunction cFunction = getCFunctionStrictly(xmlObj);
                     cFunction.readPodFile(xmlObj, cfile);
                 }, xmlObj));
 
@@ -225,8 +223,26 @@ public class CApplication {
                 .map((xml) -> reader.readXml(xml, fs.getBaseDir()))
                 .sequential()
                 .forEach((xmlObj) -> runInHandler(() -> {
-                    final CFunction cFunction = getCFunctionOrMake(xmlObj);
+                    final CFunction cFunction = getCFunctionStrictly(xmlObj);
                     cFunction.readPpoFile(xmlObj, errors);
+                }, xmlObj));
+
+    }
+
+    void readAllCfuncsXmls(Collection<File> files) {
+        LOG.info(String.format("reading %d CFUN files", files.size()));
+        final XMLFileType<CFunXml> reader = XMLFileType.getReader(CFunXml.class);
+
+        files.stream()
+                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
+                //                        .sequential()
+                .forEach((xmlObj) -> runInHandler(() -> {
+
+                    final CFile cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                    cfile.getCFunctionOrMakeNew(xmlObj);
+
+                    //TODO:
+
                 }, xmlObj));
 
     }
