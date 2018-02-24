@@ -200,16 +200,6 @@ public class CFile {
         bind(lhosts.values());
         bind(expressions.values());
 
-        //        Stream<IndexedTableNode> stream = cdict.cfile.cDeclarations.filenames.stream();
-        //        stream.collect(Collectors.toMap(
-        //      node -> node.id,
-        //      node -> node.getTagsSplit()[0]));
-        //        filenamesIndex = cdict.cfile.cDeclarations.filenames
-        //                .stream()
-        //                .collect(Collectors.toMap(
-        //                    (Function<IndexedTableNode, Integer>) node -> node.index,
-        //                    (Function<IndexedTableNode, String>) node -> node.getTagsSplit()[0]));
-
         filenamesIndex = new HashMap<>();
         for (final IndexedTableNode node : cdict.cfile.cDeclarations.filenames) {
             filenamesIndex.put(node.index, node.getTagsSplit()[0]);
