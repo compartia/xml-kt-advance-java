@@ -54,11 +54,12 @@ public class CLocation {
     public Integer id;
     public Integer line;
 
-    public CLocation(IndexedTableNode node) {
+    public CLocation(IndexedTableNode node, CFile cfile) {
         this.id = node.index;
-        this.byteNo = node.getArguments()[1];
-        this.line = node.getArguments()[2];
-        //        this.file=file//XXX: TODO:
+        final Integer[] args = node.getArguments();
+        this.byteNo = args[1];
+        this.line = args[2];
+        this.file = cfile.getFilename(args[0]);
     }
 
     @Override

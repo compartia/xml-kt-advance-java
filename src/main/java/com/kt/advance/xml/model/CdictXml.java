@@ -45,6 +45,10 @@ public class CdictXml extends FileLevelAnalysisXml {
         @XmlElement(name = "n")
         public List<IndexedTableNode> locations = new ArrayList<>();
 
+        @XmlElementWrapper(name = "filename-table")
+        @XmlElement(name = "n")
+        public List<IndexedTableNode> filenames = new ArrayList<>();
+
         @XmlElementWrapper(name = "varinfo-table")
         @XmlElement(name = "n")
         public List<IndexedTableNode> varinfos = new ArrayList<>();

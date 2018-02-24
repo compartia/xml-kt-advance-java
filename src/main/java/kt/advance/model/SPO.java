@@ -27,6 +27,10 @@ import com.kt.advance.xml.model.SpoXml.ApiCondition;
 
 import kt.advance.model.Definitions.POLevel;
 
+/**
+ * Represents a secondary proof obligation associated with a call site.
+ * 
+ */
 public class SPO extends PO {
 
     public final Integer id;

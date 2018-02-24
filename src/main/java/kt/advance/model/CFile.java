@@ -113,6 +113,10 @@ public class CFile {
         return requireValue(lvalues, key, "exp");
     }
 
+    public String getFilename(Integer key) {
+        return requireValue(filenamesIndex, key, "filename");
+    }
+
     public String getName() {
         return name;
     }
@@ -196,13 +200,30 @@ public class CFile {
         bind(lhosts.values());
         bind(expressions.values());
 
+        //        Stream<IndexedTableNode> stream = cdict.cfile.cDeclarations.filenames.stream();
+        //        stream.collect(Collectors.toMap(
+        //      node -> node.id,
+        //      node -> node.getTagsSplit()[0]));
+        //        filenamesIndex = cdict.cfile.cDeclarations.filenames
+        //                .stream()
+        //                .collect(Collectors.toMap(
+        //                    (Function<IndexedTableNode, Integer>) node -> node.index,
+        //                    (Function<IndexedTableNode, String>) node -> node.getTagsSplit()[0]));
+
+        filenamesIndex = new HashMap<>();
+        for (final IndexedTableNode node : cdict.cfile.cDeclarations.filenames) {
+            filenamesIndex.put(node.index, node.getTagsSplit()[0]);
+        }
+
         //        parsing locations
         locations = cdict.cfile.cDeclarations.locations
-                .parallelStream()
-                .map(node -> new CLocation(node))
-                .collect(Collectors.toConcurrentMap(node -> node.id, node -> node));
+                .stream()
+                .map(node -> new CLocation(node, this))
+                .collect(Collectors.toMap(node -> node.id, node -> node));
 
     }
+
+    HashMap<Integer, String> filenamesIndex;
 
     public void readPrdFile(PrdXml prdXml, PredicatesFactory pf) {
 
