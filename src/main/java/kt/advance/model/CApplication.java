@@ -100,7 +100,7 @@ public class CApplication {
     public CFile getCFileOrMakeNew(String name) {
         CFile f = cfiles.get(name);
         if (f == null) {
-            f = new CFile(name);
+            f = new CFile(name, this);
             cfiles.put(name, f);
         }
         return f;
