@@ -102,8 +102,8 @@ public class CFunctionCallsiteSPO {
             final SPO spo = new SPO(apiCondition, cfunc);
             putUniq(spos, apiCondition.iapi, spo);
 
-            Preconditions.checkState(spo.getLocation().equals(location), "" + spo.getLocation().toString(cfunc)
-                    + " vs " + location.toString(cfunc));
+            Preconditions.checkState(spo.getLocation().equals(location), "" + spo.getLocation().toString()
+                    + " vs " + location.toString());
 
         }
     }

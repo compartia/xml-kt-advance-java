@@ -68,8 +68,11 @@ public class CFile {
         return true;
     }
 
-    public CFile(String name) {
+    final CApplication application;
+
+    public CFile(String name, CApplication host) {
         this.name = name;
+        this.application = host;
     }
 
     public CFunction getCFunctionOrMakeNew(CFunXml node) {
@@ -208,7 +211,7 @@ public class CFile {
         //        parsing locations
         locations = cdict.cfile.cDeclarations.locations
                 .stream()
-                .map(node -> new CLocation(node, this))
+                .map(node -> new CLocation(node, this, this.application))
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
     }

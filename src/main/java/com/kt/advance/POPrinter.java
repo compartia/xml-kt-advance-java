@@ -16,11 +16,9 @@ public class POPrinter {
         }
 
         sb.append(RL).append("@");
-        if (function != null) {
-            sb.append(po.getLocation().toString(function));
-        } else {
-            sb.append(po.getLocation().toString());
-        }
+
+        sb.append(po.getLocation().toString());
+
         sb.append(RL).append(po.deps.toString());
         return sb.toString();
     }

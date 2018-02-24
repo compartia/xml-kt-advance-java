@@ -50,25 +50,49 @@ import com.kt.advance.xml.model.IndexedTableNode;
  */
 public class CLocation {
     public Integer byteNo;
-    public String file;
+    private CFile cfile;
     public Integer id;
     public Integer line;
+    private String filename;
 
-    public CLocation(IndexedTableNode node, CFile cfile) {
+    public CLocation(IndexedTableNode node, CFile cfile, CApplication app) {
         this.id = node.index;
         final Integer[] args = node.getArguments();
         this.byteNo = args[1];
         this.line = args[2];
-        this.file = cfile.getFilename(args[0]);
+        final String fn = cfile.getFilename(args[0]);
+        try {
+            this.setCfile(app.getCFileStrictly(fn));
+            this.setFilename(null);
+        } catch (final IllegalStateException ex) {
+            //dealing with external .h files.
+            this.setFilename(fn);
+        }
     }
 
     @Override
     public String toString() {
-        return file + ":L" + line.toString();
+        return getFilename() + ":" + line.toString();
     }
 
-    public String toString(CFunction function) {
-        return function.getCfile().getName() + "::" + function.getName() + ":L" + line.toString();
+    public String getFilename() {
+        if (this.cfile == null) {
+            return filename;
+        } else {
+            return this.cfile.getName();
+        }
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
+    public CFile getCfile() {
+        return cfile;
+    }
+
+    public void setCfile(CFile cfile) {
+        this.cfile = cfile;
     }
 
 }
