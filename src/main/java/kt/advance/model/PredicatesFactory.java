@@ -24,6 +24,7 @@
 package kt.advance.model;
 
 import com.kt.advance.Util;
+import com.kt.advance.api.Definitions;
 import com.kt.advance.xml.model.IndexedTableNode;
 
 import kt.advance.model.CTypeFactory.CType;
@@ -34,14 +35,14 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
     public static abstract class CPOPredicate extends Indexed implements Bindable {
         Integer[] args;
         String[] tags;
-        public final PredicateType type;
+        public final Definitions.PredicateType type;
 
         public CPOPredicate(IndexedTableNode node) {
             super(node);
 
             tags = node.getTagsSplit();
 
-            type = PredicateType.valueOf("_" + tags[0]);
+            type = Definitions.PredicateType.valueOf("_" + tags[0]);
             args = node.getArguments();
 
         }
@@ -49,107 +50,18 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         public abstract String express();
 
         @Override
-        public void bind(CFile cfile) {
+        public void bind(CFileImpl cfile) {
             this.bindImpl(cfile, tags, args);
 
             tags = null;
             args = null;
         }
 
-        public abstract void bindImpl(CFile cfile, String[] tags, Integer[] args);
+        public abstract void bindImpl(CFileImpl cfile, String[] tags, Integer[] args);
 
         @Override
         public final String toString() {
             return Util.call(this.type + "\n\t", express());
-        }
-    }
-
-    public enum PredicateType {
-        //      'nn': lambda(x):PO.CPONotNull(*x),
-        //      'null': lambda(x):PO.CPONull(*x),
-        //      'vm': lambda(x):PO.CPOValidMem(*x),
-        //      'gm': lambda(x):PO.CPOGlobalMem(*x),
-        //      'ab': lambda(x):PO.CPOAllocationBase(*x),
-        //      'tao': lambda(x):PO.CPOTypeAtOffset(*x),
-        //      'lb': lambda(x):PO.CPOLowerBound(*x),
-        //      'ub': lambda(x):PO.CPOUpperBound(*x),
-        //      'ilb': lambda(x):PO.CPOIndexLowerBound(*x),
-        //      'iub': lambda(x):PO.CPOIndexUpperBound(*x),
-        //      'i': lambda(x):PO.CPOInitialized(*x),
-        //      'ir': lambda(x):PO.CPOInitializedRange(*x),
-        //      'c': lambda(x):PO.CPOCast(*x),
-        //      'pc': lambda(x):PO.CPOPointerCast(*x),
-        //      'csu': lambda(x):PO.CPOSignedToUnsignedCast(*x),
-        //      'cus': lambda(x):PO.CPOUnsignedToSignedCast(*x),
-        //      'z': lambda(x):PO.CPONotZero(*x),
-        //      'nt': lambda(x):PO.CPONullTerminated(*x),
-        //      'nneg': lambda(x):PO.CPONonNegative(*x),
-        //      'iu': lambda(x):PO.CPOIntUnderflow(*x),
-        //      'io': lambda(x):PO.CPOIntOverflow(*x),
-        //      'w': lambda(x):PO.CPOWidthOverflow(*x),
-        //      'plb': lambda(x):PO.CPOPtrLowerBound(*x),
-        //      'pub': lambda(x):PO.CPOPtrUpperBound(*x),
-        //      'pubd': lambda(x):PO.CPOPtrUpperBoundDeref(*x),
-        //      'cb': lambda(x):PO.CPOCommonBase(*x),
-        //      'cbt': lambda x:PO.CPOCommonBaseType(*x),
-        //      'ft': lambda(x):PO.CPOFormatString(*x),
-        //      'no': lambda(x):PO.CPONoOverlap(*x),
-        //      'vc': lambda(x):PO.CPOValueConstraint(*x),
-        //      'pre': lambda(x):PO.CPOPredicate(*x)
-
-        _ab("Allocation Base"),//
-        _c("Cast"),//
-        _cb("Common Base"), //
-        _cbt("Common Base Type"),//
-        _csu("Signed To Unsigned Cast"),//
-        _cus("Unsigned To Signed Cast"),//
-        _ft("Format String"),//
-        _gm("Global Mem"), //
-        _i("Initialized"),//
-        _ilb("Index Lower Bound"),//
-        _io("Int Overflow"), //
-        _ir("Initialized Range"),//
-        _iu("Int Underflow"),//
-        _iub("Index Upper Bound"),//
-        _lb("Lower Bound"),//
-        _nn("Not Null"),//
-        _nneg("Non Negative"),//
-        _no("No Overlap"),//
-        _nt("Null Terminated"),//
-        _null("Null"),//
-        _pc("Pointer Cast"),//
-        _plb("Ptr Lower Bound"),//
-
-        _pre("Predicate"),//
-        _pub("Ptr Upper Bound"),//
-
-        _pubd("Ptr Upper Bound Deref"),//
-        _tao("Type At Offset"),//
-        _ub("Upper Bound"),//
-        _vc("Value Constraint"),//
-        _vm("Valid Mem"),//
-        _w("Width Overflow"),//
-        _z("Not Zero");
-
-        public String label;
-
-        PredicateType(String label) {
-            this.label = label;
-        };
-
-        @Override
-        public String toString() {
-            return this.label;
-        }
-
-        /**
-         * @deprecated should be maintained by sonar-specific code
-         * @return
-         */
-        @Deprecated
-        public double defaultEffortValue() {
-            return 1.0;
-            //XXX: configure by predicate;
         }
     }
 
@@ -170,7 +82,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
-        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
+        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
             this.exp1 = cfile.getExression(args[1]);
             this.exp2 = cfile.getExression(args[2]);
 
@@ -197,7 +109,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
-        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
+        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
             this.exp = Util.requireValue(cfile.expressions, args[2], "exp");
 
             this.fromType = cfile.getType(args[0]);
@@ -220,7 +132,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
-        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
+        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
             this.exp1 = cfile.getExression(args[0]);
             this.exp2 = cfile.getExression(args[1]);
 
@@ -247,7 +159,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
-        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
+        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
 
             exp = cfile.getExression(args[1]);
             ctype = cfile.getType(args[0]);
@@ -268,7 +180,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
-        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
+        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
             this.exp = Util.requireValue(cfile.expressions, args[0], "exp " + Util.bra(this.type.toString()));
 
         }
@@ -287,7 +199,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
-        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
+        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
             this.lvalue = cfile.getLValue(args[0]);
 
         }
@@ -310,7 +222,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
-        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
+        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
             // def get_exp(self): return self.cd.dictionary.get_exp(self.args[0])
             // def get_length(self): return self.cd.dictionary.get_exp(self.args[1])
             this.exp = cfile.getExression(args[0]);
@@ -342,7 +254,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
-        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
+        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
             //        def get_binop(self): return self.tags[1]
             //
             //                def get_ikind(self): return self.tags[2]
@@ -420,7 +332,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
-        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
+        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
             this.exp = cfile.getExression(args[0]);
             fromKind = tags[1];
             targetKind = tags[2];
@@ -449,7 +361,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
-        public void bindImpl(CFile cfile, String[] tags, Integer[] args) {
+        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
             this.exp = cfile.getExression(args[0]);
             this.kind = tags[1];
 

@@ -1,4 +1,4 @@
-package com.kt.advance.api;
+package com.kt.advance.json;
 
 public class POInfo {
     public String dep;

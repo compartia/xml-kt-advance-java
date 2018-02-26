@@ -11,6 +11,10 @@ import java.util.stream.Collectors;
 
 import com.google.common.base.Preconditions;
 import com.kt.advance.ErrorsBundle;
+import com.kt.advance.api.CFile;
+import com.kt.advance.api.CFunction;
+import com.kt.advance.api.CFunctionCallsiteSPO;
+import com.kt.advance.api.PPO;
 import com.kt.advance.xml.model.ApiXml;
 import com.kt.advance.xml.model.CFunXml;
 import com.kt.advance.xml.model.PodXml;
@@ -19,7 +23,7 @@ import com.kt.advance.xml.model.SpoXml;
 import com.kt.advance.xml.model.SpoXml.CallsitesWrapper;
 import com.kt.advance.xml.model.SpoXml.SPOCall;
 
-public class CFunction {
+class CFunctionImpl implements CFunction {
     public Map<Integer, ApiAssumption> apiAssumptions;
     public Map<Integer, AssumptionType> assumptionsTypesMap;
 
@@ -27,19 +31,19 @@ public class CFunction {
         return requireValue(assumptionsTypesMap, typeKey, "AssumptionType ");
     }
 
-    public List<CFunctionCallsiteSPO> calls = new ArrayList<>();
+    private final List<CFunctionCallsiteSPO> calls = new ArrayList<>();
 
-    public Map<Integer, PPO> ppos = new HashMap<>();
+    public Map<Integer, PPOImpl> ppos = new HashMap<>();
 
     public Map<Integer, PoTypeRef> ppoTypes;
 
     public Map<Integer, PoTypeRef> spoTypes;
 
-    private final CFile cfile;
+    private final CFileImpl cfile;
     private final String name;
     public final CVarInfo varInfo;
 
-    public CFunction(CFunXml cfunXml, CFile cfile) {
+    public CFunctionImpl(CFunXml cfunXml, CFileImpl cfile) {
         Preconditions.checkNotNull(cfunXml, "cfunXml is null");
         Preconditions.checkNotNull(cfunXml.getFunctionName(), "funcName is null");
         Preconditions.checkNotNull(cfunXml.function.svar, "svar is null");
@@ -50,15 +54,18 @@ public class CFunction {
         this.cfile = cfile;
     }
 
+    @Override
     public CFile getCfile() {
         return cfile;
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
-    public Collection<PPO> getPPOs() {
+    @Override
+    public Collection<? extends PPO> getPPOs() {
         return this.ppos.values();
     }
 
@@ -66,20 +73,27 @@ public class CFunction {
         return requireValue(ppos, ppoId, "PPO");
     }
 
+    @Override
     public PoTypeRef getPPOTypeRef(int typeKey) {
         return requireValue(ppoTypes, typeKey, "ppo type ref");
     }
 
+    @Override
     public Collection<CFunctionCallsiteSPO> getCallsites() {
         return this.calls;
     }
 
+    /*
+     * (non-Javadoc)
+     *
+     * @see kt.advance.model.CFunction#getSPOTypeRef(int)
+     */
+    @Override
     public PoTypeRef getSPOTypeRef(int typeKey) {
         return requireValue(spoTypes, typeKey, "spo type ref");
     }
 
     public void readApiFile(final ApiXml apiXml) {
-        Preconditions.checkState(this.getCfile().predicates != null, "predicates map is not inited");
 
         apiAssumptions = apiXml.getAssumptions()
                 .stream()
@@ -88,7 +102,7 @@ public class CFunction {
 
     }
 
-    public void readPodFile(PodXml dict, CFile cfile) {
+    public void readPodFile(PodXml dict, CFileImpl cfile) {
         Preconditions.checkState(null != cfile.locations, "locations map is null");
         Preconditions.checkState(null != cfile.predicates, "predicates map is null");
 
@@ -115,8 +129,8 @@ public class CFunction {
 
         ppos = pposXml.function.proofObligations
                 .parallelStream()
-                .map(x -> new PPO(x, this))
-                .collect(Collectors.toConcurrentMap(node -> node.id, node -> node));
+                .map(x -> new PPOImpl(x, this))
+                .collect(Collectors.toConcurrentMap(node -> node.getId(), node -> node));
 
     }
 
@@ -145,8 +159,8 @@ public class CFunction {
 
     private void addCalls(List<SPOCall> collection) {
 
-        final List<CFunctionCallsiteSPO> c = collection.stream()
-                .map(x -> new CFunctionCallsiteSPO(x, this))
+        final List<CFunctionCallsiteSPOImpl> c = collection.stream()
+                .map(x -> new CFunctionCallsiteSPOImpl(x, this))
                 .collect(Collectors.toList());
 
         if (!c.isEmpty()) {

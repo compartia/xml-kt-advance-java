@@ -43,7 +43,7 @@ public class CLval extends Indexed implements Bindable {
     }
 
     @Override
-    public void bind(CFile cfile) {
+    public void bind(CFileImpl cfile) {
         this.lhost = cfile.getLHost(lhostId);
         this.offset = cfile.getOffest(offsetId);
     }

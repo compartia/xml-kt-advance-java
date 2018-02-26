@@ -29,9 +29,10 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 
 import com.kt.advance.Util;
+import com.kt.advance.api.CFile;
 import com.kt.advance.xml.model.IndexedTableNode;
 
-public class CConst implements Bindable {
+class CConst implements Bindable {
 
     public enum ConstType {
         _cenum, _chr, _int, _real, _str, _wstr
@@ -76,7 +77,7 @@ public class CConst implements Bindable {
     }
 
     @Override
-    public void bind(CFile cfile) {
+    public void bind(CFileImpl cfile) {
         if (this.kind == ConstType._str) {
             this.val = Util.quote(cfile.getString(stringIndex));
         }

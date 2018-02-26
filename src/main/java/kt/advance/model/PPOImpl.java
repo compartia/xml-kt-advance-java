@@ -27,15 +27,18 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.kt.advance.api.CFunction;
+import com.kt.advance.api.Definitions.POLevel;
+import com.kt.advance.api.PPO;
+import com.kt.advance.api.SPO;
 import com.kt.advance.xml.model.PpoXml.PPONode;
 
 import kt.advance.model.AssumptionType.AssumptionTypeCode;
-import kt.advance.model.Definitions.POLevel;
 
-public class PPO extends PO {
+class PPOImpl extends POImpl implements PPO {
 
-    public PPO(PPONode ppoNode, CFunction cfun) {
-        super(ppoNode, cfun.getPPOTypeRef(ppoNode.id));
+    public PPOImpl(PPONode ppoNode, CFunction cfun) {
+        super(ppoNode.id, ppoNode, cfun.getPPOTypeRef(ppoNode.id));
     }
 
     @Override
@@ -43,10 +46,13 @@ public class PPO extends PO {
         return POLevel.PRIMARY;
     }
 
-    public Set<SPO> getAssociatedSpos(CFunction cfun) {
+    @Override
+    public Set<SPO> getAssociatedSpos(CFunction cfunIn) {
         final Set<SPO> collected = new HashSet<>();
 
-        final Set<Integer> assumptionTypeIds = this.deps.ids
+        final CFunctionImpl cfun = (CFunctionImpl) cfunIn;///XXX: do something about this cast!!
+
+        final Set<Integer> assumptionTypeIds = this.getDeps().ids
                 .stream()
                 .map(id -> cfun.getAssumptionType(id))
                 .filter(assumptionType -> assumptionType.type == AssumptionTypeCode.aa)
@@ -57,9 +63,9 @@ public class PPO extends PO {
                 .stream()
                 .forEach(
                     callsite -> {
-                        final Set<SPO> associatedSpos = callsite.spos.values()
+                        final Set<SPO> associatedSpos = callsite.getSpos()
                                 .stream()
-                                .filter(spo -> assumptionTypeIds.contains(spo.type.getExternalId()))
+                                .filter(spo -> assumptionTypeIds.contains(spo.getType().getExternalId()))
                                 .collect(Collectors.toSet());
 
                         collected.addAll(associatedSpos);

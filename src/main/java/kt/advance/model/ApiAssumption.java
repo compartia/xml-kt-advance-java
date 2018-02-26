@@ -1,11 +1,12 @@
 package kt.advance.model;
 
 import com.kt.advance.Util;
+import com.kt.advance.api.CFunction;
 import com.kt.advance.xml.model.ApiXml.ApiAssumptionNode;
 
 import kt.advance.model.PredicatesFactory.CPOPredicate;
 
-public class ApiAssumption {
+class ApiAssumption {
     public final Integer index;
     public final Integer[] ppos;
     public final CPOPredicate predicate;

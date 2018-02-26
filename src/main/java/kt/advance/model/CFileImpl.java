@@ -11,6 +11,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Preconditions;
+import com.kt.advance.api.CApplication;
+import com.kt.advance.api.CFile;
+import com.kt.advance.api.CFunction;
+import com.kt.advance.api.CLocation;
 import com.kt.advance.xml.XmlReadFailedException;
 import com.kt.advance.xml.model.CFunXml;
 import com.kt.advance.xml.model.CdictXml;
@@ -22,16 +26,23 @@ import kt.advance.model.CTypeFactory.CType;
 import kt.advance.model.ExpFactory.CExpression;
 import kt.advance.model.PredicatesFactory.CPOPredicate;
 
-public class CFile {
-    static final Logger LOG = LoggerFactory.getLogger(CFile.class.getName());
-    public final Map<String, CFunction> cfunctions = new HashMap<>();
+class CFileImpl implements CFile {
+    static final Logger LOG = LoggerFactory.getLogger(CFileImpl.class.getName());
+
+    private final Map<String, CFunctionImpl> cfunctions = new HashMap<>();
+
+    @Override
+    public Collection<CFunctionImpl> getCFunctions() {
+        return this.cfunctions.values();
+    }
+
     public Map<Integer, CPOPredicate> predicates;
 
     private final String name;
     Map<Integer, CConst> constants;
     Map<Integer, CExpression> expressions;
     Map<Integer, CLHost> lhosts;
-    Map<Integer, CLocation> locations;
+    Map<Integer, CLocationImpl> locations;
 
     Map<Integer, CLval> lvalues;
     Map<Integer, COffset> offsets;
@@ -70,7 +81,7 @@ public class CFile {
 
     final CApplication application;
 
-    public CFile(String name, CApplication host) {
+    public CFileImpl(String name, CApplication host) {
         this.name = name;
         this.application = host;
     }
@@ -78,15 +89,20 @@ public class CFile {
     public CFunction getCFunctionOrMakeNew(CFunXml node) {
 
         final String functionName = node.getFunctionName();
-        CFunction f = cfunctions.get(functionName);
+        CFunctionImpl f = cfunctions.get(functionName);
         if (f == null) {
-            f = new CFunction(node, this);
+            f = new CFunctionImpl(node, this);
             cfunctions.put(f.getName(), f);
         }
         return f;
     }
 
+    @Override
     public CFunction getCFunctionStrictly(String name) {
+        return requireValue(cfunctions, name, "cfunction");
+    }
+
+    CFunctionImpl getCFunctionImpl(String name) {
         return requireValue(cfunctions, name, "cfunction");
     }
 
@@ -95,47 +111,57 @@ public class CFile {
         return requireValue(constants, key, "constant");
     }
 
+    @Override
     public CExpression getExression(Integer key) {
         Preconditions.checkState(this.expressions != null, this.getName() + " has null or borken expressions map");
         return requireValue(expressions, key, "exp");
     }
 
-    public CLHost getLHost(Integer key) {
+    CLHost getLHost(Integer key) {
         return requireValue(lhosts, key, "exp");
     }
 
+    @Override
     public CLocation getLocation(Integer key) {
         return requireValue(locations, key, "location");
     }
 
+    @Override
     public CVarInfo getVarInfo(Integer key) {
         return requireValue(varinfos, key, "location");
     }
 
+    @Override
     public CLval getLValue(Integer key) {
         return requireValue(lvalues, key, "exp");
     }
 
+    @Override
     public String getFilename(Integer key) {
         return requireValue(filenamesIndex, key, "filename");
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    //    @Override
     public COffset getOffest(Integer key) {
         return requireValue(offsets, key, "type");
     }
 
+    @Override
     public CPOPredicate getPredicate(Integer key) {
         return requireValue(predicates, key, "location");
     }
 
+    @Override
     public CString getString(Integer key) {
         return requireValue(strings, key, "string");
     }
 
+    @Override
     public CType getType(Integer key) {
         return requireValue(types, key, "type");
     }
@@ -211,7 +237,7 @@ public class CFile {
         //        parsing locations
         locations = cdict.cfile.cDeclarations.locations
                 .stream()
-                .map(node -> new CLocation(node, this, this.application))
+                .map(node -> new CLocationImpl(node, this, this.application))
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
     }

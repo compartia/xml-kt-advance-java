@@ -1,5 +1,5 @@
 package kt.advance.model;
 
-public interface Bindable {
-    void bind(CFile cfile);
+interface Bindable {
+    void bind(CFileImpl cfile);
 }

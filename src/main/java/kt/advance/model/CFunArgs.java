@@ -32,7 +32,7 @@ import com.kt.advance.xml.model.IndexedTableNode;
 
 import kt.advance.model.CTypeFactory.CType;
 
-public class CFunArgs extends Indexed implements Bindable {
+class CFunArgs extends Indexed implements Bindable {
 
     public static class CFunArg extends Indexed implements Bindable {
         private String name;
@@ -51,7 +51,7 @@ public class CFunArgs extends Indexed implements Bindable {
         }
 
         @Override
-        public void bind(CFile cfile) {
+        public void bind(CFileImpl cfile) {
             this.type = cfile.getType(typeId);
         }
 
@@ -71,7 +71,7 @@ public class CFunArgs extends Indexed implements Bindable {
     }
 
     @Override
-    public void bind(CFile cfile) {
+    public void bind(CFileImpl cfile) {
         cFunArgs = new ArrayList<>();
         for (int i = 1; i < args.length; i++) {
             cFunArgs.add(cfile.getCFunArg(args[i]));

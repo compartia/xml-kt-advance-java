@@ -37,7 +37,10 @@ import org.slf4j.LoggerFactory;
 import com.google.common.base.Preconditions;
 import com.kt.advance.ErrorsBundle;
 import com.kt.advance.MapCounterInt;
-import com.kt.advance.xml.FsAbstraction;
+import com.kt.advance.api.CApplication;
+import com.kt.advance.api.CFile;
+import com.kt.advance.api.CFunction;
+import com.kt.advance.api.FsAbstraction;
 import com.kt.advance.xml.XMLFileType;
 import com.kt.advance.xml.model.AnalysisXml;
 import com.kt.advance.xml.model.ApiXml;
@@ -49,7 +52,7 @@ import com.kt.advance.xml.model.PpoXml;
 import com.kt.advance.xml.model.PrdXml;
 import com.kt.advance.xml.model.SpoXml;
 
-public class CApplication {
+public class CApplicationImpl implements CApplication {
 
     private static final String SOURCEFILES_DIR_NAME = "sourcefiles";
 
@@ -60,22 +63,27 @@ public class CApplication {
         void run();
     }
 
-    static final Logger LOG = LoggerFactory.getLogger(CApplication.class.getName());
+    static final Logger LOG = LoggerFactory.getLogger(CApplicationImpl.class.getName());
 
-    public final Map<String, CFile> cfiles = new HashMap<>();
+    private final Map<String, CFileImpl> cfiles = new HashMap<>();
 
-    public ErrorsBundle errors = new ErrorsBundle();
+    private ErrorsBundle errors = new ErrorsBundle();
 
-    public final MapCounterInt<String> filesStats;
+    private final MapCounterInt<String> filesStats;
 
-    public final FsAbstraction fs;
+    private final FsAbstraction fs;
+
+    @Override
+    public File getBaseDir() {
+        return this.fs.getBaseDir();
+    }
 
     public final PredicatesFactory predicatesFactory = new PredicatesFactory();
 
     private List<String> targetFiles;
     private File sourceDir;
 
-    public CApplication(FsAbstraction fs) {
+    public CApplicationImpl(FsAbstraction fs) {
         Preconditions.checkNotNull(fs, "FileSystemAbstraction is required");
         Preconditions.checkNotNull(fs.getBaseDir(), "base dir is required");
 
@@ -93,20 +101,22 @@ public class CApplication {
         this.fs = fs;
     }
 
+    @Override
     public File getSourceDir() {
         return sourceDir;
     }
 
-    public CFile getCFileOrMakeNew(String name) {
-        CFile f = cfiles.get(name);
+    CFileImpl getCFileOrMakeNew(String name) {
+        CFileImpl f = cfiles.get(name);
         if (f == null) {
-            f = new CFile(name, this);
+            f = new CFileImpl(name, this);
             cfiles.put(name, f);
         }
         return f;
     }
 
-    public CFile getCFileStrictly(String name) {
+    @Override
+    public CFileImpl getCFileStrictly(String name) {
         return requireValue(cfiles, name, "cfile");
     }
 
@@ -115,10 +125,16 @@ public class CApplication {
         return cfile.getCFunctionStrictly(f.getFunctionName());
     }
 
+    CFunctionImpl getCFunctionImpl(FunctionLevelAnalysisXml f) {
+        final CFileImpl cfile = getCFileOrMakeNew(f.getSourceFilename());
+        return cfile.getCFunctionImpl(f.getFunctionName());
+    }
+
     public ErrorsBundle getErrors() {
         return errors;
     }
 
+    @Override
     public void read() {
 
         LOG.info("reading " + fs.getBaseDir());
@@ -170,7 +186,7 @@ public class CApplication {
                 .sequential()
                 .forEach((xmlObj) -> runInHandler(() -> {
                     //                    final CFile cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                    final CFunction cFunction = getCFunctionStrictly(xmlObj);
+                    final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
 
                     cFunction.readApiFile(xmlObj);
                 }, xmlObj));
@@ -188,7 +204,7 @@ public class CApplication {
                 .sequential()
                 .forEach(
                     (xmlObj) -> runInHandler(() -> {
-                        final CFile cfile = getCFileOrMakeNew(xmlObj.getSourceFilename());
+                        final CFileImpl cfile = getCFileOrMakeNew(xmlObj.getSourceFilename());
                         cfile.readCDictFile(xmlObj, predicatesFactory.expressionsFactory);
                     }, xmlObj)
 
@@ -206,8 +222,8 @@ public class CApplication {
                 .map((xml) -> reader.readXml(xml, fs.getBaseDir()))
                 .sequential()
                 .forEach((xmlObj) -> runInHandler(() -> {
-                    final CFile cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                    final CFunction cFunction = getCFunctionStrictly(xmlObj);
+                    final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                    final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
                     cFunction.readPodFile(xmlObj, cfile);
                 }, xmlObj));
 
@@ -223,7 +239,7 @@ public class CApplication {
                 .map((xml) -> reader.readXml(xml, fs.getBaseDir()))
                 .sequential()
                 .forEach((xmlObj) -> runInHandler(() -> {
-                    final CFunction cFunction = getCFunctionStrictly(xmlObj);
+                    final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
                     cFunction.readPpoFile(xmlObj, errors);
                 }, xmlObj));
 
@@ -237,7 +253,7 @@ public class CApplication {
                 .map(xml -> reader.readXml(xml, fs.getBaseDir()))
                 .forEach(xmlObj -> runInHandler(() -> {
 
-                    final CFile cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                    final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
                     cfile.getCFunctionOrMakeNew(xmlObj);
 
                 }, xmlObj));
@@ -254,7 +270,7 @@ public class CApplication {
                 .map(xml -> reader.readXml(xml, fs.getBaseDir()))
                 .sequential()
                 .forEach(xmlObj -> runInHandler(() -> {
-                    final CFile cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                    final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
                     cfile.readPrdFile(xmlObj, predicatesFactory);
                 }, xmlObj));
     }
@@ -269,9 +285,14 @@ public class CApplication {
                 .map((xml) -> reader.readXml(xml, fs.getBaseDir()))
                 .sequential()
                 .forEach(xmlObj -> runInHandler(() -> {
-                    final CFunction cFunction = getCFunctionStrictly(xmlObj);
+                    final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
                     cFunction.readSpoFile(xmlObj, errors);
                 }, xmlObj));
+    }
+
+    @Override
+    public Collection<? extends CFile> getCfiles() {
+        return cfiles.values();
     }
 
 }
