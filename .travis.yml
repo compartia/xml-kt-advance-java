@@ -1,11 +1,11 @@
 language: java
 before_deploy:
-# Set up git user name and tag this commit
 - git config --local user.name compartia
 - git config --local user.email compartia@gmai.com
 - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 deploy:
   provider: releases
-  api_key: $GH_TOKEN
+  api_key:
+    secure: ME2OQI7tKB9ceogQAgY1HOihRvxF8zmj9czNZj8t7umSJhCVomb2ys2uXztn5HV42asAVVpMosEKeHNMR8/DAjS1p0WFH7j61vEbisREfLIxrjiOXbfp9dOe5RA+3m5KYcn6kwxe9bv0CKy+WOw1iRpUV7OfvY7N3BkEvly3ne/k9Lu1tIb/QnhTtG9wmyiE9MLPfEETe94y49JBfsNW2pLzCMnwnlJ0AnmsxFIcCuV5g0UWNaJg13bcRHFBpGeoBD2mcBgf5dFd5RR7C56ABVGIuurEuqDV+tVsKtRZR33RaiMkcU8ctgBKq32cExs/GG7gVvHoI9lPXBcDaCg6uPzTgc/uZKfkedei7zK0dRoVm7quwMPgigU3IcoqQ7IIBtuCUv9rB7Vi/W7WpNUi4a+5G1/WqKh+B+AHAQ467pP6/TQSSh4h12cGp5v8pMmBkRk5UPP86T4PeSp4BhRfIEW3E8NFMegSDj7Y2xJ5tQQkYh7XCjp8Wd/LRWMTe4sTlvoYuSgUJ6LRnfRAci9Bx3koV7nAMJHTuvDKwyizVcMLs2YmqTAM3eosx//1wRqD3t8yy58r3FsF47KSJrPcQr2ON12UOhgOQRC0wZubNn3dvF4gn28YIBSVWPL8TFPczE512h6WrwDbaIBF1zt/xPeSx0fTP6WMQjttcm54Mjg=
   file: target/kt-advance-xml-2.0.jar
   skip_cleanup: true
