@@ -1,1 +1,11 @@
 language: java
+before_deploy:
+# Set up git user name and tag this commit
+- git config --local user.name compartia
+- git config --local user.email compartia@gmai.com
+- git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+deploy:
+  provider: releases
+  api_key: $GH_TOKEN
+  file: target/kt-advance-xml-2.0.jar
+  skip_cleanup: true
