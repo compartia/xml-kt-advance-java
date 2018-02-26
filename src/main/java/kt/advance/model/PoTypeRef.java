@@ -26,6 +26,8 @@ package kt.advance.model;
 import static com.kt.advance.Util.requireValue;
 
 import com.kt.advance.Util;
+import com.kt.advance.api.CLocation;
+import com.kt.advance.api.Definitions;
 import com.kt.advance.xml.model.IndexedTableNode;
 
 import kt.advance.model.PredicatesFactory.CPOPredicate;
@@ -62,7 +64,7 @@ public class PoTypeRef extends Indexed {
     public final CPOPredicate predicate;
     public Definitions.POType proofObligationType;
 
-    public PoTypeRef(IndexedTableNode node, CFile cfile) {
+    public PoTypeRef(IndexedTableNode node, CFileImpl cfile) {
         super(node);
         final Integer[] args = node.getArguments();
 

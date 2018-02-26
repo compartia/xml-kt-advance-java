@@ -50,7 +50,7 @@ public class CTypeFactory extends AbstractFactory<CType> {
         }
 
         @Override
-        void bindImpl(CFile cfile, Integer[] args, String[] tags) {
+        void bindImpl(CFileImpl cfile, Integer[] args, String[] tags) {
             ckey = args[0];
             struct = cfile.getStruct(ckey);
             structName = cfile.getStructName(ckey);
@@ -72,7 +72,7 @@ public class CTypeFactory extends AbstractFactory<CType> {
         }
 
         @Override
-        public void bind(CFile cfile) {
+        public void bind(CFileImpl cfile) {
             this.bindImpl(cfile, args, tags);
 
             tags = null;
@@ -83,7 +83,7 @@ public class CTypeFactory extends AbstractFactory<CType> {
         @Override
         public abstract String toString();
 
-        abstract void bindImpl(CFile cfile, Integer[] args, String[] tags);
+        abstract void bindImpl(CFileImpl cfile, Integer[] args, String[] tags);
 
     }
 
@@ -101,7 +101,7 @@ public class CTypeFactory extends AbstractFactory<CType> {
         }
 
         @Override
-        void bindImpl(CFile cfile, Integer[] args, String[] tags) {
+        void bindImpl(CFileImpl cfile, Integer[] args, String[] tags) {
             this.ref = cfile.getType(args[0]);
         }
 
@@ -127,7 +127,7 @@ public class CTypeFactory extends AbstractFactory<CType> {
         }
 
         @Override
-        void bindImpl(CFile cfile, Integer[] args, String[] tags) {
+        void bindImpl(CFileImpl cfile, Integer[] args, String[] tags) {
             this.returnType = cfile.getType(args[0]);
             this.funArgs = cfile.getCFunArgs(args[1]);
         }
@@ -147,7 +147,7 @@ public class CTypeFactory extends AbstractFactory<CType> {
         }
 
         @Override
-        void bindImpl(CFile cfile, Integer[] args, String[] tags) {
+        void bindImpl(CFileImpl cfile, Integer[] args, String[] tags) {
             kind = tags[0];
         }
 
@@ -184,7 +184,7 @@ public class CTypeFactory extends AbstractFactory<CType> {
         }
 
         @Override
-        void bindImpl(CFile cfile, Integer[] args, String[] tags) {
+        void bindImpl(CFileImpl cfile, Integer[] args, String[] tags) {
             final String kindKey = tags[1];
             this.kind = integernames.get(kindKey);
         }
@@ -213,7 +213,7 @@ public class CTypeFactory extends AbstractFactory<CType> {
         }
 
         @Override
-        void bindImpl(CFile cfile, Integer[] args, String[] tags) {
+        void bindImpl(CFileImpl cfile, Integer[] args, String[] tags) {
             final String kindKey = tags[1];
             this.kind = floatnames.get(kindKey);
         }
@@ -240,7 +240,7 @@ public class CTypeFactory extends AbstractFactory<CType> {
         }
 
         @Override
-        void bindImpl(CFile cfile, Integer[] args, String[] tags) {
+        void bindImpl(CFileImpl cfile, Integer[] args, String[] tags) {
             this.name = tags[1];
         }
 
@@ -259,7 +259,7 @@ public class CTypeFactory extends AbstractFactory<CType> {
         }
 
         @Override
-        void bindImpl(CFile cfile, Integer[] args, String[] tags) {
+        void bindImpl(CFileImpl cfile, Integer[] args, String[] tags) {
 
         }
 

@@ -21,25 +21,26 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02
  * -------------------------------------------------------------------
  */
-package com.kt.advance.api;
+package kt.advance.model;
 
-import java.util.Collection;
+import com.kt.advance.api.CFunction;
+import com.kt.advance.api.Definitions.POLevel;
+import com.kt.advance.api.SPO;
+import com.kt.advance.xml.model.SpoXml.ApiCondition;
 
-public interface AnalysisReader {
-    /**
-     *
-     * @param fileName
-     * @param functionName
-     * @return all PPOs
-     */
-    Collection<POInfo> getPPOByFunction(String fileName, String functionName);
+/**
+ * Represents a secondary proof obligation associated with a call site.
+ *
+ */
+class SPOImpl extends POImpl implements SPO {
 
-    /**
-     *
-     * @param fileName
-     * @param functionName
-     * @return all SPOs
-     */
-    Collection<POInfo> getSPOByFunction(String fileName, String functionName);
+    public SPOImpl(ApiCondition call, CFunction host) {
+        super(call.iapi, call.proofObligation, host.getSPOTypeRef(call.proofObligation.id));
+    }
+
+    @Override
+    public POLevel getLevel() {
+        return POLevel.SECONDARY;
+    }
 
 }

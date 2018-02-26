@@ -46,7 +46,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
 
             this.binop = tags[1];
             final int exp1Id = args[0];
@@ -76,7 +76,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
             lvalue = cfile.getLValue(args[0]);
         }
 
@@ -96,7 +96,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
             lvalue = cfile.getLValue(args[0]);
         }
 
@@ -116,7 +116,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
             this.exp = cfile.getExression(args[1]);
             type = cfile.getType(args[0]);
 
@@ -140,7 +140,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
             exps = new CExpression[args.length - 1];
             for (int i = 1; i < args.length; i++) {
                 exps[i - 1] = cfile.getExression(args[i]);
@@ -166,7 +166,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
             lvalue = cfile.getLValue(args[0]);
         }
 
@@ -194,7 +194,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
             this.ctype = cfile.getType(args[0]);
         }
 
@@ -213,7 +213,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
             this.exp = cfile.getExression(args[0]);
         }
 
@@ -232,7 +232,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
             this.exp = cfile.getExression(args[0]);
         }
 
@@ -253,7 +253,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
             this.ctype = cfile.getType(args[1]);
             op = tags[1];
             this.exp = cfile.getExression(args[0]);
@@ -280,7 +280,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
             this.constant = cfile.getConst(args[0]);
         }
 
@@ -300,7 +300,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
             this.nameaa = tags[0];
         }
 
@@ -321,7 +321,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public final void bind(CFile cfile) {
+        public final void bind(CFileImpl cfile) {
 
             bindImpl(node.getArguments(), node.getTagsSplit(), cfile);
             /**
@@ -330,7 +330,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
             this.node = null;
         }
 
-        public abstract void bindImpl(Integer[] args, String[] tags, CFile cfile);
+        public abstract void bindImpl(Integer[] args, String[] tags, CFileImpl cfile);
 
     }
 

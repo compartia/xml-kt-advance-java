@@ -24,6 +24,9 @@
 
 package kt.advance.model;
 
+import com.kt.advance.api.CApplication;
+import com.kt.advance.api.CFile;
+import com.kt.advance.api.CLocation;
 import com.kt.advance.xml.model.IndexedTableNode;
 
 /**
@@ -48,14 +51,14 @@ import com.kt.advance.xml.model.IndexedTableNode;
  * @author artem
  *
  */
-public class CLocation {
-    public Integer byteNo;
+class CLocationImpl implements CLocation {
+    public final Integer byteNo;
     private CFile cfile;
-    public Integer id;
-    public Integer line;
+    public final Integer id;
+    private final Integer line;
     private String filename;
 
-    public CLocation(IndexedTableNode node, CFile cfile, CApplication app) {
+    public CLocationImpl(IndexedTableNode node, CFile cfile, CApplication app) {
         this.id = node.index;
         final Integer[] args = node.getArguments();
         this.byteNo = args[1];
@@ -72,9 +75,10 @@ public class CLocation {
 
     @Override
     public String toString() {
-        return getFilename() + ":" + line.toString();
+        return getFilename() + ":" + getLine().toString();
     }
 
+    @Override
     public String getFilename() {
         if (this.cfile == null) {
             return filename;
@@ -87,12 +91,18 @@ public class CLocation {
         this.filename = filename;
     }
 
+    @Override
     public CFile getCfile() {
         return cfile;
     }
 
     public void setCfile(CFile cfile) {
         this.cfile = cfile;
+    }
+
+    @Override
+    public Integer getLine() {
+        return line;
     }
 
 }

@@ -1,4 +1,4 @@
-package kt.advance.model;
+package com.kt.advance.api;
 
 import java.io.File;
 import java.util.Collection;
@@ -11,11 +11,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.kt.advance.ErrorsBundle;
-import com.kt.advance.xml.FsAbstraction;
 import com.kt.advance.xml.XMLFileType;
 import com.kt.advance.xml.model.TargetFilesXml;
 
-public class CAnalysis {
+import kt.advance.model.CApplicationImpl;
+
+public class CAnalysisImpl implements CAnalysis {
     static final Logger LOG = LoggerFactory.getLogger(CApplication.class.getName());
     public final FsAbstraction fs;
 
@@ -23,10 +24,16 @@ public class CAnalysis {
 
     ErrorsBundle errors;
 
-    public CAnalysis(FsAbstraction fs) {
+    public CAnalysisImpl(FsAbstraction fs) {
         this.fs = fs;
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see kt.advance.model.CAnalysisInter#getApps()
+     */
+    @Override
     public Set<CApplication> getApps() {
         return apps;
     }
@@ -35,6 +42,7 @@ public class CAnalysis {
         return errors;
     }
 
+    @Override
     public void read() throws JAXBException {
         errors = new ErrorsBundle();
         final Collection<File> targetFiles = fs.listTargetFiles();
@@ -42,7 +50,7 @@ public class CAnalysis {
         apps = targetFiles.stream()
                 .map((x) -> {
                     final FsAbstraction afs = fs.instance(x);
-                    final CApplication app = new CApplication(afs);
+                    final CApplicationImpl app = new CApplicationImpl(afs);
                     app.setErrors(errors);
                     return app;
                 })

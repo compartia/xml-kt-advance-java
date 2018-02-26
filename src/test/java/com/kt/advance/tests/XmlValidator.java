@@ -40,21 +40,21 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.kt.advance.MapCounterInt;
-import com.kt.advance.POJsonPrinter;
-import com.kt.advance.xml.FsAbstraction;
+import com.kt.advance.api.CAnalysisImpl;
+import com.kt.advance.api.CApplication;
+import com.kt.advance.api.CFile;
+import com.kt.advance.api.CFunction;
+import com.kt.advance.api.CFunctionCallsiteSPO;
+import com.kt.advance.api.Definitions;
+import com.kt.advance.api.FsAbstraction;
+import com.kt.advance.api.PPO;
+import com.kt.advance.api.SPO;
+import com.kt.advance.json.POJsonPrinter;
 import com.kt.advance.xml.model.AnalysisXml;
 import com.kt.advance.xml.model.PpoXml;
 import com.kt.advance.xml.model.PpoXml.PPONode;
 
-import kt.advance.model.CAnalysis;
-import kt.advance.model.CApplication;
-import kt.advance.model.CFile;
-import kt.advance.model.CFunction;
-import kt.advance.model.CFunctionCallsiteSPO;
-import kt.advance.model.Definitions;
-import kt.advance.model.PPO;
 import kt.advance.model.PredicatesFactory.CPOPredicate;
-import kt.advance.model.SPO;
 
 public class XmlValidator {
     public static FsAbstraction fileSystem;
@@ -80,7 +80,7 @@ public class XmlValidator {
     @Test
     public void testAllPod2PpoCorrespondence() throws JAXBException {
 
-        final CAnalysis an = new CAnalysis(fileSystem);
+        final CAnalysisImpl an = new CAnalysisImpl(fileSystem);
         an.read();
 
         an.getApps().stream().forEach((app) -> testAllPod2PpoCorrespondence(app));
@@ -111,24 +111,24 @@ public class XmlValidator {
         final MapCounterInt<String> funcStats = new MapCounterInt<>(3 + 2 * Definitions.POStatus.values().length);
         final int cnt = 0;
         //        building stats
-        for (final CFile cfile : app.cfiles.values()) {
-            for (final CFunction cfunciton : cfile.cfunctions.values()) {
-                funcStats.inc(cfile.getName(), "functions", cfile.cfunctions.size());
+        for (final CFile cfile : app.getCfiles()) {
+            for (final CFunction cfunciton : cfile.getCFunctions()) {
+                funcStats.inc(cfile.getName(), "functions", cfile.getCFunctions().size());
 
-                for (final PPO ppo : cfunciton.ppos.values()) {
+                for (final PPO ppo : cfunciton.getPPOs()) {
 
                     funcStats.inc(cfile.getName(), "PPO", 1);
 
-                    final Definitions.POStatus statusCode = ppo.status;
+                    final Definitions.POStatus statusCode = ppo.getStatus();
                     final CPOPredicate predicate = ppo.getPredicate();
 
                     final String predicateName = predicate.type.label;
 
                     stats.inc(predicateName, "PPO", 1);
                     stats.inc(predicateName, PPO_ + statusCode.label, 1);
-                    stats.inc(predicateName, ppo.type.proofObligationType.label, 1);
+                    stats.inc(predicateName, ppo.getType().proofObligationType.label, 1);
 
-                    stats.inc(TOTAL, ppo.type.proofObligationType.label, 1);
+                    stats.inc(TOTAL, ppo.getType().proofObligationType.label, 1);
                     stats.inc(TOTAL, PPO_ + statusCode.label, 1);
 
                     funcStats.inc(cfile.getName(), PPO_ + statusCode.label, 1);
@@ -137,21 +137,21 @@ public class XmlValidator {
 
                 }
 
-                for (final CFunctionCallsiteSPO callsite : cfunciton.calls) {
+                for (final CFunctionCallsiteSPO callsite : cfunciton.getCallsites()) {
 
-                    for (final SPO spo : callsite.spos.values()) {
+                    for (final SPO spo : callsite.getSpos()) {
 
                         funcStats.inc(cfile.getName(), "PPO", 1);
 
-                        final Definitions.POStatus statusCode = spo.status;
+                        final Definitions.POStatus statusCode = spo.getStatus();
                         final CPOPredicate predicate = spo.getPredicate();
 
                         final String predicateName = predicate.type.label;
                         stats.inc(predicateName, "SPO", 1);
                         stats.inc(predicateName, SPO_ + statusCode.label, 1);
-                        stats.inc(predicateName, spo.type.proofObligationType.label, 1);
+                        stats.inc(predicateName, spo.getType().proofObligationType.label, 1);
 
-                        stats.inc(TOTAL, spo.type.proofObligationType.label, 1);
+                        stats.inc(TOTAL, spo.getType().proofObligationType.label, 1);
                         stats.inc(TOTAL, SPO_ + statusCode.label, 1);
 
                         funcStats.inc(cfile.getName(), SPO_ + statusCode.label, 1);
@@ -165,7 +165,7 @@ public class XmlValidator {
         }
 
         line();
-        LOG.info("\n\nPrimary Proof Obligations in " + app.fs.getBaseDir());
+        LOG.info("\n\nPrimary Proof Obligations in " + app.getBaseDir());
         LOG.info("\n" + stats.toSv(",\t"));
 
         if (false) {
@@ -194,11 +194,11 @@ public class XmlValidator {
     private void printSamplePPOs(CApplication app) {
 
         final HashMap<String, String> pposByPre = new HashMap<>();
-        for (final CFile cfile : app.cfiles.values()) {
-            for (final CFunction cfunciton : cfile.cfunctions.values()) {
-                for (final PPO ppo : cfunciton.ppos.values()) {
+        for (final CFile cfile : app.getCfiles()) {
+            for (final CFunction cfunciton : cfile.getCFunctions()) {
+                for (final PPO ppo : cfunciton.getPPOs()) {
                     final CPOPredicate predicate = ppo.getPredicate();
-                    pposByPre.put(predicate.type.label, ppo.toString(cfunciton));
+                    pposByPre.put(predicate.type.label, ppo.toString());
 
                 }
             }
@@ -212,13 +212,13 @@ public class XmlValidator {
     private void printSampleSPOs(CApplication app) {
         final HashMap<String, String> sposByPre = new HashMap<>();
 
-        for (final CFile cfile : app.cfiles.values()) {
-            for (final CFunction cfunciton : cfile.cfunctions.values()) {
-                for (final CFunctionCallsiteSPO callsite : cfunciton.calls) {
+        for (final CFile cfile : app.getCfiles()) {
+            for (final CFunction cfunciton : cfile.getCFunctions()) {
+                for (final CFunctionCallsiteSPO callsite : cfunciton.getCallsites()) {
 
-                    for (final SPO spo : callsite.spos.values()) {
+                    for (final SPO spo : callsite.getSpos()) {
                         final CPOPredicate predicate = spo.getPredicate();
-                        sposByPre.put(predicate.type.label, spo.toString(cfunciton));
+                        sposByPre.put(predicate.type.label, spo.toString());
                     }
                 }
 
@@ -230,7 +230,7 @@ public class XmlValidator {
         }
     }
 
-    private void toJson(CAnalysis an) throws FileNotFoundException, UnsupportedEncodingException {
+    private void toJson(CAnalysisImpl an) throws FileNotFoundException, UnsupportedEncodingException {
 
         final File f = new File(an.fs.getBaseDir().getName() + ".json");
         line();

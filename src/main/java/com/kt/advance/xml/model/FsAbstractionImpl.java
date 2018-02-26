@@ -39,7 +39,7 @@ import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.kt.advance.xml.FsAbstraction;
+import com.kt.advance.api.FsAbstraction;
 import com.kt.advance.xml.XmlNamesUtils;
 
 public class FsAbstractionImpl implements FsAbstraction {

@@ -23,6 +23,7 @@
  */
 package kt.advance.model;
 
+import com.kt.advance.api.CFile;
 import com.kt.advance.xml.model.IndexedTableNode;
 
 import kt.advance.model.PredicatesFactory.CPOPredicate;
@@ -32,7 +33,7 @@ import kt.advance.model.PredicatesFactory.CPOPredicate;
 //    'ua': lambda x:AT.ATUserAssumptionType(*x),
 //    'pc': lambda x:AT.ATPostconditionType(*x)
 //    }
-public class AssumptionType extends Indexed {
+class AssumptionType extends Indexed {
     public enum AssumptionTypeCode {
         aa, pc, ua
     }

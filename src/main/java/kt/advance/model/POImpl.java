@@ -25,34 +25,38 @@ package kt.advance.model;
 
 import com.google.common.base.Preconditions;
 import com.kt.advance.POPrinter;
+import com.kt.advance.api.CFunction;
+import com.kt.advance.api.CLocation;
+import com.kt.advance.api.Definitions;
+import com.kt.advance.api.Definitions.POLevel;
+import com.kt.advance.api.Definitions.POStatus;
+import com.kt.advance.api.PO;
 import com.kt.advance.xml.model.PpoXml.ENode;
 import com.kt.advance.xml.model.PpoXml.PPONode;
 
-import kt.advance.model.CFunctionCallsiteSPO.CProofDependencies;
-import kt.advance.model.Definitions.POLevel;
-import kt.advance.model.Definitions.POStatus;
 import kt.advance.model.PredicatesFactory.CPOPredicate;
 
-public abstract class PO {
-    public CProofDependencies deps;
+abstract class POImpl implements PO {
+    final Integer id;
+    private CProofDependencies deps;
 
-    public final String explaination;
-    public final Integer id;
-    public final Definitions.POStatus status;
+    private final String explaination;
 
-    public PoTypeRef type;
+    private final Definitions.POStatus status;
+
+    private final PoTypeRef type;
 
     public boolean isDelegated() {
-        if (this.isSafe() && this.deps != null) {
-            return deps.hasExternalDependencies();
+        if (this.isSafe() && this.getDeps() != null) {
+            return getDeps().hasExternalDependencies();
         }
         return false;
     }
 
-    public PO(PPONode ppoNode, PoTypeRef type) {
+    public POImpl(Integer id, PPONode ppoNode, PoTypeRef type) {
         Preconditions.checkNotNull(type, "PO type must not be null");
 
-        this.id = ppoNode.id;
+        this.id = id;
         this.type = type;
 
         this.status = Definitions.POStatus.forString(ppoNode.status);
@@ -71,25 +75,29 @@ public abstract class PO {
 
             final String level = ppoNode.deps;
 
-            deps = new CProofDependencies(ids, invs, level);
+            setDeps(new CProofDependencies(ids, invs, level));
         } catch (final Throwable ee) {
             //TODO: handle this
             ee.printStackTrace();
         }
     }
 
+    @Override
     public abstract POLevel getLevel();
 
+    @Override
     public CLocation getLocation() {
-        return type.location;
+        return getType().location;
     }
 
+    @Override
     public CPOPredicate getPredicate() {
-        return type.getPredicate();
+        return getType().getPredicate();
     }
 
+    @Override
     public boolean isSafe() {
-        return status == POStatus.discharged;
+        return getStatus() == POStatus.discharged;
     }
 
     @Override
@@ -99,6 +107,35 @@ public abstract class PO {
 
     public String toString(CFunction function) {
         return POPrinter.toString(this, function);
+    }
+
+    @Override
+    public Definitions.POStatus getStatus() {
+        return status;
+    }
+
+    @Override
+    public String getExplaination() {
+        return explaination;
+    }
+
+    @Override
+    public CProofDependencies getDeps() {
+        return deps;
+    }
+
+    private void setDeps(CProofDependencies deps) {
+        this.deps = deps;
+    }
+
+    @Override
+    public Integer getId() {
+        return id;
+    }
+
+    @Override
+    public PoTypeRef getType() {
+        return type;
     }
 
 }

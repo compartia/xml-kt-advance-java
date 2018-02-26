@@ -1,4 +1,4 @@
-package com.kt.advance;
+package com.kt.advance.json;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,15 +9,12 @@ import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.kt.advance.api.Mapper;
-import com.kt.advance.api.POInfo;
-
-import kt.advance.model.CAnalysis;
-import kt.advance.model.CApplication;
-import kt.advance.model.CFile;
-import kt.advance.model.CFunction;
-import kt.advance.model.CFunctionCallsiteSPO;
-import kt.advance.model.SPO;
+import com.kt.advance.api.CAnalysisImpl;
+import com.kt.advance.api.CApplication;
+import com.kt.advance.api.CFile;
+import com.kt.advance.api.CFunction;
+import com.kt.advance.api.CFunctionCallsiteSPO;
+import com.kt.advance.api.SPO;
 
 public class POJsonPrinter {
     public static class JAnalysis {
@@ -25,7 +22,7 @@ public class POJsonPrinter {
         public String basedir;
         public final List<JApp> dirs;
 
-        public JAnalysis(CAnalysis an) {
+        public JAnalysis(CAnalysisImpl an) {
             this.basedir = an.fs.getBaseDir().getAbsolutePath();
 
             dirs = an.getApps().parallelStream()
@@ -40,9 +37,9 @@ public class POJsonPrinter {
         public final List<JFile> files;
 
         public JApp(CApplication app) {
-            this.basedir = app.fs.getBaseDir().getAbsolutePath();
+            this.basedir = app.getBaseDir().getAbsolutePath();
 
-            files = app.cfiles.values().parallelStream()
+            files = app.getCfiles().parallelStream()
                     .map((x) -> new JFile(x))
                     .collect(Collectors.toList());
         }
@@ -52,10 +49,11 @@ public class POJsonPrinter {
         public final List<JFunc> functions;
 
         public String name;
+
         public JFile(CFile f) {
             this.name = f.getName();
 
-            functions = f.cfunctions.values().parallelStream()
+            functions = f.getCFunctions().parallelStream()
                     .map((x) -> new JFunc(x))
                     .collect(Collectors.toList());
 
@@ -74,9 +72,9 @@ public class POJsonPrinter {
                     .map((x) -> Mapper.toPOInfo(x, cfunction))
                     .collect(Collectors.toList());
 
-            for (final CFunctionCallsiteSPO callsite : cfunction.calls) {
+            for (final CFunctionCallsiteSPO callsite : cfunction.getCallsites()) {
 
-                for (final SPO spo : callsite.spos.values()) {
+                for (final SPO spo : callsite.getSpos()) {
                     this.ppos.add(Mapper.toPOInfo(spo, cfunction));
                 }
             }
@@ -85,7 +83,7 @@ public class POJsonPrinter {
 
     final static String RL = "\n\t\t----> ";
 
-    public static String toJson(CAnalysis an) {
+    public static String toJson(CAnalysisImpl an) {
 
         final JAnalysis jAnalysis = new JAnalysis(an);
         final ObjectMapper objectMapper = new ObjectMapper();

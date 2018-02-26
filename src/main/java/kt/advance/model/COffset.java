@@ -27,7 +27,7 @@ import com.kt.advance.xml.model.IndexedTableNode;
 
 import kt.advance.model.ExpFactory.CExpression;
 
-public class COffset extends Indexed implements Bindable {
+class COffset extends Indexed implements Bindable {
     CExpression exp;
     Integer expId, offsetId;
 
@@ -58,7 +58,7 @@ public class COffset extends Indexed implements Bindable {
     }
 
     @Override
-    public void bind(CFile cfile) {
+    public void bind(CFileImpl cfile) {
         if (offsetId != null) {
             this.offset = cfile.getOffest(offsetId);
         }
