@@ -1,6 +1,6 @@
 ## xml-kt-advance-java
 
-[![Build Status](https://travis-ci.org/compartia/xml-kt-advance-java.svg?branch=master)](https://travis-ci.org/compartia/xml-kt-advance-java)
+[![Build Status](https://travis-ci.org/mrbkt/xml-kt-advance-java.svg?branch=master)](https://travis-ci.org/mrbkt/xml-kt-advance-java)
 
 
 ### Usage
