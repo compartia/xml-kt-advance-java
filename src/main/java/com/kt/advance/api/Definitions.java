@@ -5,7 +5,7 @@ public class Definitions {
         a("dependent on other functions"), f("dependent on context"), i(
                 "unknown"), s("dependent on itself"), x("dead code");
 
-        public String label;
+        private final String label;
 
         DepsLevel(String label) {
             this.label = label;
@@ -64,12 +64,15 @@ public class Definitions {
 
         cs(":Callsite"), p(":PPO"), pl(":PPOLib"), rs(":Returnsite");
 
-        public String label;
+        private final String label;
 
         POType(String label) {
             this.label = label;
         }
 
+        public String getLabel() {
+            return label;
+        }
     }
 
     public enum PredicateType {
@@ -104,7 +107,7 @@ public class Definitions {
         //      'no': lambda(x):PO.CPONoOverlap(*x),
         //      'vc': lambda(x):PO.CPOValueConstraint(*x),
         //      'pre': lambda(x):PO.CPOPredicate(*x)
-    
+
         _ab("Allocation Base"),//
         _c("Cast"),//
         _cb("Common Base"), //
@@ -127,10 +130,10 @@ public class Definitions {
         _null("Null"),//
         _pc("Pointer Cast"),//
         _plb("Ptr Lower Bound"),//
-    
+
         _pre("Predicate"),//
         _pub("Ptr Upper Bound"),//
-    
+
         _pubd("Ptr Upper Bound Deref"),//
         _tao("Type At Offset"),//
         _ub("Upper Bound"),//
@@ -138,18 +141,18 @@ public class Definitions {
         _vm("Valid Mem"),//
         _w("Width Overflow"),//
         _z("Not Zero");
-    
+
         public String label;
-    
+
         PredicateType(String label) {
             this.label = label;
         };
-    
+
         @Override
         public String toString() {
             return this.label;
         }
-    
+
         /**
          * @deprecated should be maintained by sonar-specific code
          * @return

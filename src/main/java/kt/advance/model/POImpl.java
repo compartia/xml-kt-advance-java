@@ -38,7 +38,7 @@ import kt.advance.model.PredicatesFactory.CPOPredicate;
 
 abstract class POImpl implements PO {
     final Integer id;
-    private CProofDependencies deps;
+    private final CProofDependencies deps;
 
     private final String explaination;
 
@@ -69,17 +69,13 @@ abstract class POImpl implements PO {
             explaination = null;
         }
 
-        try {
-            final Integer[] ids = ppoNode.getIds();
-            final Integer[] invs = ppoNode.getInvariants();
+        final Integer[] ids = ppoNode.getIds();
+        final Integer[] invs = ppoNode.getInvariants();
 
-            final String level = ppoNode.deps;
+        final String level = ppoNode.deps;
 
-            setDeps(new CProofDependencies(ids, invs, level));
-        } catch (final Throwable ee) {
-            //TODO: handle this
-            ee.printStackTrace();
-        }
+        this.deps = new CProofDependencies(ids, invs, level);
+
     }
 
     @Override
@@ -122,10 +118,6 @@ abstract class POImpl implements PO {
     @Override
     public CProofDependencies getDeps() {
         return deps;
-    }
-
-    private void setDeps(CProofDependencies deps) {
-        this.deps = deps;
     }
 
     @Override

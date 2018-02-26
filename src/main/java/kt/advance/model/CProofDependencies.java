@@ -17,7 +17,7 @@ public class CProofDependencies {
 
     public final Integer[] invs;
 
-    public final Definitions.DepsLevel level;
+    public Definitions.DepsLevel level;
 
     public boolean hasExternalDependencies() {
         return this.level == Definitions.DepsLevel.a;
@@ -27,11 +27,13 @@ public class CProofDependencies {
         super();
         this.ids = Arrays.asList(ids);
         this.invs = invs;
-        if (level != null) {
+
+        try {
             this.level = Definitions.DepsLevel.valueOf(level);
-        } else {
+        } catch (final Exception e) {
             this.level = Definitions.DepsLevel.i;
         }
+
     }
 
     @Override

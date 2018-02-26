@@ -126,9 +126,9 @@ public class XmlValidator {
 
                     stats.inc(predicateName, "PPO", 1);
                     stats.inc(predicateName, PPO_ + statusCode.label, 1);
-                    stats.inc(predicateName, ppo.getType().proofObligationType.label, 1);
+                    stats.inc(predicateName, ppo.getType().proofObligationType.getLabel(), 1);
 
-                    stats.inc(TOTAL, ppo.getType().proofObligationType.label, 1);
+                    stats.inc(TOTAL, ppo.getType().proofObligationType.getLabel(), 1);
                     stats.inc(TOTAL, PPO_ + statusCode.label, 1);
 
                     funcStats.inc(cfile.getName(), PPO_ + statusCode.label, 1);
@@ -149,9 +149,9 @@ public class XmlValidator {
                         final String predicateName = predicate.type.label;
                         stats.inc(predicateName, "SPO", 1);
                         stats.inc(predicateName, SPO_ + statusCode.label, 1);
-                        stats.inc(predicateName, spo.getType().proofObligationType.label, 1);
+                        stats.inc(predicateName, spo.getType().proofObligationType.getLabel(), 1);
 
-                        stats.inc(TOTAL, spo.getType().proofObligationType.label, 1);
+                        stats.inc(TOTAL, spo.getType().proofObligationType.getLabel(), 1);
                         stats.inc(TOTAL, SPO_ + statusCode.label, 1);
 
                         funcStats.inc(cfile.getName(), SPO_ + statusCode.label, 1);
@@ -259,7 +259,7 @@ public class XmlValidator {
         }
 
         for (final Definitions.POType s : Definitions.POType.values()) {
-            stats.inc(TOTAL, s.label, 0);
+            stats.inc(TOTAL, s.getLabel(), 0);
 
         }
         return stats;
