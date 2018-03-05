@@ -46,6 +46,7 @@ import com.kt.advance.xml.model.AnalysisXml;
 import com.kt.advance.xml.model.ApiXml;
 import com.kt.advance.xml.model.CFunXml;
 import com.kt.advance.xml.model.CdictXml;
+import com.kt.advance.xml.model.CfileXml;
 import com.kt.advance.xml.model.FunctionLevelAnalysisXml;
 import com.kt.advance.xml.model.PodXml;
 import com.kt.advance.xml.model.PpoXml;
@@ -139,6 +140,8 @@ public class CApplicationImpl implements CApplication {
 
         LOG.info("reading " + fs.getBaseDir());
 
+        readAllCfileXmls(fs.listXMLs(FsAbstraction.CFILE_SUFFIX));
+
         readAllCdictXmls(fs.listCDICTs());
 
         readAllCfuncsXmls(fs.listCFuns());
@@ -193,6 +196,25 @@ public class CApplicationImpl implements CApplication {
 
     }
 
+    void readAllCfileXmls(Collection<File> cdictFiles) {
+
+        LOG.info(String.format("reading %d " + FsAbstraction.CFILE_SUFFIX + " files", cdictFiles.size()));
+
+        final XMLFileType<CfileXml> reader = XMLFileType.getReader(CfileXml.class);
+
+        cdictFiles.parallelStream()
+                .map((file) -> reader.readXml(file, fs.getBaseDir()))
+                .sequential()
+                .forEach(
+                    (xmlObj) -> runInHandler(() -> {
+                        final CFileImpl cfile = getCFileOrMakeNew(xmlObj.getSourceFilename());
+                        cfile.readCFileXml(xmlObj);
+                    }, xmlObj)
+
+        );
+
+    }
+
     void readAllCdictXmls(Collection<File> cdictFiles) {
 
         LOG.info(String.format("reading %d CDICT files", cdictFiles.size()));
@@ -204,7 +226,7 @@ public class CApplicationImpl implements CApplication {
                 .sequential()
                 .forEach(
                     (xmlObj) -> runInHandler(() -> {
-                        final CFileImpl cfile = getCFileOrMakeNew(xmlObj.getSourceFilename());
+                        final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
                         cfile.readCDictFile(xmlObj, predicatesFactory.expressionsFactory);
                     }, xmlObj)
 
