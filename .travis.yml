@@ -1,5 +1,4 @@
 language: java
-dist: trusty
 sudo: required
 install: true
 
@@ -13,6 +12,11 @@ addons:
 script: 
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
 
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
+    
 after_success: 
   - ls ./target|grep jar
   - mv ./target/$(ls ./target|grep .with-dependencies.jar) ./target/kt-advance-xml-$TRAVIS_TAG.jar
