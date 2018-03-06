@@ -32,12 +32,24 @@ import com.kt.advance.xml.model.IndexedTableNode;
 import kt.advance.model.CTypeFactory.CType;
 
 public class CTypeFactory extends AbstractFactory<CType> {
+    public static class CCompInfo extends Indexed {
+        final String name;
+        final Boolean isStruct;
+        public final Integer ckey;
+
+        public CCompInfo(IndexedTableNode node) {
+            super(node);
+
+            this.name = node.getTagsSplit()[0];
+            final Integer[] args = node.getArguments();
+            this.isStruct = args[1] == 1;
+            ckey = args[0];
+        }
+    }
 
     public static class CTypComp extends CType {
         Integer ckey;
-        boolean isStruct;
-        String struct;
-        String structName;
+        CCompInfo struct;
 
         public CTypComp(IndexedTableNode node) {
             super(node);
@@ -45,17 +57,14 @@ public class CTypeFactory extends AbstractFactory<CType> {
 
         @Override
         public String toString() {
-            return isStruct ? "struct " + structName + Util.bra(ckey.toString())
-                    : "union " + structName + Util.bra(ckey.toString());
+            return struct.isStruct ? "struct " + struct.name + Util.bra(ckey.toString())
+                    : "union " + struct.name + Util.bra(ckey.toString());
         }
 
         @Override
         void bindImpl(CFileImpl cfile, Integer[] args, String[] tags) {
             ckey = args[0];
             struct = cfile.getStruct(ckey);
-            structName = cfile.getStructName(ckey);
-            isStruct = cfile.isStruct(ckey);
-
         }
 
     }

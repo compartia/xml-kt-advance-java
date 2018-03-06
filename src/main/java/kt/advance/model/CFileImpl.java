@@ -18,10 +18,12 @@ import com.kt.advance.api.CLocation;
 import com.kt.advance.xml.XmlReadFailedException;
 import com.kt.advance.xml.model.CFunXml;
 import com.kt.advance.xml.model.CdictXml;
+import com.kt.advance.xml.model.CfileXml;
 import com.kt.advance.xml.model.IndexedTableNode;
 import com.kt.advance.xml.model.PrdXml;
 
 import kt.advance.model.CFunArgs.CFunArg;
+import kt.advance.model.CTypeFactory.CCompInfo;
 import kt.advance.model.CTypeFactory.CType;
 import kt.advance.model.ExpFactory.CExpression;
 import kt.advance.model.PredicatesFactory.CPOPredicate;
@@ -53,6 +55,14 @@ class CFileImpl implements CFile {
 
     Map<Integer, CFunArg> funArg;
     Map<Integer, CFunArgs> funArgs;
+    //
+    //    Map<Integer, GCompTagDecl> globalComptagDefinitions;
+    //    Map<Integer, GCompTagDecl> globalComptagDeclarations;
+
+    Map<Integer, CCompInfo> globalComptagDefinitions;
+    Map<Integer, CCompInfo> globalComptagDeclarations;
+
+    Map<Integer, CCompInfo> compinfos;
 
     public CFunArgs getCFunArgs(Integer key) {
         Preconditions.checkState(this.funArgs != null, this.getName() + " has null or borken funArgs map");
@@ -64,19 +74,18 @@ class CFileImpl implements CFile {
         return requireValue(funArg, key, "CFunArg");
     }
 
-    public String getStruct(Integer key) {
-        //        LOG.warn("getStruct is not implemented");
-        return " #struct# ";
-    }
+    public CCompInfo getStruct(Integer key) {
+        if (this.globalComptagDefinitions.containsKey(key)) {
+            return globalComptagDefinitions.get(key);
+        }
 
-    public String getStructName(Integer key) {
-        //        LOG.warn("getStructName is not implemented");
-        return " #struct name# ";
-    }
+        if (this.globalComptagDeclarations.containsKey(key)) {
+            return globalComptagDeclarations.get(key);
+        }
 
-    public boolean isStruct(Integer key) {
-        LOG.warn("isStruct is not implemented");
-        return true;
+        throw new IllegalStateException(
+                "no GCompTagDecl the key " + key);
+
     }
 
     final CApplication application;
@@ -166,11 +175,40 @@ class CFileImpl implements CFile {
         return requireValue(types, key, "type");
     }
 
+    private CfileXml cfileXmlCached;
+
+    public void readCFileXml(CfileXml cfile) {
+        //        globalComptagDefinitions = cfile.cfile.gcomptag
+        //                .stream()
+        //                .collect(Collectors.toMap(node -> node.icinfo, node -> node));
+        //
+        //        globalComptagDeclarations = cfile.cfile.gcomptagdecl
+        //                .stream()
+        //                .collect(Collectors.toMap(node -> node.icinfo, node -> node));
+        this.cfileXmlCached = cfile;
+    }
+
     public void readCDictFile(CdictXml cdict, ExpFactory ef) {
 
         LOG.debug("parsing " + cdict.getOrigin());
         final CTypeFactory cTypeFactory = new CTypeFactory();
 
+        compinfos = cdict.cfile.cDeclarations.compinfos
+                .stream()
+                .map(node -> new CCompInfo(node))
+                .collect(Collectors.toMap(node -> node.id, node -> node));
+
+        globalComptagDeclarations = cfileXmlCached.cfile.gcomptagdecl
+                .stream()
+                .map(x -> compinfos.get(x.icinfo))
+                .collect(Collectors.toMap(node -> node.ckey, node -> node));
+
+        globalComptagDefinitions = cfileXmlCached.cfile.gcomptag
+                .stream()
+                .map(x -> compinfos.get(x.icinfo))
+                .collect(Collectors.toMap(node -> node.ckey, node -> node));
+
+        cfileXmlCached = null;
         varinfos = cdict.cfile.cDeclarations.varinfos
                 .stream()
                 .map(node -> new CVarInfo(node))
