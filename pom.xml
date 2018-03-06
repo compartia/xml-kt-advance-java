@@ -8,8 +8,8 @@
 	<packaging>jar</packaging>
 	<version>2.0</version>
 
-	<name>KT Advance</name>
-	<description>KT Advance Memory Safety Analyzer for C</description>
+	<name>KT Advance analyzis XML parser</name>
+	<description>KT Advance analyzis XML parser for KT Advance Memory Safety Analyzer for C</description>
 	<inceptionYear>2018</inceptionYear>
 
 	<organization>
