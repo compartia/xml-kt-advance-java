@@ -3,7 +3,7 @@ install: true
 script: mvn clean install 
 after_success: 
   - ls ./target|grep jar
-  - mv ./target/$(ls ./target|grep jar) ./target/kt-advance-xml-$TRAVIS_TAG.jar
+  - mv ./target/$(ls ./target|grep .with-dependencies.jar) ./target/kt-advance-xml-$TRAVIS_TAG.jar
   
 deploy:
   provider: releases
