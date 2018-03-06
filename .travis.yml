@@ -1,6 +1,9 @@
 language: java
 install: true
-after_success: "mv ./target/$(ls ./target|grep jar) ./target/kt-advance-xml-$TRAVIS_TAG.jar" 
+after_success: 
+  - ls ./target|grep jar
+  - mv ./target/$(ls ./target|grep jar) ./target/kt-advance-xml-$TRAVIS_TAG.jar
+  
 deploy:
   provider: releases
   api_key:
