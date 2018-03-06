@@ -29,6 +29,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.google.common.collect.ImmutableMap;
 import com.kt.advance.Util;
+import com.kt.advance.api.CFile;
 import com.kt.advance.xml.model.IndexedTableNode;
 
 import kt.advance.model.CTypeFactory.CType;
@@ -46,7 +47,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
 
             this.binop = tags[1];
             final int exp1Id = args[0];
@@ -61,7 +62,8 @@ public class ExpFactory extends AbstractFactory<CExpression> {
             if (ExpFactory.OP_MAP.containsKey(binop)) {
                 return String.format(ExpFactory.OP_MAP.get(binop), exp1, exp2);
             } else {
-                throw new IllegalArgumentException("unkown binop " + binop);
+                return String.format("UNKNOWN(%s,%s)", exp1, exp2);
+                //                throw new IllegalArgumentException("unkown binop " + binop);
             }
 
         }
@@ -76,13 +78,13 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             lvalue = cfile.getLValue(args[0]);
         }
 
         @Override
         public String toString() {
-            return "&" + Util.bra(lvalue.toString());
+            return "&" + Util.bra(lvalue);
         }
     }
 
@@ -96,13 +98,13 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             lvalue = cfile.getLValue(args[0]);
         }
 
         @Override
         public String toString() {
-            return Util.call("addroflabel", lvalue.toString());
+            return Util.call("addroflabel", lvalue);
         }
     }
 
@@ -116,7 +118,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             this.exp = cfile.getExression(args[1]);
             type = cfile.getType(args[0]);
 
@@ -140,7 +142,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             exps = new CExpression[args.length - 1];
             for (int i = 1; i < args.length; i++) {
                 exps[i - 1] = cfile.getExression(args[i]);
@@ -166,12 +168,15 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             lvalue = cfile.getLValue(args[0]);
         }
 
         @Override
         public String toString() {
+            if (lvalue == null) {
+                return ERR_VALUE;
+            }
             return lvalue.toString();
         }
 
@@ -194,7 +199,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             this.ctype = cfile.getType(args[0]);
         }
 
@@ -213,7 +218,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             this.exp = cfile.getExression(args[0]);
         }
 
@@ -232,7 +237,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             this.exp = cfile.getExression(args[0]);
         }
 
@@ -253,7 +258,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             this.ctype = cfile.getType(args[1]);
             op = tags[1];
             this.exp = cfile.getExression(args[0]);
@@ -262,10 +267,11 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         @Override
         public String toString() {
 
-            if (ExpFactory.OP_MAP.containsKey(op)) {
-                return String.format(ExpFactory.OP_MAP.get(op), exp);
+            if (ExpFactory.UN_OP_MAP.containsKey(op)) {
+                return String.format(ExpFactory.UN_OP_MAP.get(op), exp);
             } else {
-                throw new IllegalArgumentException("unkown binop " + op);
+                return String.format("UNKNOWN(%s)", exp);
+                //                throw new IllegalArgumentException("unkown binop " + op);
             }
         }
 
@@ -280,16 +286,21 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
-            this.constant = cfile.getConst(args[0]);
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+            this.constant = ((CFileImpl) cfile).getConst(args[0]);
         }
 
         @Override
         public String toString() {
+            if (constant == null) {
+                return ERR_VALUE;
+            }
             return constant.toString();
         }
 
     }
+
+    private static final String ERR_VALUE = "-=ERR:NULL=-";
 
     public static class DefaultCExpression extends CExpression {
         @Deprecated
@@ -300,7 +311,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             this.nameaa = tags[0];
         }
 
@@ -330,11 +341,11 @@ public class ExpFactory extends AbstractFactory<CExpression> {
             this.node = null;
         }
 
-        public abstract void bindImpl(Integer[] args, String[] tags, CFileImpl cfile);
+        public abstract void bindImpl(Integer[] args, String[] tags, CFile cfile);
 
     }
 
-    static final Map<String, String> OP_MAP = new ImmutableMap.Builder<String, String>()
+    public static final Map<String, String> OP_MAP = new ImmutableMap.Builder<String, String>()
             .put("div", "%s / %s")
             .put("plusa", "%s + %s")
             .put("pluspi", "%s + %s")
@@ -357,6 +368,11 @@ public class ExpFactory extends AbstractFactory<CExpression> {
             .put("indexpi", "%s[%s]")
             .put("band", "%s & %s")
             .put("land", "%s && %s")
+
+            .build();
+
+    public static final Map<String, String> UN_OP_MAP = new ImmutableMap.Builder<String, String>()
+
             ///
             .put("neg", "-%s")
             .put("bnot", "~%s")
@@ -367,22 +383,22 @@ public class ExpFactory extends AbstractFactory<CExpression> {
     public ExpFactory() {
         super();
 
-        /* 1 */ reg("binop", (node) -> new BinOp(node));
-        /* 2 */ reg("const", (node) -> new Const(node));
-        /* 3 */ reg("caste", (node) -> new CExpCastE(node));
-        /* 4 */ reg("lval", (node) -> new CExpLval(node));
+        /* 1 */ reg("binop", BinOp::new);
+        /* 2 */ reg("const", Const::new);
+        /* 3 */ reg("caste", CExpCastE::new);
+        /* 4 */ reg("lval", CExpLval::new);
 
-        /* 5 */ reg("addrof", (node) -> new CExpAddrOf(node));
-        /* 6 */ reg("startof", (node) -> new CExpAddrOf(node));
+        /* 5 */ reg("addrof", CExpAddrOf::new);
+        /* 6 */ reg("startof", CExpAddrOf::new);
 
-        /* 7 */ reg("addoflabel", (node) -> new CExpAddrOfLabel(node));
+        /* 7 */ reg("addoflabel", CExpAddrOfLabel::new);
 
-        /* 8 */ reg("sizeofe", (node) -> new CExpSizeOfE(node));
-        /* 9 */ reg("sizeofstr", (node) -> new CExpSizeOfStr(node));
+        /* 8 */ reg("sizeofe", CExpSizeOfE::new);
+        /* 9 */ reg("sizeofstr", CExpSizeOfStr::new);
 
-        /* 10 */ reg("cnapp", (node) -> new CExpCnApp(node));
-        /* 11 */ reg("sizeof", (node) -> new CExpSizeOf(node));
-        /* 11 */ reg("unop", (node) -> new CExpUnOp(node));
+        /* 10 */ reg("cnapp", CExpCnApp::new);
+        /* 11 */ reg("sizeof", CExpSizeOf::new);
+        /* 11 */ reg("unop", CExpUnOp::new);
 
         //        XXX: add more
 
