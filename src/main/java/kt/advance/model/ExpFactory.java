@@ -367,22 +367,22 @@ public class ExpFactory extends AbstractFactory<CExpression> {
     public ExpFactory() {
         super();
 
-        /* 1 */ reg("binop", (node) -> new BinOp(node));
-        /* 2 */ reg("const", (node) -> new Const(node));
-        /* 3 */ reg("caste", (node) -> new CExpCastE(node));
-        /* 4 */ reg("lval", (node) -> new CExpLval(node));
+        /* 1 */ reg("binop", BinOp::new);
+        /* 2 */ reg("const", Const::new);
+        /* 3 */ reg("caste", CExpCastE::new);
+        /* 4 */ reg("lval", CExpLval::new);
 
-        /* 5 */ reg("addrof", (node) -> new CExpAddrOf(node));
-        /* 6 */ reg("startof", (node) -> new CExpAddrOf(node));
+        /* 5 */ reg("addrof", CExpAddrOf::new);
+        /* 6 */ reg("startof", CExpAddrOf::new);
 
-        /* 7 */ reg("addoflabel", (node) -> new CExpAddrOfLabel(node));
+        /* 7 */ reg("addoflabel", CExpAddrOfLabel::new);
 
-        /* 8 */ reg("sizeofe", (node) -> new CExpSizeOfE(node));
-        /* 9 */ reg("sizeofstr", (node) -> new CExpSizeOfStr(node));
+        /* 8 */ reg("sizeofe", CExpSizeOfE::new);
+        /* 9 */ reg("sizeofstr", CExpSizeOfStr::new);
 
-        /* 10 */ reg("cnapp", (node) -> new CExpCnApp(node));
-        /* 11 */ reg("sizeof", (node) -> new CExpSizeOf(node));
-        /* 11 */ reg("unop", (node) -> new CExpUnOp(node));
+        /* 10 */ reg("cnapp", CExpCnApp::new);
+        /* 11 */ reg("sizeof", CExpSizeOf::new);
+        /* 11 */ reg("unop", CExpUnOp::new);
 
         //        XXX: add more
 

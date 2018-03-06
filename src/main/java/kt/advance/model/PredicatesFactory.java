@@ -77,6 +77,10 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
         @Override
         public String express() {
+            if (binop == null) {
+                return ERR_VALUE;
+            }
+
             final String op = String.format(ExpFactory.OP_MAP.get(binop), exp1, exp2);
             return op + ", typ:" + typ;
         }
@@ -176,17 +180,19 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
         @Override
         public String express() {
-            return "!!!!!!!!" + exp.toString();
+            return "!!!!!!!!" + exp;
         }
 
         @Override
         public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
             this.exp = Util.requireValue(cfile.expressions, args[0], "exp " + Util.bra(this.type.toString()));
-
         }
     }
 
+    private static final String ERR_VALUE = "-=ERR=-";
+
     static class CPOInitialized extends CPOPredicate {
+
         public CLval lvalue;
 
         public CPOInitialized(IndexedTableNode node) {
@@ -195,6 +201,9 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
         @Override
         public String express() {
+            if (lvalue == null) {
+                return ERR_VALUE;
+            }
             return lvalue.toString();
         }
 
@@ -218,6 +227,11 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
             //            def __str__(self):
             //                return (self.get_tag() + '(' + str(self.get_exp())
             //                        + ',len:' + str(self.get_length()) + ')')
+
+            if (exp == null || len == null) {
+                return ERR_VALUE;
+            }
+
             return exp.toString() + ", len:" + len.toString();
         }
 
@@ -248,7 +262,12 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
             //                        + ',' + str(self.get_exp2())
             //                        + ',op:' + self.get_binop()
             //                        + ',ikind:' + self.get_ikind() + ')')
-            final String op = String.format(ExpFactory.OP_MAP.get(binop), exp1, exp2);
+
+            if (binop == null) {
+                return ERR_VALUE;
+            }
+            final String op = String.format(ExpFactory.OP_MAP.get(binop), exp1,
+                exp2);
             return op + ", ikind:" + kind;
 
         }
@@ -312,6 +331,10 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
         @Override
         public String express() {
+            if (exp == null) {
+                return ERR_VALUE;
+            }
+
             return exp.toString();
         }
     }
@@ -326,6 +349,11 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
         @Override
         public String express() {
+
+            if (exp == null) {
+                return ERR_VALUE;
+            }
+
             return exp.toString()
                     + ",from:" + fromKind
                     + ",to:" + targetKind;
@@ -373,53 +401,53 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
     public PredicatesFactory() {
         super();
 
-        reg("null", node -> new CPOSimpleExpression(node));
-        reg("nn", node -> new CPOSimpleExpression(node));
+        reg("null", CPOSimpleExpression::new);
+        reg("nn", CPOSimpleExpression::new);
 
-        reg("vm", node -> new CPOSimpleExpression(node));
-        reg("gm", node -> new CPOSimpleExpression(node));
+        reg("vm", CPOSimpleExpression::new);
+        reg("gm", CPOSimpleExpression::new);
 
-        reg("ab", node -> new CPOSimpleExpression(node));
+        reg("ab", CPOSimpleExpression::new);
 
-        reg("tao", node -> new _CPOTypeAndExp(node));
-        reg("lb", node -> new _CPOTypeAndExp(node));
-        reg("ub", node -> new _CPOTypeAndExp(node));
+        reg("tao", _CPOTypeAndExp::new);
+        reg("lb", _CPOTypeAndExp::new);
+        reg("ub", _CPOTypeAndExp::new);
 
-        reg("ilb", node -> new CPOSimpleExpression(node));
-        reg("iub", node -> new CPOSimpleExpression(node));
+        reg("ilb", CPOSimpleExpression::new);
+        reg("iub", CPOSimpleExpression::new);
 
-        reg("ir", node -> new CPOInitializedRange(node));
-        reg("i", node -> new CPOInitialized(node));
+        reg("ir", CPOInitializedRange::new);
+        reg("i", CPOInitialized::new);
 
-        reg("c", node -> new _CPOCast(node));
-        reg("pc", node -> new _CPOCast(node));
+        reg("c", _CPOCast::new);
+        reg("pc", _CPOCast::new);
 
-        reg("csu", node -> new CPOSignedToUnsignedCast(node));
-        reg("cus", node -> new CPOUnsignedToSignedCast(node));
+        reg("csu", CPOSignedToUnsignedCast::new);
+        reg("cus", CPOUnsignedToSignedCast::new);
 
-        reg("z", node -> new CPOSimpleExpression(node));
+        reg("z", CPOSimpleExpression::new);
 
-        reg("nt", node -> new CPOSimpleExpression(node));
-        reg("nneg", node -> new CPOSimpleExpression(node));
+        reg("nt", CPOSimpleExpression::new);
+        reg("nneg", CPOSimpleExpression::new);
 
-        reg("iu", node -> new CPOIntOverflow(node));
-        reg("io", node -> new CPOIntUnderflow(node));
+        reg("iu", CPOIntOverflow::new);
+        reg("io", CPOIntUnderflow::new);
 
-        reg("w", node -> new CPOWidthOverflow(node));
+        reg("w", CPOWidthOverflow::new);
 
-        reg("plb", node -> new CPOPtrLowerBound(node));
-        reg("pub", node -> new CPOPtrUpperBound(node));
+        reg("plb", CPOPtrLowerBound::new);
+        reg("pub", CPOPtrUpperBound::new);
 
-        reg("pubd", node -> new CPOPtrUpperBoundDeref(node));
+        reg("pubd", CPOPtrUpperBoundDeref::new);
 
-        reg("cb", node -> new _CPOTwoExpressions(node));
-        reg("cbt", node -> new _CPOTwoExpressions(node));
+        reg("cb", _CPOTwoExpressions::new);
+        reg("cbt", _CPOTwoExpressions::new);
 
-        reg("ft", node -> new CPOSimpleExpression(node));
+        reg("ft", CPOSimpleExpression::new);
 
-        reg("vc", node -> new CPOValueConstraint(node));
-        reg("pre", node -> new CPOExp0(node));
-        reg("no", node -> new _CPOTwoExpressions(node));
+        reg("vc", CPOValueConstraint::new);
+        reg("pre", CPOExp0::new);
+        reg("no", _CPOTwoExpressions::new);
 
     }
 
