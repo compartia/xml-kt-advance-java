@@ -51,15 +51,16 @@ import com.kt.advance.xml.model.IndexedTableNode;
  * @author artem
  *
  */
-class CLocationImpl implements CLocation {
+class CLocationImpl extends Indexed implements CLocation {
     public final Integer byteNo;
     private CFile cfile;
-    public final Integer id;
+
     private final Integer line;
     private String filename;
 
     public CLocationImpl(IndexedTableNode node, CFile cfile, CApplication app) {
-        this.id = node.index;
+        super(node);
+
         final Integer[] args = node.getArguments();
         this.byteNo = args[1];
         this.line = args[2];
