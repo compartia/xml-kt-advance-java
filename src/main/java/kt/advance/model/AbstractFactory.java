@@ -23,6 +23,7 @@
  */
 package kt.advance.model;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 import com.google.common.base.Preconditions;
@@ -38,6 +39,10 @@ public abstract class AbstractFactory<T> {
 
     public AbstractFactory() {
         map = new HashMap<>();
+    }
+
+    public Collection<String> getKeys() {
+        return this.map.keySet();
     }
 
     protected <X> void reg(String name, Builder<? extends T> b) {
