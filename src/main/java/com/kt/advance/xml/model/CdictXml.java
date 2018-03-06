@@ -52,6 +52,10 @@ public class CdictXml extends FileLevelAnalysisXml {
         @XmlElementWrapper(name = "varinfo-table")
         @XmlElement(name = "n")
         public List<IndexedTableNode> varinfos = new ArrayList<>();
+
+        @XmlElementWrapper(name = "compinfo-table")
+        @XmlElement(name = "n")
+        public List<IndexedTableNode> compinfos = new ArrayList<>();
     }
 
     public static class CDictionaryNode {
@@ -98,6 +102,7 @@ public class CdictXml extends FileLevelAnalysisXml {
 
         @XmlElement(name = "c-dictionary")
         public CDictionaryNode cDictionary;
+
     }
 
     @XmlElement(name = "cfile")

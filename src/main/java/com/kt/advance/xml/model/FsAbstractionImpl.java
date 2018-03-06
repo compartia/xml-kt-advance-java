@@ -141,7 +141,8 @@ public class FsAbstractionImpl implements FsAbstraction {
         return targetDirs;
     }
 
-    private Collection<File> listXMLs(String suffix) {
+    @Override
+    public Collection<File> listXMLs(String suffix) {
         return FileUtils.listFiles(getBaseDir(),
             getSuffinxFilter(suffix),
             TrueFileFilter.INSTANCE)
