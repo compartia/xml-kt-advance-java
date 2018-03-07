@@ -11,8 +11,12 @@ public class Util {
         return '(' + exp + ')';
     }
 
-    public static String call(Object f, String exp) {
-        return f.toString() + "" + Util.bra(exp);
+    public static String bra(Object exp) {
+        return String.format("( %s )", exp);
+    }
+
+    public static String call(Object f, Object exp) {
+        return f + "" + Util.bra(exp);
     }
 
     public static String idx(Integer i) {

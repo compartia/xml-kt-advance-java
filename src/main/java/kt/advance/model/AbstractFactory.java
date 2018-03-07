@@ -23,6 +23,7 @@
  */
 package kt.advance.model;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 import com.google.common.base.Preconditions;
@@ -30,7 +31,7 @@ import com.kt.advance.xml.model.IndexedTableNode;
 
 public abstract class AbstractFactory<T> {
     @FunctionalInterface
-    protected interface Builder<X> {
+    public interface Builder<X> {
         X build(IndexedTableNode node);
     }
 
@@ -38,6 +39,10 @@ public abstract class AbstractFactory<T> {
 
     public AbstractFactory() {
         map = new HashMap<>();
+    }
+
+    public Collection<String> getKeys() {
+        return this.map.keySet();
     }
 
     protected <X> void reg(String name, Builder<? extends T> b) {
@@ -50,12 +55,17 @@ public abstract class AbstractFactory<T> {
 
     public T buildImpl(IndexedTableNode node, String type, T fallBackValueSingleton) {
 
-        final Builder<? extends T> builder = map.get(type);
+        final Builder<? extends T> builder = getBuilder(type);
 
         if (builder == null) {
             return fallBackValueSingleton;
         }
+
         final T exp = builder.build(node);
         return exp;
+    }
+
+    public Builder<? extends T> getBuilder(String type) {
+        return map.get(type);
     }
 }

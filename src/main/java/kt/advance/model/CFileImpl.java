@@ -42,7 +42,7 @@ class CFileImpl implements CFile {
 
     private final String name;
     Map<Integer, CConst> constants;
-    Map<Integer, CExpression> expressions;
+    private Map<Integer, CExpression> expressions;
     Map<Integer, CLHost> lhosts;
     Map<Integer, CLocationImpl> locations;
 
@@ -178,24 +178,18 @@ class CFileImpl implements CFile {
     private CfileXml cfileXmlCached;
 
     public void readCFileXml(CfileXml cfile) {
-        //        globalComptagDefinitions = cfile.cfile.gcomptag
-        //                .stream()
-        //                .collect(Collectors.toMap(node -> node.icinfo, node -> node));
-        //
-        //        globalComptagDeclarations = cfile.cfile.gcomptagdecl
-        //                .stream()
-        //                .collect(Collectors.toMap(node -> node.icinfo, node -> node));
         this.cfileXmlCached = cfile;
     }
 
     public void readCDictFile(CdictXml cdict, ExpFactory ef) {
 
-        LOG.debug("parsing " + cdict.getOrigin());
+        LOG.debug(String.format("Parsing %s ", cdict.getOrigin()));
+
         final CTypeFactory cTypeFactory = new CTypeFactory();
 
         compinfos = cdict.cfile.cDeclarations.compinfos
                 .stream()
-                .map(node -> new CCompInfo(node))
+                .map(CCompInfo::new)
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         globalComptagDeclarations = cfileXmlCached.cfile.gcomptagdecl
@@ -209,9 +203,10 @@ class CFileImpl implements CFile {
                 .collect(Collectors.toMap(node -> node.ckey, node -> node));
 
         cfileXmlCached = null;
+
         varinfos = cdict.cfile.cDeclarations.varinfos
                 .stream()
-                .map(node -> new CVarInfo(node))
+                .map(CVarInfo::new)
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         types = cdict.cfile.cDictionary.types
@@ -221,22 +216,22 @@ class CFileImpl implements CFile {
 
         funArg = cdict.cfile.cDictionary.funArg
                 .stream()
-                .map(node -> new CFunArg(node))
+                .map(CFunArg::new)
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         funArgs = cdict.cfile.cDictionary.funArgs
                 .stream()
-                .map(node -> new CFunArgs(node))
+                .map(CFunArgs::new)
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         offsets = cdict.cfile.cDictionary.offsets
                 .parallelStream()
-                .map(node -> new COffset(node))
+                .map(COffset::new)
                 .collect(Collectors.toConcurrentMap(node -> node.id, node -> node));
 
         lvalues = cdict.cfile.cDictionary.lvals
                 .stream()
-                .map(node -> new CLval(node))
+                .map(CLval::new)
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         strings = cdict.cfile.cDictionary.strings
@@ -256,7 +251,7 @@ class CFileImpl implements CFile {
 
         lhosts = cdict.cfile.cDictionary.lhosts
                 .stream()
-                .map(node -> new CLHost(node))
+                .map(CLHost::new)
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         //        binding
@@ -272,7 +267,7 @@ class CFileImpl implements CFile {
             filenamesIndex.put(node.index, node.getTagsSplit()[0]);
         }
 
-        //        parsing locations
+        //      parsing locations
         locations = cdict.cfile.cDeclarations.locations
                 .stream()
                 .map(node -> new CLocationImpl(node, this, this.application))
@@ -304,9 +299,7 @@ class CFileImpl implements CFile {
     private void bind(Collection<? extends Bindable> collection) {
         collection
                 .parallelStream()
-                .forEach(exp -> {
-                    exp.bind(this);
-                });
+                .forEach(exp -> exp.bind(this));
     }
 
 }

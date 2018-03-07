@@ -19,13 +19,10 @@ public class ErrorsBundle {
 
     public void addError(String key, String error) {
 
-        List<String> list = this.errors.get(key);
-        if (list == null) {
-            list = new ArrayList<>();
-            this.errors.put(key, list);
-        }
-        errorsCount++;
+        final List<String> list = errors.computeIfAbsent(key, k -> new ArrayList<>());
         list.add(error);
+        errorsCount++;
+
     }
 
     public int getErrorsCount() {

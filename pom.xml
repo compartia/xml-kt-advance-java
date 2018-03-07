@@ -8,8 +8,8 @@
 	<packaging>jar</packaging>
 	<version>2.0</version>
 
-	<name>KT Advance</name>
-	<description>KT Advance Memory Safety Analyzer for C</description>
+	<name>KT Advance analyzis XML parser</name>
+	<description>KT Advance analyzis XML parser for KT Advance Memory Safety Analyzer for C</description>
 	<inceptionYear>2018</inceptionYear>
 
 	<organization>
@@ -159,15 +159,6 @@
 
 		</plugins>
 
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.sonarsource.scanner.maven</groupId>
-					<artifactId>sonar-maven-plugin</artifactId>
-					<version>3.0.2</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
 
 	</build>
 

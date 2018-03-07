@@ -29,6 +29,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.google.common.collect.ImmutableMap;
 import com.kt.advance.Util;
+import com.kt.advance.api.CFile;
 import com.kt.advance.xml.model.IndexedTableNode;
 
 import kt.advance.model.CTypeFactory.CType;
@@ -36,17 +37,17 @@ import kt.advance.model.ExpFactory.CExpression;
 
 public class ExpFactory extends AbstractFactory<CExpression> {
 
-    public static class BinOp extends CExpression {
-        public String binop;
+    static class BinOp extends CExpression {
+        private String binop;
 
-        public CExpression exp1, exp2;
+        private CExpression exp1, exp2;
 
         public BinOp(IndexedTableNode node) {
             super(node);
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
 
             this.binop = tags[1];
             final int exp1Id = args[0];
@@ -61,34 +62,34 @@ public class ExpFactory extends AbstractFactory<CExpression> {
             if (ExpFactory.OP_MAP.containsKey(binop)) {
                 return String.format(ExpFactory.OP_MAP.get(binop), exp1, exp2);
             } else {
-                throw new IllegalArgumentException("unkown binop " + binop);
+                return String.format("UNKNOWN(%s,%s)", exp1, exp2);
             }
 
         }
     }
 
-    public static class CExpAddrOf extends CExpression {
+    static class CExpAddrOf extends CExpression {
 
-        CLval lvalue;
+        private CLval lvalue;
 
         public CExpAddrOf(IndexedTableNode node) {
             super(node);
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             lvalue = cfile.getLValue(args[0]);
         }
 
         @Override
         public String toString() {
-            return "&" + Util.bra(lvalue.toString());
+            return "&" + Util.bra(lvalue);
         }
     }
 
-    public static class CExpAddrOfLabel extends CExpression {
+    static class CExpAddrOfLabel extends CExpression {
 
-        CLval lvalue;
+        private CLval lvalue;
 
         public CExpAddrOfLabel(IndexedTableNode node) {
             super(node);
@@ -96,19 +97,19 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             lvalue = cfile.getLValue(args[0]);
         }
 
         @Override
         public String toString() {
-            return Util.call("addroflabel", lvalue.toString());
+            return Util.call("addroflabel", lvalue);
         }
     }
 
-    public static class CExpCastE extends CExpression {
-        public CExpression exp;
-        public CType type;
+    static class CExpCastE extends CExpression {
+        private CExpression exp;
+        private CType type;
 
         public CExpCastE(IndexedTableNode node) {
             super(node);
@@ -116,7 +117,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             this.exp = cfile.getExression(args[1]);
             type = cfile.getType(args[0]);
 
@@ -129,10 +130,11 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
     }
 
-    public static class CExpCnApp extends CExpression {
-        CType ctype;
-        CExpression[] exps;
-        String name;
+    static class CExpCnApp extends CExpression {
+        @SuppressWarnings("unused")
+        private CType ctype;
+        private CExpression[] exps;
+        private String name;
 
         public CExpCnApp(IndexedTableNode node) {
             super(node);
@@ -140,7 +142,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             exps = new CExpression[args.length - 1];
             for (int i = 1; i < args.length; i++) {
                 exps[i - 1] = cfile.getExression(args[i]);
@@ -156,9 +158,9 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
     }
 
-    public static class CExpLval extends CExpression {
+    static class CExpLval extends CExpression {
 
-        CLval lvalue;
+        private CLval lvalue;
 
         public CExpLval(IndexedTableNode node) {
             super(node);
@@ -166,7 +168,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             lvalue = cfile.getLValue(args[0]);
         }
 
@@ -177,24 +179,15 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
     }
 
-    public static abstract class CExpression extends AbstractCExpression {
-
-        public CExpression(IndexedTableNode node) {
-            super(node);
-
-        }
-
-    }
-
-    public static class CExpSizeOf extends CExpression {
-        public CType ctype;
+    static class CExpSizeOf extends CExpression {
+        private CType ctype;
 
         public CExpSizeOf(IndexedTableNode node) {
             super(node);
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             this.ctype = cfile.getType(args[0]);
         }
 
@@ -205,15 +198,15 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
     }
 
-    public static class CExpSizeOfE extends CExpression {
-        public CExpression exp;
+    static class CExpSizeOfE extends CExpression {
+        private CExpression exp;
 
         public CExpSizeOfE(IndexedTableNode node) {
             super(node);
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             this.exp = cfile.getExression(args[0]);
         }
 
@@ -224,15 +217,15 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
     }
 
-    public static class CExpSizeOfStr extends CExpression {
-        public CExpression exp;
+    static class CExpSizeOfStr extends CExpression {
+        private CExpression exp;
 
         public CExpSizeOfStr(IndexedTableNode node) {
             super(node);
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             this.exp = cfile.getExression(args[0]);
         }
 
@@ -243,17 +236,36 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
     }
 
-    public static class CExpUnOp extends CExpression {
-        public CType ctype;
-        public CExpression exp;
-        public String op;
+    static class CExpAlignOf extends CExpression {
+        private CType type;
+
+        public CExpAlignOf(IndexedTableNode node) {
+            super(node);
+        }
+
+        @Override
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+            this.type = cfile.getType(args[0]);
+        }
+
+        @Override
+        public String toString() {
+            return Util.call("alignof", type);
+        }
+    }
+
+    static class CExpUnOp extends CExpression {
+        @SuppressWarnings("unused")
+        private CType ctype;
+        private CExpression exp;
+        private String op;
 
         public CExpUnOp(IndexedTableNode node) {
             super(node);
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
             this.ctype = cfile.getType(args[1]);
             op = tags[1];
             this.exp = cfile.getExression(args[0]);
@@ -262,16 +274,16 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         @Override
         public String toString() {
 
-            if (ExpFactory.OP_MAP.containsKey(op)) {
-                return String.format(ExpFactory.OP_MAP.get(op), exp);
+            if (ExpFactory.UN_OP_MAP.containsKey(op)) {
+                return String.format(ExpFactory.UN_OP_MAP.get(op), exp);
             } else {
-                throw new IllegalArgumentException("unkown binop " + op);
+                return String.format("UNKNOWN(%s)", exp);
             }
         }
 
     }
 
-    public static class Const extends CExpression {
+    static class Const extends CExpression {
 
         private CConst constant;
 
@@ -280,34 +292,13 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
-            this.constant = cfile.getConst(args[0]);
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+            this.constant = ((CFileImpl) cfile).getConst(args[0]);
         }
 
         @Override
         public String toString() {
             return constant.toString();
-        }
-
-    }
-
-    public static class DefaultCExpression extends CExpression {
-        @Deprecated
-        String nameaa;
-
-        public DefaultCExpression(IndexedTableNode node) {
-            super(node);
-        }
-
-        @Override
-        public void bindImpl(Integer[] args, String[] tags, CFileImpl cfile) {
-            this.nameaa = tags[0];
-        }
-
-        @Override
-        public String toString() {
-            //XXX: warn to LOG
-            return "-=EXPR " + nameaa + "=-";
         }
 
     }
@@ -330,11 +321,38 @@ public class ExpFactory extends AbstractFactory<CExpression> {
             this.node = null;
         }
 
-        public abstract void bindImpl(Integer[] args, String[] tags, CFileImpl cfile);
+        public abstract void bindImpl(Integer[] args, String[] tags, CFile cfile);
 
     }
 
-    static final Map<String, String> OP_MAP = new ImmutableMap.Builder<String, String>()
+    public static abstract class CExpression extends AbstractCExpression {
+        public CExpression(IndexedTableNode node) {
+            super(node);
+        }
+
+    }
+
+    public static class CExpBase extends CExpression {
+
+        private String name;
+
+        public CExpBase(IndexedTableNode node) {
+            super(node);
+        }
+
+        @Override
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+            this.name = tags[0];
+        }
+
+        @Override
+        public String toString() {
+            return "baseexp:" + name;
+        }
+
+    }
+
+    public static final Map<String, String> OP_MAP = new ImmutableMap.Builder<String, String>()
             .put("div", "%s / %s")
             .put("plusa", "%s + %s")
             .put("pluspi", "%s + %s")
@@ -357,6 +375,11 @@ public class ExpFactory extends AbstractFactory<CExpression> {
             .put("indexpi", "%s[%s]")
             .put("band", "%s & %s")
             .put("land", "%s && %s")
+
+            .build();
+
+    public static final Map<String, String> UN_OP_MAP = new ImmutableMap.Builder<String, String>()
+
             ///
             .put("neg", "-%s")
             .put("bnot", "~%s")
@@ -367,29 +390,35 @@ public class ExpFactory extends AbstractFactory<CExpression> {
     public ExpFactory() {
         super();
 
-        /* 1 */ reg("binop", (node) -> new BinOp(node));
-        /* 2 */ reg("const", (node) -> new Const(node));
-        /* 3 */ reg("caste", (node) -> new CExpCastE(node));
-        /* 4 */ reg("lval", (node) -> new CExpLval(node));
+        reg("const", Const::new);
+        reg("lval", CExpLval::new);
 
-        /* 5 */ reg("addrof", (node) -> new CExpAddrOf(node));
-        /* 6 */ reg("startof", (node) -> new CExpAddrOf(node));
+        reg("sizeof", CExpSizeOf::new);
+        reg("sizeofe", CExpSizeOfE::new);
 
-        /* 7 */ reg("addoflabel", (node) -> new CExpAddrOfLabel(node));
+        reg("sizeofstr", CExpSizeOfStr::new);
 
-        /* 8 */ reg("sizeofe", (node) -> new CExpSizeOfE(node));
-        /* 9 */ reg("sizeofstr", (node) -> new CExpSizeOfStr(node));
+        reg("alignof", CExpAlignOf::new);
+        // alignofe XXX: add
 
-        /* 10 */ reg("cnapp", (node) -> new CExpCnApp(node));
-        /* 11 */ reg("sizeof", (node) -> new CExpSizeOf(node));
-        /* 11 */ reg("unop", (node) -> new CExpUnOp(node));
+        reg("unop", CExpUnOp::new);
+        reg("binop", BinOp::new);
 
-        //        XXX: add more
+        // question XXX: add
+
+        reg("caste", CExpCastE::new);
+        reg("addrof", CExpAddrOf::new);
+        reg("addoflabel", CExpAddrOfLabel::new);
+
+        reg("startof", CExpAddrOf::new);
+
+        reg("fnapp", CExpBase::new);
+        reg("cnapp", CExpCnApp::new);
 
     }
 
     @Override
     public CExpression build(IndexedTableNode node) {
-        return super.buildImpl(node, node.getTagsSplit()[0], new DefaultCExpression(node));
+        return super.buildImpl(node, node.getTagsSplit()[0], new CExpBase(node));
     }
 }

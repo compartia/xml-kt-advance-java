@@ -26,7 +26,7 @@ public class POJsonPrinter {
             this.basedir = an.fs.getBaseDir().getAbsolutePath();
 
             dirs = an.getApps().parallelStream()
-                    .map((x) -> new JApp(x))
+                    .map(JApp::new)
                     .collect(Collectors.toList());
         }
     }
@@ -40,7 +40,7 @@ public class POJsonPrinter {
             this.basedir = app.getBaseDir().getAbsolutePath();
 
             files = app.getCfiles().parallelStream()
-                    .map((x) -> new JFile(x))
+                    .map(JFile::new)
                     .collect(Collectors.toList());
         }
     }
@@ -54,7 +54,7 @@ public class POJsonPrinter {
             this.name = f.getName();
 
             functions = f.getCFunctions().parallelStream()
-                    .map((x) -> new JFunc(x))
+                    .map(JFunc::new)
                     .collect(Collectors.toList());
 
         }
@@ -69,7 +69,7 @@ public class POJsonPrinter {
             this.name = cfunction.getName();
 
             ppos = cfunction.getPPOs().parallelStream()
-                    .map((x) -> Mapper.toPOInfo(x, cfunction))
+                    .map(x -> Mapper.toPOInfo(x, cfunction))
                     .collect(Collectors.toList());
 
             for (final CFunctionCallsiteSPO callsite : cfunction.getCallsites()) {
@@ -81,7 +81,7 @@ public class POJsonPrinter {
         }
     }
 
-    final static String RL = "\n\t\t----> ";
+    static final String RL = "\n\t\t----> ";
 
     public static String toJson(CAnalysisImpl an) {
 

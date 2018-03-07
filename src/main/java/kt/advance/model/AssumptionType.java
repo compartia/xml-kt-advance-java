@@ -28,14 +28,15 @@ import com.kt.advance.xml.model.IndexedTableNode;
 
 import kt.advance.model.PredicatesFactory.CPOPredicate;
 
-//assumption_type_constructors = {
-//    'aa': lambda x:AT.ATApiAssumptionType(*x),
-//    'ua': lambda x:AT.ATUserAssumptionType(*x),
-//    'pc': lambda x:AT.ATPostconditionType(*x)
-//    }
 class AssumptionType extends Indexed {
+
     public enum AssumptionTypeCode {
-        aa, pc, ua
+        /** ATApiAssumptionType */
+        aa,
+        /** ATPostconditionType */
+        pc,
+        /** ATUserAssumptionType */
+        ua
     }
 
     public Integer postRequestIndex;
@@ -69,7 +70,6 @@ class AssumptionType extends Indexed {
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
         return predicate.toString() + " :" + type;
     }
 }
