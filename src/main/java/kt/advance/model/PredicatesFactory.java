@@ -23,6 +23,7 @@
  */
 package kt.advance.model;
 
+import com.google.common.base.Preconditions;
 import com.kt.advance.Util;
 import com.kt.advance.api.Definitions;
 import com.kt.advance.xml.model.IndexedTableNode;
@@ -33,17 +34,17 @@ import kt.advance.model.PredicatesFactory.CPOPredicate;
 
 public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
     public static abstract class CPOPredicate extends Indexed implements Bindable {
-        Integer[] args;
-        String[] tags;
+        private Integer[] args;
+        private String[] tags;
         public final Definitions.PredicateType type;
 
         public CPOPredicate(IndexedTableNode node) {
             super(node);
 
+            args = node.getArguments();
             tags = node.getTagsSplit();
 
             type = Definitions.PredicateType.valueOf("_" + tags[0]);
-            args = node.getArguments();
 
         }
 
@@ -114,8 +115,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
         @Override
         public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
-            this.exp = Util.requireValue(cfile.expressions, args[2], "exp");
-
+            this.exp = cfile.getExression(args[2]);
             this.fromType = cfile.getType(args[0]);
             this.targetType = cfile.getType(args[1]);
         }
@@ -185,7 +185,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
         @Override
         public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
-            this.exp = Util.requireValue(cfile.expressions, args[0], "exp " + Util.bra(this.type.toString()));
+            this.exp = cfile.getExression(args[0]);
         }
     }
 
@@ -266,7 +266,9 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
             if (binop == null) {
                 return ERR_VALUE;
             }
-            final String op = String.format(ExpFactory.OP_MAP.get(binop), exp1,
+            final String string = ExpFactory.OP_MAP.get(binop);
+            Preconditions.checkNotNull(string, "unnkown %s", binop);
+            final String op = String.format(string, exp1,
                 exp2);
             return op + ", ikind:" + kind;
 
