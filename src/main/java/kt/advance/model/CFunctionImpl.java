@@ -24,8 +24,8 @@ import com.kt.advance.xml.model.SpoXml.CallsitesWrapper;
 import com.kt.advance.xml.model.SpoXml.SPOCall;
 
 class CFunctionImpl implements CFunction {
-    public Map<Integer, ApiAssumption> apiAssumptions;
-    public Map<Integer, AssumptionType> assumptionsTypesMap;
+    private Map<Integer, ApiAssumption> apiAssumptions;
+    private Map<Integer, AssumptionType> assumptionsTypesMap;
 
     public AssumptionType getAssumptionType(int typeKey) {
         return requireValue(assumptionsTypesMap, typeKey, "AssumptionType ");
@@ -33,11 +33,11 @@ class CFunctionImpl implements CFunction {
 
     private final List<CFunctionCallsiteSPO> calls = new ArrayList<>();
 
-    public Map<Integer, PPOImpl> ppos = new HashMap<>();
+    private Map<Integer, PPOImpl> ppos = new HashMap<>();
 
-    public Map<Integer, PoTypeRef> ppoTypes;
+    private Map<Integer, PoTypeRef> ppoTypes;
 
-    public Map<Integer, PoTypeRef> spoTypes;
+    private Map<Integer, PoTypeRef> spoTypes;
 
     private final CFileImpl cfile;
     private final String name;

@@ -67,10 +67,10 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
     }
 
     static class _CPOBinOp extends CPOPredicate {
-        public String binop;
-        public CExpression exp1;
-        public CExpression exp2;
-        public CType typ;
+        private String binop;
+        private CExpression exp1;
+        private CExpression exp2;
+        private CType typ;
 
         public _CPOBinOp(IndexedTableNode node) {
             super(node);
@@ -99,8 +99,8 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
     }
 
     static class _CPOCast extends CPOPredicate {
-        public CExpression exp;
-        public CType fromType, targetType;
+        private CExpression exp;
+        private CType fromType, targetType;
 
         public _CPOCast(IndexedTableNode node) {
             super(node);
@@ -123,8 +123,8 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
     }
 
     static class _CPOTwoExpressions extends CPOPredicate {
-        public CExpression exp1;
-        public CExpression exp2;
+        private CExpression exp1;
+        private CExpression exp2;
 
         public _CPOTwoExpressions(IndexedTableNode node) {
             super(node);
@@ -144,9 +144,9 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
     }
 
     static class _CPOTypeAndExp extends CPOPredicate {
-        CType ctype;
+        private CType ctype;
 
-        CExpression exp;
+        private CExpression exp;
 
         public _CPOTypeAndExp(IndexedTableNode node) {
             super(node);
@@ -172,7 +172,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
     }
 
     static class CPOExp0 extends CPOPredicate {
-        public CExpression exp;
+        protected CExpression exp;
 
         public CPOExp0(IndexedTableNode node) {
             super(node);
@@ -193,7 +193,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
     static class CPOInitialized extends CPOPredicate {
 
-        public CLval lvalue;
+        private CLval lvalue;
 
         public CPOInitialized(IndexedTableNode node) {
             super(node);
@@ -215,8 +215,8 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
     }
 
     static class CPOInitializedRange extends CPOPredicate {
-        CExpression exp;
-        CExpression len;
+        private CExpression exp;
+        private CExpression len;
 
         public CPOInitializedRange(IndexedTableNode node) {
             super(node);
@@ -237,8 +237,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
         @Override
         public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
-            // def get_exp(self): return self.cd.dictionary.get_exp(self.args[0])
-            // def get_length(self): return self.cd.dictionary.get_exp(self.args[1])
+
             this.exp = cfile.getExression(args[0]);
             this.len = cfile.getExression(args[1]);
 
@@ -247,9 +246,9 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
     }
 
     static class CPOIntOverflow extends CPOPredicate {
-        CExpression exp1, exp2;
+        private CExpression exp1, exp2;
 
-        String kind, binop;
+        private String kind, binop;
 
         public CPOIntOverflow(IndexedTableNode node) {
             super(node);
@@ -257,11 +256,6 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
         @Override
         public String express() {
-            //            def __str__(self):
-            //                return (self.get_tag() + '(' + str(self.get_exp1())
-            //                        + ',' + str(self.get_exp2())
-            //                        + ',op:' + self.get_binop()
-            //                        + ',ikind:' + self.get_ikind() + ')')
 
             if (binop == null) {
                 return ERR_VALUE;
@@ -276,13 +270,6 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
         @Override
         public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
-            //        def get_binop(self): return self.tags[1]
-            //
-            //                def get_ikind(self): return self.tags[2]
-            //
-            //                def get_exp1(self): return self.cd.dictionary.get_exp(self.args[0])
-            //
-            //                def get_exp2(self): return self.cd.dictionary.get_exp(self.args[1])
 
             this.binop = tags[1];
             this.kind = tags[2];
@@ -342,8 +329,8 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
     }
 
     static class CPOUnsignedToSignedCast extends CPOPredicate {
-        public CExpression exp;
-        String fromKind, targetKind;
+        private CExpression exp;
+        private String fromKind, targetKind;
 
         public CPOUnsignedToSignedCast(IndexedTableNode node) {
             super(node);
@@ -378,8 +365,8 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
     }
 
     static class CPOWidthOverflow extends CPOPredicate {
-        public CExpression exp;
-        public String kind;
+        private CExpression exp;
+        private String kind;
 
         public CPOWidthOverflow(IndexedTableNode node) {
             super(node);
