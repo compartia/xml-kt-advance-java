@@ -103,12 +103,6 @@ public class PredicatesFactoryTest {
             prd.bind(cfile);
             assertNotNull(prd.express());
 
-            //            assertNotNull(type, prd.toString());
-            //            assertNotNull(type, prd.type);
-            //            assertNotNull(type, prd.express());
-            //            assertEquals(node.index, prd.id);
-            //            assertEquals(pt, prd.type);
-
         }
     }
 

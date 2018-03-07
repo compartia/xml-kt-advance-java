@@ -180,7 +180,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
         @Override
         public String express() {
-            return "!!!!!!!!" + exp;
+            return "predicate:" + exp;
         }
 
         @Override
