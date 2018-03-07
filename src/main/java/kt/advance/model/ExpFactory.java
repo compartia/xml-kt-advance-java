@@ -160,7 +160,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
     public static class CExpLval extends CExpression {
 
-        CLval lvalue;
+        private CLval lvalue;
 
         public CExpLval(IndexedTableNode node) {
             super(node);
@@ -174,19 +174,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
         @Override
         public String toString() {
-            if (lvalue == null) {
-                return ERR_VALUE;
-            }
             return lvalue.toString();
-        }
-
-    }
-
-    public static abstract class CExpression extends AbstractCExpression {
-
-        public CExpression(IndexedTableNode node) {
-            super(node);
-
         }
 
     }
@@ -248,6 +236,24 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
     }
 
+    static class CExpAlignOf extends CExpression {
+        public CType type;
+
+        public CExpAlignOf(IndexedTableNode node) {
+            super(node);
+        }
+
+        @Override
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+            this.type = cfile.getType(args[0]);
+        }
+
+        @Override
+        public String toString() {
+            return Util.call("alignof", type);
+        }
+    }
+
     public static class CExpUnOp extends CExpression {
         public CType ctype;
         public CExpression exp;
@@ -300,28 +306,8 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
     }
 
+    @Deprecated
     private static final String ERR_VALUE = "-=ERR:NULL=-";
-
-    public static class DefaultCExpression extends CExpression {
-        @Deprecated
-        String nameaa;
-
-        public DefaultCExpression(IndexedTableNode node) {
-            super(node);
-        }
-
-        @Override
-        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
-            this.nameaa = tags[0];
-        }
-
-        @Override
-        public String toString() {
-            //XXX: warn to LOG
-            return "-=EXPR " + nameaa + "=-";
-        }
-
-    }
 
     static abstract class AbstractCExpression extends Indexed implements Bindable {
         private IndexedTableNode node;
@@ -342,6 +328,33 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
 
         public abstract void bindImpl(Integer[] args, String[] tags, CFile cfile);
+
+    }
+
+    public static abstract class CExpression extends AbstractCExpression {
+        public CExpression(IndexedTableNode node) {
+            super(node);
+        }
+
+    }
+
+    public static class CExpBase extends CExpression {
+
+        private String name;
+
+        public CExpBase(IndexedTableNode node) {
+            super(node);
+        }
+
+        @Override
+        public void bindImpl(Integer[] args, String[] tags, CFile cfile) {
+            this.name = tags[0];
+        }
+
+        @Override
+        public String toString() {
+            return "baseexp:" + name;
+        }
 
     }
 
@@ -383,29 +396,35 @@ public class ExpFactory extends AbstractFactory<CExpression> {
     public ExpFactory() {
         super();
 
-        /* 1 */ reg("binop", BinOp::new);
-        /* 2 */ reg("const", Const::new);
-        /* 3 */ reg("caste", CExpCastE::new);
-        /* 4 */ reg("lval", CExpLval::new);
+        reg("const", Const::new);
+        reg("lval", CExpLval::new);
 
-        /* 5 */ reg("addrof", CExpAddrOf::new);
-        /* 6 */ reg("startof", CExpAddrOf::new);
+        reg("sizeof", CExpSizeOf::new);
+        reg("sizeofe", CExpSizeOfE::new);
 
-        /* 7 */ reg("addoflabel", CExpAddrOfLabel::new);
+        reg("sizeofstr", CExpSizeOfStr::new);
 
-        /* 8 */ reg("sizeofe", CExpSizeOfE::new);
-        /* 9 */ reg("sizeofstr", CExpSizeOfStr::new);
+        reg("alignof", CExpAlignOf::new);
+        // alignofe XXX: add
 
-        /* 10 */ reg("cnapp", CExpCnApp::new);
-        /* 11 */ reg("sizeof", CExpSizeOf::new);
-        /* 11 */ reg("unop", CExpUnOp::new);
+        reg("unop", CExpUnOp::new);
+        reg("binop", BinOp::new);
 
-        //        XXX: add more
+        // question XXX: add
+
+        reg("caste", CExpCastE::new);
+        reg("addrof", CExpAddrOf::new);
+        reg("addoflabel", CExpAddrOfLabel::new);
+
+        reg("startof", CExpAddrOf::new);
+
+        reg("fnapp", CExpBase::new);
+        reg("cnapp", CExpCnApp::new);
 
     }
 
     @Override
     public CExpression build(IndexedTableNode node) {
-        return super.buildImpl(node, node.getTagsSplit()[0], new DefaultCExpression(node));
+        return super.buildImpl(node, node.getTagsSplit()[0], new CExpBase(node));
     }
 }
