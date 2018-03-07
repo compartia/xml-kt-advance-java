@@ -133,7 +133,7 @@ public class CApplicationImpl implements CApplication {
     @Override
     public void read() {
 
-        LOG.info("reading " + fs.getBaseDir());
+        LOG.info("reading APP DIR: " + fs.getBaseDir());
 
         readAllCfileXmls(fs.listXMLs(FsAbstraction.CFILE_SUFFIX));
 

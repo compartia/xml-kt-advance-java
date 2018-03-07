@@ -19,6 +19,7 @@ import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
 import com.kt.advance.api.CFunctionCallsiteSPO;
 import com.kt.advance.api.FsAbstraction;
+import com.kt.advance.api.PO;
 import com.kt.advance.api.SPO;
 import com.kt.advance.xml.model.FsAbstractionImpl;
 
@@ -86,11 +87,7 @@ public class ReadTest {
 
                         ppo -> {
                             stats.inc("total", "PPO", 1);
-                            assertNotNull(ppo.getLocation());
-                            if (ppo.getLocation().getFilename().endsWith(".c")) {
-                                assertNotNull(ppo.getLocation().getFilename(), ppo.getLocation().getCfile());
-                                assertNotNull(ppo.getLocation().getCfile().getName());
-                            }
+                            checkPO(ppo);
 
                             stats.inc(ppo.getLocation().getFilename(), "PPO", 1);
 
@@ -103,6 +100,9 @@ public class ReadTest {
                         // Iterate SPOs
                         callsite.getSpos().stream()
                                 .forEach(spo -> {
+
+                                    checkPO(spo);
+
                                     stats.inc("total", "SPO", 1);
                                     stats.inc(spo.getLocation().getFilename(), "SPO", 1);
 
@@ -118,6 +118,21 @@ public class ReadTest {
 
         System.out.println(stats.toTsv());
         return stats;
+    }
+
+    private void checkPO(PO ppo) {
+        assertNotNull(ppo.toString());
+        assertNotNull(ppo.getLevel());
+        assertNotNull(ppo.getPredicate());
+        assertNotNull(ppo.getStatus());
+        assertNotNull(ppo.getId());
+        assertNotNull(ppo.getType());
+
+        assertNotNull(ppo.getLocation());
+        if (ppo.getLocation().getFilename().endsWith(".c")) {
+            assertNotNull(ppo.getLocation().getFilename(), ppo.getLocation().getCfile());
+            assertNotNull(ppo.getLocation().getCfile().getName());
+        }
     }
 
     private void validateCFiles(final CAnalysis cAnalysis) {
