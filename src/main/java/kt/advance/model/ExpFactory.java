@@ -37,10 +37,10 @@ import kt.advance.model.ExpFactory.CExpression;
 
 public class ExpFactory extends AbstractFactory<CExpression> {
 
-    public static class BinOp extends CExpression {
-        public String binop;
+    static class BinOp extends CExpression {
+        private String binop;
 
-        public CExpression exp1, exp2;
+        private CExpression exp1, exp2;
 
         public BinOp(IndexedTableNode node) {
             super(node);
@@ -63,15 +63,14 @@ public class ExpFactory extends AbstractFactory<CExpression> {
                 return String.format(ExpFactory.OP_MAP.get(binop), exp1, exp2);
             } else {
                 return String.format("UNKNOWN(%s,%s)", exp1, exp2);
-                //                throw new IllegalArgumentException("unkown binop " + binop);
             }
 
         }
     }
 
-    public static class CExpAddrOf extends CExpression {
+    static class CExpAddrOf extends CExpression {
 
-        CLval lvalue;
+        private CLval lvalue;
 
         public CExpAddrOf(IndexedTableNode node) {
             super(node);
@@ -88,9 +87,9 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
     }
 
-    public static class CExpAddrOfLabel extends CExpression {
+    static class CExpAddrOfLabel extends CExpression {
 
-        CLval lvalue;
+        private CLval lvalue;
 
         public CExpAddrOfLabel(IndexedTableNode node) {
             super(node);
@@ -108,9 +107,9 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
     }
 
-    public static class CExpCastE extends CExpression {
-        public CExpression exp;
-        public CType type;
+    static class CExpCastE extends CExpression {
+        private CExpression exp;
+        private CType type;
 
         public CExpCastE(IndexedTableNode node) {
             super(node);
@@ -131,10 +130,11 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
     }
 
-    public static class CExpCnApp extends CExpression {
-        CType ctype;
-        CExpression[] exps;
-        String name;
+    static class CExpCnApp extends CExpression {
+        @SuppressWarnings("unused")
+        private CType ctype;
+        private CExpression[] exps;
+        private String name;
 
         public CExpCnApp(IndexedTableNode node) {
             super(node);
@@ -158,7 +158,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
     }
 
-    public static class CExpLval extends CExpression {
+    static class CExpLval extends CExpression {
 
         private CLval lvalue;
 
@@ -179,8 +179,8 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
     }
 
-    public static class CExpSizeOf extends CExpression {
-        public CType ctype;
+    static class CExpSizeOf extends CExpression {
+        private CType ctype;
 
         public CExpSizeOf(IndexedTableNode node) {
             super(node);
@@ -198,8 +198,8 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
     }
 
-    public static class CExpSizeOfE extends CExpression {
-        public CExpression exp;
+    static class CExpSizeOfE extends CExpression {
+        private CExpression exp;
 
         public CExpSizeOfE(IndexedTableNode node) {
             super(node);
@@ -217,8 +217,8 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
     }
 
-    public static class CExpSizeOfStr extends CExpression {
-        public CExpression exp;
+    static class CExpSizeOfStr extends CExpression {
+        private CExpression exp;
 
         public CExpSizeOfStr(IndexedTableNode node) {
             super(node);
@@ -237,7 +237,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
     }
 
     static class CExpAlignOf extends CExpression {
-        public CType type;
+        private CType type;
 
         public CExpAlignOf(IndexedTableNode node) {
             super(node);
@@ -254,10 +254,11 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         }
     }
 
-    public static class CExpUnOp extends CExpression {
-        public CType ctype;
-        public CExpression exp;
-        public String op;
+    static class CExpUnOp extends CExpression {
+        @SuppressWarnings("unused")
+        private CType ctype;
+        private CExpression exp;
+        private String op;
 
         public CExpUnOp(IndexedTableNode node) {
             super(node);
@@ -277,13 +278,12 @@ public class ExpFactory extends AbstractFactory<CExpression> {
                 return String.format(ExpFactory.UN_OP_MAP.get(op), exp);
             } else {
                 return String.format("UNKNOWN(%s)", exp);
-                //                throw new IllegalArgumentException("unkown binop " + op);
             }
         }
 
     }
 
-    public static class Const extends CExpression {
+    static class Const extends CExpression {
 
         private CConst constant;
 
@@ -298,16 +298,10 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
         @Override
         public String toString() {
-            if (constant == null) {
-                return ERR_VALUE;
-            }
             return constant.toString();
         }
 
     }
-
-    @Deprecated
-    private static final String ERR_VALUE = "-=ERR:NULL=-";
 
     static abstract class AbstractCExpression extends Indexed implements Bindable {
         private IndexedTableNode node;
