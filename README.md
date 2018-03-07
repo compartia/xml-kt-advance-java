@@ -6,6 +6,9 @@
 [![Quality gate](https://sonarcloud.io/api/project_badges/measure?project=kt.advance%3Akt-advance-xml&metric=alert_status)](https://sonarcloud.io/dashboard?id=kt.advance%3Akt-advance-xml)
 
 
+[![](https://jitpack.io/v/compartia/xml-kt-advance-java.svg)](https://jitpack.io/#compartia/xml-kt-advance-java)
+
+
 ### Usage
 
 ```java
