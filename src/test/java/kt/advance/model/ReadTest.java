@@ -1,6 +1,7 @@
 package kt.advance.model;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
@@ -32,6 +33,7 @@ public class ReadTest {
 
         final ClassLoader classLoader = getClass().getClassLoader();
 
+        //        final File basedir = new File("/Users/artem/work/KestrelTechnology/IN/naim-0.11.8.3.1");
         final File basedir = new File(classLoader.getResource("xmls/p1").getFile());
 
         //Create a  file system abstraction
@@ -84,7 +86,13 @@ public class ReadTest {
 
                         ppo -> {
                             stats.inc("total", "PPO", 1);
-                            stats.inc(ppo.getLocation().getCfile().getName(), "PPO", 1);
+                            assertNotNull(ppo.getLocation());
+                            if (ppo.getLocation().getFilename().endsWith(".c")) {
+                                assertNotNull(ppo.getLocation().getFilename(), ppo.getLocation().getCfile());
+                                assertNotNull(ppo.getLocation().getCfile().getName());
+                            }
+
+                            stats.inc(ppo.getLocation().getFilename(), "PPO", 1);
 
                             //iterate over associated SPOs
                             final Set<SPO> associatedSpos = ppo.getAssociatedSpos(function);
@@ -96,7 +104,7 @@ public class ReadTest {
                         callsite.getSpos().stream()
                                 .forEach(spo -> {
                                     stats.inc("total", "SPO", 1);
-                                    stats.inc(spo.getLocation().getCfile().getName(), "SPO", 1);
+                                    stats.inc(spo.getLocation().getFilename(), "SPO", 1);
 
                                     /* do smth */});
                     }

@@ -61,7 +61,7 @@ public class CAnalysisImpl implements CAnalysis {
                 })
                 .collect(Collectors.toSet());
 
-        getApps().parallelStream().forEach(x -> x.read());
+        getApps().stream().forEach(x -> x.read());
 
     }
 

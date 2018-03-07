@@ -23,7 +23,11 @@
  */
 package com.kt.advance.xml.model;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public abstract class FileLevelAnalysisXml extends AnalysisXml {
+    static final Logger LOG = LoggerFactory.getLogger(FileLevelAnalysisXml.class.getName());
 
     @Override
     public String getSourceFilename() {
@@ -35,10 +39,12 @@ public abstract class FileLevelAnalysisXml extends AnalysisXml {
 
     @Deprecated
     private String fetchNameFromOldHeader() {
+
         final String relativeOrigin = this.getRelativeOrigin();
+
         final Integer id = relativeOrigin.lastIndexOf("_");
         final String name = relativeOrigin.substring(0, id);
-
+        LOG.warn("no header.application.file in " + relativeOrigin + ", subst. with " + name);
         return name + ".c";
 
     }

@@ -108,12 +108,7 @@ public class CApplicationImpl implements CApplication {
     }
 
     CFileImpl getCFileOrMakeNew(String name) {
-        CFileImpl f = cfiles.get(name);
-        if (f == null) {
-            f = new CFileImpl(name, this);
-            cfiles.put(name, f);
-        }
-        return f;
+        return cfiles.computeIfAbsent(name, n -> new CFileImpl(name, this));
     }
 
     @Override
@@ -122,12 +117,12 @@ public class CApplicationImpl implements CApplication {
     }
 
     public CFunction getCFunctionStrictly(FunctionLevelAnalysisXml f) {
-        final CFile cfile = getCFileOrMakeNew(f.getSourceFilename());
+        final CFile cfile = getCFileStrictly(f.getSourceFilename());
         return cfile.getCFunctionStrictly(f.getFunctionName());
     }
 
     CFunctionImpl getCFunctionImpl(FunctionLevelAnalysisXml f) {
-        final CFileImpl cfile = getCFileOrMakeNew(f.getSourceFilename());
+        final CFileImpl cfile = getCFileStrictly(f.getSourceFilename());
         return cfile.getCFunctionImpl(f.getFunctionName());
     }
 
@@ -203,10 +198,10 @@ public class CApplicationImpl implements CApplication {
         final XMLFileType<CfileXml> reader = XMLFileType.getReader(CfileXml.class);
 
         cdictFiles.parallelStream()
-                .map((file) -> reader.readXml(file, fs.getBaseDir()))
+                .map(file -> reader.readXml(file, fs.getBaseDir()))
                 .sequential()
                 .forEach(
-                    (xmlObj) -> runInHandler(() -> {
+                    xmlObj -> runInHandler(() -> {
                         final CFileImpl cfile = getCFileOrMakeNew(xmlObj.getSourceFilename());
                         cfile.readCFileXml(xmlObj);
                     }, xmlObj)
@@ -225,7 +220,7 @@ public class CApplicationImpl implements CApplication {
                 .map((file) -> reader.readXml(file, fs.getBaseDir()))
                 .sequential()
                 .forEach(
-                    (xmlObj) -> runInHandler(() -> {
+                    xmlObj -> runInHandler(() -> {
                         final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
                         cfile.readCDictFile(xmlObj, predicatesFactory.expressionsFactory);
                     }, xmlObj)

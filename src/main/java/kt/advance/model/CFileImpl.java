@@ -55,9 +55,6 @@ class CFileImpl implements CFile {
 
     Map<Integer, CFunArg> funArg;
     Map<Integer, CFunArgs> funArgs;
-    //
-    //    Map<Integer, GCompTagDecl> globalComptagDefinitions;
-    //    Map<Integer, GCompTagDecl> globalComptagDeclarations;
 
     Map<Integer, CCompInfo> globalComptagDefinitions;
     Map<Integer, CCompInfo> globalComptagDeclarations;
@@ -88,7 +85,12 @@ class CFileImpl implements CFile {
 
     }
 
-    final CApplication application;
+    private final CApplication application;
+
+    @Override
+    public CApplication getApplication() {
+        return application;
+    }
 
     public CFileImpl(String name, CApplication host) {
         this.name = name;
@@ -225,9 +227,9 @@ class CFileImpl implements CFile {
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         offsets = cdict.cfile.cDictionary.offsets
-                .parallelStream()
+                .stream()
                 .map(COffset::new)
-                .collect(Collectors.toConcurrentMap(node -> node.id, node -> node));
+                .collect(Collectors.toMap(node -> node.id, node -> node));
 
         lvalues = cdict.cfile.cDictionary.lvals
                 .stream()
@@ -236,18 +238,18 @@ class CFileImpl implements CFile {
 
         strings = cdict.cfile.cDictionary.strings
                 .stream()
-                .map(node -> new CString(node))
+                .map(CString::new)
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         constants = cdict.cfile.cDictionary.constants
-                .parallelStream()
+                .stream()
                 .map(node -> new CConst(node, this))
-                .collect(Collectors.toConcurrentMap(node -> node.id, node -> node));
+                .collect(Collectors.toMap(node -> node.id, node -> node));
 
         expressions = cdict.cfile.cDictionary.expressions
-                .parallelStream()
+                .stream()
                 .map(node -> ef.build(node))
-                .collect(Collectors.toConcurrentMap(node -> node.id, node -> node));
+                .collect(Collectors.toMap(node -> node.id, node -> node));
 
         lhosts = cdict.cfile.cDictionary.lhosts
                 .stream()
