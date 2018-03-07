@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:54">
+   <application file="common/statusdata.c"/>
+  </header>
+  <function fname="cleanup_status_data">
+   <api>
+    <api-assumptions/>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="xsddefault_cleanup_status_data" h="xsddefault"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="xsddefault/xsddefault_cleanup_status_data"/>
+    </missing-summaries>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:29:20">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="grab_on_demand_service_macro">
+   <api xlst="123,154">
+    <api-assumptions>
+     <aa ipr="1863" ppos="1102,20"/>
+     <aa ipr="1864" ppos="467,1104,1401,1379,1357,1012,1240,458,22,1058,1195,1508,1527,966,1560,1285,1450,874,1484,920,1150,829,1330,1541" spos="15"/>
+     <aa ipr="2079" ppos="456" spos="14"/>
+     <aa ipr="2083" ppos="465" spos="13"/>
+     <aa ipr="2230" ppos="827"/>
+     <aa ipr="2245" ppos="872"/>
+     <aa ipr="2260" ppos="917"/>
+     <aa ipr="2261" ppos="918"/>
+     <aa ipr="2275" ppos="963"/>
+     <aa ipr="2276" ppos="964"/>
+     <aa ipr="2284" ppos="1009"/>
+     <aa ipr="2285" ppos="1010"/>
+     <aa ipr="2293" ppos="1055"/>
+     <aa ipr="2294" ppos="1056"/>
+     <aa ipr="2302" ppos="1101"/>
+     <aa ipr="2310" ppos="1147"/>
+     <aa ipr="2311" ppos="1148"/>
+     <aa ipr="2320" ppos="1193"/>
+     <aa ipr="2334" ppos="1238"/>
+     <aa ipr="2342" ppos="1283"/>
+     <aa ipr="2351" ppos="1328,1355,1399,1377"/>
+     <aa ipr="2410" ppos="1448"/>
+     <aa ipr="2428" ppos="1482"/>
+     <aa ipr="2441" ppos="1525,1506"/>
+     <aa ipr="2451" ppos="1558,1539"/>
+     <aa ipr="8029" ppos="86,154,69,341,358,137,542,426,324,256,273,52,120,205,290,443,479,409,171,307,103,239,375,605,222,392,188"/>
+     <aa ipr="8030" ppos="1553"/>
+     <aa ipr="8031" ppos="1520"/>
+     <aa ipr="8391" spos="18,11"/>
+     <aa ipr="8392" spos="19,12"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="time" h="time"/>
+     <lc c="1" f="find_serviceextinfo" h="objects"/>
+     <lc c="17" f="malloc" h="stdlib"/>
+     <lc c="27" f="strcmp" h="string"/>
+     <lc c="14" f="snprintf" h="stdio"/>
+     <lc c="1" f="is_service_member_of_servicegroup" h="objects"/>
+     <lc c="6" f="strcpy" h="string"/>
+     <lc c="9" f="strdup" h="string"/>
+     <lc c="2" f="free" h="stdlib"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="objects/find_serviceextinfo"/>
+     <ms n="objects/is_service_member_of_servicegroup"/>
+    </missing-summaries>
+    <unevaluated>
+     <uu po-id="2208"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

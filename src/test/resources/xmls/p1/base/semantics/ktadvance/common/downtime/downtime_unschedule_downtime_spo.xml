@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:03">
+   <application file="common/downtime.c"/>
+  </header>
+  <function fname="unschedule_downtime">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="487,491" ictxt="1005" iloc="445" ivinfo="31">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="481" ictxt="1127" iloc="477" ivinfo="8">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="481" ictxt="1125" iloc="476" ivinfo="9">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="338,2,505,485,487,491,506,507,508,509,510,495,511,512,513,104" ictxt="1033" iloc="454" ivinfo="47">
+       <api-conditions>
+        <api-c iapi="1130">
+         <po deps="s" id="9" ispo="9" s="g">
+          <e txt="null pointer cannot be dereferenced, and hence target cannot be initialized (acceptability of null is checked separately)"/>
+         </po>
+        </api-c>
+        <api-c iapi="1131">
+         <po deps="s" id="10" ispo="10" s="r">
+          <e txt="expression is a null pointer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="31,513" ictxt="1137" iloc="480" ivinfo="20">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="488,2" ictxt="1068" iloc="456" ivinfo="35">
+       <api-conditions/>
+       <post-guarantees>
+        <pg iipc="3"/>
+       </post-guarantees>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="492,2" ictxt="1087" iloc="462" ivinfo="36">
+       <api-conditions/>
+       <post-guarantees>
+        <pg iipc="3"/>
+       </post-guarantees>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="517,365" ictxt="1101" iloc="465" ivinfo="45">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="517,365" ictxt="1080" iloc="459" ivinfo="45">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="533,543" ictxt="1120" iloc="474" ivinfo="44">
+       <api-conditions>
+        <api-c iapi="1301">
+         <po id="6" ispo="6"/>
+        </api-c>
+        <api-c iapi="1113">
+         <po deps="s" id="2" ispo="2" s="g">
+          <e txt="event_list_high is global"/>
+         </po>
+        </api-c>
+        <api-c iapi="1300">
+         <po id="5" ispo="5"/>
+        </api-c>
+        <api-c iapi="1302">
+         <po id="7" ispo="7"/>
+        </api-c>
+        <api-c iapi="1303">
+         <po id="8" ispo="8"/>
+        </api-c>
+        <api-c iapi="1120">
+         <po id="1" ispo="1"/>
+        </api-c>
+        <api-c iapi="1121">
+         <po id="4" ispo="4">
+          <d>
+           <invs>
+            <arg a="1" i="288"/>
+           </invs>
+           <msgs/>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="1115">
+         <po deps="s" id="3" ispo="3" s="g">
+          <e txt="address of variable event_list_high"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="480,481" ictxt="987" iloc="439" ivinfo="4">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="487" ictxt="997" iloc="442" ivinfo="30">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="1146" iexp="2" iloc="486">
+      <postconditions/>
+     </rs>
+     <rs ictxt="1014" iexp="46" iloc="446">
+      <postconditions/>
+     </rs>
+     <rs ictxt="1004" iexp="46" iloc="443">
+      <postconditions/>
+     </rs>
+     <rs ictxt="994" iexp="46" iloc="440">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

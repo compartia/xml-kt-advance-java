@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="common/downtime" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:56"/>
+  </header>
+  <function filename="common/downtime">
+   <svar ivinfo="12"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="9310,11,1,0,0,191,0,1" ix="1" t="host_name,n"/>
+     <n a="9311,12,1,0,0,192,0,2" ix="2" t="entry_time,n"/>
+     <n a="9312,11,1,0,0,193,0,3" ix="3" t="author,n"/>
+     <n a="9313,11,1,0,0,194,0,4" ix="4" t="comment_data,n"/>
+     <n a="9314,12,1,0,0,195,0,5" ix="5" t="start_time,n"/>
+     <n a="9315,12,1,0,0,196,0,6" ix="6" t="end_time,n"/>
+     <n a="9316,5,1,0,0,197,0,7" ix="7" t="fixed,n"/>
+     <n a="9317,7,1,0,0,198,0,8" ix="8" t="triggered_by,n"/>
+     <n a="9318,7,1,0,0,199,0,9" ix="9" t="duration,n"/>
+     <n a="9319,24,1,0,0,200,0,10" ix="10" t="downtime_id,n"/>
+     <n a="9320,5,1,0,0,201,0,0" ix="11" t="result,n"/>
+     <n a="9321,7,1,0,0,202,1,0" ix="12" t="new_downtime_id,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="247">
+      <skind iexp="194" iloc="204" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="248">
+          <skind iexp="46" iloc="203" stag="return"/>
+          <succs/>
+          <preds r="247"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="248,249"/>
+      <preds/>
+     </stmt>
+     <stmt sid="249">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="195" iloc="205" ilval="141" itag="call">
+         <args>
+          <exp iexp="192"/>
+          <exp iexp="196"/>
+          <exp iexp="197"/>
+          <exp iexp="198"/>
+          <exp iexp="199"/>
+          <exp iexp="200"/>
+          <exp iexp="201"/>
+          <exp iexp="202"/>
+          <exp iexp="203"/>
+          <exp iexp="204"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="250"/>
+      <preds r="247"/>
+     </stmt>
+     <stmt sid="250">
+      <skind iexp="207" iloc="207" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="251">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="208" iloc="206" ilval="143" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="252"/>
+          <preds r="250"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="251,252"/>
+      <preds r="249"/>
+     </stmt>
+     <stmt sid="252">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="102" iloc="208" itag="call">
+         <args>
+          <exp iexp="190"/>
+          <exp iexp="2"/>
+          <exp iexp="2"/>
+          <exp iexp="25"/>
+          <exp iexp="192"/>
+          <exp iexp="73"/>
+          <exp iexp="196"/>
+          <exp iexp="197"/>
+          <exp iexp="198"/>
+          <exp iexp="199"/>
+          <exp iexp="200"/>
+          <exp iexp="201"/>
+          <exp iexp="202"/>
+          <exp iexp="203"/>
+          <exp iexp="208"/>
+          <exp iexp="104"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="253"/>
+      <preds r="251,250"/>
+     </stmt>
+     <stmt sid="253">
+      <skind iexp="209" iloc="209" stag="return"/>
+      <succs/>
+      <preds r="252"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

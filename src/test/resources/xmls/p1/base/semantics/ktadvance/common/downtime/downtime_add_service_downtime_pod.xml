@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:41:51">
+   <application file="common/downtime.c"/>
+  </header>
+  <function fname="add_service_downtime">
+   <assumption-table>
+    <n a="997" ix="1" t="aa"/>
+    <n a="995" ix="2" t="aa"/>
+    <n a="994" ix="3" t="aa"/>
+    <n a="996" ix="4" t="aa"/>
+   </assumption-table>
+   <ppo-type-table>
+    <n a="110,46,42" ix="1" t="p"/>
+    <n a="110,46,43" ix="2" t="p"/>
+    <n a="110,46,44" ix="3" t="p"/>
+    <n a="110,46,45" ix="4" t="p"/>
+    <n a="110,47,46" ix="5" t="p"/>
+    <n a="110,47,47" ix="6" t="p"/>
+    <n a="110,47,48" ix="7" t="p"/>
+    <n a="110,47,49" ix="8" t="p"/>
+    <n a="110,48,50" ix="9" t="p"/>
+    <n a="110,49,51" ix="10" t="p"/>
+    <n a="110,49,52" ix="11" t="p"/>
+    <n a="110,49,53" ix="12" t="p"/>
+    <n a="110,49,54" ix="13" t="p"/>
+    <n a="110,50,55" ix="14" t="p"/>
+    <n a="110,50,56" ix="15" t="p"/>
+    <n a="110,50,57" ix="16" t="p"/>
+    <n a="110,50,58" ix="17" t="p"/>
+    <n a="110,51,59" ix="18" t="p"/>
+    <n a="110,52,60" ix="19" t="p"/>
+    <n a="110,53,61" ix="20" t="p"/>
+    <n a="110,54,62" ix="21" t="p"/>
+    <n a="110,55,63" ix="22" t="p"/>
+    <n a="110,56,64" ix="23" t="p"/>
+    <n a="111,57,65" ix="24" t="p"/>
+   </ppo-type-table>
+   <spo-type-table>
+    <n a="110,45,994,992" ix="1" t="cs"/>
+    <n a="110,45,995,989" ix="2" t="cs"/>
+    <n a="110,45,996,990" ix="3" t="cs"/>
+    <n a="110,45,997,991" ix="4" t="cs"/>
+   </spo-type-table>
+  </function>
+ </c-analysis>

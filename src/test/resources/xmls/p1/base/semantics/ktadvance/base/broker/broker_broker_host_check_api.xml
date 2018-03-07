@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:11:42">
+   <application file="base/broker.c"/>
+  </header>
+  <function fname="broker_host_check">
+   <api>
+    <api-assumptions>
+     <aa ipr="238" ppos="66"/>
+     <aa ipr="239" ppos="85,68,79"/>
+     <aa ipr="248" ppos="77"/>
+     <aa ipr="249" ppos="83"/>
+     <aa ipr="1072" ppos="16"/>
+     <aa ipr="1144" spos="1"/>
+     <aa ipr="1145" spos="2"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="2" f="strtok" h="string"/>
+     <lc c="1" f="neb_make_callbacks" h="nebmods"/>
+     <lc c="1" f="strdup" h="string"/>
+     <lc c="1" f="free" h="stdlib"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="nebmods/neb_make_callbacks"/>
+    </missing-summaries>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

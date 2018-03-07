@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:02">
+   <application file="common/downtime.c"/>
+  </header>
+  <function fname="find_downtime">
+   <ppos>
+    <ppo id="22" ippo="22">
+     <d>
+      <invs>
+       <arg a="1" i="15"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="18" ippo="18">
+     <d>
+      <invs>
+       <arg a="2" i="18"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="19" ippo="19">
+     <d>
+      <invs>
+       <arg a="2" i="18"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="32" ippo="32" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+    <ppo id="17" ippo="17">
+     <d>
+      <invs>
+       <arg a="1" i="18"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="scheduled_downtime_list is global"/>
+    </ppo>
+    <ppo id="28" ippo="28">
+     <d>
+      <invs>
+       <arg a="1" i="17"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="23" ippo="23"/>
+    <ppo id="25" ippo="25">
+     <d>
+      <invs>
+       <arg a="2" i="15"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="3" invs="16" ippo="3" s="g" ts="2018-01-09 16:01:59">
+     <e txt="assignedAt#963(globalscheduled_downtime_list9170)_xx_assignedAt#963(fieldnext172)"/>
+    </ppo>
+    <ppo id="30" ippo="30">
+     <d>
+      <invs>
+       <arg a="2" i="17"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="16" ippo="16">
+     <d>
+      <invs>
+       <arg a="1" i="18"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="24" ippo="24">
+     <d>
+      <invs>
+       <arg a="2" i="15"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="14" ippo="14"/>
+    <ppo deps="f" id="21" invs="15" ippo="21" s="g" ts="2018-01-09 16:01:59">
+     <e txt="assignedAt#963(globalscheduled_downtime_list9170)_xx_assignedAt#963(fieldnext172)"/>
+    </ppo>
+    <ppo deps="s" id="33" ippo="33" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="37" ippo="37" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="36" ippo="36" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="type is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="15" invs="18" ippo="15" s="g" ts="2018-01-09 16:01:59">
+     <e txt="assignedAt#963(globalscheduled_downtime_list9170)_xx_assignedAt#963(fieldnext172)"/>
+    </ppo>
+    <ppo deps="f" id="27" invs="17" ippo="27" s="g" ts="2018-01-09 16:01:59">
+     <e txt="assignedAt#963(globalscheduled_downtime_list9170)_xx_assignedAt#963(fieldnext172)"/>
+    </ppo>
+    <ppo id="10" ippo="10">
+     <d>
+      <invs>
+       <arg a="1" i="14"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="26" ippo="26"/>
+    <ppo id="11" ippo="11">
+     <d>
+      <invs>
+       <arg a="2" i="14"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="9" ippo="9">
+     <d>
+      <invs>
+       <arg a="1" i="14"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="31" ippo="31">
+     <d>
+      <invs>
+       <arg a="2" i="17"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="12" ippo="12">
+     <d>
+      <invs>
+       <arg a="2" i="14"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="13" ippo="13" s="g">
+     <e txt="type is a function parameter"/>
+    </ppo>
+    <ppo id="7" ippo="7"/>
+    <ppo deps="s" id="34" ippo="34" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="f" id="8" invs="14" ippo="8" s="g" ts="2018-01-09 16:01:59">
+     <e txt="assignedAt#963(globalscheduled_downtime_list9170)_xx_assignedAt#963(fieldnext172)"/>
+    </ppo>
+    <ppo deps="s" id="35" ippo="35" s="g">
+     <e txt="null pointer is a non-local address"/>
+    </ppo>
+    <ppo id="29" ippo="29">
+     <d>
+      <invs>
+       <arg a="1" i="17"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="20" ippo="20" s="g">
+     <e txt="downtime_id is a function parameter"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:51">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="my_system">
+   <api>
+    <api-assumptions>
+     <aa ipr="1108" ppos="568,24,70,585"/>
+     <aa ipr="1113" ppos="29,380,578,63"/>
+     <aa ipr="1139" ppos="61,576"/>
+     <aa ipr="1141" ppos="583,68"/>
+     <aa ipr="1153" ppos="180,92,441,404"/>
+     <aa ipr="1184" ppos="140"/>
+     <aa ipr="1186" ppos="527,146,142"/>
+     <aa ipr="1188" ppos="148,529,509,12,126,548"/>
+     <aa ipr="1190" ppos="531,150"/>
+     <aa ipr="1203" ppos="174"/>
+     <aa ipr="1360" ppos="523"/>
+     <aa ipr="8020" ppos="549,13"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="2" f="write" h="unistd"/>
+     <lc c="2" f="gettimeofday" h="time"/>
+     <lc c="2" f="fcntl" h="fcntl"/>
+     <lc c="2" f="kill" h="signal"/>
+     <lc c="4" f="snprintf" h="stdio"/>
+     <lc c="2" f="strlen" h="string"/>
+     <lc c="1" f="_exit" h="unistd"/>
+     <lc c="1" f="sleep" h="unistd"/>
+     <lc c="1" f="pipe" h="unistd"/>
+     <lc c="1" f="fork" h="unistd"/>
+     <lc c="1" f="setpgid" h="unistd"/>
+     <lc c="2" f="alarm" h="unistd"/>
+     <lc c="1" f="popen" h="stdio"/>
+     <lc c="3" f="strcpy" h="string"/>
+     <lc c="1" f="signal" h="signal"/>
+     <lc c="2" f="fgets" h="stdio"/>
+     <lc c="1" f="pclose" h="stdio"/>
+     <lc c="1" f="waitpid" h="wait"/>
+     <lc c="1" f="read" h="unistd"/>
+     <lc c="2" f="broker_system_command" h="broker"/>
+     <lc c="3" f="write_to_logs_and_console" h="nagios"/>
+     <lc c="3" f="strncpy" h="string"/>
+     <lc c="1" f="__errno_location" h="errno"/>
+     <lc c="6" f="close" h="unistd"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="broker/broker_system_command"/>
+     <ms n="nagios/write_to_logs_and_console"/>
+    </missing-summaries>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

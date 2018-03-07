@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:11:43">
+   <application file="base/broker.c"/>
+  </header>
+  <function fname="broker_system_command">
+   <ppos>
+    <ppo deps="s" id="15" ippo="15" s="g">
+     <e txt="timeout is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="22" ippo="22" s="g">
+     <e txt="exectime is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="18" invs="39" ippo="18" s="g" ts="2018-01-09 15:27:04">
+     <e txt="upper-bound value is initial value of parameter cmd satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="19" invs="82" ippo="19" s="g" ts="2018-01-09 16:38:41">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:get_broker_timestamp @156 r:3"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(cmd_21_)#init"/>
+    </ppo>
+    <ppo deps="f" id="27" invs="81" ippo="27" s="g" ts="2018-01-09 16:38:41">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:get_broker_timestamp @156 r:5"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(output_23_)#init"/>
+    </ppo>
+    <ppo deps="s" id="32" ippo="32" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="f" id="17" invs="39" ippo="17" s="g" ts="2018-01-09 15:27:04">
+     <e txt="initial value of parameter cmd satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="event_broker_options is global"/>
+    </ppo>
+    <ppo deps="f" id="10" invs="72" ippo="10" s="g" ts="2018-01-09 15:27:04">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(timestamp_9_)#init"/>
+    </ppo>
+    <ppo deps="f" id="26" invs="25" ippo="26" s="g" ts="2018-01-09 15:27:04">
+     <e txt="upper-bound value is initial value of parameter output satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="28" ippo="28">
+     <d>
+      <invs>
+       <arg a="1" i="25,52,81"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="11" invs="23" ippo="11" s="g" ts="2018-01-09 15:27:04">
+     <e txt="initial value of parameter timestamp satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="23" ippo="23" s="g">
+     <e txt="retcode is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="25" invs="25" ippo="25" s="g" ts="2018-01-09 15:27:04">
+     <e txt="initial value of parameter output satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="timestamp is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="31" ippo="31" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="12" invs="23" ippo="12" s="g" ts="2018-01-09 15:27:04">
+     <e txt="upper-bound value is initial value of parameter timestamp satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="13" ippo="13" s="g">
+     <e txt="start_time is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="cmd is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="flags is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="30" ippo="30" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="attr is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="16" ippo="16" s="g">
+     <e txt="cmd is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="24" ippo="24" s="g">
+     <e txt="output is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="14" ippo="14" s="g">
+     <e txt="end_time is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="21" ippo="21" s="g">
+     <e txt="early_timeout is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="29" ippo="29" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="type is a function parameter"/>
+    </ppo>
+    <ppo id="20" ippo="20">
+     <d>
+      <invs>
+       <arg a="1" i="39,53,82"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

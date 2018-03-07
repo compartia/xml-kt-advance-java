@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="common/statusdata" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:55"/>
+  </header>
+  <function filename="common/statusdata">
+   <svar ivinfo="1"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="8705,2,1,0,0,2,0,1" ix="1" t="svc,n"/>
+     <n a="8706,3,1,0,0,3,0,2" ix="2" t="aggregated_dump,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="19">
+      <skind iexp="3" iloc="5" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="20">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="4" iloc="4" itag="call">
+             <args>
+              <exp iexp="5"/>
+              <exp iexp="1"/>
+              <exp iexp="1"/>
+              <exp iexp="6"/>
+              <exp iexp="8"/>
+             </args>
+            </instr>
+           </instrs>
+          </skind>
+          <succs r="21"/>
+          <preds r="19"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="20,21"/>
+      <preds/>
+     </stmt>
+     <stmt sid="21">
+      <skind iexp="10" iloc="7" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="22">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="11" iloc="6" itag="call">
+             <args/>
+            </instr>
+           </instrs>
+          </skind>
+          <succs r="23"/>
+          <preds r="21"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="22,23"/>
+      <preds r="20,19"/>
+     </stmt>
+     <stmt sid="23">
+      <skind iexp="1" iloc="8" stag="return"/>
+      <succs/>
+      <preds r="22,21"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

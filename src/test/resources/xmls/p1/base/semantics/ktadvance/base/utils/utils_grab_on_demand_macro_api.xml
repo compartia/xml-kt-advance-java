@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:29:31">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="grab_on_demand_macro">
+   <api xlst="19,25">
+    <api-assumptions>
+     <aa ipr="8042" ppos="23"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="4" f="strncat" h="string"/>
+     <lc c="1" f="find_servicegroup" h="objects"/>
+     <lc c="4" f="strlen" h="string"/>
+     <lc c="1" f="find_hostgroup" h="objects"/>
+     <lc c="2" f="strstr" h="string"/>
+     <lc c="5" f="strdup" h="string"/>
+     <lc c="2" f="strchr" h="string"/>
+     <lc c="2" f="find_service" h="objects"/>
+     <lc c="12" f="free" h="stdlib"/>
+     <lc c="2" f="find_host" h="objects"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="objects/find_host"/>
+     <ms n="objects/find_hostgroup"/>
+     <ms n="objects/find_service"/>
+     <ms n="objects/find_servicegroup"/>
+    </missing-summaries>
+    <unevaluated>
+     <uu po-id="2825"/>
+     <uu po-id="2839"/>
+     <uu po-id="2848"/>
+     <uu po-id="2854"/>
+     <uu po-id="2877"/>
+     <uu po-id="2940"/>
+     <uu po-id="2960"/>
+     <uu po-id="8339"/>
+     <uu po-id="8357"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

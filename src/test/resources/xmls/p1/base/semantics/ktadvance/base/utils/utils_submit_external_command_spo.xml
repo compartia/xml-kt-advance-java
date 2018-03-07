@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:32:01">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="submit_external_command">
+   <spos>
+    <callsites>
+     <direct-calls/>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="7689" iexp="239" iloc="252">
+      <postconditions/>
+     </rs>
+     <rs ictxt="7659" iexp="179" iloc="240">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

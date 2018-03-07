@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="base/utils" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:48"/>
+  </header>
+  <function filename="base/utils">
+   <svar ivinfo="4"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="10132,1,1,0,0,-1,0,0" ix="1" t="tmp,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="2006">
+      <skind iexp="161" iloc="200" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="2007">
+          <skind iexp="163" iloc="200" stag="if">
+           <thenblock>
+            <bstmts>
+             <stmt sid="2008">
+              <skind stag="instr">
+               <instrs>
+                <instr iexp="164" iloc="196" itag="call">
+                 <args/>
+                </instr>
+               </instrs>
+              </skind>
+              <succs r="2009"/>
+              <preds r="2007"/>
+             </stmt>
+             <stmt sid="2009">
+              <skind iexp="166" iloc="197" stag="if">
+               <thenblock>
+                <bstmts>
+                 <stmt sid="2010">
+                  <skind stag="instr">
+                   <instrs>
+                    <instr iexp="20" iloc="197" ilval="130" itag="set"/>
+                   </instrs>
+                  </skind>
+                  <succs r="2012"/>
+                  <preds r="2009"/>
+                 </stmt>
+                </bstmts>
+               </thenblock>
+               <elseblock>
+                <bstmts>
+                 <stmt sid="2011">
+                  <skind stag="instr">
+                   <instrs>
+                    <instr iexp="26" iloc="197" ilval="130" itag="set"/>
+                   </instrs>
+                  </skind>
+                  <succs r="2012"/>
+                  <preds r="2009"/>
+                 </stmt>
+                </bstmts>
+               </elseblock>
+              </skind>
+              <succs r="2010,2011"/>
+              <preds r="2008"/>
+             </stmt>
+             <stmt sid="2012">
+              <skind stag="instr">
+               <instrs>
+                <instr iexp="167" iloc="197" itag="call">
+                 <args>
+                  <exp iexp="20"/>
+                  <exp iexp="168"/>
+                 </args>
+                </instr>
+                <instr iexp="169" iloc="198" itag="call">
+                 <args/>
+                </instr>
+                <instr iexp="170" iloc="199" itag="call">
+                 <args/>
+                </instr>
+               </instrs>
+              </skind>
+              <succs r="2013"/>
+              <preds r="2011,2010"/>
+             </stmt>
+            </bstmts>
+           </thenblock>
+           <elseblock>
+            <bstmts/>
+           </elseblock>
+          </skind>
+          <succs r="2008,2013"/>
+          <preds r="2006"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="2007,2013"/>
+      <preds/>
+     </stmt>
+     <stmt sid="2013">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="171" iloc="201" itag="call">
+         <args/>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="2014"/>
+      <preds r="2012,2007,2006"/>
+     </stmt>
+     <stmt sid="2014">
+      <skind iloc="202" stag="return"/>
+      <succs/>
+      <preds r="2013"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

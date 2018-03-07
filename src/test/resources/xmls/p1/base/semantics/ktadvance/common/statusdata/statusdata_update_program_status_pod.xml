@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:54">
+   <application file="common/statusdata.c"/>
+  </header>
+  <function fname="update_program_status">
+   <assumption-table/>
+   <ppo-type-table>
+    <n a="20,8,12" ix="1" t="p"/>
+    <n a="19,10,13" ix="2" t="p"/>
+    <n a="19,11,14" ix="3" t="p"/>
+    <n a="19,10,15" ix="4" t="p"/>
+    <n a="19,10,16" ix="5" t="p"/>
+    <n a="19,10,17" ix="6" t="p"/>
+    <n a="22,12,18" ix="7" t="p"/>
+   </ppo-type-table>
+   <spo-type-table>
+    <n a="19,9,30,1140" ix="1" t="cs"/>
+    <n a="19,9,31,1141" ix="2" t="cs"/>
+   </spo-type-table>
+  </function>
+ </c-analysis>

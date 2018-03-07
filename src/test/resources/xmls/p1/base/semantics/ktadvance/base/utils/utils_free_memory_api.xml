@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:29:32">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="free_memory">
+   <api>
+    <api-assumptions/>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="free_comment_data" h="comments"/>
+     <lc c="1" f="free_object_data" h="objects"/>
+     <lc c="21" f="free" h="stdlib"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="comments/free_comment_data"/>
+     <ms n="objects/free_object_data"/>
+    </missing-summaries>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

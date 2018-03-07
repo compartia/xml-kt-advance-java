@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:02">
+   <application file="common/downtime.c"/>
+  </header>
+  <function fname="find_service_downtime">
+   <assumption-table/>
+   <ppo-type-table>
+    <n a="14,949,757" ix="1" t="p"/>
+    <n a="14,950,758" ix="2" t="p"/>
+    <n a="14,950,759" ix="3" t="p"/>
+    <n a="14,950,760" ix="4" t="p"/>
+    <n a="14,950,761" ix="5" t="p"/>
+    <n a="14,950,762" ix="6" t="p"/>
+   </ppo-type-table>
+   <spo-type-table/>
+  </function>
+ </c-analysis>

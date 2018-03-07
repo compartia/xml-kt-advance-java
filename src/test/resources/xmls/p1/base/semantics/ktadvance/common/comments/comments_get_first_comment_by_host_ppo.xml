@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:52">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="get_first_comment_by_host">
+   <ppos>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="host_name is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="10" invs="16" ippo="10" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#619(rv:get_next_comment_by_host)"/>
+    </ppo>
+    <ppo deps="f" id="11" invs="19" ippo="11" s="g" ts="2018-01-09 16:02:47">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(get_next_comment_by_host(_^_)#return"/>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="f" id="4" invs="6" ippo="4" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is initial value of parameter host_name satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+    <ppo id="12" ippo="12"/>
+    <ppo deps="f" id="13" invs="5" ippo="13" s="g" ts="2018-01-09 16:02:47">
+     <e txt="return value from function get_next_comment_by_host satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="3" invs="6" ippo="3" s="g" ts="2018-01-09 16:02:47">
+     <e txt="initial value of parameter host_name satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="f" id="14" invs="5" ippo="14" s="g" ts="2018-01-09 16:02:47">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:no function summary for get_next_comment_by_host"/>
+        <msg t="[2]:function arguments: _,0"/>
+        <msg t="[2]:function return value: get_next_comment_by_host"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function get_next_comment_by_host satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="2" invs="20" ippo="2" s="g" ts="2018-01-09 16:02:47">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(host_name_2_)#init"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

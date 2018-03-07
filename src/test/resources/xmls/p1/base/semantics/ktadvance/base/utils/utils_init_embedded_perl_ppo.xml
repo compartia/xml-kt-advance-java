@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:53">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="init_embedded_perl">
+   <ppos/>
+  </function>
+ </c-analysis>

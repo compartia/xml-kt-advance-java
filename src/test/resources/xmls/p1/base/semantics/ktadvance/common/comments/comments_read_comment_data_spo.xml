@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:54">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="read_comment_data">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="219" ictxt="722" iloc="208" ivinfo="41">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="724" iexp="220" iloc="209">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

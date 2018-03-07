@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:53">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="init_embedded_perl">
+   <var-dictionary>
+    <allocated-region-data-table/>
+    <memory-base-table>
+     <n a="5" ix="1" t="bv"/>
+     <n a="1" ix="2" t="null"/>
+     <n a="-1" ix="3" t="null"/>
+    </memory-base-table>
+    <memory-reference-data-table/>
+    <constant-value-variable-table>
+     <n a="1,25" ix="1" t="iv"/>
+     <n a="4,25" ix="2" t="iv"/>
+    </constant-value-variable-table>
+    <c-variable-denotation-table>
+     <n a="1" ix="1" t="rv"/>
+     <n a="10036,1" ix="2" t="lv"/>
+     <n a="1" ix="3" t="av"/>
+     <n a="2" ix="4" t="av"/>
+    </c-variable-denotation-table>
+    <xpr-dictionary>
+     <numerical-table>
+      <n ix="1" t="0"/>
+     </numerical-table>
+     <symbol-table>
+      <n a="2" ix="1" t="env"/>
+      <n a="3" ix="2" t="(env_2_)#init"/>
+      <n a="1" ix="3" t="return"/>
+      <n a="2" ix="4" t="NULL(1)"/>
+      <n a="1" ix="5" t="addr_in_(env_2_)#init"/>
+      <n a="4" ix="6" t="(env_2_)#init"/>
+     </symbol-table>
+     <variable-table>
+      <n a="1" ix="1" t="nv"/>
+      <n a="2" ix="2" t="nv"/>
+      <n a="3" ix="3" t="nv"/>
+      <n a="1" ix="4" t="sv"/>
+      <n a="6" ix="5" t="sv"/>
+     </variable-table>
+     <xcst-table/>
+     <xpr-table>
+      <n a="2" ix="1" t="v"/>
+     </xpr-table>
+     <xpr-list-table/>
+     <xpr-list-list-table/>
+    </xpr-dictionary>
+   </var-dictionary>
+   <allocated-regions size="1"/>
+   <memory-regions size="4">
+    <region imb="1" index="1"/>
+    <region imb="2" index="2"/>
+    <region imb="3" index="3"/>
+   </memory-regions>
+   <memory-references size="1"/>
+  </function>
+ </c-analysis>

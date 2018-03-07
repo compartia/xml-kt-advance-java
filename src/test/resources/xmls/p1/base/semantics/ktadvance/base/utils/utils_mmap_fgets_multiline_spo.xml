@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:30:07">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="mmap_fgets_multiline">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="443" ictxt="4725" iloc="465" ivinfo="20">
+       <api-conditions>
+        <api-c iapi="1801">
+         <po deps="a" id="3" ids="1" invs="15" ispo="3" s="g">
+          <e txt="condition initialized(temp_mmapfile-&gt;mmap_buf) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="8026">
+         <po deps="a" id="5" ids="2" invs="296,294" ispo="5" s="g">
+          <e txt="condition ptr-lowerbound(((temp_mmapfile-&gt;mmap_buf +i temp_mmapfile-&gt;current_position):char) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="1791">
+         <po deps="a" id="8" ids="3" invs="15" ispo="8" s="g">
+          <e txt="condition initialized(temp_mmapfile-&gt;current_position) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="1796">
+         <po deps="a" id="2" ids="4" invs="15" ispo="2" s="g">
+          <e txt="condition initialized(temp_mmapfile-&gt;file_size) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="1848">
+         <po deps="a" id="4" ids="5" invs="15" ispo="4" s="g">
+          <e txt="condition initialized(temp_mmapfile-&gt;current_line) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="8028">
+         <po deps="s" id="7" ispo="7" s="g">
+          <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+         </po>
+        </api-c>
+        <api-c iapi="8027">
+         <po deps="a" id="6" ids="6" invs="296" ispo="6" s="g">
+          <e txt="condition not-null(temp_mmapfile-&gt;mmap_buf) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="1792">
+         <po deps="a" id="1" ids="7" invs="297" ispo="1" s="g">
+          <e txt="condition not-null(temp_mmapfile) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="4810" iexp="451" iloc="484">
+      <postconditions/>
+     </rs>
+     <rs ictxt="4721" iexp="40" iloc="462">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

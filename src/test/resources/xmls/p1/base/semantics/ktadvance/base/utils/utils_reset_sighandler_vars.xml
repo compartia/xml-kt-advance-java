@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:31:40">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="reset_sighandler">
+   <var-dictionary>
+    <allocated-region-data-table/>
+    <memory-base-table>
+     <n a="-1" ix="1" t="null"/>
+    </memory-base-table>
+    <memory-reference-data-table/>
+    <constant-value-variable-table>
+     <n a="1027,2584,1,2" ix="1" t="frv"/>
+     <n a="1028,2584,3,2" ix="2" t="frv"/>
+     <n a="1029,2584,4,2" ix="3" t="frv"/>
+     <n a="1030,2584,5,2" ix="4" t="frv"/>
+     <n a="1031,2584,6,2" ix="5" t="frv"/>
+    </constant-value-variable-table>
+    <c-variable-denotation-table>
+     <n a="1,1,2,3" ix="1" t="cv"/>
+     <n a="109,1,1,1" ix="2" t="cv"/>
+     <n a="110,1,3,1,1,4,2,1,5,2" ix="3" t="cv"/>
+     <n a="1" ix="4" t="av"/>
+     <n a="1,1,7,3" ix="5" t="cv"/>
+     <n a="109,1,6,1" ix="6" t="cv"/>
+     <n a="110,1,8,1,1,9,2,1,10,2" ix="7" t="cv"/>
+     <n a="2" ix="8" t="av"/>
+     <n a="1,1,12,3" ix="9" t="cv"/>
+     <n a="109,1,11,1" ix="10" t="cv"/>
+     <n a="110,1,13,1,1,14,2,1,15,2" ix="11" t="cv"/>
+     <n a="3" ix="12" t="av"/>
+     <n a="1,1,17,3" ix="13" t="cv"/>
+     <n a="109,1,16,1" ix="14" t="cv"/>
+     <n a="110,1,18,1,1,19,2,1,20,2" ix="15" t="cv"/>
+     <n a="4" ix="16" t="av"/>
+     <n a="1,1,22,3" ix="17" t="cv"/>
+     <n a="109,1,21,1" ix="18" t="cv"/>
+     <n a="110,1,23,1,1,24,2,1,25,2" ix="19" t="cv"/>
+     <n a="5" ix="20" t="av"/>
+    </c-variable-denotation-table>
+    <xpr-dictionary>
+     <numerical-table>
+      <n ix="1" t="3"/>
+      <n ix="2" t="0"/>
+      <n ix="3" t="15"/>
+      <n ix="4" t="1"/>
+      <n ix="5" t="11"/>
+      <n ix="6" t="13"/>
+     </numerical-table>
+     <symbol-table>
+      <n a="15" ix="1" t="check_(ppo:18:1)_(ppo:19:2)_(ppo:20:2)"/>
+      <n a="13" ix="2" t="check_(ppo:17:3)"/>
+      <n a="3" ix="3" t="check_(ppo:3:1)_(ppo:4:2)_(ppo:5:2)"/>
+      <n a="1" ix="4" t="check_(ppo:2:3)"/>
+      <n a="11" ix="5" t="check_(ppo:13:1)_(ppo:14:2)_(ppo:15:2)"/>
+      <n a="9" ix="6" t="check_(ppo:12:3)"/>
+      <n a="19" ix="7" t="check_(ppo:23:1)_(ppo:24:2)_(ppo:25:2)"/>
+      <n a="17" ix="8" t="check_(ppo:22:3)"/>
+      <n a="7" ix="9" t="check_(ppo:8:1)_(ppo:9:2)_(ppo:10:2)"/>
+      <n a="5" ix="10" t="check_(ppo:7:3)"/>
+     </symbol-table>
+     <variable-table>
+      <n a="1" ix="1" t="nv"/>
+      <n a="2" ix="2" t="nv"/>
+      <n a="3" ix="3" t="nv"/>
+      <n a="4" ix="4" t="nv"/>
+      <n a="5" ix="5" t="nv"/>
+      <n a="6" ix="6" t="nv"/>
+      <n a="7" ix="7" t="nv"/>
+      <n a="8" ix="8" t="nv"/>
+      <n a="9" ix="9" t="nv"/>
+      <n a="10" ix="10" t="nv"/>
+     </variable-table>
+     <xcst-table>
+      <n a="1" ix="1" t="ic"/>
+      <n a="2" ix="2" t="ic"/>
+      <n a="3" ix="3" t="ic"/>
+      <n a="4" ix="4" t="ic"/>
+      <n a="5" ix="5" t="ic"/>
+      <n a="6" ix="6" t="ic"/>
+     </xcst-table>
+     <xpr-table>
+      <n a="1" ix="1" t="c"/>
+      <n a="2" ix="2" t="c"/>
+      <n a="3" ix="3" t="c"/>
+      <n a="4" ix="4" t="c"/>
+      <n a="5" ix="5" t="c"/>
+      <n a="6" ix="6" t="c"/>
+     </xpr-table>
+     <xpr-list-table/>
+     <xpr-list-list-table/>
+    </xpr-dictionary>
+   </var-dictionary>
+   <allocated-regions size="1"/>
+   <memory-regions size="2">
+    <region imb="1" index="1"/>
+   </memory-regions>
+   <memory-references size="1"/>
+  </function>
+ </c-analysis>

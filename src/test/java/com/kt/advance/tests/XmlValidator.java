@@ -35,6 +35,7 @@ import java.util.HashMap;
 
 import javax.xml.bind.JAXBException;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -76,7 +77,7 @@ public class XmlValidator {
         assertNotNull("no file attr in <application> tag: " + message, xml.header.application.file);
     }
 
-    //    @Ignore
+    @Ignore
     @Test
     public void testAllPod2PpoCorrespondence() throws JAXBException {
 

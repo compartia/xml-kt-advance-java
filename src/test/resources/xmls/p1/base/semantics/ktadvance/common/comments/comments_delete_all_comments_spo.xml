@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:52">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="delete_all_comments">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="275" ictxt="62" iloc="255" ivinfo="16">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="275,277" ictxt="64" iloc="256" ivinfo="15">
+       <api-conditions>
+        <api-c iapi="716">
+         <po deps="a" id="1" ids="1" invs="33" ispo="1" s="g">
+          <e txt="condition not-null(host_name) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="717">
+         <po deps="a" id="2" ids="2" invs="34" ispo="2" s="g">
+          <e txt="condition not-null(svc_description) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="67" iexp="278" iloc="258">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

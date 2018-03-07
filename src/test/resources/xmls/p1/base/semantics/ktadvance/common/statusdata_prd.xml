@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:55">
+   <application file="common/statusdata.c"/>
+  </header>
+  <po-dictionary>
+   <po-predicate-table>
+    <n a="20" ix="1" t="i"/>
+    <n a="33" ix="2" t="vm"/>
+    <n a="13,33" ix="3" t="lb"/>
+    <n a="13,33" ix="4" t="ub"/>
+    <n a="18" ix="5" t="i"/>
+    <n a="13" ix="6" t="i"/>
+    <n a="22" ix="7" t="vm"/>
+    <n a="13,22" ix="8" t="lb"/>
+    <n a="13,22" ix="9" t="ub"/>
+    <n a="14" ix="10" t="i"/>
+    <n a="11" ix="11" t="i"/>
+    <n a="9" ix="12" t="i"/>
+    <n a="5,7,7" ix="13" t="pc"/>
+    <n a="3,6,1" ix="14" t="c"/>
+    <n a="8" ix="15" t="vm"/>
+    <n a="7,8" ix="16" t="lb"/>
+    <n a="7,8" ix="17" t="ub"/>
+    <n a="4" ix="18" t="i"/>
+    <n a="17" ix="19" t="i"/>
+    <n a="6" ix="20" t="i"/>
+    <n a="8" ix="21" t="i"/>
+    <n a="16" ix="22" t="vm"/>
+    <n a="22,16" ix="23" t="lb"/>
+    <n a="22,16" ix="24" t="ub"/>
+    <n a="1" ix="25" t="i"/>
+    <n a="3" ix="26" t="i"/>
+    <n a="6" ix="27" t="vm"/>
+    <n a="23,6" ix="28" t="lb"/>
+    <n a="23,6" ix="29" t="ub"/>
+    <n a="21" ix="30" t="i"/>
+    <n a="8" ix="31" t="nn"/>
+   </po-predicate-table>
+  </po-dictionary>
+ </c-analysis>

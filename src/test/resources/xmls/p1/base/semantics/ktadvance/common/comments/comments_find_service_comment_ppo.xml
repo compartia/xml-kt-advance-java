@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:54">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="find_service_comment">
+   <ppos>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="comment_id is a function parameter"/>
+    </ppo>
+    <ppo id="4" ippo="4"/>
+    <ppo deps="f" id="5" invs="4" ippo="5" s="g" ts="2018-01-09 16:02:49">
+     <e txt="return value from function find_comment satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="3" invs="12" ippo="3" s="g" ts="2018-01-09 16:02:49">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(find_comment(_^_)#return"/>
+    </ppo>
+    <ppo deps="f" id="2" invs="10" ippo="2" s="g" ts="2018-01-09 16:02:49">
+     <e txt="assignedAt#651(rv:find_comment)"/>
+    </ppo>
+    <ppo deps="f" id="6" invs="4" ippo="6" s="g" ts="2018-01-09 16:02:49">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:no function summary for find_comment"/>
+        <msg t="[2]:function arguments: _,2"/>
+        <msg t="[2]:function return value: find_comment"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function find_comment satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

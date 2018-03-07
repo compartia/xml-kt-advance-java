@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="common/comments" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:49"/>
+  </header>
+  <function filename="common/comments">
+   <svar ivinfo="19"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="9029,1,1,0,0,266,0,1" ix="1" t="comment_id,n"/>
+     <n a="9030,2,1,0,0,267,0,0" ix="2" t="result,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="53">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="1" iloc="268" ilval="167" itag="set"/>
+        <instr iexp="234" iloc="269" ilval="167" itag="call">
+         <args>
+          <exp iexp="18"/>
+          <exp iexp="281"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="54"/>
+      <preds/>
+     </stmt>
+     <stmt sid="54">
+      <skind iexp="282" iloc="270" stag="return"/>
+      <succs/>
+      <preds r="53"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

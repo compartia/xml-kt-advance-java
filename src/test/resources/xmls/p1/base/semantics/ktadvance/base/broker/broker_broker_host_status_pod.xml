@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:11:44">
+   <application file="base/broker.c"/>
+  </header>
+  <function fname="broker_host_status">
+   <assumption-table>
+    <n a="1120" ix="1" t="aa"/>
+    <n a="1121" ix="2" t="aa"/>
+   </assumption-table>
+   <ppo-type-table>
+    <n a="384,444,1" ix="1" t="p"/>
+    <n a="385,446,501" ix="2" t="p"/>
+    <n a="386,448,502" ix="3" t="p"/>
+    <n a="387,450,503" ix="4" t="p"/>
+    <n a="388,452,504" ix="5" t="p"/>
+    <n a="388,452,505" ix="6" t="p"/>
+    <n a="388,452,506" ix="7" t="p"/>
+    <n a="388,452,507" ix="8" t="p"/>
+    <n a="389,454,508" ix="9" t="p"/>
+    <n a="389,455,509" ix="10" t="p"/>
+    <n a="389,453,510" ix="11" t="p"/>
+    <n a="389,453,511" ix="12" t="p"/>
+    <n a="389,453,512" ix="13" t="p"/>
+    <n a="390,457,513" ix="14" t="p"/>
+    <n a="390,457,514" ix="15" t="p"/>
+    <n a="390,457,515" ix="16" t="p"/>
+    <n a="390,457,516" ix="17" t="p"/>
+   </ppo-type-table>
+   <spo-type-table>
+    <n a="388,451,1120,603" ix="1" t="cs"/>
+    <n a="388,451,1121,604" ix="2" t="cs"/>
+   </spo-type-table>
+  </function>
+ </c-analysis>

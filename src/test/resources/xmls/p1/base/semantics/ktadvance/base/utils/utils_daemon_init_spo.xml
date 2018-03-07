@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:29:35">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="daemon_init">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="1066,275,20" ictxt="3731" iloc="964" ivinfo="182">
+       <api-conditions>
+        <api-c iapi="53">
+         <po deps="s" id="2" ispo="2" s="g">
+          <e txt="address of variable temp_buffer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="1228,19,19,1229" ictxt="3757" iloc="984" ivinfo="185">
+       <api-conditions>
+        <api-c iapi="1154">
+         <po deps="s" id="6" ispo="6" s="g">
+          <e txt="null pointer cannot be dereferenced, and hence target cannot be initialized (acceptability of null is checked separately)"/>
+         </po>
+        </api-c>
+        <api-c iapi="1155">
+         <po deps="s" id="7" ispo="7" s="r">
+          <e txt="expression is a null pointer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="" ictxt="3687" iloc="944" ivinfo="4">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="" ictxt="3674" iloc="939" ivinfo="4">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="1066,275,20" ictxt="3685" iloc="943" ivinfo="182">
+       <api-conditions>
+        <api-c iapi="53">
+         <po deps="s" id="3" ispo="3" s="g">
+          <e txt="address of variable temp_buffer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="" ictxt="3665" iloc="934" ivinfo="4">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="1066,1160,20" ictxt="3663" iloc="933" ivinfo="182">
+       <api-conditions>
+        <api-c iapi="53">
+         <po deps="s" id="4" ispo="4" s="g">
+          <e txt="address of variable temp_buffer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="1171,275,20" ictxt="3672" iloc="938" ivinfo="182">
+       <api-conditions>
+        <api-c iapi="53">
+         <po deps="s" id="1" ispo="1" s="g">
+          <e txt="string literal"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="" ictxt="3733" iloc="965" ivinfo="4">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="1066,275,20" ictxt="3654" iloc="930" ivinfo="182">
+       <api-conditions>
+        <api-c iapi="53">
+         <po deps="s" id="5" ispo="5" s="g">
+          <e txt="address of variable temp_buffer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="3695" iexp="179" iloc="951">
+      <postconditions/>
+     </rs>
+     <rs ictxt="3693" iexp="19" iloc="949">
+      <postconditions/>
+     </rs>
+     <rs ictxt="3760" iexp="19" iloc="985">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:54">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="add_comment">
+   <api>
+    <api-assumptions>
+     <aa ipr="718" ppos="176"/>
+     <aa ipr="719" ppos="65"/>
+     <aa ipr="720" ppos="116"/>
+     <aa ipr="721" ppos="35"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="malloc" h="stdlib"/>
+     <lc c="1" f="broker_comment_data" h="broker"/>
+     <lc c="4" f="strdup" h="string"/>
+     <lc c="10" f="free" h="stdlib"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="broker/broker_comment_data"/>
+    </missing-summaries>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

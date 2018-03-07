@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:29:32">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="set_all_macro_environment_vars">
+   <var-dictionary>
+    <allocated-region-data-table/>
+    <memory-base-table>
+     <n a="-1" ix="1" t="null"/>
+    </memory-base-table>
+    <memory-reference-data-table/>
+    <constant-value-variable-table>
+     <n a="1,1" ix="1" t="iv"/>
+     <n a="1380,8337,-1" ix="2" t="frv"/>
+     <n a="1381,8340,-1" ix="3" t="frv"/>
+     <n a="6,1" ix="4" t="iv"/>
+    </constant-value-variable-table>
+    <c-variable-denotation-table>
+     <n a="1" ix="1" t="rv"/>
+     <n a="9587,1" ix="2" t="lv"/>
+     <n a="1" ix="3" t="av"/>
+     <n a="1,1,1,1" ix="4" t="cv"/>
+     <n a="2" ix="5" t="av"/>
+     <n a="1,1,2,1" ix="6" t="cv"/>
+     <n a="3" ix="7" t="av"/>
+     <n a="4" ix="8" t="av"/>
+    </c-variable-denotation-table>
+    <xpr-dictionary>
+     <numerical-table>
+      <n ix="1" t="0"/>
+     </numerical-table>
+     <symbol-table>
+      <n a="2" ix="1" t="set"/>
+      <n a="3" ix="2" t="(set_2_)#init"/>
+      <n a="4" ix="3" t="check_(ppo:1:1)"/>
+      <n a="6" ix="4" t="check_(ppo:2:1)"/>
+      <n a="1" ix="5" t="return"/>
+     </symbol-table>
+     <variable-table>
+      <n a="1" ix="1" t="nv"/>
+      <n a="2" ix="2" t="nv"/>
+      <n a="3" ix="3" t="nv"/>
+      <n a="4" ix="4" t="nv"/>
+      <n a="5" ix="5" t="nv"/>
+      <n a="1" ix="6" t="sv"/>
+     </variable-table>
+     <xcst-table/>
+     <xpr-table>
+      <n a="2" ix="1" t="v"/>
+     </xpr-table>
+     <xpr-list-table/>
+     <xpr-list-list-table/>
+    </xpr-dictionary>
+   </var-dictionary>
+   <allocated-regions size="1"/>
+   <memory-regions size="2">
+    <region imb="1" index="1"/>
+   </memory-regions>
+   <memory-references size="1"/>
+  </function>
+ </c-analysis>

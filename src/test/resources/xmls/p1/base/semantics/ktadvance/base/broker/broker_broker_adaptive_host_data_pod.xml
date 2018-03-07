@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:12:00">
+   <application file="base/broker.c"/>
+  </header>
+  <function fname="broker_adaptive_host_data">
+   <assumption-table>
+    <n a="1148" ix="1" t="aa"/>
+    <n a="1149" ix="2" t="aa"/>
+   </assumption-table>
+   <ppo-type-table>
+    <n a="169,942,1" ix="1" t="p"/>
+    <n a="170,944,1045" ix="2" t="p"/>
+    <n a="171,946,1046" ix="3" t="p"/>
+    <n a="172,948,1047" ix="4" t="p"/>
+    <n a="173,950,1048" ix="5" t="p"/>
+    <n a="173,950,1049" ix="6" t="p"/>
+    <n a="173,950,1050" ix="7" t="p"/>
+    <n a="173,950,1051" ix="8" t="p"/>
+    <n a="174,952,1052" ix="9" t="p"/>
+    <n a="175,954,1053" ix="10" t="p"/>
+    <n a="176,956,1054" ix="11" t="p"/>
+    <n a="177,958,1055" ix="12" t="p"/>
+    <n a="177,959,1056" ix="13" t="p"/>
+    <n a="177,957,1057" ix="14" t="p"/>
+    <n a="177,957,1058" ix="15" t="p"/>
+    <n a="177,957,1059" ix="16" t="p"/>
+    <n a="178,961,1060" ix="17" t="p"/>
+    <n a="178,961,1061" ix="18" t="p"/>
+    <n a="178,961,1062" ix="19" t="p"/>
+    <n a="178,961,1063" ix="20" t="p"/>
+   </ppo-type-table>
+   <spo-type-table>
+    <n a="173,949,1148,603" ix="1" t="cs"/>
+    <n a="173,949,1149,604" ix="2" t="cs"/>
+   </spo-type-table>
+  </function>
+ </c-analysis>

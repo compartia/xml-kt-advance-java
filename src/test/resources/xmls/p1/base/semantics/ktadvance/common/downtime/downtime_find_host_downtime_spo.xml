@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:41:59">
+   <application file="common/downtime.c"/>
+  </header>
+  <function fname="find_host_downtime">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="25,26" ictxt="314" iloc="16" ivinfo="4">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="316" iexp="27" iloc="16">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

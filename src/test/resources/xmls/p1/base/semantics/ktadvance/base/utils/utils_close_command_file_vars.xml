@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:30:17">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="close_command_file">
+   <var-dictionary>
+    <allocated-region-data-table/>
+    <memory-base-table>
+     <n a="-1" ix="1" t="null"/>
+    </memory-base-table>
+    <memory-reference-data-table/>
+    <constant-value-variable-table>
+     <n a="746,8284" ix="1" t="frv"/>
+     <n a="747,419,-1" ix="2" t="frv"/>
+    </constant-value-variable-table>
+    <c-variable-denotation-table>
+     <n a="1" ix="1" t="rv"/>
+     <n a="1,1,1,1" ix="2" t="cv"/>
+     <n a="1,1,2,1" ix="3" t="cv"/>
+     <n a="9069,1" ix="4" t="gv"/>
+     <n a="1" ix="5" t="av"/>
+     <n a="205,1,3,1,1,5,1,1,6,1,1,7,2,1,8,2" ix="6" t="cv"/>
+     <n a="170,1,4,1" ix="7" t="cv"/>
+     <n a="2" ix="8" t="av"/>
+     <n a="9011,1" ix="9" t="gv"/>
+     <n a="9068,1" ix="10" t="gv"/>
+    </c-variable-denotation-table>
+    <xpr-dictionary>
+     <numerical-table>
+      <n ix="1" t="0"/>
+     </numerical-table>
+     <symbol-table>
+      <n a="4" ix="1" t="command_file_created"/>
+      <n a="1" ix="2" t="return"/>
+      <n a="-1" ix="3" t="assignedAt#3973"/>
+     </symbol-table>
+     <variable-table>
+      <n a="1" ix="1" t="nv"/>
+      <n a="2" ix="2" t="nv"/>
+      <n a="1" ix="3" t="sv"/>
+     </variable-table>
+     <xcst-table/>
+     <xpr-table/>
+     <xpr-list-table/>
+     <xpr-list-list-table/>
+    </xpr-dictionary>
+   </var-dictionary>
+   <allocated-regions size="1"/>
+   <memory-regions size="2">
+    <region imb="1" index="1"/>
+   </memory-regions>
+   <memory-references size="1"/>
+  </function>
+ </c-analysis>

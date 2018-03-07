@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:29:35">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="set_macrox_environment_vars">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="1723,50" ictxt="3764" iloc="1374" ivinfo="31">
+       <api-conditions>
+        <api-c iapi="3409">
+         <po id="4" ispo="4"/>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="1724,1723,1726" ictxt="3782" iloc="1375" ivinfo="51">
+       <api-conditions>
+        <api-c iapi="8059">
+         <po id="1" ispo="1"/>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="1724,1723,1726" ictxt="3774" iloc="1375" ivinfo="51">
+       <api-conditions>
+        <api-c iapi="8059">
+         <po id="3" ispo="3"/>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="1724,1725,1726" ictxt="3768" iloc="1374" ivinfo="51">
+       <api-conditions>
+        <api-c iapi="8059">
+         <po id="2" ispo="2"/>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="3792" iexp="19" iloc="1377">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

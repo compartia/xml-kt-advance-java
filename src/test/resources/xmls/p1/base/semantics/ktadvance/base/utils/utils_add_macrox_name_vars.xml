@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:31:40">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="add_macrox_name">
+   <var-dictionary>
+    <allocated-region-data-table>
+     <n a="1392,4" ix="1" t="h,strdup"/>
+    </allocated-region-data-table>
+    <memory-base-table>
+     <n a="17" ix="1" t="bv"/>
+     <n a="1" ix="2" t="null"/>
+     <n a="-1" ix="3" t="null"/>
+     <n a="18" ix="4" t="bv"/>
+     <n a="1" ix="5" t="ha"/>
+     <n a="4" ix="6" t="null"/>
+     <n a="6" ix="7" t="bv"/>
+    </memory-base-table>
+    <memory-reference-data-table>
+     <n a="7,1,4" ix="1"/>
+    </memory-reference-data-table>
+    <constant-value-variable-table>
+     <n a="1,1" ix="1" t="iv"/>
+     <n a="2,4" ix="2" t="iv"/>
+     <n a="1392,1896,-1" ix="3" t="frv"/>
+     <n a="3,4" ix="4" t="iv"/>
+     <n a="12,1" ix="5" t="iv"/>
+     <n a="13,4" ix="6" t="iv"/>
+    </constant-value-variable-table>
+    <c-variable-denotation-table>
+     <n a="1" ix="1" t="rv"/>
+     <n a="9580,1" ix="2" t="lv"/>
+     <n a="1" ix="3" t="av"/>
+     <n a="9581,1" ix="4" t="lv"/>
+     <n a="2" ix="5" t="av"/>
+     <n a="1,1,2,2" ix="6" t="cv"/>
+     <n a="1,1,1,1,1,2,1,1,3,1" ix="7" t="cv"/>
+     <n a="4,1,8,3,1,9,1" ix="8" t="cv"/>
+     <n a="21,1,4,1,1,5,1,1,6,3,1,7,1,1,10,1,1,11,2,1,12,2" ix="9" t="cv"/>
+     <n a="1,1,6,4,1,7,2" ix="10" t="cv"/>
+     <n a="3" ix="11" t="av"/>
+     <n a="1" ix="12" t="mv"/>
+     <n a="4" ix="13" t="av"/>
+     <n a="5" ix="14" t="av"/>
+     <n a="6" ix="15" t="av"/>
+     <n a="8962,98" ix="16" t="gv"/>
+    </c-variable-denotation-table>
+    <xpr-dictionary>
+     <numerical-table>
+      <n ix="1" t="0"/>
+      <n ix="2" t="99"/>
+     </numerical-table>
+     <symbol-table>
+      <n a="2" ix="1" t="i"/>
+      <n a="4" ix="2" t="name"/>
+      <n a="12" ix="3" t="memref-1"/>
+      <n a="13" ix="4" t="(memref-1_12_)#init"/>
+      <n a="3" ix="5" t="(i_2_)#init"/>
+      <n a="5" ix="6" t="(name_4_)#init"/>
+      <n a="1" ix="7" t="return"/>
+      <n a="6" ix="8" t="check_(ppo:2:2)"/>
+      <n a="7" ix="9" t="check_(ppo:1:1)_(ppo:2:1)_(ppo:3:1)"/>
+      <n a="9" ix="10" t="check_(ppo:4:1)_(ppo:5:1)_(ppo:6:3)_(ppo:7:1)_(ppo:10:1)_(ppo:11:2)_(ppo:12:2)"/>
+      <n a="8" ix="11" t="check_(ppo:8:3)_(ppo:9:1)"/>
+      <n a="-1" ix="12" t="assignedAt#2410,rv:,strdup"/>
+      <n a="16" ix="13" t="macro_x_names.**unknown-offset**"/>
+      <n a="2" ix="14" t="NULL(1)"/>
+      <n a="1" ix="15" t="addr_in_(name_4_)#init"/>
+      <n a="15" ix="16" t="(name_4_)#init"/>
+      <n a="11" ix="17" t="(strdup(_)#return"/>
+     </symbol-table>
+     <variable-table>
+      <n a="1" ix="1" t="nv"/>
+      <n a="2" ix="2" t="nv"/>
+      <n a="3" ix="3" t="nv"/>
+      <n a="4" ix="4" t="nv"/>
+      <n a="5" ix="5" t="nv"/>
+      <n a="6" ix="6" t="nv"/>
+      <n a="7" ix="7" t="nv"/>
+      <n a="8" ix="8" t="nv"/>
+      <n a="9" ix="9" t="nv"/>
+      <n a="10" ix="10" t="nv"/>
+      <n a="11" ix="11" t="nv"/>
+      <n a="1" ix="12" t="sv"/>
+      <n a="2" ix="13" t="sv"/>
+      <n a="13" ix="14" t="sv"/>
+      <n a="11" ix="15" t="sv"/>
+      <n a="10" ix="16" t="sv"/>
+      <n a="16" ix="17" t="sv"/>
+      <n a="17" ix="18" t="nv"/>
+     </variable-table>
+     <xcst-table>
+      <n ix="1" t="r"/>
+     </xcst-table>
+     <xpr-table>
+      <n a="4" ix="1" t="v"/>
+      <n a="5" ix="2" t="v"/>
+      <n a="6" ix="3" t="v"/>
+      <n a="1" ix="4" t="c"/>
+     </xpr-table>
+     <xpr-list-table/>
+     <xpr-list-list-table/>
+    </xpr-dictionary>
+   </var-dictionary>
+   <allocated-regions size="2">
+    <region aid="1" iard="1"/>
+   </allocated-regions>
+   <memory-regions size="7">
+    <region imb="1" index="1"/>
+    <region imb="2" index="2"/>
+    <region imb="3" index="3"/>
+    <region imb="4" index="4"/>
+    <region imb="5" index="5"/>
+    <region imb="6" index="6"/>
+   </memory-regions>
+   <memory-references size="2">
+    <reference imrd="1" index="1"/>
+   </memory-references>
+  </function>
+ </c-analysis>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:11:47">
+   <application file="base/broker.c"/>
+  </header>
+  <function fname="broker_program_state">
+   <assumption-table>
+    <n a="1154" ix="1" t="aa"/>
+    <n a="1155" ix="2" t="aa"/>
+   </assumption-table>
+   <ppo-type-table>
+    <n a="801,643,1" ix="1" t="p"/>
+    <n a="802,645,717" ix="2" t="p"/>
+    <n a="803,647,718" ix="3" t="p"/>
+    <n a="804,649,719" ix="4" t="p"/>
+    <n a="805,651,720" ix="5" t="p"/>
+    <n a="805,651,721" ix="6" t="p"/>
+    <n a="805,651,722" ix="7" t="p"/>
+    <n a="805,651,723" ix="8" t="p"/>
+    <n a="806,653,724" ix="9" t="p"/>
+    <n a="806,653,725" ix="10" t="p"/>
+    <n a="806,653,726" ix="11" t="p"/>
+    <n a="806,653,727" ix="12" t="p"/>
+   </ppo-type-table>
+   <spo-type-table>
+    <n a="805,650,1154,603" ix="1" t="cs"/>
+    <n a="805,650,1155,604" ix="2" t="cs"/>
+   </spo-type-table>
+  </function>
+ </c-analysis>

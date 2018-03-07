@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="common/downtime" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:56"/>
+  </header>
+  <function filename="common/downtime">
+   <svar ivinfo="14"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="9270,4,1,0,0,229,0,0" ix="1" t="temp_downtime,n"/>
+     <n a="9271,4,1,0,0,230,0,0" ix="2" t="next_downtime,n"/>
+     <n a="9272,12,1,0,0,231,1,0" ix="3" t="current_time,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="231">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="226" iloc="232" itag="call">
+         <args>
+          <exp iexp="227"/>
+         </args>
+        </instr>
+        <instr iexp="1" iloc="233" ilval="161" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="232"/>
+      <preds/>
+     </stmt>
+     <stmt sid="232">
+      <skind breakstmtid="242" continuestmtid="232" iloc="233" stag="loop">
+       <block>
+        <bstmts>
+         <stmt sid="233">
+          <skind iexp="230" iloc="233" stag="if">
+           <thenblock>
+            <bstmts/>
+           </thenblock>
+           <elseblock>
+            <bstmts>
+             <stmt sid="234">
+              <skind iloc="233" stag="break"/>
+              <succs r="242"/>
+              <preds r="233"/>
+             </stmt>
+            </bstmts>
+           </elseblock>
+          </skind>
+          <succs r="235,234"/>
+          <preds r="232"/>
+         </stmt>
+         <stmt sid="235">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="231" iloc="234" ilval="162" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="236"/>
+          <preds r="233"/>
+         </stmt>
+         <stmt sid="236">
+          <skind iexp="233" iloc="238" stag="if">
+           <thenblock>
+            <bstmts>
+             <stmt sid="237">
+              <skind iexp="236" iloc="238" stag="if">
+               <thenblock>
+                <bstmts>
+                 <stmt sid="238">
+                  <skind iexp="238" iloc="237" stag="if">
+                   <thenblock>
+                    <bstmts>
+                     <stmt sid="239">
+                      <skind stag="instr">
+                       <instrs>
+                        <instr iexp="239" iloc="235" itag="call">
+                         <args>
+                          <exp iexp="240"/>
+                         </args>
+                        </instr>
+                       </instrs>
+                      </skind>
+                      <succs r="241"/>
+                      <preds r="238"/>
+                     </stmt>
+                    </bstmts>
+                   </thenblock>
+                   <elseblock>
+                    <bstmts>
+                     <stmt sid="240">
+                      <skind stag="instr">
+                       <instrs>
+                        <instr iexp="241" iloc="236" itag="call">
+                         <args>
+                          <exp iexp="240"/>
+                         </args>
+                        </instr>
+                       </instrs>
+                      </skind>
+                      <succs r="241"/>
+                      <preds r="238"/>
+                     </stmt>
+                    </bstmts>
+                   </elseblock>
+                  </skind>
+                  <succs r="239,240"/>
+                  <preds r="237"/>
+                 </stmt>
+                </bstmts>
+               </thenblock>
+               <elseblock>
+                <bstmts/>
+               </elseblock>
+              </skind>
+              <succs r="238,241"/>
+              <preds r="236"/>
+             </stmt>
+            </bstmts>
+           </thenblock>
+           <elseblock>
+            <bstmts/>
+           </elseblock>
+          </skind>
+          <succs r="237,241"/>
+          <preds r="235"/>
+         </stmt>
+         <stmt sid="241">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="242" iloc="233" ilval="161" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="232"/>
+          <preds r="240,239,237,236"/>
+         </stmt>
+        </bstmts>
+       </block>
+      </skind>
+      <succs r="233"/>
+      <preds r="241,231"/>
+     </stmt>
+     <stmt sid="242">
+      <skind iexp="2" iloc="239" stag="return"/>
+      <succs/>
+      <preds r="234"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

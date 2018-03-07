@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:41:51">
+   <application file="common/downtime.c"/>
+  </header>
+  <function fname="delete_service_downtime">
+   <inv-dictionary>
+    <non-relational-value-table>
+     <n a="2" ix="1" t="sx"/>
+     <n a="3" ix="2" t="sx"/>
+     <n a="9" ix="3" t="iz"/>
+     <n a="2,2" ix="4" t="iv"/>
+    </non-relational-value-table>
+    <invariant-fact-table>
+     <n a="3,1" ix="1" t="nrv"/>
+     <n a="1,1" ix="2" t="nrv"/>
+     <n a="5,2" ix="3" t="nrv"/>
+     <n a="6,2" ix="4" t="nrv"/>
+     <n a="7,1" ix="5" t="nrv"/>
+     <n a="8,2" ix="6" t="nrv"/>
+     <n a="10,3" ix="7" t="nrv"/>
+     <n a="11,3" ix="8" t="nrv"/>
+     <n a="6,4" ix="9" t="nrv"/>
+     <n a="5,4" ix="10" t="nrv"/>
+     <n a="8,4" ix="11" t="nrv"/>
+    </invariant-fact-table>
+   </inv-dictionary>
+   <location-invariants>
+    <loc ictxt="60" ifacts="1,2"/>
+    <loc ictxt="58" ifacts="2,5"/>
+    <loc ictxt="62" ifacts="2,3,4,6,7,8,9,10,11"/>
+   </location-invariants>
+  </function>
+ </c-analysis>

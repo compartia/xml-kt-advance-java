@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="common/downtime" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:56"/>
+  </header>
+  <c-file filename="common/downtime">
+   <global-type-definitions>
+    <gtype iloc="519" itinfo="1"/>
+    <gtype iloc="520" itinfo="2"/>
+    <gtype iloc="521" itinfo="3"/>
+    <gtype iloc="522" itinfo="4"/>
+    <gtype iloc="523" itinfo="5"/>
+    <gtype iloc="524" itinfo="6"/>
+    <gtype iloc="525" itinfo="7"/>
+    <gtype iloc="526" itinfo="8"/>
+    <gtype iloc="527" itinfo="9"/>
+    <gtype iloc="528" itinfo="10"/>
+   </global-type-definitions>
+   <global-comptag-definitions>
+    <gcomptag icinfo="1" iloc="531"/>
+    <gcomptag icinfo="2" iloc="523"/>
+    <gcomptag icinfo="3" iloc="524"/>
+    <gcomptag icinfo="4" iloc="525"/>
+    <gcomptag icinfo="5" iloc="526"/>
+    <gcomptag icinfo="6" iloc="527"/>
+    <gcomptag icinfo="7" iloc="528"/>
+   </global-comptag-definitions>
+   <global-comptag-declarations/>
+   <global-enumtag-definitions/>
+   <global-enumtag-declarations/>
+   <global-var-definitions>
+    <gvar iinit="1" iloc="723" ivinfo="24"/>
+   </global-var-definitions>
+   <global-var-declarations>
+    <gvardecl iloc="725" ivinfo="25"/>
+    <gvardecl iloc="727" ivinfo="26"/>
+    <gvardecl iloc="729" ivinfo="27"/>
+    <gvardecl iloc="731" ivinfo="28"/>
+    <gvardecl iloc="733" ivinfo="29"/>
+    <gvardecl iloc="735" ivinfo="30"/>
+    <gvardecl iloc="737" ivinfo="31"/>
+    <gvardecl iloc="739" ivinfo="32"/>
+    <gvardecl iloc="741" ivinfo="33"/>
+    <gvardecl iloc="743" ivinfo="34"/>
+    <gvardecl iloc="744" ivinfo="23"/>
+    <gvardecl iloc="745" ivinfo="22"/>
+    <gvardecl iloc="746" ivinfo="13"/>
+    <gvardecl iloc="747" ivinfo="12"/>
+    <gvardecl iloc="748" ivinfo="11"/>
+    <gvardecl iloc="749" ivinfo="9"/>
+    <gvardecl iloc="750" ivinfo="8"/>
+    <gvardecl iloc="751" ivinfo="10"/>
+    <gvardecl iloc="752" ivinfo="21"/>
+    <gvardecl iloc="753" ivinfo="20"/>
+    <gvardecl iloc="754" ivinfo="19"/>
+    <gvardecl iloc="755" ivinfo="17"/>
+    <gvardecl iloc="756" ivinfo="18"/>
+    <gvardecl iloc="757" ivinfo="16"/>
+    <gvardecl iloc="758" ivinfo="15"/>
+    <gvardecl iloc="759" ivinfo="14"/>
+    <gvardecl iloc="760" ivinfo="7"/>
+    <gvardecl iloc="761" ivinfo="6"/>
+    <gvardecl iloc="762" ivinfo="5"/>
+    <gvardecl iloc="763" ivinfo="4"/>
+    <gvardecl iloc="764" ivinfo="3"/>
+    <gvardecl iloc="765" ivinfo="2"/>
+    <gvardecl iloc="766" ivinfo="1"/>
+    <gvardecl iloc="768" ivinfo="35"/>
+    <gvardecl iloc="770" ivinfo="36"/>
+    <gvardecl iloc="772" ivinfo="37"/>
+    <gvardecl iloc="774" ivinfo="38"/>
+    <gvardecl iloc="776" ivinfo="39"/>
+    <gvardecl iloc="778" ivinfo="40"/>
+    <gvardecl iloc="780" ivinfo="41"/>
+    <gvardecl iloc="782" ivinfo="42"/>
+    <gvardecl iloc="784" ivinfo="43"/>
+    <gvardecl iloc="786" ivinfo="44"/>
+    <gvardecl iloc="788" ivinfo="45"/>
+    <gvardecl iloc="790" ivinfo="46"/>
+    <gvardecl iloc="792" ivinfo="47"/>
+    <gvardecl iloc="794" ivinfo="48"/>
+   </global-var-declarations>
+   <functions>
+    <gfun iloc="514" ivinfo="23"/>
+    <gfun iloc="508" ivinfo="22"/>
+    <gfun iloc="487" ivinfo="21"/>
+    <gfun iloc="428" ivinfo="20"/>
+    <gfun iloc="382" ivinfo="19"/>
+    <gfun iloc="375" ivinfo="18"/>
+    <gfun iloc="286" ivinfo="17"/>
+    <gfun iloc="263" ivinfo="16"/>
+    <gfun iloc="240" ivinfo="15"/>
+    <gfun iloc="228" ivinfo="14"/>
+    <gfun iloc="210" ivinfo="13"/>
+    <gfun iloc="190" ivinfo="12"/>
+    <gfun iloc="169" ivinfo="11"/>
+    <gfun iloc="138" ivinfo="10"/>
+    <gfun iloc="132" ivinfo="9"/>
+    <gfun iloc="126" ivinfo="8"/>
+    <gfun iloc="112" ivinfo="7"/>
+    <gfun iloc="97" ivinfo="6"/>
+    <gfun iloc="25" ivinfo="5"/>
+    <gfun iloc="17" ivinfo="4"/>
+    <gfun iloc="15" ivinfo="3"/>
+    <gfun iloc="13" ivinfo="2"/>
+    <gfun iloc="1" ivinfo="1"/>
+   </functions>
+   <global-assembly-statements/>
+   <global-pragmas/>
+   <global-text/>
+  </c-file>
+ </c-analysis>

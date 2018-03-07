@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:31:40">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="hashfunc2">
+   <api>
+    <api-assumptions>
+     <aa ipr="6968" ppos="2,18"/>
+     <aa ipr="6992" ppos="48,32"/>
+     <aa ipr="7010" ppos="62"/>
+     <aa ipr="8076" ppos="64"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="2" f="strlen" h="string"/>
+    </library-calls>
+    <missing-summaries/>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

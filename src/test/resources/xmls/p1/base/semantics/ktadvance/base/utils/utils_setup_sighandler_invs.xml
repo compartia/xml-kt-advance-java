@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:49">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="setup_sighandler">
+   <inv-dictionary>
+    <non-relational-value-table>
+     <n a="1,1" ix="1" t="iv"/>
+     <n a="3,3" ix="2" t="iv"/>
+     <n a="7" ix="3" t="sx"/>
+     <n a="8" ix="4" t="sx"/>
+     <n a="9" ix="5" t="sx"/>
+     <n a="10" ix="6" t="sx"/>
+     <n a="31" ix="7" t="iz"/>
+    </non-relational-value-table>
+    <invariant-fact-table>
+     <n a="1,1" ix="1" t="nrv"/>
+     <n a="2,1" ix="2" t="nrv"/>
+     <n a="3,1" ix="3" t="nrv"/>
+     <n a="4,1" ix="4" t="nrv"/>
+     <n a="5,1" ix="5" t="nrv"/>
+     <n a="6,1" ix="6" t="nrv"/>
+     <n a="7,1" ix="7" t="nrv"/>
+     <n a="8,1" ix="8" t="nrv"/>
+     <n a="9,1" ix="9" t="nrv"/>
+     <n a="10,2" ix="10" t="nrv"/>
+     <n a="11,2" ix="11" t="nrv"/>
+     <n a="13,3" ix="12" t="nrv"/>
+     <n a="14,3" ix="13" t="nrv"/>
+     <n a="15,1" ix="14" t="nrv"/>
+     <n a="16,1" ix="15" t="nrv"/>
+     <n a="17,1" ix="16" t="nrv"/>
+     <n a="18,1" ix="17" t="nrv"/>
+     <n a="19,3" ix="18" t="nrv"/>
+     <n a="20,3" ix="19" t="nrv"/>
+     <n a="21,3" ix="20" t="nrv"/>
+     <n a="23,4" ix="21" t="nrv"/>
+     <n a="24,4" ix="22" t="nrv"/>
+     <n a="26,5" ix="23" t="nrv"/>
+     <n a="27,5" ix="24" t="nrv"/>
+     <n a="29,6" ix="25" t="nrv"/>
+     <n a="30,6" ix="26" t="nrv"/>
+     <n a="31,7" ix="27" t="nrv"/>
+    </invariant-fact-table>
+   </inv-dictionary>
+   <location-invariants>
+    <loc ictxt="7847" ifacts="5,20,27"/>
+    <loc ictxt="7845" ifacts="5,12,27"/>
+    <loc ictxt="7846" ifacts="5,27"/>
+    <loc ictxt="7843" ifacts="5,13,27"/>
+    <loc ictxt="7842" ifacts="5,18,27"/>
+    <loc ictxt="7841" ifacts="5,19,27"/>
+    <loc ictxt="7840" ifacts="5,10,11,27"/>
+    <loc ictxt="7839" ifacts="5,14,15,16,17,25,26,27"/>
+    <loc ictxt="7838" ifacts="1,2,3,4,5,21,22,27"/>
+    <loc ictxt="7837" ifacts="5,6,7,8,9,23,24,27"/>
+    <loc ictxt="7844" ifacts="5,27"/>
+   </location-invariants>
+  </function>
+ </c-analysis>

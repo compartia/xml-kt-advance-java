@@ -1,0 +1,2931 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:29:31">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="grab_on_demand_macro">
+   <ppos>
+    <ppo deps="f" id="386" invs="159" ippo="386" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: strdup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function strdup satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="182" ippo="182" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="f" id="427" invs="164" ippo="427" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strdup satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="80" invs="472" ippo="80" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1036(rv:strchr)"/>
+    </ppo>
+    <ppo deps="s" id="302" ippo="302" s="g">
+     <e txt="macro_ondemand is global"/>
+    </ppo>
+    <ppo deps="f" id="354" invs="632" ippo="354" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addrof_heapregion_1"/>
+    </ppo>
+    <ppo deps="s" id="557" ippo="557" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="f" id="188" invs="479" ippo="188" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1067(fieldmembers157)_xx_assignedAt#1082(fieldnext156)_xx_assignedAt#1094(fieldnext156)"/>
+    </ppo>
+    <ppo deps="s" id="219" ippo="219" s="g">
+     <e txt="macro_ondemand is global"/>
+    </ppo>
+    <ppo id="459" ippo="459">
+     <d>
+      <invs>
+       <arg a="1" i="594"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="488" ippo="488" s="g">
+     <e txt="global variable macro_ondemand is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="f" id="102" invs="235" ippo="102" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: strdup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+    </ppo>
+    <ppo deps="f" id="272" invs="455" ippo="272" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1040(c)_xx_assignedAt#998"/>
+    </ppo>
+    <ppo deps="s" id="145" ippo="145" s="g">
+     <e txt="index value 0 is non-negative"/>
+    </ppo>
+    <ppo deps="f" id="439" invs="399" ippo="439" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1136(fieldmembers159)_xx_assignedAt#1151(fieldnext158)_xx_assignedAt#1163(fieldnext158)"/>
+    </ppo>
+    <ppo deps="s" id="559" ippo="559" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="15" ippo="15" s="g">
+     <e txt="global variable macro_ondemand valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="221" ippo="221" s="g">
+     <e txt="global variable macro_ondemand valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="465" ippo="465" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="f" id="121" invs="69" ippo="121" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strchr plus non-negative offset 1 satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="425" invs="473" ippo="425" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1021(rv:strdup)"/>
+    </ppo>
+    <ppo deps="f" id="548" invs="425" ippo="548" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1163(fieldnext158)"/>
+    </ppo>
+    <ppo deps="s" id="152" ippo="152" s="g">
+     <e txt="casting constant value 0 to char"/>
+    </ppo>
+    <ppo id="205" ippo="205">
+     <d>
+      <invs>
+       <arg a="1" i="640"/>
+      </invs>
+      <msgs>
+       <msg t="not-null(str) delegated to api; unable to exclude explicit null value"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="385" invs="159" ippo="385" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strdup satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="160" invs="215" ippo="160" s="g" ts="2018-01-09 15:50:07">
+     <e txt="lower-bound value is result of adding non-negative value: 1 to pointer ; or NULL; all of which satisfy the lower-bound property"/>
+    </ppo>
+    <ppo deps="s" id="235" ippo="235" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="246" ippo="246" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="429" ippo="429"/>
+    <ppo deps="s" id="437" ippo="437" s="g">
+     <e txt="field host_name (158) is assigned a value with a valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="f" id="579" invs="461" ippo="579" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1021(rv:strdup)"/>
+    </ppo>
+    <ppo deps="f" id="54" invs="104" ippo="54" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: strdup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function strdup satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="305" ippo="305" s="g">
+     <e txt="global variable macro_ondemand is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="140" ippo="140" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo id="403" ippo="403">
+     <d>
+      <invs>
+       <arg a="2" i="290,481,897"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _,58"/>
+        <msg t="[2]:function return value: strchr"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="581" invs="140" ippo="581" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strdup satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="77" invs="195" ippo="77" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strchr plus non-negative offset 1 satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="449" invs="95" ippo="449" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function find_service satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="242" ippo="242" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="159" invs="851" ippo="159" s="g" ts="2018-01-09 16:55:59">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:find_hostgroup @-1 r:5"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addrof_heapregion_1"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="16" ippo="16" s="g">
+     <e txt="global variable macro_ondemand is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="21" ippo="21" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="484" ippo="484" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="s" id="521" ippo="521" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="f" id="131" invs="437" ippo="131" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1033(c)"/>
+    </ppo>
+    <ppo deps="s" id="231" ippo="231" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo deps="s" id="68" ippo="68" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="s" id="237" ippo="237" s="g">
+     <e txt="global variable macro_ondemand is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="f" id="85" invs="542" ippo="85" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addrof_heapregion_1"/>
+    </ppo>
+    <ppo id="105" ippo="105">
+     <d>
+      <invs>
+       <arg a="1" i="32,235,374,530"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="519" ippo="519" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="f" id="563" invs="676" ippo="563" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all regions pointed at are heap-allocated: []"/>
+    </ppo>
+    <ppo deps="s" id="247" ippo="247" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="377" ippo="377" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="63" ippo="63" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="279" ippo="279" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="176" ippo="626" s="g">
+     <e txt="upperbound of constant string argument: "/>
+    </ppo>
+    <ppo deps="f" id="186" invs="17" ippo="186" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: strdup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function strdup satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="357" invs="450" ippo="357" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1040(c)_xx_assignedAt#998"/>
+    </ppo>
+    <ppo deps="f" id="297" invs="394" ippo="297" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1094(fieldnext156)"/>
+    </ppo>
+    <ppo id="211" ippo="211"/>
+    <ppo id="433" ippo="433">
+     <d>
+      <invs>
+       <arg a="2" i="399,564"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="555" ippo="555" s="g">
+     <e txt="global variable macro_ondemand valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="f" id="569" invs="176" ippo="569" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:memory base: addrof_localvar_result_buffer_135"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="address of stack variable result_buffer is not null"/>
+    </ppo>
+    <ppo deps="s" id="326" ippo="326" s="g">
+     <e txt="string literal"/>
+    </ppo>
+    <ppo deps="s" id="392" ippo="392" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="430" invs="399" ippo="430" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1136(fieldmembers159)_xx_assignedAt#1151(fieldnext158)_xx_assignedAt#1163(fieldnext158)"/>
+    </ppo>
+    <ppo deps="s" id="17" ippo="17" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="391" ippo="391" s="g">
+     <e txt="index value 1023 is less than bound 1024"/>
+    </ppo>
+    <ppo deps="f" id="349" invs="442" ippo="349" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1021(rv:strdup)"/>
+    </ppo>
+    <ppo id="434" ippo="434">
+     <d>
+      <invs>
+       <arg a="2" i="399,564"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="226" ippo="226" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="313" ippo="313" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="f" id="199" invs="203" ippo="199" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:no function summary for find_host"/>
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: find_host"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function find_host satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="264" ippo="264"/>
+    <ppo id="295" ippo="295">
+     <d>
+      <invs>
+       <arg a="2" i="381,544"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="328" ippo="328" s="g">
+     <e txt="upperbound of constant string argument: SERVICE"/>
+    </ppo>
+    <ppo deps="f" id="353" invs="449" ippo="353" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1033(c)"/>
+    </ppo>
+    <ppo id="499" ippo="499"/>
+    <ppo id="187" ippo="187"/>
+    <ppo deps="f" id="381" invs="658" ippo="381" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all regions pointed at are heap-allocated: [heap-allocated-region created by strdup at line 1021]"/>
+    </ppo>
+    <ppo deps="s" id="550" ippo="550" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="404" ippo="404">
+     <d>
+      <invs>
+       <arg a="3" i="112,322,438"/>
+      </invs>
+      <msgs>
+       <msg t="remaining constraint: ((strlen(_)#return &lt;= 2147483647) (--&gt; ((strlen(_)#return &lt;= 2147483647))"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="142" invs="853" ippo="142" s="g" ts="2018-01-09 16:55:59">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:find_hostgroup @-1 r:5"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addrof_heapregion_1"/>
+    </ppo>
+    <ppo deps="s" id="416" ippo="627" s="g">
+     <e txt="string literal"/>
+    </ppo>
+    <ppo deps="s" id="511" ippo="511" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo deps="f" id="262" invs="134" ippo="262" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:memory base: addrof_localvar_result_buffer_135"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="address of stack variable result_buffer is not null"/>
+    </ppo>
+    <ppo deps="s" id="389" ippo="389" s="g">
+     <e txt="casting constant value 0 to char"/>
+    </ppo>
+    <ppo deps="s" id="27" ippo="27" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="s" id="157" ippo="157" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="s" id="289" ippo="289" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="334" ippo="334" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo id="212" ippo="212">
+     <d>
+      <invs>
+       <arg a="3" i="138"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="395" invs="290" ippo="395" s="g" ts="2018-01-09 15:50:07">
+     <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+    </ppo>
+    <ppo deps="f" id="460" invs="92" ippo="460" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:memory base: addrof_localvar_result_buffer_135"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="address of stack variable result_buffer is not null"/>
+    </ppo>
+    <ppo deps="f" id="490" invs="316" ippo="490" s="g" ts="2018-01-09 15:50:07">
+     <e txt="value 0 is non-negative and target type maximum value is larger than or equal to source type maximum value"/>
+    </ppo>
+    <ppo deps="s" id="364" ippo="364" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="241" invs="489" ippo="241" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1077(rv:strlen)"/>
+    </ppo>
+    <ppo id="251" ippo="251">
+     <d>
+      <invs>
+       <arg a="1" i="372,526"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_hostgroup-&gt;members
+,unknown:temp_hostgroupmember-&gt;next
+]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_hostgroup-&gt;members ,unknown:temp_hostgroupmember-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_hostgroup-&gt;members ,unknown:temp_hostgroupmember-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_hostgroup-&gt;members ,unknown:temp_hostgroupmember-&gt;next ]"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="330" invs="281" ippo="330" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: strdup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+    </ppo>
+    <ppo id="432" ippo="432">
+     <d>
+      <invs>
+       <arg a="1" i="399,564"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_servicegroup-&gt;members
+,unknown:temp_servicegroupmember-&gt;next
+]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_servicegroup-&gt;members ,unknown:temp_servicegroupmember-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_servicegroup-&gt;members ,unknown:temp_servicegroupmember-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_servicegroup-&gt;members ,unknown:temp_servicegroupmember-&gt;next ]"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="169" invs="189" ippo="169" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:no function summary for find_hostgroup"/>
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: find_hostgroup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function find_hostgroup satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="480" ippo="480">
+     <d>
+      <invs>
+       <arg a="1" i="619"/>
+      </invs>
+      <msgs>
+       <msg t="not-null(str) delegated to api; unable to exclude explicit null value"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="562" ippo="562" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo id="359" ippo="359">
+     <d>
+      <invs>
+       <arg a="2" i="270,450,633"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="317" ippo="317" s="g">
+     <e txt="global variable macro_ondemand is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="22" ippo="22" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="215" ippo="215" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="s" id="222" ippo="222" s="g">
+     <e txt="global variable macro_ondemand is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="f" id="286" invs="310" ippo="286" s="g" ts="2018-01-09 15:50:07">
+     <e txt="value 0 is non-negative and target type maximum value is larger than or equal to source type maximum value"/>
+    </ppo>
+    <ppo deps="f" id="355" invs="127" ippo="355" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strchr plus non-negative offset 1 satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="580" ippo="580">
+     <d>
+      <invs>
+       <arg a="1" i="140,275,462,643"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:find_host @-1 r:5,freed(by:find_hostgroup @-1 r:5,freed(by:find_service @-1 r:5,freed(by:find_servicegroup @-1 r:5,freed(by:grab_on_demand_host_macro @-1 r:5,freed(by:grab_on_demand_service_macro @-1 r:5"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="458" ippo="458" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo id="441" ippo="441">
+     <d>
+      <invs>
+       <arg a="1" i="399,564"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_servicegroup-&gt;members
+,unknown:temp_servicegroupmember-&gt;next
+]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_servicegroup-&gt;members ,unknown:temp_servicegroupmember-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_servicegroup-&gt;members ,unknown:temp_servicegroupmember-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_servicegroup-&gt;members ,unknown:temp_servicegroupmember-&gt;next ]"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="482" ippo="482" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo deps="f" id="65" invs="411" ippo="65" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1026(rv:strchr)"/>
+    </ppo>
+    <ppo deps="s" id="280" ippo="280" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="44" invs="34" ippo="44" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: strdup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function strdup satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="f" id="120" invs="579" ippo="120" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addrof_heapregion_1"/>
+    </ppo>
+    <ppo deps="f" id="365" invs="447" ippo="365" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1117(rv:find_service)"/>
+    </ppo>
+    <ppo id="162" ippo="162">
+     <d>
+      <invs>
+       <arg a="3" i="110,321,436"/>
+      </invs>
+      <msgs>
+       <msg t="remaining constraint: ((strlen(_)#return &lt;= 2147483647) (--&gt; ((strlen(_)#return &lt;= 2147483647))"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="539" ippo="539" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="33" invs="432" ippo="33" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1021(rv:strdup)"/>
+    </ppo>
+    <ppo deps="s" id="64" ippo="64" s="g">
+     <e txt="casting constant value 0 to char"/>
+    </ppo>
+    <ppo deps="s" id="564" ippo="564" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo id="292" ippo="292">
+     <d>
+      <invs>
+       <arg a="1" i="381,544"/>
+      </invs>
+      <msgs>
+       <msg t="encountered undetermined regions: [unknown:temp_hostgroup-&gt;members,unknown:temp_hostgroupmember-&gt;next]"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="175" ippo="628" s="g">
+     <e txt="string literal"/>
+    </ppo>
+    <ppo deps="f" id="276" invs="326" ippo="276" s="g" ts="2018-01-09 15:50:07">
+     <e txt="value 0 is non-negative and target type maximum value is larger than or equal to source type maximum value"/>
+    </ppo>
+    <ppo deps="s" id="92" ippo="92" s="g">
+     <e txt="casting constant value 0 to char"/>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="224" invs="459" ippo="224" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1063_xx_assignedAt#1086"/>
+    </ppo>
+    <ppo deps="s" id="540" ippo="540" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="417" ippo="629" s="g">
+     <e txt="string literal"/>
+    </ppo>
+    <ppo deps="f" id="153" invs="249" ippo="153" s="g" ts="2018-01-09 15:50:07">
+     <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+    </ppo>
+    <ppo id="39" ippo="39">
+     <d>
+      <invs>
+       <arg a="1" i="34,237,377,533"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="387" ippo="387" s="g">
+     <e txt="index value 0 is non-negative"/>
+    </ppo>
+    <ppo id="398" ippo="398">
+     <d>
+      <invs>
+       <arg a="1" i="290,481,897"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="498" ippo="498" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="583" invs="451" ippo="583" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1049(rv:grab_on_demand_host_macro)_xx_assignedAt#1060_xx_assignedAt#1079_xx_assignedAt#1088_xx_assignedAt#1093_xx_assignedAt#1119(rv:grab_on_demand_service_macro)_xx_assignedAt#1129_xx_assignedAt#1148_xx_assignedAt#1157_xx_assignedAt#1162_xx_assignedAt#1178"/>
+    </ppo>
+    <ppo deps="f" id="126" invs="150" ippo="126" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:no function summary for find_host"/>
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: find_host"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function find_host satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="315" ippo="315" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo id="294" ippo="294">
+     <d>
+      <invs>
+       <arg a="2" i="381,544"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="492" invs="415" ippo="492" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1146(rv:strlen)"/>
+    </ppo>
+    <ppo deps="f" id="577" invs="643" ippo="577" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all regions pointed at are heap-allocated: [heap-allocated-region created by strdup at line 1021]"/>
+    </ppo>
+    <ppo deps="f" id="108" invs="530" ippo="108" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addrof_heapregion_1"/>
+    </ppo>
+    <ppo deps="s" id="310" ippo="310" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="f" id="371" invs="124" ippo="371" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strdup satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="52" invs="606" ippo="52" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addrof_heapregion_1"/>
+    </ppo>
+    <ppo deps="f" id="491" invs="414" ippo="491" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1132_xx_assignedAt#1155"/>
+    </ppo>
+    <ppo id="333" ippo="333">
+     <d>
+      <invs>
+       <arg a="1" i="155,281,468,656"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="250" ippo="250">
+     <d>
+      <invs>
+       <arg a="1" i="372,526"/>
+      </invs>
+      <msgs>
+       <msg t="encountered undetermined regions: [unknown:temp_hostgroup-&gt;members,unknown:temp_hostgroupmember-&gt;next]"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="565" ippo="565" s="g">
+     <e txt="macro_ondemand is global"/>
+    </ppo>
+    <ppo deps="f" id="30" invs="119" ippo="30" s="g" ts="2018-01-09 15:50:07">
+     <e txt="initial value of parameter str satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="185" invs="17" ippo="185" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strdup satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="206" ippo="206">
+     <d>
+      <invs>
+       <arg a="1" i="640"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="446" ippo="446" s="g">
+     <e txt="field service_description (158) is assigned a value with a valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="14" ippo="14" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="111" ippo="111" s="g">
+     <e txt="constant string is allocated by compiler"/>
+    </ppo>
+    <ppo deps="f" id="551" invs="507" ippo="551" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all regions pointed at are heap-allocated: []"/>
+    </ppo>
+    <ppo deps="f" id="277" invs="454" ippo="277" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1077"/>
+    </ppo>
+    <ppo deps="s" id="82" ippo="82" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="487" ippo="487" s="g">
+     <e txt="global variable macro_ondemand valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="578" ippo="578" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="89" ippo="89" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="f" id="291" invs="381" ippo="291" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1067(fieldmembers157)_xx_assignedAt#1082(fieldnext156)_xx_assignedAt#1094(fieldnext156)"/>
+    </ppo>
+    <ppo deps="s" id="79" ippo="79" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="217" ippo="217" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="470" ippo="470" s="g">
+     <e txt="macro_ondemand is global"/>
+    </ppo>
+    <ppo deps="f" id="534" invs="404" ippo="534" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1133"/>
+    </ppo>
+    <ppo deps="s" id="270" ippo="270" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="573" ippo="573" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="f" id="31" invs="119" ippo="31" s="g" ts="2018-01-09 15:50:07">
+     <e txt="upper-bound value is initial value of parameter str satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="554" ippo="554" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="12" ippo="12" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="f" id="209" invs="138" ippo="209" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:memory base: addrof_localvar_result_buffer_135"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="address of stack variable result_buffer is not null"/>
+    </ppo>
+    <ppo deps="f" id="366" invs="624" ippo="366" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(find_service(_^_)#return"/>
+    </ppo>
+    <ppo deps="s" id="556" ippo="556" s="g">
+     <e txt="global variable macro_ondemand is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="476" ippo="476" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="303" ippo="303" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="81" ippo="81" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="128" ippo="128">
+     <d>
+      <invs>
+       <arg a="1" i="152,278,465,653,794,801,809,891"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:find_host @-1 r:5"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="356" ippo="356">
+     <d>
+      <invs>
+       <arg a="2" i="127,269,449,632"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _,58"/>
+        <msg t="[2]:function return value: strchr"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="285" ippo="285">
+     <d>
+      <invs>
+       <arg a="3" i="202,335,491"/>
+       <arg a="2" i="334,492"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="273" ippo="273">
+     <d>
+      <invs>
+       <arg a="1" i="273,457,636"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:find_host @-1 r:5,freed(by:find_hostgroup @-1 r:5,freed(by:grab_on_demand_host_macro @-1 r:5"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="70" invs="195" ippo="70" s="g" ts="2018-01-09 15:50:07">
+     <e txt="value of caste (first_arg:(char*)) is a compound value: ((strchr(_^58)#return + 1)"/>
+    </ppo>
+    <ppo id="134" ippo="134">
+     <d>
+      <invs>
+       <arg a="2" i="111,260,437,608,905,907,909,954"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _,58"/>
+        <msg t="[2]:function return value: strchr"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="399" ippo="399" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="f" id="509" invs="241" ippo="509" s="g" ts="2018-01-09 15:50:07">
+     <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+    </ppo>
+    <ppo id="24" ippo="24">
+     <d>
+      <invs>
+       <arg a="1" i="119,265,616"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="94" invs="231" ippo="94" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: strchr"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+    </ppo>
+    <ppo deps="f" id="109" invs="32" ippo="109" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strdup satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="167" invs="670" ippo="167" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(find_hostgroup(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="407" invs="463" ippo="407" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1123(rv:find_servicegroup)"/>
+    </ppo>
+    <ppo deps="s" id="415" ippo="415" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="507" ippo="507" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="543" ippo="543">
+     <d>
+      <invs>
+       <arg a="1" i="413,585"/>
+      </invs>
+      <msgs>
+       <msg t="encountered undetermined regions: [unknown:temp_servicegroup-&gt;members,unknown:temp_servicegroupmember-&gt;next]"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="245" invs="452" ippo="245" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1077"/>
+    </ppo>
+    <ppo deps="f" id="57" invs="673" ippo="57" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addrof_heapregion_1"/>
+    </ppo>
+    <ppo id="156" ippo="156">
+     <d>
+      <invs>
+       <arg a="1" i="215,214,249,407,851"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="421" ippo="630" s="g">
+     <e txt="constant string is allocated by compiler"/>
+    </ppo>
+    <ppo deps="s" id="257" ippo="257" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="529" ippo="529" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="11" ippo="11"/>
+    <ppo deps="s" id="485" ippo="485" s="g">
+     <e txt="macro_ondemand is global"/>
+    </ppo>
+    <ppo deps="f" id="535" invs="311,312" ippo="535" s="g" ts="2018-01-09 15:50:07">
+     <e txt="result of addition is greater than or equal to MIN: satisfies ((0 + 0) &gt;= -2147483648)"/>
+    </ppo>
+    <ppo deps="s" id="420" ippo="631" s="g">
+     <e txt="constant string is allocated by compiler"/>
+    </ppo>
+    <ppo deps="f" id="344" invs="400" ippo="344" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1040(c)_xx_assignedAt#998"/>
+    </ppo>
+    <ppo deps="s" id="552" ippo="552" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="518" ippo="518" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="f" id="375" invs="53" ippo="375" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strchr plus non-negative offset 1 satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="517" ippo="517"/>
+    <ppo deps="s" id="390" ippo="390" s="g">
+     <e txt="unsigned value is always non-negative"/>
+    </ppo>
+    <ppo id="457" ippo="457">
+     <d>
+      <invs>
+       <arg a="1" i="594"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="249" invs="372" ippo="249" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1067(fieldmembers157)_xx_assignedAt#1082(fieldnext156)_xx_assignedAt#1094(fieldnext156)"/>
+    </ppo>
+    <ppo id="331" ippo="331">
+     <d>
+      <invs>
+       <arg a="1" i="155,281,468,656"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="388" ippo="388" s="g">
+     <e txt="index value 0 is less than bound 1024"/>
+    </ppo>
+    <ppo deps="s" id="40" ippo="40" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo id="210" ippo="210"/>
+    <ppo deps="f" id="67" invs="584" ippo="67" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addrof_heapregion_1"/>
+    </ppo>
+    <ppo deps="f" id="110" invs="32" ippo="110" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: strdup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function strdup satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="339" ippo="339" s="g">
+     <e txt="constant string is allocated by compiler"/>
+    </ppo>
+    <ppo deps="s" id="345" ippo="345" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="321" ippo="321">
+     <d>
+      <invs>
+       <arg a="1" i="126"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:offset: [((sizeof(result_buffer) - 1):unsigned long]"/>
+        <msg t="[1]:offset: [0]"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="196" invs="494" ippo="196" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1074(rv:find_host)"/>
+    </ppo>
+    <ppo deps="s" id="314" ippo="314" s="g">
+     <e txt="macro_ondemand is global"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="155" ippo="155" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo deps="s" id="308" ippo="308" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo id="483" ippo="483">
+     <d>
+      <invs>
+       <arg a="1" i="619"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="116" invs="401" ippo="116" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1040(c)_xx_assignedAt#998"/>
+    </ppo>
+    <ppo deps="s" id="530" ippo="530" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="342" invs="453" ippo="342" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1108(rv:strstr)"/>
+    </ppo>
+    <ppo deps="s" id="348" ippo="348" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo id="384" ippo="384">
+     <d>
+      <invs>
+       <arg a="1" i="159,284,471,894"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:find_service @-1 r:5"/>
+        <msg t="[1]:potential frees not excluded: freed(by:find_service @-1 r:5,freed(by:find_servicegroup @-1 r:5"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="38" ippo="38" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo deps="s" id="256" ippo="256" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="374" ippo="374">
+     <d>
+      <invs>
+       <arg a="1" i="904,906,908,945,53,243,392,557"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:find_service @-1 r:5"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="522" ippo="522" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="f" id="495" invs="304" ippo="495" s="g" ts="2018-01-09 15:50:07">
+     <e txt="value 0 is non-negative and target type maximum value is larger than or equal to source type maximum value"/>
+    </ppo>
+    <ppo deps="s" id="505" ippo="505" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="74" ippo="74" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="s" id="178" ippo="632" s="g">
+     <e txt="constant string is allocated by compiler"/>
+    </ppo>
+    <ppo deps="f" id="75" invs="485" ippo="75" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1033(c)"/>
+    </ppo>
+    <ppo deps="f" id="123" invs="466" ippo="123" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1048(rv:find_host)"/>
+    </ppo>
+    <ppo deps="f" id="362" invs="441" ippo="362" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1117(rv:find_service)"/>
+    </ppo>
+    <ppo deps="s" id="558" ippo="558" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="139" invs="583" ippo="139" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all regions pointed at are heap-allocated: [heap-allocated-region created by strdup at line 1021]"/>
+    </ppo>
+    <ppo deps="s" id="147" ippo="147" s="g">
+     <e txt="casting constant value 0 to char"/>
+    </ppo>
+    <ppo deps="s" id="234" ippo="234" s="g">
+     <e txt="macro_ondemand is global"/>
+    </ppo>
+    <ppo id="293" ippo="293">
+     <d>
+      <invs>
+       <arg a="1" i="381,544"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_hostgroup-&gt;members
+,unknown:temp_hostgroupmember-&gt;next
+]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_hostgroup-&gt;members ,unknown:temp_hostgroupmember-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_hostgroup-&gt;members ,unknown:temp_hostgroupmember-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_hostgroup-&gt;members ,unknown:temp_hostgroupmember-&gt;next ]"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="53" invs="104" ippo="53" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strdup satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="240" invs="488" ippo="240" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1063_xx_assignedAt#1086"/>
+    </ppo>
+    <ppo deps="f" id="372" invs="124" ippo="372" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: strdup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function strdup satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="380" ippo="380" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="218" ippo="218" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo id="73" ippo="73">
+     <d>
+      <invs>
+       <arg a="1" i="195,293,486,672"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="373" invs="392" ippo="373" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1033(c)"/>
+    </ppo>
+    <ppo deps="f" id="163" invs="436" ippo="163" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1064(rv:strlen)"/>
+    </ppo>
+    <ppo id="230" ippo="230">
+     <d>
+      <invs>
+       <arg a="1" i="621"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="114" invs="444" ippo="114" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1044(rv:strstr)"/>
+    </ppo>
+    <ppo deps="f" id="368" invs="123" ippo="368" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:no function summary for find_service"/>
+        <msg t="[2]:function arguments: _,_"/>
+        <msg t="[2]:function return value: find_service"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function find_service satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="252" ippo="252">
+     <d>
+      <invs>
+       <arg a="2" i="372,526"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="461" ippo="461"/>
+    <ppo deps="s" id="547" ippo="547" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="283" invs="491" ippo="283" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1064"/>
+    </ppo>
+    <ppo deps="f" id="95" invs="515" ippo="95" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addrof_heapregion_1"/>
+    </ppo>
+    <ppo deps="s" id="149" ippo="149" s="g">
+     <e txt="index value 1023 is less than bound 1024"/>
+    </ppo>
+    <ppo deps="f" id="538" invs="422" ippo="538" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1155"/>
+    </ppo>
+    <ppo deps="f" id="42" invs="533" ippo="42" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addrof_heapregion_1"/>
+    </ppo>
+    <ppo id="253" ippo="253">
+     <d>
+      <invs>
+       <arg a="2" i="372,526"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="533" invs="405" ippo="533" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1146"/>
+    </ppo>
+    <ppo deps="s" id="324" ippo="324" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo id="229" ippo="229">
+     <d>
+      <invs>
+       <arg a="1" i="621"/>
+      </invs>
+      <msgs>
+       <msg t="not-null(str) delegated to api; unable to exclude explicit null value"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="447" invs="431" ippo="447" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1143(rv:find_service)"/>
+    </ppo>
+    <ppo deps="f" id="66" invs="253" ippo="66" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: strchr"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+    </ppo>
+    <ppo deps="s" id="363" ippo="363" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="340" ippo="340" s="g">
+     <e txt="constant string is allocated by compiler"/>
+    </ppo>
+    <ppo deps="f" id="570" invs="176,13" ippo="570" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:memory base: addrof_localvar_result_buffer_135"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="null value was set in array result_buffer at offset 0"/>
+    </ppo>
+    <ppo deps="f" id="239" invs="333" ippo="239" s="g" ts="2018-01-09 15:50:07">
+     <e txt="value 0 is non-negative and target type maximum value is larger than or equal to source type maximum value"/>
+    </ppo>
+    <ppo deps="f" id="318" invs="126" ippo="318" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:memory base: addrof_localvar_result_buffer_135"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="address of stack variable result_buffer is not null"/>
+    </ppo>
+    <ppo deps="f" id="464" invs="594" ippo="464" s="g" ts="2018-01-09 15:50:07">
+     <e txt="local variable result_buffer does not overlap with parameters and string literals"/>
+    </ppo>
+    <ppo deps="s" id="18" ippo="18" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="50" ippo="50" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="301" ippo="301" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="104" ippo="104" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo deps="f" id="496" invs="385" ippo="496" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1146"/>
+    </ppo>
+    <ppo id="512" ippo="512">
+     <d>
+      <invs>
+       <arg a="1" i="241,390,839"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="568" ippo="568" s="g">
+     <e txt="global variable macro_ondemand is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo id="452" ippo="452">
+     <d>
+      <invs>
+       <arg a="1" i="96,255,430,600,790,797,805,859"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:find_service @-1 r:5,freed(by:grab_on_demand_service_macro @-1 r:5"/>
+        <msg t="[1]:potential frees not excluded: freed(by:find_service @-1 r:5,freed(by:find_servicegroup @-1 r:5,freed(by:grab_on_demand_service_macro @-1 r:5"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="532" ippo="532" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="537" invs="317" ippo="537" s="g" ts="2018-01-09 15:50:07">
+     <e txt="value 0 is non-negative and target type maximum value is larger than or equal to source type maximum value"/>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="258" invs="273" ippo="258" s="g" ts="2018-01-09 15:50:07">
+     <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+    </ppo>
+    <ppo id="103" ippo="103">
+     <d>
+      <invs>
+       <arg a="1" i="32,235,374,530"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="189" ippo="189">
+     <d>
+      <invs>
+       <arg a="1" i="479,664"/>
+      </invs>
+      <msgs>
+       <msg t="encountered undetermined regions: [unknown:temp_hostgroup-&gt;members,unknown:temp_hostgroupmember-&gt;next]"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="453" invs="96" ippo="453" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strdup satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="378" invs="402" ippo="378" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1123(rv:find_servicegroup)"/>
+    </ppo>
+    <ppo id="444" ippo="444"/>
+    <ppo deps="s" id="508" ippo="508" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="544" ippo="544">
+     <d>
+      <invs>
+       <arg a="1" i="413,585"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_servicegroup-&gt;members
+,unknown:temp_servicegroupmember-&gt;next
+]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_servicegroup-&gt;members ,unknown:temp_servicegroupmember-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_servicegroup-&gt;members ,unknown:temp_servicegroupmember-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_servicegroup-&gt;members ,unknown:temp_servicegroupmember-&gt;next ]"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="477" ippo="477" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="478" ippo="478" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="180" ippo="633" s="g">
+     <e txt="constant string is allocated by compiler"/>
+    </ppo>
+    <ppo id="275" ippo="275">
+     <d>
+      <invs>
+       <arg a="2" i="273,457,636"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _,58"/>
+        <msg t="[2]:function return value: strchr"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="400" invs="480" ippo="400" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1040(c)_xx_assignedAt#998"/>
+    </ppo>
+    <ppo deps="f" id="428" invs="164" ippo="428" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: strdup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function strdup satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="523" invs="388" ippo="523" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1040(c)_xx_assignedAt#998"/>
+    </ppo>
+    <ppo id="481" ippo="481">
+     <d>
+      <invs>
+       <arg a="1" i="619"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="528" invs="387" ippo="528" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1146"/>
+    </ppo>
+    <ppo deps="f" id="141" invs="408" ippo="141" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1021(rv:strdup)"/>
+    </ppo>
+    <ppo deps="s" id="216" ippo="216" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="414" ippo="414" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="168" invs="189" ippo="168" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function find_hostgroup satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="520" ippo="520" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo id="489" ippo="489">
+     <d>
+      <invs>
+       <arg a="3" i="314"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="macro_ondemand is global"/>
+    </ppo>
+    <ppo deps="f" id="204" invs="433" ippo="204" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1075(rv:grab_on_demand_host_macro)"/>
+    </ppo>
+    <ppo id="502" ippo="502">
+     <d>
+      <invs>
+       <arg a="1" i="475,660"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_servicegroup-&gt;members
+,unknown:temp_servicegroupmember-&gt;next
+]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_servicegroup-&gt;members ,unknown:temp_servicegroupmember-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_servicegroup-&gt;members ,unknown:temp_servicegroupmember-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_servicegroup-&gt;members ,unknown:temp_servicegroupmember-&gt;next ]"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="335" invs="467" ippo="335" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1021(rv:strdup)"/>
+    </ppo>
+    <ppo id="426" ippo="426">
+     <d>
+      <invs>
+       <arg a="1" i="164,287,474"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="560" ippo="560" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo id="431" ippo="431">
+     <d>
+      <invs>
+       <arg a="1" i="399,564"/>
+      </invs>
+      <msgs>
+       <msg t="encountered undetermined regions: [unknown:temp_servicegroup-&gt;members,unknown:temp_servicegroupmember-&gt;next]"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="475" invs="427" ippo="475" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1132_xx_assignedAt#1155"/>
+    </ppo>
+    <ppo deps="s" id="195" ippo="195" s="g">
+     <e txt="field host_name (156) is assigned a value with a valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo id="504" ippo="504">
+     <d>
+      <invs>
+       <arg a="2" i="475,660"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="553" ippo="553" s="g">
+     <e txt="macro_ondemand is global"/>
+    </ppo>
+    <ppo deps="f" id="124" invs="654" ippo="124" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(find_host(_)#return"/>
+    </ppo>
+    <ppo id="370" ippo="370">
+     <d>
+      <invs>
+       <arg a="1" i="124,267,446,623,792,799,807,867"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:find_service @-1 r:5"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="474" invs="320" ippo="474" s="g" ts="2018-01-09 15:50:07">
+     <e txt="value 0 is non-negative and target type maximum value is larger than or equal to source type maximum value"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="332" ippo="332" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo deps="s" id="343" ippo="343" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo id="448" ippo="448">
+     <d>
+      <invs>
+       <arg a="1" i="789,798,806,860,95,256,431,601"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: "/>
+        <msg t="[1]:potential frees not excluded:"/>
+        <msg t="[1]:potential frees not excluded: freed(by:find_service @-1 r:120"/>
+        <msg t="[1]:potential frees not excluded:"/>
+        <msg t="[1]:potential frees not excluded:"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="419" ippo="634" s="g">
+     <e txt="constant string"/>
+    </ppo>
+    <ppo id="541" ippo="541"/>
+    <ppo deps="f" id="506" invs="482" ippo="506" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1151(fieldnext158)"/>
+    </ppo>
+    <ppo deps="f" id="36" invs="237" ippo="36" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: strdup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+    </ppo>
+    <ppo deps="f" id="213" invs="640" ippo="213" s="g" ts="2018-01-09 15:50:07">
+     <e txt="local variable result_buffer does not overlap with parameters and string literals"/>
+    </ppo>
+    <ppo deps="s" id="323" ippo="323" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo id="122" ippo="122">
+     <d>
+      <invs>
+       <arg a="2" i="69,247,403,579"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _,58"/>
+        <msg t="[2]:function return value: strchr"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="181" ippo="181"/>
+    <ppo deps="s" id="306" ippo="306" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="382" ippo="382" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="100" ippo="100" s="g">
+     <e txt="upperbound of constant string argument: HOST"/>
+    </ppo>
+    <ppo id="402" ippo="402">
+     <d>
+      <invs>
+       <arg a="2" i="290,481,897"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="26" ippo="26">
+     <d>
+      <invs>
+       <arg a="1" i="119,265,616"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="412" ippo="412" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="296" ippo="296" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo id="435" ippo="435"/>
+    <ppo deps="s" id="225" ippo="225" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="135" ippo="135" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="307" ippo="307" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="463" ippo="463">
+     <d>
+      <invs>
+       <arg a="3" i="92"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="513" invs="51" ippo="513" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:memory base: addrof_localvar_result_buffer_135"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="address of stack variable result_buffer is not null"/>
+    </ppo>
+    <ppo id="192" ippo="192">
+     <d>
+      <invs>
+       <arg a="2" i="479,664"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="259" ippo="259">
+     <d>
+      <invs>
+       <arg a="1" i="273,457,636"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="271" ippo="271" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="s" id="561" ippo="561" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="f" id="125" invs="150" ippo="125" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function find_host satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="320" invs="13" ippo="320" s="g" ts="2018-01-09 15:50:07">
+     <e txt="null-terminator in array result_buffer is present at position 0 which is less than the size of result_buffer: 1024"/>
+    </ppo>
+    <ppo id="515" ippo="515"/>
+    <ppo deps="f" id="542" invs="413" ippo="542" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1136(fieldmembers159)_xx_assignedAt#1151(fieldnext158)_xx_assignedAt#1163(fieldnext158)"/>
+    </ppo>
+    <ppo deps="f" id="143" invs="71" ippo="143" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strdup satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="19" ippo="19" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="32" ippo="32" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="227" ippo="227" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="172" ippo="172" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="228" ippo="228" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="454" invs="96" ippo="454" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: strdup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function strdup satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="497" ippo="497" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="545" ippo="545">
+     <d>
+      <invs>
+       <arg a="2" i="413,585"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="269" ippo="269" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="117" ippo="117" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="503" ippo="503">
+     <d>
+      <invs>
+       <arg a="2" i="475,660"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="514" ippo="514"/>
+    <ppo id="208" ippo="208">
+     <d>
+      <invs>
+       <arg a="1" i="640"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="525" ippo="525">
+     <d>
+      <invs>
+       <arg a="2" i="241,390,839"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="546" ippo="546">
+     <d>
+      <invs>
+       <arg a="2" i="413,585"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="60" ippo="60" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="s" id="150" ippo="150" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="244" invs="323" ippo="244" s="g" ts="2018-01-09 15:50:07">
+     <e txt="value 0 is non-negative and target type maximum value is larger than or equal to source type maximum value"/>
+    </ppo>
+    <ppo id="161" ippo="161">
+     <d>
+      <invs>
+       <arg a="2" i="215,214,249,407,851"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:upper-bound value is either NULL; all of which satisfy the lower-bound property, or is unknown expr: ((strchr(_^58)#return + 1); none of which are known to satisfy the upper-bound prooperty"/>
+        <msg t="[2]:function arguments: _,58"/>
+        <msg t="[2]:function return value: strchr"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="405" invs="438" ippo="405" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1133(rv:strlen)"/>
+    </ppo>
+    <ppo deps="f" id="144" invs="71" ippo="144" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: strdup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function strdup satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="137" ippo="137" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="243" ippo="243" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="194" ippo="194" s="g">
+     <e txt="field host_name (156) is assigned a value with a valid lower bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="f" id="319" invs="126,13" ippo="319" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:memory base: addrof_localvar_result_buffer_135"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="null value was set in array result_buffer at offset 0"/>
+    </ppo>
+    <ppo deps="s" id="87" ippo="87" s="g">
+     <e txt="add zero"/>
+    </ppo>
+    <ppo deps="f" id="84" invs="238" ippo="84" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: strchr"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+    </ppo>
+    <ppo deps="f" id="183" invs="361" ippo="183" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1021(rv:strdup)"/>
+    </ppo>
+    <ppo deps="f" id="171" invs="483" ippo="171" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1067(fieldmembers157)"/>
+    </ppo>
+    <ppo deps="s" id="34" ippo="34" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="274" ippo="274">
+     <d>
+      <invs>
+       <arg a="2" i="273,457,636"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="418" ippo="635" s="g">
+     <e txt="upperbound of constant string argument: "/>
+    </ppo>
+    <ppo deps="s" id="281" ippo="281" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="127" invs="465" ippo="127" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1021(rv:strdup)"/>
+    </ppo>
+    <ppo deps="f" id="413" invs="420" ippo="413" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1136(fieldmembers159)"/>
+    </ppo>
+    <ppo deps="s" id="298" ippo="298" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="576" ippo="576" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="28" ippo="28" s="g">
+     <e txt="str is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="148" ippo="148" s="g">
+     <e txt="unsigned value is always non-negative"/>
+    </ppo>
+    <ppo deps="s" id="325" ippo="325" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="379" ippo="379" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="440" ippo="440">
+     <d>
+      <invs>
+       <arg a="1" i="399,564"/>
+      </invs>
+      <msgs>
+       <msg t="encountered undetermined regions: [unknown:temp_servicegroup-&gt;members,unknown:temp_servicegroupmember-&gt;next]"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="423" ippo="423"/>
+    <ppo id="184" ippo="184">
+     <d>
+      <invs>
+       <arg a="1" i="17,230,362"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="424" ippo="424" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="72" ippo="72" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo id="261" ippo="261">
+     <d>
+      <invs>
+       <arg a="1" i="273,457,636"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="394" ippo="394" s="g">
+     <e txt="casting constant value 0 to char"/>
+    </ppo>
+    <ppo deps="f" id="93" invs="365" ippo="93" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1036(rv:strchr)"/>
+    </ppo>
+    <ppo deps="f" id="119" invs="403" ippo="119" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1033(c)"/>
+    </ppo>
+    <ppo deps="f" id="338" invs="155" ippo="338" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: strdup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function strdup satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="233" ippo="233" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="s" id="309" ippo="309" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="f" id="571" invs="13" ippo="571" s="g" ts="2018-01-09 15:50:07">
+     <e txt="null-terminator in array result_buffer is present at position 0 which is less than the size of result_buffer: 1024"/>
+    </ppo>
+    <ppo deps="s" id="361" ippo="361" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="136" invs="426" ippo="136" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1054(rv:find_hostgroup)"/>
+    </ppo>
+    <ppo deps="s" id="254" ippo="254" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="207" ippo="207" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo id="456" ippo="456">
+     <d>
+      <invs>
+       <arg a="1" i="594"/>
+      </invs>
+      <msgs>
+       <msg t="not-null(str) delegated to api; unable to exclude explicit null value"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="88" ippo="88" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo id="501" ippo="501">
+     <d>
+      <invs>
+       <arg a="1" i="475,660"/>
+      </invs>
+      <msgs>
+       <msg t="encountered undetermined regions: [unknown:temp_servicegroup-&gt;members,unknown:temp_servicegroupmember-&gt;next]"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="174" ippo="636" s="g">
+     <e txt="string literal"/>
+    </ppo>
+    <ppo deps="f" id="367" invs="123" ippo="367" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function find_service satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="179" ippo="637" s="g">
+     <e txt="constant string is allocated by compiler"/>
+    </ppo>
+    <ppo deps="s" id="329" ippo="329" s="g">
+     <e txt="constant string"/>
+    </ppo>
+    <ppo deps="f" id="350" invs="614" ippo="350" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addrof_heapregion_1"/>
+    </ppo>
+    <ppo deps="s" id="20" ippo="20" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="f" id="352" invs="117" ippo="352" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: strdup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function strdup satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="409" invs="644" ippo="409" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(find_servicegroup(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="129" invs="152" ippo="129" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strdup satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="397" ippo="397" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo deps="f" id="166" invs="291" ippo="166" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: find_hostgroup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+    </ppo>
+    <ppo deps="f" id="358" invs="633" ippo="358" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addrof_heapregion_1"/>
+    </ppo>
+    <ppo id="376" ippo="376">
+     <d>
+      <invs>
+       <arg a="2" i="904,906,908,945,53,243,392,557"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _,58"/>
+        <msg t="[2]:function return value: strchr"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="130" invs="152" ippo="130" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: strdup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function strdup satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="25" ippo="25" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo deps="s" id="479" ippo="479" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="49" invs="606" ippo="49" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all regions pointed at are heap-allocated: [heap-allocated-region created by strdup at line 1021]"/>
+    </ppo>
+    <ppo deps="f" id="369" invs="446" ippo="369" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1021(rv:strdup)"/>
+    </ppo>
+    <ppo deps="f" id="200" invs="493" ippo="200" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1021(rv:strdup)"/>
+    </ppo>
+    <ppo deps="s" id="436" ippo="436" s="g">
+     <e txt="field host_name (158) is assigned a value with a valid lower bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="62" ippo="62" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="284" invs="334,335" ippo="284" s="g" ts="2018-01-09 15:50:07">
+     <e txt="result of addition is greater than or equal to MIN: satisfies ((0 + 0) &gt;= -2147483648)"/>
+    </ppo>
+    <ppo deps="s" id="106" ippo="106" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo id="266" ippo="266"/>
+    <ppo deps="f" id="133" invs="111" ippo="133" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strchr plus non-negative offset 1 satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="493" ippo="493" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="56" invs="294" ippo="56" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: strchr"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+    </ppo>
+    <ppo deps="s" id="422" ippo="638" s="g">
+     <e txt="constant string is allocated by compiler"/>
+    </ppo>
+    <ppo id="443" ippo="443">
+     <d>
+      <invs>
+       <arg a="2" i="399,564"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="164" ippo="164">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: find_hostgroup"/>
+       <msg t="no function summary for find_hostgroup"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="341" ippo="341" s="g">
+     <e txt="constant string is allocated by compiler"/>
+    </ppo>
+    <ppo deps="s" id="101" ippo="101" s="g">
+     <e txt="constant string"/>
+    </ppo>
+    <ppo id="69" ippo="69">
+     <d>
+      <invs>
+       <arg a="4" i="73"/>
+       <arg a="3" i="74,253,411,584"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (strchr(_^58)#return"/>
+        <msg t="[3]:function arguments: _,58"/>
+        <msg t="[3]:function return value: strchr"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="201" ippo="201">
+     <d>
+      <invs>
+       <arg a="1" i="796,803,811,902,204,296,493,680"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:find_host @-1 r:5,freed(by:grab_on_demand_host_macro @-1 r:5"/>
+        <msg t="[1]:potential frees not excluded: freed(by:find_host @-1 r:5,freed(by:find_hostgroup @-1 r:5,freed(by:grab_on_demand_host_macro @-1 r:5"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="574" ippo="574" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="s" id="346" ippo="346" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="203" invs="204" ippo="203" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: strdup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function strdup satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="96" ippo="96" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="s" id="288" ippo="288" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="396" ippo="396">
+     <d>
+      <invs>
+       <arg a="1" i="290,481,897"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="45" ippo="45" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo id="78" ippo="78">
+     <d>
+      <invs>
+       <arg a="2" i="195,293,486,672"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _,58"/>
+        <msg t="[2]:function return value: strchr"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="118" ippo="118" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="236" ippo="236" s="g">
+     <e txt="global variable macro_ondemand valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="a" id="23" ids="1" invs="119" ippo="23" s="g" ts="2018-01-09 15:50:07">
+     <e txt="condition not-null(str) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="411" invs="144" ippo="411" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:no function summary for find_servicegroup"/>
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: find_servicegroup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function find_servicegroup satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="572" ippo="572">
+     <d>
+      <invs>
+       <arg a="1" i="176"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:offset: [((sizeof(result_buffer) - 1):unsigned long]"/>
+        <msg t="[1]:offset: [0]"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="337" invs="155" ippo="337" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strdup satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="351" invs="117" ippo="351" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strdup satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="190" ippo="190">
+     <d>
+      <invs>
+       <arg a="1" i="479,664"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_hostgroup-&gt;members
+,unknown:temp_hostgroupmember-&gt;next
+]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_hostgroup-&gt;members ,unknown:temp_hostgroupmember-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_hostgroup-&gt;members ,unknown:temp_hostgroupmember-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_hostgroup-&gt;members ,unknown:temp_hostgroupmember-&gt;next ]"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="393" ippo="393" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="76" invs="672" ippo="76" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addrof_heapregion_1"/>
+    </ppo>
+    <ppo id="197" ippo="197">
+     <d>
+      <invs>
+       <arg a="1" i="203,297,494,681,795,804,812,903"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: "/>
+        <msg t="[1]:potential frees not excluded: freed(by:find_host @-1 r:48"/>
+        <msg t="[1]:potential frees not excluded:"/>
+        <msg t="[1]:potential frees not excluded:"/>
+        <msg t="[1]:potential frees not excluded:"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="360" ippo="360">
+     <d>
+      <invs>
+       <arg a="2" i="270,450,633"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _,58"/>
+        <msg t="[2]:function return value: strchr"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="526" ippo="526">
+     <d>
+      <invs>
+       <arg a="2" i="241,390,839"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _,58"/>
+        <msg t="[2]:function return value: strchr"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="566" ippo="566" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="299" ippo="299" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="98" ippo="98" s="g">
+     <e txt="string literal"/>
+    </ppo>
+    <ppo deps="s" id="214" ippo="214" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="f" id="202" invs="204" ippo="202" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strdup satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="450" invs="95" ippo="450" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:no function summary for find_service"/>
+        <msg t="[2]:function arguments: _,_"/>
+        <msg t="[2]:function return value: find_service"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function find_service satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="13" ippo="13" s="g">
+     <e txt="macro_ondemand is global"/>
+    </ppo>
+    <ppo deps="s" id="220" ippo="220" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="f" id="51" invs="434" ippo="51" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1021(rv:strdup)"/>
+    </ppo>
+    <ppo deps="f" id="107" invs="373" ippo="107" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1021(rv:strdup)"/>
+    </ppo>
+    <ppo deps="f" id="312" invs="610" ippo="312" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all regions pointed at are heap-allocated: []"/>
+    </ppo>
+    <ppo deps="f" id="347" invs="614" ippo="347" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all regions pointed at are heap-allocated: [heap-allocated-region created by strdup at line 1021]"/>
+    </ppo>
+    <ppo deps="s" id="146" ippo="146" s="g">
+     <e txt="index value 0 is less than bound 1024"/>
+    </ppo>
+    <ppo deps="s" id="473" ippo="473" s="g">
+     <e txt="global variable macro_ondemand is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="f" id="500" invs="475" ippo="500" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1136(fieldmembers159)_xx_assignedAt#1151(fieldnext158)_xx_assignedAt#1163(fieldnext158)"/>
+    </ppo>
+    <ppo deps="s" id="316" ippo="316" s="g">
+     <e txt="global variable macro_ondemand valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="304" ippo="304" s="g">
+     <e txt="global variable macro_ondemand valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="f" id="582" invs="140" ippo="582" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: strdup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function strdup satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="90" ippo="90" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="322" ippo="322" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="s" id="268" ippo="268" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="f" id="55" invs="487" ippo="55" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1026(rv:strchr)"/>
+    </ppo>
+    <ppo deps="f" id="132" invs="608" ippo="132" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addrof_heapregion_1"/>
+    </ppo>
+    <ppo id="193" ippo="193"/>
+    <ppo deps="f" id="527" invs="309" ippo="527" s="g" ts="2018-01-09 15:50:07">
+     <e txt="value 0 is non-negative and target type maximum value is larger than or equal to source type maximum value"/>
+    </ppo>
+    <ppo deps="s" id="59" ippo="59" s="g">
+     <e txt="add zero"/>
+    </ppo>
+    <ppo deps="f" id="165" invs="484" ippo="165" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1054(rv:find_hostgroup)"/>
+    </ppo>
+    <ppo deps="s" id="445" ippo="445" s="g">
+     <e txt="field service_description (158) is assigned a value with a valid lower bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="466" ippo="466" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="f" id="223" invs="329" ippo="223" s="g" ts="2018-01-09 15:50:07">
+     <e txt="value 0 is non-negative and target type maximum value is larger than or equal to source type maximum value"/>
+    </ppo>
+    <ppo id="401" ippo="401">
+     <d>
+      <invs>
+       <arg a="1" i="290,481,897"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:find_service @-1 r:5"/>
+        <msg t="[1]:potential frees not excluded: freed(by:find_service @-1 r:5,freed(by:find_servicegroup @-1 r:5"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="383" invs="470" ippo="383" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1021(rv:strdup)"/>
+    </ppo>
+    <ppo deps="f" id="410" invs="144" ippo="410" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function find_servicegroup satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="438" ippo="438"/>
+    <ppo deps="s" id="467" ippo="467" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="f" id="300" invs="638" ippo="300" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all regions pointed at are heap-allocated: []"/>
+    </ppo>
+    <ppo deps="s" id="549" ippo="549" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="154" ippo="154">
+     <d>
+      <invs>
+       <arg a="1" i="215,214,249,407,851"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="151" ippo="151" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="406" ippo="406">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: find_servicegroup"/>
+       <msg t="no function summary for find_servicegroup"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="61" ippo="61" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="f" id="158" invs="406" ippo="158" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1040(c)_xx_assignedAt#998"/>
+    </ppo>
+    <ppo deps="s" id="472" ippo="472" s="g">
+     <e txt="global variable macro_ondemand valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="575" ippo="575" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="113" ippo="113" s="g">
+     <e txt="constant string is allocated by compiler"/>
+    </ppo>
+    <ppo deps="s" id="138" ippo="138" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="471" ippo="471" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="278" ippo="278" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="531" ippo="531" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="58" ippo="58" s="g">
+     <e txt="add non-negative number:  value is 0"/>
+    </ppo>
+    <ppo deps="s" id="170" ippo="170" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="112" ippo="112" s="g">
+     <e txt="constant string is allocated by compiler"/>
+    </ppo>
+    <ppo deps="f" id="255" invs="429" ippo="255" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1082(fieldnext156)"/>
+    </ppo>
+    <ppo deps="s" id="468" ippo="468" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="267" ippo="267" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="s" id="48" ippo="48" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="494" ippo="494" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="71" ippo="71">
+     <d>
+      <invs>
+       <arg a="1" i="195,293,486,672"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="462" ippo="462"/>
+    <ppo id="536" ippo="536">
+     <d>
+      <invs>
+       <arg a="3" i="70,312,404"/>
+       <arg a="2" i="311,405"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="524" ippo="524">
+     <d>
+      <invs>
+       <arg a="1" i="241,390,839"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:find_service @-1 r:5,freed(by:grab_on_demand_service_macro @-1 r:5"/>
+        <msg t="[1]:potential frees not excluded: freed(by:find_service @-1 r:5,freed(by:find_servicegroup @-1 r:5,freed(by:grab_on_demand_service_macro @-1 r:5"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="173" ippo="173" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="442" ippo="442">
+     <d>
+      <invs>
+       <arg a="2" i="399,564"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="260" ippo="260" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo deps="f" id="455" invs="445" ippo="455" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1144(rv:grab_on_demand_service_macro)"/>
+    </ppo>
+    <ppo id="191" ippo="191">
+     <d>
+      <invs>
+       <arg a="2" i="479,664"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="311" ippo="311" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="47" ippo="47" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="91" ippo="91" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="282" invs="492" ippo="282" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1077"/>
+    </ppo>
+    <ppo deps="f" id="408" invs="276" ippo="408" s="g" ts="2018-01-09 15:50:07">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: find_servicegroup"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+    </ppo>
+    <ppo id="97" ippo="97">
+     <d>
+      <invs>
+       <arg a="4" i="23"/>
+       <arg a="3" i="24,231,365,515"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (strchr(_^58)#return"/>
+        <msg t="[3]:function arguments: _,58"/>
+        <msg t="[3]:function return value: strchr"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="516" ippo="516">
+     <d>
+      <invs>
+       <arg a="3" i="51"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="510" ippo="510">
+     <d>
+      <invs>
+       <arg a="1" i="241,390,839"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="99" ippo="99" s="g">
+     <e txt="string literal"/>
+    </ppo>
+    <ppo id="37" ippo="37">
+     <d>
+      <invs>
+       <arg a="1" i="34,237,377,533"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="567" ippo="567" s="g">
+     <e txt="global variable macro_ondemand valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo id="265" ippo="265">
+     <d>
+      <invs>
+       <arg a="3" i="134"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="248" ippo="248"/>
+    <ppo deps="s" id="327" ippo="327" s="g">
+     <e txt="string literal"/>
+    </ppo>
+    <ppo deps="f" id="41" invs="376" ippo="41" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1021(rv:strdup)"/>
+    </ppo>
+    <ppo deps="s" id="486" ippo="486" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="f" id="198" invs="203" ippo="198" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function find_host satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="232" ippo="232">
+     <d>
+      <invs>
+       <arg a="1" i="621"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="115" ippo="115" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo id="290" ippo="290"/>
+    <ppo deps="f" id="287" invs="397" ippo="287" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1086"/>
+    </ppo>
+    <ppo deps="s" id="469" ippo="469" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="f" id="46" invs="476" ippo="46" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1026(rv:strchr)"/>
+    </ppo>
+    <ppo deps="s" id="177" ippo="639" s="g">
+     <e txt="constant string"/>
+    </ppo>
+    <ppo deps="f" id="83" invs="378" ippo="83" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1036(rv:strchr)"/>
+    </ppo>
+    <ppo deps="s" id="35" ippo="35" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="263" ippo="263"/>
+    <ppo deps="f" id="336" invs="656" ippo="336" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addrof_heapregion_1"/>
+    </ppo>
+    <ppo id="238" ippo="238">
+     <d>
+      <invs>
+       <arg a="3" i="331"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="29" invs="616" ippo="29" s="g" ts="2018-01-09 15:50:07">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(str_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="451" invs="430" ippo="451" s="g" ts="2018-01-09 15:50:07">
+     <e txt="assignedAt#1021(rv:strdup)"/>
+    </ppo>
+    <ppo deps="f" id="43" invs="34" ippo="43" s="g" ts="2018-01-09 15:50:07">
+     <e txt="return value from function strdup satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="86" ippo="86" s="g">
+     <e txt="add non-negative number:  value is 0"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

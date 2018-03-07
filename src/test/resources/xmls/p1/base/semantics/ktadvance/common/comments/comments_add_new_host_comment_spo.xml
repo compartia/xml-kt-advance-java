@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:52">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="add_new_host_comment">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="345,346,347,348,349,350,351,352,353,354" ictxt="228" iloc="354" ivinfo="35">
+       <api-conditions>
+        <api-c iapi="136">
+         <po deps="s" id="1" ispo="1" s="g">
+          <e txt="address of variable new_comment_id"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="342,1,1,18,345,346,130,347,348,349,350,351,352,353,358,168" ictxt="246" iloc="357" ivinfo="45">
+       <api-conditions>
+        <api-c iapi="1119">
+         <po deps="s" id="3" ispo="3" s="r">
+          <e txt="expression is a null pointer"/>
+         </po>
+        </api-c>
+        <api-c iapi="1118">
+         <po deps="s" id="2" ispo="2" s="g">
+          <e txt="null pointer cannot be dereferenced, and hence target cannot be initialized (acceptability of null is checked separately)"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="261" iexp="359" iloc="358">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:30:39">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="get_next_valid_time">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="1406" ictxt="5754" iloc="1144" ivinfo="168">
+       <api-conditions>
+        <api-c iapi="8515">
+         <po deps="a" id="2" ids="3" invs="184" ispo="2" s="g" ts="2018-01-09 17:30:39">
+          <e txt="condition not-null(period_name) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="1405,1406" ictxt="5747" iloc="1142" ivinfo="48">
+       <api-conditions>
+        <api-c iapi="8053">
+         <po deps="a" id="1" ids="3" invs="176" ispo="1" s="g">
+          <e txt="condition not-null(period_name) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites/>
+   </spos>
+  </function>
+ </c-analysis>

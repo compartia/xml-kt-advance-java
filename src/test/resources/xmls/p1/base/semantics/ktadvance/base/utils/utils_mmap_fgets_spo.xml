@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:53">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="mmap_fgets">
+   <spos>
+    <callsites>
+     <direct-calls/>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="1749" iexp="40" iloc="492">
+      <postconditions/>
+     </rs>
+     <rs ictxt="1787" iexp="40" iloc="502">
+      <postconditions/>
+     </rs>
+     <rs ictxt="1814" iexp="517" iloc="507">
+      <postconditions/>
+     </rs>
+     <rs ictxt="1755" iexp="40" iloc="494">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

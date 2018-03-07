@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:11:33">
+   <application file="base/broker.c"/>
+  </header>
+  <function fname="broker_notification_data">
+   <api>
+    <api-assumptions>
+     <aa ipr="1064" ppos="42,76,22,48,82,60,32"/>
+     <aa ipr="1065" ppos="80"/>
+     <aa ipr="1066" ppos="40"/>
+     <aa ipr="1067" ppos="30"/>
+     <aa ipr="1068" ppos="58"/>
+     <aa ipr="1069" ppos="74"/>
+     <aa ipr="1070" ppos="46"/>
+     <aa ipr="1071" ppos="20"/>
+     <aa ipr="1160" spos="1"/>
+     <aa ipr="1161" spos="2"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="neb_make_callbacks" h="nebmods"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="nebmods/neb_make_callbacks"/>
+    </missing-summaries>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:54">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="delete_host_comment">
+   <assumption-table/>
+   <ppo-type-table>
+    <n a="269,720,621" ix="1" t="p"/>
+    <n a="270,721,622" ix="2" t="p"/>
+   </ppo-type-table>
+   <spo-type-table/>
+  </function>
+ </c-analysis>

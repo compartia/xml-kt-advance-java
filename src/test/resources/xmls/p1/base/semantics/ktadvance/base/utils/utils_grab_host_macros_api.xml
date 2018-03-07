@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:49">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="grab_host_macros">
+   <api xlst="102">
+    <api-assumptions>
+     <aa ipr="17" ppos="22,1462" spos="5"/>
+     <aa ipr="19" ppos="620,472,338,84,935,1002,448,495,24,1274,710,54,1464,687,401,1342,146,284,1070,122,553,378,1138,237,1206,425" spos="4"/>
+     <aa ipr="40" ppos="52"/>
+     <aa ipr="58" ppos="82"/>
+     <aa ipr="78" ppos="120,144,235"/>
+     <aa ipr="171" ppos="282"/>
+     <aa ipr="204" ppos="336"/>
+     <aa ipr="231" ppos="376,399"/>
+     <aa ipr="255" ppos="423,446"/>
+     <aa ipr="274" ppos="470,493"/>
+     <aa ipr="305" ppos="551"/>
+     <aa ipr="337" ppos="618"/>
+     <aa ipr="377" ppos="685"/>
+     <aa ipr="391" ppos="708,1136"/>
+     <aa ipr="541" ppos="933"/>
+     <aa ipr="572" ppos="1000"/>
+     <aa ipr="604" ppos="1067"/>
+     <aa ipr="605" ppos="1068"/>
+     <aa ipr="636" ppos="1135"/>
+     <aa ipr="667" ppos="1203"/>
+     <aa ipr="668" ppos="1204"/>
+     <aa ipr="699" ppos="1271"/>
+     <aa ipr="700" ppos="1272"/>
+     <aa ipr="731" ppos="1339"/>
+     <aa ipr="732" ppos="1340"/>
+     <aa ipr="8002" ppos="488"/>
+     <aa ipr="8003" ppos="77"/>
+     <aa ipr="8004" ppos="17" spos="20,1"/>
+     <aa ipr="8005" ppos="441"/>
+     <aa ipr="8006" ppos="394"/>
+     <aa ipr="8007" ppos="47"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees>
+     <gg iipc="1"/>
+    </postcondition-guarantees>
+    <library-calls>
+     <lc c="1" f="time" h="time"/>
+     <lc c="16" f="malloc" h="stdlib"/>
+     <lc c="13" f="snprintf" h="stdio"/>
+     <lc c="5" f="strcpy" h="string"/>
+     <lc c="1" f="find_hostextinfo" h="objects"/>
+     <lc c="13" f="strdup" h="string"/>
+     <lc c="1" f="is_host_member_of_hostgroup" h="objects"/>
+     <lc c="29" f="free" h="stdlib"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="objects/find_hostextinfo"/>
+     <ms n="objects/is_host_member_of_hostgroup"/>
+    </missing-summaries>
+    <unevaluated>
+     <uu po-id="801"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

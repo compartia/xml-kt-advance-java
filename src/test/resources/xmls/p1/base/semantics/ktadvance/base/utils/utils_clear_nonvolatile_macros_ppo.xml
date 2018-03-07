@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:29:32">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="clear_nonvolatile_macros">
+   <ppos>
+    <ppo deps="f" id="15" invs="23" ippo="15" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#2250"/>
+    </ppo>
+    <ppo deps="s" id="22" ippo="22" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo id="18" ippo="18"/>
+    <ppo deps="f" id="19" invs="18" ippo="19" s="g" ts="2018-01-09 15:50:08">
+     <e txt="index value has non-negative lower bound: 24"/>
+    </ppo>
+    <ppo deps="s" id="27" ippo="27" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="17" ippo="17" s="g">
+     <e txt="global variable macro_x with offset [x] is assigned a value with valid lower bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="f" id="1" invs="21" ippo="1" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#2250"/>
+    </ppo>
+    <ppo id="10" ippo="10"/>
+    <ppo deps="s" id="26" ippo="26" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="f" id="28" invs="27" ippo="28" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#2250"/>
+    </ppo>
+    <ppo deps="s" id="11" ippo="11" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="23" ippo="23" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="25" ippo="25" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="macro_x is global"/>
+    </ppo>
+    <ppo deps="f" id="5" invs="15" ippo="5" s="g" ts="2018-01-09 15:50:08">
+     <e txt="index value has non-negative lower bound: 24"/>
+    </ppo>
+    <ppo deps="s" id="12" ippo="12" s="g">
+     <e txt="macro_x is global"/>
+    </ppo>
+    <ppo deps="f" id="13" invs="13" ippo="13" s="g" ts="2018-01-09 15:50:08">
+     <e txt="index value has non-negative lower bound: 24"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="7" invs="24" ippo="7" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#2250"/>
+    </ppo>
+    <ppo deps="f" id="30" invs="19,9" ippo="30" s="g" ts="2018-01-09 15:50:08">
+     <e txt="result of addition is less than MAX: satisfies((98 + 1) &lt; 2147483647)"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="16" ippo="16"/>
+    <ppo deps="s" id="24" ippo="24" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="f" id="14" invs="13" ippo="14" s="g" ts="2018-01-09 15:50:08">
+     <e txt="upper bound of index value: 96, is less than length: 99"/>
+    </ppo>
+    <ppo deps="f" id="21" invs="26" ippo="21" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#2250"/>
+    </ppo>
+    <ppo deps="s" id="29" ippo="29" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="f" id="2" invs="25" ippo="2" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#2250"/>
+    </ppo>
+    <ppo deps="f" id="6" invs="15" ippo="6" s="g" ts="2018-01-09 15:50:08">
+     <e txt="upper bound of index value: 96, is less than length: 99"/>
+    </ppo>
+    <ppo deps="f" id="20" invs="18" ippo="20" s="g" ts="2018-01-09 15:50:08">
+     <e txt="upper bound of index value: 96, is less than length: 99"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

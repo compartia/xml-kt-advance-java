@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:11:46">
+   <application file="base/broker.c"/>
+  </header>
+  <function fname="get_broker_timestamp">
+   <assumption-table>
+    <n a="604" ix="1" t="aa"/>
+    <n a="603" ix="2" t="aa"/>
+   </assumption-table>
+   <ppo-type-table>
+    <n a="6,529,591" ix="1" t="p"/>
+    <n a="6,530,592" ix="2" t="p"/>
+    <n a="6,531,20" ix="3" t="p"/>
+    <n a="6,532,21" ix="4" t="p"/>
+    <n a="4,533,593" ix="5" t="p"/>
+    <n a="4,534,594" ix="6" t="p"/>
+    <n a="4,534,595" ix="7" t="p"/>
+    <n a="4,534,596" ix="8" t="p"/>
+    <n a="4,534,597" ix="9" t="p"/>
+    <n a="4,534,598" ix="10" t="p"/>
+    <n a="4,533,599" ix="11" t="p"/>
+    <n a="4,535,21" ix="12" t="p"/>
+    <n a="4,533,600" ix="13" t="p"/>
+    <n a="4,533,601" ix="14" t="p"/>
+    <n a="4,533,602" ix="15" t="p"/>
+    <n a="5,536,603" ix="16" t="p"/>
+    <n a="5,537,592" ix="17" t="p"/>
+    <n a="5,537,604" ix="18" t="p"/>
+    <n a="5,537,605" ix="19" t="p"/>
+    <n a="5,537,606" ix="20" t="p"/>
+    <n a="5,537,607" ix="21" t="p"/>
+    <n a="7,538,608" ix="22" t="p"/>
+   </ppo-type-table>
+   <spo-type-table/>
+  </function>
+ </c-analysis>

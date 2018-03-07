@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:30:18">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="my_rename">
+   <ppos>
+    <ppo deps="a" id="18" ids="1" invs="10" ippo="18" s="g" ts="2018-01-09 15:50:51">
+     <e txt="condition not-null(dest) delegated to api"/>
+    </ppo>
+    <ppo id="19" ippo="19">
+     <d>
+      <invs>
+       <arg a="1" i="10,86,149"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="32" ippo="32" s="g">
+     <e txt="dest is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="17" ippo="17" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="50" invs="46" ippo="50" s="g" ts="2018-01-09 15:50:51">
+     <e txt="initial value of parameter dest satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="80" ippo="80" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="90" ippo="90" s="g">
+     <e txt="source is a function parameter"/>
+    </ppo>
+    <ppo id="25" ippo="25">
+     <d>
+      <invs>
+       <arg a="1" i="9,87,150"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="40" invs="146" ippo="40" s="g" ts="2018-01-09 15:50:51">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__errno_location()#return"/>
+    </ppo>
+    <ppo deps="f" id="49" invs="162" ippo="49" s="g" ts="2018-01-09 15:50:51">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(dest_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="52" invs="142" ippo="52" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4349(rv:open)"/>
+    </ppo>
+    <ppo deps="s" id="67" ippo="67" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="unsigned value is always non-negative"/>
+    </ppo>
+    <ppo deps="s" id="55" ippo="55" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo deps="f" id="30" invs="9" ippo="30" s="g" ts="2018-01-09 15:50:51">
+     <e txt="upper-bound value is initial value of parameter source satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="62" invs="132" ippo="62" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4352(rv:open)"/>
+    </ppo>
+    <ppo deps="f" id="60" invs="25" ippo="60" s="g" ts="2018-01-09 15:50:51">
+     <e txt="initial value of parameter source satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="14" ippo="14" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="59" invs="153" ippo="59" s="g" ts="2018-01-09 15:50:51">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(source_4_)#init"/>
+    </ppo>
+    <ppo deps="f" id="6" invs="135" ippo="6" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4327"/>
+    </ppo>
+    <ppo deps="s" id="15" ippo="15" s="g">
+     <e txt="dest is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="82" invs="123" ippo="82" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4354"/>
+    </ppo>
+    <ppo deps="s" id="27" ippo="27" s="g">
+     <e txt="source is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="89" ippo="89" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="f" id="38" invs="118" ippo="38" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4342(rv:__errno_location)"/>
+    </ppo>
+    <ppo id="56" ippo="56">
+     <d>
+      <invs>
+       <arg a="1" i="25,89,153"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="61" invs="25" ippo="61" s="g" ts="2018-01-09 15:50:51">
+     <e txt="upper-bound value is initial value of parameter source satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="79" ippo="79" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="87" ippo="87" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo deps="s" id="31" ippo="31" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="s" id="12" ippo="12" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="58" ippo="58" s="g">
+     <e txt="source is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="84" invs="138" ippo="84" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4349(rv:open)"/>
+    </ppo>
+    <ppo deps="f" id="34" invs="10" ippo="34" s="g" ts="2018-01-09 15:50:51">
+     <e txt="initial value of parameter dest satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="69" ippo="69" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="f" id="74" invs="96" ippo="74" s="g" ts="2018-01-09 15:50:51">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="4">
+        <msg t="[4]:increment is 1024"/>
+       </arg>
+       <arg a="3">
+        <msg t="[3]:index size of buffer is 1024 with offset 0"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="increment is less than or equal the size of buffer; satisfies (((0 + 1024) * 1) &lt;= 1024)"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="75" ippo="75">
+     <d>
+      <invs>
+       <arg a="1" i="18"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:offset: [0]"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="48" ippo="48" s="g">
+     <e txt="dest is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="96" invs="128" ippo="96" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4339(rv:rename)"/>
+    </ppo>
+    <ppo deps="f" id="71" invs="134" ippo="71" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4354(rv:read)"/>
+    </ppo>
+    <ppo deps="a" id="22" ids="2" invs="9" ippo="22" s="g" ts="2018-01-09 15:50:51">
+     <e txt="condition not-null(source) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="45" ippo="45" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo id="54" ippo="54">
+     <d>
+      <invs>
+       <arg a="1" i="25,89,153"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="78" ippo="78" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="index value 0 is non-negative"/>
+    </ppo>
+    <ppo deps="f" id="28" invs="150" ippo="28" s="g" ts="2018-01-09 15:50:51">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(source_4_)#init"/>
+    </ppo>
+    <ppo deps="a" id="53" ids="2" invs="25" ippo="53" s="g" ts="2018-01-09 15:50:51">
+     <e txt="condition not-null(source) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="81" invs="98" ippo="81" s="g" ts="2018-01-09 15:50:51">
+     <e txt="value 1 is non-negative and target type maximum value is larger than or equal to source type maximum value"/>
+    </ppo>
+    <ppo id="23" ippo="23">
+     <d>
+      <invs>
+       <arg a="1" i="9,87,150"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="65" invs="131" ippo="65" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4352(rv:open)"/>
+    </ppo>
+    <ppo deps="s" id="77" ippo="77" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="47" ippo="47" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="f" id="73" invs="18" ippo="73" s="g" ts="2018-01-09 15:50:51">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:memory base: addrof_localvar_buffer_49"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="address of stack variable buffer is not null"/>
+    </ppo>
+    <ppo id="44" ippo="44">
+     <d>
+      <invs>
+       <arg a="1" i="46,95,162"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="5" invs="73" ippo="5" s="g" ts="2018-01-09 15:50:51">
+     <e txt="upper bound of index value: 1023, is less than length: 1024"/>
+    </ppo>
+    <ppo deps="f" id="70" invs="108" ippo="70" s="g" ts="2018-01-09 15:50:51">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:remaining constraint for lower bound: ((read(_^_^1024)#return &gt;= -2147483648); remaining constraint for upper bound: ((read(_^_^1024)#return &lt;= 2147483647)"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="both lower bound: -1 and upper bound 1024 fit in range [-2147483648 - 2147483647]"/>
+    </ppo>
+    <ppo deps="f" id="91" invs="160" ippo="91" s="g" ts="2018-01-09 15:50:51">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(source_4_)#init"/>
+    </ppo>
+    <ppo deps="f" id="97" invs="127" ippo="97" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4339(rv:rename)_xx_assignedAt#4364"/>
+    </ppo>
+    <ppo deps="f" id="3" invs="139" ippo="3" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4327"/>
+    </ppo>
+    <ppo deps="s" id="16" ippo="16" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="24" ippo="24" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo deps="f" id="72" invs="141" ippo="72" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4354"/>
+    </ppo>
+    <ppo id="21" ippo="21">
+     <d>
+      <invs>
+       <arg a="1" i="10,86,149"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="33" invs="149" ippo="33" s="g" ts="2018-01-09 15:50:51">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(dest_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="37" invs="4" ippo="37" s="g" ts="2018-01-09 15:50:51">
+     <e txt="variable pointed to by return value from __errno_location is initialized"/>
+    </ppo>
+    <ppo deps="s" id="64" ippo="64" s="g">
+     <e txt="adding the size of a variable to the start of the same variable buffer"/>
+    </ppo>
+    <ppo deps="f" id="94" invs="133" ippo="94" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4349(rv:open)"/>
+    </ppo>
+    <ppo deps="f" id="36" invs="140" ippo="36" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4339(rv:rename)"/>
+    </ppo>
+    <ppo deps="f" id="76" invs="124" ippo="76" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4349(rv:open)"/>
+    </ppo>
+    <ppo deps="f" id="93" invs="44" ippo="93" s="g" ts="2018-01-09 15:50:51">
+     <e txt="upper-bound value is initial value of parameter source satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="41" invs="3" ippo="41" s="g" ts="2018-01-09 15:50:51">
+     <e txt="return value from function __errno_location satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="57" ippo="57" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="s" id="68" ippo="68" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="a" id="85" ids="2" invs="44" ippo="85" s="g" ts="2018-01-09 15:50:51">
+     <e txt="condition not-null(source) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="95" invs="130" ippo="95" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4339(rv:rename)"/>
+    </ppo>
+    <ppo deps="f" id="92" invs="44" ippo="92" s="g" ts="2018-01-09 15:50:51">
+     <e txt="initial value of parameter source satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="26" ippo="26" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="f" id="42" invs="3" ippo="42" s="g" ts="2018-01-09 15:50:51">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments:"/>
+        <msg t="[2]:function return value: __errno_location"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function __errno_location satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="11" ippo="11" s="g">
+     <e txt="source is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="46" ippo="46">
+     <d>
+      <invs>
+       <arg a="1" i="46,95,162"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="13" ippo="13" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="39" invs="3" ippo="39" s="g" ts="2018-01-09 15:50:51">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: __errno_location"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="return value from __errno_location is guaranteed not null"/>
+    </ppo>
+    <ppo deps="f" id="63" invs="31" ippo="63" s="g" ts="2018-01-09 15:50:51">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:memory base: addrof_localvar_buffer_49"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="address of stack variable buffer is not null"/>
+    </ppo>
+    <ppo deps="s" id="66" ippo="66" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="f" id="83" invs="129" ippo="83" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4352(rv:open)"/>
+    </ppo>
+    <ppo deps="f" id="7" invs="137" ippo="7" s="g" ts="2018-01-09 15:50:51">
+     <e txt="assignedAt#4327"/>
+    </ppo>
+    <ppo id="88" ippo="88">
+     <d>
+      <invs>
+       <arg a="1" i="44,93,160"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="35" invs="10" ippo="35" s="g" ts="2018-01-09 15:50:51">
+     <e txt="upper-bound value is initial value of parameter dest satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="51" invs="46" ippo="51" s="g" ts="2018-01-09 15:50:51">
+     <e txt="upper-bound value is initial value of parameter dest satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="29" invs="9" ippo="29" s="g" ts="2018-01-09 15:50:51">
+     <e txt="initial value of parameter source satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="43" ids="1" invs="46" ippo="43" s="g" ts="2018-01-09 15:50:51">
+     <e txt="condition not-null(dest) delegated to api"/>
+    </ppo>
+    <ppo id="86" ippo="86">
+     <d>
+      <invs>
+       <arg a="1" i="44,93,160"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="index value 0 is less than bound 1024"/>
+    </ppo>
+    <ppo deps="s" id="20" ippo="20" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

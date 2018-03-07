@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:52">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="initialize_comment_data">
+   <assumption-table/>
+   <ppo-type-table>
+    <n a="394,2,1" ix="1" t="p"/>
+    <n a="394,2,2" ix="2" t="p"/>
+    <n a="394,2,3" ix="3" t="p"/>
+    <n a="394,2,4" ix="4" t="p"/>
+    <n a="395,3,5" ix="5" t="p"/>
+   </ppo-type-table>
+   <spo-type-table/>
+  </function>
+ </c-analysis>

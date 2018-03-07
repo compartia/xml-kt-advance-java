@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:30:17">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="my_system_sighandler">
+   <inv-dictionary>
+    <non-relational-value-table/>
+    <invariant-fact-table/>
+   </inv-dictionary>
+   <location-invariants/>
+  </function>
+ </c-analysis>

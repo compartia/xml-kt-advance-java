@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:29:32">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="mmap_fopen">
+   <spos>
+    <callsites>
+     <direct-calls/>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="3167" iexp="546" iloc="533">
+      <postconditions/>
+     </rs>
+     <rs ictxt="3203" iexp="543" iloc="544">
+      <postconditions/>
+     </rs>
+     <rs ictxt="3159" iexp="546" iloc="529">
+      <postconditions/>
+     </rs>
+     <rs ictxt="3183" iexp="546" iloc="537">
+      <postconditions/>
+     </rs>
+     <rs ictxt="3151" iexp="546" iloc="526">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

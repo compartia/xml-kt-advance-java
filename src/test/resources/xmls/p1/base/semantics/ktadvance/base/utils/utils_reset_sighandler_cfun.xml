@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="base/utils" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:48"/>
+  </header>
+  <function filename="base/utils">
+   <svar ivinfo="43"/>
+   <declarations>
+    <local-varinfo-table/>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="1359">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="1270" iloc="1027" itag="call">
+         <args>
+          <exp iexp="50"/>
+          <exp iexp="1271"/>
+         </args>
+        </instr>
+        <instr iexp="1270" iloc="1028" itag="call">
+         <args>
+          <exp iexp="24"/>
+          <exp iexp="1271"/>
+         </args>
+        </instr>
+        <instr iexp="1270" iloc="1029" itag="call">
+         <args>
+          <exp iexp="20"/>
+          <exp iexp="1271"/>
+         </args>
+        </instr>
+        <instr iexp="1270" iloc="1030" itag="call">
+         <args>
+          <exp iexp="939"/>
+          <exp iexp="1271"/>
+         </args>
+        </instr>
+        <instr iexp="1270" iloc="1031" itag="call">
+         <args>
+          <exp iexp="846"/>
+          <exp iexp="1271"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="1360"/>
+      <preds/>
+     </stmt>
+     <stmt sid="1360">
+      <skind iloc="1032" stag="return"/>
+      <succs/>
+      <preds r="1359"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

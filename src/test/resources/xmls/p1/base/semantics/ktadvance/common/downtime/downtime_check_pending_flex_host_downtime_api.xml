@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:41:55">
+   <application file="common/downtime.c"/>
+  </header>
+  <function fname="check_pending_flex_host_downtime">
+   <api>
+    <api-assumptions>
+     <aa ipr="81" ppos="8"/>
+     <aa ipr="82" ppos="10"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="time" h="time"/>
+     <lc c="1" f="find_host" h="objects"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="objects/find_host"/>
+    </missing-summaries>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

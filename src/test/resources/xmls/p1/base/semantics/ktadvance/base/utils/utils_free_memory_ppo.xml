@@ -1,0 +1,1233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:29:32">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="free_memory">
+   <ppos>
+    <ppo deps="s" id="239" ippo="239" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="386" ippo="386" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="182" ippo="182"/>
+    <ppo deps="s" id="318" ippo="318" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="f" id="18" invs="191" ippo="18" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5160(globalevent_list_high9062)_xx_assignedAt#5164"/>
+    </ppo>
+    <ppo deps="s" id="50" ippo="50" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="80" ippo="80" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="301" ippo="301" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="104" ippo="104" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="302" ippo="302" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="354" ippo="354" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="188" ippo="188" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="219" ippo="219" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="258" ippo="258" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="103" ippo="103" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="189" ippo="189" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="102" ippo="102" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="272" ippo="272" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo id="145" ippo="145"/>
+    <ppo deps="s" id="378" ippo="378" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo id="15" ippo="15">
+     <d>
+      <invs>
+       <arg a="2" i="189"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="221" invs="163" ippo="221" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5243"/>
+    </ppo>
+    <ppo id="180" ippo="180"/>
+    <ppo deps="s" id="275" ippo="275" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="121" ippo="121" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="141" invs="147" ippo="141" s="g" ts="2018-01-09 15:50:08">
+     <e txt="upper bound of index value: 31, is less than length: 32"/>
+    </ppo>
+    <ppo deps="s" id="216" ippo="216" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="168" ippo="168" s="g">
+     <e txt="macro_user is global"/>
+    </ppo>
+    <ppo deps="s" id="152" ippo="152" s="g">
+     <e txt="global variable macro_argv with offset [x] is assigned a value with valid lower bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="205" ippo="205" s="g">
+     <e txt="macro_x is global"/>
+    </ppo>
+    <ppo deps="s" id="385" ippo="385" s="g">
+     <e txt="log_archive_path is global"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="160" ippo="160" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="204" ippo="204" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="235" ippo="235" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="246" ippo="246" s="g">
+     <e txt="illegal_output_chars is global"/>
+    </ppo>
+    <ppo deps="s" id="335" ippo="335" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="f" id="195" invs="187" ippo="195" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5243"/>
+    </ppo>
+    <ppo deps="s" id="54" ippo="54" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="305" ippo="305" s="g">
+     <e txt="temp_file is global"/>
+    </ppo>
+    <ppo deps="s" id="124" ippo="124" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="370" ippo="370" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="140" invs="147" ippo="140" s="g" ts="2018-01-09 15:50:08">
+     <e txt="index value has non-negative lower bound: 0"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+    <ppo id="77" ippo="77"/>
+    <ppo deps="s" id="242" ippo="242" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="332" ippo="332" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="343" ippo="343" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="159" ippo="159" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+    <ppo id="16" ippo="16"/>
+    <ppo id="21" ippo="21">
+     <d>
+      <invs>
+       <arg a="2" i="192"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="36" ippo="36">
+     <d>
+      <invs>
+       <arg a="1" i="170"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="131" ippo="131" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="231" ippo="231" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="68" ippo="68" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="213" invs="149" ippo="213" s="g" ts="2018-01-09 15:50:08">
+     <e txt="upper bound of index value: 98, is less than length: 99"/>
+    </ppo>
+    <ppo deps="s" id="323" ippo="323" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="122" ippo="122" s="g">
+     <e txt="ochp_command is global"/>
+    </ppo>
+    <ppo deps="s" id="181" ippo="181" s="g">
+     <e txt="global variable macro_user with offset [x] is assigned a value with valid lower bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="237" ippo="237" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="306" ippo="306" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="382" ippo="382" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="85" ippo="85" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="100" ippo="100" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="26" ippo="26" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="105" ippo="105" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="296" ippo="296" s="g">
+     <e txt="global variable log_file valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="225" ippo="225" s="g">
+     <e txt="illegal_object_chars is global"/>
+    </ppo>
+    <ppo deps="s" id="247" ippo="247" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="377" ippo="377" s="g">
+     <e txt="global variable p1_file is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="135" ippo="135" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="63" ippo="63" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="279" ippo="279" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="307" ippo="307" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="176" ippo="176" s="g">
+     <e txt="macro_user is global"/>
+    </ppo>
+    <ppo deps="s" id="186" ippo="186" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="357" ippo="357" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="297" ippo="297" s="g">
+     <e txt="global variable log_file is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="f" id="192" invs="183" ippo="192" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5236"/>
+    </ppo>
+    <ppo id="211" ippo="211"/>
+    <ppo deps="s" id="259" ippo="259" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="271" ippo="271" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo id="125" ippo="125"/>
+    <ppo deps="s" id="320" ippo="320" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="143" ippo="143" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="326" ippo="326" s="g">
+     <e txt="command_file is global"/>
+    </ppo>
+    <ppo deps="s" id="392" ippo="392" s="g">
+     <e txt="global variable log_archive_path valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo id="19" ippo="19">
+     <d>
+      <invs>
+       <arg a="1" i="192"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="32" ippo="32" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="227" ippo="227" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="17" ippo="17" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="172" ippo="172" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="228" ippo="228"/>
+    <ppo deps="s" id="391" ippo="391" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="349" ippo="349" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="226" ippo="226" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="313" ippo="313" s="g">
+     <e txt="global variable temp_file is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="f" id="199" invs="152" ippo="199" s="g" ts="2018-01-09 15:50:08">
+     <e txt="upper bound of index value: 98, is less than length: 99"/>
+    </ppo>
+    <ppo deps="s" id="264" ippo="264" s="g">
+     <e txt="global variable nagios_user valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="269" ippo="269" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="295" ippo="295" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="117" ippo="117" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="f" id="208" invs="177" ippo="208" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5243"/>
+    </ppo>
+    <ppo deps="s" id="328" ippo="328" s="g">
+     <e txt="global variable command_file valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="60" ippo="60" s="g">
+     <e txt="global variable original_my_strtok_buffer is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="f" id="150" invs="176" ippo="150" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5229"/>
+    </ppo>
+    <ppo deps="s" id="353" ippo="353" s="g">
+     <e txt="auth_file is global"/>
+    </ppo>
+    <ppo deps="s" id="187" ippo="187" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="244" ippo="244"/>
+    <ppo deps="s" id="161" ippo="161" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="381" ippo="381" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="f" id="142" invs="181" ippo="142" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5229"/>
+    </ppo>
+    <ppo deps="s" id="144" ippo="144" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="137" invs="179" ippo="137" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5229"/>
+    </ppo>
+    <ppo deps="s" id="262" ippo="262" s="g">
+     <e txt="nagios_user is global"/>
+    </ppo>
+    <ppo deps="s" id="389" ippo="389" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="27" ippo="27" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="243" ippo="243" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="157" ippo="157" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="f" id="194" invs="148,97" ippo="194" s="g" ts="2018-01-09 15:50:08">
+     <e txt="result of addition is less than MAX: satisfies((255 + 1) &lt; 2147483647)"/>
+    </ppo>
+    <ppo deps="s" id="289" ippo="289" s="g">
+     <e txt="log_file is global"/>
+    </ppo>
+    <ppo deps="s" id="334" ippo="334" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="f" id="212" invs="149" ippo="212" s="g" ts="2018-01-09 15:50:08">
+     <e txt="index value has non-negative lower bound: 0"/>
+    </ppo>
+    <ppo deps="s" id="319" ippo="319" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="395" ippo="395" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="87" ippo="87" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="84" ippo="84" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="183" invs="134" ippo="183" s="g" ts="2018-01-09 15:50:08">
+     <e txt="index value has non-negative lower bound: 0"/>
+    </ppo>
+    <ppo deps="f" id="171" invs="178" ippo="171" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5236"/>
+    </ppo>
+    <ppo deps="f" id="34" invs="170" ippo="34" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5171(globalevent_list_low9063)_xx_assignedAt#5175"/>
+    </ppo>
+    <ppo deps="s" id="274" ippo="274" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="364" ippo="364" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="241" ippo="241" s="g">
+     <e txt="illegal_output_chars is global"/>
+    </ppo>
+    <ppo deps="s" id="251" ippo="251" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="330" ippo="330" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="f" id="169" invs="144" ippo="169" s="g" ts="2018-01-09 15:50:08">
+     <e txt="index value has non-negative lower bound: 0"/>
+    </ppo>
+    <ppo deps="s" id="281" ippo="281" s="g">
+     <e txt="global variable nagios_group is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="127" ippo="127" s="g">
+     <e txt="ochp_command is global"/>
+    </ppo>
+    <ppo deps="s" id="359" ippo="359" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="317" ippo="317" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="f" id="22" invs="185" ippo="22" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5162(fieldnext172)"/>
+    </ppo>
+    <ppo deps="s" id="215" ippo="215" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="222" ippo="222" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="s" id="286" ippo="286" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="298" ippo="298" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="355" ippo="355" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="28" ippo="28" s="g">
+     <e txt="event_list_low is global"/>
+    </ppo>
+    <ppo deps="f" id="148" invs="142" ippo="148" s="g" ts="2018-01-09 15:50:08">
+     <e txt="index value has non-negative lower bound: 0"/>
+    </ppo>
+    <ppo deps="s" id="65" ippo="65" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="280" ippo="280" s="g">
+     <e txt="global variable nagios_group valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="325" ippo="325" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="379" ippo="379" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="44" ippo="44">
+     <d>
+      <invs>
+       <arg a="2" i="168"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="event_list_high is global"/>
+    </ppo>
+    <ppo deps="s" id="120" ippo="120" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="f" id="184" invs="134" ippo="184" s="g" ts="2018-01-09 15:50:08">
+     <e txt="upper bound of index value: 255, is less than length: 256"/>
+    </ppo>
+    <ppo deps="s" id="365" ippo="365" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="162" ippo="162" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="72" ippo="72" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="261" ippo="261" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo id="33" ippo="33"/>
+    <ppo deps="s" id="64" ippo="64" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="394" ippo="394" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo id="292" ippo="292"/>
+    <ppo id="93" ippo="93"/>
+    <ppo deps="s" id="119" ippo="119" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="175" ippo="175" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="338" ippo="338" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="276" ippo="276"/>
+    <ppo deps="s" id="233" ippo="233" s="g">
+     <e txt="global variable illegal_object_chars is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="92" ippo="92" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="309" ippo="309" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo id="10" ippo="10"/>
+    <ppo deps="s" id="224" ippo="224" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="361" ippo="361" s="g">
+     <e txt="global variable auth_file is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="136" ippo="136" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="254" ippo="254" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo id="153" ippo="153"/>
+    <ppo id="39" ippo="39"/>
+    <ppo deps="f" id="207" invs="143" ippo="207" s="g" ts="2018-01-09 15:50:08">
+     <e txt="upper bound of index value: 98, is less than length: 99"/>
+    </ppo>
+    <ppo deps="s" id="387" ippo="387" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="7" invs="174" ippo="7" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5160(globalevent_list_high9062)_xx_assignedAt#5164"/>
+    </ppo>
+    <ppo deps="s" id="88" ippo="88" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="398" ippo="398" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo id="174" ippo="174"/>
+    <ppo deps="s" id="367" ippo="367" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="126" ippo="126" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="f" id="179" invs="171" ippo="179" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5236"/>
+    </ppo>
+    <ppo deps="s" id="329" ippo="329" s="g">
+     <e txt="global variable command_file is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="350" ippo="350" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo id="20" ippo="20">
+     <d>
+      <invs>
+       <arg a="2" i="192"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="315" ippo="315" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="294" ippo="294" s="g">
+     <e txt="log_file is global"/>
+    </ppo>
+    <ppo deps="s" id="352" ippo="352" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="129" ippo="129" s="g">
+     <e txt="global variable ochp_command valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="397" ippo="397" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="108" ippo="108" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="166" invs="160" ippo="166" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5236"/>
+    </ppo>
+    <ppo deps="s" id="358" ippo="358" s="g">
+     <e txt="auth_file is global"/>
+    </ppo>
+    <ppo deps="s" id="376" ippo="376" s="g">
+     <e txt="global variable p1_file valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="130" ippo="130" s="g">
+     <e txt="global variable ochp_command is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="310" ippo="310" s="g">
+     <e txt="temp_file is global"/>
+    </ppo>
+    <ppo deps="s" id="371" ippo="371" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="25" ippo="25" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="49" ippo="49" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="52" ippo="52" s="g">
+     <e txt="original_my_strtok_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="369" ippo="369" s="g">
+     <e txt="p1_file is global"/>
+    </ppo>
+    <ppo deps="f" id="200" invs="188" ippo="200" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5243"/>
+    </ppo>
+    <ppo deps="s" id="333" ippo="333" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="250" ippo="250" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="f" id="30" invs="182" ippo="30" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5171(globalevent_list_low9063)_xx_assignedAt#5175"/>
+    </ppo>
+    <ppo deps="s" id="62" ippo="62" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="185" invs="162" ippo="185" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5236"/>
+    </ppo>
+    <ppo deps="s" id="284" ippo="284" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="106" ippo="106" s="g">
+     <e txt="ocsp_command is global"/>
+    </ppo>
+    <ppo deps="f" id="206" invs="143" ippo="206" s="g" ts="2018-01-09 15:50:08">
+     <e txt="index value has non-negative lower bound: 0"/>
+    </ppo>
+    <ppo id="14" ippo="14">
+     <d>
+      <invs>
+       <arg a="2" i="189"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="111" ippo="111" s="g">
+     <e txt="ocsp_command is global"/>
+    </ppo>
+    <ppo deps="s" id="266" ippo="266" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="277" ippo="277" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="82" ippo="82" s="g">
+     <e txt="global variable global_host_event_handler is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="133" ippo="133" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="89" ippo="89" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="291" ippo="291" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="56" ippo="56" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="79" ippo="79" s="g">
+     <e txt="global_host_event_handler is global"/>
+    </ppo>
+    <ppo deps="s" id="217" ippo="217" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="270" ippo="270" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="164" ippo="164" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="s" id="341" ippo="341" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="31" ippo="31" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="12" ippo="12">
+     <d>
+      <invs>
+       <arg a="1" i="189"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="101" ippo="101" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo id="209" ippo="209"/>
+    <ppo deps="s" id="69" ippo="69" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="201" ippo="201" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="366" ippo="366" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="346" ippo="346" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo id="203" ippo="203"/>
+    <ppo deps="s" id="96" ippo="96" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="288" ippo="288" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="396" ippo="396" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="f" id="45" invs="180" ippo="45" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5173(fieldnext172)"/>
+    </ppo>
+    <ppo deps="s" id="78" ippo="78" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="118" ippo="118" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="303" ippo="303" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="81" ippo="81" s="g">
+     <e txt="global variable global_host_event_handler valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="128" ippo="128" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="236" ippo="236" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo id="356" ippo="356"/>
+    <ppo deps="s" id="23" ippo="23" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+    <ppo deps="s" id="285" ippo="285" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="273" ippo="273" s="g">
+     <e txt="nagios_group is global"/>
+    </ppo>
+    <ppo deps="s" id="70" ippo="70" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="134" ippo="134" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="337" ippo="337" s="g">
+     <e txt="lock_file is global"/>
+    </ppo>
+    <ppo deps="s" id="399" ippo="399" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="24" ippo="24" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="351" ippo="351" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="94" ippo="94" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo id="109" ippo="109"/>
+    <ppo deps="s" id="190" ippo="190" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="167" ippo="167" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="393" ippo="393" s="g">
+     <e txt="global variable log_archive_path is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="76" ippo="76" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="197" ippo="197" s="g">
+     <e txt="macro_x is global"/>
+    </ppo>
+    <ppo deps="s" id="245" ippo="245" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="57" ippo="57" s="g">
+     <e txt="original_my_strtok_buffer is global"/>
+    </ppo>
+    <ppo deps="f" id="156" invs="169" ippo="156" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5229"/>
+    </ppo>
+    <ppo deps="s" id="257" ippo="257" s="g">
+     <e txt="nagios_user is global"/>
+    </ppo>
+    <ppo deps="s" id="360" ippo="360" s="g">
+     <e txt="global variable auth_file valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="299" ippo="299" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="98" ippo="98" s="g">
+     <e txt="global variable global_service_event_handler is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="f" id="214" invs="186" ippo="214" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5243"/>
+    </ppo>
+    <ppo deps="f" id="11" invs="189" ippo="11" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5160(globalevent_list_high9062)_xx_assignedAt#5164"/>
+    </ppo>
+    <ppo deps="s" id="202" ippo="202" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="13" ippo="13">
+     <d>
+      <invs>
+       <arg a="1" i="189"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="220" ippo="220" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="344" ippo="344" s="g">
+     <e txt="global variable lock_file valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="51" ippo="51" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="107" ippo="107" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="312" ippo="312" s="g">
+     <e txt="global variable temp_file valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="347" ippo="347" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="375" ippo="375" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="146" ippo="146" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="390" ippo="390" s="g">
+     <e txt="log_archive_path is global"/>
+    </ppo>
+    <ppo deps="s" id="249" ippo="249" s="g">
+     <e txt="global variable illegal_output_chars is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="316" ippo="316" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="304" ippo="304" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="90" ippo="90" s="g">
+     <e txt="global_service_event_handler is global"/>
+    </ppo>
+    <ppo deps="s" id="322" ippo="322" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="331" ippo="331" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="268" ippo="268" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo id="388" ippo="388"/>
+    <ppo deps="s" id="40" ippo="40" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="210" ippo="210" s="g">
+     <e txt="global variable macro_x with offset [x] is assigned a value with valid lower bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="67" ippo="67" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo id="55" ippo="55"/>
+    <ppo deps="s" id="132" ippo="132" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="110" ippo="110" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="193" ippo="193" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="s" id="339" ippo="339" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="345" ippo="345" s="g">
+     <e txt="global variable lock_file is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="59" ippo="59" s="g">
+     <e txt="global variable original_my_strtok_buffer valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="f" id="165" invs="138,19" ippo="165" s="g" ts="2018-01-09 15:50:08">
+     <e txt="result of addition is less than MAX: satisfies((31 + 1) &lt; 2147483647)"/>
+    </ppo>
+    <ppo deps="s" id="321" ippo="321" s="g">
+     <e txt="command_file is global"/>
+    </ppo>
+    <ppo deps="s" id="196" ippo="196" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="223" invs="136,18" ippo="223" s="g" ts="2018-01-09 15:50:08">
+     <e txt="result of addition is less than MAX: satisfies((98 + 1) &lt; 2147483647)"/>
+    </ppo>
+    <ppo deps="s" id="314" ippo="314" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="155" invs="140" ippo="155" s="g" ts="2018-01-09 15:50:08">
+     <e txt="upper bound of index value: 31, is less than length: 32"/>
+    </ppo>
+    <ppo id="308" ippo="308"/>
+    <ppo deps="s" id="383" ippo="383" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="116" ippo="116" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="300" ippo="300" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="f" id="154" invs="140" ippo="154" s="g" ts="2018-01-09 15:50:08">
+     <e txt="index value has non-negative lower bound: 0"/>
+    </ppo>
+    <ppo id="151" ippo="151"/>
+    <ppo deps="s" id="342" ippo="342" s="g">
+     <e txt="lock_file is global"/>
+    </ppo>
+    <ppo deps="s" id="348" ippo="348" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="384" ippo="384" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo id="38" ippo="38">
+     <d>
+      <invs>
+       <arg a="2" i="170"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="61" ippo="61" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="158" ippo="158" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="113" ippo="113" s="g">
+     <e txt="global variable ocsp_command valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="138" ippo="138" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="256" ippo="256" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="374" ippo="374" s="g">
+     <e txt="p1_file is global"/>
+    </ppo>
+    <ppo deps="s" id="278" ippo="278" s="g">
+     <e txt="nagios_group is global"/>
+    </ppo>
+    <ppo deps="s" id="58" ippo="58" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="f" id="170" invs="144" ippo="170" s="g" ts="2018-01-09 15:50:08">
+     <e txt="upper bound of index value: 255, is less than length: 256"/>
+    </ppo>
+    <ppo deps="s" id="74" ippo="74" s="g">
+     <e txt="global_host_event_handler is global"/>
+    </ppo>
+    <ppo deps="s" id="112" ippo="112" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="f" id="178" invs="141" ippo="178" s="g" ts="2018-01-09 15:50:08">
+     <e txt="upper bound of index value: 255, is less than length: 256"/>
+    </ppo>
+    <ppo deps="s" id="255" ippo="255" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="75" ippo="75" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="123" ippo="123" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="267" ippo="267" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="48" ippo="48" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="362" ippo="362" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="139" ippo="139" s="g">
+     <e txt="macro_argv is global"/>
+    </ppo>
+    <ppo deps="s" id="147" ippo="147" s="g">
+     <e txt="macro_argv is global"/>
+    </ppo>
+    <ppo deps="s" id="71" ippo="71" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="234" ippo="234" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="173" ippo="173" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="293" ippo="293" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo id="260" ippo="260"/>
+    <ppo deps="s" id="53" ippo="53" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="240" ippo="240" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo id="372" ippo="372"/>
+    <ppo deps="s" id="380" ippo="380" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="191" ippo="191" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="218" ippo="218" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="311" ippo="311" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="47" ippo="47" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="73" ippo="73" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="373" ippo="373" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="91" ippo="91" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="282" ippo="282" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="97" ippo="97" s="g">
+     <e txt="global variable global_service_event_handler valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="f" id="163" invs="165" ippo="163" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5229"/>
+    </ppo>
+    <ppo deps="s" id="230" ippo="230" s="g">
+     <e txt="illegal_object_chars is global"/>
+    </ppo>
+    <ppo deps="s" id="99" ippo="99" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="114" ippo="114" s="g">
+     <e txt="global variable ocsp_command is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo id="37" ippo="37">
+     <d>
+      <invs>
+       <arg a="2" i="170"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="368" ippo="368" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="252" ippo="252" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="265" ippo="265" s="g">
+     <e txt="global variable nagios_user is assigned a value with valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="s" id="248" ippo="248" s="g">
+     <e txt="global variable illegal_output_chars valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="327" ippo="327" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="f" id="41" invs="166" ippo="41" s="g" ts="2018-01-09 15:50:08">
+     <e txt="assignedAt#5171(globalevent_list_low9063)_xx_assignedAt#5175"/>
+    </ppo>
+    <ppo deps="s" id="283" ippo="283" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="95" ippo="95" s="g">
+     <e txt="global_service_event_handler is global"/>
+    </ppo>
+    <ppo deps="f" id="149" invs="142" ippo="149" s="g" ts="2018-01-09 15:50:08">
+     <e txt="upper bound of index value: 31, is less than length: 32"/>
+    </ppo>
+    <ppo deps="f" id="198" invs="152" ippo="198" s="g" ts="2018-01-09 15:50:08">
+     <e txt="index value has non-negative lower bound: 0"/>
+    </ppo>
+    <ppo deps="s" id="232" ippo="232" s="g">
+     <e txt="global variable illegal_object_chars valid lower bound by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="115" ippo="115" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="290" ippo="290" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="42" ippo="42">
+     <d>
+      <invs>
+       <arg a="1" i="168"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="253" ippo="253" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="287" ippo="287" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo id="324" ippo="324"/>
+    <ppo deps="s" id="229" ippo="229" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="46" ippo="46" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+    <ppo deps="f" id="177" invs="141" ippo="177" s="g" ts="2018-01-09 15:50:08">
+     <e txt="index value has non-negative lower bound: 0"/>
+    </ppo>
+    <ppo deps="s" id="66" ippo="66" s="g">
+     <e txt="null pointer is not subject to null-termination"/>
+    </ppo>
+    <ppo deps="s" id="83" ippo="83" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="363" ippo="363" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="340" ippo="340"/>
+    <ppo id="35" ippo="35">
+     <d>
+      <invs>
+       <arg a="1" i="170"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="263" ippo="263" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="336" ippo="336" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="238" ippo="238" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="29" ippo="29" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo id="43" ippo="43">
+     <d>
+      <invs>
+       <arg a="2" i="168"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="86" ippo="86" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

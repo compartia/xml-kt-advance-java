@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:53">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="get_next_log_rotation_time">
+   <ppos>
+    <ppo deps="f" id="18" invs="9" ippo="18" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="129" invs="13" ippo="129" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="50" invs="23" ippo="50" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="80" invs="28" ippo="80" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="108" invs="57" ippo="108" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo deps="f" id="104" invs="78" ippo="104" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="130" invs="13" ippo="130" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="25" invs="17" ippo="25" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="49" invs="23" ippo="49" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="52" invs="69" ippo="52" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="address of variable current_time"/>
+    </ppo>
+    <ppo deps="f" id="30" invs="20" ippo="30" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="62" invs="18" ippo="62" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="103" ippo="103">
+     <d>
+      <invs>
+       <arg a="1" i="6,37,57,78"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="102" invs="57" ippo="102" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo deps="f" id="106" invs="6" ippo="106" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="14" invs="21" ippo="14" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="111" invs="6" ippo="111" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="145" invs="89" ippo="145" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="15" invs="61" ippo="15" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo deps="f" id="82" invs="74" ippo="82" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo deps="f" id="133" invs="58" ippo="133" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo id="89" ippo="89"/>
+    <ppo deps="f" id="56" invs="23" ippo="56" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="79" invs="28" ippo="79" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="31" invs="20" ippo="31" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="121" ippo="121">
+     <d>
+      <invs>
+       <arg a="1" i="4,36,56,77"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="12" invs="87" ippo="12" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="141" invs="63" ippo="141" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3282"/>
+    </ppo>
+    <ppo deps="f" id="101" invs="16" ippo="101" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="69" invs="25" ippo="69" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo id="96" ippo="96">
+     <d>
+      <invs>
+       <arg a="1" i="16,42,64,83"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="45" invs="8" ippo="45" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="54" invs="88" ippo="54" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="78" invs="92" ippo="78" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="124" invs="4" ippo="124" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="118" invs="26" ippo="118" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="140" ippo="140">
+     <d>
+      <invs>
+       <arg a="3" i="1"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo id="81" ippo="81">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: localtime"/>
+       <msg t="unknown if location pointed to by return value from localtime is initialized"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="128" invs="82" ippo="128" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="23" invs="84" ippo="23" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo id="77" ippo="77">
+     <d>
+      <invs>
+       <arg a="1" i="28,51,74,92"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="70" invs="74" ippo="70" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo id="134" ippo="134">
+     <d>
+      <invs>
+       <arg a="1" i="7,38,58,79"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="16" ippo="16">
+     <d>
+      <invs>
+       <arg a="1" i="9,40,61,81"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="24" invs="17" ippo="24" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="21" invs="65" ippo="21" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo deps="f" id="94" invs="29" ippo="94" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="109" ippo="109">
+     <d>
+      <invs>
+       <arg a="1" i="6,37,57,78"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="36" invs="20" ippo="36" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="76" invs="74" ippo="76" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo deps="f" id="131" invs="72" ippo="131" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3282"/>
+    </ppo>
+    <ppo deps="s" id="57" ippo="57" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="f" id="68" invs="25" ippo="68" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="122" invs="77" ippo="122" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="85" invs="28" ippo="85" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="100" invs="16" ippo="100" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="26" ippo="26" s="g">
+     <e txt="log_rotation_method is global"/>
+    </ppo>
+    <ppo deps="f" id="98" invs="64" ippo="98" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo deps="f" id="105" invs="6" ippo="105" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="11" ippo="11">
+     <d>
+      <invs>
+       <arg a="1" i="21,46,68,87"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="f" id="135" invs="79" ippo="135" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="13" invs="21" ippo="13" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="63" invs="18" ippo="63" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="51" ippo="51">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: localtime"/>
+       <msg t="unknown if location pointed to by return value from localtime is initialized"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="107" ippo="107">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: localtime"/>
+       <msg t="unknown if location pointed to by return value from localtime is initialized"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="146" invs="24" ippo="146" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="125" ippo="125">
+     <d>
+      <invs>
+       <arg a="1" i="13,41,62,82"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="143" invs="70" ippo="143" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo deps="f" id="19" invs="9" ippo="19" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="32" ippo="32">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: localtime"/>
+       <msg t="unknown if location pointed to by return value from localtime is initialized"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="17" invs="81" ippo="17" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo id="90" ippo="90"/>
+    <ppo id="40" ippo="40">
+     <d>
+      <invs>
+       <arg a="1" i="8,39,59,80"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="67" invs="90" ippo="67" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="55" invs="23" ippo="55" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="117" invs="91" ippo="117" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo id="132" ippo="132">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: localtime"/>
+       <msg t="unknown if location pointed to by return value from localtime is initialized"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="110" invs="78" ippo="110" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo id="60" ippo="60">
+     <d>
+      <invs>
+       <arg a="1" i="18,44,66,85"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="150" ippo="150" s="g">
+     <e txt="subtract non-negative number:  value is 3600"/>
+    </ppo>
+    <ppo deps="f" id="59" invs="66" ippo="59" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo id="142" ippo="142">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: localtime"/>
+       <msg t="unknown if location pointed to by return value from localtime is initialized"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="144" ippo="144">
+     <d>
+      <invs>
+       <arg a="1" i="24,48,70,89"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="116" ippo="116">
+     <d>
+      <invs>
+       <arg a="1" i="26,50,73,91"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="137" invs="7" ippo="137" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="27" invs="67" ippo="27" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo id="151" ippo="151"/>
+    <ppo deps="s" id="38" ippo="38" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="f" id="61" invs="85" ippo="61" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo id="87" ippo="87">
+     <d>
+      <invs>
+       <arg a="2" i="27"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="113" ippo="113" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo id="138" ippo="138"/>
+    <ppo id="58" ippo="58">
+     <d>
+      <invs>
+       <arg a="3" i="22"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="84" invs="92" ippo="84" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo id="34" ippo="34">
+     <d>
+      <invs>
+       <arg a="1" i="20,45,67,86"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="74" invs="28" ippo="74" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="112" invs="6" ippo="112" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="75" ippo="75">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: localtime"/>
+       <msg t="unknown if location pointed to by return value from localtime is initialized"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="123" invs="4" ippo="123" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="48" invs="88" ippo="48" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="127" invs="62" ippo="127" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo deps="s" id="139" ippo="139" s="g">
+     <e txt="add non-negative number:  value is 3600"/>
+    </ppo>
+    <ppo deps="f" id="147" invs="24" ippo="147" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="71" ippo="71">
+     <d>
+      <invs>
+       <arg a="1" i="28,51,74,92"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="22" ippo="22">
+     <d>
+      <invs>
+       <arg a="1" i="17,43,65,84"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="28" ippo="28">
+     <d>
+      <invs>
+       <arg a="1" i="20,45,67,86"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="53" ippo="53">
+     <d>
+      <invs>
+       <arg a="1" i="23,47,69,88"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="148" ippo="148"/>
+    <ppo id="65" ippo="65">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: localtime"/>
+       <msg t="unknown if location pointed to by return value from localtime is initialized"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="47" ippo="47">
+     <d>
+      <invs>
+       <arg a="1" i="23,47,69,88"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="73" invs="28" ippo="73" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="44" invs="8" ippo="44" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="5" ippo="5"/>
+    <ppo deps="f" id="91" invs="75" ippo="91" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo deps="f" id="120" invs="56" ippo="120" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo id="97" ippo="97">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: localtime"/>
+       <msg t="unknown if location pointed to by return value from localtime is initialized"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="72" invs="92" ippo="72" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="99" invs="83" ippo="99" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo id="114" ippo="114">
+     <d>
+      <invs>
+       <arg a="3" i="5"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="33" invs="67" ippo="33" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo deps="f" id="37" invs="20" ippo="37" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="64" ippo="64">
+     <d>
+      <invs>
+       <arg a="1" i="25,49,71,90"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="93" invs="93" ippo="93" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="119" invs="26" ippo="119" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="41" ippo="41">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: localtime"/>
+       <msg t="unknown if location pointed to by return value from localtime is initialized"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="95" invs="29" ippo="95" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="149" ippo="149">
+     <d>
+      <invs>
+       <arg a="3" i="12"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: 3600"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="92" ippo="92">
+     <d>
+      <invs>
+       <arg a="1" i="29,52,75,93"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="115" invs="73" ippo="115" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo deps="f" id="10" invs="68" ippo="10" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo deps="f" id="42" invs="59" ippo="42" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo deps="f" id="136" invs="7" ippo="136" s="g" ts="2018-01-09 15:49:32">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="46" invs="69" ippo="46" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo id="39" ippo="39">
+     <d>
+      <invs>
+       <arg a="3" i="19"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="66" invs="71" ippo="66" s="g" ts="2018-01-09 15:49:32">
+     <e txt="assignedAt#3279(rv:localtime)"/>
+    </ppo>
+    <ppo id="83" ippo="83">
+     <d>
+      <invs>
+       <arg a="1" i="28,51,74,92"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo id="88" ippo="88">
+     <d>
+      <invs>
+       <arg a="2" i="27"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="35" invs="86" ippo="35" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="29" invs="86" ippo="29" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo id="126" ippo="126">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: localtime"/>
+       <msg t="unknown if location pointed to by return value from localtime is initialized"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="43" invs="80" ippo="43" s="g" ts="2018-01-09 15:49:32">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="86" invs="28" ippo="86" s="g" ts="2018-01-09 15:49:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo id="20" ippo="20">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: localtime"/>
+       <msg t="unknown if location pointed to by return value from localtime is initialized"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

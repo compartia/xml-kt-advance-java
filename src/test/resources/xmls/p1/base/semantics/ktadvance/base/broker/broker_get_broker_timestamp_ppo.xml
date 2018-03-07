@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:11:46">
+   <application file="base/broker.c"/>
+  </header>
+  <function fname="get_broker_timestamp">
+   <ppos>
+    <ppo deps="s" id="15" ippo="15" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo id="22" ippo="22"/>
+    <ppo deps="a" id="18" ids="1" invs="10" ippo="18" s="g" ts="2018-01-09 15:27:06">
+     <e txt="condition not-null(timestamp) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="19" invs="20" ippo="19" s="g" ts="2018-01-09 15:27:06">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(timestamp_2_)#init"/>
+    </ppo>
+    <ppo deps="s" id="17" ippo="17" s="g">
+     <e txt="timestamp is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="11" ippo="11" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="constant null pointer"/>
+    </ppo>
+    <ppo deps="s" id="12" ippo="12" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="13" ippo="13" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="a" id="16" ids="2" invs="3" ippo="16" s="g" ts="2018-01-09 15:27:06">
+     <e txt="condition initialized((*timestamp)) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="14" ippo="14" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="f" id="21" invs="10" ippo="21" s="g" ts="2018-01-09 15:27:06">
+     <e txt="upper-bound value is initial value of parameter timestamp satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="timestamp is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="address of variable tv"/>
+    </ppo>
+    <ppo deps="f" id="20" invs="10" ippo="20" s="g" ts="2018-01-09 15:27:06">
+     <e txt="initial value of parameter timestamp satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

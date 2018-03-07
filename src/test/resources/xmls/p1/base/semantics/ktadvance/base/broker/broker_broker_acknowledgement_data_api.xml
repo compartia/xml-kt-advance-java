@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:11:46">
+   <application file="base/broker.c"/>
+  </header>
+  <function fname="broker_acknowledgement_data">
+   <api>
+    <api-assumptions>
+     <aa ipr="1087" ppos="29,63,39,47,19"/>
+     <aa ipr="1088" ppos="17"/>
+     <aa ipr="1089" ppos="27"/>
+     <aa ipr="1090" ppos="61"/>
+     <aa ipr="1091" ppos="45"/>
+     <aa ipr="1092" ppos="37"/>
+     <aa ipr="1156" spos="1"/>
+     <aa ipr="1157" spos="2"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="neb_make_callbacks" h="nebmods"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="nebmods/neb_make_callbacks"/>
+    </missing-summaries>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:55">
+   <application file="common/statusdata.c"/>
+  </header>
+  <function fname="update_host_status">
+   <ppos>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="aggregated_dump is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="11" ippo="11" s="g">
+     <e txt="aggregate_status_updates is global"/>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="f" id="4" invs="83" ippo="4" s="g" ts="2018-01-09 16:02:50">
+     <e txt="initial value of parameter hst satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="5" invs="83" ippo="5" s="g" ts="2018-01-09 16:02:50">
+     <e txt="upper-bound value is initial value of parameter hst satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="3" invs="94" ippo="3" s="g" ts="2018-01-09 16:02:50">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(hst_2_)#init"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="hst is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

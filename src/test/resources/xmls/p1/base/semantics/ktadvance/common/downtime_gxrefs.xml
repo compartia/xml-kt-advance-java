@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="global-xrefs" name="global-xrefs" time="2018-01-09 15:25:13.598258"/>
+  <global-xrefs>
+    <compinfo-xrefs>
+      <cxref ckey="19" gckey="5"/>
+      <cxref ckey="153" gckey="6"/>
+      <cxref ckey="154" gckey="7"/>
+      <cxref ckey="155" gckey="8"/>
+      <cxref ckey="162" gckey="3"/>
+      <cxref ckey="172" gckey="80"/>
+      <cxref ckey="173" gckey="22"/>
+    </compinfo-xrefs>
+    <varinfo-xrefs>
+      <vxref gvid="3" vid="517"/>
+      <vxref gvid="50" vid="1068"/>
+      <vxref gvid="68" vid="1081"/>
+      <vxref gvid="4" vid="1416"/>
+      <vxref gvid="69" vid="1896"/>
+      <vxref gvid="234" vid="7085"/>
+      <vxref gvid="240" vid="7137"/>
+      <vxref gvid="241" vid="7140"/>
+      <vxref gvid="848" vid="7266"/>
+      <vxref gvid="849" vid="7269"/>
+      <vxref gvid="852" vid="7294"/>
+      <vxref gvid="833" vid="7315"/>
+      <vxref gvid="834" vid="7338"/>
+      <vxref gvid="832" vid="7341"/>
+      <vxref gvid="835" vid="7344"/>
+      <vxref gvid="837" vid="7349"/>
+      <vxref gvid="841" vid="7374"/>
+      <vxref gvid="842" vid="7379"/>
+      <vxref gvid="843" vid="7384"/>
+      <vxref gvid="845" vid="7387"/>
+      <vxref gvid="846" vid="7390"/>
+      <vxref gvid="840" vid="7393"/>
+      <vxref gvid="844" vid="7396"/>
+      <vxref gvid="305" vid="7399"/>
+      <vxref gvid="851" vid="7420"/>
+      <vxref gvid="850" vid="7443"/>
+      <vxref gvid="831" vid="7468"/>
+      <vxref gvid="836" vid="7473"/>
+      <vxref gvid="830" vid="7476"/>
+      <vxref gvid="838" vid="7479"/>
+      <vxref gvid="839" vid="7482"/>
+      <vxref gvid="1124" vid="7501"/>
+      <vxref gvid="1125" vid="7506"/>
+      <vxref gvid="1144" vid="7509"/>
+      <vxref gvid="1134" vid="7518"/>
+      <vxref gvid="1136" vid="7542"/>
+      <vxref gvid="1137" vid="7565"/>
+      <vxref gvid="1138" vid="7568"/>
+      <vxref gvid="1139" vid="7571"/>
+      <vxref gvid="260" vid="7648"/>
+      <vxref gvid="281" vid="7672"/>
+      <vxref gvid="904" vid="8117"/>
+      <vxref gvid="477" vid="8900"/>
+      <vxref gvid="829" vid="9170"/>
+      <vxref gvid="847" vid="9171"/>
+    </varinfo-xrefs>
+  </global-xrefs>
+</c-analysis>

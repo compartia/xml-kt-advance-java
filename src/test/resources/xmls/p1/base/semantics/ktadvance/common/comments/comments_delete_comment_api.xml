@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:53">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="delete_comment">
+   <api xlst="4">
+    <api-assumptions/>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees>
+     <gg iipc="1"/>
+    </postcondition-guarantees>
+    <library-calls>
+     <lc c="1" f="hashfunc1" h="nagios"/>
+     <lc c="1" f="xcddefault_delete_service_comment" h="xcddefault"/>
+     <lc c="1" f="broker_comment_data" h="broker"/>
+     <lc c="5" f="free" h="stdlib"/>
+     <lc c="1" f="xcddefault_delete_host_comment" h="xcddefault"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="broker/broker_comment_data"/>
+     <ms n="nagios/hashfunc1"/>
+     <ms n="xcddefault/xcddefault_delete_host_comment"/>
+     <ms n="xcddefault/xcddefault_delete_service_comment"/>
+    </missing-summaries>
+    <unevaluated>
+     <uu po-id="391"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

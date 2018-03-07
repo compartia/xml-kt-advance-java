@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:03">
+   <application file="common/downtime.c"/>
+  </header>
+  <function fname="schedule_downtime">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="554,565" ictxt="972" iloc="504" ivinfo="19">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="554,555,556,557,558,559,549,548,560,561,562,563" ictxt="959" iloc="503" ivinfo="13">
+       <api-conditions>
+        <api-c iapi="1064">
+         <po deps="s" id="1" ispo="1" s="g">
+          <e txt="address of variable downtime_id"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="958" iexp="46" iloc="501">
+      <postconditions/>
+     </rs>
+     <rs ictxt="982" iexp="2" iloc="507">
+      <postconditions/>
+     </rs>
+     <rs ictxt="953" iexp="46" iloc="501">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

@@ -28,9 +28,14 @@ public class CAnalysisImpl implements CAnalysis {
         this.fs = fs;
     }
 
+    @Override
+    public String relativize(File f) {
+        return fs.getBaseDir().toPath().relativize(f.toPath()).toString();
+    }
+
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see kt.advance.model.CAnalysisInter#getApps()
      */
     @Override

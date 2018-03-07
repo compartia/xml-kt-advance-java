@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="common/downtime" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:56"/>
+  </header>
+  <function filename="common/downtime">
+   <svar ivinfo="23"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="9174,11,1,0,0,515,0,1" ix="1" t="config_file,n"/>
+     <n a="9175,5,1,0,0,516,0,0" ix="2" t="result,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="1">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="573" iloc="517" ilval="339" itag="call">
+         <args>
+          <exp iexp="574"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="2"/>
+      <preds/>
+     </stmt>
+     <stmt sid="2">
+      <skind iexp="575" iloc="518" stag="return"/>
+      <succs/>
+      <preds r="1"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

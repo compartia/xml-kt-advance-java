@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:29:32">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="submit_raw_external_command">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="191,212" ictxt="3100" iloc="229" ivinfo="8">
+       <api-conditions>
+        <api-c iapi="8082">
+         <po deps="f" id="2" invs="154" ispo="2" s="g">
+          <e txt="all targets are non-null: [heap-allocated-region created by malloc at line 5067]"/>
+         </po>
+        </api-c>
+        <api-c iapi="7978">
+         <po deps="a" id="1" ids="4" invs="148" ispo="1" s="g">
+          <e txt="condition not-null(buffer_items) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="3105" iexp="214" iloc="231">
+      <postconditions/>
+     </rs>
+     <rs ictxt="3063" iexp="179" iloc="218">
+      <postconditions/>
+     </rs>
+     <rs ictxt="3077" iexp="179" iloc="222">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

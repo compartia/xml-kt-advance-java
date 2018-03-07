@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:52">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="delete_all_host_comments">
+   <ppos>
+    <ppo deps="f" id="22" invs="41" ippo="22" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#283(rv:get_first_comment_by_host)_xx_assignedAt#283(rv:get_next_comment_by_host)"/>
+    </ppo>
+    <ppo deps="f" id="18" invs="85" ippo="18" s="g" ts="2018-01-09 17:08:57">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:get_next_comment_by_host @283 r:5"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(get_first_comment_by_host(_)#return, addr_in_(get_next_comment_by_host(_^_)#return"/>
+    </ppo>
+    <ppo deps="f" id="19" invs="27" ippo="19" s="g" ts="2018-01-09 16:02:47">
+     <e txt="lower-bound value is return value from get_next_comment_by_host (IH); or return value from get_first_comment_by_host (IH); all of which satisfy the lower-bound property"/>
+    </ppo>
+    <ppo id="32" ippo="32">
+     <d>
+      <invs>
+       <arg a="1" i="79,78,80,88,29,28,43,59"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:delete_comment @285 r:11,freed(by:delete_comment @285 r:5"/>
+        <msg t="[1]:potential frees not excluded: freed(by:delete_comment @285 r:5,freed(by:get_next_comment_by_host @283 r:5"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="17" invs="56" ippo="17" s="g" ts="2018-01-09 16:02:47">
+     <e txt="all targets are non-null: [basevar (get_first_comment_by_host(_)#return,basevar (get_next_comment_by_host(_^_)#return]"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+    <ppo id="28" ippo="28">
+     <d>
+      <invs>
+       <arg a="1" i="11,35,87,92,93,94"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:delete_comment @285 r:1"/>
+        <msg t="[1]:potential frees not excluded: freed(by:delete_comment @285 r:1,freed(by:get_first_comment_by_host @283 r:1,freed(by:get_next_comment_by_host @283 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="23" invs="53" ippo="23" s="g" ts="2018-01-09 16:02:47">
+     <e txt="all targets are non-null: [basevar (get_first_comment_by_host(_)#return,basevar (get_next_comment_by_host(_^_)#return]"/>
+    </ppo>
+    <ppo deps="f" id="25" invs="23" ippo="25" s="g" ts="2018-01-09 16:02:47">
+     <e txt="lower-bound value is return value from get_next_comment_by_host (IH); or return value from get_first_comment_by_host (IH); all of which satisfy the lower-bound property"/>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="host_name is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="30" invs="11" ippo="30" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is initial value of parameter host_name satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="16" invs="42" ippo="16" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#283(rv:get_first_comment_by_host)_xx_assignedAt#283(rv:get_next_comment_by_host)"/>
+    </ppo>
+    <ppo deps="f" id="24" invs="84" ippo="24" s="g" ts="2018-01-09 17:08:57">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:get_next_comment_by_host @283 r:5"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(get_first_comment_by_host(_)#return, addr_in_(get_next_comment_by_host(_^_)#return"/>
+    </ppo>
+    <ppo deps="s" id="14" ippo="14" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="21" ippo="21"/>
+    <ppo deps="f" id="33" invs="29" ippo="33" s="g" ts="2018-01-09 16:02:47">
+     <e txt="lower-bound value is return value from get_next_comment_by_host (IH); or return value from get_first_comment_by_host (IH); all of which satisfy the lower-bound property"/>
+    </ppo>
+    <ppo deps="f" id="37" invs="19" ippo="37" s="g" ts="2018-01-09 16:02:47">
+     <e txt="initial value of parameter host_name satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="36" ippo="36">
+     <d>
+      <invs>
+       <arg a="1" i="19,36,91"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:delete_comment @285 r:1"/>
+        <msg t="[1]:potential frees not excluded: freed(by:delete_comment @285 r:1,freed(by:get_first_comment_by_host @283 r:1,freed(by:get_next_comment_by_host @283 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="15" ippo="15"/>
+    <ppo deps="s" id="27" ippo="27" s="g">
+     <e txt="host_name is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="10" invs="6" ippo="10" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is initial value of parameter host_name satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="26" invs="22" ippo="26" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is return value from get_next_comment_by_host (IH); or return value from get_first_comment_by_host (IH); all of which satisfy the upper-bound property"/>
+    </ppo>
+    <ppo deps="f" id="38" invs="19" ippo="38" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is initial value of parameter host_name satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="11" ippo="11" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="9" invs="6" ippo="9" s="g" ts="2018-01-09 16:02:47">
+     <e txt="initial value of parameter host_name satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="31" invs="43" ippo="31" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#283(rv:get_first_comment_by_host)_xx_assignedAt#283(rv:get_next_comment_by_host)"/>
+    </ppo>
+    <ppo deps="f" id="12" invs="45" ippo="12" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#283(rv:get_first_comment_by_host)_xx_assignedAt#283(rv:get_next_comment_by_host)"/>
+    </ppo>
+    <ppo deps="s" id="13" ippo="13" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="39" invs="44" ippo="39" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#290(rv:xcddefault_delete_all_host_comments)"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="host_name is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="34" invs="28" ippo="34" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is return value from get_next_comment_by_host (IH); or return value from get_first_comment_by_host (IH); all of which satisfy the upper-bound property"/>
+    </ppo>
+    <ppo deps="f" id="8" invs="50" ippo="8" s="g" ts="2018-01-09 16:02:47">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(host_name_2_)#init"/>
+    </ppo>
+    <ppo deps="s" id="35" ippo="35" s="g">
+     <e txt="host_name is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="29" invs="11" ippo="29" s="g" ts="2018-01-09 16:02:47">
+     <e txt="initial value of parameter host_name satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="20" invs="26" ippo="20" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is return value from get_next_comment_by_host (IH); or return value from get_first_comment_by_host (IH); all of which satisfy the upper-bound property"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

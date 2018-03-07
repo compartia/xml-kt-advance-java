@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:30:17">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="init_command_file_worker_thread">
+   <spos>
+    <callsites>
+     <direct-calls/>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="5061" iexp="179" iloc="416">
+      <postconditions/>
+     </rs>
+     <rs ictxt="5039" iexp="179" iloc="409">
+      <postconditions/>
+     </rs>
+     <rs ictxt="5062" iexp="19" iloc="418">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

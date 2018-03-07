@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="base/utils" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:48"/>
+  </header>
+  <function filename="base/utils">
+   <svar ivinfo="27"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="9946,21,1,0,0,602,0,1" ix="1" t="name1,n"/>
+     <n a="9947,1,1,0,0,603,0,2" ix="2" t="hashslots,n"/>
+     <n a="9948,73,1,0,0,604,0,0" ix="3" t="i,n"/>
+     <n a="9949,73,1,0,0,605,0,0" ix="4" t="result,n"/>
+     <n a="9950,19,1,0,0,-1,0,0" ix="5" t="tmp,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="1721">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="622" iloc="606" ilval="344" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="1722"/>
+      <preds/>
+     </stmt>
+     <stmt sid="1722">
+      <skind iexp="645" iloc="609" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="1723">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="622" iloc="607" ilval="346" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="1724"/>
+          <preds r="1722"/>
+         </stmt>
+         <stmt sid="1724">
+          <skind breakstmtid="1729" continuestmtid="1724" iloc="607" stag="loop">
+           <block>
+            <bstmts>
+             <stmt sid="1725">
+              <skind stag="instr">
+               <instrs>
+                <instr iexp="180" iloc="607" ilval="347" itag="call">
+                 <args>
+                  <exp iexp="645"/>
+                 </args>
+                </instr>
+               </instrs>
+              </skind>
+              <succs r="1726"/>
+              <preds r="1724"/>
+             </stmt>
+             <stmt sid="1726">
+              <skind iexp="649" iloc="607" stag="if">
+               <thenblock>
+                <bstmts/>
+               </thenblock>
+               <elseblock>
+                <bstmts>
+                 <stmt sid="1727">
+                  <skind iloc="607" stag="break"/>
+                  <succs r="1729"/>
+                  <preds r="1726"/>
+                 </stmt>
+                </bstmts>
+               </elseblock>
+              </skind>
+              <succs r="1728,1727"/>
+              <preds r="1725"/>
+             </stmt>
+             <stmt sid="1728">
+              <skind stag="instr">
+               <instrs>
+                <instr iexp="654" iloc="608" ilval="344" itag="set"/>
+                <instr iexp="655" iloc="607" ilval="346" itag="set"/>
+               </instrs>
+              </skind>
+              <succs r="1724"/>
+              <preds r="1726"/>
+             </stmt>
+            </bstmts>
+           </block>
+          </skind>
+          <succs r="1725"/>
+          <preds r="1728,1723"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="1723,1729"/>
+      <preds r="1721"/>
+     </stmt>
+     <stmt sid="1729">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="658" iloc="610" ilval="344" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="1730"/>
+      <preds r="1727,1722"/>
+     </stmt>
+     <stmt sid="1730">
+      <skind iexp="659" iloc="611" stag="return"/>
+      <succs/>
+      <preds r="1729"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

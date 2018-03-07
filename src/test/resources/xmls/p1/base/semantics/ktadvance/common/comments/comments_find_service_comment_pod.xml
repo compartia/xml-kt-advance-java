@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:54">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="find_service_comment">
+   <assumption-table/>
+   <ppo-type-table>
+    <n a="11,806,709" ix="1" t="p"/>
+    <n a="11,807,710" ix="2" t="p"/>
+    <n a="11,807,711" ix="3" t="p"/>
+    <n a="11,807,712" ix="4" t="p"/>
+    <n a="11,807,713" ix="5" t="p"/>
+    <n a="11,807,714" ix="6" t="p"/>
+   </ppo-type-table>
+   <spo-type-table/>
+  </function>
+ </c-analysis>

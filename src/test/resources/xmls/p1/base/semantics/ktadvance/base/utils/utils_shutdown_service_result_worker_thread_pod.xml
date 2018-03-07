@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:49">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="shutdown_service_result_worker_thread">
+   <assumption-table/>
+   <ppo-type-table>
+    <n a="428,816,930" ix="1" t="p"/>
+    <n a="428,817,28" ix="2" t="p"/>
+    <n a="428,817,931" ix="3" t="p"/>
+    <n a="429,818,930" ix="4" t="p"/>
+    <n a="429,819,28" ix="5" t="p"/>
+    <n a="429,819,931" ix="6" t="p"/>
+    <n a="429,820,932" ix="7" t="p"/>
+    <n a="429,821,6" ix="8" t="p"/>
+    <n a="429,820,933" ix="9" t="p"/>
+    <n a="429,820,934" ix="10" t="p"/>
+    <n a="429,820,935" ix="11" t="p"/>
+   </ppo-type-table>
+   <spo-type-table/>
+  </function>
+ </c-analysis>

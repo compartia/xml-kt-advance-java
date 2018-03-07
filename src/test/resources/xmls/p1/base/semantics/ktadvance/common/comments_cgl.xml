@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:54">
+   <application file="common/comments.c"/>
+  </header>
+  <assignment-dictionary>
+   <function-name-table>
+    <n ix="1" t="add_new_service_comment"/>
+    <n ix="2" t="add_comment_to_hashlist"/>
+    <n ix="3" t="add_new_host_comment"/>
+    <n ix="4" t="delete_comment"/>
+    <n ix="5" t="add_comment"/>
+    <n ix="6" t="add_new_comment"/>
+    <n ix="7" t="free_comment_data"/>
+   </function-name-table>
+   <assignment-table>
+    <n a="1,211,341,335,20" ix="1" t="u"/>
+    <n a="8931,2,197,185,101" ix="2" t="g,comment_hashlist"/>
+    <n a="2,117,3,189,110" ix="3" t="u"/>
+    <n a="171,2,125,202,199,151" ix="4" t="f,nexthash"/>
+    <n a="2,120,202,200,154" ix="5" t="u"/>
+    <n a="171,2,126,209,202,159" ix="6" t="f,nexthash"/>
+    <n a="3,225,358,355,243" ix="7" t="u"/>
+    <n a="171,4,192,313,297,403" ix="8" t="f,nexthash"/>
+    <n a="4,191,3,298,407" ix="9" t="u"/>
+    <n a="8930,4,286,303,420" ix="10" t="g,comment_list"/>
+    <n a="171,4,194,293,304,423" ix="11" t="f,next"/>
+    <n a="171,5,62,130,99,506" ix="12" t="f,service_description"/>
+    <n a="171,5,65,107,116,557" ix="13" t="f,comment_type"/>
+    <n a="171,5,66,142,117,560" ix="14" t="f,entry_type"/>
+    <n a="171,5,68,143,118,563" ix="15" t="f,source"/>
+    <n a="171,5,70,144,119,566" ix="16" t="f,entry_time"/>
+    <n a="171,5,72,145,120,569" ix="17" t="f,comment_id"/>
+    <n a="171,5,75,18,121,573" ix="18" t="f,persistent"/>
+    <n a="171,5,75,1,121,575" ix="19" t="f,persistent"/>
+    <n a="171,5,77,18,122,578" ix="20" t="f,expires"/>
+    <n a="171,5,77,1,122,580" ix="21" t="f,expires"/>
+    <n a="171,5,78,150,123,582" ix="22" t="f,expire_time"/>
+    <n a="171,5,80,151,124,585" ix="23" t="f,next"/>
+    <n a="171,5,81,151,125,589" ix="24" t="f,nexthash"/>
+    <n a="171,5,80,154,130,607" ix="25" t="f,next"/>
+    <n a="8930,5,116,131,614" ix="26" t="g,comment_list"/>
+    <n a="171,5,85,116,132,616" ix="27" t="f,next"/>
+    <n a="171,5,80,151,137,626" ix="28" t="f,next"/>
+    <n a="8930,5,116,138,630" ix="29" t="g,comment_list"/>
+    <n a="171,5,80,151,139,636" ix="30" t="f,next"/>
+    <n a="171,5,85,116,140,640" ix="31" t="f,next"/>
+    <n a="6,243,378,381,715" ix="32" t="u"/>
+    <n a="8931,7,96,63,753" ix="33" t="g,comment_hashlist"/>
+    <n a="8930,7,3,64,756" ix="34" t="g,comment_list"/>
+    <n a="8930,1" ix="35" t="init,comment_list"/>
+    <n a="8931,2" ix="36" t="init,comment_hashlist"/>
+   </assignment-table>
+   <global-value-table/>
+  </assignment-dictionary>
+ </c-analysis>

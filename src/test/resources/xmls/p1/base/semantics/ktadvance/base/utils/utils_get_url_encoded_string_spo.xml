@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:49">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="get_url_encoded_string">
+   <spos>
+    <callsites>
+     <direct-calls/>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="895" iexp="40" iloc="621">
+      <postconditions/>
+     </rs>
+     <rs ictxt="882" iexp="40" iloc="618">
+      <postconditions/>
+     </rs>
+     <rs ictxt="1044" iexp="670" iloc="634">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

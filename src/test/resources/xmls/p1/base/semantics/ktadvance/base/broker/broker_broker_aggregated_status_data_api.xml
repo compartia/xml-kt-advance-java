@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:11:33">
+   <application file="base/broker.c"/>
+  </header>
+  <function fname="broker_aggregated_status_data">
+   <api>
+    <api-assumptions>
+     <aa ipr="1116" spos="1"/>
+     <aa ipr="1117" spos="2"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="neb_make_callbacks" h="nebmods"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="nebmods/neb_make_callbacks"/>
+    </missing-summaries>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>
