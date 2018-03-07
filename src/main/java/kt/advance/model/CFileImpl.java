@@ -42,7 +42,7 @@ class CFileImpl implements CFile {
 
     private final String name;
     Map<Integer, CConst> constants;
-    Map<Integer, CExpression> expressions;
+    private Map<Integer, CExpression> expressions;
     Map<Integer, CLHost> lhosts;
     Map<Integer, CLocationImpl> locations;
 
