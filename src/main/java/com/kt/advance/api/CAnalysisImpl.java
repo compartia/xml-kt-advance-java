@@ -28,9 +28,14 @@ public class CAnalysisImpl implements CAnalysis {
         this.fs = fs;
     }
 
+    @Override
+    public String relativize(File f) {
+        return fs.getBaseDir().toPath().relativize(f.toPath()).toString();
+    }
+
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see kt.advance.model.CAnalysisInter#getApps()
      */
     @Override
@@ -56,7 +61,7 @@ public class CAnalysisImpl implements CAnalysis {
                 })
                 .collect(Collectors.toSet());
 
-        getApps().parallelStream().forEach(x -> x.read());
+        getApps().stream().forEach(x -> x.read());
 
     }
 

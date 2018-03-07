@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="global-xrefs" name="global-xrefs" time="2018-01-09 15:25:13.574747"/>
+  <global-xrefs>
+    <compinfo-xrefs>
+      <cxref ckey="19" gckey="5"/>
+      <cxref ckey="171" gckey="21"/>
+    </compinfo-xrefs>
+    <varinfo-xrefs>
+      <vxref gvid="50" vid="1068"/>
+      <vxref gvid="68" vid="1081"/>
+      <vxref gvid="4" vid="1416"/>
+      <vxref gvid="227" vid="1858"/>
+      <vxref gvid="69" vid="1896"/>
+      <vxref gvid="229" vid="7057"/>
+      <vxref gvid="230" vid="7060"/>
+      <vxref gvid="234" vid="7085"/>
+      <vxref gvid="235" vid="7106"/>
+      <vxref gvid="236" vid="7129"/>
+      <vxref gvid="238" vid="7134"/>
+      <vxref gvid="240" vid="7137"/>
+      <vxref gvid="241" vid="7140"/>
+      <vxref gvid="243" vid="7147"/>
+      <vxref gvid="244" vid="7150"/>
+      <vxref gvid="245" vid="7155"/>
+      <vxref gvid="246" vid="7158"/>
+      <vxref gvid="248" vid="7163"/>
+      <vxref gvid="249" vid="7166"/>
+      <vxref gvid="223" vid="7169"/>
+      <vxref gvid="224" vid="7172"/>
+      <vxref gvid="225" vid="7177"/>
+      <vxref gvid="226" vid="7180"/>
+      <vxref gvid="242" vid="7185"/>
+      <vxref gvid="247" vid="7188"/>
+      <vxref gvid="228" vid="7213"/>
+      <vxref gvid="233" vid="7234"/>
+      <vxref gvid="232" vid="7257"/>
+      <vxref gvid="237" vid="7260"/>
+      <vxref gvid="239" vid="7263"/>
+      <vxref gvid="819" vid="7266"/>
+      <vxref gvid="815" vid="7275"/>
+      <vxref gvid="820" vid="7299"/>
+      <vxref gvid="821" vid="7322"/>
+      <vxref gvid="822" vid="7325"/>
+      <vxref gvid="823" vid="7328"/>
+      <vxref gvid="824" vid="7331"/>
+      <vxref gvid="825" vid="7336"/>
+      <vxref gvid="828" vid="7345"/>
+      <vxref gvid="260" vid="7408"/>
+      <vxref gvid="231" vid="7790"/>
+      <vxref gvid="868" vid="7802"/>
+      <vxref gvid="465" vid="8627"/>
+      <vxref gvid="221" vid="8930"/>
+      <vxref gvid="222" vid="8931"/>
+    </varinfo-xrefs>
+  </global-xrefs>
+</c-analysis>

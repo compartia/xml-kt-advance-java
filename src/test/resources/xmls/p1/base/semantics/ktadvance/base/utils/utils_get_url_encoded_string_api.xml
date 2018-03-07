@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:49">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="get_url_encoded_string">
+   <api xlst="2">
+    <api-assumptions>
+     <aa ipr="1029" ppos="43,115,163,256,151,55,67,220,13,88,136,292,184,359,199,271,307,235,103"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="malloc" h="stdlib"/>
+     <lc c="1" f="strlen" h="string"/>
+     <lc c="1" f="sprintf" h="stdio"/>
+     <lc c="1" f="strcat" h="string"/>
+    </library-calls>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="1073"/>
+     <uu po-id="1086"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

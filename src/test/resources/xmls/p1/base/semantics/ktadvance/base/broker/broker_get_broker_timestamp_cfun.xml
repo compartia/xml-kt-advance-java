@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="base/broker" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:42"/>
+  </header>
+  <function filename="base/broker">
+   <svar ivinfo="1"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="9294,2,1,0,0,2,0,1" ix="1" t="timestamp,n"/>
+     <n a="9295,1,1,0,0,3,1,0" ix="2" t="tv,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="160">
+      <skind iexp="6" iloc="6" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="161">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="7" iloc="4" itag="call">
+             <args>
+              <exp iexp="9"/>
+              <exp iexp="10"/>
+             </args>
+            </instr>
+           </instrs>
+          </skind>
+          <succs r="163"/>
+          <preds r="160"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts>
+         <stmt sid="162">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="11" iloc="5" ilval="3" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="163"/>
+          <preds r="160"/>
+         </stmt>
+        </bstmts>
+       </elseblock>
+      </skind>
+      <succs r="161,162"/>
+      <preds/>
+     </stmt>
+     <stmt sid="163">
+      <skind iexp="12" iloc="7" stag="return"/>
+      <succs/>
+      <preds r="162,161"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

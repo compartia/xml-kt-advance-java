@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:41:51">
+   <application file="common/downtime.c"/>
+  </header>
+  <function fname="handle_scheduled_downtime_by_id">
+   <assumption-table/>
+   <ppo-type-table>
+    <n a="378,63,68" ix="1" t="p"/>
+    <n a="378,64,4" ix="2" t="p"/>
+    <n a="379,66,69" ix="3" t="p"/>
+    <n a="379,67,70" ix="4" t="p"/>
+    <n a="379,68,71" ix="5" t="p"/>
+    <n a="379,69,3" ix="6" t="p"/>
+    <n a="379,70,4" ix="7" t="p"/>
+    <n a="381,73,71" ix="8" t="p"/>
+    <n a="381,73,72" ix="9" t="p"/>
+    <n a="381,73,73" ix="10" t="p"/>
+    <n a="381,73,74" ix="11" t="p"/>
+    <n a="381,74,75" ix="12" t="p"/>
+   </ppo-type-table>
+   <spo-type-table>
+    <n a="381,72,1025,407" ix="1" t="cs"/>
+    <n a="381,72,1026,357" ix="2" t="cs"/>
+    <n a="381,72,1027,358" ix="3" t="cs"/>
+    <n a="381,72,1028,392" ix="4" t="cs"/>
+    <n a="381,72,1029,362" ix="5" t="cs"/>
+    <n a="381,72,1030,395" ix="6" t="cs"/>
+    <n a="381,72,1031,397" ix="7" t="cs"/>
+    <n a="381,72,1032,398" ix="8" t="cs"/>
+    <n a="381,72,1033,368" ix="9" t="cs"/>
+    <n a="381,72,1034,402" ix="10" t="cs"/>
+    <n a="381,72,1035,374" ix="11" t="cs"/>
+    <n a="381,72,1036,375" ix="12" t="cs"/>
+    <n a="381,72,1037,408" ix="13" t="cs"/>
+    <n a="381,72,1038,409" ix="14" t="cs"/>
+    <n a="381,72,1039,474" ix="15" t="cs"/>
+    <n a="381,72,1040,988" ix="16" t="cs"/>
+    <n a="381,72,1041,406" ix="17" t="cs"/>
+   </spo-type-table>
+  </function>
+ </c-analysis>

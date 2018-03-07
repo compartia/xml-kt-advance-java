@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:54">
+   <application file="common/statusdata.c"/>
+  </header>
+  <function fname="update_program_status">
+   <api>
+    <api-assumptions/>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees>
+     <gg iipc="1"/>
+    </postcondition-guarantees>
+    <library-calls>
+     <lc c="1" f="broker_program_status" h="broker"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="broker/broker_program_status"/>
+    </missing-summaries>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

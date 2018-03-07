@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:49">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="grab_host_macros">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="2980,2765" ictxt="622" iloc="2416" ivinfo="176">
+       <api-conditions>
+        <api-c iapi="156">
+         <po id="2" ispo="2"/>
+        </api-c>
+        <api-c iapi="8137">
+         <po deps="a" id="1" ids="6" invs="1400" ispo="1" s="g">
+          <e txt="condition not-null(hst-&gt;name) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="181">
+         <po deps="a" id="5" ids="13" invs="102" ispo="5" s="g">
+          <e txt="condition initialized(hst-&gt;name) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="182">
+         <po deps="a" id="4" ids="2" invs="1401" ispo="4" s="g">
+          <e txt="condition not-null(hst) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="157">
+         <po id="3" ispo="3">
+          <d>
+           <invs>
+            <arg a="1" i="1404"/>
+           </invs>
+           <msgs/>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="2836" ictxt="742" iloc="2447" ivinfo="33">
+       <api-conditions>
+        <api-c iapi="2822">
+         <po id="9" ispo="9"/>
+        </api-c>
+        <api-c iapi="619">
+         <po id="8" ispo="8">
+          <d>
+           <invs>
+            <arg a="1" i="1403"/>
+           </invs>
+           <msgs/>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="2820" ictxt="736" iloc="2445" ivinfo="33">
+       <api-conditions>
+        <api-c iapi="2822">
+         <po id="7" ispo="7"/>
+        </api-c>
+        <api-c iapi="619">
+         <po id="6" ispo="6">
+          <d>
+           <invs>
+            <arg a="1" i="1405"/>
+           </invs>
+           <msgs/>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="3007,3023,3026,327" ictxt="768" iloc="2453" ivinfo="69">
+       <api-conditions>
+        <api-c iapi="8270">
+         <po id="22" ispo="22"/>
+        </api-c>
+        <api-c iapi="2524">
+         <po deps="f" id="19" invs="1394" ispo="19" s="g">
+          <e txt="non-negative pointer increment: lower bound for ((caste (sizeof(temp_buffer):int) - 1):int is 1023"/>
+         </po>
+        </api-c>
+        <api-c iapi="8035">
+         <po deps="s" id="18" ispo="18" s="g">
+          <e txt="add zero"/>
+         </po>
+        </api-c>
+        <api-c iapi="2522">
+         <po deps="s" id="17" ispo="17" s="g">
+          <e txt="address of variable temp_buffer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="2828" ictxt="739" iloc="2446" ivinfo="33">
+       <api-conditions>
+        <api-c iapi="2822">
+         <po id="13" ispo="13"/>
+        </api-c>
+        <api-c iapi="619">
+         <po id="12" ispo="12">
+          <d>
+           <invs>
+            <arg a="1" i="1406"/>
+           </invs>
+           <msgs/>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="3015" ictxt="745" iloc="2448" ivinfo="33">
+       <api-conditions>
+        <api-c iapi="2822">
+         <po id="11" ispo="11"/>
+        </api-c>
+        <api-c iapi="619">
+         <po id="10" ispo="10"/>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="2999,3023,3026,327" ictxt="753" iloc="2449" ivinfo="69">
+       <api-conditions>
+        <api-c iapi="8270">
+         <po id="21" ispo="21"/>
+        </api-c>
+        <api-c iapi="2524">
+         <po deps="f" id="16" invs="1397" ispo="16" s="g">
+          <e txt="non-negative pointer increment: lower bound for ((caste (sizeof(temp_buffer):int) - 1):int is 1023"/>
+         </po>
+        </api-c>
+        <api-c iapi="8035">
+         <po deps="s" id="15" ispo="15" s="g">
+          <e txt="add zero"/>
+         </po>
+        </api-c>
+        <api-c iapi="2522">
+         <po deps="s" id="14" ispo="14" s="g">
+          <e txt="address of variable temp_buffer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="2766" ictxt="668" iloc="2428" ivinfo="174">
+       <api-conditions>
+        <api-c iapi="8506">
+         <po deps="a" id="20" ids="6" invs="1445" ispo="20" s="g" ts="2018-01-09 17:28:48">
+          <e txt="condition not-null(hst-&gt;name) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="" ictxt="735" iloc="2444" ivinfo="61">
+       <api-conditions/>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="no"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="778" iexp="19" iloc="2457">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

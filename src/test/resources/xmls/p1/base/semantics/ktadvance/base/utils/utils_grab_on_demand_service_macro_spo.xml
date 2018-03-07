@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:29:20">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="grab_on_demand_service_macro">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="2023,2373,2376,327" ictxt="1981" iloc="1901" ivinfo="69">
+       <api-conditions>
+        <api-c iapi="8270">
+         <po deps="f" id="21" invs="1573" ispo="21" s="g" ts="2018-01-09 17:29:20">
+          <e txt="all targets are non-null: [heap-allocated-region created by strdup at line 1706,heap-allocated-region created by strdup at line 1714]"/>
+         </po>
+        </api-c>
+        <api-c iapi="2524">
+         <po deps="f" id="6" invs="1455" ispo="6" s="g">
+          <e txt="non-negative pointer increment: lower bound for ((caste (sizeof(temp_buffer):int) - 1):int is 1023"/>
+         </po>
+        </api-c>
+        <api-c iapi="8035">
+         <po deps="s" id="5" ispo="5" s="g">
+          <e txt="add zero"/>
+         </po>
+        </api-c>
+        <api-c iapi="2522">
+         <po deps="s" id="4" ispo="4" s="g">
+          <e txt="address of variable temp_buffer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="2334,2322" ictxt="1839" iloc="1865" ivinfo="177">
+       <api-conditions>
+        <api-c iapi="8164">
+         <po deps="a" id="11" ids="29" invs="1453" ispo="11" s="g">
+          <e txt="condition not-null(svc-&gt;host_name) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="2674">
+         <po deps="a" id="14" ids="14" invs="101" ispo="14" s="g">
+          <e txt="condition initialized(svc-&gt;host_name) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="8165">
+         <po deps="a" id="12" ids="30" invs="1452" ispo="12" s="g">
+          <e txt="condition not-null(svc-&gt;description) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="2675">
+         <po deps="a" id="15" ids="5" invs="1454" ispo="15" s="g">
+          <e txt="condition not-null(svc) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="2650">
+         <po id="17" ispo="17">
+          <d>
+           <invs>
+            <arg a="1" i="1461"/>
+           </invs>
+           <msgs/>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2649">
+         <po id="16" ispo="16"/>
+        </api-c>
+        <api-c iapi="2697">
+         <po deps="a" id="13" ids="2" invs="101" ispo="13" s="g">
+          <e txt="condition initialized(svc-&gt;description) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="2023,2373,2376,327" ictxt="1961" iloc="1894" ivinfo="69">
+       <api-conditions>
+        <api-c iapi="8270">
+         <po deps="f" id="20" invs="1572" ispo="20" s="g" ts="2018-01-09 17:29:20">
+          <e txt="all targets are non-null: [heap-allocated-region created by strdup at line 1700]"/>
+         </po>
+        </api-c>
+        <api-c iapi="2524">
+         <po deps="f" id="3" invs="1449" ispo="3" s="g">
+          <e txt="non-negative pointer increment: lower bound for ((caste (sizeof(temp_buffer):int) - 1):int is 1023"/>
+         </po>
+        </api-c>
+        <api-c iapi="8035">
+         <po deps="s" id="2" ispo="2" s="g">
+          <e txt="add zero"/>
+         </po>
+        </api-c>
+        <api-c iapi="2522">
+         <po deps="s" id="1" ispo="1" s="g">
+          <e txt="address of variable temp_buffer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="2023" ictxt="2367" iloc="1992" ivinfo="33">
+       <api-conditions>
+        <api-c iapi="2822">
+         <po id="8" ispo="8"/>
+        </api-c>
+        <api-c iapi="619">
+         <po id="7" ispo="7">
+          <d>
+           <invs>
+            <arg a="1" i="1459,1471"/>
+           </invs>
+           <msgs>
+            <msg t="unable to exclude null return value from strdup"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="2367,2368" ictxt="1942" iloc="1890" ivinfo="175">
+       <api-conditions>
+        <api-c iapi="8499">
+         <po deps="a" id="18" ids="29" invs="1569" ispo="18" s="g" ts="2018-01-09 17:29:20">
+          <e txt="condition not-null(svc-&gt;host_name) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="8500">
+         <po deps="a" id="19" ids="30" invs="1568" ispo="19" s="g" ts="2018-01-09 17:29:20">
+          <e txt="condition not-null(svc-&gt;description) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="2023" ictxt="2380" iloc="1996" ivinfo="33">
+       <api-conditions>
+        <api-c iapi="2822">
+         <po id="10" ispo="10"/>
+        </api-c>
+        <api-c iapi="619">
+         <po id="9" ispo="9">
+          <d>
+           <invs>
+            <arg a="1" i="1460,1515"/>
+           </invs>
+           <msgs>
+            <msg t="unable to exclude null return value from strdup"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="1824" iexp="179" iloc="1859">
+      <postconditions/>
+     </rs>
+     <rs ictxt="1819" iexp="179" iloc="1859">
+      <postconditions/>
+     </rs>
+     <rs ictxt="1941" iexp="179" iloc="1889">
+      <postconditions/>
+     </rs>
+     <rs ictxt="2382" iexp="19" iloc="1998">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

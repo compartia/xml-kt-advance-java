@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="base/broker" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:42"/>
+  </header>
+  <function filename="base/broker">
+   <svar ivinfo="7"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="9195,4,1,0,0,137,0,1" ix="1" t="type,n"/>
+     <n a="9196,4,1,0,0,138,0,2" ix="2" t="flags,n"/>
+     <n a="9197,4,1,0,0,139,0,3" ix="3" t="attr,n"/>
+     <n a="9198,15,1,0,0,140,0,4" ix="4" t="svc,n"/>
+     <n a="9199,4,1,0,0,141,0,5" ix="5" t="command_type,n"/>
+     <n a="9200,7,1,0,0,142,0,6" ix="6" t="modattr,n"/>
+     <n a="9201,7,1,0,0,143,0,7" ix="7" t="modattrs,n"/>
+     <n a="9202,2,1,0,0,144,0,8" ix="8" t="timestamp,n"/>
+     <n a="9203,27,1,0,0,145,1,0" ix="9" t="ds,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="122">
+      <skind iexp="111" iloc="147" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="123">
+          <skind iloc="146" stag="return"/>
+          <succs/>
+          <preds r="122"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="123,124"/>
+      <preds/>
+     </stmt>
+     <stmt sid="124">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="112" iloc="148" ilval="105" itag="set"/>
+        <instr iexp="113" iloc="149" ilval="107" itag="set"/>
+        <instr iexp="114" iloc="150" ilval="109" itag="set"/>
+        <instr iexp="22" iloc="151" ilval="112" itag="call">
+         <args>
+          <exp iexp="115"/>
+         </args>
+        </instr>
+        <instr iexp="116" iloc="152" ilval="113" itag="set"/>
+        <instr iexp="117" iloc="153" ilval="115" itag="set"/>
+        <instr iexp="118" iloc="154" ilval="117" itag="set"/>
+        <instr iexp="120" iloc="155" ilval="119" itag="set"/>
+        <instr iexp="42" iloc="156" itag="call">
+         <args>
+          <exp iexp="121"/>
+          <exp iexp="123"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="125"/>
+      <preds r="122"/>
+     </stmt>
+     <stmt sid="125">
+      <skind iloc="157" stag="return"/>
+      <succs/>
+      <preds r="124"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

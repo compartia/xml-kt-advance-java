@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:30:18">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="get_raw_command_line">
+   <api>
+    <api-assumptions>
+     <aa ipr="5251" ppos="232,173,75,220,96,201,185,63,246"/>
+     <aa ipr="5259" ppos="112,156,130,85,15" spos="9,6"/>
+     <aa ipr="5288" ppos="158"/>
+     <aa ipr="8065" ppos="16"/>
+     <aa ipr="8066" ppos="106"/>
+     <aa ipr="8405" spos="7"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="find_command" h="objects"/>
+     <lc c="1" f="strcpy" h="string"/>
+     <lc c="1" f="strdup" h="string"/>
+     <lc c="1" f="free" h="stdlib"/>
+     <lc c="1" f="strncpy" h="string"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="objects/find_command"/>
+    </missing-summaries>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

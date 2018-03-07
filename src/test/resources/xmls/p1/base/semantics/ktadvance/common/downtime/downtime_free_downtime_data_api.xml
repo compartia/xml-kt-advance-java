@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:41:55">
+   <application file="common/downtime.c"/>
+  </header>
+  <function fname="free_downtime_data">
+   <api>
+    <api-assumptions/>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="5" f="free" h="stdlib"/>
+    </library-calls>
+    <missing-summaries/>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

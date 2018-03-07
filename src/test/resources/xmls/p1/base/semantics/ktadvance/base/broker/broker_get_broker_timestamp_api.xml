@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:11:46">
+   <application file="base/broker.c"/>
+  </header>
+  <function fname="get_broker_timestamp">
+   <api>
+    <api-assumptions>
+     <aa ipr="603" ppos="16"/>
+     <aa ipr="604" ppos="18"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="gettimeofday" h="time"/>
+    </library-calls>
+    <missing-summaries/>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

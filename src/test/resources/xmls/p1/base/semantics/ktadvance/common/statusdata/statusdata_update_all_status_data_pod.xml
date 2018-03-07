@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:54">
+   <application file="common/statusdata.c"/>
+  </header>
+  <function fname="update_all_status_data">
+   <assumption-table/>
+   <ppo-type-table>
+    <n a="33,16,13" ix="1" t="p"/>
+    <n a="33,17,14" ix="2" t="p"/>
+    <n a="33,16,15" ix="3" t="p"/>
+    <n a="33,16,16" ix="4" t="p"/>
+    <n a="33,16,17" ix="5" t="p"/>
+    <n a="35,20,13" ix="6" t="p"/>
+    <n a="35,21,14" ix="7" t="p"/>
+    <n a="35,20,15" ix="8" t="p"/>
+    <n a="35,20,16" ix="9" t="p"/>
+    <n a="35,20,17" ix="10" t="p"/>
+    <n a="37,22,19" ix="11" t="p"/>
+   </ppo-type-table>
+   <spo-type-table>
+    <n a="33,15,30,1116" ix="1" t="cs"/>
+    <n a="33,15,31,1117" ix="2" t="cs"/>
+    <n a="35,19,30,1116" ix="3" t="cs"/>
+    <n a="35,19,31,1117" ix="4" t="cs"/>
+   </spo-type-table>
+  </function>
+ </c-analysis>

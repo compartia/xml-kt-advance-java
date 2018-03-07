@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:53">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="add_host_comment">
+   <ppos>
+    <ppo deps="f" id="15" invs="23" ippo="15" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is initial value of parameter author satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="22" ippo="22" s="g">
+     <e txt="expires is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="18" invs="19" ippo="18" s="g" ts="2018-01-09 16:02:47">
+     <e txt="initial value of parameter comment_data satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="19" invs="19" ippo="19" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is initial value of parameter comment_data satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="17" invs="47" ippo="17" s="g" ts="2018-01-09 16:02:47">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(comment_data_14_)#init"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="entry_type is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="11" ippo="11" s="g">
+     <e txt="entry_time is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="23" ippo="23" s="g">
+     <e txt="expire_time is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="25" invs="38" ippo="25" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#423(rv:add_comment)"/>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="f" id="4" invs="16" ippo="4" s="g" ts="2018-01-09 16:02:47">
+     <e txt="initial value of parameter host_name satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="5" invs="16" ippo="5" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is initial value of parameter host_name satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="12" ippo="12" s="g">
+     <e txt="author is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="13" invs="46" ippo="13" s="g" ts="2018-01-09 16:02:47">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(author_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="3" invs="48" ippo="3" s="g" ts="2018-01-09 16:02:47">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(host_name_20_)#init"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="16" ippo="16" s="g">
+     <e txt="comment_data is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="24" ippo="24" s="g">
+     <e txt="source is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="14" invs="23" ippo="14" s="g" ts="2018-01-09 16:02:47">
+     <e txt="initial value of parameter author satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="21" ippo="21" s="g">
+     <e txt="persistent is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="host_name is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="null-terminator cast"/>
+    </ppo>
+    <ppo deps="s" id="20" ippo="20" s="g">
+     <e txt="comment_id is a function parameter"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

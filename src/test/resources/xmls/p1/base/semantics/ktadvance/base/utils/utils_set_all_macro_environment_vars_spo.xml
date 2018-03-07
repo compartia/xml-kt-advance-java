@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:29:32">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="set_all_macro_environment_vars">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="1729" ictxt="3441" iloc="1381" ivinfo="52">
+       <api-conditions/>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="1729" ictxt="3439" iloc="1380" ivinfo="53">
+       <api-conditions/>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="3443" iexp="19" iloc="1382">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

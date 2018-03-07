@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:41:55">
+   <application file="common/downtime.c"/>
+  </header>
+  <function fname="initialize_downtime_data">
+   <assumption-table/>
+   <ppo-type-table>
+    <n a="517,118,107" ix="1" t="p"/>
+    <n a="517,118,108" ix="2" t="p"/>
+    <n a="517,118,109" ix="3" t="p"/>
+    <n a="517,118,110" ix="4" t="p"/>
+    <n a="518,119,111" ix="5" t="p"/>
+   </ppo-type-table>
+   <spo-type-table/>
+  </function>
+ </c-analysis>

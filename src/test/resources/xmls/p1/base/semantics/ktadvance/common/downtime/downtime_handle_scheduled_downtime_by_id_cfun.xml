@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="common/downtime" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:56"/>
+  </header>
+  <function filename="common/downtime">
+   <svar ivinfo="18"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="9240,7,1,0,0,376,0,1" ix="1" t="downtime_id,n"/>
+     <n a="9241,4,1,0,0,377,0,0" ix="2" t="temp_downtime,n"/>
+     <n a="9242,5,1,0,0,-1,0,0" ix="3" t="tmp,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="90">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="20" iloc="378" ilval="245" itag="set"/>
+        <instr iexp="21" iloc="379" ilval="245" itag="call">
+         <args>
+          <exp iexp="31"/>
+          <exp iexp="405"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="91"/>
+      <preds/>
+     </stmt>
+     <stmt sid="91">
+      <skind iexp="408" iloc="379" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="92">
+          <skind iexp="46" iloc="380" stag="return"/>
+          <succs/>
+          <preds r="91"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="92,93"/>
+      <preds r="90"/>
+     </stmt>
+     <stmt sid="93">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="271" iloc="381" ilval="247" itag="call">
+         <args>
+          <exp iexp="406"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="94"/>
+      <preds r="91"/>
+     </stmt>
+     <stmt sid="94">
+      <skind iexp="409" iloc="381" stag="return"/>
+      <succs/>
+      <preds r="93"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

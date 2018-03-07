@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="base/broker" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:42"/>
+  </header>
+  <function filename="base/broker">
+   <svar ivinfo="18"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="8941,4,1,0,0,503,0,1" ix="1" t="type,n"/>
+     <n a="8942,4,1,0,0,504,0,2" ix="2" t="flags,n"/>
+     <n a="8943,4,1,0,0,505,0,3" ix="3" t="attr,n"/>
+     <n a="8944,4,1,0,0,506,0,4" ix="4" t="comment_type,n"/>
+     <n a="8945,4,1,0,0,507,0,5" ix="5" t="entry_type,n"/>
+     <n a="8946,17,1,0,0,508,0,6" ix="6" t="host_name,n"/>
+     <n a="8947,17,1,0,0,509,0,7" ix="7" t="svc_description,n"/>
+     <n a="8948,23,1,0,0,510,0,8" ix="8" t="entry_time,n"/>
+     <n a="8949,17,1,0,0,511,0,9" ix="9" t="author_name,n"/>
+     <n a="8950,17,1,0,0,512,0,10" ix="10" t="comment_data,n"/>
+     <n a="8951,4,1,0,0,513,0,11" ix="11" t="persistent,n"/>
+     <n a="8952,4,1,0,0,514,0,12" ix="12" t="source,n"/>
+     <n a="8953,4,1,0,0,515,0,13" ix="13" t="expires,n"/>
+     <n a="8954,23,1,0,0,516,0,14" ix="14" t="expire_time,n"/>
+     <n a="8955,7,1,0,0,517,0,15" ix="15" t="comment_id,n"/>
+     <n a="8956,2,1,0,0,518,0,16" ix="16" t="timestamp,n"/>
+     <n a="8957,55,1,0,0,519,1,0" ix="17" t="ds,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="54">
+      <skind iexp="352" iloc="521" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="55">
+          <skind iloc="520" stag="return"/>
+          <succs/>
+          <preds r="54"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="55,56"/>
+      <preds/>
+     </stmt>
+     <stmt sid="56">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="353" iloc="522" ilval="422" itag="set"/>
+        <instr iexp="354" iloc="523" ilval="424" itag="set"/>
+        <instr iexp="355" iloc="524" ilval="426" itag="set"/>
+        <instr iexp="22" iloc="525" ilval="429" itag="call">
+         <args>
+          <exp iexp="356"/>
+         </args>
+        </instr>
+        <instr iexp="357" iloc="526" ilval="430" itag="set"/>
+        <instr iexp="358" iloc="527" ilval="432" itag="set"/>
+        <instr iexp="359" iloc="528" ilval="434" itag="set"/>
+        <instr iexp="360" iloc="529" ilval="436" itag="set"/>
+        <instr iexp="361" iloc="530" ilval="438" itag="set"/>
+        <instr iexp="362" iloc="531" ilval="440" itag="set"/>
+        <instr iexp="363" iloc="532" ilval="442" itag="set"/>
+        <instr iexp="364" iloc="533" ilval="444" itag="set"/>
+        <instr iexp="365" iloc="534" ilval="446" itag="set"/>
+        <instr iexp="366" iloc="535" ilval="448" itag="set"/>
+        <instr iexp="367" iloc="536" ilval="450" itag="set"/>
+        <instr iexp="368" iloc="537" ilval="452" itag="set"/>
+        <instr iexp="42" iloc="538" itag="call">
+         <args>
+          <exp iexp="369"/>
+          <exp iexp="371"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="57"/>
+      <preds r="54"/>
+     </stmt>
+     <stmt sid="57">
+      <skind iloc="539" stag="return"/>
+      <succs/>
+      <preds r="56"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

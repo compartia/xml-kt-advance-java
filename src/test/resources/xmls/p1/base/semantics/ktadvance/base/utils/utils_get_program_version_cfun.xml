@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="base/utils" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:48"/>
+  </header>
+  <function filename="base/utils">
+   <svar ivinfo="6"/>
+   <declarations>
+    <local-varinfo-table/>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="2004">
+      <skind iexp="175" iloc="206" stag="return"/>
+      <succs/>
+      <preds/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

@@ -22,12 +22,12 @@
 
 	<logger name="kt.advance">
 		<level value="DEBUG" />
-		<appender-ref ref="Kt2JsonLogFile" />
+		<appender-ref ref="consoleAppender" />
 	</logger>
 
 	<logger name="com.kt.advance">
 		<level value="DEBUG" />
-		<appender-ref ref="Kt2JsonLogFile" />
+		<appender-ref ref="consoleAppender" />
 	</logger>
 	
 	<logger name="kt">

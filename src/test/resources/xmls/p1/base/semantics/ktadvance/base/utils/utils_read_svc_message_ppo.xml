@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:32:00">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="read_svc_message">
+   <ppos>
+    <ppo deps="s" id="18" ippo="18" s="g">
+     <e txt="82-character string is a string literal"/>
+    </ppo>
+    <ppo deps="s" id="19" ippo="19" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="s" id="32" ippo="32" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="s" id="17" ippo="17" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo id="50" ippo="50">
+     <d>
+      <invs>
+       <arg a="4" i="30"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="80" ippo="80"/>
+    <ppo deps="s" id="90" ippo="90" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo id="108" ippo="108"/>
+    <ppo deps="s" id="104" ippo="104" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="25" ippo="25" s="g">
+     <e txt="result of addition is less than or equal to size of the variable buffer (difference with size:  value is 1)"/>
+    </ppo>
+    <ppo deps="s" id="40" ippo="40" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="49" ippo="49"/>
+    <ppo deps="s" id="52" ippo="52" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="67" ippo="67" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="55" invs="31" ippo="55" s="g" ts="2018-01-09 15:52:28">
+     <e txt="initial value of parameter message satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="117" invs="55" ippo="117" s="g" ts="2018-01-09 15:52:28">
+     <e txt="assignedAt#3798_xx_assignedAt#3814"/>
+    </ppo>
+    <ppo id="110" ippo="110">
+     <d>
+      <invs>
+       <arg a="3" i="39"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: 1"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="30" ippo="30" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="62" ippo="62"/>
+    <ppo deps="s" id="103" ippo="103" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="60" ippo="60" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="102" ippo="102" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo id="106" ippo="106">
+     <d>
+      <invs>
+       <arg a="3" i="42"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="14" ippo="14" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo id="59" ippo="59"/>
+    <ppo deps="s" id="111" ippo="111" s="g">
+     <e txt="subtract non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="a" id="6" ids="1" invs="16,15" ippo="6" s="g" ts="2018-01-09 15:52:28">
+     <e txt="condition ptr-upperbound(((message +i 496):void) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="15" ippo="15" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo id="82" ippo="82"/>
+    <ppo deps="s" id="116" ippo="116" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="27" ippo="27" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo id="89" ippo="89"/>
+    <ppo deps="s" id="38" ippo="38" s="g">
+     <e txt="index value 1023 is less than bound 1024"/>
+    </ppo>
+    <ppo deps="f" id="56" invs="31" ippo="56" s="g" ts="2018-01-09 15:52:28">
+     <e txt="upper-bound value is initial value of parameter message satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="61" ippo="61" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo id="79" ippo="79"/>
+    <ppo id="87" ippo="87"/>
+    <ppo deps="s" id="113" ippo="113" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="31" ippo="31" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="12" ippo="12" s="g">
+     <e txt="address of variable service_result_buffer"/>
+    </ppo>
+    <ppo id="58" ippo="58"/>
+    <ppo deps="s" id="84" ippo="84" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="101" ippo="101" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="34" ippo="34" s="g">
+     <e txt="constant string is allocated by compiler"/>
+    </ppo>
+    <ppo deps="s" id="69" ippo="69" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="74" ippo="74" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="112" ippo="112" s="g">
+     <e txt="address of variable service_result_buffer"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="message is a function parameter"/>
+    </ppo>
+    <ppo id="75" ippo="75"/>
+    <ppo deps="a" id="48" ids="1" invs="31,30" ippo="48" s="g" ts="2018-01-09 15:52:28">
+     <e txt="condition ptr-upperbound(((message +i 496):void) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="96" ippo="96" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo id="71" ippo="71"/>
+    <ppo deps="s" id="22" ippo="22" s="g">
+     <e txt="upperbound of constant string argument: 82-character string"/>
+    </ppo>
+    <ppo deps="s" id="45" ippo="45" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo id="54" ippo="54">
+     <d>
+      <invs>
+       <arg a="1" i="31,51,64"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:write_to_logs_and_console @3790 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="78" ippo="78" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="28" ippo="28" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="53" ippo="53" s="g">
+     <e txt="message is a function parameter"/>
+    </ppo>
+    <ppo id="81" ippo="81"/>
+    <ppo deps="s" id="23" ippo="23" s="g">
+     <e txt="constant string"/>
+    </ppo>
+    <ppo id="65" ippo="65"/>
+    <ppo deps="s" id="77" ippo="77" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo deps="a" id="47" ids="2" invs="31" ippo="47" s="g" ts="2018-01-09 15:52:28">
+     <e txt="condition not-null(message) delegated to api"/>
+    </ppo>
+    <ppo id="73" ippo="73"/>
+    <ppo deps="s" id="44" ippo="44" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="a" id="5" ids="2" invs="16" ippo="5" s="g" ts="2018-01-09 15:52:28">
+     <e txt="condition not-null(message) delegated to api"/>
+    </ppo>
+    <ppo id="70" ippo="70"/>
+    <ppo deps="s" id="91" ippo="91" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="97" ippo="97" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="16" ippo="16" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="f" id="24" invs="26" ippo="24" s="g" ts="2018-01-09 15:52:28">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:memory base: addrof_localvar_buffer_26"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="address of stack variable buffer is not null"/>
+    </ppo>
+    <ppo id="72" ippo="72"/>
+    <ppo deps="s" id="99" ippo="99" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="114" ippo="114" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="s" id="21" ippo="21" s="g">
+     <e txt="string literal"/>
+    </ppo>
+    <ppo deps="s" id="33" ippo="33" s="g">
+     <e txt="constant string is allocated by compiler"/>
+    </ppo>
+    <ppo deps="s" id="37" ippo="37" s="g">
+     <e txt="unsigned value is always non-negative"/>
+    </ppo>
+    <ppo id="64" ippo="64"/>
+    <ppo id="94" ippo="94"/>
+    <ppo deps="s" id="109" ippo="109" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="36" ippo="36" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo id="76" ippo="76"/>
+    <ppo id="93" ippo="93"/>
+    <ppo deps="s" id="41" ippo="41" s="g">
+     <e txt="casting constant value 0 to char"/>
+    </ppo>
+    <ppo deps="s" id="57" ippo="57" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="68" ippo="68" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="85" ippo="85" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="95" ippo="95"/>
+    <ppo id="92" ippo="92"/>
+    <ppo deps="s" id="100" ippo="100" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="115" ippo="115" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="f" id="10" invs="16" ippo="10" s="g" ts="2018-01-09 15:52:28">
+     <e txt="initial value of parameter message satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="26" ippo="26" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="s" id="42" ippo="42" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="s" id="98" ippo="98" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="105" ippo="105" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="f" id="11" invs="16" ippo="11" s="g" ts="2018-01-09 15:52:28">
+     <e txt="upper-bound value is initial value of parameter message satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="9" invs="60" ippo="9" s="g" ts="2018-01-09 15:52:28">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(message_2_)#init"/>
+    </ppo>
+    <ppo id="46" ippo="46"/>
+    <ppo deps="s" id="13" ippo="13" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="39" ippo="39" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="63" ippo="63"/>
+    <ppo deps="s" id="66" ippo="66" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="s" id="83" ippo="83" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo id="88" ippo="88"/>
+    <ppo deps="s" id="35" ippo="35" s="g">
+     <e txt="constant string is allocated by compiler"/>
+    </ppo>
+    <ppo id="51" ippo="51">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:value: 496"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="107" ippo="107" s="g">
+     <e txt="check_result_buffer_slots is global"/>
+    </ppo>
+    <ppo deps="s" id="29" ippo="29" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="43" ippo="43" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="86" ippo="86" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="message is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="20" ippo="20" s="g">
+     <e txt="string literal"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

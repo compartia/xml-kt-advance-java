@@ -1,0 +1,1066 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:52">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="strip">
+   <ppos>
+    <ppo deps="s" id="239" ippo="239" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="182" ippo="182" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="s" id="18" ippo="18" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo deps="s" id="50" ippo="50" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="f" id="80" invs="220" ippo="80" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4012"/>
+    </ppo>
+    <ppo deps="a" id="104" ids="1" invs="4" ippo="104" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="188" ippo="188" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="219" ippo="219" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="f" id="258" invs="247" ippo="258" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4021"/>
+    </ppo>
+    <ppo deps="f" id="103" invs="219" ippo="103" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4012"/>
+    </ppo>
+    <ppo deps="f" id="189" invs="225" ippo="189" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4021"/>
+    </ppo>
+    <ppo deps="s" id="102" ippo="102" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="145" ippo="145" s="g">
+     <e txt="casting constant value 0 to char"/>
+    </ppo>
+    <ppo deps="s" id="15" ippo="15" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="221" ippo="221" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="180" invs="84" ippo="180" s="g" ts="2018-01-09 15:49:30">
+     <e txt="non-negative pointer increment: lower bound for x is 0"/>
+    </ppo>
+    <ppo deps="s" id="121" ippo="121" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="141" ippo="141" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="f" id="216" invs="118" ippo="216" s="g" ts="2018-01-09 15:49:30">
+     <e txt="non-negative pointer increment: lower bound for x is 0"/>
+    </ppo>
+    <ppo deps="f" id="168" invs="77" ippo="168" s="g" ts="2018-01-09 15:49:30">
+     <e txt="non-negative pointer increment: lower bound for x is 0"/>
+    </ppo>
+    <ppo id="152" ippo="152">
+     <d>
+      <invs>
+       <arg a="1" i="28,162,284"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="205" ippo="205">
+     <d>
+      <invs>
+       <arg a="4" i="66,65,181,224"/>
+       <arg a="3" i="9,138,260"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (buffer_1_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="a" id="8" ids="1" invs="36" ippo="8" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="160" invs="236" ippo="160" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4021"/>
+    </ppo>
+    <ppo deps="f" id="204" invs="66" ippo="204" s="g" ts="2018-01-09 15:49:30">
+     <e txt="non-negative pointer increment: lower bound for x is 0"/>
+    </ppo>
+    <ppo deps="f" id="235" invs="266" ippo="235" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="f" id="246" invs="266" ippo="246" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="s" id="195" ippo="195" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="54" ippo="54" s="g">
+     <e txt="casting from char to int is safe"/>
+    </ppo>
+    <ppo id="124" ippo="124"/>
+    <ppo id="140" ippo="140">
+     <d>
+      <invs>
+       <arg a="4" i="108,107,203,242"/>
+       <arg a="3" i="25,157,279"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (buffer_1_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="77" ippo="77" s="g">
+     <e txt="casting from char to int is safe"/>
+    </ppo>
+    <ppo id="242" ippo="242"/>
+    <ppo deps="f" id="159" invs="234" ippo="159" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4020(rv:strlen)"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="a" id="16" ids="1" invs="19" ippo="16" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="21" ippo="21" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="36" invs="271" ippo="36" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="s" id="131" ippo="131" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="f" id="231" invs="228" ippo="231" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4021"/>
+    </ppo>
+    <ppo deps="a" id="68" ids="1" invs="48" ippo="68" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="213" invs="246" ippo="213" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4021"/>
+    </ppo>
+    <ppo deps="s" id="122" ippo="122" s="g">
+     <e txt="casting constant value 0 to char"/>
+    </ppo>
+    <ppo id="181" ippo="181">
+     <d>
+      <invs>
+       <arg a="4" i="84,83,193,232"/>
+       <arg a="3" i="14,147,269"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (buffer_1_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="237" ippo="237">
+     <d>
+      <invs>
+       <arg a="3" i="12,144,266"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="85" ippo="85" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="s" id="100" ippo="100" s="g">
+     <e txt="casting from char to int is safe"/>
+    </ppo>
+    <ppo deps="f" id="26" invs="230" ippo="26" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4011(rv:strlen)"/>
+    </ppo>
+    <ppo deps="f" id="105" invs="256" ippo="105" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="f" id="225" invs="241" ippo="225" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4021"/>
+    </ppo>
+    <ppo deps="f" id="247" invs="185" ippo="247" s="g" ts="2018-01-09 15:49:30">
+     <e txt="non-negative pointer increment: lower bound for z is 1"/>
+    </ppo>
+    <ppo deps="s" id="135" ippo="135" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="63" ippo="63" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="176" ippo="176" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="186" ippo="186" s="g">
+     <e txt="casting from char to int is safe"/>
+    </ppo>
+    <ppo deps="f" id="192" invs="73" ippo="192" s="g" ts="2018-01-09 15:49:30">
+     <e txt="non-negative pointer increment: lower bound for x is 0"/>
+    </ppo>
+    <ppo id="211" ippo="211"/>
+    <ppo id="259" ippo="259">
+     <d>
+      <invs>
+       <arg a="3" i="209,247"/>
+       <arg a="2" i="39,208,248"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="125" ippo="125" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="143" ippo="143" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="19" ippo="19">
+     <d>
+      <invs>
+       <arg a="1" i="19,154,276"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="32" ippo="32"/>
+    <ppo deps="f" id="227" invs="252" ippo="227" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4028"/>
+    </ppo>
+    <ppo id="17" ippo="17">
+     <d>
+      <invs>
+       <arg a="1" i="19,154,276"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="172" ippo="172" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="228" invs="251" ippo="228" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4020"/>
+    </ppo>
+    <ppo deps="f" id="226" invs="238" ippo="226" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4021"/>
+    </ppo>
+    <ppo id="199" ippo="199"/>
+    <ppo id="264" ippo="264">
+     <d>
+      <invs>
+       <arg a="3" i="40,168,291"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="269" ippo="269" s="g">
+     <e txt="casting constant value 0 to char"/>
+    </ppo>
+    <ppo id="117" ippo="117">
+     <d>
+      <invs>
+       <arg a="4" i="124,123,211,250"/>
+       <arg a="3" i="43,170,293"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (buffer_1_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="208" ippo="208" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="60" invs="112" ippo="60" s="g" ts="2018-01-09 15:49:30">
+     <e txt="non-negative pointer increment: lower bound for x is 0"/>
+    </ppo>
+    <ppo id="150" ippo="150">
+     <d>
+      <invs>
+       <arg a="1" i="28,162,284"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="187" ippo="187"/>
+    <ppo deps="f" id="244" invs="229" ippo="244" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4028"/>
+    </ppo>
+    <ppo deps="f" id="161" invs="237" ippo="161" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4020"/>
+    </ppo>
+    <ppo deps="s" id="142" ippo="142" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="144" ippo="144" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="137" ids="1" invs="25" ippo="137" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="262" invs="291" ippo="262" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="f" id="27" invs="240" ippo="27" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4011"/>
+    </ppo>
+    <ppo deps="s" id="243" ippo="243" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="157" invs="28" ippo="157" s="g" ts="2018-01-09 15:49:30">
+     <e txt="upper-bound value is initial value of parameter buffer satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="194" ippo="194" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="s" id="212" ippo="212" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="87" ippo="87" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="84" ippo="84">
+     <d>
+      <invs>
+       <arg a="4" i="62,61,180,220"/>
+       <arg a="3" i="6,136,258"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (buffer_1_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="183" ippo="183" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="171" ippo="171" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="f" id="34" invs="233" ippo="34" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4012"/>
+    </ppo>
+    <ppo deps="s" id="241" ippo="241" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="251" ippo="251" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="169" ippo="169">
+     <d>
+      <invs>
+       <arg a="4" i="77,76,184,226"/>
+       <arg a="3" i="11,142,264"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (buffer_1_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="a" id="127" ids="1" invs="17" ippo="127" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="22" invs="276" ippo="22" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="f" id="215" invs="289" ippo="215" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="f" id="222" invs="249" ippo="222" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4021"/>
+    </ppo>
+    <ppo deps="f" id="28" invs="201,23" ippo="28" s="g" ts="2018-01-09 15:49:30">
+     <e txt="result of subtraction is greater than or equal to MIN: satisfies ((0 - 1) &gt;= -2147483648)"/>
+    </ppo>
+    <ppo deps="s" id="148" ippo="148" s="g">
+     <e txt="subtract non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="s" id="65" ippo="65" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="44" invs="239" ippo="44" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4012"/>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="casting from char to int is safe"/>
+    </ppo>
+    <ppo deps="s" id="120" ippo="120" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="184" ippo="184" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="162" ippo="162" s="g">
+     <e txt="casting from char to int is safe"/>
+    </ppo>
+    <ppo deps="s" id="72" ippo="72" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="a" id="261" ids="1" invs="40" ippo="261" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="33" ippo="33" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="64" ippo="64" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="93" invs="128" ippo="93" s="g" ts="2018-01-09 15:49:30">
+     <e txt="non-negative pointer increment: lower bound for x is 0"/>
+    </ppo>
+    <ppo deps="s" id="119" ippo="119" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo id="175" ippo="175"/>
+    <ppo deps="f" id="233" invs="186" ippo="233" s="g" ts="2018-01-09 15:49:30">
+     <e txt="subtracting non-negative value (lowerbound is 1)"/>
+    </ppo>
+    <ppo deps="f" id="92" invs="295" ippo="92" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="add non-negative number:  value is 0"/>
+    </ppo>
+    <ppo deps="f" id="224" invs="119,42" ippo="224" s="g" ts="2018-01-09 15:49:30">
+     <e txt="result of addition is equal to external value: (((strlen(_)#return - 1) + 1) = (strlen(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="136" invs="242" ippo="136" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4012"/>
+    </ppo>
+    <ppo deps="s" id="254" ippo="254" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="s" id="153" ippo="153" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="s" id="39" ippo="39" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="s" id="207" ippo="207" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="88" ippo="88" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="174" ippo="174" s="g">
+     <e txt="casting from char to int is safe"/>
+    </ppo>
+    <ppo deps="f" id="126" invs="235" ippo="126" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4012"/>
+    </ppo>
+    <ppo deps="f" id="179" invs="269" ippo="179" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="s" id="20" ippo="20" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="f" id="129" invs="92" ippo="129" s="g" ts="2018-01-09 15:49:30">
+     <e txt="non-negative pointer increment: lower bound for x is 0"/>
+    </ppo>
+    <ppo deps="s" id="108" ippo="108" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="a" id="166" ids="1" invs="11" ippo="166" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo id="130" ippo="130">
+     <d>
+      <invs>
+       <arg a="4" i="92,91,196,235"/>
+       <arg a="3" i="17,151,273"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (buffer_1_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="25" ippo="25">
+     <d>
+      <invs>
+       <arg a="3" i="13,190,230"/>
+      </invs>
+      <msgs>
+       <msg t="remaining constraint: ((strlen(_)#return &lt;= 2147483647) (--&gt; ((strlen(_)#return &lt;= 2147483647))"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="49" ippo="49" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="s" id="52" ippo="52" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="200" ippo="200" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="250" ippo="250" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="f" id="30" invs="231" ippo="30" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4012"/>
+    </ppo>
+    <ppo deps="s" id="62" ippo="62" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="s" id="185" ippo="185" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="106" invs="54" ippo="106" s="g" ts="2018-01-09 15:49:30">
+     <e txt="non-negative pointer increment: lower bound for x is 0"/>
+    </ppo>
+    <ppo deps="s" id="206" ippo="206" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="s" id="14" ippo="14" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="111" ippo="111" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="266" ippo="266" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="f" id="82" invs="258" ippo="82" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="s" id="133" ippo="133" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="89" ippo="89" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="56" ippo="56" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="79" ippo="79" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo id="217" ippo="217">
+     <d>
+      <invs>
+       <arg a="4" i="118,117,207,246"/>
+       <arg a="3" i="38,166,289"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (buffer_1_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="164" ippo="164" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="31" ippo="31" s="g">
+     <e txt="casting from char to int is safe"/>
+    </ppo>
+    <ppo deps="s" id="12" ippo="12" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo id="101" ippo="101"/>
+    <ppo deps="s" id="209" ippo="209" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="69" invs="297" ippo="69" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="f" id="201" invs="224" ippo="201" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4021"/>
+    </ppo>
+    <ppo deps="f" id="203" invs="260" ippo="203" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="s" id="96" ippo="96" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="a" id="45" ids="1" invs="21" ippo="45" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo id="78" ippo="78"/>
+    <ppo deps="s" id="118" ippo="118" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="a" id="81" ids="1" invs="6" ippo="81" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="128" invs="273" ippo="128" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo id="236" ippo="236">
+     <d>
+      <invs>
+       <arg a="3" i="12,144,266"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="23" invs="19" ippo="23" s="g" ts="2018-01-09 15:49:30">
+     <e txt="initial value of parameter buffer satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="70" invs="132" ippo="70" s="g" ts="2018-01-09 15:49:30">
+     <e txt="non-negative pointer increment: lower bound for x is 0"/>
+    </ppo>
+    <ppo deps="s" id="134" ippo="134" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="24" invs="19" ippo="24" s="g" ts="2018-01-09 15:49:30">
+     <e txt="upper-bound value is initial value of parameter buffer satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="94" ippo="94">
+     <d>
+      <invs>
+       <arg a="4" i="128,127,214,253"/>
+       <arg a="3" i="46,172,295"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (buffer_1_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="109" ippo="109" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="a" id="190" ids="1" invs="10" ippo="190" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="167" invs="264" ippo="167" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="s" id="76" ippo="76" s="g">
+     <e txt="casting constant value 0 to char"/>
+    </ppo>
+    <ppo deps="s" id="197" ippo="197" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="245" ids="1" invs="12" ippo="245" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="57" invs="243" ippo="57" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4012"/>
+    </ppo>
+    <ppo deps="f" id="156" invs="28" ippo="156" s="g" ts="2018-01-09 15:49:30">
+     <e txt="initial value of parameter buffer satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="257" invs="248" ippo="257" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4020"/>
+    </ppo>
+    <ppo deps="s" id="98" ippo="98" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="214" ids="1" invs="38" ippo="214" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="11" ippo="11" s="g">
+     <e txt="add zero"/>
+    </ppo>
+    <ppo deps="a" id="202" ids="1" invs="9" ippo="202" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="9" invs="287" ippo="9" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="s" id="13" ippo="13" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="220" ippo="220" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="51" ippo="51" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="107" ippo="107">
+     <d>
+      <invs>
+       <arg a="4" i="54,53,176,219"/>
+       <arg a="3" i="4,134,256"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (buffer_1_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="146" invs="245" ippo="146" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4012"/>
+    </ppo>
+    <ppo deps="s" id="249" ippo="249" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="f" id="90" invs="253" ippo="90" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4012"/>
+    </ppo>
+    <ppo deps="s" id="268" ippo="268" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="40" ippo="40" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="210" ippo="210" s="g">
+     <e txt="casting from char to int is safe"/>
+    </ppo>
+    <ppo deps="f" id="67" invs="254" ippo="67" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4012"/>
+    </ppo>
+    <ppo id="55" ippo="55"/>
+    <ppo deps="s" id="132" ippo="132" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="110" ippo="110" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="193" ippo="193">
+     <d>
+      <invs>
+       <arg a="4" i="73,72,183,225"/>
+       <arg a="3" i="10,140,262"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (buffer_1_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="59" invs="281" ippo="59" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="f" id="165" invs="226" ippo="165" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4021"/>
+    </ppo>
+    <ppo deps="s" id="196" ippo="196" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="223" ippo="223" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="a" id="6" ids="2" invs="50" ippo="6" s="g" ts="2018-01-09 15:49:30">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:api expr: (memref-1_113_)#init"/>
+        <msg t="[1]:initial value: (memref-1_113_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="condition initialized((*buffer)) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="155" invs="284" ippo="155" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="f" id="116" invs="124" ippo="116" s="g" ts="2018-01-09 15:49:30">
+     <e txt="non-negative pointer increment: lower bound for x is 0"/>
+    </ppo>
+    <ppo deps="s" id="154" ippo="154" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="151" ippo="151" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo id="38" ippo="38">
+     <d>
+      <invs>
+       <arg a="4" i="88,87,194,233"/>
+       <arg a="3" i="15,149,271"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (buffer_1_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="61" ippo="61">
+     <d>
+      <invs>
+       <arg a="4" i="112,111,204,243"/>
+       <arg a="3" i="27,159,281"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (buffer_1_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="158" ippo="158">
+     <d>
+      <invs>
+       <arg a="3" i="16,195,234"/>
+      </invs>
+      <msgs>
+       <msg t="remaining constraint: ((strlen(_)#return &lt;= 2147483647) (--&gt; ((strlen(_)#return &lt;= 2147483647))"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="113" invs="250" ippo="113" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4012"/>
+    </ppo>
+    <ppo deps="f" id="138" invs="279" ippo="138" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="s" id="256" ippo="256" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="a" id="58" ids="1" invs="27" ippo="58" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="170" ippo="170" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="s" id="74" ippo="74" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="112" ippo="112" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="a" id="178" ids="1" invs="14" ippo="178" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo id="255" ippo="255">
+     <d>
+      <invs>
+       <arg a="3" i="33"/>
+       <arg a="2" i="205,244"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="75" ippo="75" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="123" ippo="123" s="g">
+     <e txt="casting from char to int is safe"/>
+    </ppo>
+    <ppo deps="s" id="267" ippo="267" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="48" ippo="48">
+     <d>
+      <invs>
+       <arg a="4" i="102,101,200,239"/>
+       <arg a="3" i="21,155,277"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (buffer_1_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="139" invs="108" ippo="139" s="g" ts="2018-01-09 15:49:30">
+     <e txt="non-negative pointer increment: lower bound for x is 0"/>
+    </ppo>
+    <ppo deps="f" id="147" invs="114,34" ippo="147" s="g" ts="2018-01-09 15:49:30">
+     <e txt="result of subtraction is greater than or equal to MIN: satisfies ((0 - 1) &gt;= -2147483648)"/>
+    </ppo>
+    <ppo id="71" ippo="71">
+     <d>
+      <invs>
+       <arg a="4" i="132,131,215,254"/>
+       <arg a="3" i="48,174,297"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (buffer_1_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="a" id="234" ids="1" invs="12" ippo="234" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="173" ippo="173" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="260" invs="209" ippo="260" s="g" ts="2018-01-09 15:49:30">
+     <e txt="subtracting non-negative value (lowerbound is 1)"/>
+    </ppo>
+    <ppo deps="s" id="53" ippo="53" s="g">
+     <e txt="casting constant value 0 to char"/>
+    </ppo>
+    <ppo deps="s" id="240" ippo="240" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="191" invs="262" ippo="191" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="s" id="218" ippo="218" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="f" id="47" invs="102" ippo="47" s="g" ts="2018-01-09 15:49:30">
+     <e txt="non-negative pointer increment: lower bound for x is 0"/>
+    </ppo>
+    <ppo deps="s" id="73" ippo="73" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="a" id="91" ids="1" invs="46" ippo="91" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="97" ippo="97" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="163" ippo="163"/>
+    <ppo deps="f" id="230" invs="229" ippo="230" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4028"/>
+    </ppo>
+    <ppo deps="s" id="99" ippo="99" s="g">
+     <e txt="casting constant value 0 to char"/>
+    </ppo>
+    <ppo deps="a" id="114" ids="1" invs="43" ippo="114" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="37" invs="88" ippo="37" s="g" ts="2018-01-09 15:49:30">
+     <e txt="non-negative pointer increment: lower bound for x is 0"/>
+    </ppo>
+    <ppo deps="s" id="252" ippo="252" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="265" ippo="265" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo id="248" ippo="248">
+     <d>
+      <invs>
+       <arg a="4" i="185,229"/>
+       <arg a="3" i="12,144,266"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (buffer_1_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="41" ippo="41" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="95" ippo="95" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="a" id="149" ids="1" invs="28" ippo="149" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="198" ippo="198" s="g">
+     <e txt="casting from char to int is safe"/>
+    </ppo>
+    <ppo id="232" ippo="232">
+     <d>
+      <invs>
+       <arg a="3" i="186,228"/>
+       <arg a="2" i="185,229"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="115" invs="293" ippo="115" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="s" id="42" ippo="42" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="253" invs="244" ippo="253" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4028"/>
+    </ppo>
+    <ppo deps="s" id="229" ippo="229" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="46" invs="277" ippo="46" s="g" ts="2018-01-09 15:49:30">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_1_)#init"/>
+    </ppo>
+    <ppo deps="f" id="177" invs="232" ippo="177" s="g" ts="2018-01-09 15:49:30">
+     <e txt="assignedAt#4021"/>
+    </ppo>
+    <ppo deps="s" id="66" ippo="66" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="83" invs="62" ippo="83" s="g" ts="2018-01-09 15:49:30">
+     <e txt="non-negative pointer increment: lower bound for x is 0"/>
+    </ppo>
+    <ppo deps="a" id="35" ids="1" invs="15" ippo="35" s="g" ts="2018-01-09 15:49:30">
+     <e txt="condition not-null(buffer) delegated to api"/>
+    </ppo>
+    <ppo id="263" ippo="263">
+     <d>
+      <invs>
+       <arg a="3" i="40,168,291"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="238" ippo="238" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="s" id="29" ippo="29" s="g">
+     <e txt="subtract non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="s" id="43" ippo="43" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="86" ippo="86" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="buffer is a function parameter"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

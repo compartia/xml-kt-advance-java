@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:51">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="my_system">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="1557,19,19,1558,1559,1560,1561,1562,1563,1546,40,1229" ictxt="1074" iloc="1272" ivinfo="186">
+       <api-conditions>
+        <api-c iapi="1128">
+         <po deps="s" id="4" ispo="4" s="g">
+          <e txt="null pointer cannot be dereferenced, and hence target cannot be initialized (acceptability of null is checked separately)"/>
+         </po>
+        </api-c>
+        <api-c iapi="1129">
+         <po deps="s" id="5" ispo="5" s="r">
+          <e txt="expression is a null pointer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="1566,962,20" ictxt="1114" iloc="1279" ivinfo="182">
+       <api-conditions>
+        <api-c iapi="53">
+         <po deps="s" id="3" ispo="3" s="g">
+          <e txt="address of variable buffer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="" ictxt="1123" iloc="1286" ivinfo="3">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="19" ictxt="1202" iloc="1311" ivinfo="54">
+       <api-conditions/>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="1566,962,20" ictxt="1248" iloc="1320" ivinfo="182">
+       <api-conditions>
+        <api-c iapi="53">
+         <po deps="s" id="1" ispo="1" s="g">
+          <e txt="address of variable buffer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="" ictxt="1124" iloc="1287" ivinfo="43">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="20" ictxt="1122" iloc="1285" ivinfo="54">
+       <api-conditions/>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="1566,962,20" ictxt="1236" iloc="1320" ivinfo="182">
+       <api-conditions>
+        <api-c iapi="53">
+         <po deps="s" id="2" ispo="2" s="g">
+          <e txt="address of variable buffer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="1676,19,19,1558,1559,1560,1561,1562,1563,1546,1539,1229" ictxt="1303" iloc="1339" ivinfo="186">
+       <api-conditions>
+        <api-c iapi="1128">
+         <po deps="s" id="6" ispo="6" s="g">
+          <e txt="null pointer cannot be dereferenced, and hence target cannot be initialized (acceptability of null is checked separately)"/>
+         </po>
+        </api-c>
+        <api-c iapi="1129">
+         <po deps="s" id="7" ispo="7" s="r">
+          <e txt="expression is a null pointer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="1318" iexp="1563" iloc="1342">
+      <postconditions/>
+     </rs>
+     <rs ictxt="1063" iexp="19" iloc="1264">
+      <postconditions/>
+     </rs>
+     <rs ictxt="1120" iexp="50" iloc="1282">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:02">
+   <application file="common/downtime.c"/>
+  </header>
+  <function fname="check_for_expired_downtime">
+   <ppos>
+    <ppo deps="f" id="22" invs="13" ippo="22" s="g" ts="2018-01-09 16:01:59">
+     <e txt="assignedAt#623(globalscheduled_downtime_list9170)_xx_assignedAt#623"/>
+    </ppo>
+    <ppo id="45" ippo="45">
+     <d>
+      <invs>
+       <arg a="2" i="14"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="18" ippo="18">
+     <d>
+      <invs>
+       <arg a="1" i="11"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="19" ippo="19">
+     <d>
+      <invs>
+       <arg a="2" i="11"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="32" ippo="32">
+     <d>
+      <invs>
+       <arg a="2" i="9"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="17" ippo="17">
+     <d>
+      <invs>
+       <arg a="1" i="11"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo id="28" ippo="28"/>
+    <ppo id="23" ippo="23">
+     <d>
+      <invs>
+       <arg a="1" i="13"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="25" ippo="25">
+     <d>
+      <invs>
+       <arg a="2" i="13"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="40" ippo="40"/>
+    <ppo id="44" ippo="44">
+     <d>
+      <invs>
+       <arg a="2" i="14"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="scheduled_downtime_list is global"/>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo id="30" ippo="30">
+     <d>
+      <invs>
+       <arg a="1" i="9"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="16" invs="11" ippo="16" s="g" ts="2018-01-09 16:01:59">
+     <e txt="assignedAt#623(globalscheduled_downtime_list9170)_xx_assignedAt#623"/>
+    </ppo>
+    <ppo id="24" ippo="24">
+     <d>
+      <invs>
+       <arg a="1" i="13"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="14" ippo="14">
+     <d>
+      <invs>
+       <arg a="2" i="10"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="21" ippo="21"/>
+    <ppo id="33" ippo="33">
+     <d>
+      <invs>
+       <arg a="2" i="9"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="37" ippo="37">
+     <d>
+      <invs>
+       <arg a="1" i="15"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="36" ippo="36">
+     <d>
+      <invs>
+       <arg a="1" i="15"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="6" invs="12" ippo="6" s="g" ts="2018-01-09 16:01:59">
+     <e txt="assignedAt#623(globalscheduled_downtime_list9170)_xx_assignedAt#623"/>
+    </ppo>
+    <ppo id="15" ippo="15"/>
+    <ppo deps="f" id="41" invs="14" ippo="41" s="g" ts="2018-01-09 16:01:59">
+     <e txt="assignedAt#623(globalscheduled_downtime_list9170)_xx_assignedAt#623"/>
+    </ppo>
+    <ppo id="27" ippo="27"/>
+    <ppo deps="f" id="10" invs="10" ippo="10" s="g" ts="2018-01-09 16:01:59">
+     <e txt="assignedAt#623(globalscheduled_downtime_list9170)_xx_assignedAt#623"/>
+    </ppo>
+    <ppo id="26" ippo="26">
+     <d>
+      <invs>
+       <arg a="2" i="13"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="38" ippo="38">
+     <d>
+      <invs>
+       <arg a="2" i="15"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="42" ippo="42">
+     <d>
+      <invs>
+       <arg a="1" i="14"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="11" ippo="11">
+     <d>
+      <invs>
+       <arg a="1" i="10"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="9" ippo="9"/>
+    <ppo id="31" ippo="31">
+     <d>
+      <invs>
+       <arg a="1" i="9"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="12" ippo="12">
+     <d>
+      <invs>
+       <arg a="1" i="10"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="46" invs="8" ippo="46" s="g" ts="2018-01-09 16:01:59">
+     <e txt="assignedAt#625(fieldnext172)"/>
+    </ppo>
+    <ppo id="13" ippo="13">
+     <d>
+      <invs>
+       <arg a="2" i="10"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="39" ippo="39">
+     <d>
+      <invs>
+       <arg a="2" i="15"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="34" ippo="34"/>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="35" invs="15" ippo="35" s="g" ts="2018-01-09 16:01:59">
+     <e txt="assignedAt#623(globalscheduled_downtime_list9170)_xx_assignedAt#623"/>
+    </ppo>
+    <ppo deps="f" id="29" invs="9" ippo="29" s="g" ts="2018-01-09 16:01:59">
+     <e txt="assignedAt#623(globalscheduled_downtime_list9170)_xx_assignedAt#623"/>
+    </ppo>
+    <ppo id="43" ippo="43">
+     <d>
+      <invs>
+       <arg a="1" i="14"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo id="20" ippo="20">
+     <d>
+      <invs>
+       <arg a="2" i="11"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

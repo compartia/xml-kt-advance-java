@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:54">
+   <application file="common/statusdata.c"/>
+  </header>
+  <function fname="cleanup_status_data">
+   <ppos>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="config_file is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="4" invs="7" ippo="4" s="g" ts="2018-01-09 16:02:49">
+     <e txt="upper-bound value is initial value of parameter config_file satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="delete_status_data is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="3" invs="7" ippo="3" s="g" ts="2018-01-09 16:02:49">
+     <e txt="initial value of parameter config_file satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="2" invs="17" ippo="2" s="g" ts="2018-01-09 16:02:49">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(config_file_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="6" invs="13" ippo="6" s="g" ts="2018-01-09 16:02:49">
+     <e txt="assignedAt#114(rv:xsddefault_cleanup_status_data)"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

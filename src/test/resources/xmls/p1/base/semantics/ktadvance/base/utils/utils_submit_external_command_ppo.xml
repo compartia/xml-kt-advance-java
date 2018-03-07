@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:32:01">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="submit_external_command">
+   <ppos>
+    <ppo deps="s" id="18" ippo="18" s="g">
+     <e txt="address of variable external_command_buffer"/>
+    </ppo>
+    <ppo deps="s" id="19" ippo="19" s="g">
+     <e txt="external_command_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="32" ippo="32" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="f" id="17" invs="24" ippo="17" s="g" ts="2018-01-09 15:52:28">
+     <e txt="upper-bound value is initial value of parameter buffer_items satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="50" ippo="50" s="g">
+     <e txt="external_command_buffer is global"/>
+    </ppo>
+    <ppo id="25" ippo="25"/>
+    <ppo deps="s" id="40" ippo="40" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo id="49" ippo="49"/>
+    <ppo id="52" ippo="52">
+     <d>
+      <invs>
+       <arg a="3" i="19"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="67" ippo="67" s="g">
+     <e txt="external_command_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="55" ippo="55" s="g">
+     <e txt="external_command_buffer is global"/>
+    </ppo>
+    <ppo id="30" ippo="30"/>
+    <ppo deps="f" id="62" invs="50" ippo="62" s="g" ts="2018-01-09 15:52:28">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_items_4_)#init"/>
+    </ppo>
+    <ppo deps="s" id="60" ippo="60" s="g">
+     <e txt="buffer_items is a function parameter"/>
+    </ppo>
+    <ppo deps="a" id="14" ids="1" invs="24" ippo="14" s="g" ts="2018-01-09 15:52:28">
+     <e txt="condition not-null(buffer_items) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="59" ippo="59" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="external_command_buffer is global"/>
+    </ppo>
+    <ppo deps="f" id="15" invs="55" ippo="15" s="g" ts="2018-01-09 15:52:28">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(buffer_items_4_)#init"/>
+    </ppo>
+    <ppo deps="s" id="27" ippo="27" s="g">
+     <e txt="external_command_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="38" ippo="38" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo deps="s" id="56" ippo="56" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="a" id="61" ids="1" invs="9" ippo="61" s="g" ts="2018-01-09 15:52:28">
+     <e txt="condition not-null(buffer_items) delegated to api"/>
+    </ppo>
+    <ppo id="31" ippo="31"/>
+    <ppo deps="s" id="12" ippo="12" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="58" ippo="58" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="34" ippo="34" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="69" ippo="69" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="48" ippo="48" s="g">
+     <e txt="external_command_buffer_slots is global"/>
+    </ppo>
+    <ppo deps="f" id="71" invs="40" ippo="71" s="g" ts="2018-01-09 15:52:28">
+     <e txt="assignedAt#5016_xx_assignedAt#5041"/>
+    </ppo>
+    <ppo deps="s" id="22" ippo="22" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="45" ippo="45" s="g">
+     <e txt="external_command_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="54" ippo="54" s="g">
+     <e txt="external_command_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo id="28" ippo="28"/>
+    <ppo deps="s" id="53" ippo="53" s="g">
+     <e txt="external_command_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="23" ippo="23" s="g">
+     <e txt="external_command_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="65" ippo="65" s="g">
+     <e txt="external_command_buffer is global"/>
+    </ppo>
+    <ppo id="47" ippo="47">
+     <d>
+      <invs>
+       <arg a="3" i="10"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="44" invs="4" ippo="44" s="g" ts="2018-01-09 15:52:28">
+     <e txt="upper-bound value is initial value of parameter cmd satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="70" ippo="70" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="16" invs="24" ippo="16" s="g" ts="2018-01-09 15:52:28">
+     <e txt="initial value of parameter buffer_items satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="24" ippo="24" s="g">
+     <e txt="external_command_buffer_slots is global"/>
+    </ppo>
+    <ppo deps="s" id="21" ippo="21" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="33" ippo="33" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo id="37" ippo="37">
+     <d>
+      <invs>
+       <arg a="1" i="4,32,48"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="64" invs="9" ippo="64" s="g" ts="2018-01-09 15:52:28">
+     <e txt="upper-bound value is initial value of parameter buffer_items satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="36" ids="2" invs="4" ippo="36" s="g" ts="2018-01-09 15:52:28">
+     <e txt="condition not-null(cmd) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="41" ippo="41" s="g">
+     <e txt="cmd is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="57" ippo="57" s="g">
+     <e txt="buffer_items is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="68" ippo="68" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="buffer_items is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="26" ippo="26" s="g">
+     <e txt="external_command_buffer is global"/>
+    </ppo>
+    <ppo deps="f" id="42" invs="48" ippo="42" s="g" ts="2018-01-09 15:52:28">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(cmd_2_)#init"/>
+    </ppo>
+    <ppo deps="s" id="11" ippo="11" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="46" ippo="46" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="s" id="13" ippo="13" s="g">
+     <e txt="buffer_items is a function parameter"/>
+    </ppo>
+    <ppo id="39" ippo="39">
+     <d>
+      <invs>
+       <arg a="1" i="4,32,48"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="63" invs="9" ippo="63" s="g" ts="2018-01-09 15:52:28">
+     <e txt="initial value of parameter buffer_items satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="66" ippo="66" s="g">
+     <e txt="address of variable external_command_buffer"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="35" ippo="35" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="51" ippo="51" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo id="29" ippo="29"/>
+    <ppo deps="f" id="43" invs="4" ippo="43" s="g" ts="2018-01-09 15:52:28">
+     <e txt="initial value of parameter cmd satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="cmd is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="20" ippo="20" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

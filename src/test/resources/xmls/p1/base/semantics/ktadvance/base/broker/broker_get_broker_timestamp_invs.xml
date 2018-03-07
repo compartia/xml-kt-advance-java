@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:11:46">
+   <application file="base/broker.c"/>
+  </header>
+  <function fname="get_broker_timestamp">
+   <inv-dictionary>
+    <non-relational-value-table>
+     <n a="2" ix="1" t="sx"/>
+     <n a="3" ix="2" t="sx"/>
+     <n a="4" ix="3" t="sx"/>
+     <n a="5" ix="4" t="sx"/>
+     <n a="1,1" ix="5" t="iv"/>
+     <n a="4,1,1,1" ix="6" t="bv,x"/>
+     <n a="4,1,1,0" ix="7" t="bv,x"/>
+     <n a="17,18" ix="8" t="rs"/>
+     <n a="17" ix="9" t="rs"/>
+     <n a="18" ix="10" t="rs"/>
+    </non-relational-value-table>
+    <invariant-fact-table>
+     <n a="3,1" ix="1" t="nrv"/>
+     <n a="2,2" ix="2" t="nrv"/>
+     <n a="1,3" ix="3" t="nrv"/>
+     <n a="8,4" ix="4" t="nrv"/>
+     <n a="9,4" ix="5" t="nrv"/>
+     <n a="10,5" ix="6" t="nrv"/>
+     <n a="11,5" ix="7" t="nrv"/>
+     <n a="12,5" ix="8" t="nrv"/>
+     <n a="1,5" ix="9" t="nrv"/>
+     <n a="13,3" ix="10" t="nrv"/>
+     <n a="14,3" ix="11" t="nrv"/>
+     <n a="15,5" ix="12" t="nrv"/>
+     <n a="16,5" ix="13" t="nrv"/>
+     <n a="1,6" ix="14" t="nrv"/>
+     <n a="13,7" ix="15" t="nrv"/>
+     <n a="14,6" ix="16" t="nrv"/>
+     <n a="17,8" ix="17" t="nrv"/>
+     <n a="17,9" ix="18" t="nrv"/>
+     <n a="17,10" ix="19" t="nrv"/>
+     <n a="18,10" ix="20" t="nrv"/>
+     <n a="19,8" ix="21" t="nrv"/>
+    </invariant-fact-table>
+   </inv-dictionary>
+   <location-invariants>
+    <loc ictxt="1011" ifacts="1,2,3,10,14,15,19,20"/>
+    <loc ictxt="1010" ifacts="1,2,3,4,5,6,7,8,9,14,18"/>
+    <loc ictxt="538" ifacts="1,2,3,14,17"/>
+    <loc ictxt="1009" ifacts="1,2,3,11,12,13,14,16,17,21"/>
+   </location-invariants>
+  </function>
+ </c-analysis>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:31:40">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="reset_sighandler">
+   <ppos>
+    <ppo deps="s" id="15" ippo="15" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="22" ippo="22" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="18" ippo="18" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="19" ippo="19" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="17" ippo="17" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="null pointer cannot be dereferenced, and hence target cannot be initialized (acceptability of null is checked separately)"/>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="11" ippo="11" s="g">
+     <e txt="null pointer cannot be dereferenced, and hence target cannot be initialized (acceptability of null is checked separately)"/>
+    </ppo>
+    <ppo deps="s" id="23" ippo="23" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="25" ippo="25" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="12" ippo="12" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="13" ippo="13" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="16" ippo="16" s="g">
+     <e txt="null pointer cannot be dereferenced, and hence target cannot be initialized (acceptability of null is checked separately)"/>
+    </ppo>
+    <ppo deps="s" id="24" ippo="24" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="14" ippo="14" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="21" ippo="21" s="g">
+     <e txt="null pointer cannot be dereferenced, and hence target cannot be initialized (acceptability of null is checked separately)"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="null pointer cannot be dereferenced, and hence target cannot be initialized (acceptability of null is checked separately)"/>
+    </ppo>
+    <ppo deps="s" id="20" ippo="20" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

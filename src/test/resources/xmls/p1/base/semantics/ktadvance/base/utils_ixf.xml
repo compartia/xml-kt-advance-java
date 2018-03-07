@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:32:01">
+   <application file="base/utils.c"/>
+  </header>
+  <interface-dictionary>
+   <api-parameter-table/>
+   <s-term-table>
+    <n a="0" ix="1" t="ic"/>
+    <n ix="2" t="rv"/>
+   </s-term-table>
+   <precondition-table/>
+   <postcondition-table>
+    <n a="2,1" ix="1" t="px,eq"/>
+   </postcondition-table>
+   <postrequest-table/>
+   <sideeffect-table/>
+   <lv-property-table>
+    <n a="242" ix="1" t="nn"/>
+    <n a="242" ix="2" t="i"/>
+   </lv-property-table>
+   <library-variable-table>
+    <n a="1,2" ix="1" t="stdin"/>
+    <n a="1,2" ix="2" t="stdout"/>
+    <n a="1,2" ix="3" t="stderr"/>
+   </library-variable-table>
+  </interface-dictionary>
+ </c-analysis>

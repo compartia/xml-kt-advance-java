@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:31:40">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="compare_hashdata2">
+   <spos>
+    <callsites>
+     <direct-calls/>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="6629" iexp="618" iloc="579">
+      <postconditions/>
+     </rs>
+     <rs ictxt="6626" iexp="29" iloc="578">
+      <postconditions/>
+     </rs>
+     <rs ictxt="6624" iexp="20" iloc="577">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

@@ -1,6 +1,10 @@
 ## xml-kt-advance-java
 
-[![Build Status](https://travis-ci.org/compartia/xml-kt-advance-java.svg?branch=master)](https://travis-ci.org/compartia/xml-kt-advance-java)
+[![Build Status](https://travis-ci.org/mrbkt/xml-kt-advance-java.svg?branch=master)](https://travis-ci.org/mrbkt/xml-kt-advance-java)
+
+
+
+[![Quality gate](https://sonarcloud.io/api/project_badges/measure?project=kt.advance%3Akt-advance-xml&metric=alert_status)](https://sonarcloud.io/dashboard?id=kt.advance%3Akt-advance-xml)
 
 
 

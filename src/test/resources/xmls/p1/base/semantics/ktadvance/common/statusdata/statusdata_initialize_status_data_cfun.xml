@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="common/statusdata" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:55"/>
+  </header>
+  <function filename="common/statusdata">
+   <svar ivinfo="6"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="8683,14,1,0,0,40,0,1" ix="1" t="config_file,n"/>
+     <n a="8684,3,1,0,0,41,0,0" ix="2" t="result,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="1">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="1" iloc="42" ilval="18" itag="set"/>
+        <instr iexp="32" iloc="43" ilval="18" itag="call">
+         <args>
+          <exp iexp="33"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="2"/>
+      <preds/>
+     </stmt>
+     <stmt sid="2">
+      <skind iexp="34" iloc="44" stag="return"/>
+      <succs/>
+      <preds r="1"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

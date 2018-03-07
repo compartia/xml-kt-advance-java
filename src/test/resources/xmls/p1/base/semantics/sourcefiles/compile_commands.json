@@ -1,0 +1,127 @@
+[
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o broker.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/base/broker.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base/broker.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o nebmods.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/base/nebmods.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base/nebmods.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o checks.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/base/checks.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base/checks.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o config.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/base/config.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base/config.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o commands.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/base/commands.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base/commands.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o events.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/base/events.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base/events.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o flapping.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/base/flapping.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base/flapping.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o logging.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/base/logging.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base/logging.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o notifications.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/base/notifications.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base/notifications.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o sehandlers.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/base/sehandlers.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base/sehandlers.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o utils.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/base/utils.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base/utils.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o retention-base.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/base/sretention.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base/sretention.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o xretention-base.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/xdata/xrddefault.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/xdata/xrddefault.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o comments-base.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/common/comments.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/common/comments.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o xcomments-base.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/xdata/xcddefault.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/xdata/xcddefault.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o objects-base.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/common/objects.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/common/objects.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o xobjects-base.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/xdata/xodtemplate.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/xdata/xodtemplate.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o statusdata-base.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/common/statusdata.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/common/statusdata.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o xstatusdata-base.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/xdata/xsddefault.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/xdata/xsddefault.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o perfdata-base.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/base/perfdata.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base/perfdata.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o xperfdata-base.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/xdata/xpddefault.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/xdata/xpddefault.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o downtime-base.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/common/downtime.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/common/downtime.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o xdowntime-base.o /home/henny/CCode/goldstandard/nagios/nagios-2.10/xdata/xdddefault.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/xdata/xdddefault.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o nagios broker.o nebmods.o checks.o config.o commands.o events.o flapping.o logging.o notifications.o sehandlers.o utils.o retention-base.o xretention-base.o comments-base.o xcomments-base.o objects-base.o xobjects-base.o statusdata-base.o xstatusdata-base.o perfdata-base.o xperfdata-base.o downtime-base.o xdowntime-base.o -Wl,-export-dynamic /home/henny/CCode/goldstandard/nagios/nagios-2.10/base/nagios.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base/nagios.c"
+    },
+    {
+        "command": "cc -c -g -O2 -DHAVE_CONFIG_H -DNSCORE -o nagiostats /home/henny/CCode/goldstandard/nagios/nagios-2.10/base/nagiostats.c",
+        "directory": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base",
+        "file": "/home/henny/CCode/goldstandard/nagios/nagios-2.10/base/nagiostats.c"
+    }
+]

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:30:06">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="grab_on_demand_host_macro">
+   <api xlst="126,134">
+    <api-assumptions>
+     <aa ipr="4255" ppos="850,20"/>
+     <aa ipr="4256" ppos="714,760,1475,475,1202,1374,898,22,1297,1247,1532,1316,852,1426,1453,806,1283,1264,1157,943,1518,1340,988" spos="14"/>
+     <aa ipr="4478" ppos="473" spos="15"/>
+     <aa ipr="4554" ppos="711"/>
+     <aa ipr="4555" ppos="712"/>
+     <aa ipr="4563" ppos="757"/>
+     <aa ipr="4564" ppos="758"/>
+     <aa ipr="4572" ppos="803"/>
+     <aa ipr="4573" ppos="804"/>
+     <aa ipr="4581" ppos="849"/>
+     <aa ipr="4589" ppos="895"/>
+     <aa ipr="4590" ppos="896"/>
+     <aa ipr="4598" ppos="941"/>
+     <aa ipr="4606" ppos="986"/>
+     <aa ipr="4661" ppos="1155"/>
+     <aa ipr="4669" ppos="1200"/>
+     <aa ipr="4677" ppos="1245"/>
+     <aa ipr="4679" ppos="1281,1262"/>
+     <aa ipr="4689" ppos="1314,1295"/>
+     <aa ipr="4704" ppos="1338"/>
+     <aa ipr="4722" ppos="1372"/>
+     <aa ipr="4741" ppos="1473,1451,1424"/>
+     <aa ipr="4759" ppos="1516"/>
+     <aa ipr="4768" ppos="1530"/>
+     <aa ipr="8054" ppos="86,154,69,341,358,137,426,324,256,273,52,120,205,290,443,409,171,307,613,103,239,375,487,222,460,550,392,188"/>
+     <aa ipr="8055" ppos="1511"/>
+     <aa ipr="8056" ppos="1309"/>
+     <aa ipr="8057" ppos="1276"/>
+     <aa ipr="8058" ppos="1525"/>
+     <aa ipr="8386" spos="17,11"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="time" h="time"/>
+     <lc c="16" f="malloc" h="stdlib"/>
+     <lc c="28" f="strcmp" h="string"/>
+     <lc c="13" f="snprintf" h="stdio"/>
+     <lc c="1" f="find_hostextinfo" h="objects"/>
+     <lc c="5" f="strcpy" h="string"/>
+     <lc c="1" f="is_host_member_of_hostgroup" h="objects"/>
+     <lc c="11" f="strdup" h="string"/>
+     <lc c="2" f="free" h="stdlib"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="objects/find_hostextinfo"/>
+     <ms n="objects/is_host_member_of_hostgroup"/>
+    </missing-summaries>
+    <unevaluated>
+     <uu po-id="2208"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

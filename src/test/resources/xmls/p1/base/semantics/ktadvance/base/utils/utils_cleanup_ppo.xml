@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:49">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="cleanup">
+   <ppos>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="test_scheduling is global"/>
+    </ppo>
+    <ppo deps="f" id="4" invs="4" ippo="4" s="g" ts="2018-01-09 15:49:27">
+     <e txt="assignedAt#5126"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="sigshutdown is global"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="verify_config is global"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

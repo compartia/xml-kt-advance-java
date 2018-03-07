@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:53">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="add_host_comment">
+   <assumption-table>
+    <n a="729" ix="1" t="aa"/>
+    <n a="731" ix="2" t="aa"/>
+    <n a="730" ix="3" t="aa"/>
+   </assumption-table>
+   <ppo-type-table>
+    <n a="174,263,250" ix="1" t="p"/>
+    <n a="174,264,251" ix="2" t="p"/>
+    <n a="174,264,252" ix="3" t="p"/>
+    <n a="174,264,253" ix="4" t="p"/>
+    <n a="174,264,254" ix="5" t="p"/>
+    <n a="174,265,245" ix="6" t="p"/>
+    <n a="174,266,34" ix="7" t="p"/>
+    <n a="174,265,246" ix="8" t="p"/>
+    <n a="174,265,247" ix="9" t="p"/>
+    <n a="174,265,248" ix="10" t="p"/>
+    <n a="174,267,255" ix="11" t="p"/>
+    <n a="174,268,256" ix="12" t="p"/>
+    <n a="174,268,257" ix="13" t="p"/>
+    <n a="174,268,258" ix="14" t="p"/>
+    <n a="174,268,259" ix="15" t="p"/>
+    <n a="174,269,260" ix="16" t="p"/>
+    <n a="174,269,261" ix="17" t="p"/>
+    <n a="174,269,262" ix="18" t="p"/>
+    <n a="174,269,263" ix="19" t="p"/>
+    <n a="174,270,264" ix="20" t="p"/>
+    <n a="174,271,265" ix="21" t="p"/>
+    <n a="174,272,266" ix="22" t="p"/>
+    <n a="174,273,267" ix="23" t="p"/>
+    <n a="174,274,268" ix="24" t="p"/>
+    <n a="175,275,269" ix="25" t="p"/>
+   </ppo-type-table>
+   <spo-type-table>
+    <n a="174,262,729,720" ix="1" t="cs"/>
+    <n a="174,262,730,721" ix="2" t="cs"/>
+    <n a="174,262,731,718" ix="3" t="cs"/>
+    <n a="174,262,732,719" ix="4" t="cs"/>
+   </spo-type-table>
+  </function>
+ </c-analysis>

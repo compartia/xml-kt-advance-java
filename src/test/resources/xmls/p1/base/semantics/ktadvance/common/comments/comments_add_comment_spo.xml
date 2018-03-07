@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:54">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="add_comment">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="167,1,1,107,142,97,109,144,101,104,146,143,148,144,145,168" ictxt="643" iloc="143" ivinfo="45">
+       <api-conditions>
+        <api-c iapi="1119">
+         <po deps="s" id="4" ispo="4" s="r">
+          <e txt="expression is a null pointer"/>
+         </po>
+        </api-c>
+        <api-c iapi="1118">
+         <po deps="s" id="3" ispo="3" s="g">
+          <e txt="null pointer cannot be dereferenced, and hence target cannot be initialized (acceptability of null is checked separately)"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="116" ictxt="593" iloc="126" ivinfo="12">
+       <api-conditions>
+        <api-c iapi="122">
+         <po deps="f" id="2" invs="408" ispo="2" s="g">
+          <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+         </po>
+        </api-c>
+        <api-c iapi="747">
+         <po id="5" ispo="5"/>
+        </api-c>
+        <api-c iapi="121">
+         <po id="1" ispo="1">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="unknown if location pointed to by return value from malloc is initialized"/>
+            <msg t="function return value: malloc"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="556" iexp="100" iloc="114">
+      <postconditions/>
+     </rs>
+     <rs ictxt="472" iexp="100" iloc="85">
+      <postconditions/>
+     </rs>
+     <rs ictxt="479" iexp="100" iloc="88">
+      <postconditions/>
+     </rs>
+     <rs ictxt="490" iexp="100" iloc="92">
+      <postconditions/>
+     </rs>
+     <rs ictxt="531" iexp="100" iloc="106">
+      <postconditions/>
+     </rs>
+     <rs ictxt="658" iexp="1" iloc="144">
+      <postconditions/>
+     </rs>
+     <rs ictxt="596" iexp="100" iloc="127">
+      <postconditions/>
+     </rs>
+     <rs ictxt="505" iexp="100" iloc="97">
+      <postconditions/>
+     </rs>
+     <rs ictxt="456" iexp="100" iloc="85">
+      <postconditions/>
+     </rs>
+     <rs ictxt="466" iexp="100" iloc="85">
+      <postconditions/>
+     </rs>
+     <rs ictxt="461" iexp="100" iloc="85">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

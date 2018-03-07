@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:53">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="grab_contact_macros">
+   <api>
+    <api-assumptions>
+     <aa ipr="1607" ppos="22"/>
+     <aa ipr="1609" ppos="175,148,125,24,78,54,203,101"/>
+     <aa ipr="1630" ppos="52"/>
+     <aa ipr="1644" ppos="99,76"/>
+     <aa ipr="1663" ppos="123,146"/>
+     <aa ipr="1683" ppos="173,201"/>
+     <aa ipr="8022" ppos="141"/>
+     <aa ipr="8023" ppos="94"/>
+     <aa ipr="8024" ppos="17"/>
+     <aa ipr="8025" ppos="47"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees>
+     <gg iipc="1"/>
+    </postcondition-guarantees>
+    <library-calls>
+     <lc c="5" f="strdup" h="string"/>
+     <lc c="5" f="free" h="stdlib"/>
+    </library-calls>
+    <missing-summaries/>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

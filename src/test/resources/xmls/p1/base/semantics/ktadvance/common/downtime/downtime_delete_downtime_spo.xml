@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:02">
+   <application file="common/downtime.c"/>
+  </header>
+  <function fname="delete_downtime">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="149" ictxt="649" iloc="153" ivinfo="33">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="149" ictxt="652" iloc="154" ivinfo="34">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="151,2,2,143,152,153,154,155,156,157,158,159,160,161,140,104" ictxt="655" iloc="156" ivinfo="47">
+       <api-conditions>
+        <api-c iapi="1130">
+         <po deps="s" id="1" ispo="1" s="g">
+          <e txt="null pointer cannot be dereferenced, and hence target cannot be initialized (acceptability of null is checked separately)"/>
+         </po>
+        </api-c>
+        <api-c iapi="1131">
+         <po deps="s" id="2" ispo="2" s="r">
+          <e txt="expression is a null pointer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="704" iexp="169" iloc="168">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

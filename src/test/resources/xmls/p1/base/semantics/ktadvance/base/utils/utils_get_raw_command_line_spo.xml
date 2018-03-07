@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:30:18">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="get_raw_command_line">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="1485" ictxt="5145" iloc="1217" ivinfo="172">
+       <api-conditions>
+        <api-c iapi="8480">
+         <po deps="a" id="9" ids="1" invs="372" ispo="9" s="g" ts="2018-01-09 17:30:18">
+          <e txt="condition not-null(raw_command) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="1531,1532,1535,1536" ictxt="5215" iloc="1235" ivinfo="69">
+       <api-conditions>
+        <api-c iapi="8270">
+         <po deps="s" id="8" ispo="8" s="g">
+          <e txt="address of variable temp_arg"/>
+         </po>
+        </api-c>
+        <api-c iapi="2524">
+         <po deps="f" id="3" invs="348" ispo="3" s="g">
+          <e txt="non-negative pointer increment: lower bound for ((caste (sizeof(arg_buffer):int) - 1):int is 8191"/>
+         </po>
+        </api-c>
+        <api-c iapi="8035">
+         <po deps="s" id="2" ispo="2" s="g">
+          <e txt="add zero"/>
+         </po>
+        </api-c>
+        <api-c iapi="2522">
+         <po deps="s" id="1" ispo="1" s="g">
+          <e txt="address of variable arg_buffer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="1532" ictxt="5220" iloc="1236" ivinfo="33">
+       <api-conditions>
+        <api-c iapi="2822">
+         <po id="5" ispo="5"/>
+        </api-c>
+        <api-c iapi="619">
+         <po deps="s" id="4" ispo="4" s="g">
+          <e txt="address of variable arg_buffer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="" ictxt="5083" iloc="1203" ivinfo="60">
+       <api-conditions/>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="1485" ictxt="5165" iloc="1222" ivinfo="33">
+       <api-conditions>
+        <api-c iapi="2822">
+         <po deps="a" id="7" ids="6" invs="6" ispo="7" s="g">
+          <e txt="condition initialized((*raw_command)) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="619">
+         <po deps="a" id="6" ids="1" invs="346" ispo="6" s="g">
+          <e txt="condition not-null(raw_command) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites/>
+   </spos>
+  </function>
+ </c-analysis>

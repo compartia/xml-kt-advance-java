@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:29:32">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="clear_argv_macros">
+   <inv-dictionary>
+    <non-relational-value-table>
+     <n a="1,1" ix="1" t="iv"/>
+     <n a="2,2" ix="2" t="iv"/>
+     <n a="3,3" ix="3" t="iv"/>
+     <n a="2,4" ix="4" t="iv"/>
+     <n a="2,3" ix="5" t="iv"/>
+     <n a="17" ix="6" t="iz"/>
+    </non-relational-value-table>
+    <invariant-fact-table>
+     <n a="1,1" ix="1" t="nrv"/>
+     <n a="2,2" ix="2" t="nrv"/>
+     <n a="3,3" ix="3" t="nrv"/>
+     <n a="4,2" ix="4" t="nrv"/>
+     <n a="5,2" ix="5" t="nrv"/>
+     <n a="6,2" ix="6" t="nrv"/>
+     <n a="7,3" ix="7" t="nrv"/>
+     <n a="8,2" ix="8" t="nrv"/>
+     <n a="9,2" ix="9" t="nrv"/>
+     <n a="10,3" ix="10" t="nrv"/>
+     <n a="11,4" ix="11" t="nrv"/>
+     <n a="12,4" ix="12" t="nrv"/>
+     <n a="12,5" ix="13" t="nrv"/>
+     <n a="13,5" ix="14" t="nrv"/>
+     <n a="12,3" ix="15" t="nrv"/>
+     <n a="14,4" ix="16" t="nrv"/>
+     <n a="15,4" ix="17" t="nrv"/>
+     <n a="16,4" ix="18" t="nrv"/>
+     <n a="17,6" ix="19" t="nrv"/>
+     <n a="18,6" ix="20" t="nrv"/>
+     <n a="19,6" ix="21" t="nrv"/>
+     <n a="20,6" ix="22" t="nrv"/>
+     <n a="21,6" ix="23" t="nrv"/>
+     <n a="22,6" ix="24" t="nrv"/>
+    </invariant-fact-table>
+   </inv-dictionary>
+   <location-invariants>
+    <loc ictxt="3117" ifacts="3,4,5,6,12,16,19,22"/>
+    <loc ictxt="8397" ifacts="10,12,18,19,24"/>
+    <loc ictxt="8398" ifacts="1,11,12,19,20"/>
+    <loc ictxt="8396" ifacts="7,8,9,12,17,19,23"/>
+    <loc ictxt="8395" ifacts="13,14,19,21"/>
+    <loc ictxt="3124" ifacts="2,15,19"/>
+    <loc ictxt="8399"/>
+   </location-invariants>
+  </function>
+ </c-analysis>

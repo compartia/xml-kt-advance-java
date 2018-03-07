@@ -1,0 +1,1170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:29:31">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="grab_on_demand_macro">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="2688,2694" ictxt="2888" iloc="2230" ivinfo="173">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="2752,2753" ictxt="2927" iloc="2246" ivinfo="173">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="2688" ictxt="2898" iloc="2232" ivinfo="171">
+       <api-conditions>
+        <api-c iapi="8516">
+         <po deps="f" id="117" invs="904" ispo="117" s="g" ts="2018-01-09 17:29:31">
+          <e txt="value of first_arg is a compound value: ((strchr(_^58)#return + 1)"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="2713" ictxt="2818" iloc="2201" ivinfo="169">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="2698,2677" ictxt="2786" iloc="2186" ivinfo="65">
+       <api-conditions>
+        <api-c iapi="4759">
+         <po id="87" ispo="87">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4572">
+         <po id="101" ispo="101"/>
+        </api-c>
+        <api-c iapi="4256">
+         <po id="89" ispo="89">
+          <d>
+           <invs>
+            <arg a="1" i="793,802,810,892"/>
+           </invs>
+           <msgs>
+            <msg t="unable to exclude null return value from find_host"/>
+            <msg t="no function summary found for find_host"/>
+           </msgs>
+           <amsgs>
+            <arg a="1">
+             <msg t="[1]:function return value from: find_host"/>
+            </arg>
+           </amsgs>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4669">
+         <po id="91" ispo="91">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4554">
+         <po id="95" ispo="95"/>
+        </api-c>
+        <api-c iapi="4689">
+         <po id="97" ispo="97">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4478">
+         <po id="108" ispo="108">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4581">
+         <po id="104" ispo="104"/>
+        </api-c>
+        <api-c iapi="4598">
+         <po id="109" ispo="109">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8057">
+         <po id="112" ispo="112"/>
+        </api-c>
+        <api-c iapi="4606">
+         <po id="114" ispo="114">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8386">
+         <po id="122" ispo="122"/>
+        </api-c>
+        <api-c iapi="4768">
+         <po id="92" ispo="92">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4741">
+         <po id="86" ispo="86">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4679">
+         <po id="94" ispo="94">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4704">
+         <po id="103" ispo="103">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8056">
+         <po id="111" ispo="111"/>
+        </api-c>
+        <api-c iapi="4661">
+         <po id="90" ispo="90">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4573">
+         <po id="102" ispo="102">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4563">
+         <po id="98" ispo="98"/>
+        </api-c>
+        <api-c iapi="4590">
+         <po id="106" ispo="106">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4564">
+         <po id="99" ispo="99">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8055">
+         <po id="110" ispo="110"/>
+        </api-c>
+        <api-c iapi="8058">
+         <po id="113" ispo="113"/>
+        </api-c>
+        <api-c iapi="4255">
+         <po id="88" ispo="88">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8054">
+         <po deps="f" id="100" invs="801" ispo="100" s="g">
+          <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+         </po>
+        </api-c>
+        <api-c iapi="4722">
+         <po id="107" ispo="107">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4555">
+         <po id="96" ispo="96">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4677">
+         <po id="93" ispo="93">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4589">
+         <po id="105" ispo="105"/>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="2738,2677" ictxt="2932" iloc="2247" ivinfo="64">
+       <api-conditions>
+        <api-c iapi="2245">
+         <po id="12" ispo="12">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2261">
+         <po id="16" ispo="16">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8031">
+         <po id="19" ispo="19"/>
+        </api-c>
+        <api-c iapi="2310">
+         <po id="1" ispo="1"/>
+        </api-c>
+        <api-c iapi="2311">
+         <po id="2" ispo="2">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2285">
+         <po id="24" ispo="24">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8030">
+         <po id="18" ispo="18"/>
+        </api-c>
+        <api-c iapi="2284">
+         <po id="23" ispo="23"/>
+        </api-c>
+        <api-c iapi="2293">
+         <po id="25" ispo="25"/>
+        </api-c>
+        <api-c iapi="2083">
+         <po id="8" ispo="8">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2079">
+         <po id="7" ispo="7">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2230">
+         <po id="11" ispo="11">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2260">
+         <po id="15" ispo="15"/>
+        </api-c>
+        <api-c iapi="2428">
+         <po id="27" ispo="27">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2410">
+         <po id="22" ispo="22">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2294">
+         <po id="26" ispo="26">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2276">
+         <po id="21" ispo="21">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="1864">
+         <po id="14" ispo="14">
+          <d>
+           <invs>
+            <arg a="1" i="789,798,806,860"/>
+           </invs>
+           <msgs>
+            <msg t="unable to exclude null return value from find_service"/>
+            <msg t="no function summary found for find_service"/>
+           </msgs>
+           <amsgs>
+            <arg a="1">
+             <msg t="[1]:function return value from: find_service"/>
+            </arg>
+           </amsgs>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8029">
+         <po deps="f" id="17" invs="797" ispo="17" s="g">
+          <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+         </po>
+        </api-c>
+        <api-c iapi="2451">
+         <po id="5" ispo="5">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8391">
+         <po id="115" ispo="115"/>
+        </api-c>
+        <api-c iapi="1863">
+         <po id="13" ispo="13">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2441">
+         <po id="3" ispo="3">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2342">
+         <po id="9" ispo="9">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2302">
+         <po id="28" ispo="28"/>
+        </api-c>
+        <api-c iapi="2320">
+         <po id="4" ispo="4">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2334">
+         <po id="6" ispo="6">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2351">
+         <po id="10" ispo="10">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8392">
+         <po id="116" ispo="116"/>
+        </api-c>
+        <api-c iapi="2275">
+         <po id="20" ispo="20"/>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="2688" ictxt="2789" iloc="2187" ivinfo="170">
+       <api-conditions>
+        <api-c iapi="8479">
+         <po deps="f" id="118" invs="905" ispo="118" s="g" ts="2018-01-09 17:29:31">
+          <e txt="value of first_arg is a compound value: ((strchr(_^58)#return + 1)"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="2688" ictxt="2784" iloc="2185" ivinfo="169">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="2738,2677" ictxt="2895" iloc="2231" ivinfo="64">
+       <api-conditions>
+        <api-c iapi="2245">
+         <po id="40" ispo="40">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2261">
+         <po id="44" ispo="44">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8031">
+         <po id="47" ispo="47"/>
+        </api-c>
+        <api-c iapi="2310">
+         <po id="29" ispo="29"/>
+        </api-c>
+        <api-c iapi="2311">
+         <po id="30" ispo="30">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2285">
+         <po id="52" ispo="52">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8030">
+         <po id="46" ispo="46"/>
+        </api-c>
+        <api-c iapi="2284">
+         <po id="51" ispo="51"/>
+        </api-c>
+        <api-c iapi="2293">
+         <po id="53" ispo="53"/>
+        </api-c>
+        <api-c iapi="2083">
+         <po id="36" ispo="36">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2079">
+         <po id="35" ispo="35">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2230">
+         <po id="39" ispo="39">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2260">
+         <po id="43" ispo="43"/>
+        </api-c>
+        <api-c iapi="2428">
+         <po id="55" ispo="55">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2410">
+         <po id="50" ispo="50">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2294">
+         <po id="54" ispo="54">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2276">
+         <po id="49" ispo="49">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="1864">
+         <po deps="f" id="42" invs="800" ispo="42" s="g">
+          <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+         </po>
+        </api-c>
+        <api-c iapi="8029">
+         <po deps="f" id="45" invs="799" ispo="45" s="g">
+          <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+         </po>
+        </api-c>
+        <api-c iapi="2451">
+         <po id="33" ispo="33">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8391">
+         <po id="119" ispo="119"/>
+        </api-c>
+        <api-c iapi="1863">
+         <po id="41" ispo="41">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2441">
+         <po id="31" ispo="31">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2342">
+         <po id="37" ispo="37">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2302">
+         <po id="56" ispo="56"/>
+        </api-c>
+        <api-c iapi="2320">
+         <po id="32" ispo="32">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2334">
+         <po id="34" ispo="34">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="2351">
+         <po id="38" ispo="38">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_service"/>
+            <msg t="function return value: find_service"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8392">
+         <po id="120" ispo="120"/>
+        </api-c>
+        <api-c iapi="2275">
+         <po id="48" ispo="48"/>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="2698,2677" ictxt="2821" iloc="2202" ivinfo="65">
+       <api-conditions>
+        <api-c iapi="4759">
+         <po id="58" ispo="58">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4572">
+         <po id="72" ispo="72"/>
+        </api-c>
+        <api-c iapi="4256">
+         <po id="60" ispo="60">
+          <d>
+           <invs>
+            <arg a="1" i="795,804,812,903"/>
+           </invs>
+           <msgs>
+            <msg t="unable to exclude null return value from find_host"/>
+            <msg t="no function summary found for find_host"/>
+           </msgs>
+           <amsgs>
+            <arg a="1">
+             <msg t="[1]:function return value from: find_host"/>
+            </arg>
+           </amsgs>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4669">
+         <po id="62" ispo="62">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4554">
+         <po id="66" ispo="66"/>
+        </api-c>
+        <api-c iapi="4689">
+         <po id="68" ispo="68">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4478">
+         <po id="79" ispo="79">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4581">
+         <po id="75" ispo="75"/>
+        </api-c>
+        <api-c iapi="4598">
+         <po id="80" ispo="80">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8057">
+         <po id="83" ispo="83"/>
+        </api-c>
+        <api-c iapi="4606">
+         <po id="85" ispo="85">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8386">
+         <po id="121" ispo="121"/>
+        </api-c>
+        <api-c iapi="4768">
+         <po id="63" ispo="63">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4741">
+         <po id="57" ispo="57">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4679">
+         <po id="65" ispo="65">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4704">
+         <po id="74" ispo="74">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8056">
+         <po id="82" ispo="82"/>
+        </api-c>
+        <api-c iapi="4661">
+         <po id="61" ispo="61">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4573">
+         <po id="73" ispo="73">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4563">
+         <po id="69" ispo="69"/>
+        </api-c>
+        <api-c iapi="4590">
+         <po id="77" ispo="77">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4564">
+         <po id="70" ispo="70">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8055">
+         <po id="81" ispo="81"/>
+        </api-c>
+        <api-c iapi="8058">
+         <po id="84" ispo="84"/>
+        </api-c>
+        <api-c iapi="4255">
+         <po id="59" ispo="59">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="8054">
+         <po deps="f" id="71" invs="803" ispo="71" s="g">
+          <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+         </po>
+        </api-c>
+        <api-c iapi="4722">
+         <po id="78" ispo="78">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4555">
+         <po id="67" ispo="67">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4677">
+         <po id="64" ispo="64">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="no function summary for find_host"/>
+            <msg t="function return value: find_host"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="4589">
+         <po id="76" ispo="76"/>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="2990" iexp="2760" iloc="2273">
+      <postconditions/>
+     </rs>
+     <rs ictxt="2817" iexp="19" iloc="2199">
+      <postconditions/>
+     </rs>
+     <rs ictxt="2926" iexp="19" iloc="2244">
+      <postconditions/>
+     </rs>
+     <rs ictxt="2797" iexp="179" iloc="2189">
+      <postconditions/>
+     </rs>
+     <rs ictxt="2887" iexp="179" iloc="2228">
+      <postconditions/>
+     </rs>
+     <rs ictxt="2906" iexp="179" iloc="2234">
+      <postconditions/>
+     </rs>
+     <rs ictxt="2757" iexp="179" iloc="2176">
+      <postconditions/>
+     </rs>
+     <rs ictxt="2748" iexp="179" iloc="2172">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

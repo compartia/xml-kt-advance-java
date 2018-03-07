@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:02">
+   <application file="common/downtime.c"/>
+  </header>
+  <function fname="cleanup_downtime_data">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="" ictxt="766" iloc="512" ivinfo="1">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="570" ictxt="764" iloc="511" ivinfo="38">
+       <api-conditions/>
+       <post-guarantees>
+        <pg iipc="3"/>
+       </post-guarantees>
+       <frees v="no"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="767" iexp="572" iloc="513">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

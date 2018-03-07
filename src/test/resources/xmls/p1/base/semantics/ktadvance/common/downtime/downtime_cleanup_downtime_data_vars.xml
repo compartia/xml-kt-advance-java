@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:02">
+   <application file="common/downtime.c"/>
+  </header>
+  <function fname="cleanup_downtime_data">
+   <var-dictionary>
+    <allocated-region-data-table/>
+    <memory-base-table>
+     <n a="14" ix="1" t="bv"/>
+     <n a="1" ix="2" t="null"/>
+     <n a="-1" ix="3" t="null"/>
+     <n a="511,1" ix="4" t="fr,xdddefault_cleanup_downtime_data"/>
+     <n a="512,1" ix="5" t="fr,free_downtime_data"/>
+     <n a="6" ix="6" t="bv"/>
+    </memory-base-table>
+    <memory-reference-data-table>
+     <n a="6,1,11" ix="1"/>
+    </memory-reference-data-table>
+    <constant-value-variable-table>
+     <n a="1,11" ix="1" t="iv"/>
+     <n a="511,7518,-1" ix="2" t="frv"/>
+     <n a="512,7482" ix="3" t="frv"/>
+     <n a="2,11" ix="4" t="iv"/>
+     <n a="10,11" ix="5" t="iv"/>
+    </constant-value-variable-table>
+    <c-variable-denotation-table>
+     <n a="5" ix="1" t="rv"/>
+     <n a="9178,1" ix="2" t="lv"/>
+     <n a="1" ix="3" t="av"/>
+     <n a="11,1,1,1,1,2,1,1,3,2,1,4,2" ix="4" t="cv"/>
+     <n a="2" ix="5" t="av"/>
+     <n a="9179,1" ix="6" t="lv"/>
+     <n a="3" ix="7" t="av"/>
+     <n a="5,1,5,1" ix="8" t="cv"/>
+     <n a="1" ix="9" t="mv"/>
+     <n a="4" ix="10" t="av"/>
+     <n a="5" ix="11" t="av"/>
+    </c-variable-denotation-table>
+    <xpr-dictionary>
+     <numerical-table>
+      <n ix="1" t="0"/>
+     </numerical-table>
+     <symbol-table>
+      <n a="2" ix="1" t="config_file"/>
+      <n a="9" ix="2" t="memref-1"/>
+      <n a="10" ix="3" t="(memref-1_9_)#init"/>
+      <n a="5" ix="4" t="(xdddefault_cleanup_downtime_data(_)#return"/>
+      <n a="6" ix="5" t="result"/>
+      <n a="3" ix="6" t="(config_file_2_)#init"/>
+      <n a="1" ix="7" t="return"/>
+      <n a="8" ix="8" t="check_(ppo:5:1)"/>
+      <n a="4" ix="9" t="check_(ppo:1:1)_(ppo:2:1)_(ppo:3:2)_(ppo:4:2)"/>
+      <n a="-1" ix="10" t="assignedAt#82,rv:,xdddefault_cleanup_downtime_data"/>
+      <n a="2" ix="11" t="NULL(1)"/>
+      <n a="1" ix="12" t="addr_in_(config_file_2_)#init"/>
+      <n a="5" ix="13" t="freed(by:free_downtime_data @86 r:1"/>
+      <n a="4" ix="14" t="freed(by:xdddefault_cleanup_downtime_data @82 r:1"/>
+      <n a="11" ix="15" t="(config_file_2_)#init"/>
+     </symbol-table>
+     <variable-table>
+      <n a="1" ix="1" t="nv"/>
+      <n a="2" ix="2" t="nv"/>
+      <n a="3" ix="3" t="nv"/>
+      <n a="4" ix="4" t="nv"/>
+      <n a="5" ix="5" t="nv"/>
+      <n a="6" ix="6" t="nv"/>
+      <n a="7" ix="7" t="nv"/>
+      <n a="8" ix="8" t="nv"/>
+      <n a="9" ix="9" t="nv"/>
+      <n a="1" ix="10" t="sv"/>
+      <n a="5" ix="11" t="sv"/>
+      <n a="8" ix="12" t="sv"/>
+      <n a="9" ix="13" t="sv"/>
+      <n a="15" ix="14" t="sv"/>
+     </variable-table>
+     <xcst-table/>
+     <xpr-table>
+      <n a="3" ix="1" t="v"/>
+      <n a="4" ix="2" t="v"/>
+      <n a="6" ix="3" t="v"/>
+     </xpr-table>
+     <xpr-list-table/>
+     <xpr-list-list-table/>
+    </xpr-dictionary>
+   </var-dictionary>
+   <allocated-regions size="1"/>
+   <memory-regions size="6">
+    <region imb="1" index="1"/>
+    <region imb="2" index="2"/>
+    <region imb="3" index="3"/>
+    <region imb="4" index="4"/>
+    <region imb="5" index="5"/>
+   </memory-regions>
+   <memory-references size="2">
+    <reference imrd="1" index="1"/>
+   </memory-references>
+  </function>
+ </c-analysis>

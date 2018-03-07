@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:52">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="add_comment_to_hashlist">
+   <ppos>
+    <ppo deps="s" id="18" ippo="18" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="129" ippo="129" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="s" id="50" ippo="50" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+    <ppo deps="f" id="80" invs="32" ippo="80" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is initial value of parameter new_comment satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="108" invs="112" ippo="108" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#396_xx_assignedAt#396(fieldnexthash171)"/>
+    </ppo>
+    <ppo deps="f" id="104" invs="56" ippo="104" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is initial value of parameter memref-10 satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="130" ippo="130" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="f" id="25" invs="64" ippo="25" s="g" ts="2018-01-09 16:02:47">
+     <e txt="non-negative pointer increment: lower bound for i is 0"/>
+    </ppo>
+    <ppo deps="f" id="49" invs="62" ippo="49" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is initial value of parameter memref-10 satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="52" ippo="52"/>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="30" ippo="30" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="62" ippo="62" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="103" invs="56" ippo="103" s="g" ts="2018-01-09 16:02:47">
+     <e txt="initial value of parameter memref-10 satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="102" ippo="102">
+     <d>
+      <invs>
+       <arg a="1" i="159,56"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="106" invs="104" ippo="106" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#396_xx_assignedAt#396(fieldnexthash171)"/>
+    </ppo>
+    <ppo deps="f" id="14" invs="82" ippo="14" s="g" ts="2018-01-09 16:02:47">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: 4096"/>
+        <msg t="[2]:function return value: malloc"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="offset size 0 is less than the size of (malloc(4096)#return (4096)"/>
+    </ppo>
+    <ppo id="111" ippo="111">
+     <d>
+      <invs>
+       <arg a="2" i="112,173"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="145" ippo="145">
+     <d>
+      <invs>
+       <arg a="1" i="110,170"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*))
+,unknown:temp_comment-&gt;nexthash
+]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)) ,unknown:temp_comment-&gt;nexthash ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)) ,unknown:temp_comment-&gt;nexthash ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)) ,unknown:temp_comment-&gt;nexthash ]"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="15" invs="148" ippo="15" s="g" ts="2018-01-09 16:02:47">
+     <e txt="all memory regions potentially pointed at are valid: addrof_heapregion_1"/>
+    </ppo>
+    <ppo deps="f" id="82" invs="59" ippo="82" s="g" ts="2018-01-09 16:02:47">
+     <e txt="initial value of parameter memref-10 satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="133" ippo="133" s="g">
+     <e txt="new_comment is a function parameter"/>
+    </ppo>
+    <ppo id="89" ippo="89">
+     <d>
+      <invs>
+       <arg a="1" i="99,166"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*))
+,unknown:temp_comment-&gt;nexthash
+]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)) ,unknown:temp_comment-&gt;nexthash ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)) ,unknown:temp_comment-&gt;nexthash ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)) ,unknown:temp_comment-&gt;nexthash ]"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="56" ippo="56" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="f" id="79" invs="32" ippo="79" s="g" ts="2018-01-09 16:02:47">
+     <e txt="initial value of parameter new_comment satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="31" ippo="31" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+    <ppo deps="f" id="121" invs="16" ippo="121" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is initial value of parameter new_comment satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="12" invs="108" ippo="12" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#383(rv:malloc)"/>
+    </ppo>
+    <ppo deps="f" id="141" invs="44" ippo="141" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is initial value of parameter new_comment satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="101" invs="27" ippo="101" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is initial value of parameter new_comment satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="69" ippo="69">
+     <d>
+      <invs>
+       <arg a="2" i="101,140"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="a" id="96" ids="1" invs="17" ippo="96" s="g" ts="2018-01-09 16:02:47">
+     <e txt="condition initialized(new_comment-&gt;host_name) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="45" invs="53" ippo="45" s="g" ts="2018-01-09 16:02:47">
+     <e txt="initial value of parameter new_comment satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="54" invs="117" ippo="54" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#394(rv:hashfunc1)"/>
+    </ppo>
+    <ppo deps="f" id="78" invs="168" ippo="78" s="g" ts="2018-01-09 17:08:57">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:compare_hashdata1 @396 r:1,freed(by:compare_hashdata1 @397 r:1,freed(by:hashfunc1 @394 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(new_comment_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="124" invs="114" ippo="124" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#394(rv:hashfunc1)"/>
+    </ppo>
+    <ppo id="118" ippo="118">
+     <d>
+      <invs>
+       <arg a="2" i="89,164"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="140" invs="44" ippo="140" s="g" ts="2018-01-09 16:02:47">
+     <e txt="initial value of parameter new_comment satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+    <ppo id="81" ippo="81">
+     <d>
+      <invs>
+       <arg a="1" i="59,160"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="128" ippo="128">
+     <d>
+      <invs>
+       <arg a="4" i="48,72,114"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="23" invs="129" ippo="23" s="g" ts="2018-01-09 16:02:47">
+     <e txt="all targets are non-null: [heap-allocated-region created by malloc at line 383]"/>
+    </ppo>
+    <ppo deps="a" id="77" ids="2" invs="32" ippo="77" s="g" ts="2018-01-09 16:02:47">
+     <e txt="condition not-null(new_comment) delegated to api"/>
+    </ppo>
+    <ppo id="70" ippo="70">
+     <d>
+      <invs>
+       <arg a="2" i="101,140"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+    <ppo deps="f" id="134" invs="49" ippo="134" s="g" ts="2018-01-09 16:02:47">
+     <e txt="initial value of parameter new_comment satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="16" ippo="16" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="24" ippo="24" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="s" id="21" ippo="21" s="g">
+     <e txt="comment_hashlist is global"/>
+    </ppo>
+    <ppo id="94" ippo="94"/>
+    <ppo id="109" ippo="109">
+     <d>
+      <invs>
+       <arg a="1" i="112,173"/>
+      </invs>
+      <msgs>
+       <msg t="encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)),unknown:temp_comment-&gt;nexthash]"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="36" invs="105" ippo="36" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#387"/>
+    </ppo>
+    <ppo deps="s" id="76" ippo="76" s="g">
+     <e txt="new_comment is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="131" ippo="131" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="57" ippo="57">
+     <d>
+      <invs>
+       <arg a="4" i="50,73,117"/>
+      </invs>
+      <msgs>
+       <msg t="remaining constraint: ((hashfunc1(_^1024)#return &gt;= 0) (--&gt; ((hashfunc1(_^1024)#return &gt;= 0))"/>
+       <msg t="remaining constraint: ((hashfunc1((memref-10_93_)#init^1024)#return &gt;= 0) (--&gt; ((hashfunc1((memref-10_93_)#init^1024)#return &gt;= 0))"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="68" ippo="68">
+     <d>
+      <invs>
+       <arg a="1" i="101,140"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*))
+,unknown:temp_comment-&gt;nexthash
+]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)) ,unknown:temp_comment-&gt;nexthash ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)) ,unknown:temp_comment-&gt;nexthash ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)) ,unknown:temp_comment-&gt;nexthash ]"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="122" invs="165" ippo="122" s="g" ts="2018-01-09 17:08:57">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:compare_hashdata1 @396 r:1,freed(by:compare_hashdata1 @397 r:1,freed(by:hashfunc1 @394 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(new_comment_2_)#init"/>
+    </ppo>
+    <ppo deps="s" id="85" ippo="85" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="f" id="100" invs="27" ippo="100" s="g" ts="2018-01-09 16:02:47">
+     <e txt="initial value of parameter new_comment satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="26" ippo="26">
+     <d>
+      <invs>
+       <arg a="4" i="64,97"/>
+       <arg a="3" i="96,129"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="a" id="98" ids="2" invs="27" ippo="98" s="g" ts="2018-01-09 16:02:47">
+     <e txt="condition not-null(new_comment) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="105" invs="113" ippo="105" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#397(rv:compare_hashdata1)"/>
+    </ppo>
+    <ppo id="11" ippo="11"/>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="135" invs="49" ippo="135" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is initial value of parameter new_comment satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="13" invs="40" ippo="13" s="g" ts="2018-01-09 16:02:47">
+     <e txt="return value from function malloc satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="63" invs="102" ippo="63" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#396_xx_assignedAt#396(fieldnexthash171)"/>
+    </ppo>
+    <ppo deps="s" id="51" ippo="51" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="107" ippo="107"/>
+    <ppo id="125" ippo="125"/>
+    <ppo id="143" ippo="143">
+     <d>
+      <invs>
+       <arg a="2" i="110,170"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="19" ippo="19" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="32" ippo="32" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="17" ippo="17" s="g">
+     <e txt="comment_hashlist is global"/>
+    </ppo>
+    <ppo id="90" ippo="90">
+     <d>
+      <invs>
+       <arg a="2" i="99,166"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="40" ippo="40" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo id="67" ippo="67">
+     <d>
+      <invs>
+       <arg a="1" i="101,140"/>
+      </invs>
+      <msgs>
+       <msg t="encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)),unknown:temp_comment-&gt;nexthash]"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="55" ippo="55"/>
+    <ppo id="117" ippo="117">
+     <d>
+      <invs>
+       <arg a="2" i="89,164"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="132" ippo="132" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="110" ippo="110">
+     <d>
+      <invs>
+       <arg a="1" i="112,173"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*))
+,unknown:temp_comment-&gt;nexthash
+]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)) ,unknown:temp_comment-&gt;nexthash ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)) ,unknown:temp_comment-&gt;nexthash ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)) ,unknown:temp_comment-&gt;nexthash ]"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="60" ippo="60" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="59" ippo="59" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="comment_hashlist is global"/>
+    </ppo>
+    <ppo deps="f" id="142" invs="110" ippo="142" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#396_xx_assignedAt#396(fieldnexthash171)"/>
+    </ppo>
+    <ppo id="144" ippo="144">
+     <d>
+      <invs>
+       <arg a="2" i="110,170"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="116" ippo="116">
+     <d>
+      <invs>
+       <arg a="1" i="89,164"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:encountered undetermined regions: [null
+,unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*))
+,unknown:temp_comment-&gt;nexthash
+]"/>
+        <msg t="[1]:encountered undetermined regions: [null ,unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)) ,unknown:temp_comment-&gt;nexthash ]"/>
+        <msg t="[1]:encountered undetermined regions: [null ,unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)) ,unknown:temp_comment-&gt;nexthash ]"/>
+        <msg t="[1]:encountered undetermined regions: [null ,unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)) ,unknown:temp_comment-&gt;nexthash ]"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="137" ippo="137" s="g">
+     <e txt="new_comment is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="27" ippo="27" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="f" id="38" invs="68,36" ippo="38" s="g" ts="2018-01-09 16:02:47">
+     <e txt="result of addition is less than MAX: satisfies((1023 + 1) &lt; 2147483647)"/>
+    </ppo>
+    <ppo deps="s" id="61" ippo="61" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="87" invs="99" ippo="87" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#396_xx_assignedAt#396(fieldnexthash171)"/>
+    </ppo>
+    <ppo deps="f" id="113" invs="115" ippo="113" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#395_xx_assignedAt#399"/>
+    </ppo>
+    <ppo deps="a" id="138" ids="2" invs="44" ippo="138" s="g" ts="2018-01-09 16:02:47">
+     <e txt="condition not-null(new_comment) delegated to api"/>
+    </ppo>
+    <ppo id="58" ippo="58">
+     <d>
+      <invs>
+       <arg a="4" i="50,73,117"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="84" invs="106" ippo="84" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#396(rv:compare_hashdata1)"/>
+    </ppo>
+    <ppo deps="s" id="34" ippo="34" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="74" ippo="74" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo id="112" ippo="112">
+     <d>
+      <invs>
+       <arg a="2" i="112,173"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="a" id="75" ids="1" invs="17" ippo="75" s="g" ts="2018-01-09 16:02:47">
+     <e txt="condition initialized(new_comment-&gt;host_name) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="123" ippo="123" s="g">
+     <e txt="comment_hashlist is global"/>
+    </ppo>
+    <ppo deps="f" id="48" invs="62" ippo="48" s="g" ts="2018-01-09 16:02:47">
+     <e txt="initial value of parameter memref-10 satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="127" ippo="127">
+     <d>
+      <invs>
+       <arg a="4" i="48,72,114"/>
+      </invs>
+      <msgs>
+       <msg t="remaining constraint: ((hashfunc1(_^1024)#return &gt;= 0) (--&gt; ((hashfunc1(_^1024)#return &gt;= 0))"/>
+       <msg t="remaining constraint: ((hashfunc1((memref-10_93_)#init^1024)#return &gt;= 0) (--&gt; ((hashfunc1((memref-10_93_)#init^1024)#return &gt;= 0))"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="139" invs="171" ippo="139" s="g" ts="2018-01-09 17:08:57">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:compare_hashdata1 @396 r:1,freed(by:compare_hashdata1 @397 r:1,freed(by:hashfunc1 @394 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(new_comment_2_)#init"/>
+    </ppo>
+    <ppo id="71" ippo="71"/>
+    <ppo deps="f" id="22" invs="97" ippo="22" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#387"/>
+    </ppo>
+    <ppo deps="s" id="28" ippo="28" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="53" ippo="53" s="g">
+     <e txt="comment_hashlist is global"/>
+    </ppo>
+    <ppo id="65" ippo="65"/>
+    <ppo id="47" ippo="47">
+     <d>
+      <invs>
+       <arg a="1" i="62,162"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="73" ippo="73"/>
+    <ppo deps="f" id="44" invs="155" ippo="44" s="g" ts="2018-01-09 16:02:47">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(new_comment_2_)#init"/>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo id="91" ippo="91">
+     <d>
+      <invs>
+       <arg a="2" i="99,166"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="120" invs="16" ippo="120" s="g" ts="2018-01-09 16:02:47">
+     <e txt="initial value of parameter new_comment satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="97" ippo="97" s="g">
+     <e txt="new_comment is a function parameter"/>
+    </ppo>
+    <ppo id="72" ippo="72"/>
+    <ppo deps="f" id="99" invs="167" ippo="99" s="g" ts="2018-01-09 17:08:57">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:compare_hashdata1 @396 r:1,freed(by:compare_hashdata1 @397 r:1,freed(by:hashfunc1 @394 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(new_comment_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="114" invs="89" ippo="114" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#395_xx_assignedAt#399"/>
+    </ppo>
+    <ppo deps="s" id="33" ippo="33" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="37" ippo="37" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="s" id="64" ippo="64" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo id="93" ippo="93"/>
+    <ppo deps="s" id="119" ippo="119" s="g">
+     <e txt="new_comment is a function parameter"/>
+    </ppo>
+    <ppo deps="a" id="41" ids="1" invs="17" ippo="41" s="g" ts="2018-01-09 16:02:47">
+     <e txt="condition initialized(new_comment-&gt;host_name) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="95" ippo="95" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo id="92" ippo="92"/>
+    <ppo id="115" ippo="115">
+     <d>
+      <invs>
+       <arg a="1" i="89,164"/>
+      </invs>
+      <msgs>
+       <msg t="encountered undetermined regions: [null,unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)),unknown:temp_comment-&gt;nexthash]"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="42" ippo="42" s="g">
+     <e txt="new_comment is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="136" invs="174" ippo="136" s="g" ts="2018-01-09 17:08:57">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:compare_hashdata1 @396 r:1,freed(by:compare_hashdata1 @397 r:1,freed(by:hashfunc1 @394 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(new_comment_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="46" invs="53" ippo="46" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is initial value of parameter new_comment satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="39" ippo="39" s="g">
+     <e txt="new_comment is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="66" invs="101" ippo="66" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#396_xx_assignedAt#396(fieldnexthash171)"/>
+    </ppo>
+    <ppo deps="f" id="83" invs="59" ippo="83" s="g" ts="2018-01-09 16:02:47">
+     <e txt="upper-bound value is initial value of parameter memref-10 satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="88" ippo="88">
+     <d>
+      <invs>
+       <arg a="1" i="99,166"/>
+      </invs>
+      <msgs>
+       <msg t="encountered undetermined regions: [unknown:*(((lval (comment_hashlist) +i lval (hashslot)):((comment*)*)),unknown:temp_comment-&gt;nexthash]"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="35" ippo="35" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="29" ippo="29" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="126" ippo="126" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="a" id="43" ids="2" invs="53" ippo="43" s="g" ts="2018-01-09 16:02:47">
+     <e txt="condition not-null(new_comment) delegated to api"/>
+    </ppo>
+    <ppo id="86" ippo="86"/>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="20" invs="107" ippo="20" s="g" ts="2018-01-09 16:02:47">
+     <e txt="assignedAt#387"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

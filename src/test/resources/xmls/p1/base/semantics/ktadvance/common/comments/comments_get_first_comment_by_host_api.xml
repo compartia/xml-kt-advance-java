@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:52">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="get_first_comment_by_host">
+   <api xlst="3">
+    <api-assumptions>
+     <aa ipr="749" spos="3"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls/>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="55"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

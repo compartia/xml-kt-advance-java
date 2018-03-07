@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:30:17">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="free_notification_list">
+   <inv-dictionary>
+    <non-relational-value-table>
+     <n a="1,1" ix="1" t="iv"/>
+     <n a="7,8" ix="2" t="iz"/>
+     <n a="11" ix="3" t="iz"/>
+     <n a="16" ix="4" t="rs"/>
+     <n a="17" ix="5" t="rs"/>
+    </non-relational-value-table>
+    <invariant-fact-table>
+     <n a="1,1" ix="1" t="nrv"/>
+     <n a="2,1" ix="2" t="nrv"/>
+     <n a="3,1" ix="3" t="nrv"/>
+     <n a="4,1" ix="4" t="nrv"/>
+     <n a="5,1" ix="5" t="nrv"/>
+     <n a="6,1" ix="6" t="nrv"/>
+     <n a="7,2" ix="7" t="nrv"/>
+     <n a="8,2" ix="8" t="nrv"/>
+     <n a="9,2" ix="9" t="nrv"/>
+     <n a="10,3" ix="10" t="nrv"/>
+     <n a="11,3" ix="11" t="nrv"/>
+     <n a="12,2" ix="12" t="nrv"/>
+     <n a="13,2" ix="13" t="nrv"/>
+     <n a="10,4" ix="14" t="nrv"/>
+     <n a="11,4" ix="15" t="nrv"/>
+     <n a="7,5" ix="16" t="nrv"/>
+    </invariant-fact-table>
+   </inv-dictionary>
+   <location-invariants>
+    <loc ictxt="8918" ifacts="7,10,11,14,15"/>
+    <loc ictxt="8917" ifacts="7,10,12,13,14"/>
+    <loc ictxt="8916" ifacts="7,8"/>
+    <loc ictxt="8915" ifacts="1,2,7,9"/>
+    <loc ictxt="5073" ifacts="3,4,5,6,7,16"/>
+    <loc ictxt="8914"/>
+    <loc ictxt="8919"/>
+   </location-invariants>
+  </function>
+ </c-analysis>

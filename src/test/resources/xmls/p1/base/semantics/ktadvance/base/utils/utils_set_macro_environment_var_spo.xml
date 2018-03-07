@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:30:16">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="set_macro_environment_var">
+   <spos>
+    <callsites>
+     <direct-calls/>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="4957" iexp="19" iloc="1360">
+      <postconditions/>
+     </rs>
+     <rs ictxt="4929" iexp="179" iloc="1352">
+      <postconditions/>
+     </rs>
+     <rs ictxt="4915" iexp="179" iloc="1349">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

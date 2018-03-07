@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="base/utils" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:48"/>
+  </header>
+  <function filename="base/utils">
+   <svar ivinfo="8"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="10109,4,1,0,0,233,0,1" ix="1" t="cmd,n"/>
+     <n a="10110,17,1,0,0,234,0,2" ix="2" t="buffer_items,n"/>
+     <n a="10111,1,1,0,0,235,0,0" ix="3" t="result,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="1976">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="19" iloc="236" ilval="151" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="1977"/>
+      <preds/>
+     </stmt>
+     <stmt sid="1977">
+      <skind iexp="217" iloc="237" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="1978">
+          <skind iloc="237" stag="goto" stmtid="1980"/>
+          <succs r="1980"/>
+          <preds r="1977"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts>
+         <stmt sid="1979">
+          <skind iexp="220" iloc="237" stag="if">
+           <thenblock>
+            <bstmts>
+             <stmt sid="1980">
+              <skind iexp="223" iloc="239" stag="if">
+               <thenblock>
+                <bstmts>
+                 <stmt sid="1981">
+                  <skind stag="instr">
+                   <instrs>
+                    <instr iexp="29" iloc="238" ilval="155" itag="set"/>
+                   </instrs>
+                  </skind>
+                  <succs r="1982"/>
+                  <preds r="1980"/>
+                 </stmt>
+                </bstmts>
+               </thenblock>
+               <elseblock>
+                <bstmts/>
+               </elseblock>
+              </skind>
+              <succs r="1981,1982"/>
+              <preds r="1979,1978"/>
+              <labels>
+               <label iloc="237" lname="_L" ltag="label" programlabel="false"/>
+              </labels>
+             </stmt>
+             <stmt sid="1982">
+              <skind iexp="179" iloc="240" stag="return"/>
+              <succs/>
+              <preds r="1981,1980"/>
+             </stmt>
+            </bstmts>
+           </thenblock>
+           <elseblock>
+            <bstmts/>
+           </elseblock>
+          </skind>
+          <succs r="1980,1983"/>
+          <preds r="1977"/>
+         </stmt>
+        </bstmts>
+       </elseblock>
+      </skind>
+      <succs r="1978,1979"/>
+      <preds r="1976"/>
+     </stmt>
+     <stmt sid="1983">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="224" iloc="241" itag="call">
+         <args>
+          <exp iexp="225"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="1984"/>
+      <preds r="1979"/>
+     </stmt>
+     <stmt sid="1984">
+      <skind iexp="228" iloc="248" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="1985">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="1" iloc="242" ilval="160" itag="call">
+             <args>
+              <exp iexp="229"/>
+             </args>
+            </instr>
+            <instr iexp="234" iloc="243" ilval="159" itag="set"/>
+            <instr iexp="235" iloc="244" ilval="158" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="1986"/>
+          <preds r="1984"/>
+         </stmt>
+         <stmt sid="1986">
+          <skind iexp="237" iloc="246" stag="if">
+           <thenblock>
+            <bstmts>
+             <stmt sid="1987">
+              <skind stag="instr">
+               <instrs>
+                <instr iexp="227" iloc="245" ilval="161" itag="set"/>
+               </instrs>
+              </skind>
+              <succs r="1989"/>
+              <preds r="1986"/>
+             </stmt>
+            </bstmts>
+           </thenblock>
+           <elseblock>
+            <bstmts/>
+           </elseblock>
+          </skind>
+          <succs r="1987,1989"/>
+          <preds r="1985"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts>
+         <stmt sid="1988">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="179" iloc="247" ilval="151" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="1989"/>
+          <preds r="1984"/>
+         </stmt>
+        </bstmts>
+       </elseblock>
+      </skind>
+      <succs r="1985,1988"/>
+      <preds r="1983"/>
+     </stmt>
+     <stmt sid="1989">
+      <skind iexp="223" iloc="250" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="1990">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="227" iloc="249" ilval="155" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="1991"/>
+          <preds r="1989"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="1990,1991"/>
+      <preds r="1988,1987,1986"/>
+     </stmt>
+     <stmt sid="1991">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="238" iloc="251" itag="call">
+         <args>
+          <exp iexp="225"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="1992"/>
+      <preds r="1990,1989"/>
+     </stmt>
+     <stmt sid="1992">
+      <skind iexp="239" iloc="252" stag="return"/>
+      <succs/>
+      <preds r="1991"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

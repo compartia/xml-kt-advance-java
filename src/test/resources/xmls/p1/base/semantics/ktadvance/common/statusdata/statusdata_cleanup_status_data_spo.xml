@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:54">
+   <application file="common/statusdata.c"/>
+  </header>
+  <function fname="cleanup_status_data">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="22,23" ictxt="4" iloc="29" ivinfo="12">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="7" iexp="24" iloc="30">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

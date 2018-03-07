@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:53">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="init_embedded_perl">
+   <inv-dictionary>
+    <non-relational-value-table>
+     <n a="1" ix="1" t="sx"/>
+     <n a="1,1" ix="2" t="iv"/>
+     <n a="1,1,1,1" ix="3" t="bv,x"/>
+     <n a="4,5" ix="4" t="rs"/>
+    </non-relational-value-table>
+    <invariant-fact-table>
+     <n a="1,1" ix="1" t="nrv"/>
+     <n a="3,2" ix="2" t="nrv"/>
+     <n a="1,3" ix="3" t="nrv"/>
+     <n a="4,4" ix="4" t="nrv"/>
+    </invariant-fact-table>
+   </inv-dictionary>
+   <location-invariants>
+    <loc ictxt="1652" ifacts="1,2,3,4"/>
+   </location-invariants>
+  </function>
+ </c-analysis>

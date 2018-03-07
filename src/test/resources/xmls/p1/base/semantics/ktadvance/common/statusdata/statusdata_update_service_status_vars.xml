@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:55">
+   <application file="common/statusdata.c"/>
+  </header>
+  <function fname="update_service_status">
+   <var-dictionary>
+    <allocated-region-data-table/>
+    <memory-base-table>
+     <n a="176" ix="1" t="bv"/>
+     <n a="1" ix="2" t="null"/>
+     <n a="-1" ix="3" t="null"/>
+     <n a="4,1" ix="4" t="fr,broker_service_status"/>
+     <n a="6,1" ix="5" t="fr,update_all_status_data"/>
+     <n a="86" ix="6" t="bv"/>
+    </memory-base-table>
+    <memory-reference-data-table>
+     <n a="6,81,2" ix="1"/>
+     <n a="6,82,2" ix="2"/>
+     <n a="6,83,2" ix="3"/>
+     <n a="6,84,2" ix="4"/>
+     <n a="6,85,2" ix="5"/>
+     <n a="6,86,2" ix="6"/>
+     <n a="6,87,2" ix="7"/>
+     <n a="6,88,2" ix="8"/>
+     <n a="6,89,2" ix="9"/>
+     <n a="6,90,2" ix="10"/>
+     <n a="6,91,2" ix="11"/>
+     <n a="6,92,2" ix="12"/>
+     <n a="6,93,2" ix="13"/>
+     <n a="6,94,2" ix="14"/>
+     <n a="6,95,2" ix="15"/>
+     <n a="6,96,2" ix="16"/>
+     <n a="6,97,2" ix="17"/>
+     <n a="6,98,2" ix="18"/>
+     <n a="6,99,2" ix="19"/>
+     <n a="6,100,2" ix="20"/>
+     <n a="6,101,2" ix="21"/>
+     <n a="6,102,2" ix="22"/>
+     <n a="6,103,2" ix="23"/>
+     <n a="6,104,2" ix="24"/>
+     <n a="6,105,2" ix="25"/>
+     <n a="6,106,2" ix="26"/>
+     <n a="6,107,2" ix="27"/>
+     <n a="6,108,2" ix="28"/>
+     <n a="6,109,2" ix="29"/>
+     <n a="6,110,2" ix="30"/>
+     <n a="6,111,2" ix="31"/>
+     <n a="6,112,2" ix="32"/>
+     <n a="6,113,2" ix="33"/>
+     <n a="6,114,2" ix="34"/>
+     <n a="6,115,2" ix="35"/>
+     <n a="6,116,2" ix="36"/>
+     <n a="6,117,2" ix="37"/>
+     <n a="6,118,2" ix="38"/>
+     <n a="6,119,2" ix="39"/>
+     <n a="6,120,2" ix="40"/>
+     <n a="6,121,2" ix="41"/>
+     <n a="6,122,2" ix="42"/>
+     <n a="6,123,2" ix="43"/>
+     <n a="6,124,2" ix="44"/>
+     <n a="6,125,2" ix="45"/>
+     <n a="6,126,2" ix="46"/>
+     <n a="6,127,2" ix="47"/>
+     <n a="6,128,2" ix="48"/>
+     <n a="6,129,2" ix="49"/>
+     <n a="6,130,2" ix="50"/>
+     <n a="6,131,2" ix="51"/>
+     <n a="6,132,2" ix="52"/>
+     <n a="6,133,2" ix="53"/>
+     <n a="6,134,2" ix="54"/>
+     <n a="6,135,2" ix="55"/>
+     <n a="6,136,2" ix="56"/>
+     <n a="6,137,2" ix="57"/>
+     <n a="6,138,2" ix="58"/>
+     <n a="6,139,2" ix="59"/>
+     <n a="6,140,2" ix="60"/>
+     <n a="6,141,2" ix="61"/>
+     <n a="6,142,2" ix="62"/>
+     <n a="6,143,2" ix="63"/>
+     <n a="6,144,2" ix="64"/>
+     <n a="6,145,2" ix="65"/>
+     <n a="6,146,2" ix="66"/>
+     <n a="6,147,2" ix="67"/>
+     <n a="6,148,2" ix="68"/>
+     <n a="6,149,2" ix="69"/>
+     <n a="6,150,2" ix="70"/>
+     <n a="6,151,2" ix="71"/>
+     <n a="6,152,2" ix="72"/>
+     <n a="6,153,2" ix="73"/>
+     <n a="6,154,2" ix="74"/>
+     <n a="6,155,2" ix="75"/>
+     <n a="6,156,2" ix="76"/>
+     <n a="6,157,2" ix="77"/>
+     <n a="6,158,2" ix="78"/>
+     <n a="6,159,2" ix="79"/>
+     <n a="6,160,2" ix="80"/>
+     <n a="6,161,2" ix="81"/>
+    </memory-reference-data-table>
+    <constant-value-variable-table>
+     <n a="1,3" ix="1" t="iv"/>
+     <n a="2,2" ix="2" t="iv"/>
+     <n a="4,8443,1,2,2,-1,2" ix="3" t="frv"/>
+     <n a="6,7060" ix="4" t="frv"/>
+     <n a="3,14" ix="5" t="iv"/>
+     <n a="4,14" ix="6" t="iv"/>
+     <n a="5,14" ix="7" t="iv"/>
+     <n a="6,14" ix="8" t="iv"/>
+     <n a="7,3" ix="9" t="iv"/>
+     <n a="8,3" ix="10" t="iv"/>
+     <n a="9,3" ix="11" t="iv"/>
+     <n a="10,3" ix="12" t="iv"/>
+     <n a="11,30" ix="13" t="iv"/>
+     <n a="12,3" ix="14" t="iv"/>
+     <n a="13,3" ix="15" t="iv"/>
+     <n a="14,3" ix="16" t="iv"/>
+     <n a="15,3" ix="17" t="iv"/>
+     <n a="16,3" ix="18" t="iv"/>
+     <n a="17,3" ix="19" t="iv"/>
+     <n a="18,3" ix="20" t="iv"/>
+     <n a="19,3" ix="21" t="iv"/>
+     <n a="20,3" ix="22" t="iv"/>
+     <n a="21,3" ix="23" t="iv"/>
+     <n a="22,3" ix="24" t="iv"/>
+     <n a="23,14" ix="25" t="iv"/>
+     <n a="24,14" ix="26" t="iv"/>
+     <n a="25,3" ix="27" t="iv"/>
+     <n a="26,31" ix="28" t="iv"/>
+     <n a="27,31" ix="29" t="iv"/>
+     <n a="28,3" ix="30" t="iv"/>
+     <n a="29,3" ix="31" t="iv"/>
+     <n a="30,3" ix="32" t="iv"/>
+     <n a="31,3" ix="33" t="iv"/>
+     <n a="32,3" ix="34" t="iv"/>
+     <n a="33,3" ix="35" t="iv"/>
+     <n a="34,3" ix="36" t="iv"/>
+     <n a="35,3" ix="37" t="iv"/>
+     <n a="36,3" ix="38" t="iv"/>
+     <n a="37,3" ix="39" t="iv"/>
+     <n a="38,3" ix="40" t="iv"/>
+     <n a="39,14" ix="41" t="iv"/>
+     <n a="40,3" ix="42" t="iv"/>
+     <n a="41,3" ix="43" t="iv"/>
+     <n a="42,3" ix="44" t="iv"/>
+     <n a="43,3" ix="45" t="iv"/>
+     <n a="44,3" ix="46" t="iv"/>
+     <n a="45,3" ix="47" t="iv"/>
+     <n a="46,3" ix="48" t="iv"/>
+     <n a="47,14" ix="49" t="iv"/>
+     <n a="48,14" ix="50" t="iv"/>
+     <n a="49,3" ix="51" t="iv"/>
+     <n a="50,32" ix="52" t="iv"/>
+     <n a="51,3" ix="53" t="iv"/>
+     <n a="52,32" ix="54" t="iv"/>
+     <n a="53,3" ix="55" t="iv"/>
+     <n a="54,32" ix="56" t="iv"/>
+     <n a="55,32" ix="57" t="iv"/>
+     <n a="56,3" ix="58" t="iv"/>
+     <n a="57,3" ix="59" t="iv"/>
+     <n a="58,32" ix="60" t="iv"/>
+     <n a="59,32" ix="61" t="iv"/>
+     <n a="60,32" ix="62" t="iv"/>
+     <n a="61,32" ix="63" t="iv"/>
+     <n a="62,32" ix="64" t="iv"/>
+     <n a="63,32" ix="65" t="iv"/>
+     <n a="64,3" ix="66" t="iv"/>
+     <n a="65,3" ix="67" t="iv"/>
+     <n a="66,3" ix="68" t="iv"/>
+     <n a="67,3" ix="69" t="iv"/>
+     <n a="68,3" ix="70" t="iv"/>
+     <n a="69,3" ix="71" t="iv"/>
+     <n a="70,31" ix="72" t="iv"/>
+     <n a="71,31" ix="73" t="iv"/>
+     <n a="72,3" ix="74" t="iv"/>
+     <n a="73,3" ix="75" t="iv"/>
+     <n a="74,3" ix="76" t="iv"/>
+     <n a="75,3" ix="77" t="iv"/>
+     <n a="76,33" ix="78" t="iv"/>
+     <n a="77,3" ix="79" t="iv"/>
+     <n a="78,3" ix="80" t="iv"/>
+     <n a="79,34" ix="81" t="iv"/>
+     <n a="80,31" ix="82" t="iv"/>
+     <n a="81,34" ix="83" t="iv"/>
+     <n a="82,36" ix="84" t="iv"/>
+     <n a="83,36" ix="85" t="iv"/>
+     <n a="173,3" ix="86" t="iv"/>
+     <n a="174,2" ix="87" t="iv"/>
+    </constant-value-variable-table>
+    <c-variable-denotation-table>
+     <n a="3" ix="1" t="rv"/>
+     <n a="8706,1" ix="2" t="lv"/>
+     <n a="1" ix="3" t="av"/>
+     <n a="8705,1" ix="4" t="lv"/>
+     <n a="2" ix="5" t="av"/>
+     <n a="3,1,1,1" ix="6" t="cv"/>
+     <n a="3,1,7,3" ix="7" t="cv"/>
+     <n a="36,1,2,1,1,3,1,1,4,2,1,5,2" ix="8" t="cv"/>
+     <n a="6,1,6,3" ix="9" t="cv"/>
+     <n a="8,1,8,1,1,9,2,1,10,2" ix="10" t="cv"/>
+     <n a="3" ix="11" t="av"/>
+     <n a="3,1,11,1" ix="12" t="cv"/>
+     <n a="4" ix="13" t="av"/>
+     <n a="1" ix="14" t="mv"/>
+     <n a="5" ix="15" t="av"/>
+     <n a="2" ix="16" t="mv"/>
+     <n a="6" ix="17" t="av"/>
+     <n a="3" ix="18" t="mv"/>
+     <n a="7" ix="19" t="av"/>
+     <n a="4" ix="20" t="mv"/>
+     <n a="8" ix="21" t="av"/>
+     <n a="5" ix="22" t="mv"/>
+     <n a="9" ix="23" t="av"/>
+     <n a="6" ix="24" t="mv"/>
+     <n a="10" ix="25" t="av"/>
+     <n a="7" ix="26" t="mv"/>
+     <n a="11" ix="27" t="av"/>
+     <n a="8" ix="28" t="mv"/>
+     <n a="12" ix="29" t="av"/>
+     <n a="9" ix="30" t="mv"/>
+     <n a="13" ix="31" t="av"/>
+     <n a="10" ix="32" t="mv"/>
+     <n a="14" ix="33" t="av"/>
+     <n a="11" ix="34" t="mv"/>
+     <n a="15" ix="35" t="av"/>
+     <n a="12" ix="36" t="mv"/>
+     <n a="16" ix="37" t="av"/>
+     <n a="13" ix="38" t="mv"/>
+     <n a="17" ix="39" t="av"/>
+     <n a="14" ix="40" t="mv"/>
+     <n a="18" ix="41" t="av"/>
+     <n a="15" ix="42" t="mv"/>
+     <n a="19" ix="43" t="av"/>
+     <n a="16" ix="44" t="mv"/>
+     <n a="20" ix="45" t="av"/>
+     <n a="17" ix="46" t="mv"/>
+     <n a="21" ix="47" t="av"/>
+     <n a="18" ix="48" t="mv"/>
+     <n a="22" ix="49" t="av"/>
+     <n a="19" ix="50" t="mv"/>
+     <n a="23" ix="51" t="av"/>
+     <n a="20" ix="52" t="mv"/>
+     <n a="24" ix="53" t="av"/>
+     <n a="21" ix="54" t="mv"/>
+     <n a="25" ix="55" t="av"/>
+     <n a="22" ix="56" t="mv"/>
+     <n a="26" ix="57" t="av"/>
+     <n a="23" ix="58" t="mv"/>
+     <n a="27" ix="59" t="av"/>
+     <n a="24" ix="60" t="mv"/>
+     <n a="28" ix="61" t="av"/>
+     <n a="25" ix="62" t="mv"/>
+     <n a="29" ix="63" t="av"/>
+     <n a="26" ix="64" t="mv"/>
+     <n a="30" ix="65" t="av"/>
+     <n a="27" ix="66" t="mv"/>
+     <n a="31" ix="67" t="av"/>
+     <n a="28" ix="68" t="mv"/>
+     <n a="32" ix="69" t="av"/>
+     <n a="29" ix="70" t="mv"/>
+     <n a="33" ix="71" t="av"/>
+     <n a="30" ix="72" t="mv"/>
+     <n a="34" ix="73" t="av"/>
+     <n a="31" ix="74" t="mv"/>
+     <n a="35" ix="75" t="av"/>
+     <n a="32" ix="76" t="mv"/>
+     <n a="36" ix="77" t="av"/>
+     <n a="33" ix="78" t="mv"/>
+     <n a="37" ix="79" t="av"/>
+     <n a="34" ix="80" t="mv"/>
+     <n a="38" ix="81" t="av"/>
+     <n a="35" ix="82" t="mv"/>
+     <n a="39" ix="83" t="av"/>
+     <n a="36" ix="84" t="mv"/>
+     <n a="40" ix="85" t="av"/>
+     <n a="37" ix="86" t="mv"/>
+     <n a="41" ix="87" t="av"/>
+     <n a="38" ix="88" t="mv"/>
+     <n a="42" ix="89" t="av"/>
+     <n a="39" ix="90" t="mv"/>
+     <n a="43" ix="91" t="av"/>
+     <n a="40" ix="92" t="mv"/>
+     <n a="44" ix="93" t="av"/>
+     <n a="41" ix="94" t="mv"/>
+     <n a="45" ix="95" t="av"/>
+     <n a="42" ix="96" t="mv"/>
+     <n a="46" ix="97" t="av"/>
+     <n a="43" ix="98" t="mv"/>
+     <n a="47" ix="99" t="av"/>
+     <n a="44" ix="100" t="mv"/>
+     <n a="48" ix="101" t="av"/>
+     <n a="45" ix="102" t="mv"/>
+     <n a="49" ix="103" t="av"/>
+     <n a="46" ix="104" t="mv"/>
+     <n a="50" ix="105" t="av"/>
+     <n a="47" ix="106" t="mv"/>
+     <n a="51" ix="107" t="av"/>
+     <n a="48" ix="108" t="mv"/>
+     <n a="52" ix="109" t="av"/>
+     <n a="49" ix="110" t="mv"/>
+     <n a="53" ix="111" t="av"/>
+     <n a="50" ix="112" t="mv"/>
+     <n a="54" ix="113" t="av"/>
+     <n a="51" ix="114" t="mv"/>
+     <n a="55" ix="115" t="av"/>
+     <n a="52" ix="116" t="mv"/>
+     <n a="56" ix="117" t="av"/>
+     <n a="53" ix="118" t="mv"/>
+     <n a="57" ix="119" t="av"/>
+     <n a="54" ix="120" t="mv"/>
+     <n a="58" ix="121" t="av"/>
+     <n a="55" ix="122" t="mv"/>
+     <n a="59" ix="123" t="av"/>
+     <n a="56" ix="124" t="mv"/>
+     <n a="60" ix="125" t="av"/>
+     <n a="57" ix="126" t="mv"/>
+     <n a="61" ix="127" t="av"/>
+     <n a="58" ix="128" t="mv"/>
+     <n a="62" ix="129" t="av"/>
+     <n a="59" ix="130" t="mv"/>
+     <n a="63" ix="131" t="av"/>
+     <n a="60" ix="132" t="mv"/>
+     <n a="64" ix="133" t="av"/>
+     <n a="61" ix="134" t="mv"/>
+     <n a="65" ix="135" t="av"/>
+     <n a="62" ix="136" t="mv"/>
+     <n a="66" ix="137" t="av"/>
+     <n a="63" ix="138" t="mv"/>
+     <n a="67" ix="139" t="av"/>
+     <n a="64" ix="140" t="mv"/>
+     <n a="68" ix="141" t="av"/>
+     <n a="65" ix="142" t="mv"/>
+     <n a="69" ix="143" t="av"/>
+     <n a="66" ix="144" t="mv"/>
+     <n a="70" ix="145" t="av"/>
+     <n a="67" ix="146" t="mv"/>
+     <n a="71" ix="147" t="av"/>
+     <n a="68" ix="148" t="mv"/>
+     <n a="72" ix="149" t="av"/>
+     <n a="69" ix="150" t="mv"/>
+     <n a="73" ix="151" t="av"/>
+     <n a="70" ix="152" t="mv"/>
+     <n a="74" ix="153" t="av"/>
+     <n a="71" ix="154" t="mv"/>
+     <n a="75" ix="155" t="av"/>
+     <n a="72" ix="156" t="mv"/>
+     <n a="76" ix="157" t="av"/>
+     <n a="73" ix="158" t="mv"/>
+     <n a="77" ix="159" t="av"/>
+     <n a="74" ix="160" t="mv"/>
+     <n a="78" ix="161" t="av"/>
+     <n a="75" ix="162" t="mv"/>
+     <n a="79" ix="163" t="av"/>
+     <n a="76" ix="164" t="mv"/>
+     <n a="80" ix="165" t="av"/>
+     <n a="77" ix="166" t="mv"/>
+     <n a="81" ix="167" t="av"/>
+     <n a="78" ix="168" t="mv"/>
+     <n a="82" ix="169" t="av"/>
+     <n a="79" ix="170" t="mv"/>
+     <n a="83" ix="171" t="av"/>
+     <n a="80" ix="172" t="mv"/>
+     <n a="84" ix="173" t="av"/>
+     <n a="81" ix="174" t="mv"/>
+     <n a="85" ix="175" t="av"/>
+     <n a="86" ix="176" t="av"/>
+     <n a="87" ix="177" t="av"/>
+     <n a="8680,1" ix="178" t="gv"/>
+     <n a="7,0,1,1" ix="179" t="cv"/>
+     <n a="8,0,2,1,1,8,1,1,9,2,1,10,2" ix="180" t="cv"/>
+    </c-variable-denotation-table>
+    <xpr-dictionary>
+     <numerical-table>
+      <n ix="1" t="1202"/>
+      <n ix="2" t="0"/>
+     </numerical-table>
+     <symbol-table>
+      <n a="2" ix="1" t="aggregated_dump"/>
+      <n a="4" ix="2" t="svc"/>
+      <n a="14" ix="3" t="memref-1"/>
+      <n a="16" ix="4" t="memref-2"/>
+      <n a="18" ix="5" t="memref-3"/>
+      <n a="20" ix="6" t="memref-4"/>
+      <n a="22" ix="7" t="memref-5"/>
+      <n a="24" ix="8" t="memref-6"/>
+      <n a="26" ix="9" t="memref-7"/>
+      <n a="28" ix="10" t="memref-8"/>
+      <n a="30" ix="11" t="memref-9"/>
+      <n a="32" ix="12" t="memref-10"/>
+      <n a="34" ix="13" t="memref-11"/>
+      <n a="36" ix="14" t="memref-12"/>
+      <n a="38" ix="15" t="memref-13"/>
+      <n a="40" ix="16" t="memref-14"/>
+      <n a="42" ix="17" t="memref-15"/>
+      <n a="44" ix="18" t="memref-16"/>
+      <n a="46" ix="19" t="memref-17"/>
+      <n a="48" ix="20" t="memref-18"/>
+      <n a="50" ix="21" t="memref-19"/>
+      <n a="52" ix="22" t="memref-20"/>
+      <n a="54" ix="23" t="memref-21"/>
+      <n a="56" ix="24" t="memref-22"/>
+      <n a="58" ix="25" t="memref-23"/>
+      <n a="60" ix="26" t="memref-24"/>
+      <n a="62" ix="27" t="memref-25"/>
+      <n a="64" ix="28" t="memref-26"/>
+      <n a="66" ix="29" t="memref-27"/>
+      <n a="68" ix="30" t="memref-28"/>
+      <n a="70" ix="31" t="memref-29"/>
+      <n a="72" ix="32" t="memref-30"/>
+      <n a="74" ix="33" t="memref-31"/>
+      <n a="76" ix="34" t="memref-32"/>
+      <n a="78" ix="35" t="memref-33"/>
+      <n a="80" ix="36" t="memref-34"/>
+      <n a="82" ix="37" t="memref-35"/>
+      <n a="84" ix="38" t="memref-36"/>
+      <n a="86" ix="39" t="memref-37"/>
+      <n a="88" ix="40" t="memref-38"/>
+      <n a="90" ix="41" t="memref-39"/>
+      <n a="92" ix="42" t="memref-40"/>
+      <n a="94" ix="43" t="memref-41"/>
+      <n a="96" ix="44" t="memref-42"/>
+      <n a="98" ix="45" t="memref-43"/>
+      <n a="100" ix="46" t="memref-44"/>
+      <n a="102" ix="47" t="memref-45"/>
+      <n a="104" ix="48" t="memref-46"/>
+      <n a="106" ix="49" t="memref-47"/>
+      <n a="108" ix="50" t="memref-48"/>
+      <n a="110" ix="51" t="memref-49"/>
+      <n a="112" ix="52" t="memref-50"/>
+      <n a="114" ix="53" t="memref-51"/>
+      <n a="116" ix="54" t="memref-52"/>
+      <n a="118" ix="55" t="memref-53"/>
+      <n a="120" ix="56" t="memref-54"/>
+      <n a="122" ix="57" t="memref-55"/>
+      <n a="124" ix="58" t="memref-56"/>
+      <n a="126" ix="59" t="memref-57"/>
+      <n a="128" ix="60" t="memref-58"/>
+      <n a="130" ix="61" t="memref-59"/>
+      <n a="132" ix="62" t="memref-60"/>
+      <n a="134" ix="63" t="memref-61"/>
+      <n a="136" ix="64" t="memref-62"/>
+      <n a="138" ix="65" t="memref-63"/>
+      <n a="140" ix="66" t="memref-64"/>
+      <n a="142" ix="67" t="memref-65"/>
+      <n a="144" ix="68" t="memref-66"/>
+      <n a="146" ix="69" t="memref-67"/>
+      <n a="148" ix="70" t="memref-68"/>
+      <n a="150" ix="71" t="memref-69"/>
+      <n a="152" ix="72" t="memref-70"/>
+      <n a="154" ix="73" t="memref-71"/>
+      <n a="156" ix="74" t="memref-72"/>
+      <n a="158" ix="75" t="memref-73"/>
+      <n a="160" ix="76" t="memref-74"/>
+      <n a="162" ix="77" t="memref-75"/>
+      <n a="164" ix="78" t="memref-76"/>
+      <n a="166" ix="79" t="memref-77"/>
+      <n a="168" ix="80" t="memref-78"/>
+      <n a="170" ix="81" t="memref-79"/>
+      <n a="172" ix="82" t="memref-80"/>
+      <n a="174" ix="83" t="memref-81"/>
+      <n a="175" ix="84" t="(memref-81_174_)#init"/>
+      <n a="173" ix="85" t="(memref-80_172_)#init"/>
+      <n a="5" ix="86" t="(svc_4_)#init"/>
+      <n a="171" ix="87" t="(memref-79_170_)#init"/>
+      <n a="169" ix="88" t="(memref-78_168_)#init"/>
+      <n a="167" ix="89" t="(memref-77_166_)#init"/>
+      <n a="165" ix="90" t="(memref-76_164_)#init"/>
+      <n a="163" ix="91" t="(memref-75_162_)#init"/>
+      <n a="161" ix="92" t="(memref-74_160_)#init"/>
+      <n a="159" ix="93" t="(memref-73_158_)#init"/>
+      <n a="157" ix="94" t="(memref-72_156_)#init"/>
+      <n a="155" ix="95" t="(memref-71_154_)#init"/>
+      <n a="153" ix="96" t="(memref-70_152_)#init"/>
+      <n a="151" ix="97" t="(memref-69_150_)#init"/>
+      <n a="149" ix="98" t="(memref-68_148_)#init"/>
+      <n a="147" ix="99" t="(memref-67_146_)#init"/>
+      <n a="145" ix="100" t="(memref-66_144_)#init"/>
+      <n a="143" ix="101" t="(memref-65_142_)#init"/>
+      <n a="141" ix="102" t="(memref-64_140_)#init"/>
+      <n a="139" ix="103" t="(memref-63_138_)#init"/>
+      <n a="137" ix="104" t="(memref-62_136_)#init"/>
+      <n a="135" ix="105" t="(memref-61_134_)#init"/>
+      <n a="133" ix="106" t="(memref-60_132_)#init"/>
+      <n a="131" ix="107" t="(memref-59_130_)#init"/>
+      <n a="129" ix="108" t="(memref-58_128_)#init"/>
+      <n a="127" ix="109" t="(memref-57_126_)#init"/>
+      <n a="125" ix="110" t="(memref-56_124_)#init"/>
+      <n a="123" ix="111" t="(memref-55_122_)#init"/>
+      <n a="121" ix="112" t="(memref-54_120_)#init"/>
+      <n a="119" ix="113" t="(memref-53_118_)#init"/>
+      <n a="117" ix="114" t="(memref-52_116_)#init"/>
+      <n a="115" ix="115" t="(memref-51_114_)#init"/>
+      <n a="113" ix="116" t="(memref-50_112_)#init"/>
+      <n a="111" ix="117" t="(memref-49_110_)#init"/>
+      <n a="109" ix="118" t="(memref-48_108_)#init"/>
+      <n a="107" ix="119" t="(memref-47_106_)#init"/>
+      <n a="105" ix="120" t="(memref-46_104_)#init"/>
+      <n a="103" ix="121" t="(memref-45_102_)#init"/>
+      <n a="101" ix="122" t="(memref-44_100_)#init"/>
+      <n a="99" ix="123" t="(memref-43_98_)#init"/>
+      <n a="97" ix="124" t="(memref-42_96_)#init"/>
+      <n a="95" ix="125" t="(memref-41_94_)#init"/>
+      <n a="93" ix="126" t="(memref-40_92_)#init"/>
+      <n a="91" ix="127" t="(memref-39_90_)#init"/>
+      <n a="89" ix="128" t="(memref-38_88_)#init"/>
+      <n a="87" ix="129" t="(memref-37_86_)#init"/>
+      <n a="85" ix="130" t="(memref-36_84_)#init"/>
+      <n a="83" ix="131" t="(memref-35_82_)#init"/>
+      <n a="81" ix="132" t="(memref-34_80_)#init"/>
+      <n a="79" ix="133" t="(memref-33_78_)#init"/>
+      <n a="77" ix="134" t="(memref-32_76_)#init"/>
+      <n a="75" ix="135" t="(memref-31_74_)#init"/>
+      <n a="73" ix="136" t="(memref-30_72_)#init"/>
+      <n a="71" ix="137" t="(memref-29_70_)#init"/>
+      <n a="69" ix="138" t="(memref-28_68_)#init"/>
+      <n a="67" ix="139" t="(memref-27_66_)#init"/>
+      <n a="65" ix="140" t="(memref-26_64_)#init"/>
+      <n a="63" ix="141" t="(memref-25_62_)#init"/>
+      <n a="61" ix="142" t="(memref-24_60_)#init"/>
+      <n a="59" ix="143" t="(memref-23_58_)#init"/>
+      <n a="57" ix="144" t="(memref-22_56_)#init"/>
+      <n a="55" ix="145" t="(memref-21_54_)#init"/>
+      <n a="53" ix="146" t="(memref-20_52_)#init"/>
+      <n a="51" ix="147" t="(memref-19_50_)#init"/>
+      <n a="49" ix="148" t="(memref-18_48_)#init"/>
+      <n a="47" ix="149" t="(memref-17_46_)#init"/>
+      <n a="45" ix="150" t="(memref-16_44_)#init"/>
+      <n a="43" ix="151" t="(memref-15_42_)#init"/>
+      <n a="41" ix="152" t="(memref-14_40_)#init"/>
+      <n a="39" ix="153" t="(memref-13_38_)#init"/>
+      <n a="37" ix="154" t="(memref-12_36_)#init"/>
+      <n a="35" ix="155" t="(memref-11_34_)#init"/>
+      <n a="33" ix="156" t="(memref-10_32_)#init"/>
+      <n a="31" ix="157" t="(memref-9_30_)#init"/>
+      <n a="29" ix="158" t="(memref-8_28_)#init"/>
+      <n a="27" ix="159" t="(memref-7_26_)#init"/>
+      <n a="25" ix="160" t="(memref-6_24_)#init"/>
+      <n a="23" ix="161" t="(memref-5_22_)#init"/>
+      <n a="21" ix="162" t="(memref-4_20_)#init"/>
+      <n a="19" ix="163" t="(memref-3_18_)#init"/>
+      <n a="17" ix="164" t="(memref-2_16_)#init"/>
+      <n a="15" ix="165" t="(memref-1_14_)#init"/>
+      <n a="3" ix="166" t="(aggregated_dump_2_)#init"/>
+      <n a="1" ix="167" t="return"/>
+      <n a="8" ix="168" t="check_(ppo:2:1)_(ppo:3:1)_(ppo:4:2)_(ppo:5:2)"/>
+      <n a="7" ix="169" t="check_(ppo:7:3)"/>
+      <n a="10" ix="170" t="check_(ppo:8:1)_(ppo:9:2)_(ppo:10:2)"/>
+      <n a="9" ix="171" t="check_(ppo:6:3)"/>
+      <n a="6" ix="172" t="check_(ppo:1:1)"/>
+      <n a="2" ix="173" t="NULL(1)"/>
+      <n a="1" ix="174" t="addr_in_(svc_4_)#init"/>
+      <n a="4" ix="175" t="freed(by:broker_service_status @168 r:1"/>
+      <n a="5" ix="176" t="freed(by:update_all_status_data @175 r:1"/>
+      <n a="177" ix="177" t="(svc_4_)#init"/>
+      <n a="180" ix="178" t="check_(spo:2:1)_(ppo:8:1)_(ppo:9:2)_(ppo:10:2)"/>
+     </symbol-table>
+     <variable-table>
+      <n a="1" ix="1" t="nv"/>
+      <n a="2" ix="2" t="nv"/>
+      <n a="3" ix="3" t="nv"/>
+      <n a="4" ix="4" t="nv"/>
+      <n a="5" ix="5" t="nv"/>
+      <n a="6" ix="6" t="nv"/>
+      <n a="7" ix="7" t="nv"/>
+      <n a="8" ix="8" t="nv"/>
+      <n a="9" ix="9" t="nv"/>
+      <n a="10" ix="10" t="nv"/>
+      <n a="11" ix="11" t="nv"/>
+      <n a="12" ix="12" t="nv"/>
+      <n a="13" ix="13" t="nv"/>
+      <n a="14" ix="14" t="nv"/>
+      <n a="15" ix="15" t="nv"/>
+      <n a="16" ix="16" t="nv"/>
+      <n a="17" ix="17" t="nv"/>
+      <n a="18" ix="18" t="nv"/>
+      <n a="19" ix="19" t="nv"/>
+      <n a="20" ix="20" t="nv"/>
+      <n a="21" ix="21" t="nv"/>
+      <n a="22" ix="22" t="nv"/>
+      <n a="23" ix="23" t="nv"/>
+      <n a="24" ix="24" t="nv"/>
+      <n a="25" ix="25" t="nv"/>
+      <n a="26" ix="26" t="nv"/>
+      <n a="27" ix="27" t="nv"/>
+      <n a="28" ix="28" t="nv"/>
+      <n a="29" ix="29" t="nv"/>
+      <n a="30" ix="30" t="nv"/>
+      <n a="31" ix="31" t="nv"/>
+      <n a="32" ix="32" t="nv"/>
+      <n a="33" ix="33" t="nv"/>
+      <n a="34" ix="34" t="nv"/>
+      <n a="35" ix="35" t="nv"/>
+      <n a="36" ix="36" t="nv"/>
+      <n a="37" ix="37" t="nv"/>
+      <n a="38" ix="38" t="nv"/>
+      <n a="39" ix="39" t="nv"/>
+      <n a="40" ix="40" t="nv"/>
+      <n a="41" ix="41" t="nv"/>
+      <n a="42" ix="42" t="nv"/>
+      <n a="43" ix="43" t="nv"/>
+      <n a="44" ix="44" t="nv"/>
+      <n a="45" ix="45" t="nv"/>
+      <n a="46" ix="46" t="nv"/>
+      <n a="47" ix="47" t="nv"/>
+      <n a="48" ix="48" t="nv"/>
+      <n a="49" ix="49" t="nv"/>
+      <n a="50" ix="50" t="nv"/>
+      <n a="51" ix="51" t="nv"/>
+      <n a="52" ix="52" t="nv"/>
+      <n a="53" ix="53" t="nv"/>
+      <n a="54" ix="54" t="nv"/>
+      <n a="55" ix="55" t="nv"/>
+      <n a="56" ix="56" t="nv"/>
+      <n a="57" ix="57" t="nv"/>
+      <n a="58" ix="58" t="nv"/>
+      <n a="59" ix="59" t="nv"/>
+      <n a="60" ix="60" t="nv"/>
+      <n a="61" ix="61" t="nv"/>
+      <n a="62" ix="62" t="nv"/>
+      <n a="63" ix="63" t="nv"/>
+      <n a="64" ix="64" t="nv"/>
+      <n a="65" ix="65" t="nv"/>
+      <n a="66" ix="66" t="nv"/>
+      <n a="67" ix="67" t="nv"/>
+      <n a="68" ix="68" t="nv"/>
+      <n a="69" ix="69" t="nv"/>
+      <n a="70" ix="70" t="nv"/>
+      <n a="71" ix="71" t="nv"/>
+      <n a="72" ix="72" t="nv"/>
+      <n a="73" ix="73" t="nv"/>
+      <n a="74" ix="74" t="nv"/>
+      <n a="75" ix="75" t="nv"/>
+      <n a="76" ix="76" t="nv"/>
+      <n a="77" ix="77" t="nv"/>
+      <n a="78" ix="78" t="nv"/>
+      <n a="79" ix="79" t="nv"/>
+      <n a="80" ix="80" t="nv"/>
+      <n a="81" ix="81" t="nv"/>
+      <n a="82" ix="82" t="nv"/>
+      <n a="83" ix="83" t="nv"/>
+      <n a="84" ix="84" t="nv"/>
+      <n a="85" ix="85" t="nv"/>
+      <n a="86" ix="86" t="nv"/>
+      <n a="87" ix="87" t="nv"/>
+      <n a="88" ix="88" t="nv"/>
+      <n a="89" ix="89" t="nv"/>
+      <n a="90" ix="90" t="nv"/>
+      <n a="91" ix="91" t="nv"/>
+      <n a="92" ix="92" t="nv"/>
+      <n a="93" ix="93" t="nv"/>
+      <n a="94" ix="94" t="nv"/>
+      <n a="95" ix="95" t="nv"/>
+      <n a="96" ix="96" t="nv"/>
+      <n a="97" ix="97" t="nv"/>
+      <n a="98" ix="98" t="nv"/>
+      <n a="99" ix="99" t="nv"/>
+      <n a="100" ix="100" t="nv"/>
+      <n a="101" ix="101" t="nv"/>
+      <n a="102" ix="102" t="nv"/>
+      <n a="103" ix="103" t="nv"/>
+      <n a="104" ix="104" t="nv"/>
+      <n a="105" ix="105" t="nv"/>
+      <n a="106" ix="106" t="nv"/>
+      <n a="107" ix="107" t="nv"/>
+      <n a="108" ix="108" t="nv"/>
+      <n a="109" ix="109" t="nv"/>
+      <n a="110" ix="110" t="nv"/>
+      <n a="111" ix="111" t="nv"/>
+      <n a="112" ix="112" t="nv"/>
+      <n a="113" ix="113" t="nv"/>
+      <n a="114" ix="114" t="nv"/>
+      <n a="115" ix="115" t="nv"/>
+      <n a="116" ix="116" t="nv"/>
+      <n a="117" ix="117" t="nv"/>
+      <n a="118" ix="118" t="nv"/>
+      <n a="119" ix="119" t="nv"/>
+      <n a="120" ix="120" t="nv"/>
+      <n a="121" ix="121" t="nv"/>
+      <n a="122" ix="122" t="nv"/>
+      <n a="123" ix="123" t="nv"/>
+      <n a="124" ix="124" t="nv"/>
+      <n a="125" ix="125" t="nv"/>
+      <n a="126" ix="126" t="nv"/>
+      <n a="127" ix="127" t="nv"/>
+      <n a="128" ix="128" t="nv"/>
+      <n a="129" ix="129" t="nv"/>
+      <n a="130" ix="130" t="nv"/>
+      <n a="131" ix="131" t="nv"/>
+      <n a="132" ix="132" t="nv"/>
+      <n a="133" ix="133" t="nv"/>
+      <n a="134" ix="134" t="nv"/>
+      <n a="135" ix="135" t="nv"/>
+      <n a="136" ix="136" t="nv"/>
+      <n a="137" ix="137" t="nv"/>
+      <n a="138" ix="138" t="nv"/>
+      <n a="139" ix="139" t="nv"/>
+      <n a="140" ix="140" t="nv"/>
+      <n a="141" ix="141" t="nv"/>
+      <n a="142" ix="142" t="nv"/>
+      <n a="143" ix="143" t="nv"/>
+      <n a="144" ix="144" t="nv"/>
+      <n a="145" ix="145" t="nv"/>
+      <n a="146" ix="146" t="nv"/>
+      <n a="147" ix="147" t="nv"/>
+      <n a="148" ix="148" t="nv"/>
+      <n a="149" ix="149" t="nv"/>
+      <n a="150" ix="150" t="nv"/>
+      <n a="151" ix="151" t="nv"/>
+      <n a="152" ix="152" t="nv"/>
+      <n a="153" ix="153" t="nv"/>
+      <n a="154" ix="154" t="nv"/>
+      <n a="155" ix="155" t="nv"/>
+      <n a="156" ix="156" t="nv"/>
+      <n a="157" ix="157" t="nv"/>
+      <n a="158" ix="158" t="nv"/>
+      <n a="159" ix="159" t="nv"/>
+      <n a="160" ix="160" t="nv"/>
+      <n a="161" ix="161" t="nv"/>
+      <n a="162" ix="162" t="nv"/>
+      <n a="163" ix="163" t="nv"/>
+      <n a="164" ix="164" t="nv"/>
+      <n a="165" ix="165" t="nv"/>
+      <n a="166" ix="166" t="nv"/>
+      <n a="167" ix="167" t="nv"/>
+      <n a="168" ix="168" t="nv"/>
+      <n a="169" ix="169" t="nv"/>
+      <n a="170" ix="170" t="nv"/>
+      <n a="171" ix="171" t="nv"/>
+      <n a="172" ix="172" t="nv"/>
+      <n a="1" ix="173" t="sv"/>
+      <n a="2" ix="174" t="sv"/>
+      <n a="168" ix="175" t="sv"/>
+      <n a="177" ix="176" t="sv"/>
+      <n a="178" ix="177" t="nv"/>
+     </variable-table>
+     <xcst-table>
+      <n a="1" ix="1" t="ic"/>
+      <n a="2" ix="2" t="ic"/>
+     </xcst-table>
+     <xpr-table>
+      <n a="1" ix="1" t="c"/>
+      <n a="2" ix="2" t="c"/>
+      <n a="84" ix="3" t="v"/>
+      <n a="85" ix="4" t="v"/>
+      <n a="86" ix="5" t="v"/>
+      <n a="87" ix="6" t="v"/>
+      <n a="88" ix="7" t="v"/>
+      <n a="89" ix="8" t="v"/>
+      <n a="90" ix="9" t="v"/>
+      <n a="91" ix="10" t="v"/>
+      <n a="92" ix="11" t="v"/>
+      <n a="93" ix="12" t="v"/>
+      <n a="94" ix="13" t="v"/>
+      <n a="95" ix="14" t="v"/>
+      <n a="96" ix="15" t="v"/>
+      <n a="97" ix="16" t="v"/>
+      <n a="98" ix="17" t="v"/>
+      <n a="99" ix="18" t="v"/>
+      <n a="100" ix="19" t="v"/>
+      <n a="101" ix="20" t="v"/>
+      <n a="102" ix="21" t="v"/>
+      <n a="103" ix="22" t="v"/>
+      <n a="104" ix="23" t="v"/>
+      <n a="105" ix="24" t="v"/>
+      <n a="106" ix="25" t="v"/>
+      <n a="107" ix="26" t="v"/>
+      <n a="108" ix="27" t="v"/>
+      <n a="109" ix="28" t="v"/>
+      <n a="110" ix="29" t="v"/>
+      <n a="111" ix="30" t="v"/>
+      <n a="112" ix="31" t="v"/>
+      <n a="113" ix="32" t="v"/>
+      <n a="114" ix="33" t="v"/>
+      <n a="115" ix="34" t="v"/>
+      <n a="116" ix="35" t="v"/>
+      <n a="117" ix="36" t="v"/>
+      <n a="118" ix="37" t="v"/>
+      <n a="119" ix="38" t="v"/>
+      <n a="120" ix="39" t="v"/>
+      <n a="121" ix="40" t="v"/>
+      <n a="122" ix="41" t="v"/>
+      <n a="123" ix="42" t="v"/>
+      <n a="124" ix="43" t="v"/>
+      <n a="125" ix="44" t="v"/>
+      <n a="126" ix="45" t="v"/>
+      <n a="127" ix="46" t="v"/>
+      <n a="128" ix="47" t="v"/>
+      <n a="129" ix="48" t="v"/>
+      <n a="130" ix="49" t="v"/>
+      <n a="131" ix="50" t="v"/>
+      <n a="132" ix="51" t="v"/>
+      <n a="133" ix="52" t="v"/>
+      <n a="134" ix="53" t="v"/>
+      <n a="135" ix="54" t="v"/>
+      <n a="136" ix="55" t="v"/>
+      <n a="137" ix="56" t="v"/>
+      <n a="138" ix="57" t="v"/>
+      <n a="139" ix="58" t="v"/>
+      <n a="140" ix="59" t="v"/>
+      <n a="141" ix="60" t="v"/>
+      <n a="142" ix="61" t="v"/>
+      <n a="143" ix="62" t="v"/>
+      <n a="144" ix="63" t="v"/>
+      <n a="145" ix="64" t="v"/>
+      <n a="146" ix="65" t="v"/>
+      <n a="147" ix="66" t="v"/>
+      <n a="148" ix="67" t="v"/>
+      <n a="149" ix="68" t="v"/>
+      <n a="150" ix="69" t="v"/>
+      <n a="151" ix="70" t="v"/>
+      <n a="152" ix="71" t="v"/>
+      <n a="153" ix="72" t="v"/>
+      <n a="154" ix="73" t="v"/>
+      <n a="155" ix="74" t="v"/>
+      <n a="156" ix="75" t="v"/>
+      <n a="157" ix="76" t="v"/>
+      <n a="158" ix="77" t="v"/>
+      <n a="159" ix="78" t="v"/>
+      <n a="160" ix="79" t="v"/>
+      <n a="161" ix="80" t="v"/>
+      <n a="162" ix="81" t="v"/>
+      <n a="163" ix="82" t="v"/>
+      <n a="164" ix="83" t="v"/>
+      <n a="165" ix="84" t="v"/>
+      <n a="166" ix="85" t="v"/>
+     </xpr-table>
+     <xpr-list-table/>
+     <xpr-list-list-table/>
+    </xpr-dictionary>
+   </var-dictionary>
+   <allocated-regions size="1"/>
+   <memory-regions size="6">
+    <region imb="1" index="1"/>
+    <region imb="2" index="2"/>
+    <region imb="3" index="3"/>
+    <region imb="4" index="4"/>
+    <region imb="5" index="5"/>
+   </memory-regions>
+   <memory-references size="82">
+    <reference imrd="1" index="1"/>
+    <reference imrd="2" index="2"/>
+    <reference imrd="3" index="3"/>
+    <reference imrd="4" index="4"/>
+    <reference imrd="5" index="5"/>
+    <reference imrd="6" index="6"/>
+    <reference imrd="7" index="7"/>
+    <reference imrd="8" index="8"/>
+    <reference imrd="9" index="9"/>
+    <reference imrd="10" index="10"/>
+    <reference imrd="11" index="11"/>
+    <reference imrd="12" index="12"/>
+    <reference imrd="13" index="13"/>
+    <reference imrd="14" index="14"/>
+    <reference imrd="15" index="15"/>
+    <reference imrd="16" index="16"/>
+    <reference imrd="17" index="17"/>
+    <reference imrd="18" index="18"/>
+    <reference imrd="19" index="19"/>
+    <reference imrd="20" index="20"/>
+    <reference imrd="21" index="21"/>
+    <reference imrd="22" index="22"/>
+    <reference imrd="23" index="23"/>
+    <reference imrd="24" index="24"/>
+    <reference imrd="25" index="25"/>
+    <reference imrd="26" index="26"/>
+    <reference imrd="27" index="27"/>
+    <reference imrd="28" index="28"/>
+    <reference imrd="29" index="29"/>
+    <reference imrd="30" index="30"/>
+    <reference imrd="31" index="31"/>
+    <reference imrd="32" index="32"/>
+    <reference imrd="33" index="33"/>
+    <reference imrd="34" index="34"/>
+    <reference imrd="35" index="35"/>
+    <reference imrd="36" index="36"/>
+    <reference imrd="37" index="37"/>
+    <reference imrd="38" index="38"/>
+    <reference imrd="39" index="39"/>
+    <reference imrd="40" index="40"/>
+    <reference imrd="41" index="41"/>
+    <reference imrd="42" index="42"/>
+    <reference imrd="43" index="43"/>
+    <reference imrd="44" index="44"/>
+    <reference imrd="45" index="45"/>
+    <reference imrd="46" index="46"/>
+    <reference imrd="47" index="47"/>
+    <reference imrd="48" index="48"/>
+    <reference imrd="49" index="49"/>
+    <reference imrd="50" index="50"/>
+    <reference imrd="51" index="51"/>
+    <reference imrd="52" index="52"/>
+    <reference imrd="53" index="53"/>
+    <reference imrd="54" index="54"/>
+    <reference imrd="55" index="55"/>
+    <reference imrd="56" index="56"/>
+    <reference imrd="57" index="57"/>
+    <reference imrd="58" index="58"/>
+    <reference imrd="59" index="59"/>
+    <reference imrd="60" index="60"/>
+    <reference imrd="61" index="61"/>
+    <reference imrd="62" index="62"/>
+    <reference imrd="63" index="63"/>
+    <reference imrd="64" index="64"/>
+    <reference imrd="65" index="65"/>
+    <reference imrd="66" index="66"/>
+    <reference imrd="67" index="67"/>
+    <reference imrd="68" index="68"/>
+    <reference imrd="69" index="69"/>
+    <reference imrd="70" index="70"/>
+    <reference imrd="71" index="71"/>
+    <reference imrd="72" index="72"/>
+    <reference imrd="73" index="73"/>
+    <reference imrd="74" index="74"/>
+    <reference imrd="75" index="75"/>
+    <reference imrd="76" index="76"/>
+    <reference imrd="77" index="77"/>
+    <reference imrd="78" index="78"/>
+    <reference imrd="79" index="79"/>
+    <reference imrd="80" index="80"/>
+    <reference imrd="81" index="81"/>
+   </memory-references>
+  </function>
+ </c-analysis>

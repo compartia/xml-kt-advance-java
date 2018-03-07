@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="base/utils" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:48"/>
+  </header>
+  <function filename="base/utils">
+   <svar ivinfo="15"/>
+   <declarations>
+    <local-varinfo-table/>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="1860">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="397" iloc="428" itag="call">
+         <args>
+          <exp iexp="429"/>
+         </args>
+        </instr>
+        <instr iexp="399" iloc="429" itag="call">
+         <args>
+          <exp iexp="429"/>
+          <exp iexp="400"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="1861"/>
+      <preds/>
+     </stmt>
+     <stmt sid="1861">
+      <skind iexp="19" iloc="430" stag="return"/>
+      <succs/>
+      <preds r="1860"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

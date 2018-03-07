@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="base/utils" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:48"/>
+  </header>
+  <function filename="base/utils">
+   <svar ivinfo="24"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="9974,21,1,0,0,571,0,1" ix="1" t="val1a,n"/>
+     <n a="9975,21,1,0,0,572,0,2" ix="2" t="val1b,n"/>
+     <n a="9976,21,1,0,0,573,0,3" ix="3" t="val2a,n"/>
+     <n a="9977,21,1,0,0,574,0,4" ix="4" t="val2b,n"/>
+     <n a="9978,1,1,0,0,575,0,0" ix="5" t="result,n"/>
+     <n a="9979,1,1,0,0,-1,0,0" ix="6" t="tmp,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="1750">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="610" iloc="576" ilval="328" itag="call">
+         <args>
+          <exp iexp="611"/>
+          <exp iexp="612"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="1751"/>
+      <preds/>
+     </stmt>
+     <stmt sid="1751">
+      <skind iexp="614" iloc="581" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="1752">
+          <skind iexp="20" iloc="577" stag="return"/>
+          <succs/>
+          <preds r="1751"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts>
+         <stmt sid="1753">
+          <skind iexp="615" iloc="580" stag="if">
+           <thenblock>
+            <bstmts>
+             <stmt sid="1754">
+              <skind iexp="29" iloc="578" stag="return"/>
+              <succs/>
+              <preds r="1753"/>
+             </stmt>
+            </bstmts>
+           </thenblock>
+           <elseblock>
+            <bstmts>
+             <stmt sid="1755">
+              <skind stag="instr">
+               <instrs>
+                <instr iexp="610" iloc="579" ilval="331" itag="call">
+                 <args>
+                  <exp iexp="616"/>
+                  <exp iexp="617"/>
+                 </args>
+                </instr>
+               </instrs>
+              </skind>
+              <succs r="1756"/>
+              <preds r="1753"/>
+             </stmt>
+             <stmt sid="1756">
+              <skind iexp="618" iloc="579" stag="return"/>
+              <succs/>
+              <preds r="1755"/>
+             </stmt>
+            </bstmts>
+           </elseblock>
+          </skind>
+          <succs r="1754,1755"/>
+          <preds r="1751"/>
+         </stmt>
+        </bstmts>
+       </elseblock>
+      </skind>
+      <succs r="1752,1753"/>
+      <preds r="1750"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

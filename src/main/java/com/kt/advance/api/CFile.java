@@ -33,4 +33,6 @@ public interface CFile {
 
     Collection<? extends CFunction> getCFunctions();
 
+    CApplication getApplication();
+
 }

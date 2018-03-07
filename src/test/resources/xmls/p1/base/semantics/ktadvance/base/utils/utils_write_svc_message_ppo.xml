@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:32:00">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="write_svc_message">
+   <ppos>
+    <ppo deps="f" id="22" invs="77" ippo="22" s="g" ts="2018-01-09 15:52:28">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__errno_location()#return"/>
+    </ppo>
+    <ppo deps="s" id="45" ippo="45" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="54" ippo="54" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="f" id="18" invs="69" ippo="18" s="g" ts="2018-01-09 15:52:28">
+     <e txt="assignedAt#3843"/>
+    </ppo>
+    <ppo deps="f" id="19" invs="19" ippo="19" s="g" ts="2018-01-09 15:52:28">
+     <e txt="variable pointed to by return value from __errno_location is initialized"/>
+    </ppo>
+    <ppo deps="s" id="32" ippo="32" s="g">
+     <e txt="one of the arguments is a null pointer "/>
+    </ppo>
+    <ppo deps="f" id="17" invs="65" ippo="17" s="g" ts="2018-01-09 15:52:28">
+     <e txt="assignedAt#3843(rv:write)"/>
+    </ppo>
+    <ppo deps="s" id="50" ippo="50" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo id="28" ippo="28"/>
+    <ppo deps="s" id="53" ippo="53" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="f" id="23" invs="28" ippo="23" s="g" ts="2018-01-09 15:52:28">
+     <e txt="return value from function __errno_location satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="25" ippo="25" s="g">
+     <e txt="casting from int to long is safe"/>
+    </ppo>
+    <ppo deps="s" id="40" ippo="40" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo deps="s" id="47" ippo="47" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="44" ippo="44" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="49" ippo="49" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="52" ippo="52" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="a" id="5" ids="1" invs="25" ippo="5" s="g" ts="2018-01-09 15:52:28">
+     <e txt="condition not-null(message) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="55" ippo="55" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="30" ippo="30" s="g">
+     <e txt="null pointer cannot be dereferenced, and hence target cannot be initialized (acceptability of null is checked separately)"/>
+    </ppo>
+    <ppo deps="f" id="62" invs="17" ippo="62" s="g" ts="2018-01-09 15:52:28">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments:"/>
+        <msg t="[2]:function return value: __errno_location"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function __errno_location satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="16" invs="57" ippo="16" s="g" ts="2018-01-09 15:52:28">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:remaining constraint for lower bound: ((write(_^_^496)#return &gt;= -2147483648); remaining constraint for upper bound: ((write(_^_^496)#return &lt;= 2147483647)"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="both lower bound: -1 and upper bound 496 fit in range [-2147483648 - 2147483647]"/>
+    </ppo>
+    <ppo deps="f" id="24" invs="28" ippo="24" s="g" ts="2018-01-09 15:52:28">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments:"/>
+        <msg t="[2]:function return value: __errno_location"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function __errno_location satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="60" invs="74" ippo="60" s="g" ts="2018-01-09 15:52:28">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__errno_location()#return"/>
+    </ppo>
+    <ppo deps="f" id="14" invs="25" ippo="14" s="g" ts="2018-01-09 15:52:28">
+     <e txt="initial value of parameter message satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="21" invs="28" ippo="21" s="g" ts="2018-01-09 15:52:28">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: __errno_location"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="return value from __errno_location is guaranteed not null"/>
+    </ppo>
+    <ppo deps="s" id="33" ippo="33" s="g">
+     <e txt="one of the arguments is a null pointer "/>
+    </ppo>
+    <ppo id="37" ippo="37"/>
+    <ppo deps="f" id="59" invs="17" ippo="59" s="g" ts="2018-01-09 15:52:28">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: __errno_location"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="return value from __errno_location is guaranteed not null"/>
+    </ppo>
+    <ppo id="36" ippo="36"/>
+    <ppo deps="a" id="6" ids="2" invs="25,22" ippo="6" s="g" ts="2018-01-09 15:52:28">
+     <e txt="condition ptr-upperbound(((message +i 496):void) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="15" invs="25" ippo="15" s="g" ts="2018-01-09 15:52:28">
+     <e txt="upper-bound value is initial value of parameter message satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="41" ippo="41" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="f" id="57" invs="18" ippo="57" s="g" ts="2018-01-09 15:52:28">
+     <e txt="variable pointed to by return value from __errno_location is initialized"/>
+    </ppo>
+    <ppo deps="s" id="27" ippo="27" s="g">
+     <e txt="address of variable tv"/>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="index value 1 is less than bound 2"/>
+    </ppo>
+    <ppo deps="s" id="26" ippo="26" s="g">
+     <e txt="casting from int to long is safe"/>
+    </ppo>
+    <ppo deps="s" id="38" ippo="38" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+    <ppo deps="s" id="42" ippo="42" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="56" ippo="56" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="f" id="61" invs="17" ippo="61" s="g" ts="2018-01-09 15:52:28">
+     <e txt="return value from function __errno_location satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="11" ippo="11" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="index value 1 is non-negative"/>
+    </ppo>
+    <ppo deps="s" id="31" ippo="31" s="g">
+     <e txt="null pointer cannot be dereferenced, and hence target cannot be initialized (acceptability of null is checked separately)"/>
+    </ppo>
+    <ppo deps="s" id="12" ippo="12" s="g">
+     <e txt="message is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="46" ippo="46" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="f" id="58" invs="64" ippo="58" s="g" ts="2018-01-09 15:52:28">
+     <e txt="assignedAt#3856(rv:__errno_location)"/>
+    </ppo>
+    <ppo deps="f" id="13" invs="76" ippo="13" s="g" ts="2018-01-09 15:52:28">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(message_2_)#init"/>
+    </ppo>
+    <ppo deps="s" id="39" ippo="39" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo id="63" ippo="63">
+     <d>
+      <invs>
+       <arg a="1" i="11,54"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="7" ippo="7">
+     <d>
+      <invs>
+       <arg a="1" i="25,51,76"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:value: 496"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="34" ippo="34" s="g">
+     <e txt="one of the arguments is a null pointer "/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="ipc_pipe is global"/>
+    </ppo>
+    <ppo id="35" ippo="35"/>
+    <ppo deps="s" id="51" ippo="51" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="48" ippo="48" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+    <ppo deps="s" id="29" ippo="29" s="g">
+     <e txt="null pointer cannot be dereferenced, and hence target cannot be initialized (acceptability of null is checked separately)"/>
+    </ppo>
+    <ppo deps="s" id="43" ippo="43" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="message is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="20" invs="66" ippo="20" s="g" ts="2018-01-09 15:52:28">
+     <e txt="assignedAt#3848(rv:__errno_location)"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

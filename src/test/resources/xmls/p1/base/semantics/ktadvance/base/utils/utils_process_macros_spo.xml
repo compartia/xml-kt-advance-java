@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:29:29">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="process_macros">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="40,3306" ictxt="2700" iloc="2670" ivinfo="30">
+       <api-conditions>
+        <api-c iapi="8063">
+         <po deps="s" id="8" ispo="8" s="g">
+          <e txt="constant string is guaranteed to have at least one character"/>
+         </po>
+        </api-c>
+        <api-c iapi="8062">
+         <po deps="s" id="7" ispo="7" s="r">
+          <e txt="expression is a null pointer"/>
+         </po>
+        </api-c>
+        <api-c iapi="5144">
+         <po deps="s" id="6" ispo="6" s="g">
+          <e txt="string literal"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="3307" ictxt="2481" iloc="2691" ivinfo="66">
+       <api-conditions>
+        <api-c iapi="8042">
+         <po deps="f" id="5" invs="1058" ispo="5" s="g">
+          <e txt="all targets are non-null: [basevar (my_strtok(_^_)#return]"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="3307" ictxt="2505" iloc="2697" ivinfo="66">
+       <api-conditions>
+        <api-c iapi="8042">
+         <po deps="f" id="4" invs="1013" ispo="4" s="g">
+          <e txt="all targets are non-null: [basevar (my_strtok(_^_)#return]"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="3410" ictxt="2647" iloc="2725" ivinfo="28">
+       <api-conditions>
+        <api-c iapi="1029">
+         <po id="10" ispo="10">
+          <d>
+           <invs>
+            <arg a="1" i="989"/>
+           </invs>
+           <msgs/>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="3301,3306" ictxt="2402" iloc="2670" ivinfo="30">
+       <api-conditions>
+        <api-c iapi="8063">
+         <po deps="s" id="3" ispo="3" s="g">
+          <e txt="constant string is guaranteed to have at least one character"/>
+         </po>
+        </api-c>
+        <api-c iapi="8062">
+         <po deps="a" id="2" ids="4" invs="982" ispo="2" s="g">
+          <e txt="condition not-null(input_buffer) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="5144">
+         <po deps="s" id="1" ispo="1" s="g">
+          <e txt="string literal"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="3410,3340" ictxt="2658" iloc="2728" ivinfo="31">
+       <api-conditions>
+        <api-c iapi="3409">
+         <po id="9" ispo="9">
+          <d>
+           <invs>
+            <arg a="1" i="990"/>
+           </invs>
+           <msgs/>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="2392" iexp="179" iloc="2664">
+      <postconditions/>
+     </rs>
+     <rs ictxt="2390" iexp="179" iloc="2664">
+      <postconditions/>
+     </rs>
+     <rs ictxt="2704" iexp="19" iloc="2736">
+      <postconditions/>
+     </rs>
+     <rs ictxt="2401" iexp="179" iloc="2667">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

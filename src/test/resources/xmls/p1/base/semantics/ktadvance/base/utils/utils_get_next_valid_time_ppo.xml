@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:30:39">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="get_next_valid_time">
+   <ppos>
+    <ppo deps="f" id="18" invs="137" ippo="18" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3130(rv:find_timeperiod)"/>
+    </ppo>
+    <ppo deps="a" id="129" ids="1" invs="49" ippo="129" s="g" ts="2018-01-09 15:51:09">
+     <e txt="condition not-null(valid_time) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="50" invs="135" ippo="50" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3137(rv:localtime)"/>
+    </ppo>
+    <ppo id="80" ippo="80"/>
+    <ppo id="108" ippo="108">
+     <d>
+      <invs>
+       <arg a="1" i="119,153"/>
+      </invs>
+      <msgs>
+       <msg t="encountered undetermined regions: [unknown:temp_period-&gt;days[weekday],unknown:temp_timerange-&gt;next]"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="a" id="104" ids="2" invs="65" ippo="104" s="g" ts="2018-01-09 15:51:09">
+     <e txt="condition signed-to-unsigned-cast((long) preferred_time: unsigned long) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="130" invs="183" ippo="130" s="g" ts="2018-01-09 16:57:06">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:check_time_against_period @3123 r:1,freed(by:find_timeperiod @3130 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(valid_time_3_)#init"/>
+    </ppo>
+    <ppo deps="f" id="25" invs="37" ippo="25" s="g" ts="2018-01-09 15:51:09">
+     <e txt="upper-bound value is initial value of parameter valid_time satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="49" ippo="49">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: localtime"/>
+       <msg t="unknown if location pointed to by return value from localtime is initialized"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="52" invs="41" ippo="52" s="g" ts="2018-01-09 15:51:09">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="4" invs="22" ippo="4" s="g" ts="2018-01-09 15:51:09">
+     <e txt="initial value of parameter period_name satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="30" ippo="30" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="f" id="62" invs="121" ippo="62" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3145"/>
+    </ppo>
+    <ppo deps="s" id="103" ippo="103" s="g">
+     <e txt="preferred_time is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="102" invs="136" ippo="102" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3161"/>
+    </ppo>
+    <ppo id="106" ippo="106"/>
+    <ppo deps="f" id="14" invs="179" ippo="14" s="g" ts="2018-01-09 16:57:06">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:check_time_against_period @3123 r:3"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(period_name_5_)#init"/>
+    </ppo>
+    <ppo id="111" ippo="111">
+     <d>
+      <invs>
+       <arg a="2" i="119,153"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="15" invs="30" ippo="15" s="g" ts="2018-01-09 15:51:09">
+     <e txt="initial value of parameter period_name satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="82" invs="59" ippo="82" s="g" ts="2018-01-09 15:51:09">
+     <e txt="value 0 is non-negative and target type maximum value is larger than or equal to source type maximum value"/>
+    </ppo>
+    <ppo id="133" ippo="133">
+     <d>
+      <invs>
+       <arg a="3" i="138,67"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="89" ippo="89" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="56" ippo="56">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: localtime"/>
+       <msg t="unknown if location pointed to by return value from localtime is initialized"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="79" ippo="79" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="31" ippo="31" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="f" id="121" invs="116" ippo="121" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3109_xx_assignedAt#3165"/>
+    </ppo>
+    <ppo deps="s" id="12" ippo="12" s="g">
+     <e txt="preferred_time is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="101" invs="111" ippo="101" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3109_xx_assignedAt#3165"/>
+    </ppo>
+    <ppo deps="f" id="69" invs="78" ippo="69" s="g" ts="2018-01-09 15:51:09">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: find_timeperiod"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+    </ppo>
+    <ppo deps="a" id="8" ids="1" invs="42" ippo="8" s="g" ts="2018-01-09 15:51:09">
+     <e txt="condition not-null(valid_time) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="96" ippo="96" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="45" invs="156" ippo="45" s="g" ts="2018-01-09 15:51:09">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo id="54" ippo="54">
+     <d>
+      <invs>
+       <arg a="3" i="16,109"/>
+      </invs>
+      <msgs>
+       <msg t="remaining constraint: ((mktime(_)#return &gt;= 0) (--&gt; ((mktime(_)#return &gt;= 0))"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="78" ippo="78" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="124" invs="180" ippo="124" s="g" ts="2018-01-09 16:57:06">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:check_time_against_period @3123 r:1,freed(by:find_timeperiod @3130 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(valid_time_3_)#init"/>
+    </ppo>
+    <ppo deps="f" id="118" invs="118" ippo="118" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3150"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="preferred_time is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="81" invs="127" ippo="81" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3143"/>
+    </ppo>
+    <ppo deps="s" id="128" ippo="128" s="g">
+     <e txt="valid_time is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="23" invs="181" ippo="23" s="g" ts="2018-01-09 16:57:06">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:check_time_against_period @3123 r:1,freed(by:find_timeperiod @3130 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(valid_time_3_)#init"/>
+    </ppo>
+    <ppo deps="f" id="77" invs="115" ippo="77" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3158_xx_assignedAt#3158(fieldnext149)"/>
+    </ppo>
+    <ppo deps="f" id="70" invs="158" ippo="70" s="g" ts="2018-01-09 15:51:09">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(find_timeperiod(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="3" invs="152" ippo="3" s="g" ts="2018-01-09 15:51:09">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(period_name_5_)#init"/>
+    </ppo>
+    <ppo deps="f" id="134" invs="138" ippo="134" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3109_xx_assignedAt#3165"/>
+    </ppo>
+    <ppo deps="f" id="16" invs="30" ippo="16" s="g" ts="2018-01-09 15:51:09">
+     <e txt="upper-bound value is initial value of parameter period_name satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="24" invs="37" ippo="24" s="g" ts="2018-01-09 15:51:09">
+     <e txt="initial value of parameter valid_time satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="21" ippo="21" s="g">
+     <e txt="valid_time is a function parameter"/>
+    </ppo>
+    <ppo id="94" ippo="94">
+     <d>
+      <invs>
+       <arg a="2" i="128,154"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="109" ippo="109">
+     <d>
+      <invs>
+       <arg a="1" i="119,153"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_period-&gt;days[weekday]
+,unknown:temp_timerange-&gt;next
+]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_period-&gt;days[weekday] ,unknown:temp_timerange-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_period-&gt;days[weekday] ,unknown:temp_timerange-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_period-&gt;days[weekday] ,unknown:temp_timerange-&gt;next ]"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="36" invs="8" ippo="36" s="g" ts="2018-01-09 15:51:09">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="76" ippo="76" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="131" invs="49" ippo="131" s="g" ts="2018-01-09 15:51:09">
+     <e txt="initial value of parameter valid_time satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="57" invs="133" ippo="57" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3137(rv:localtime)"/>
+    </ppo>
+    <ppo deps="f" id="68" invs="131" ippo="68" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3130(rv:find_timeperiod)"/>
+    </ppo>
+    <ppo deps="s" id="122" ippo="122" s="g">
+     <e txt="valid_time is a function parameter"/>
+    </ppo>
+    <ppo id="85" ippo="85">
+     <d>
+      <invs>
+       <arg a="3" i="27"/>
+       <arg a="2" i="62,90,126"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="100" invs="112" ippo="100" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3161"/>
+    </ppo>
+    <ppo deps="s" id="26" ippo="26" s="g">
+     <e txt="preferred_time is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="98" invs="123" ippo="98" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3109_xx_assignedAt#3165"/>
+    </ppo>
+    <ppo deps="f" id="105" invs="134" ippo="105" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3161"/>
+    </ppo>
+    <ppo deps="f" id="11" invs="42" ippo="11" s="g" ts="2018-01-09 15:51:09">
+     <e txt="upper-bound value is initial value of parameter valid_time satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="9" invs="182" ippo="9" s="g" ts="2018-01-09 16:57:06">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:check_time_against_period @3123 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(valid_time_3_)#init"/>
+    </ppo>
+    <ppo deps="s" id="13" ippo="13" s="g">
+     <e txt="period_name is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="63" invs="125" ippo="63" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3150"/>
+    </ppo>
+    <ppo deps="f" id="51" invs="162" ippo="51" s="g" ts="2018-01-09 15:51:09">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="107" invs="119" ippo="107" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3158_xx_assignedAt#3158(fieldnext149)"/>
+    </ppo>
+    <ppo deps="f" id="125" invs="33" ippo="125" s="g" ts="2018-01-09 15:51:09">
+     <e txt="initial value of parameter valid_time satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="19" ippo="19" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="s" id="32" ippo="32" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="17" ippo="17" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo id="90" ippo="90"/>
+    <ppo deps="f" id="40" invs="146" ippo="40" s="g" ts="2018-01-09 15:51:09">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo id="67" ippo="67">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: find_timeperiod"/>
+       <msg t="no function summary for find_timeperiod"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="55" invs="109" ippo="55" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3143(rv:mktime)"/>
+    </ppo>
+    <ppo id="117" ippo="117">
+     <d>
+      <invs>
+       <arg a="3" i="26"/>
+       <arg a="2" i="124"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="132" invs="49" ippo="132" s="g" ts="2018-01-09 15:51:09">
+     <e txt="upper-bound value is initial value of parameter valid_time satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="110" ippo="110">
+     <d>
+      <invs>
+       <arg a="2" i="119,153"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="60" invs="40" ippo="60" s="g" ts="2018-01-09 15:51:09">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="59" invs="161" ippo="59" s="g" ts="2018-01-09 15:51:09">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="6" invs="114" ippo="6" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3123(rv:check_time_against_period)"/>
+    </ppo>
+    <ppo deps="s" id="116" ippo="116" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="s" id="27" ippo="27" s="g">
+     <e txt="address of variable preferred_time"/>
+    </ppo>
+    <ppo deps="f" id="38" invs="113" ippo="38" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3137(rv:localtime)"/>
+    </ppo>
+    <ppo deps="f" id="61" invs="40" ippo="61" s="g" ts="2018-01-09 15:51:09">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="87" ippo="87">
+     <d>
+      <invs>
+       <arg a="3" i="28"/>
+       <arg a="2" i="60,89"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="113" invs="108" ippo="113" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3150_xx_assignedAt#3153"/>
+    </ppo>
+    <ppo id="58" ippo="58">
+     <d>
+      <invs>
+       <arg a="1" i="40,80,133,161"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="84" invs="62,27" ippo="84" s="g" ts="2018-01-09 15:51:09">
+     <e txt="lower-bound of both operands is non-negative: days_into_the_future: 0 and 3600: 3600"/>
+    </ppo>
+    <ppo id="34" ippo="34">
+     <d>
+      <invs>
+       <arg a="1" i="8,72,98,143"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="74" ippo="74">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="array length is: 7; no index upper-bound value found for weekday; invariants: {assignedAt#3150,assignedAt#3153}; "/>
+       <msg t="array length is: 7; no index upper-bound value found for weekday; invariants: {assignedAt#3150,assignedAt#3153};"/>
+       <msg t="array length is: 7; no index upper-bound value found for weekday; invariants: {assignedAt#3150,assignedAt#3153};"/>
+       <msg t="array length is: 7; no index upper-bound value found for weekday; invariants: {assignedAt#3150,assignedAt#3153};"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="112" invs="122" ippo="112" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3147_xx_assignedAt#3154"/>
+    </ppo>
+    <ppo deps="f" id="75" invs="132" ippo="75" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3150_xx_assignedAt#3153"/>
+    </ppo>
+    <ppo deps="a" id="123" ids="1" invs="33" ippo="123" s="g" ts="2018-01-09 15:51:09">
+     <e txt="condition not-null(valid_time) delegated to api"/>
+    </ppo>
+    <ppo id="48" ippo="48">
+     <d>
+      <invs>
+       <arg a="1" i="41,81,135,162"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="127" ippo="127" s="g">
+     <e txt="preferred_time is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="71" invs="36" ippo="71" s="g" ts="2018-01-09 15:51:09">
+     <e txt="return value from function find_timeperiod satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="22" ids="1" invs="37" ippo="22" s="g" ts="2018-01-09 15:51:09">
+     <e txt="condition not-null(valid_time) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="28" ippo="28" s="g" ts="2018-01-09 15:51:09">
+     <e txt="preferred_time is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="53" invs="41" ippo="53" s="g" ts="2018-01-09 15:51:09">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="65" invs="63,31" ippo="65" s="g" ts="2018-01-09 15:51:09">
+     <e txt="result of subtraction is greater than or equal to MIN: satisfies ((7 - 7) &gt;= -2147483648)"/>
+    </ppo>
+    <ppo deps="f" id="47" invs="32" ippo="47" s="g" ts="2018-01-09 15:51:09">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="73" ippo="73">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="insufficient information from invariants for weekday; invariants: {assignedAt#3150,assignedAt#3153}; "/>
+       <msg t="insufficient information from invariants for weekday; invariants: {assignedAt#3150,assignedAt#3153};"/>
+       <msg t="insufficient information from invariants for weekday; invariants: {assignedAt#3150,assignedAt#3153};"/>
+       <msg t="insufficient information from invariants for weekday; invariants: {assignedAt#3150,assignedAt#3153};"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="44" ippo="44">
+     <d>
+      <invs>
+       <arg a="1" i="32,76,130,156"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="5" invs="22" ippo="5" s="g" ts="2018-01-09 15:51:09">
+     <e txt="upper-bound value is initial value of parameter period_name satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="91" invs="128" ippo="91" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3158_xx_assignedAt#3158(fieldnext149)"/>
+    </ppo>
+    <ppo id="120" ippo="120">
+     <d>
+      <invs>
+       <arg a="3" i="21"/>
+       <arg a="2" i="55,86,118"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="97" ippo="97" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="72" invs="36" ippo="72" s="g" ts="2018-01-09 15:51:09">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:no function summary for find_timeperiod"/>
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: find_timeperiod"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function find_timeperiod satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="99" ippo="99">
+     <d>
+      <invs>
+       <arg a="3" i="112"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="114" invs="107" ippo="114" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3145"/>
+    </ppo>
+    <ppo deps="f" id="33" invs="98" ippo="33" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3137(rv:localtime)"/>
+    </ppo>
+    <ppo deps="f" id="37" invs="8" ippo="37" s="g" ts="2018-01-09 15:51:09">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="64" invs="129" ippo="64" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3150"/>
+    </ppo>
+    <ppo id="93" ippo="93">
+     <d>
+      <invs>
+       <arg a="1" i="128,154"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_period-&gt;days[weekday]
+,unknown:temp_timerange-&gt;next
+]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_period-&gt;days[weekday] ,unknown:temp_timerange-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_period-&gt;days[weekday] ,unknown:temp_timerange-&gt;next ]"/>
+        <msg t="[1]:encountered undetermined regions: [unknown:temp_period-&gt;days[weekday] ,unknown:temp_timerange-&gt;next ]"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="119" ippo="119" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="f" id="41" invs="17" ippo="41" s="g" ts="2018-01-09 15:51:09">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="95" ippo="95">
+     <d>
+      <invs>
+       <arg a="2" i="128,154"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="92" ippo="92">
+     <d>
+      <invs>
+       <arg a="1" i="128,154"/>
+      </invs>
+      <msgs>
+       <msg t="encountered undetermined regions: [unknown:temp_period-&gt;days[weekday],unknown:temp_timerange-&gt;next]"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="115" invs="124" ippo="115" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3150_xx_assignedAt#3153"/>
+    </ppo>
+    <ppo deps="f" id="10" invs="42" ippo="10" s="g" ts="2018-01-09 15:51:09">
+     <e txt="initial value of parameter valid_time satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="42" invs="17" ippo="42" s="g" ts="2018-01-09 15:51:09">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: _"/>
+        <msg t="[2]:function return value: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="upper-bound value is return value from function localtime satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="46" invs="32" ippo="46" s="g" ts="2018-01-09 15:51:09">
+     <e txt="return value from function localtime satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="39" ippo="39">
+     <d>
+      <invs>
+       <arg a="1" i="17,73,113,146"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from localtime"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: localtime"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="66" ippo="66" s="g">
+     <e txt="subtract non-negative number:  value is 7"/>
+    </ppo>
+    <ppo deps="f" id="83" invs="126" ippo="83" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3150"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="valid_time is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="88" ippo="88" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="35" invs="143" ippo="35" s="g" ts="2018-01-09 15:51:09">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(localtime(_)#return"/>
+    </ppo>
+    <ppo deps="s" id="29" ippo="29" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="f" id="126" invs="33" ippo="126" s="g" ts="2018-01-09 15:51:09">
+     <e txt="upper-bound value is initial value of parameter valid_time satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="43" invs="130" ippo="43" s="g" ts="2018-01-09 15:51:09">
+     <e txt="assignedAt#3137(rv:localtime)"/>
+    </ppo>
+    <ppo deps="f" id="86" invs="60,28" ippo="86" s="g" ts="2018-01-09 15:51:09">
+     <e txt="lower-bound of both operands is non-negative: ((days_into_the_future * 3600):int: 0 and 24: 24"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="period_name is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="20" ippo="20" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

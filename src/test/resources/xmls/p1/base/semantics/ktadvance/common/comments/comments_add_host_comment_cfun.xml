@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="common/comments" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:49"/>
+  </header>
+  <function filename="common/comments">
+   <svar ivinfo="11"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="9091,2,1,0,0,162,0,1" ix="1" t="entry_type,n"/>
+     <n a="9092,10,1,0,0,163,0,2" ix="2" t="host_name,n"/>
+     <n a="9093,19,1,0,0,164,0,3" ix="3" t="entry_time,n"/>
+     <n a="9094,10,1,0,0,165,0,4" ix="4" t="author,n"/>
+     <n a="9095,10,1,0,0,166,0,5" ix="5" t="comment_data,n"/>
+     <n a="9096,1,1,0,0,167,0,6" ix="6" t="comment_id,n"/>
+     <n a="9097,2,1,0,0,168,0,7" ix="7" t="persistent,n"/>
+     <n a="9098,2,1,0,0,169,0,8" ix="8" t="expires,n"/>
+     <n a="9099,19,1,0,0,170,0,9" ix="9" t="expire_time,n"/>
+     <n a="9100,2,1,0,0,171,0,10" ix="10" t="source,n"/>
+     <n a="9101,2,1,0,0,172,0,0" ix="11" t="result,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="135">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="1" iloc="173" ilval="101" itag="set"/>
+        <instr iexp="169" iloc="174" ilval="101" itag="call">
+         <args>
+          <exp iexp="18"/>
+          <exp iexp="182"/>
+          <exp iexp="183"/>
+          <exp iexp="130"/>
+          <exp iexp="184"/>
+          <exp iexp="185"/>
+          <exp iexp="186"/>
+          <exp iexp="187"/>
+          <exp iexp="188"/>
+          <exp iexp="189"/>
+          <exp iexp="190"/>
+          <exp iexp="191"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="136"/>
+      <preds/>
+     </stmt>
+     <stmt sid="136">
+      <skind iexp="192" iloc="175" stag="return"/>
+      <succs/>
+      <preds r="135"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

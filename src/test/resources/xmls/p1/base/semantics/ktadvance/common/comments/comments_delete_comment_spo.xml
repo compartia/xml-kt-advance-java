@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:53">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="delete_comment">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="287" ictxt="441" iloc="314" ivinfo="37">
+       <api-conditions/>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="287" ictxt="443" iloc="315" ivinfo="38">
+       <api-conditions/>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="305,34" ictxt="387" iloc="294" ivinfo="43">
+       <api-conditions>
+        <api-c iapi="7846">
+         <po id="2" ispo="2"/>
+        </api-c>
+        <api-c iapi="8077">
+         <po deps="s" id="3" ispo="3" s="g">
+          <e txt="value is 1024"/>
+         </po>
+        </api-c>
+        <api-c iapi="7869">
+         <po deps="s" id="1" ispo="1" s="g">
+          <e txt="constant value 1024 fits in type unsigned int"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="294,1,1,290,295,296,297,298,299,300,301,302,303,304,287,168" ictxt="362" iloc="293" ivinfo="45">
+       <api-conditions>
+        <api-c iapi="1119">
+         <po deps="s" id="5" ispo="5" s="r">
+          <e txt="expression is a null pointer"/>
+         </po>
+        </api-c>
+        <api-c iapi="1118">
+         <po deps="s" id="4" ispo="4" s="g">
+          <e txt="null pointer cannot be dereferenced, and hence target cannot be initialized (acceptability of null is checked separately)"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="445" iexp="324" iloc="317">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

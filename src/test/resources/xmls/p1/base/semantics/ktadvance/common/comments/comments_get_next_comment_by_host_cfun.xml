@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="common/comments" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:49"/>
+  </header>
+  <function filename="common/comments">
+   <svar ivinfo="4"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="9181,10,1,0,0,12,0,1" ix="1" t="host_name,n"/>
+     <n a="9182,4,1,0,0,12,0,2" ix="2" t="start,n"/>
+     <n a="9183,4,1,0,0,13,0,0" ix="3" t="temp_comment,n"/>
+     <n a="9184,2,1,0,0,-1,0,0" ix="4" t="tmp,n"/>
+     <n a="9186,2,1,0,0,-1,0,0" ix="5" t="tmp___0,n"/>
+     <n a="9188,2,1,0,0,-1,0,0" ix="6" t="tmp___1,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="238">
+      <skind iexp="25" iloc="15" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="239">
+          <skind iexp="3" iloc="14" stag="return"/>
+          <succs/>
+          <preds r="238"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts>
+         <stmt sid="240">
+          <skind iexp="28" iloc="15" stag="if">
+           <thenblock>
+            <bstmts>
+             <stmt sid="241">
+              <skind iexp="3" iloc="14" stag="return"/>
+              <succs/>
+              <preds r="240"/>
+             </stmt>
+            </bstmts>
+           </thenblock>
+           <elseblock>
+            <bstmts/>
+           </elseblock>
+          </skind>
+          <succs r="241,242"/>
+          <preds r="238"/>
+         </stmt>
+        </bstmts>
+       </elseblock>
+      </skind>
+      <succs r="239,240"/>
+      <preds/>
+     </stmt>
+     <stmt sid="242">
+      <skind iexp="31" iloc="18" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="243">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="32" iloc="16" ilval="17" itag="call">
+             <args>
+              <exp iexp="33"/>
+              <exp iexp="34"/>
+             </args>
+            </instr>
+            <instr iexp="37" iloc="16" ilval="18" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="245"/>
+          <preds r="242"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts>
+         <stmt sid="244">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="38" iloc="17" ilval="18" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="245"/>
+          <preds r="242"/>
+         </stmt>
+        </bstmts>
+       </elseblock>
+      </skind>
+      <succs r="243,244"/>
+      <preds r="240"/>
+     </stmt>
+     <stmt sid="245">
+      <skind breakstmtid="252" continuestmtid="245" iloc="19" stag="loop">
+       <block>
+        <bstmts>
+         <stmt sid="246">
+          <skind iexp="39" iloc="19" stag="if">
+           <thenblock>
+            <bstmts>
+             <stmt sid="247">
+              <skind stag="instr">
+               <instrs>
+                <instr iexp="40" iloc="19" ilval="23" itag="call">
+                 <args>
+                  <exp iexp="42"/>
+                  <exp iexp="33"/>
+                 </args>
+                </instr>
+               </instrs>
+              </skind>
+              <succs r="248"/>
+              <preds r="246"/>
+             </stmt>
+             <stmt sid="248">
+              <skind iexp="44" iloc="19" stag="if">
+               <thenblock>
+                <bstmts/>
+               </thenblock>
+               <elseblock>
+                <bstmts>
+                 <stmt sid="249">
+                  <skind iloc="19" stag="break"/>
+                  <succs r="252"/>
+                  <preds r="248"/>
+                 </stmt>
+                </bstmts>
+               </elseblock>
+              </skind>
+              <succs r="251,249"/>
+              <preds r="247"/>
+             </stmt>
+            </bstmts>
+           </thenblock>
+           <elseblock>
+            <bstmts>
+             <stmt sid="250">
+              <skind iloc="19" stag="break"/>
+              <succs r="252"/>
+              <preds r="246"/>
+             </stmt>
+            </bstmts>
+           </elseblock>
+          </skind>
+          <succs r="247,250"/>
+          <preds r="245"/>
+         </stmt>
+         <stmt sid="251">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="45" iloc="19" ilval="18" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="245"/>
+          <preds r="248"/>
+         </stmt>
+        </bstmts>
+       </block>
+      </skind>
+      <succs r="246"/>
+      <preds r="251,244,243"/>
+     </stmt>
+     <stmt sid="252">
+      <skind iexp="39" iloc="20" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="253">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="40" iloc="20" ilval="25" itag="call">
+             <args>
+              <exp iexp="42"/>
+              <exp iexp="33"/>
+             </args>
+            </instr>
+           </instrs>
+          </skind>
+          <succs r="254"/>
+          <preds r="252"/>
+         </stmt>
+         <stmt sid="254">
+          <skind iexp="47" iloc="20" stag="if">
+           <thenblock>
+            <bstmts>
+             <stmt sid="255">
+              <skind iexp="39" iloc="21" stag="return"/>
+              <succs/>
+              <preds r="254"/>
+             </stmt>
+            </bstmts>
+           </thenblock>
+           <elseblock>
+            <bstmts/>
+           </elseblock>
+          </skind>
+          <succs r="255,256"/>
+          <preds r="253"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="253,256"/>
+      <preds r="250,249"/>
+     </stmt>
+     <stmt sid="256">
+      <skind iexp="3" iloc="22" stag="return"/>
+      <succs/>
+      <preds r="254,252"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

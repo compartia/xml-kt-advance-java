@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:29:29">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="cleanup_service_result_worker_thread">
+   <ppos>
+    <ppo deps="s" id="22" ippo="22" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo id="45" ippo="45"/>
+    <ppo id="18" ippo="18"/>
+    <ppo id="19" ippo="19"/>
+    <ppo deps="s" id="32" ippo="32" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+    <ppo deps="s" id="17" ippo="17" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="28" ippo="28" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="f" id="23" invs="10" ippo="23" s="g" ts="2018-01-09 15:50:06">
+     <e txt="assignedAt#4673"/>
+    </ppo>
+    <ppo id="25" ippo="25"/>
+    <ppo deps="s" id="40" ippo="40" s="g">
+     <e txt="check_result_buffer_slots is global"/>
+    </ppo>
+    <ppo id="47" ippo="47"/>
+    <ppo deps="s" id="44" ippo="44" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo id="4" ippo="4"/>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="30" ippo="30" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="16" ippo="16" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="24" ippo="24"/>
+    <ppo deps="s" id="14" ippo="14" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo id="21" ippo="21"/>
+    <ppo deps="s" id="33" ippo="33" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="37" invs="8" ippo="37" s="g" ts="2018-01-09 15:50:06">
+     <e txt="assignedAt#4673"/>
+    </ppo>
+    <ppo deps="s" id="36" ippo="36" s="g">
+     <e txt="null pointer is a valid memory pointer"/>
+    </ppo>
+    <ppo id="6" ippo="6"/>
+    <ppo deps="s" id="15" ippo="15" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo id="41" ippo="41"/>
+    <ppo id="27" ippo="27">
+     <d>
+      <invs>
+       <arg a="4" i="10"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="10" ippo="10"/>
+    <ppo id="26" ippo="26">
+     <d>
+      <invs>
+       <arg a="4" i="10"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="38" ippo="38" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo id="42" ippo="42"/>
+    <ppo id="11" ippo="11"/>
+    <ppo deps="f" id="9" invs="11" ippo="9" s="g" ts="2018-01-09 15:50:06">
+     <e txt="assignedAt#4673"/>
+    </ppo>
+    <ppo deps="s" id="31" ippo="31" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="12" ippo="12">
+     <d>
+      <invs>
+       <arg a="4" i="11"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="46" ippo="46" s="g">
+     <e txt="global variable service_result_buffer with offset .buffer is assigned a value with valid lower bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo id="13" ippo="13">
+     <d>
+      <invs>
+       <arg a="4" i="11"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="39" ippo="39">
+     <d>
+      <invs>
+       <arg a="3" i="1"/>
+       <arg a="2" i="8"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="7" ippo="7"/>
+    <ppo deps="s" id="34" ippo="34" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="service_result_buffer is global"/>
+    </ppo>
+    <ppo deps="s" id="35" ippo="35" s="g">
+     <e txt="null pointer does not violate bounds"/>
+    </ppo>
+    <ppo deps="s" id="29" ippo="29" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="43" ippo="43" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="f" id="2" invs="9" ippo="2" s="g" ts="2018-01-09 15:50:06">
+     <e txt="assignedAt#4673"/>
+    </ppo>
+    <ppo id="20" ippo="20"/>
+   </ppos>
+  </function>
+ </c-analysis>

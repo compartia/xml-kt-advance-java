@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="base/broker" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:42"/>
+  </header>
+  <function filename="base/broker">
+   <svar ivinfo="14"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="9030,4,1,0,0,377,0,1" ix="1" t="type,n"/>
+     <n a="9031,4,1,0,0,378,0,2" ix="2" t="flags,n"/>
+     <n a="9032,4,1,0,0,379,0,3" ix="3" t="attr,n"/>
+     <n a="9033,13,1,0,0,380,0,4" ix="4" t="hst,n"/>
+     <n a="9034,2,1,0,0,381,0,5" ix="5" t="timestamp,n"/>
+     <n a="9035,47,1,0,0,382,1,0" ix="6" t="ds,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="77">
+      <skind iexp="87" iloc="384" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="78">
+          <skind iloc="383" stag="return"/>
+          <succs/>
+          <preds r="77"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="78,79"/>
+      <preds/>
+     </stmt>
+     <stmt sid="79">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="265" iloc="385" ilval="301" itag="set"/>
+        <instr iexp="266" iloc="386" ilval="303" itag="set"/>
+        <instr iexp="267" iloc="387" ilval="305" itag="set"/>
+        <instr iexp="22" iloc="388" ilval="308" itag="call">
+         <args>
+          <exp iexp="268"/>
+         </args>
+        </instr>
+        <instr iexp="270" iloc="389" ilval="309" itag="set"/>
+        <instr iexp="42" iloc="390" itag="call">
+         <args>
+          <exp iexp="271"/>
+          <exp iexp="273"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="80"/>
+      <preds r="77"/>
+     </stmt>
+     <stmt sid="80">
+      <skind iloc="391" stag="return"/>
+      <succs/>
+      <preds r="79"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

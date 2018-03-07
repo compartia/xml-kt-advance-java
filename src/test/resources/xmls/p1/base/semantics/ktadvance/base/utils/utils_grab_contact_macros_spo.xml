@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:53">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="grab_contact_macros">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="2281" ictxt="1632" iloc="1840" ivinfo="33">
+       <api-conditions>
+        <api-c iapi="2822">
+         <po id="4" ispo="4"/>
+        </api-c>
+        <api-c iapi="619">
+         <po id="3" ispo="3">
+          <d>
+           <invs>
+            <arg a="1" i="184"/>
+           </invs>
+           <msgs/>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="2294" ictxt="1638" iloc="1842" ivinfo="33">
+       <api-conditions>
+        <api-c iapi="2822">
+         <po id="2" ispo="2"/>
+        </api-c>
+        <api-c iapi="619">
+         <po id="1" ispo="1">
+          <d>
+           <invs>
+            <arg a="1" i="181"/>
+           </invs>
+           <msgs/>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="" ictxt="1631" iloc="1839" ivinfo="61">
+       <api-conditions/>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="2288" ictxt="1635" iloc="1841" ivinfo="33">
+       <api-conditions>
+        <api-c iapi="2822">
+         <po id="6" ispo="6"/>
+        </api-c>
+        <api-c iapi="619">
+         <po id="5" ispo="5">
+          <d>
+           <invs>
+            <arg a="1" i="183"/>
+           </invs>
+           <msgs/>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="2312" ictxt="1645" iloc="1845" ivinfo="33">
+       <api-conditions>
+        <api-c iapi="2822">
+         <po id="10" ispo="10">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="deref lval: macro_contactaddress[x]"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="619">
+         <po id="9" ispo="9"/>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="2302" ictxt="1641" iloc="1843" ivinfo="33">
+       <api-conditions>
+        <api-c iapi="2822">
+         <po id="8" ispo="8"/>
+        </api-c>
+        <api-c iapi="619">
+         <po id="7" ispo="7">
+          <d>
+           <invs>
+            <arg a="1" i="182"/>
+           </invs>
+           <msgs/>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="1651" iexp="19" iloc="1846">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

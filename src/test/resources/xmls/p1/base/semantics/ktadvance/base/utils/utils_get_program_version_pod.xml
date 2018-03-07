@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:28:49">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="get_program_version">
+   <assumption-table/>
+   <ppo-type-table>
+    <n a="206,806,921" ix="1" t="p"/>
+    <n a="206,806,922" ix="2" t="p"/>
+    <n a="206,806,923" ix="3" t="p"/>
+    <n a="206,806,924" ix="4" t="p"/>
+    <n a="206,806,925" ix="5" t="p"/>
+   </ppo-type-table>
+   <spo-type-table/>
+  </function>
+ </c-analysis>

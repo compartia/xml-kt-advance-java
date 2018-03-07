@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="base/utils" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:48"/>
+  </header>
+  <function filename="base/utils">
+   <svar ivinfo="37"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="9841,44,1,0,0,803,0,1" ix="1" t="message,n"/>
+     <n a="9842,27,1,0,0,804,1,0" ix="2" t="buffer,n"/>
+     <n a="9843,1,1,0,0,805,0,0" ix="3" t="result,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="1505">
+      <skind iexp="952" iloc="807" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="1506">
+          <skind iexp="29" iloc="806" stag="return"/>
+          <succs/>
+          <preds r="1505"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="1506,1507"/>
+      <preds/>
+     </stmt>
+     <stmt sid="1507">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="335" iloc="808" itag="call">
+         <args>
+          <exp iexp="953"/>
+          <exp iexp="19"/>
+          <exp iexp="338"/>
+         </args>
+        </instr>
+        <instr iexp="224" iloc="809" itag="call">
+         <args>
+          <exp iexp="330"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="1508"/>
+      <preds r="1505"/>
+     </stmt>
+     <stmt sid="1508">
+      <skind iexp="954" iloc="814" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="1509">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="200" iloc="810" itag="call">
+             <args>
+              <exp iexp="956"/>
+              <exp iexp="959"/>
+              <exp iexp="961"/>
+              <exp iexp="370"/>
+             </args>
+            </instr>
+            <instr iexp="210" iloc="811" ilval="461" itag="set"/>
+            <instr iexp="903" iloc="812" itag="call">
+             <args>
+              <exp iexp="955"/>
+              <exp iexp="962"/>
+              <exp iexp="20"/>
+             </args>
+            </instr>
+            <instr iexp="28" iloc="813" ilval="225" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="1510"/>
+          <preds r="1508"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="1509,1510"/>
+      <preds r="1507"/>
+     </stmt>
+     <stmt sid="1510">
+      <skind iexp="963" iloc="822" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="1511">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="29" iloc="815" ilval="462" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="1513"/>
+          <preds r="1510"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts>
+         <stmt sid="1512">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="366" iloc="816" itag="call">
+             <args>
+              <exp iexp="964"/>
+              <exp iexp="967"/>
+              <exp iexp="338"/>
+             </args>
+            </instr>
+            <instr iexp="62" iloc="817" itag="call">
+             <args>
+              <exp iexp="968"/>
+             </args>
+            </instr>
+            <instr iexp="39" iloc="818" ilval="464" itag="set"/>
+            <instr iexp="374" iloc="819" ilval="226" itag="set"/>
+            <instr iexp="970" iloc="820" ilval="212" itag="set"/>
+            <instr iexp="19" iloc="821" ilval="462" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="1513"/>
+          <preds r="1510"/>
+         </stmt>
+        </bstmts>
+       </elseblock>
+      </skind>
+      <succs r="1511,1512"/>
+      <preds r="1509,1508"/>
+     </stmt>
+     <stmt sid="1513">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="238" iloc="823" itag="call">
+         <args>
+          <exp iexp="330"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="1514"/>
+      <preds r="1512,1511"/>
+     </stmt>
+     <stmt sid="1514">
+      <skind iexp="971" iloc="824" stag="return"/>
+      <succs/>
+      <preds r="1513"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

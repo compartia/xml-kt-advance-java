@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:30:38">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="service_result_worker_thread">
+   <api xlst="5">
+    <api-assumptions/>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees>
+     <gg iipc="1"/>
+    </postcondition-guarantees>
+    <library-calls>
+     <lc c="1" f="__sigsetjmp" h="pthread"/>
+     <lc c="1" f="poll" h="poll"/>
+     <lc c="1" f="memcpy" h="string"/>
+     <lc c="2" f="pthread_mutex_unlock" h="pthread"/>
+     <lc c="1" f="select" h="select"/>
+     <lc c="1" f="malloc" h="stdlib"/>
+     <lc c="1" f="__pthread_unwind_next" h="pthread"/>
+     <lc c="3" f="pthread_testcancel" h="pthread"/>
+     <lc c="1" f="__builtin_expect" h="builtins"/>
+     <lc c="1" f="pthread_setcanceltype" h="pthread"/>
+     <lc c="2" f="pthread_mutex_lock" h="pthread"/>
+     <lc c="1" f="__pthread_register_cancel" h="pthread"/>
+     <lc c="1" f="read" h="unistd"/>
+     <lc c="1" f="pthread_setcancelstate" h="pthread"/>
+     <lc c="4" f="write_to_log" h="nagios"/>
+     <lc c="1" f="memset" h="string"/>
+     <lc c="1" f="__pthread_unregister_cancel" h="pthread"/>
+     <lc c="2" f="__errno_location" h="errno"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="nagios/write_to_log"/>
+     <ms n="pthread/__pthread_register_cancel"/>
+     <ms n="pthread/__pthread_unregister_cancel"/>
+     <ms n="pthread/__pthread_unwind_next"/>
+     <ms n="pthread/__sigsetjmp"/>
+    </missing-summaries>
+    <unevaluated>
+     <uu po-id="5824"/>
+     <uu po-id="5881"/>
+     <uu po-id="5900"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

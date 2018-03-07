@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:54">
+   <application file="common/comments.c"/>
+  </header>
+  <function fname="find_service_comment">
+   <api xlst="2">
+    <api-assumptions/>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls/>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="712"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

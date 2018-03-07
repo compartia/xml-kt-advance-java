@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="common/downtime" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:56"/>
+  </header>
+  <function filename="common/downtime">
+   <svar ivinfo="7"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="9375,11,1,0,0,113,0,1" ix="1" t="host_name,n"/>
+     <n a="9376,12,1,0,0,114,0,2" ix="2" t="entry_time,n"/>
+     <n a="9377,11,1,0,0,115,0,3" ix="3" t="author,n"/>
+     <n a="9378,11,1,0,0,116,0,4" ix="4" t="comment_data,n"/>
+     <n a="9379,12,1,0,0,117,0,5" ix="5" t="start_time,n"/>
+     <n a="9380,12,1,0,0,118,0,6" ix="6" t="end_time,n"/>
+     <n a="9381,5,1,0,0,119,0,7" ix="7" t="fixed,n"/>
+     <n a="9382,7,1,0,0,120,0,8" ix="8" t="triggered_by,n"/>
+     <n a="9383,7,1,0,0,121,0,9" ix="9" t="duration,n"/>
+     <n a="9384,7,1,0,0,122,0,10" ix="10" t="downtime_id,n"/>
+     <n a="9385,5,1,0,0,123,0,0" ix="11" t="result,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="287">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="105" iloc="124" ilval="84" itag="call">
+         <args>
+          <exp iexp="25"/>
+          <exp iexp="118"/>
+          <exp iexp="73"/>
+          <exp iexp="119"/>
+          <exp iexp="120"/>
+          <exp iexp="121"/>
+          <exp iexp="122"/>
+          <exp iexp="123"/>
+          <exp iexp="124"/>
+          <exp iexp="125"/>
+          <exp iexp="126"/>
+          <exp iexp="127"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="288"/>
+      <preds/>
+     </stmt>
+     <stmt sid="288">
+      <skind iexp="128" iloc="125" stag="return"/>
+      <succs/>
+      <preds r="287"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

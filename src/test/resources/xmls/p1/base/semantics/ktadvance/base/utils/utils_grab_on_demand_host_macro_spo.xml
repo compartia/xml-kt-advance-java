@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:30:06">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="grab_on_demand_host_macro">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="2023" ictxt="4606" iloc="2122" ivinfo="33">
+       <api-conditions>
+        <api-c iapi="2822">
+         <po id="2" ispo="2"/>
+        </api-c>
+        <api-c iapi="619">
+         <po id="1" ispo="1">
+          <d>
+           <invs>
+            <arg a="1" i="1424,1438"/>
+           </invs>
+           <msgs>
+            <msg t="unable to exclude null return value from strdup"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="2023" ictxt="4619" iloc="2126" ivinfo="33">
+       <api-conditions>
+        <api-c iapi="2822">
+         <po id="7" ispo="7"/>
+        </api-c>
+        <api-c iapi="619">
+         <po id="6" ispo="6">
+          <d>
+           <invs>
+            <arg a="1" i="1425,1441"/>
+           </invs>
+           <msgs>
+            <msg t="unable to exclude null return value from strdup"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="2559" ictxt="4280" iloc="2043" ivinfo="174">
+       <api-conditions>
+        <api-c iapi="8506">
+         <po deps="a" id="17" ids="30" invs="1535" ispo="17" s="g" ts="2018-01-09 17:30:06">
+          <e txt="condition not-null(hst-&gt;name) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="2525,2513" ictxt="4173" iloc="2017" ivinfo="176">
+       <api-conditions>
+        <api-c iapi="156">
+         <po id="12" ispo="12"/>
+        </api-c>
+        <api-c iapi="8137">
+         <po deps="a" id="11" ids="30" invs="1415" ispo="11" s="g">
+          <e txt="condition not-null(hst-&gt;name) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="181">
+         <po deps="a" id="15" ids="27" invs="84" ispo="15" s="g">
+          <e txt="condition initialized(hst-&gt;name) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="182">
+         <po deps="a" id="14" ids="1" invs="1416" ispo="14" s="g">
+          <e txt="condition not-null(hst) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="157">
+         <po id="13" ispo="13">
+          <d>
+           <invs>
+            <arg a="1" i="1426"/>
+           </invs>
+           <msgs/>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="2023,2564,2567,327" ictxt="4297" iloc="2047" ivinfo="69">
+       <api-conditions>
+        <api-c iapi="8270">
+         <po deps="f" id="18" invs="1539" ispo="18" s="g" ts="2018-01-09 17:30:06">
+          <e txt="all targets are non-null: [heap-allocated-region created by strdup at line 1422]"/>
+         </po>
+        </api-c>
+        <api-c iapi="2524">
+         <po deps="f" id="10" invs="1420" ispo="10" s="g">
+          <e txt="non-negative pointer increment: lower bound for ((caste (sizeof(temp_buffer):int) - 1):int is 1023"/>
+         </po>
+        </api-c>
+        <api-c iapi="8035">
+         <po deps="s" id="9" ispo="9" s="g">
+          <e txt="add zero"/>
+         </po>
+        </api-c>
+        <api-c iapi="2522">
+         <po deps="s" id="8" ispo="8" s="g">
+          <e txt="address of variable temp_buffer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="2023,2564,2567,327" ictxt="4317" iloc="2054" ivinfo="69">
+       <api-conditions>
+        <api-c iapi="8270">
+         <po deps="f" id="16" invs="1538" ispo="16" s="g" ts="2018-01-09 17:30:06">
+          <e txt="all targets are non-null: [heap-allocated-region created by strdup at line 1428,heap-allocated-region created by strdup at line 1436]"/>
+         </po>
+        </api-c>
+        <api-c iapi="2524">
+         <po deps="f" id="5" invs="1417" ispo="5" s="g">
+          <e txt="non-negative pointer increment: lower bound for ((caste (sizeof(temp_buffer):int) - 1):int is 1023"/>
+         </po>
+        </api-c>
+        <api-c iapi="8035">
+         <po deps="s" id="4" ispo="4" s="g">
+          <e txt="add zero"/>
+         </po>
+        </api-c>
+        <api-c iapi="2522">
+         <po deps="s" id="3" ispo="3" s="g">
+          <e txt="address of variable temp_buffer"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="4153" iexp="179" iloc="2011">
+      <postconditions/>
+     </rs>
+     <rs ictxt="4158" iexp="179" iloc="2011">
+      <postconditions/>
+     </rs>
+     <rs ictxt="4279" iexp="179" iloc="2042">
+      <postconditions/>
+     </rs>
+     <rs ictxt="4699" iexp="19" iloc="2147">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

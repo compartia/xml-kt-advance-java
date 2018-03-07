@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:42:02">
+   <application file="common/downtime.c"/>
+  </header>
+  <function fname="cleanup_downtime_data">
+   <api>
+    <api-assumptions/>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees>
+     <gg iipc="3"/>
+    </postcondition-guarantees>
+    <library-calls>
+     <lc c="1" f="xdddefault_cleanup_downtime_data" h="xdddefault"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="xdddefault/xdddefault_cleanup_downtime_data"/>
+    </missing-summaries>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

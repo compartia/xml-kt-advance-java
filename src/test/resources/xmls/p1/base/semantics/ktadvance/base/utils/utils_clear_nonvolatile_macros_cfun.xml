@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="base/utils" project-directory="/home/henny/CCode/goldstandard/nagios/nagios-2.10" time="11/03/2017 15:46:48"/>
+  </header>
+  <function filename="base/utils">
+   <svar ivinfo="58"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="9573,1,1,0,0,1499,0,0" ix="1" t="x,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="1082">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="19" iloc="1500" ilval="812" itag="set"/>
+        <instr iexp="19" iloc="1501" ilval="812" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="1083"/>
+      <preds/>
+     </stmt>
+     <stmt sid="1083">
+      <skind breakstmtid="1092" continuestmtid="1083" iloc="1501" stag="loop">
+       <block>
+        <bstmts>
+         <stmt sid="1084">
+          <skind iexp="2000" iloc="1501" stag="if">
+           <thenblock>
+            <bstmts/>
+           </thenblock>
+           <elseblock>
+            <bstmts>
+             <stmt sid="1085">
+              <skind iloc="1501" stag="break"/>
+              <succs r="1092"/>
+              <preds r="1084"/>
+             </stmt>
+            </bstmts>
+           </elseblock>
+          </skind>
+          <succs r="1086,1085"/>
+          <preds r="1083"/>
+         </stmt>
+         <stmt sid="1086">
+          <skind iexp="1999" iloc="1523" stag="switch">
+           <block>
+            <bstmts>
+             <stmt sid="1087">
+              <skind iexp="2003" iloc="1504" stag="if">
+               <thenblock>
+                <bstmts>
+                 <stmt sid="1088">
+                  <skind stag="instr">
+                   <instrs>
+                    <instr iexp="62" iloc="1502" itag="call">
+                     <args>
+                      <exp iexp="2004"/>
+                     </args>
+                    </instr>
+                    <instr iexp="40" iloc="1503" ilval="813" itag="set"/>
+                   </instrs>
+                  </skind>
+                  <succs r="1089"/>
+                  <preds r="1087"/>
+                 </stmt>
+                </bstmts>
+               </thenblock>
+               <elseblock>
+                <bstmts/>
+               </elseblock>
+              </skind>
+              <succs r="1088,1089"/>
+              <preds r="1086"/>
+              <labels>
+               <label iexp="1991" iloc="1505" ltag="case"/>
+               <label iexp="1925" iloc="1506" ltag="case"/>
+               <label iexp="1922" iloc="1507" ltag="case"/>
+               <label iexp="1919" iloc="1508" ltag="case"/>
+               <label iexp="1916" iloc="1509" ltag="case"/>
+               <label iexp="1913" iloc="1510" ltag="case"/>
+               <label iexp="1910" iloc="1511" ltag="case"/>
+               <label iexp="1907" iloc="1512" ltag="case"/>
+               <label iexp="1061" iloc="1513" ltag="case"/>
+               <label iexp="685" iloc="1514" ltag="case"/>
+               <label iexp="1900" iloc="1515" ltag="case"/>
+               <label iexp="1897" iloc="1516" ltag="case"/>
+               <label iexp="1894" iloc="1517" ltag="case"/>
+               <label iexp="1795" iloc="1518" ltag="case"/>
+               <label iexp="1144" iloc="1519" ltag="case"/>
+              </labels>
+             </stmt>
+             <stmt sid="1089">
+              <skind iloc="1520" stag="break"/>
+              <succs r="1091"/>
+              <preds r="1088,1087"/>
+             </stmt>
+             <stmt sid="1090">
+              <skind iloc="1521" stag="break"/>
+              <succs r="1091"/>
+              <preds r="1086"/>
+              <labels>
+               <label iloc="1522" ltag="default"/>
+              </labels>
+             </stmt>
+            </bstmts>
+           </block>
+           <stmts r="1087,1090"/>
+          </skind>
+          <succs r="1090,1087"/>
+          <preds r="1084"/>
+         </stmt>
+         <stmt sid="1091">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="2005" iloc="1501" ilval="812" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="1083"/>
+          <preds r="1090,1089"/>
+         </stmt>
+        </bstmts>
+       </block>
+      </skind>
+      <succs r="1084"/>
+      <preds r="1091,1082"/>
+     </stmt>
+     <stmt sid="1092">
+      <skind iexp="19" iloc="1524" stag="return"/>
+      <succs/>
+      <preds r="1085"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

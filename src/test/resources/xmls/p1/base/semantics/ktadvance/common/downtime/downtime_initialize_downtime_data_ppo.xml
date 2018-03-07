@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:41:55">
+   <application file="common/downtime.c"/>
+  </header>
+  <function fname="initialize_downtime_data">
+   <ppos>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="config_file is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="4" invs="6" ippo="4" s="g" ts="2018-01-09 16:01:53">
+     <e txt="upper-bound value is initial value of parameter config_file satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="5" invs="10" ippo="5" s="g" ts="2018-01-09 16:01:53">
+     <e txt="assignedAt#69(rv:xdddefault_initialize_downtime_data)"/>
+    </ppo>
+    <ppo deps="f" id="3" invs="6" ippo="3" s="g" ts="2018-01-09 16:01:53">
+     <e txt="initial value of parameter config_file satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="2" invs="13" ippo="2" s="g" ts="2018-01-09 16:01:53">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(config_file_2_)#init"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

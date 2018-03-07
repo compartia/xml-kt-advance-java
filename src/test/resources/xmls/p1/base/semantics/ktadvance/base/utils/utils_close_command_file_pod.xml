@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:30:17">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="close_command_file">
+   <assumption-table/>
+   <ppo-type-table>
+    <n a="742,5016,1430" ix="1" t="p"/>
+    <n a="744,5018,1431" ix="2" t="p"/>
+    <n a="747,5022,1588" ix="3" t="p"/>
+    <n a="747,5022,1589" ix="4" t="p"/>
+    <n a="747,5022,1546" ix="5" t="p"/>
+    <n a="747,5022,1590" ix="6" t="p"/>
+    <n a="747,5022,1591" ix="7" t="p"/>
+    <n a="747,5022,1592" ix="8" t="p"/>
+   </ppo-type-table>
+   <spo-type-table/>
+  </function>
+ </c-analysis>

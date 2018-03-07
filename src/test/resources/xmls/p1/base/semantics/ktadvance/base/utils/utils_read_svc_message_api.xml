@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:32:00">
+   <application file="base/utils.c"/>
+  </header>
+  <function fname="read_svc_message">
+   <api>
+    <api-assumptions>
+     <aa ipr="8080" ppos="48,6"/>
+     <aa ipr="8081" ppos="5,47"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="memcpy" h="string"/>
+     <lc c="1" f="pthread_mutex_unlock" h="pthread"/>
+     <lc c="1" f="snprintf" h="stdio"/>
+     <lc c="1" f="pthread_mutex_lock" h="pthread"/>
+     <lc c="1" f="write_to_logs_and_console" h="nagios"/>
+     <lc c="1" f="free" h="stdlib"/>
+     <lc c="1" f="memset" h="string"/>
+    </library-calls>
+    <missing-summaries>
+     <ms n="nagios/write_to_logs_and_console"/>
+    </missing-summaries>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

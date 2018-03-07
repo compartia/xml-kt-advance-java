@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-01-09 17:11:58">
+   <application file="base/broker.c"/>
+  </header>
+  <function fname="broker_contact_notification_method_data">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="169" ictxt="861" iloc="243" ivinfo="1">
+       <api-conditions>
+        <api-c iapi="603">
+         <po deps="a" id="1" ids="12" invs="47" ispo="1" s="g">
+          <e txt="condition initialized((*timestamp)) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="604">
+         <po deps="a" id="2" ids="13" invs="293" ispo="2" s="g">
+          <e txt="condition not-null(timestamp) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="194,196" ictxt="913" iloc="265" ivinfo="30">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites/>
+   </spos>
+  </function>
+ </c-analysis>
