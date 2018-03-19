@@ -2,6 +2,7 @@ package com.kt.advance.api;
 
 import java.io.File;
 import java.util.Collection;
+import java.util.Map;
 
 import javax.xml.bind.JAXBException;
 
@@ -12,6 +13,8 @@ public interface CAnalysis {
     void read() throws JAXBException;
 
     String relativize(File f);
+
+    Map<File, CApplication> readTargetDirs();
 
     CApplication getAppByBaseDir(File baseDir);
 }

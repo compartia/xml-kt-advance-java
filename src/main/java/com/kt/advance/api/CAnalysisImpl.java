@@ -53,6 +53,7 @@ public class CAnalysisImpl implements CAnalysis {
 
     }
 
+    @Override
     public Map<File, CApplication> readTargetDirs() {
         errors = new ErrorsBundle();
         final Collection<File> targetFiles = fs.listTargetFiles();
