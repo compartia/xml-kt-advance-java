@@ -1,5 +1,6 @@
 package com.kt.advance.api;
 
+import java.io.File;
 import java.util.Collection;
 
 import kt.advance.model.CLval;
@@ -24,6 +25,8 @@ public interface CFile {
     String getFilename(Integer key);
 
     String getName();
+
+    File getSourceFile();
 
     CPOPredicate getPredicate(Integer key);
 
