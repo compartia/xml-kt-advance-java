@@ -2,7 +2,7 @@ package com.kt.advance.api;
 
 import java.io.File;
 import java.util.Collection;
-import java.util.Set;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import javax.xml.bind.JAXBException;
@@ -11,8 +11,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.kt.advance.ErrorsBundle;
-import com.kt.advance.xml.XMLFileType;
-import com.kt.advance.xml.model.TargetFilesXml;
 
 import kt.advance.model.CApplicationImpl;
 
@@ -20,7 +18,12 @@ public class CAnalysisImpl implements CAnalysis {
     static final Logger LOG = LoggerFactory.getLogger(CApplication.class.getName());
     public final FsAbstraction fs;
 
-    private Set<CApplication> apps;
+    private Map<File, CApplication> apps;
+
+    @Override
+    public CApplication getAppByBaseDir(File baseDir) {
+        return apps.get(baseDir);
+    }
 
     ErrorsBundle errors;
 
@@ -33,14 +36,9 @@ public class CAnalysisImpl implements CAnalysis {
         return fs.getBaseDir().toPath().relativize(f.toPath()).toString();
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see kt.advance.model.CAnalysisInter#getApps()
-     */
     @Override
-    public Set<CApplication> getApps() {
-        return apps;
+    public Collection<CApplication> getApps() {
+        return apps.values();
     }
 
     public ErrorsBundle getErrors() {
@@ -49,33 +47,29 @@ public class CAnalysisImpl implements CAnalysis {
 
     @Override
     public void read() throws JAXBException {
-        errors = new ErrorsBundle();
-        final Collection<File> targetFiles = fs.listTargetFiles();
-
-        apps = targetFiles.stream()
-                .map((x) -> {
-                    final FsAbstraction afs = fs.instance(x);
-                    final CApplicationImpl app = new CApplicationImpl(afs);
-                    app.setErrors(errors);
-                    return app;
-                })
-                .collect(Collectors.toSet());
+        readTargetDirs();
 
         getApps().stream().forEach(x -> x.read());
 
     }
 
-    public void readAllTargetFilesXmls(Collection<File> xmls)
-            throws JAXBException {
+    @Override
+    public Map<File, CApplication> readTargetDirs() {
+        errors = new ErrorsBundle();
+        final Collection<File> targetFiles = fs.listTargetFiles();
 
-        LOG.info(String.format("listing %d TARGET_FILES files", xmls.size()));
+        apps = targetFiles.stream()
+                .map((appDir) -> {
 
-        final XMLFileType<TargetFilesXml> reader = XMLFileType.getReader(TargetFilesXml.class);
+                    final FsAbstraction appFs = fs.instance(appDir);
 
-        xmls.parallelStream()
-                .map((xml) -> reader.readXml(xml, fs.getBaseDir()))
-                .collect(Collectors.toList());
+                    final CApplicationImpl app = new CApplicationImpl(appFs);
+                    app.setErrors(errors);
+                    return app;
+                })
+                .collect(Collectors.toMap(app -> app.getBaseDir(), app -> app));
 
+        return apps;
     }
 
     public void setErrors(ErrorsBundle errors) {

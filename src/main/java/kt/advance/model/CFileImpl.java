@@ -2,6 +2,7 @@ package kt.advance.model;
 
 import static com.kt.advance.Util.requireValue;
 
+import java.io.File;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -155,6 +156,10 @@ class CFileImpl implements CFile {
     @Override
     public String getName() {
         return name;
+    }
+
+    public File getSourceFile() {
+        return new File(getApplication().getSourceDir(), getName());
     }
 
     //    @Override
