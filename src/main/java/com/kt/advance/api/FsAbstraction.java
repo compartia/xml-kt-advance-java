@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.Collection;
 
 public interface FsAbstraction {
+    public static final String ANALYSIS_DIR_NAME = "ktadvance";
 
     public static final String API_SUFFIX = "_api";
     public static final String CDICT_SUFFIX = "_cdict";
@@ -70,6 +71,9 @@ public interface FsAbstraction {
     @Deprecated
     Collection<File> listSPOs();
 
+    @Deprecated
     Collection<File> listTargetFiles();
+
+    Collection<File> listSubdirsRecursively(String dirName);
 
 }

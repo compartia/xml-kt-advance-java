@@ -46,9 +46,6 @@ public class FsAbstractionImpl implements FsAbstraction {
 
     static Map<String, IOFileFilter> filters = new HashMap<>();
 
-    static final IOFileFilter ktadvanceDirFilter = new NameFileFilter(
-            "ktadvance",
-            IOCase.INSENSITIVE);
     static final Logger LOG = LoggerFactory.getLogger(FsAbstractionImpl.class.getName());
 
     private final File baseDir;
@@ -124,21 +121,30 @@ public class FsAbstractionImpl implements FsAbstraction {
     }
 
     @Override
-    public Collection<File> listTargetFiles() {
+    public Collection<File> listSubdirsRecursively(String dirname) {
+        final NameFileFilter dirFilter = new NameFileFilter(
+                dirname,
+                IOCase.INSENSITIVE);
 
         final Collection<File> dirs = FileUtils.listFilesAndDirs(getBaseDir(),
-            FsAbstractionImpl.ktadvanceDirFilter,
+            dirFilter,
             TrueFileFilter.INSTANCE);
 
         final Set<File> targetDirs = dirs.stream()
-                .filter(x -> x.isDirectory() && x.getName().equals("ktadvance"))
+                .filter(x -> x.isDirectory() && x.getName().equals(dirname))
                 .collect(Collectors.toSet());
 
-        LOG.info(String.format("listing %d TARGET_FILES files", targetDirs.size()));
+        LOG.info(String.format("listing %d directories files", targetDirs.size()));
         for (final File tf : targetDirs) {
             LOG.info(tf.getAbsolutePath());
         }
         return targetDirs;
+    }
+
+    @Override
+    public Collection<File> listTargetFiles() {
+        return listSubdirsRecursively(ANALYSIS_DIR_NAME);
+
     }
 
     @Override
