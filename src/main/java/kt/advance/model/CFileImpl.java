@@ -158,6 +158,7 @@ class CFileImpl implements CFile {
         return name;
     }
 
+    @Override
     public File getSourceFile() {
         return new File(getApplication().getSourceDir(), getName());
     }
@@ -304,9 +305,7 @@ class CFileImpl implements CFile {
     }
 
     private void bind(Collection<? extends Bindable> collection) {
-        collection
-                .parallelStream()
-                .forEach(exp -> exp.bind(this));
+        collection.forEach(exp -> exp.bind(this));
     }
 
 }
