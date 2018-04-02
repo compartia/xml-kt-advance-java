@@ -47,27 +47,21 @@ public class CAnalysisImpl implements CAnalysis {
 
     @Override
     public void read() throws JAXBException {
-        readTargetDirs();
+        scanForCApps();
 
-        getApps().stream().forEach(x -> x.read());
+        getApps().forEach(x -> x.read());
 
     }
 
     @Override
-    public Map<File, CApplication> readTargetDirs() {
+    public Map<File, CApplication> scanForCApps() {
         errors = new ErrorsBundle();
-        final Collection<File> targetFiles = fs.listTargetFiles();
+
+        final Collection<File> targetFiles = fs.listSubdirsRecursively(FsAbstraction.ANALYSIS_DIR_NAME);
 
         apps = targetFiles.stream()
-                .map((appDir) -> {
-
-                    final FsAbstraction appFs = fs.instance(appDir);
-
-                    final CApplicationImpl app = new CApplicationImpl(appFs);
-                    app.setErrors(errors);
-                    return app;
-                })
-                .collect(Collectors.toMap(app -> app.getBaseDir(), app -> app));
+                .map(appDir -> new CApplicationImpl(fs.instance(appDir), errors))
+                .collect(Collectors.toMap(CApplication::getBaseDir, app -> app));
 
         return apps;
     }

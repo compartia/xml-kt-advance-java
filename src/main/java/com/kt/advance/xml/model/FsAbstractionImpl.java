@@ -54,18 +54,14 @@ public class FsAbstractionImpl implements FsAbstraction {
         this.baseDir = baseDir;
     }
 
-    static synchronized IOFileFilter getSuffinxFilter(String suffix) {
+    static synchronized IOFileFilter getSuffixFilter(String suffix) {
 
-        IOFileFilter ioFileFilter = filters.get(suffix);
+        return filters.computeIfAbsent(
+            suffix,
+            sfx -> new SuffixFileFilter(
+                    XmlNamesUtils.xmlSuffix(sfx),
+                    IOCase.SENSITIVE));
 
-        if (ioFileFilter == null) {
-            ioFileFilter = new SuffixFileFilter(
-                    XmlNamesUtils.xmlSuffix(suffix),
-                    IOCase.SENSITIVE);
-            filters.put(suffix, ioFileFilter);
-        }
-
-        return ioFileFilter;
     }
 
     @Override
@@ -150,7 +146,22 @@ public class FsAbstractionImpl implements FsAbstraction {
     @Override
     public Collection<File> listXMLs(String suffix) {
         return FileUtils.listFiles(getBaseDir(),
-            getSuffinxFilter(suffix),
+            getSuffixFilter(suffix),
+            TrueFileFilter.INSTANCE)
+                .stream()
+                .sorted()
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public Collection<File> listFilesRecursively(String suffix) {
+
+        final IOFileFilter suffixFilter = new SuffixFileFilter(
+                suffix,
+                IOCase.SENSITIVE);
+
+        return FileUtils.listFiles(getBaseDir(),
+            suffixFilter,
             TrueFileFilter.INSTANCE)
                 .stream()
                 .sorted()
