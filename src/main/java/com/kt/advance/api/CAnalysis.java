@@ -14,7 +14,7 @@ public interface CAnalysis {
 
     String relativize(File f);
 
-    Map<File, CApplication> readTargetDirs();
+    Map<File, CApplication> scanForCApps();
 
     CApplication getAppByBaseDir(File baseDir);
 }

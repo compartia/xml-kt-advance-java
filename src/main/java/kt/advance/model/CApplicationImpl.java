@@ -53,10 +53,6 @@ import com.kt.advance.xml.model.SpoXml;
 
 public class CApplicationImpl implements CApplication {
 
-    private static final String SOURCEFILES_DIR_NAME = "sourcefiles";
-
-    private static final String SEMANTICS_DIR_NAME = "semantics";
-
     @FunctionalInterface
     interface UnsafeProc {
         void run();
@@ -79,18 +75,18 @@ public class CApplicationImpl implements CApplication {
 
     private File sourceDir;
 
-    public CApplicationImpl(FsAbstraction fs) {
+    public CApplicationImpl(FsAbstraction fs, ErrorsBundle errors) {
         Preconditions.checkNotNull(fs, "FileSystemAbstraction is required");
         Preconditions.checkNotNull(fs.getBaseDir(), "base dir is required");
 
-        final String path = fs.getBaseDir().getAbsolutePath();
-        final int semanticsIndex = path.lastIndexOf(SEMANTICS_DIR_NAME);
-        if (semanticsIndex >= 0) {
-            sourceDir = new File(path.substring(0, semanticsIndex + SEMANTICS_DIR_NAME.length()));
-            sourceDir = new File(sourceDir, SOURCEFILES_DIR_NAME);
+        final File analysisDir = fs.getBaseDir().getParentFile();
+        final File sourceFile = new File(analysisDir, FsAbstraction.SOURCEFILES_DIR_NAME);
+
+        if (sourceFile.isDirectory() && sourceFile.exists()) {
+            this.sourceDir = sourceFile;
         } else {
-            sourceDir = null;
-            LOG.error("no " + SEMANTICS_DIR_NAME + " in path " + path);
+            this.sourceDir = null;
+            LOG.error("no " + FsAbstraction.SOURCEFILES_DIR_NAME + " in   " + analysisDir);
         }
 
         this.fs = fs;

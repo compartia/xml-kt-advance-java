@@ -107,19 +107,19 @@ class CFunctionImpl implements CFunction {
         Preconditions.checkState(null != cfile.predicates, "predicates map is null");
 
         ppoTypes = dict.function.ppoTypes
-                .parallelStream()
+                .stream()
                 .map((x) -> new PoTypeRef(x, cfile))
-                .collect(Collectors.toConcurrentMap(node -> node.id, node -> node));
+                .collect(Collectors.toMap(node -> node.id, node -> node));
 
         spoTypes = dict.function.spoTypes
-                .parallelStream()
+                .stream()
                 .map((x) -> new PoTypeRef(x, cfile))
-                .collect(Collectors.toConcurrentMap(node -> node.id, node -> node));
+                .collect(Collectors.toMap(node -> node.id, node -> node));
 
         assumptionsTypesMap = dict.function.assumptionTypeTable
-                .parallelStream()
+                .stream()
                 .map((x) -> new AssumptionType(x, cfile))
-                .collect(Collectors.toConcurrentMap(node -> node.id, node -> node));
+                .collect(Collectors.toMap(node -> node.id, node -> node));
 
     }
 
@@ -128,9 +128,9 @@ class CFunctionImpl implements CFunction {
         Preconditions.checkState(ppoTypes != null, "ppoTypes map is null for " + this.getName());
 
         ppos = pposXml.function.proofObligations
-                .parallelStream()
+                .stream()
                 .map(x -> new PPOImpl(x, this))
-                .collect(Collectors.toConcurrentMap(node -> node.getId(), node -> node));
+                .collect(Collectors.toMap(node -> node.getId(), node -> node));
 
     }
 

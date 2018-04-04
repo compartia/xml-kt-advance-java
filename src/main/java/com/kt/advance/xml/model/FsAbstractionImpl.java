@@ -46,9 +46,6 @@ public class FsAbstractionImpl implements FsAbstraction {
 
     static Map<String, IOFileFilter> filters = new HashMap<>();
 
-    static final IOFileFilter ktadvanceDirFilter = new NameFileFilter(
-            "ktadvance",
-            IOCase.INSENSITIVE);
     static final Logger LOG = LoggerFactory.getLogger(FsAbstractionImpl.class.getName());
 
     private final File baseDir;
@@ -57,18 +54,14 @@ public class FsAbstractionImpl implements FsAbstraction {
         this.baseDir = baseDir;
     }
 
-    static synchronized IOFileFilter getSuffinxFilter(String suffix) {
+    static synchronized IOFileFilter getSuffixFilter(String suffix) {
 
-        IOFileFilter ioFileFilter = filters.get(suffix);
+        return filters.computeIfAbsent(
+            suffix,
+            sfx -> new SuffixFileFilter(
+                    XmlNamesUtils.xmlSuffix(sfx),
+                    IOCase.SENSITIVE));
 
-        if (ioFileFilter == null) {
-            ioFileFilter = new SuffixFileFilter(
-                    XmlNamesUtils.xmlSuffix(suffix),
-                    IOCase.SENSITIVE);
-            filters.put(suffix, ioFileFilter);
-        }
-
-        return ioFileFilter;
     }
 
     @Override
@@ -124,17 +117,20 @@ public class FsAbstractionImpl implements FsAbstraction {
     }
 
     @Override
-    public Collection<File> listTargetFiles() {
+    public Collection<File> listSubdirsRecursively(String dirname) {
+        final NameFileFilter dirFilter = new NameFileFilter(
+                dirname,
+                IOCase.INSENSITIVE);
 
         final Collection<File> dirs = FileUtils.listFilesAndDirs(getBaseDir(),
-            FsAbstractionImpl.ktadvanceDirFilter,
+            dirFilter,
             TrueFileFilter.INSTANCE);
 
         final Set<File> targetDirs = dirs.stream()
-                .filter(x -> x.isDirectory() && x.getName().equals("ktadvance"))
+                .filter(x -> x.isDirectory() && x.getName().equals(dirname))
                 .collect(Collectors.toSet());
 
-        LOG.info(String.format("listing %d TARGET_FILES files", targetDirs.size()));
+        LOG.info(String.format("listing %d directories files", targetDirs.size()));
         for (final File tf : targetDirs) {
             LOG.info(tf.getAbsolutePath());
         }
@@ -142,9 +138,30 @@ public class FsAbstractionImpl implements FsAbstraction {
     }
 
     @Override
+    public Collection<File> listTargetFiles() {
+        return listSubdirsRecursively(ANALYSIS_DIR_NAME);
+
+    }
+
+    @Override
     public Collection<File> listXMLs(String suffix) {
         return FileUtils.listFiles(getBaseDir(),
-            getSuffinxFilter(suffix),
+            getSuffixFilter(suffix),
+            TrueFileFilter.INSTANCE)
+                .stream()
+                .sorted()
+                .collect(Collectors.toSet());
+    }
+
+    @Override
+    public Collection<File> listFilesRecursively(String suffix) {
+
+        final IOFileFilter suffixFilter = new SuffixFileFilter(
+                suffix,
+                IOCase.SENSITIVE);
+
+        return FileUtils.listFiles(getBaseDir(),
+            suffixFilter,
             TrueFileFilter.INSTANCE)
                 .stream()
                 .sorted()
