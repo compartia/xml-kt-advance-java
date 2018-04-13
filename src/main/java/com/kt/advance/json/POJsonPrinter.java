@@ -9,6 +9,7 @@ import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.kt.advance.api.CAnalysis;
 import com.kt.advance.api.CAnalysisImpl;
 import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
@@ -20,12 +21,12 @@ public class POJsonPrinter {
     public static class JAnalysis {
 
         public String basedir;
-        public final List<JApp> dirs;
+        public final List<JApp> apps;
 
-        public JAnalysis(CAnalysisImpl an) {
-            this.basedir = an.fs.getBaseDir().getAbsolutePath();
+        public JAnalysis(CAnalysis an) {
+            //            this.basedir = an. an.fs.getBaseDir().getAbsolutePath();
 
-            dirs = an.getApps().parallelStream()
+            apps = an.getApps().parallelStream()
                     .map(JApp::new)
                     .collect(Collectors.toList());
         }
@@ -33,11 +34,11 @@ public class POJsonPrinter {
 
     public static class JApp {
 
-        public String basedir;
+        public String sourceDir;
         public final List<JFile> files;
 
         public JApp(CApplication app) {
-            this.basedir = app.getBaseDir().getAbsolutePath();
+            this.sourceDir = app.getSourceDir().getAbsolutePath();
 
             files = app.getCfiles().parallelStream()
                     .map(JFile::new)
@@ -60,10 +61,16 @@ public class POJsonPrinter {
         }
     }
 
+    public static class JCalliste {
+        public List<POInfo> spos = new ArrayList<>();
+    }
+
     public static class JFunc {
         public String name;
         public List<POInfo> ppos = new ArrayList<>();
-        public List<POInfo> spos = new ArrayList<>();
+        public List<JCalliste> callsites = new ArrayList<>();
+
+        //public List<POInfo> spos = new ArrayList<>();
 
         public JFunc(CFunction cfunction) {
             this.name = cfunction.getName();
@@ -73,9 +80,11 @@ public class POJsonPrinter {
                     .collect(Collectors.toList());
 
             for (final CFunctionCallsiteSPO callsite : cfunction.getCallsites()) {
+                final JCalliste jCallsite = new JCalliste();
+                this.callsites.add(jCallsite);
 
                 for (final SPO spo : callsite.getSpos()) {
-                    this.ppos.add(Mapper.toPOInfo(spo, cfunction));
+                    jCallsite.spos.add(Mapper.toPOInfo(spo, cfunction));
                 }
             }
         }
