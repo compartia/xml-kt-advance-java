@@ -59,18 +59,20 @@ class PPOImpl extends POImpl implements PPO {
                 .map(assumptionType -> assumptionType.apiId)
                 .collect(Collectors.toSet());
 
-        cfun.getCallsites()        //TODO: probably missing deps from other functions
-                .stream()
-                .forEach(
-                    callsite -> {
-                        final Set<SPO> associatedSpos = callsite.getSpos()
-                                .stream()
-                                .filter(spo -> assumptionTypeIds.contains(spo.getType().getExternalId()))
-                                .collect(Collectors.toSet());
+        if (!assumptionTypeIds.isEmpty()) {
+            cfun.getCallsites()        //TODO: probably missing deps from other functions
+                    .stream()
+                    .forEach(
+                        callsite -> {
+                            final Set<SPO> associatedSpos = callsite.getSpos()
+                                    .stream()
+                                    .filter(spo -> assumptionTypeIds.contains(spo.getType().getExternalId()))
+                                    .collect(Collectors.toSet());
 
-                        collected.addAll(associatedSpos);
+                            collected.addAll(associatedSpos);
 
-                    });
+                        });
+        }
 
         return collected;
 

@@ -2,11 +2,12 @@ package com.kt.advance.json;
 
 import com.kt.advance.api.CFunction;
 import com.kt.advance.api.PO;
+import com.kt.advance.json.POJsonPrinter.JPO;
 
 public class Mapper {
 
-    public static <X extends PO> POInfo toPOInfo(X po, CFunction function) {
-        final POInfo info = new POInfo();
+    public static <X extends PO> JPO toPOInfo(X po, CFunction function) {
+        final JPO info = new JPO();
         info.id = po.getId();
         info.sts = po.getStatus().label;
         info.evl = po.getExplaination();

@@ -2,6 +2,7 @@ package com.kt.advance.json;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -15,13 +16,22 @@ import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
 import com.kt.advance.api.CFunctionCallsiteSPO;
+import com.kt.advance.api.PO;
 import com.kt.advance.api.SPO;
 
 public class POJsonPrinter {
-    public static class JAnalysis {
+    /**
+     *
+     * just a marker interface
+     *
+     */
+    interface Jsonable {
+    }
 
-        public String basedir;
+    public static class JAnalysis implements Jsonable {
+
         public final List<JApp> apps;
+        public String basedir;
 
         public JAnalysis(CAnalysis an) {
             //            this.basedir = an. an.fs.getBaseDir().getAbsolutePath();
@@ -32,10 +42,10 @@ public class POJsonPrinter {
         }
     }
 
-    public static class JApp {
+    public static class JApp implements Jsonable {
 
-        public String sourceDir;
         public final List<JFile> files;
+        public String sourceDir;
 
         public JApp(CApplication app) {
             this.sourceDir = app.getSourceDir().getAbsolutePath();
@@ -46,7 +56,11 @@ public class POJsonPrinter {
         }
     }
 
-    public static class JFile {
+    public static class JCalliste implements Jsonable {
+        public List<JPO> spos = new ArrayList<>();
+    }
+
+    public static class JFile implements Jsonable {
         public final List<JFunc> functions;
 
         public String name;
@@ -61,32 +75,90 @@ public class POJsonPrinter {
         }
     }
 
-    public static class JCalliste {
-        public List<POInfo> spos = new ArrayList<>();
+    /**
+     * in JSON format, represents a link to Primary proof obligation;
+     */
+    public static class JLink implements Jsonable {
+        public String file;
+        public String functionName;
+        public Integer id;
+
+        public JLink(PO po, CFunction fun) {
+            this.file = fun.getCfile().getName();
+            this.functionName = fun.getName();
+            this.id = po.getId();
+        }
+
     }
 
-    public static class JFunc {
-        public String name;
-        public List<POInfo> ppos = new ArrayList<>();
+    public static class JPO implements Jsonable {
+        public String dep;
+        public String evl;
+        public String exp;
+        public Integer id;
+        public Integer line;
+        public String prd;
+        public String sts;
+
+        public List<JLink> links = new ArrayList<>();
+    }
+
+    /**
+     * represents CFunction in JSON format
+     *
+     * @author artem
+     *
+     */
+    public static class JFunc implements Jsonable {
         public List<JCalliste> callsites = new ArrayList<>();
+        public String name;
+        public List<JPO> ppos = new ArrayList<>();
 
         //public List<POInfo> spos = new ArrayList<>();
 
         public JFunc(CFunction cfunction) {
             this.name = cfunction.getName();
 
-            ppos = cfunction.getPPOs().parallelStream()
-                    .map(x -> Mapper.toPOInfo(x, cfunction))
+            /*
+             * PPO: collecting primary proof obligations
+             */
+            this.ppos = cfunction.getPPOs().parallelStream()
+                    .map(ppo -> {
+
+                        final JPO poInfo = Mapper.toPOInfo(ppo, cfunction);
+
+                        final Set<SPO> associatedSpos = ppo.getAssociatedSpos(cfunction);
+
+                        poInfo.links = associatedSpos
+                                .stream()
+                                .map(spo -> new JLink(spo, cfunction))
+                                .collect(Collectors.toList());
+
+                        return poInfo;
+
+                    })
                     .collect(Collectors.toList());
 
+            /*
+             * SPO: collecting callsites and secondary proof obligations
+             */
             for (final CFunctionCallsiteSPO callsite : cfunction.getCallsites()) {
                 final JCalliste jCallsite = new JCalliste();
-                this.callsites.add(jCallsite);
 
                 for (final SPO spo : callsite.getSpos()) {
                     jCallsite.spos.add(Mapper.toPOInfo(spo, cfunction));
                 }
+
+                this.callsites.add(jCallsite);
             }
+
+            //            /*
+            //             * ASSOSIATED:
+            //             */
+            //            cfunction.getPPOs().forEach(
+            //                ppo -> {
+            //                    final Set<SPO> associatedSpos = ppo.getAssociatedSpos(cfunction);
+            //                });
         }
     }
 

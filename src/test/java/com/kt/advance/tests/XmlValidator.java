@@ -35,7 +35,6 @@ import java.util.HashMap;
 
 import javax.xml.bind.JAXBException;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -77,7 +76,7 @@ public class XmlValidator {
         assertNotNull("no file attr in <application> tag: " + message, xml.header.application.file);
     }
 
-    @Ignore
+    //    @Ignore
     @Test
     public void testAllPod2PpoCorrespondence() throws JAXBException {
 
@@ -233,7 +232,8 @@ public class XmlValidator {
 
     private void toJson(CAnalysisImpl an) throws FileNotFoundException, UnsupportedEncodingException {
 
-        final File f = new File(an.fs.getBaseDir().getName() + ".json");
+        final File f = new File(an.fs.getBaseDir(), an.fs.getBaseDir().getName() + ".kt.analysis.json");
+        System.out.println("writing json to:" + f.getAbsolutePath());
         line();
         LOG.info("writing json to " + f.getAbsolutePath());
         final PrintWriter writer = new PrintWriter(f, "UTF-8");
