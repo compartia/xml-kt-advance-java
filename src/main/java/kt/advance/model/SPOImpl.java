@@ -35,7 +35,8 @@ import com.kt.advance.xml.model.SpoXml.ApiCondition;
 class SPOImpl extends POImpl implements SPO {
 
     public SPOImpl(ApiCondition call, CFunction host) {
-        super(call.iapi, call.proofObligation, host.getSPOTypeRef(call.proofObligation.id));
+
+        super(call.proofObligation, host.getSPOTypeRef(call.proofObligation.id));
     }
 
     @Override

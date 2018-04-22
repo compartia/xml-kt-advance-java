@@ -31,7 +31,7 @@ import java.util.Map;
 
 import com.google.common.base.Preconditions;
 import com.kt.advance.api.CFunction;
-import com.kt.advance.api.CFunctionCallsiteSPO;
+import com.kt.advance.api.CFunctionCallsiteSPOs;
 import com.kt.advance.api.CLocation;
 import com.kt.advance.api.SPO;
 import com.kt.advance.xml.model.SpoXml.ApiCondition;
@@ -39,7 +39,7 @@ import com.kt.advance.xml.model.SpoXml.SPOCall;
 
 import kt.advance.model.ExpFactory.CExpression;
 
-class CFunctionCallsiteSPOImpl implements CFunctionCallsiteSPO {
+class CFunctionCallsiteSPOImpl implements CFunctionCallsiteSPOs {
 
     private final CExpression exp;
     private final CLocation location;
@@ -56,7 +56,8 @@ class CFunctionCallsiteSPOImpl implements CFunctionCallsiteSPO {
         for (final ApiCondition apiCondition : call.apiConditions) {
 
             final SPOImpl spo = new SPOImpl(apiCondition, cfunc);
-            putUniq(spos, apiCondition.iapi, spo);
+            //            putUniq(spos, apiCondition.iapi, spo);
+            putUniq(spos, spo.id, spo);
 
             Preconditions.checkState(spo.getLocation().equals(getLocation()), "" + spo.getLocation().toString()
                     + " vs " + getLocation().toString());
@@ -64,10 +65,12 @@ class CFunctionCallsiteSPOImpl implements CFunctionCallsiteSPO {
         }
     }
 
+    @Override
     public CExpression getExp() {
         return exp;
     }
 
+    @Override
     public CLocation getLocation() {
         return location;
     }

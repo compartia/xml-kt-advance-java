@@ -12,10 +12,12 @@ public interface CFunction {
 
     PoTypeRef getPPOTypeRef(int typeKey);
 
-    Collection<CFunctionCallsiteSPO> getCallsites();
+    Collection<CFunctionCallsiteSPOs> getCallsites();
 
     PoTypeRef getSPOTypeRef(int typeKey);
 
     Collection<? extends PPO> getPPOs();
+
+    Collection<ApiAssumption> getApiAssumptions();
 
 }
