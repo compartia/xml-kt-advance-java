@@ -5,19 +5,24 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.kt.advance.api.ApiAssumption;
 import com.kt.advance.api.CAnalysis;
 import com.kt.advance.api.CAnalysisImpl;
 import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
-import com.kt.advance.api.CFunctionCallsiteSPO;
+import com.kt.advance.api.CFunctionCallsiteSPOs;
 import com.kt.advance.api.PO;
 import com.kt.advance.api.SPO;
+
+import kt.advance.model.ExpFactory.CExpression;
 
 public class POJsonPrinter {
     /**
@@ -31,10 +36,10 @@ public class POJsonPrinter {
     public static class JAnalysis implements Jsonable {
 
         public final List<JApp> apps;
-        public String basedir;
+        //        public String basedir;
 
         public JAnalysis(CAnalysis an) {
-            //            this.basedir = an. an.fs.getBaseDir().getAbsolutePath();
+            //            this.basedir = an.fs.getBaseDir().getAbsolutePath();
 
             apps = an.getApps().parallelStream()
                     .map(JApp::new)
@@ -57,10 +62,25 @@ public class POJsonPrinter {
     }
 
     public static class JCalliste implements Jsonable {
+        @JsonInclude(Include.NON_EMPTY)
         public List<JPO> spos = new ArrayList<>();
+
+        public String exp;
+        public String loc;
+
+        public JCalliste(CFunctionCallsiteSPOs callsite) {
+            final CExpression exp2 = callsite.getExp();
+            this.exp = exp2 != null ? exp2.toString() : null;
+            this.loc = callsite.getLocation().toString();
+
+            for (final SPO spo : callsite.getSpos()) {
+                spos.add(Mapper.toPOInfo(spo));
+            }
+        }
     }
 
     public static class JFile implements Jsonable {
+        @JsonInclude(Include.NON_EMPTY)
         public final List<JFunc> functions;
 
         public String name;
@@ -100,7 +120,35 @@ public class POJsonPrinter {
         public String prd;
         public String sts;
 
+        @JsonInclude(Include.NON_EMPTY)
         public List<JLink> links = new ArrayList<>();
+    }
+
+    public static class JApiAssumption {
+        public final String prd;
+
+        @JsonInclude(Include.NON_EMPTY)
+        public final Integer[] ppos;
+
+        @JsonInclude(Include.NON_EMPTY)
+        public final Integer[] spos;
+
+        public final Integer id;
+
+        public JApiAssumption(ApiAssumption mApiAssumption) {
+            this.id = mApiAssumption.index;
+            this.prd = mApiAssumption.predicate.type.label;
+            this.ppos = mApiAssumption.ppos;
+            this.spos = mApiAssumption.spos;
+        }
+    }
+
+    public static class JApi {
+        @JsonInclude(Include.NON_EMPTY)
+        /**
+         * aa is for Api-assumption
+         */
+        public List<JApiAssumption> aa = new ArrayList<>();
     }
 
     /**
@@ -110,9 +158,15 @@ public class POJsonPrinter {
      *
      */
     public static class JFunc implements Jsonable {
+        @JsonInclude(Include.NON_EMPTY)
         public List<JCalliste> callsites = new ArrayList<>();
+
         public String name;
+
+        @JsonInclude(Include.NON_EMPTY)
         public List<JPO> ppos = new ArrayList<>();
+
+        public JApi api = new JApi();
 
         //public List<POInfo> spos = new ArrayList<>();
 
@@ -120,12 +174,20 @@ public class POJsonPrinter {
             this.name = cfunction.getName();
 
             /*
+             * API
+             */
+
+            this.api.aa = cfunction.getApiAssumptions().stream()
+                    .map(JApiAssumption::new)
+                    .collect(Collectors.toList());
+
+            /*
              * PPO: collecting primary proof obligations
              */
             this.ppos = cfunction.getPPOs().parallelStream()
                     .map(ppo -> {
 
-                        final JPO poInfo = Mapper.toPOInfo(ppo, cfunction);
+                        final JPO poInfo = Mapper.toPOInfo(ppo);
 
                         final Set<SPO> associatedSpos = ppo.getAssociatedSpos(cfunction);
 
@@ -142,23 +204,12 @@ public class POJsonPrinter {
             /*
              * SPO: collecting callsites and secondary proof obligations
              */
-            for (final CFunctionCallsiteSPO callsite : cfunction.getCallsites()) {
-                final JCalliste jCallsite = new JCalliste();
-
-                for (final SPO spo : callsite.getSpos()) {
-                    jCallsite.spos.add(Mapper.toPOInfo(spo, cfunction));
-                }
+            for (final CFunctionCallsiteSPOs callsite : cfunction.getCallsites()) {
+                final JCalliste jCallsite = new JCalliste(callsite);
 
                 this.callsites.add(jCallsite);
             }
 
-            //            /*
-            //             * ASSOSIATED:
-            //             */
-            //            cfunction.getPPOs().forEach(
-            //                ppo -> {
-            //                    final Set<SPO> associatedSpos = ppo.getAssociatedSpos(cfunction);
-            //                });
         }
     }
 
@@ -167,6 +218,7 @@ public class POJsonPrinter {
     public static String toJson(CAnalysisImpl an) {
 
         final JAnalysis jAnalysis = new JAnalysis(an);
+
         final ObjectMapper objectMapper = new ObjectMapper();
 
         final SimpleModule simpleModule = new SimpleModule("SimpleModule", new Version(1, 0, 0, null));

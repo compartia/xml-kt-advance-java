@@ -10,3 +10,7 @@ ppos.json
 src/test/java/com/kt/advance/tests/ApiXmlReadingTests.java
 
 kt-ch_analysis.log
+
+nagios-2.10.json
+
+nagios-2.10.kt.analysis.json
