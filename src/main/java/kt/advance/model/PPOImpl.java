@@ -38,7 +38,7 @@ import kt.advance.model.AssumptionType.AssumptionTypeCode;
 class PPOImpl extends POImpl implements PPO {
 
     public PPOImpl(PPONode ppoNode, CFunction cfun) {
-        super(ppoNode, cfun.getPPOTypeRef(ppoNode.id));
+        super(ppoNode, cfun.getPPOTypeRef(ppoNode.ippo));
     }
 
     @Override
