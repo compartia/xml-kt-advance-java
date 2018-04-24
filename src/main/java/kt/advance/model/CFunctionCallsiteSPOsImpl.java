@@ -39,19 +39,30 @@ import com.kt.advance.xml.model.SpoXml.SPOCall;
 
 import kt.advance.model.ExpFactory.CExpression;
 
-class CFunctionCallsiteSPOImpl implements CFunctionCallsiteSPOs {
+class CFunctionCallsiteSPOsImpl implements CFunctionCallsiteSPOs {
 
     private final CExpression exp;
     private final CLocation location;
     private final Map<Integer, SPO> spos = new HashMap<>();
 
-    public CFunctionCallsiteSPOImpl(SPOCall call, CFunction cfunc) {
+    private final CVarInfo callee;
+
+    @Override
+    public CVarInfo getCallee() {
+        return callee;
+    }
+
+    public CFunctionCallsiteSPOsImpl(SPOCall call, CFunction cfunc) {
+
         this.location = cfunc.getCfile().getLocation(call.iloc);
+
         if (call.iexp != null) {
             exp = cfunc.getCfile().getExression(call.iexp);
         } else {
             exp = null;
         }
+
+        callee = call.callee != null ? cfunc.getCfile().getVarInfo(call.callee) : null;
 
         for (final ApiCondition apiCondition : call.apiConditions) {
 
@@ -59,8 +70,9 @@ class CFunctionCallsiteSPOImpl implements CFunctionCallsiteSPOs {
             //            putUniq(spos, apiCondition.iapi, spo);
             putUniq(spos, spo.id, spo);
 
-            Preconditions.checkState(spo.getLocation().equals(getLocation()), "" + spo.getLocation().toString()
-                    + " vs " + getLocation().toString());
+            Preconditions.checkState(
+                spo.getLocation().equals(getLocation()), "" + spo.getLocation().toString()
+                        + " vs " + getLocation().toString());
 
         }
     }

@@ -90,7 +90,7 @@ public final class SpoXml extends FunctionLevelAnalysisXml {
         public Integer iloc;
 
         @XmlAttribute(name = "ivinfo")
-        public Integer ivinfo;
+        public Integer callee;
 
     }
 

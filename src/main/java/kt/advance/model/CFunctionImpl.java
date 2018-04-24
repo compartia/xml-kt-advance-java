@@ -15,6 +15,7 @@ import com.kt.advance.api.ApiAssumption;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
 import com.kt.advance.api.CFunctionCallsiteSPOs;
+import com.kt.advance.api.CLocation;
 import com.kt.advance.api.PPO;
 import com.kt.advance.xml.model.ApiXml;
 import com.kt.advance.xml.model.CFunXml;
@@ -169,14 +170,19 @@ class CFunctionImpl implements CFunction {
 
     private void addCalls(List<SPOCall> collection) {
 
-        final List<CFunctionCallsiteSPOImpl> c = collection.stream()
-                .map(x -> new CFunctionCallsiteSPOImpl(x, this))
+        final List<CFunctionCallsiteSPOsImpl> c = collection.stream()
+                .map(x -> new CFunctionCallsiteSPOsImpl(x, this))
                 .collect(Collectors.toList());
 
         if (!c.isEmpty()) {
             calls.addAll(c);
         }
 
+    }
+
+    @Override
+    public CLocation getLocation() {
+        return this.varInfo.location;
     }
 
 }

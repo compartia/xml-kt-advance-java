@@ -19,31 +19,50 @@ import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
 import com.kt.advance.api.CFunctionCallsiteSPOs;
+import com.kt.advance.api.CLocation;
 import com.kt.advance.api.PO;
 import com.kt.advance.api.SPO;
 
+import kt.advance.model.CVarInfo;
 import kt.advance.model.ExpFactory.CExpression;
 
 public class POJsonPrinter {
-    /**
-     *
-     * just a marker interface
-     *
-     */
-    interface Jsonable {
-    }
-
     public static class JAnalysis implements Jsonable {
 
         public final List<JApp> apps;
-        //        public String basedir;
 
         public JAnalysis(CAnalysis an) {
-            //            this.basedir = an.fs.getBaseDir().getAbsolutePath();
 
             apps = an.getApps().parallelStream()
                     .map(JApp::new)
                     .collect(Collectors.toList());
+        }
+    }
+
+    public static class JApi {
+        @JsonInclude(Include.NON_EMPTY)
+        /**
+         * aa is for Api-assumption
+         */
+        public List<JApiAssumption> aa = new ArrayList<>();
+    }
+
+    public static class JApiAssumption {
+        public final Integer id;
+
+        @JsonInclude(Include.NON_EMPTY)
+        public final Integer[] ppos;
+
+        public final String prd;
+
+        @JsonInclude(Include.NON_EMPTY)
+        public final Integer[] spos;
+
+        public JApiAssumption(ApiAssumption mApiAssumption) {
+            this.id = mApiAssumption.index;
+            this.prd = mApiAssumption.predicate.type.label;
+            this.ppos = mApiAssumption.ppos;
+            this.spos = mApiAssumption.spos;
         }
     }
 
@@ -61,17 +80,44 @@ public class POJsonPrinter {
         }
     }
 
+    public static class JLocation implements Jsonable {
+
+        public final Integer line;
+        public final String file;
+
+        public JLocation(CLocation loc) {
+            this.line = loc.getLine();
+            this.file = loc.getFilename();
+        }
+
+    }
+
+    public static class JVarInfo implements Jsonable {
+        public String name;
+        public JLocation loc;
+
+        public JVarInfo(CVarInfo varInfo) {
+            this.name = varInfo.name;
+            this.loc = varInfo.location == null ? null : new JLocation(varInfo.location);
+
+        }
+
+    }
+
     public static class JCalliste implements Jsonable {
+        public String exp;
+
+        public JVarInfo callee;
         @JsonInclude(Include.NON_EMPTY)
         public List<JPO> spos = new ArrayList<>();
-
-        public String exp;
-        public String loc;
 
         public JCalliste(CFunctionCallsiteSPOs callsite) {
             final CExpression exp2 = callsite.getExp();
             this.exp = exp2 != null ? exp2.toString() : null;
-            this.loc = callsite.getLocation().toString();
+
+            if (callsite.getCallee() != null) {
+                this.callee = new JVarInfo(callsite.getCallee());
+            }
 
             for (final SPO spo : callsite.getSpos()) {
                 spos.add(Mapper.toPOInfo(spo));
@@ -96,82 +142,28 @@ public class POJsonPrinter {
     }
 
     /**
-     * in JSON format, represents a link to Primary proof obligation;
-     */
-    public static class JLink implements Jsonable {
-        public String file;
-        public String functionName;
-        public Integer id;
-
-        public JLink(PO po, CFunction fun) {
-            this.file = fun.getCfile().getName();
-            this.functionName = fun.getName();
-            this.id = po.getId();
-        }
-
-    }
-
-    public static class JPO implements Jsonable {
-        public String dep;
-        public String evl;
-        public String exp;
-        public Integer id;
-        public Integer line;
-        public String prd;
-        public String sts;
-
-        @JsonInclude(Include.NON_EMPTY)
-        public List<JLink> links = new ArrayList<>();
-    }
-
-    public static class JApiAssumption {
-        public final String prd;
-
-        @JsonInclude(Include.NON_EMPTY)
-        public final Integer[] ppos;
-
-        @JsonInclude(Include.NON_EMPTY)
-        public final Integer[] spos;
-
-        public final Integer id;
-
-        public JApiAssumption(ApiAssumption mApiAssumption) {
-            this.id = mApiAssumption.index;
-            this.prd = mApiAssumption.predicate.type.label;
-            this.ppos = mApiAssumption.ppos;
-            this.spos = mApiAssumption.spos;
-        }
-    }
-
-    public static class JApi {
-        @JsonInclude(Include.NON_EMPTY)
-        /**
-         * aa is for Api-assumption
-         */
-        public List<JApiAssumption> aa = new ArrayList<>();
-    }
-
-    /**
      * represents CFunction in JSON format
      *
      * @author artem
      *
      */
     public static class JFunc implements Jsonable {
+        public String name;
+
+        public JApi api = new JApi();
+
         @JsonInclude(Include.NON_EMPTY)
         public List<JCalliste> callsites = new ArrayList<>();
-
-        public String name;
 
         @JsonInclude(Include.NON_EMPTY)
         public List<JPO> ppos = new ArrayList<>();
 
-        public JApi api = new JApi();
-
-        //public List<POInfo> spos = new ArrayList<>();
+        public JLocation loc;
 
         public JFunc(CFunction cfunction) {
             this.name = cfunction.getName();
+
+            this.loc = new JLocation(cfunction.getLocation());//.getLine();
 
             /*
              * API
@@ -211,6 +203,43 @@ public class POJsonPrinter {
             }
 
         }
+    }
+
+    /**
+     * in JSON format, represents a link to Primary proof obligation;
+     */
+    public static class JLink implements Jsonable {
+        public String file;
+        public String functionName;
+        public Integer id;
+
+        public JLink(PO po, CFunction fun) {
+            this.file = fun.getCfile().getName();
+            this.functionName = fun.getName();
+            this.id = po.getId();
+        }
+
+    }
+
+    public static class JPO implements Jsonable {
+        public String dep;
+        public String evl;
+        public String exp;
+        public Integer id;
+        public Integer line;
+        @JsonInclude(Include.NON_EMPTY)
+        public List<JLink> links = new ArrayList<>();
+        public String prd;
+
+        public String sts;
+    }
+
+    /**
+     *
+     * just a marker interface
+     *
+     */
+    interface Jsonable {
     }
 
     static final String RL = "\n\t\t----> ";

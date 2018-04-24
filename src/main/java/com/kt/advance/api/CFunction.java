@@ -20,4 +20,6 @@ public interface CFunction {
 
     Collection<ApiAssumption> getApiAssumptions();
 
+    CLocation getLocation();
+
 }
