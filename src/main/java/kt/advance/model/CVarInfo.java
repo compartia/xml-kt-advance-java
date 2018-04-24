@@ -24,12 +24,40 @@
 
 package kt.advance.model;
 
+import com.kt.advance.api.CLocation;
 import com.kt.advance.xml.model.IndexedTableNode;
 
-public class CVarInfo extends Indexed {
+public class CVarInfo extends Indexed implements Bindable {
+    public String name;
+
+    public CLocation location;
+
+    int locId;
 
     public CVarInfo(IndexedTableNode node) {
         super(node);
+    }
+
+    @Override
+    public void bind(CFileImpl cfile) {
+        if (locId != -1) {//global locations are not yet supported
+            location = cfile.getLocation(locId);
+        }
+
+    }
+
+    public int getLineNumber() {
+        if (this.location != null) {
+            return this.location.getLine();
+        } else {
+            return 0;
+        }
+    }
+
+    @Override
+    protected void init(Integer[] args, String[] tags) {
+        this.name = tags[0];
+        this.locId = args[5];
     }
 
 }

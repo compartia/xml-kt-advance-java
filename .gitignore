@@ -9,4 +9,10 @@ ppos.json
 
 src/test/java/com/kt/advance/tests/ApiXmlReadingTests.java
 
-kt-ch_analysis.log
+*.log
+
+*.analysis.json
+
+ 
+
+src/test/java/com/kt/advance/tests/FsTest.java

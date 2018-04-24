@@ -53,10 +53,10 @@ abstract class POImpl implements PO {
         return false;
     }
 
-    public POImpl(Integer id, PPONode ppoNode, PoTypeRef type) {
+    public POImpl(PPONode ppoNode, PoTypeRef type) {
         Preconditions.checkNotNull(type, "PO type must not be null");
 
-        this.id = id;
+        this.id = ppoNode.id;
         this.type = type;
 
         this.status = Definitions.POStatus.forString(ppoNode.status);

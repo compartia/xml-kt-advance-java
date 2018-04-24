@@ -35,7 +35,6 @@ import java.util.HashMap;
 
 import javax.xml.bind.JAXBException;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,7 +44,7 @@ import com.kt.advance.api.CAnalysisImpl;
 import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
-import com.kt.advance.api.CFunctionCallsiteSPO;
+import com.kt.advance.api.CFunctionCallsiteSPOs;
 import com.kt.advance.api.Definitions;
 import com.kt.advance.api.FsAbstraction;
 import com.kt.advance.api.PPO;
@@ -77,7 +76,7 @@ public class XmlValidator {
         assertNotNull("no file attr in <application> tag: " + message, xml.header.application.file);
     }
 
-    @Ignore
+    //    @Ignore
     @Test
     public void testAllPod2PpoCorrespondence() throws JAXBException {
 
@@ -138,7 +137,7 @@ public class XmlValidator {
 
                 }
 
-                for (final CFunctionCallsiteSPO callsite : cfunciton.getCallsites()) {
+                for (final CFunctionCallsiteSPOs callsite : cfunciton.getCallsites()) {
 
                     for (final SPO spo : callsite.getSpos()) {
 
@@ -215,7 +214,7 @@ public class XmlValidator {
 
         for (final CFile cfile : app.getCfiles()) {
             for (final CFunction cfunciton : cfile.getCFunctions()) {
-                for (final CFunctionCallsiteSPO callsite : cfunciton.getCallsites()) {
+                for (final CFunctionCallsiteSPOs callsite : cfunciton.getCallsites()) {
 
                     for (final SPO spo : callsite.getSpos()) {
                         final CPOPredicate predicate = spo.getPredicate();
@@ -233,7 +232,8 @@ public class XmlValidator {
 
     private void toJson(CAnalysisImpl an) throws FileNotFoundException, UnsupportedEncodingException {
 
-        final File f = new File(an.fs.getBaseDir().getName() + ".json");
+        final File f = new File(an.fs.getBaseDir(), an.fs.getBaseDir().getName() + ".kt.analysis.json");
+        System.out.println("writing json to:" + f.getAbsolutePath());
         line();
         LOG.info("writing json to " + f.getAbsolutePath());
         final PrintWriter writer = new PrintWriter(f, "UTF-8");

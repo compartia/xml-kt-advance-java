@@ -140,7 +140,7 @@ class CFileImpl implements CFile {
 
     @Override
     public CVarInfo getVarInfo(Integer key) {
-        return requireValue(varinfos, key, "location");
+        return requireValue(varinfos, key, "var info");
     }
 
     @Override
@@ -270,6 +270,9 @@ class CFileImpl implements CFile {
         bind(lhosts.values());
         bind(expressions.values());
 
+        bind(funArg.values());
+        bind(funArgs.values());
+
         filenamesIndex = new HashMap<>();
         for (final IndexedTableNode node : cdict.cfile.cDeclarations.filenames) {
             filenamesIndex.put(node.index, node.getTagsSplit()[0]);
@@ -280,6 +283,8 @@ class CFileImpl implements CFile {
                 .stream()
                 .map(node -> new CLocationImpl(node, this, this.application))
                 .collect(Collectors.toMap(node -> node.id, node -> node));
+
+        bind(varinfos.values());
 
     }
 

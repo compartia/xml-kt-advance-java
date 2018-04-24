@@ -34,11 +34,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class ApiXml extends FunctionLevelAnalysisXml {
 
     public static class ApiAssumptionNode {
-        @XmlAttribute(name = "ppos")
-        public String ppos;
-
         @XmlAttribute(name = "ipr")
         public Integer predicateIndex;
+
+        @XmlAttribute(name = "ppos")
+        public String ppos;
 
         @XmlAttribute(name = "spos")
         public String spos;

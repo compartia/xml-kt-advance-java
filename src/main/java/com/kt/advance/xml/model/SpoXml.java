@@ -36,6 +36,7 @@ import com.kt.advance.xml.model.PpoXml.PPONode;
 
 @XmlRootElement(name = "c-analysis")
 public final class SpoXml extends FunctionLevelAnalysisXml {
+
     public static class ApiCondition {
         @XmlAttribute(name = "iapi")
         public Integer iapi;
@@ -89,7 +90,7 @@ public final class SpoXml extends FunctionLevelAnalysisXml {
         public Integer iloc;
 
         @XmlAttribute(name = "ivinfo")
-        public Integer ivinfo;
+        public Integer callee;
 
     }
 

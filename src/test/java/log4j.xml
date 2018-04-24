@@ -3,15 +3,14 @@
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
 	debug="false">
 
-	<appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
-		
+	<appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">		
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern" value="%-5p %t [%-40.40c] %x - %m%n" />
 		</layout>
 	</appender>
 
 	<!-- general application log -->
-	<appender name="Kt2JsonLogFile" class="org.apache.log4j.FileAppender">
+	<appender name="Kt2JsonLogFile" class="org.apache.log4j.RollingFileAppender">
 		<param name="File" value="kt-ch_analysis.log" />
 		<param name="Threshold" value="DEBUG" />
 		<layout class="org.apache.log4j.PatternLayout">

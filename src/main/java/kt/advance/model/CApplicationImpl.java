@@ -26,6 +26,8 @@ package kt.advance.model;
 import static com.kt.advance.Util.requireValue;
 
 import java.io.File;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -179,6 +181,7 @@ public class CApplicationImpl implements CApplication {
     }
 
     void readAllCfileXmls(Collection<File> cdictFiles) {
+        final Instant start = Instant.now();
         LOG.info("reading {} {} files", cdictFiles.size(), FsAbstraction.CFILE_SUFFIX);
 
         final XMLFileType<CfileXml> reader = XMLFileType.getReader(CfileXml.class);
@@ -193,6 +196,9 @@ public class CApplicationImpl implements CApplication {
                     }, xmlObj)
 
         );
+        final Instant end = Instant.now();
+        LOG.info("Time elapsed for reading {} {} files is {}", cdictFiles.size(), FsAbstraction.CFILE_SUFFIX,
+            Duration.between(start, end));
 
     }
 

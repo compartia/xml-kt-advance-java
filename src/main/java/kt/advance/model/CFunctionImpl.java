@@ -11,9 +11,11 @@ import java.util.stream.Collectors;
 
 import com.google.common.base.Preconditions;
 import com.kt.advance.ErrorsBundle;
+import com.kt.advance.api.ApiAssumption;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
-import com.kt.advance.api.CFunctionCallsiteSPO;
+import com.kt.advance.api.CFunctionCallsiteSPOs;
+import com.kt.advance.api.CLocation;
 import com.kt.advance.api.PPO;
 import com.kt.advance.xml.model.ApiXml;
 import com.kt.advance.xml.model.CFunXml;
@@ -24,14 +26,21 @@ import com.kt.advance.xml.model.SpoXml.CallsitesWrapper;
 import com.kt.advance.xml.model.SpoXml.SPOCall;
 
 class CFunctionImpl implements CFunction {
+
     private Map<Integer, ApiAssumption> apiAssumptions;
+
+    @Override
+    public Collection<ApiAssumption> getApiAssumptions() {
+        return this.apiAssumptions.values();
+    }
+
     private Map<Integer, AssumptionType> assumptionsTypesMap;
 
     public AssumptionType getAssumptionType(int typeKey) {
         return requireValue(assumptionsTypesMap, typeKey, "AssumptionType ");
     }
 
-    private final List<CFunctionCallsiteSPO> calls = new ArrayList<>();
+    private final List<CFunctionCallsiteSPOs> calls = new ArrayList<>();
 
     private Map<Integer, PPOImpl> ppos = new HashMap<>();
 
@@ -79,7 +88,7 @@ class CFunctionImpl implements CFunction {
     }
 
     @Override
-    public Collection<CFunctionCallsiteSPO> getCallsites() {
+    public Collection<CFunctionCallsiteSPOs> getCallsites() {
         return this.calls;
     }
 
@@ -94,7 +103,9 @@ class CFunctionImpl implements CFunction {
     }
 
     public void readApiFile(final ApiXml apiXml) {
-
+        //XXX: read library-calls
+        // TODO: read postcondition-guarantees
+        //TODO: read postcondition-requests
         apiAssumptions = apiXml.getAssumptions()
                 .stream()
                 .map(apiNode -> new ApiAssumption(apiNode, this))
@@ -159,14 +170,19 @@ class CFunctionImpl implements CFunction {
 
     private void addCalls(List<SPOCall> collection) {
 
-        final List<CFunctionCallsiteSPOImpl> c = collection.stream()
-                .map(x -> new CFunctionCallsiteSPOImpl(x, this))
+        final List<CFunctionCallsiteSPOsImpl> c = collection.stream()
+                .map(x -> new CFunctionCallsiteSPOsImpl(x, this))
                 .collect(Collectors.toList());
 
         if (!c.isEmpty()) {
             calls.addAll(c);
         }
 
+    }
+
+    @Override
+    public CLocation getLocation() {
+        return this.varInfo.location;
     }
 
 }
