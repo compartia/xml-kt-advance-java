@@ -14,7 +14,6 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.kt.advance.api.ApiAssumption;
 import com.kt.advance.api.CAnalysis;
-import com.kt.advance.api.CAnalysisImpl;
 import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
@@ -244,7 +243,7 @@ public class POJsonPrinter {
 
     static final String RL = "\n\t\t----> ";
 
-    public static String toJson(CAnalysisImpl an) {
+    public static String toJson(CAnalysis an) {
 
         final JAnalysis jAnalysis = new JAnalysis(an);
 
