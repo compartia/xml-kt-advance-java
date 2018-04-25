@@ -4,7 +4,7 @@ import com.kt.advance.api.PO;
 
 public class POPrinter {
     private POPrinter() {
-    };
+    }
 
     static final String RL = "\n\t\t----> ";
 
