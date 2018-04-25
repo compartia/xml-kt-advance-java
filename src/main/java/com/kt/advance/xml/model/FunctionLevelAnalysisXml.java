@@ -30,10 +30,7 @@ public abstract class FunctionLevelAnalysisXml extends AnalysisXml implements Ha
     @Override
     public String getSourceFilename() {
         if (this.header.application == null) {
-
             return fetchNameFromOldHeader();
-
-            //            throw new XmlReadFailedException(getOrigin(), " file has no header/applicatoin tag");
         }
 
         return this.header.application.file;
@@ -52,12 +49,11 @@ public abstract class FunctionLevelAnalysisXml extends AnalysisXml implements Ha
     @Override
     public String getFunctionName() {
         final File f = new File(getSourceFilename());
-        final String nameNoExt = f.getName().substring(0, f.getName().lastIndexOf("."));
+        final String nameNoExt = f.getName().substring(0, f.getName().lastIndexOf('.'));
 
         final String relativeOrigin = new File(this.getRelativeOrigin()).getName();
 
-        final String name = relativeOrigin.substring(nameNoExt.length() + 1, relativeOrigin.lastIndexOf("_"));
-        return name;
+        return relativeOrigin.substring(nameNoExt.length() + 1, relativeOrigin.lastIndexOf('_'));
     }
 
 }

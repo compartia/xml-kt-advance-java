@@ -25,7 +25,6 @@ package kt.advance.model;
 
 import com.google.common.base.Preconditions;
 import com.kt.advance.POPrinter;
-import com.kt.advance.api.CFunction;
 import com.kt.advance.api.CLocation;
 import com.kt.advance.api.Definitions;
 import com.kt.advance.api.Definitions.POLevel;
@@ -98,11 +97,7 @@ abstract class POImpl implements PO {
 
     @Override
     public String toString() {
-        return POPrinter.toString(this, null);
-    }
-
-    public String toString(CFunction function) {
-        return POPrinter.toString(this, function);
+        return POPrinter.toString(this);
     }
 
     @Override

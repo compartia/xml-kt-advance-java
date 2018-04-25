@@ -48,9 +48,7 @@ public class CAnalysisImpl implements CAnalysis {
     @Override
     public void read() throws JAXBException {
         scanForCApps();
-
-        getApps().forEach(x -> x.read());
-
+        getApps().forEach(CApplication::read);
     }
 
     @Override

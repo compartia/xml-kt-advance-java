@@ -1,12 +1,14 @@
 package com.kt.advance;
 
-import com.kt.advance.api.CFunction;
 import com.kt.advance.api.PO;
 
 public class POPrinter {
-    final static String RL = "\n\t\t----> ";
+    private POPrinter() {
+    }
 
-    public static String toString(PO po, CFunction function) {
+    static final String RL = "\n\t\t----> ";
+
+    public static String toString(PO po) {
         final StringBuilder sb = new StringBuilder();
 
         sb.append(po.getClass().getSimpleName()).append("\t").append(po.getId()).append("\t");
