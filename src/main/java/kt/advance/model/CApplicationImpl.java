@@ -28,8 +28,10 @@ import static com.kt.advance.Util.requireValue;
 import java.io.File;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -130,13 +132,13 @@ public class CApplicationImpl implements CApplication {
         readAllCfileXmls(fs.listXMLs(FsAbstraction.CFILE_SUFFIX));
         readAllCdictXmls(fs.listXMLs(FsAbstraction.CDICT_SUFFIX));
 
-        readAllCfuncsXmls(fs.listCFuns());
+        readAllCfuncsXmls(fs.listXMLs(FsAbstraction.CFUN_SUFFIX));
 
-        readAllPrdXmls(fs.listPRDs());
-        readAllPodXmls(fs.listPODs());
-        readAllPpoXmls(fs.listPPOs());
-        readAllSpoXmls(fs.listSPOs());
-        readAllApiXmls(fs.listAPIs());
+        readAllPrdXmls(fs.listXMLs(FsAbstraction.PRD_SUFFIX));
+        readAllPodXmls(fs.listXMLs(FsAbstraction.POD_SUFFIX));
+        readAllPpoXmls(fs.listXMLs(FsAbstraction.PPO_SUFFIX));
+        readAllSpoXmls(fs.listXMLs(FsAbstraction.SPO_SUFFIX));
+        readAllApiXmls(fs.listXMLs(FsAbstraction.API_SUFFIX));
 
     }
 
@@ -298,8 +300,10 @@ public class CApplicationImpl implements CApplication {
     }
 
     @Override
-    public Collection<? extends CFile> getCfiles() {
-        return cfiles.values();
+    public Collection<CFile> getCfiles() {
+        final List<CFile> files = new ArrayList<>();
+        files.addAll(cfiles.values());
+        return files;
     }
 
 }

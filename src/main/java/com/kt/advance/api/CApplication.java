@@ -30,7 +30,7 @@ public interface CApplication {
 
     void read();
 
-    Collection<? extends CFile> getCfiles();
+    Collection<CFile> getCfiles();
 
     CFile getCFileStrictly(String name);
 

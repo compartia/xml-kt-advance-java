@@ -98,11 +98,11 @@ abstract class POImpl implements PO {
 
     @Override
     public String toString() {
-        return POPrinter.toString(this, null);
+        return POPrinter.toString(this);
     }
 
     public String toString(CFunction function) {
-        return POPrinter.toString(this, function);
+        return POPrinter.toString(this);
     }
 
     @Override

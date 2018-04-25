@@ -34,16 +34,15 @@ public class ErrorsBundle {
     }
 
     public void print() {
-        int cnt = 1;
-        for (final String key : errors.keySet()) {
-            final List<String> list = errors.get(key);
-            LOG.error(cnt + "\t" + key + " \t errors: " + list.size());
+
+        errors.forEach((key, list) -> {
+            LOG.error("{}  \t errors: {}", key, list.size());
 
             for (final String e : list) {
-                LOG.error("\t\t - " + e);
+                LOG.error("\t\t - {}", e);
             }
 
-            cnt++;
-        }
+        });
+
     }
 }
