@@ -26,7 +26,7 @@ import kt.advance.model.CVarInfo;
 import kt.advance.model.ExpFactory.CExpression;
 
 public class POJsonPrinter {
-    public static class JAnalysis implements Jsonable {
+    static class JAnalysis implements Jsonable {
 
         public final List<JApp> apps;
 
@@ -38,7 +38,7 @@ public class POJsonPrinter {
         }
     }
 
-    public static class JApi {
+    static class JApi {
         @JsonInclude(Include.NON_EMPTY)
         /**
          * aa is for Api-assumption
@@ -46,7 +46,7 @@ public class POJsonPrinter {
         public List<JApiAssumption> aa = new ArrayList<>();
     }
 
-    public static class JApiAssumption {
+    static class JApiAssumption {
         public final Integer id;
 
         @JsonInclude(Include.NON_EMPTY)
@@ -65,7 +65,7 @@ public class POJsonPrinter {
         }
     }
 
-    public static class JApp implements Jsonable {
+    static class JApp implements Jsonable {
 
         public final List<JFile> files;
         public String sourceDir;
@@ -79,34 +79,10 @@ public class POJsonPrinter {
         }
     }
 
-    public static class JLocation implements Jsonable {
-
-        public final Integer line;
-        public final String file;
-
-        public JLocation(CLocation loc) {
-            this.line = loc.getLine();
-            this.file = loc.getFilename();
-        }
-
-    }
-
-    public static class JVarInfo implements Jsonable {
-        public String name;
-        public JLocation loc;
-
-        public JVarInfo(CVarInfo varInfo) {
-            this.name = varInfo.name;
-            this.loc = varInfo.location == null ? null : new JLocation(varInfo.location);
-
-        }
-
-    }
-
-    public static class JCalliste implements Jsonable {
-        public String exp;
-
+    static class JCalliste implements Jsonable {
         public JVarInfo callee;
+
+        public String exp;
         @JsonInclude(Include.NON_EMPTY)
         public List<JPO> spos = new ArrayList<>();
 
@@ -124,7 +100,7 @@ public class POJsonPrinter {
         }
     }
 
-    public static class JFile implements Jsonable {
+    static class JFile implements Jsonable {
         @JsonInclude(Include.NON_EMPTY)
         public final List<JFunc> functions;
 
@@ -146,18 +122,18 @@ public class POJsonPrinter {
      * @author artem
      *
      */
-    public static class JFunc implements Jsonable {
-        public String name;
-
+    static class JFunc implements Jsonable {
         public JApi api = new JApi();
 
         @JsonInclude(Include.NON_EMPTY)
         public List<JCalliste> callsites = new ArrayList<>();
 
+        public JLocation loc;
+
+        public String name;
+
         @JsonInclude(Include.NON_EMPTY)
         public List<JPO> ppos = new ArrayList<>();
-
-        public JLocation loc;
 
         public JFunc(CFunction cfunction) {
             this.name = cfunction.getName();
@@ -207,7 +183,7 @@ public class POJsonPrinter {
     /**
      * in JSON format, represents a link to Primary proof obligation;
      */
-    public static class JLink implements Jsonable {
+    static class JLink implements Jsonable {
         public String file;
         public String functionName;
         public Integer id;
@@ -220,7 +196,19 @@ public class POJsonPrinter {
 
     }
 
-    public static class JPO implements Jsonable {
+    static class JLocation implements Jsonable {
+
+        public final String file;
+        public final Integer line;
+
+        public JLocation(CLocation loc) {
+            this.line = loc.getLine();
+            this.file = loc.getFilename();
+        }
+
+    }
+
+    static class JPO implements Jsonable {
         public String dep;
         public String evl;
         public String exp;
@@ -231,6 +219,18 @@ public class POJsonPrinter {
         public String prd;
 
         public String sts;
+    }
+
+    static class JVarInfo implements Jsonable {
+        public JLocation loc;
+        public String name;
+
+        public JVarInfo(CVarInfo varInfo) {
+            this.name = varInfo.name;
+            this.loc = varInfo.location == null ? null : new JLocation(varInfo.location);
+
+        }
+
     }
 
     /**
