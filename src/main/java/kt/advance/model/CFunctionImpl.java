@@ -160,18 +160,18 @@ class CFunctionImpl implements CFunction {
 
         //        List<CFunctionCallsiteSPO>
 
-        addCalls(callsites.directCalls);
-        addCalls(callsites.indirectCalls);
-        addCalls(callsites.returnSites);
+        addCalls(callsites.directCalls, "dc");
+        addCalls(callsites.indirectCalls, "ic");
+        addCalls(callsites.returnSites, "rs");
 
         //XXX: add callsite-type to CFunctionCallsiteSPO
 
     }
 
-    private void addCalls(List<SPOCall> collection) {
+    private void addCalls(List<SPOCall> collection, String callsType) {
 
         final List<CFunctionCallsiteSPOsImpl> c = collection.stream()
-                .map(x -> new CFunctionCallsiteSPOsImpl(x, this))
+                .map(x -> new CFunctionCallsiteSPOsImpl(x, callsType, this))
                 .collect(Collectors.toList());
 
         if (!c.isEmpty()) {

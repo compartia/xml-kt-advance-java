@@ -83,10 +83,12 @@ public class POJsonPrinter {
         public JVarInfo callee;
 
         public String exp;
+        public String type;
         @JsonInclude(Include.NON_EMPTY)
         public List<JPO> spos = new ArrayList<>();
 
         public JCalliste(CFunctionCallsiteSPOs callsite) {
+            this.type = callsite.getType();
             final CExpression exp2 = callsite.getExp();
             this.exp = exp2 != null ? exp2.toString() : null;
 
