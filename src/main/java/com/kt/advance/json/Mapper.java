@@ -14,7 +14,7 @@ public class Mapper {
         info.line = po.getLocation().getLine();
         info.prd = po.getPredicate().type.label;
         info.exp = po.getPredicate().express();
-        info.dep = po.getDeps().toString();
+        info.dep = po.getDeps().level.name();//.toString();
         return info;
 
     }
