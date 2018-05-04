@@ -20,6 +20,7 @@ import com.kt.advance.xml.XmlReadFailedException;
 import com.kt.advance.xml.model.CFunXml;
 import com.kt.advance.xml.model.CdictXml;
 import com.kt.advance.xml.model.CfileXml;
+import com.kt.advance.xml.model.IndexedStrignTable;
 import com.kt.advance.xml.model.IndexedTableNode;
 import com.kt.advance.xml.model.PrdXml;
 
@@ -170,7 +171,7 @@ class CFileImpl implements CFile {
 
     @Override
     public CPOPredicate getPredicate(Integer key) {
-        return requireValue(predicates, key, "location");
+        return requireValue(predicates, key, "predicate");
     }
 
     @Override
@@ -191,7 +192,7 @@ class CFileImpl implements CFile {
 
     public void readCDictFile(CdictXml cdict, ExpFactory ef) {
 
-        LOG.debug(String.format("Parsing %s ", cdict.getOrigin()));
+        LOG.debug("Parsing ({}) {} ", this.getName(), cdict.getOrigin());
 
         final CTypeFactory cTypeFactory = new CTypeFactory();
 
@@ -274,8 +275,8 @@ class CFileImpl implements CFile {
         bind(funArgs.values());
 
         filenamesIndex = new HashMap<>();
-        for (final IndexedTableNode node : cdict.cfile.cDeclarations.filenames) {
-            filenamesIndex.put(node.index, node.getTagsSplit()[0]);
+        for (final IndexedStrignTable node : cdict.cfile.cDeclarations.filenames) {
+            filenamesIndex.put(node.index, node.value);
         }
 
         //      parsing locations
@@ -291,10 +292,11 @@ class CFileImpl implements CFile {
     HashMap<Integer, String> filenamesIndex;
 
     public void readPrdFile(PrdXml prdXml, PredicatesFactory pf) {
-
+        LOG.debug("reading {}", prdXml.getOrigin());
         Preconditions.checkState(null != expressions, "expressions map is null for " + prdXml.getOrigin());
 
         predicates = new HashMap<>();
+
         for (final IndexedTableNode node : prdXml.predicatesDictionary.predicates) {
             final Integer pk = node.index;
 

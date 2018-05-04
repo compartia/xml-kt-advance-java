@@ -40,7 +40,7 @@ public class PrdXml extends FileLevelAnalysisXml {
         public List<IndexedTableNode> predicates = new ArrayList<>();
     }
 
-    @XmlElement(name = "po-dictionary")
+    @XmlElement(name = "po-dictionary", required = true)
     public PredicatesDictionary predicatesDictionary;
 
     @Override
