@@ -47,12 +47,20 @@ class CFunctionCallsiteSPOsImpl implements CFunctionCallsiteSPOs {
 
     private final CVarInfo callee;
 
+    private final String type;
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
     @Override
     public CVarInfo getCallee() {
         return callee;
     }
 
-    public CFunctionCallsiteSPOsImpl(SPOCall call, CFunction cfunc) {
+    public CFunctionCallsiteSPOsImpl(SPOCall call, String type, CFunction cfunc) {
+        this.type = type;
 
         this.location = cfunc.getCfile().getLocation(call.iloc);
 

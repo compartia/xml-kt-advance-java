@@ -15,4 +15,6 @@ public interface CFunctionCallsiteSPOs {
 
     CVarInfo getCallee();
 
+    String getType();
+
 }
