@@ -27,9 +27,10 @@ import com.kt.advance.api.CAnalysisImpl;
 import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
-import com.kt.advance.api.CFunctionCallsiteSPOs;
+import com.kt.advance.api.CFunctionSiteSPOs;
 import com.kt.advance.api.CLocation;
 import com.kt.advance.api.PO;
+import com.kt.advance.api.PPO;
 import com.kt.advance.api.SPO;
 import com.kt.advance.xml.model.FsAbstractionImpl;
 
@@ -114,23 +115,31 @@ public class POJsonPrinter {
     }
 
     static class JCalliste implements Jsonable {
+
+        @JsonInclude(Include.NON_EMPTY)
         public JVarInfo callee;
 
         public String exp;
-        public String type;
+        public final String type;
+
+        public final JLocation loc;
+
         @JsonInclude(Include.NON_EMPTY)
         public List<JPO> spos = new ArrayList<>();
 
-        public JCalliste(CFunctionCallsiteSPOs callsite) {
-            this.type = callsite.getType();
-            final CExpression exp2 = callsite.getExp();
+        public JCalliste(CFunctionSiteSPOs site) {
+
+            this.loc = new JLocation(site.getLocation());
+
+            this.type = site.getType();
+            final CExpression exp2 = site.getExp();
             this.exp = exp2 != null ? exp2.toString() : null;
 
-            if (callsite.getCallee() != null) {
-                this.callee = new JVarInfo(callsite.getCallee());
+            if (site.getCallee() != null) {
+                this.callee = new JVarInfo(site.getCallee());
             }
 
-            for (final SPO spo : callsite.getSpos()) {
+            for (final SPO spo : site.getSpos()) {
                 spos.add(new JPO(spo));
             }
         }
@@ -163,6 +172,9 @@ public class POJsonPrinter {
 
         @JsonInclude(Include.NON_EMPTY)
         public List<JCalliste> callsites = new ArrayList<>();
+
+        @JsonInclude(Include.NON_EMPTY)
+        public List<JCalliste> returnsites = new ArrayList<>();
 
         public JLocation loc;
 
@@ -207,10 +219,17 @@ public class POJsonPrinter {
             /*
              * SPO: collecting callsites and secondary proof obligations
              */
-            for (final CFunctionCallsiteSPOs callsite : cfunction.getCallsites()) {
+            for (final CFunctionSiteSPOs callsite : cfunction.getCallsites()) {
                 final JCalliste jCallsite = new JCalliste(callsite);
-
                 this.callsites.add(jCallsite);
+            }
+
+            for (final CFunctionSiteSPOs returnsite : cfunction.getReturnsites()) {
+                final JCalliste jsite = new JCalliste(returnsite);
+                if (!jsite.spos.isEmpty()) {
+                    //TODO: this must pe configurable
+                    this.returnsites.add(jsite);
+                }
             }
 
         }
@@ -246,27 +265,39 @@ public class POJsonPrinter {
     }
 
     static class JPO implements Jsonable {
-        public final String dep;
-        public final String evl;
-        public final String exp;
-        public final Integer id;
-        public final Integer line;
+        public String dep;
+        public String evl;
+        public String exp;
+        public Integer id;
+        @JsonInclude(Include.NON_EMPTY)
+        public Integer line;
         @JsonInclude(Include.NON_EMPTY)
         public List<JLink> links = new ArrayList<>();
-        public final String prd;
+        public String prd;
 
-        public final String sts;
+        public String sts;
 
-        public JPO(PO po) {
+        private void init(PO po) {
 
             this.id = po.getId();
             this.sts = po.getStatus().label;
             this.evl = po.getExplaination();
-            //        info.loc = po.getLocation().toString(function);
-            this.line = po.getLocation().getLine();
+
             this.prd = po.getPredicate().type.label;
             this.exp = po.getPredicate().express();
-            this.dep = po.getDeps().level.name();//.toString();
+            this.dep = po.getDeps().level.name();
+
+        }
+
+        public JPO(SPO po) {
+            init(po);
+            /* SPO location defined by call-site or return-site */
+            this.line = null;
+        }
+
+        public JPO(PPO po) {
+            init(po);
+            this.line = po.getLocation().getLine();
 
         }
     }
@@ -274,10 +305,12 @@ public class POJsonPrinter {
     static class JVarInfo implements Jsonable {
         public JLocation loc;
         public String name;
+        public String type;
 
         public JVarInfo(CVarInfo varInfo) {
             this.name = varInfo.name;
             this.loc = varInfo.location == null ? null : new JLocation(varInfo.location);
+            this.type = varInfo.type.toString();
 
         }
 

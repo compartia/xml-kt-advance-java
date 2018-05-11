@@ -30,21 +30,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.kt.advance.api.CFunction;
-import com.kt.advance.api.CFunctionCallsiteSPOs;
+import com.kt.advance.api.CFunctionSiteSPOs;
 import com.kt.advance.api.CLocation;
 import com.kt.advance.api.SPO;
-import com.kt.advance.xml.model.SpoXml.ApiCondition;
-import com.kt.advance.xml.model.SpoXml.SPOCall;
+import com.kt.advance.xml.model.SpoXml.PCElement;
+import com.kt.advance.xml.model.SpoXml.RSElement;
 
 import kt.advance.model.ExpFactory.CExpression;
 
-class CFunctionCallsiteSPOsImpl implements CFunctionCallsiteSPOs {
+class CFunctionReturnsiteSPOsImpl implements CFunctionSiteSPOs {
 
     private final CExpression exp;
     private final CLocation location;
     private final Map<Integer, SPO> spos = new HashMap<>();
-
-    private final CVarInfo callee;
 
     private final String type;
 
@@ -53,29 +51,24 @@ class CFunctionCallsiteSPOsImpl implements CFunctionCallsiteSPOs {
         return type;
     }
 
-    @Override
-    public CVarInfo getCallee() {
-        return callee;
-    }
-
-    public CFunctionCallsiteSPOsImpl(SPOCall call, String type, CFunction cfunc) {
+    public CFunctionReturnsiteSPOsImpl(RSElement rs, String type, CFunction cfunc) {
         this.type = type;
 
-        this.location = cfunc.getCfile().getLocation(call.iloc);
+        this.location = cfunc.getCfile().getLocation(rs.iloc);
 
-        if (call.iexp != null) {
-            exp = cfunc.getCfile().getExression(call.iexp);
+        if (rs.iexp != null) {
+            exp = cfunc.getCfile().getExression(rs.iexp);
         } else {
             exp = null;
         }
 
-        callee = call.callee != null ? cfunc.getCfile().getVarInfo(call.callee) : null;
+        for (final PCElement postcondition : rs.postconditions) {
 
-        for (final ApiCondition apiCondition : call.apiConditions) {
-
-            final SPOImpl spo = new SPOImpl(apiCondition, cfunc, this);
-            //            putUniq(spos, apiCondition.iapi, spo);
-            putUniq(spos, spo.id, spo);
+            if (postcondition.proofObligation != null) {
+                final SPOImpl spo = new SPOImpl(postcondition, cfunc, this);
+                //            putUniq(spos, apiCondition.iapi, spo);
+                putUniq(spos, spo.id, spo);
+            }
 
         }
     }
@@ -93,6 +86,11 @@ class CFunctionCallsiteSPOsImpl implements CFunctionCallsiteSPOs {
     @Override
     public Collection<SPO> getSpos() {
         return spos.values();
+    }
+
+    @Override
+    public CVarInfo getCallee() {
+        return null;
     }
 
 }

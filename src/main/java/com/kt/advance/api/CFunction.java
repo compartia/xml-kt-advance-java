@@ -14,6 +14,8 @@ public interface CFunction {
 
     Collection<CFunctionCallsiteSPOs> getCallsites();
 
+    Collection<CFunctionSiteSPOs> getReturnsites();
+
     PoTypeRef getSPOTypeRef(int typeKey);
 
     Collection<? extends PPO> getPPOs();

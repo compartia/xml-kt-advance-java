@@ -17,7 +17,7 @@ import com.kt.advance.api.CAnalysisImpl;
 import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
-import com.kt.advance.api.CFunctionCallsiteSPOs;
+import com.kt.advance.api.CFunctionSiteSPOs;
 import com.kt.advance.api.FsAbstraction;
 import com.kt.advance.api.PO;
 import com.kt.advance.api.SPO;
@@ -96,7 +96,7 @@ public class ReadTest {
                         });
 
                     // Iterate callsites
-                    for (final CFunctionCallsiteSPOs callsite : function.getCallsites()) {
+                    for (final CFunctionSiteSPOs callsite : function.getCallsites()) {
                         // Iterate SPOs
                         callsite.getSpos().stream()
                                 .forEach(spo -> {
