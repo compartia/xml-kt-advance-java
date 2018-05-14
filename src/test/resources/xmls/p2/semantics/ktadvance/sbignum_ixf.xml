@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:16:08">
+   <application file="sbignum.c"/>
+  </header>
+  <interface-dictionary>
+   <api-parameter-table/>
+   <s-term-table>
+    <n a="0" ix="1" t="ic"/>
+    <n ix="2" t="rv"/>
+    <n a="256" ix="3" t="ic"/>
+   </s-term-table>
+   <precondition-table/>
+   <postcondition-table>
+    <n a="2,1" ix="1" t="px,eq"/>
+    <n a="2,3" ix="2" t="px,lt"/>
+    <n a="2,1" ix="3" t="px,ge"/>
+   </postcondition-table>
+   <postrequest-table>
+    <n a="1682,2" ix="1" t="fp"/>
+    <n a="1682,3" ix="2" t="fp"/>
+   </postrequest-table>
+   <sideeffect-table/>
+   <lv-property-table/>
+   <library-variable-table/>
+  </interface-dictionary>
+ </c-analysis>

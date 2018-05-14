@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:22">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_muli_raw">
+   <api xlst="5">
+    <api-assumptions>
+     <aa ipr="358" ppos="98,1"/>
+     <aa ipr="360" ppos="120,100,3"/>
+     <aa ipr="374" ppos="19"/>
+     <aa ipr="375" ppos="215,71,170,194,143,21" spos="24,9"/>
+     <aa ipr="419" ppos="40,108"/>
+     <aa ipr="429" ppos="118"/>
+     <aa ipr="3018" ppos="69"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="memcpy" h="string"/>
+     <lc c="1" f="malloc" h="stdlib"/>
+     <lc c="1" f="free" h="stdlib"/>
+    </library-calls>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="389"/>
+     <uu po-id="430"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

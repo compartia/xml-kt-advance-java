@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="sbignum" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:48" version="CP1.00"/>
+  </header>
+  <function filename="sbignum">
+   <svar ivinfo="68"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="2231,1,1,0,0,1518,0,1" ix="1" t="z,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="31">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="1245" iloc="1519" itag="call">
+         <args>
+          <exp iexp="1701"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="32"/>
+      <preds/>
+     </stmt>
+     <stmt sid="32">
+      <skind iloc="1520" stag="return"/>
+      <succs/>
+      <preds r="31"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

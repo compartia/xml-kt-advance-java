@@ -1,0 +1,1248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:26">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_tdiv_qr">
+   <ppos>
+    <ppo deps="f" id="239" invs="87" ippo="239" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter d satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="182" invs="51" ippo="182" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is return value from function __builtin_alloca satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="18" ippo="18" s="g">
+     <e txt="r is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="50" ippo="50" s="g">
+     <e txt="constant value 1 fits in type unsigned int"/>
+    </ppo>
+    <ppo deps="f" id="80" invs="179" ippo="80" s="g" ts="2018-05-02 13:04:39">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: 16"/>
+        <msg t="[2]:function return value: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="offset size 0 is less than the size of (__builtin_alloca(16)#return (16)"/>
+    </ppo>
+    <ppo deps="s" id="301" ippo="301" s="g">
+     <e txt="field d (38) is assigned a value with a valid upper bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="a" id="104" ids="1" invs="71" ippo="104" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo id="302" ippo="302"/>
+    <ppo deps="f" id="188" invs="168" ippo="188" s="g" ts="2018-05-02 13:04:39">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: 16"/>
+        <msg t="[2]:function return value: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="offset size 0 is less than the size of (__builtin_alloca(16)#return (16)"/>
+    </ppo>
+    <ppo deps="f" id="4" invs="299" ippo="4" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(d_8_)#init"/>
+    </ppo>
+    <ppo id="219" ippo="219">
+     <d>
+      <invs>
+       <arg a="4" i="148"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="258" ippo="258"/>
+    <ppo deps="s" id="103" ippo="103" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="a" id="189" ids="2" invs="23" ippo="189" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition initialized(d-&gt;s) delegated to api"/>
+    </ppo>
+    <ppo deps="a" id="102" ids="3" invs="28" ippo="102" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition initialized(z-&gt;l) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="272" invs="289" ippo="272" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(r_4_)#init"/>
+    </ppo>
+    <ppo deps="s" id="145" ippo="145" s="g">
+     <e txt="casting from unsigned int to unsigned long is safe"/>
+    </ppo>
+    <ppo deps="s" id="15" ippo="15" s="g">
+     <e txt="constant value 1 fits in type unsigned int"/>
+    </ppo>
+    <ppo id="221" ippo="221">
+     <d>
+      <invs>
+       <arg a="4" i="148"/>
+       <arg a="3" i="127"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (memref-13_173_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="180" invs="220" ippo="180" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1254(rv:__builtin_alloca)"/>
+    </ppo>
+    <ppo id="275" ippo="275"/>
+    <ppo id="121" ippo="121">
+     <d>
+      <invs>
+       <arg a="4" i="141"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="141" invs="66" ippo="141" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="216" invs="91" ippo="216" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter d satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="168" ids="4" invs="108" ippo="168" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition not-null(d) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="152" ippo="152" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="205" invs="93" ippo="205" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter d satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="160" ippo="160" s="g">
+     <e txt="d is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="204" invs="93" ippo="204" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter d satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="235" ippo="235" s="g">
+     <e txt="d is a function parameter"/>
+    </ppo>
+    <ppo deps="a" id="246" ids="4" invs="87" ippo="246" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition not-null(d) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="195" invs="240" ippo="195" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1254"/>
+    </ppo>
+    <ppo deps="f" id="54" invs="256" ippo="54" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(r_4_)#init"/>
+    </ppo>
+    <ppo deps="f" id="305" invs="309" ippo="305" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return, addr_in_(d_8_)#init"/>
+    </ppo>
+    <ppo id="124" ippo="124">
+     <d>
+      <invs>
+       <arg a="1" i="118"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="140" invs="66" ippo="140" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="1" ids="5" invs="23" ippo="1" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition initialized(d-&gt;l) delegated to api"/>
+    </ppo>
+    <ppo id="77" ippo="77">
+     <d>
+      <invs>
+       <arg a="1" i="69,179,230,275"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from __builtin_alloca"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="242" invs="127" ippo="242" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter memref-13 satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="159" ippo="159" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="a" id="3" ids="4" invs="95" ippo="3" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition not-null(d) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="16" invs="212" ippo="16" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1229(rv:mpz_set_ui)"/>
+    </ppo>
+    <ppo deps="f" id="21" invs="43" ippo="21" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter r satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="36" invs="316" ippo="36" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_6_)#init"/>
+    </ppo>
+    <ppo deps="f" id="131" invs="178" ippo="131" s="g" ts="2018-05-02 13:04:39">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: 16"/>
+        <msg t="[2]:function return value: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="offset size 0 is less than the size of (__builtin_alloca(16)#return (16)"/>
+    </ppo>
+    <ppo id="231" ippo="231"/>
+    <ppo deps="a" id="68" ids="6" invs="28" ippo="68" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition initialized(z-&gt;a) delegated to api"/>
+    </ppo>
+    <ppo deps="a" id="213" ids="4" invs="91" ippo="213" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition not-null(d) delegated to api"/>
+    </ppo>
+    <ppo id="122" ippo="122">
+     <d>
+      <invs>
+       <arg a="1" i="118"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="181" invs="51" ippo="181" s="g" ts="2018-05-02 13:04:39">
+     <e txt="return value from function __builtin_alloca satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="237" invs="291" ippo="237" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(d_8_)#init"/>
+    </ppo>
+    <ppo deps="f" id="306" invs="156" ippo="306" s="g" ts="2018-05-02 13:04:39">
+     <e txt="lower-bound value is return value from __builtin_alloca (IH); or value of parameter d (IH); all of which satisfy the lower-bound property"/>
+    </ppo>
+    <ppo deps="f" id="85" invs="277" ippo="85" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="100" invs="70" ippo="100" s="g" ts="2018-05-02 13:04:39">
+     <e txt="return value from function __builtin_alloca satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="26" ippo="26" s="g">
+     <e txt="d is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="105" invs="279" ippo="105" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_6_)#init"/>
+    </ppo>
+    <ppo deps="f" id="296" invs="309" ippo="296" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return, addr_in_(d_8_)#init"/>
+    </ppo>
+    <ppo deps="f" id="225" invs="238" ippo="225" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1254"/>
+    </ppo>
+    <ppo deps="f" id="247" invs="291" ippo="247" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(d_8_)#init"/>
+    </ppo>
+    <ppo deps="s" id="135" ippo="135" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="63" ippo="63" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="279" invs="145" ippo="279" s="g" ts="2018-05-02 13:04:39">
+     <e txt="lower-bound value is return value from __builtin_alloca (IH); or value of parameter z (IH); all of which satisfy the lower-bound property"/>
+    </ppo>
+    <ppo deps="f" id="307" invs="155" ippo="307" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is return value from __builtin_alloca (IH); or value of parameter d (IH); all of which satisfy the upper-bound property"/>
+    </ppo>
+    <ppo deps="f" id="176" invs="264" ippo="176" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="186" invs="261" ippo="186" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="297" invs="156" ippo="297" s="g" ts="2018-05-02 13:04:39">
+     <e txt="lower-bound value is return value from __builtin_alloca (IH); or value of parameter d (IH); all of which satisfy the lower-bound property"/>
+    </ppo>
+    <ppo deps="f" id="192" invs="260" ippo="192" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(d_8_)#init"/>
+    </ppo>
+    <ppo deps="a" id="211" ids="7" invs="23" ippo="211" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition initialized(d-&gt;a) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="259" ippo="259" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="a" id="271" ids="8" invs="84" ippo="271" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition not-null(r) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="125" ippo="125" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="f" id="143" invs="118" ippo="143" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter memref-9 satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="19" invs="262" ippo="19" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(r_4_)#init"/>
+    </ppo>
+    <ppo deps="f" id="32" invs="315" ippo="32" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(r_4_)#init"/>
+    </ppo>
+    <ppo deps="f" id="227" invs="292" ippo="227" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="17" invs="236" ippo="17" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1229(rv:mpz_set_ui)"/>
+    </ppo>
+    <ppo deps="s" id="172" ippo="172" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="228" invs="86" ippo="228" s="g" ts="2018-05-02 13:04:39">
+     <e txt="return value from function __builtin_alloca satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="226" ippo="226">
+     <d>
+      <invs>
+       <arg a="1" i="86,190,238,292"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from __builtin_alloca"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="199" invs="194" ippo="199" s="g" ts="2018-05-02 13:04:39">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: 16"/>
+        <msg t="[2]:function return value: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="offset size 0 is less than the size of (__builtin_alloca(16)#return (16)"/>
+    </ppo>
+    <ppo id="264" ippo="264"/>
+    <ppo deps="f" id="269" invs="151" ippo="269" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is return value from __builtin_alloca (IH); or value of parameter d (IH); all of which satisfy the upper-bound property"/>
+    </ppo>
+    <ppo id="295" ippo="295">
+     <d>
+      <invs>
+       <arg a="1" i="156,155,309"/>
+      </invs>
+      <msgs>
+       <msg t="not-null(d) delegated to api; unable to exclude null return value from __builtin_alloca"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="117" invs="73" ippo="117" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="208" invs="296" ippo="208" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return"/>
+    </ppo>
+    <ppo deps="s" id="60" ippo="60" s="g">
+     <e txt="q is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="150" invs="66" ippo="150" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="187" invs="39" ippo="187" s="g" ts="2018-05-02 13:04:39">
+     <e txt="return value from function __builtin_alloca satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="244" ids="7" invs="23" ippo="244" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition initialized(d-&gt;a) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="161" ippo="161" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo id="142" ippo="142">
+     <d>
+      <invs>
+       <arg a="1" i="118"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="144" invs="118" ippo="144" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter memref-9 satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="137" ippo="137" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="262" invs="150" ippo="262" s="g" ts="2018-05-02 13:04:39">
+     <e txt="lower-bound value is return value from __builtin_alloca (IH); or value of parameter z (IH); all of which satisfy the lower-bound property"/>
+    </ppo>
+    <ppo deps="f" id="27" invs="302" ippo="27" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(d_8_)#init"/>
+    </ppo>
+    <ppo deps="s" id="243" ippo="243" s="g">
+     <e txt="casting from unsigned int to unsigned long is safe"/>
+    </ppo>
+    <ppo deps="s" id="157" ippo="157" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="194" invs="42" ippo="194" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter d satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="289" ippo="289" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="212" ippo="212" s="g">
+     <e txt="d is a function parameter"/>
+    </ppo>
+    <ppo id="87" ippo="87">
+     <d>
+      <invs>
+       <arg a="1" i="111,204,247,313"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from __builtin_alloca"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="84" ippo="84">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:remaining constraint: ((memref-10_167_)#init &gt; 0)"/>
+        <msg t="[2]:function arguments: ((memref-10_167_)#init * 4)"/>
+        <msg t="[2]:function return value: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="183" invs="266" ippo="183" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="171" invs="108" ippo="171" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter d satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="34" invs="114" ippo="34" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter r satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="274" invs="84" ippo="274" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter r satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="241" invs="127" ippo="241" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter memref-13 satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="251" ippo="251" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="169" invs="308" ippo="169" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(d_8_)#init"/>
+    </ppo>
+    <ppo deps="s" id="281" ippo="281" s="g">
+     <e txt="q is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="127" invs="229" ippo="127" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1251"/>
+    </ppo>
+    <ppo deps="s" id="22" ippo="22" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="215" invs="91" ippo="215" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter d satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="222" ippo="222">
+     <d>
+      <invs>
+       <arg a="1" i="127"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="286" invs="311" ippo="286" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(r_4_)#init"/>
+    </ppo>
+    <ppo deps="f" id="298" invs="155" ippo="298" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is return value from __builtin_alloca (IH); or value of parameter d (IH); all of which satisfy the upper-bound property"/>
+    </ppo>
+    <ppo deps="f" id="28" invs="101" ippo="28" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter d satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="148" ids="1" invs="66" ippo="148" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo id="65" ippo="65"/>
+    <ppo deps="f" id="280" invs="144" ippo="280" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is return value from __builtin_alloca (IH); or value of parameter z (IH); all of which satisfy the upper-bound property"/>
+    </ppo>
+    <ppo deps="f" id="44" invs="24" ippo="44" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter q satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="5" invs="95" ippo="5" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter d satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="120" ippo="120"/>
+    <ppo deps="f" id="184" invs="216" ippo="184" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1254"/>
+    </ppo>
+    <ppo deps="s" id="162" ippo="162" s="g">
+     <e txt="r is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="72" invs="75" ippo="72" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="261" invs="306" ippo="261" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return, addr_in_(z_6_)#init"/>
+    </ppo>
+    <ppo deps="f" id="33" invs="114" ippo="33" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter r satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="64" ippo="64" s="g">
+     <e txt="r is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="292" invs="153" ippo="292" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is return value from __builtin_alloca (IH); or value of parameter z (IH); all of which satisfy the upper-bound property"/>
+    </ppo>
+    <ppo deps="a" id="93" ids="1" invs="112" ippo="93" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo id="119" ippo="119"/>
+    <ppo id="175" ippo="175">
+     <d>
+      <invs>
+       <arg a="1" i="53,171,219,264"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from __builtin_alloca"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="276" ippo="276" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="233" ippo="233" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="s" id="92" ippo="92" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="d is a function parameter"/>
+    </ppo>
+    <ppo id="224" ippo="224">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: __builtin_alloca"/>
+       <msg t="unknown if location pointed to by return value from __builtin_alloca is initialized"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="a" id="136" ids="9" invs="28" ippo="136" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition initialized(z-&gt;d) delegated to api"/>
+    </ppo>
+    <ppo deps="a" id="254" ids="10" invs="103" ippo="254" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition not-null(q) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="153" ippo="153" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="39" invs="217" ippo="39" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1237(rv:mpz_set)"/>
+    </ppo>
+    <ppo id="207" ippo="207">
+     <d>
+      <invs>
+       <arg a="1" i="90,193,239,296"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from __builtin_alloca"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="88" invs="313" ippo="88" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="174" invs="219" ippo="174" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1254"/>
+    </ppo>
+    <ppo id="126" ippo="126">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="function return value: __builtin_alloca"/>
+       <msg t="unknown if location pointed to by return value from __builtin_alloca is initialized"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="179" ippo="179"/>
+    <ppo deps="f" id="20" invs="43" ippo="20" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter r satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="294" ippo="294" s="g">
+     <e txt="d is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="129" invs="273" ippo="129" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="108" invs="234" ippo="108" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1251"/>
+    </ppo>
+    <ppo deps="a" id="166" ids="7" invs="23" ippo="166" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition initialized(d-&gt;a) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="130" invs="63" ippo="130" s="g" ts="2018-05-02 13:04:39">
+     <e txt="return value from function __builtin_alloca satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="25" invs="102" ippo="25" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="49" invs="47" ippo="49" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter q satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="52" invs="244" ippo="52" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1243(rv:mpz_set_ui)"/>
+    </ppo>
+    <ppo deps="a" id="200" ids="5" invs="23" ippo="200" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition initialized(d-&gt;l) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="250" ippo="250" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="30" invs="218" ippo="30" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1235(rv:mpz_cmpabs)"/>
+    </ppo>
+    <ppo deps="s" id="62" ippo="62" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo id="185" ippo="185">
+     <d>
+      <invs>
+       <arg a="1" i="39,168,216,261"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from __builtin_alloca"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="284" invs="109" ippo="284" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter q satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="106" invs="71" ippo="106" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="206" invs="239" ippo="206" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1254"/>
+    </ppo>
+    <ppo deps="f" id="14" invs="100" ippo="14" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter q satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="111" invs="72" ippo="111" s="g" ts="2018-05-02 13:04:39">
+     <e txt="return value from function __builtin_alloca satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="266" ippo="266">
+     <d>
+      <invs>
+       <arg a="1" i="152,151,304"/>
+      </invs>
+      <msgs>
+       <msg t="not-null(d) delegated to api; unable to exclude null return value from __builtin_alloca"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="277" ippo="277">
+     <d>
+      <invs>
+       <arg a="1" i="145,144,290"/>
+      </invs>
+      <msgs>
+       <msg t="not-null(z) delegated to api; unable to exclude null return value from __builtin_alloca"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="82" invs="231" ippo="82" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1251(rv:__builtin_alloca)"/>
+    </ppo>
+    <ppo id="133" ippo="133"/>
+    <ppo deps="f" id="89" invs="111" ippo="89" s="g" ts="2018-05-02 13:04:39">
+     <e txt="return value from function __builtin_alloca satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="291" invs="154" ippo="291" s="g" ts="2018-05-02 13:04:39">
+     <e txt="lower-bound value is return value from __builtin_alloca (IH); or value of parameter z (IH); all of which satisfy the lower-bound property"/>
+    </ppo>
+    <ppo deps="f" id="56" invs="33" ippo="56" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter r satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="79" invs="69" ippo="79" s="g" ts="2018-05-02 13:04:39">
+     <e txt="return value from function __builtin_alloca satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="217" ippo="217"/>
+    <ppo deps="s" id="270" ippo="270" s="g">
+     <e txt="r is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="164" invs="224" ippo="164" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1254(rv:__builtin_alloca)"/>
+    </ppo>
+    <ppo deps="s" id="31" ippo="31" s="g">
+     <e txt="r is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="12" invs="301" ippo="12" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(q_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="101" invs="182" ippo="101" s="g" ts="2018-05-02 13:04:39">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: 16"/>
+        <msg t="[2]:function return value: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="offset size 0 is less than the size of (__builtin_alloca(16)#return (16)"/>
+    </ppo>
+    <ppo deps="f" id="209" invs="90" ippo="209" s="g" ts="2018-05-02 13:04:39">
+     <e txt="return value from function __builtin_alloca satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="69" ippo="69" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="201" ippo="201" s="g">
+     <e txt="d is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="203" invs="297" ippo="203" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(d_8_)#init"/>
+    </ppo>
+    <ppo deps="f" id="96" invs="112" ippo="96" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="288" invs="110" ippo="288" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter r satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="45" invs="222" ippo="45" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1235(rv:mpz_cmpabs)"/>
+    </ppo>
+    <ppo deps="f" id="78" invs="275" ippo="78" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="118" invs="73" ippo="118" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="303" ippo="303" s="g">
+     <e txt="d is a function parameter"/>
+    </ppo>
+    <ppo id="81" ippo="81"/>
+    <ppo id="128" ippo="128">
+     <d>
+      <invs>
+       <arg a="1" i="63,178,229,273"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from __builtin_alloca"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="a" id="236" ids="4" invs="87" ippo="236" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition not-null(d) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="23" invs="303" ippo="23" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_6_)#init"/>
+    </ppo>
+    <ppo deps="s" id="285" ippo="285" s="g">
+     <e txt="r is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="273" invs="84" ippo="273" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter r satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="70" ids="1" invs="75" ippo="70" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo id="134" ippo="134"/>
+    <ppo deps="f" id="24" invs="102" ippo="24" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="94" invs="314" ippo="94" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_6_)#init"/>
+    </ppo>
+    <ppo id="109" ippo="109">
+     <d>
+      <invs>
+       <arg a="1" i="72,183,234,280"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from __builtin_alloca"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="190" ippo="190" s="g">
+     <e txt="d is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="167" ippo="167" s="g">
+     <e txt="d is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="76" invs="230" ippo="76" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1251"/>
+    </ppo>
+    <ppo deps="f" id="197" invs="298" ippo="197" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return"/>
+    </ppo>
+    <ppo deps="s" id="245" ippo="245" s="g">
+     <e txt="d is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="57" ippo="57" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="156" ippo="156" s="g">
+     <e txt="d is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="257" invs="103" ippo="257" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter q satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="299" ippo="299"/>
+    <ppo id="98" ippo="98">
+     <d>
+      <invs>
+       <arg a="1" i="70,182,233,278"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from __builtin_alloca"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="214" invs="295" ippo="214" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(d_8_)#init"/>
+    </ppo>
+    <ppo deps="s" id="11" ippo="11" s="g">
+     <e txt="q is a function parameter"/>
+    </ppo>
+    <ppo deps="a" id="202" ids="4" invs="93" ippo="202" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition not-null(d) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="13" invs="100" ippo="13" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter q satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="220" ippo="220">
+     <d>
+      <invs>
+       <arg a="1" i="127"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="51" invs="225" ippo="51" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1243(rv:mpz_set_ui)"/>
+    </ppo>
+    <ppo deps="f" id="107" invs="71" ippo="107" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="146" ids="6" invs="28" ippo="146" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition initialized(z-&gt;a) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="249" invs="87" ippo="249" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter d satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="304" ippo="304">
+     <d>
+      <invs>
+       <arg a="1" i="156,155,309"/>
+      </invs>
+      <msgs>
+       <msg t="not-null(d) delegated to api; unable to exclude null return value from __builtin_alloca"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="90" invs="204" ippo="90" s="g" ts="2018-05-02 13:04:39">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: 16"/>
+        <msg t="[2]:function return value: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="offset size 0 is less than the size of (__builtin_alloca(16)#return (16)"/>
+    </ppo>
+    <ppo deps="f" id="268" invs="152" ippo="268" s="g" ts="2018-05-02 13:04:39">
+     <e txt="lower-bound value is return value from __builtin_alloca (IH); or value of parameter d (IH); all of which satisfy the lower-bound property"/>
+    </ppo>
+    <ppo deps="f" id="40" invs="223" ippo="40" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1237(rv:mpz_set)"/>
+    </ppo>
+    <ppo deps="f" id="210" invs="193" ippo="210" s="g" ts="2018-05-02 13:04:39">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: 16"/>
+        <msg t="[2]:function return value: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="offset size 0 is less than the size of (__builtin_alloca(16)#return (16)"/>
+    </ppo>
+    <ppo deps="s" id="67" ippo="67" s="g">
+     <e txt="casting from unsigned int to unsigned long is safe"/>
+    </ppo>
+    <ppo deps="f" id="55" invs="33" ippo="55" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter r satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="132" ippo="132"/>
+    <ppo deps="f" id="110" invs="280" ippo="110" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return"/>
+    </ppo>
+    <ppo deps="f" id="193" invs="42" ippo="193" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter d satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="59" ippo="59" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="165" ippo="165" s="g">
+     <e txt="casting from unsigned int to unsigned long is safe"/>
+    </ppo>
+    <ppo id="196" ippo="196">
+     <d>
+      <invs>
+       <arg a="1" i="92,194,240,298"/>
+      </invs>
+      <msgs>
+       <msg t="unable to exclude null return value from __builtin_alloca"/>
+      </msgs>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:function return value from: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="223" ippo="223" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="f" id="6" invs="95" ippo="6" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter d satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="155" ippo="155" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="308" invs="245" ippo="308" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1258(rv:mpz_divi_qr_raw)"/>
+    </ppo>
+    <ppo deps="f" id="116" invs="281" ippo="116" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_6_)#init"/>
+    </ppo>
+    <ppo deps="s" id="300" ippo="300" s="g">
+     <e txt="field d (38) is assigned a value with a valid lower bound by inductive hypothesis (checked at assignment)"/>
+    </ppo>
+    <ppo deps="f" id="154" invs="243" ippo="154" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1251"/>
+    </ppo>
+    <ppo deps="f" id="151" invs="66" ippo="151" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="38" invs="113" ippo="38" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="61" ippo="61" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="158" ippo="158" s="g">
+     <e txt="q is a function parameter"/>
+    </ppo>
+    <ppo deps="a" id="113" ids="6" invs="28" ippo="113" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition initialized(z-&gt;a) delegated to api"/>
+    </ppo>
+    <ppo deps="a" id="138" ids="1" invs="66" ippo="138" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="256" invs="103" ippo="256" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter q satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="278" invs="290" ippo="278" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return, addr_in_(z_6_)#init"/>
+    </ppo>
+    <ppo deps="s" id="58" ippo="58" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="170" invs="108" ippo="170" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter d satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="74" ippo="74" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="112" invs="183" ippo="112" s="g" ts="2018-05-02 13:04:39">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: 16"/>
+        <msg t="[2]:function return value: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="offset size 0 is less than the size of (__builtin_alloca(16)#return (16)"/>
+    </ppo>
+    <ppo deps="f" id="178" invs="171" ippo="178" s="g" ts="2018-05-02 13:04:39">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: 16"/>
+        <msg t="[2]:function return value: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="offset size 0 is less than the size of (__builtin_alloca(16)#return (16)"/>
+    </ppo>
+    <ppo deps="f" id="255" invs="305" ippo="255" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(q_2_)#init"/>
+    </ppo>
+    <ppo deps="s" id="75" ippo="75" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="123" ippo="123">
+     <d>
+      <invs>
+       <arg a="4" i="141"/>
+       <arg a="3" i="118"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (memref-9_165_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="267" invs="304" ippo="267" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return, addr_in_(d_8_)#init"/>
+    </ppo>
+    <ppo deps="f" id="48" invs="47" ippo="48" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter q satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="139" invs="274" ippo="139" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_6_)#init"/>
+    </ppo>
+    <ppo deps="s" id="147" ippo="147" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="71" invs="282" ippo="71" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_6_)#init"/>
+    </ppo>
+    <ppo deps="a" id="234" ids="11" invs="23" ippo="234" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition initialized(d-&gt;d) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="173" ippo="173" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="293" ippo="293"/>
+    <ppo id="260" ippo="260">
+     <d>
+      <invs>
+       <arg a="1" i="150,149,306"/>
+      </invs>
+      <msgs>
+       <msg t="not-null(z) delegated to api; unable to exclude null return value from __builtin_alloca"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="53" ippo="53" s="g">
+     <e txt="r is a function parameter"/>
+    </ppo>
+    <ppo id="240" ippo="240">
+     <d>
+      <invs>
+       <arg a="1" i="127"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="a" id="191" ids="4" invs="42" ippo="191" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition not-null(d) delegated to api"/>
+    </ppo>
+    <ppo id="218" ippo="218"/>
+    <ppo deps="f" id="47" invs="263" ippo="47" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(q_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="73" invs="75" ippo="73" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="91" ids="12" invs="28" ippo="91" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition initialized(z-&gt;s) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="282" invs="310" ippo="282" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(q_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="97" invs="233" ippo="97" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1251"/>
+    </ppo>
+    <ppo id="163" ippo="163"/>
+    <ppo id="230" ippo="230"/>
+    <ppo deps="f" id="99" invs="278" ippo="99" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return"/>
+    </ppo>
+    <ppo deps="s" id="114" ippo="114" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="37" invs="113" ippo="37" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="252" invs="246" ippo="252" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1254"/>
+    </ppo>
+    <ppo deps="s" id="265" ippo="265" s="g">
+     <e txt="d is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="248" invs="87" ippo="248" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter d satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="41" ippo="41" s="g">
+     <e txt="q is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="283" invs="109" ippo="283" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter q satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="95" invs="112" ippo="95" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="149" invs="274" ippo="149" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_6_)#init"/>
+    </ppo>
+    <ppo deps="f" id="198" invs="92" ippo="198" s="g" ts="2018-05-02 13:04:39">
+     <e txt="return value from function __builtin_alloca satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="232" ippo="232"/>
+    <ppo deps="a" id="115" ids="1" invs="73" ippo="115" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="290" invs="312" ippo="290" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(__builtin_alloca(_)#return, addr_in_(z_6_)#init"/>
+    </ppo>
+    <ppo deps="f" id="42" invs="252" ippo="42" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(q_2_)#init"/>
+    </ppo>
+    <ppo deps="s" id="253" ippo="253" s="g">
+     <e txt="q is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="287" invs="110" ippo="287" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter r satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="229" invs="190" ippo="229" s="g" ts="2018-05-02 13:04:39">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:function arguments: 16"/>
+        <msg t="[2]:function return value: __builtin_alloca"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="offset size 0 is less than the size of (__builtin_alloca(16)#return (16)"/>
+    </ppo>
+    <ppo deps="s" id="46" ippo="46" s="g">
+     <e txt="q is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="177" invs="53" ippo="177" s="g" ts="2018-05-02 13:04:39">
+     <e txt="return value from function __builtin_alloca satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="66" invs="235" ippo="66" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1251(rv:__builtin_alloca)"/>
+    </ppo>
+    <ppo deps="f" id="83" invs="67" ippo="83" s="g" ts="2018-05-02 13:04:39">
+     <e txt="return value from function __builtin_alloca satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="35" ippo="35" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="263" invs="149" ippo="263" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is return value from __builtin_alloca (IH); or value of parameter z (IH); all of which satisfy the upper-bound property"/>
+    </ppo>
+    <ppo deps="f" id="238" invs="87" ippo="238" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter d satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="29" invs="101" ippo="29" s="g" ts="2018-05-02 13:04:39">
+     <e txt="upper-bound value is initial value of parameter d satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="43" invs="24" ippo="43" s="g" ts="2018-05-02 13:04:39">
+     <e txt="initial value of parameter q satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="86" invs="247" ippo="86" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1251"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="d is a function parameter"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

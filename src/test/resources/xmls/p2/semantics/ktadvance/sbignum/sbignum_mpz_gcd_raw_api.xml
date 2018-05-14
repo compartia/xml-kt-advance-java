@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:46">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_gcd_raw">
+   <api xlst="4">
+    <api-assumptions>
+     <aa ipr="1779" ppos="1,8,53"/>
+     <aa ipr="1781" ppos="99,66,89,44,55,10,21,3"/>
+     <aa ipr="1790" ppos="97,64,19"/>
+     <aa ipr="1803" ppos="42"/>
+     <aa ipr="1816" ppos="87"/>
+     <aa ipr="1851" ppos="612,537,555,519,575,166,591" spos="31,18,15"/>
+     <aa ipr="1852" ppos="620,633,168,577,593,539,639,557,182,614,512,521" spos="30,16,14"/>
+     <aa ipr="1940" ppos="510,618,637" spos="29,13"/>
+     <aa ipr="3031" ppos="131"/>
+     <aa ipr="3319" spos="19"/>
+     <aa ipr="3414" spos="32"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="4" f="memcpy" h="string"/>
+     <lc c="3" f="__builtin_alloca" h="builtins"/>
+    </library-calls>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="1781"/>
+     <uu po-id="1794"/>
+     <uu po-id="1807"/>
+     <uu po-id="1853"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

@@ -1,31 +1,64 @@
 package com.kt.advance.json;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+
+import javax.xml.bind.JAXBException;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
-import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.kt.advance.api.ApiAssumption;
 import com.kt.advance.api.CAnalysis;
+import com.kt.advance.api.CAnalysisImpl;
 import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
-import com.kt.advance.api.CFunctionCallsiteSPOs;
+import com.kt.advance.api.CFunctionSiteSPOs;
 import com.kt.advance.api.CLocation;
 import com.kt.advance.api.PO;
+import com.kt.advance.api.PPO;
 import com.kt.advance.api.SPO;
+import com.kt.advance.xml.model.FsAbstractionImpl;
 
 import kt.advance.model.CVarInfo;
 import kt.advance.model.ExpFactory.CExpression;
 
 public class POJsonPrinter {
+    private static final Logger LOG = LoggerFactory.getLogger(POJsonPrinter.class.getName());
+
+    public static void main(String[] args) throws JAXBException, IOException {
+
+        final long startTime = System.nanoTime();
+        //
+        final String basedir = args[0];
+        final FsAbstractionImpl fileSystem = new FsAbstractionImpl(new File(basedir));
+        final CAnalysisImpl an = new CAnalysisImpl(fileSystem);
+        an.read();
+
+        final File file = new File(an.fs.getBaseDir(), an.fs.getBaseDir().getName() + ".kt.analysis.json");
+        POJsonPrinter.toJson(an, file);
+
+        final long endTime = System.nanoTime();
+        final long durations = TimeUnit.NANOSECONDS.toSeconds(endTime - startTime);
+        LOG.info(
+            "TOOK {}  seconds; or {}  ms", durations, TimeUnit.NANOSECONDS.toMillis(endTime - startTime));
+
+    }
+
     static class JAnalysis implements Jsonable {
 
         public final List<JApp> apps;
@@ -39,10 +72,10 @@ public class POJsonPrinter {
     }
 
     static class JApi {
-        @JsonInclude(Include.NON_EMPTY)
         /**
          * aa is for Api-assumption
          */
+        @JsonInclude(Include.NON_EMPTY)
         public List<JApiAssumption> aa = new ArrayList<>();
     }
 
@@ -53,6 +86,7 @@ public class POJsonPrinter {
         public final Integer[] ppos;
 
         public final String prd;
+        public final String exp;
 
         @JsonInclude(Include.NON_EMPTY)
         public final Integer[] spos;
@@ -62,6 +96,7 @@ public class POJsonPrinter {
             this.prd = mApiAssumption.predicate.type.label;
             this.ppos = mApiAssumption.ppos;
             this.spos = mApiAssumption.spos;
+            this.exp = mApiAssumption.predicate.express();
         }
     }
 
@@ -80,24 +115,32 @@ public class POJsonPrinter {
     }
 
     static class JCalliste implements Jsonable {
+
+        @JsonInclude(Include.NON_EMPTY)
         public JVarInfo callee;
 
         public String exp;
-        public String type;
+        public final String type;
+
+        public final JLocation loc;
+
         @JsonInclude(Include.NON_EMPTY)
         public List<JPO> spos = new ArrayList<>();
 
-        public JCalliste(CFunctionCallsiteSPOs callsite) {
-            this.type = callsite.getType();
-            final CExpression exp2 = callsite.getExp();
+        public JCalliste(CFunctionSiteSPOs site) {
+
+            this.loc = new JLocation(site.getLocation());
+
+            this.type = site.getType();
+            final CExpression exp2 = site.getExp();
             this.exp = exp2 != null ? exp2.toString() : null;
 
-            if (callsite.getCallee() != null) {
-                this.callee = new JVarInfo(callsite.getCallee());
+            if (site.getCallee() != null) {
+                this.callee = new JVarInfo(site.getCallee());
             }
 
-            for (final SPO spo : callsite.getSpos()) {
-                spos.add(Mapper.toPOInfo(spo));
+            for (final SPO spo : site.getSpos()) {
+                spos.add(new JPO(spo));
             }
         }
     }
@@ -130,6 +173,9 @@ public class POJsonPrinter {
         @JsonInclude(Include.NON_EMPTY)
         public List<JCalliste> callsites = new ArrayList<>();
 
+        @JsonInclude(Include.NON_EMPTY)
+        public List<JCalliste> returnsites = new ArrayList<>();
+
         public JLocation loc;
 
         public String name;
@@ -145,7 +191,7 @@ public class POJsonPrinter {
             /*
              * API
              */
-
+            //
             this.api.aa = cfunction.getApiAssumptions().stream()
                     .map(JApiAssumption::new)
                     .collect(Collectors.toList());
@@ -156,7 +202,7 @@ public class POJsonPrinter {
             this.ppos = cfunction.getPPOs().parallelStream()
                     .map(ppo -> {
 
-                        final JPO poInfo = Mapper.toPOInfo(ppo);
+                        final JPO poInfo = new JPO(ppo);
 
                         final Set<SPO> associatedSpos = ppo.getAssociatedSpos(cfunction);
 
@@ -173,10 +219,17 @@ public class POJsonPrinter {
             /*
              * SPO: collecting callsites and secondary proof obligations
              */
-            for (final CFunctionCallsiteSPOs callsite : cfunction.getCallsites()) {
+            for (final CFunctionSiteSPOs callsite : cfunction.getCallsites()) {
                 final JCalliste jCallsite = new JCalliste(callsite);
-
                 this.callsites.add(jCallsite);
+            }
+
+            for (final CFunctionSiteSPOs returnsite : cfunction.getReturnsites()) {
+                final JCalliste jsite = new JCalliste(returnsite);
+                if (!jsite.spos.isEmpty()) {
+                    //TODO: this must pe configurable
+                    this.returnsites.add(jsite);
+                }
             }
 
         }
@@ -191,6 +244,7 @@ public class POJsonPrinter {
         public Integer id;
 
         public JLink(PO po, CFunction fun) {
+
             this.file = fun.getCfile().getName();
             this.functionName = fun.getName();
             this.id = po.getId();
@@ -215,21 +269,48 @@ public class POJsonPrinter {
         public String evl;
         public String exp;
         public Integer id;
+        @JsonInclude(Include.NON_EMPTY)
         public Integer line;
         @JsonInclude(Include.NON_EMPTY)
         public List<JLink> links = new ArrayList<>();
         public String prd;
 
         public String sts;
+
+        private void init(PO po) {
+
+            this.id = po.getId();
+            this.sts = po.getStatus().label;
+            this.evl = po.getExplaination();
+
+            this.prd = po.getPredicate().type.label;
+            this.exp = po.getPredicate().express();
+            this.dep = po.getDeps().level.name();
+
+        }
+
+        public JPO(SPO po) {
+            init(po);
+            /* SPO location defined by call-site or return-site */
+            this.line = null;
+        }
+
+        public JPO(PPO po) {
+            init(po);
+            this.line = po.getLocation().getLine();
+
+        }
     }
 
     static class JVarInfo implements Jsonable {
         public JLocation loc;
         public String name;
+        public String type;
 
         public JVarInfo(CVarInfo varInfo) {
             this.name = varInfo.name;
             this.loc = varInfo.location == null ? null : new JLocation(varInfo.location);
+            this.type = varInfo.type.toString();
 
         }
 
@@ -245,23 +326,46 @@ public class POJsonPrinter {
 
     static final String RL = "\n\t\t----> ";
 
-    public static String toJson(CAnalysis an) {
+    public static void toJson(CAnalysis an, File file) throws IOException {
+        final JAnalysis jAnalysis = new JAnalysis(an);
+        //        jGenerator.writeObject(jAnalysis);
 
+        System.out.println("writing json to:" + file.getAbsolutePath());
+
+        LOG.info("writing json to {}", file.getAbsolutePath());
+        final PrintWriter writer = new PrintWriter(file, "UTF-8");
+
+        final JsonFactory jfactory = new JsonFactory();
+        final JsonGenerator jGenerator = jfactory.createGenerator(writer);
+        final ObjectMapper objectMapper = new ObjectMapper();
+
+        //      final SimpleModule simpleModule = new SimpleModule("SimpleModule", new Version(1, 0, 0, null));
+        //
+        //      objectMapper.registerModule(simpleModule);
+
+        final ObjectWriter ow = objectMapper.writer().withDefaultPrettyPrinter();
+        ow.writeValue(jGenerator, jAnalysis);
+        writer.close();
+    }
+
+    public static String toJson(CAnalysis an) {
         final JAnalysis jAnalysis = new JAnalysis(an);
 
         final ObjectMapper objectMapper = new ObjectMapper();
 
-        final SimpleModule simpleModule = new SimpleModule("SimpleModule", new Version(1, 0, 0, null));
-
-        objectMapper.registerModule(simpleModule);
+        //        final SimpleModule simpleModule = new SimpleModule("SimpleModule", new Version(1, 0, 0, null));
+        //
+        //        objectMapper.registerModule(simpleModule);
 
         final ObjectWriter ow = objectMapper.writer().withDefaultPrettyPrinter();
+
         try {
             final String json = ow.writeValueAsString(jAnalysis);
             return json;
         } catch (final JsonProcessingException e) {
             throw new RuntimeException(e);
         }
+
     }
 
 }

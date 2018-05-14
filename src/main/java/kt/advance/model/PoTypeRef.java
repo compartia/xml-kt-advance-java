@@ -23,8 +23,6 @@
  */
 package kt.advance.model;
 
-import static com.kt.advance.Util.requireValue;
-
 import com.kt.advance.Util;
 import com.kt.advance.api.CLocation;
 import com.kt.advance.api.Definitions;
@@ -72,7 +70,7 @@ public class PoTypeRef extends Indexed {
         this.contexId = args[1];
         final Integer predicateIndex = args[2];
 
-        this.predicate = requireValue(cfile.predicates, predicateIndex, "predicate");
+        this.predicate = cfile.getPredicate(predicateIndex);
         this.location = cfile.getLocation(locationIndex);
 
         this.proofObligationType = Definitions.POType.valueOf(Util.splitString(node.tags)[0]);

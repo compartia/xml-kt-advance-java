@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:30">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_clone">
+   <ppos>
+    <ppo deps="a" id="22" ids="1" invs="16" ippo="22" s="g" ts="2018-05-02 13:02:47">
+     <e txt="condition not-null(src) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="18" invs="17" ippo="18" s="g" ts="2018-05-02 13:02:47">
+     <e txt="upper-bound value is initial value of parameter dst satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="19" ippo="19" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="f" id="32" invs="61" ippo="32" s="g" ts="2018-05-02 13:09:51">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:adbuf_init @261 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(src_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="17" invs="17" ippo="17" s="g" ts="2018-05-02 13:02:47">
+     <e txt="initial value of parameter dst satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="28" invs="24" ippo="28" s="g" ts="2018-05-02 13:02:47">
+     <e txt="upper-bound value is initial value of parameter memref-1 satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="23" invs="61" ippo="23" s="g" ts="2018-05-02 13:09:51">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:adbuf_init @261 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(src_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="25" invs="16" ippo="25" s="g" ts="2018-05-02 13:02:47">
+     <e txt="upper-bound value is initial value of parameter src satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="40" invs="16" ippo="40" s="g" ts="2018-05-02 13:02:47">
+     <e txt="upper-bound value is initial value of parameter src satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="4" ids="1" invs="20" ippo="4" s="g" ts="2018-05-02 13:02:47">
+     <e txt="condition not-null(src) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="5" invs="49" ippo="5" s="g" ts="2018-05-02 13:02:47">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(src_2_)#init"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="src is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="30" ippo="30" s="g">
+     <e txt="src is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="16" invs="62" ippo="16" s="g" ts="2018-05-02 13:09:51">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:adbuf_init @261 r:3"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(dst_4_)#init"/>
+    </ppo>
+    <ppo deps="f" id="24" invs="16" ippo="24" s="g" ts="2018-05-02 13:02:47">
+     <e txt="initial value of parameter src satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="14" invs="39" ippo="14" s="g" ts="2018-05-02 13:02:47">
+     <e txt="assignedAt#261(rv:adbuf_init)"/>
+    </ppo>
+    <ppo deps="s" id="21" ippo="21" s="g">
+     <e txt="src is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="33" invs="16" ippo="33" s="g" ts="2018-05-02 13:02:47">
+     <e txt="initial value of parameter src satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="37" ids="1" invs="16" ippo="37" s="g" ts="2018-05-02 13:02:47">
+     <e txt="condition not-null(src) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="36" ippo="36" s="g">
+     <e txt="src is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="6" invs="20" ippo="6" s="g" ts="2018-05-02 13:02:47">
+     <e txt="initial value of parameter src satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="15" ippo="15" s="g">
+     <e txt="dst is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="41" ippo="41" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="27" invs="24" ippo="27" s="g" ts="2018-05-02 13:02:47">
+     <e txt="initial value of parameter memref-1 satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="dst is a function parameter"/>
+    </ppo>
+    <ppo id="26" ippo="26">
+     <d>
+      <invs>
+       <arg a="1" i="53,24"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="38" invs="61" ippo="38" s="g" ts="2018-05-02 13:09:51">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:adbuf_init @261 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(src_2_)#init"/>
+    </ppo>
+    <ppo deps="s" id="42" ippo="42" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="11" invs="48" ippo="11" s="g" ts="2018-05-02 13:02:47">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(dst_4_)#init"/>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="a" id="31" ids="1" invs="16" ippo="31" s="g" ts="2018-05-02 13:02:47">
+     <e txt="condition not-null(src) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="12" invs="19" ippo="12" s="g" ts="2018-05-02 13:02:47">
+     <e txt="initial value of parameter dst satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="13" invs="19" ippo="13" s="g" ts="2018-05-02 13:02:47">
+     <e txt="upper-bound value is initial value of parameter dst satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="39" invs="16" ippo="39" s="g" ts="2018-05-02 13:02:47">
+     <e txt="initial value of parameter src satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="7" invs="20" ippo="7" s="g" ts="2018-05-02 13:02:47">
+     <e txt="upper-bound value is initial value of parameter src satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="34" invs="16" ippo="34" s="g" ts="2018-05-02 13:02:47">
+     <e txt="upper-bound value is initial value of parameter src satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="a" id="35" ids="2" invs="10" ippo="35" s="g" ts="2018-05-02 13:02:47">
+     <e txt="condition initialized(src-&gt;left) delegated to api"/>
+    </ppo>
+    <ppo deps="a" id="29" ids="3" invs="10" ippo="29" s="g" ts="2018-05-02 13:02:47">
+     <e txt="condition initialized(src-&gt;size) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="43" invs="38" ippo="43" s="g" ts="2018-05-02 13:02:47">
+     <e txt="assignedAt#263(rv:adbuf_add)"/>
+    </ppo>
+    <ppo deps="a" id="2" ids="4" invs="10" ippo="2" s="g" ts="2018-05-02 13:02:47">
+     <e txt="condition initialized(src-&gt;buf) delegated to api"/>
+    </ppo>
+    <ppo deps="a" id="20" ids="4" invs="10" ippo="20" s="g" ts="2018-05-02 13:02:47">
+     <e txt="condition initialized(src-&gt;buf) delegated to api"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

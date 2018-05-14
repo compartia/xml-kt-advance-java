@@ -29,7 +29,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.google.common.base.Preconditions;
 import com.kt.advance.api.CFunction;
 import com.kt.advance.api.CFunctionCallsiteSPOs;
 import com.kt.advance.api.CLocation;
@@ -74,13 +73,9 @@ class CFunctionCallsiteSPOsImpl implements CFunctionCallsiteSPOs {
 
         for (final ApiCondition apiCondition : call.apiConditions) {
 
-            final SPOImpl spo = new SPOImpl(apiCondition, cfunc);
+            final SPOImpl spo = new SPOImpl(apiCondition, cfunc, this);
             //            putUniq(spos, apiCondition.iapi, spo);
             putUniq(spos, spo.id, spo);
-
-            Preconditions.checkState(
-                spo.getLocation().equals(getLocation()), "" + spo.getLocation().toString()
-                        + " vs " + getLocation().toString());
 
         }
     }

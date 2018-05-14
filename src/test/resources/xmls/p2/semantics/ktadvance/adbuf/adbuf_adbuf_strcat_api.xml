@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:30">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_strcat">
+   <api>
+    <api-assumptions>
+     <aa ipr="476" ppos="1" spos="5"/>
+     <aa ipr="481" spos="1"/>
+     <aa ipr="482" spos="2"/>
+     <aa ipr="483" spos="3"/>
+     <aa ipr="484" spos="4"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="strlen" h="string"/>
+    </library-calls>
+    <missing-summaries/>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

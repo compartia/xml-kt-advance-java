@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:29">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_free">
+   <assumption-table>
+    <n a="3" ix="1" t="aa"/>
+    <n a="1" ix="2" t="aa"/>
+   </assumption-table>
+   <ppo-type-table>
+    <n a="172,1,1" ix="1" t="p"/>
+    <n a="172,2,2" ix="2" t="p"/>
+    <n a="172,2,3" ix="3" t="p"/>
+    <n a="172,2,4" ix="4" t="p"/>
+    <n a="172,2,5" ix="5" t="p"/>
+    <n a="172,2,6" ix="6" t="p"/>
+    <n a="170,3,7" ix="7" t="p"/>
+    <n a="170,3,8" ix="8" t="p"/>
+    <n a="170,4,1" ix="9" t="p"/>
+    <n a="170,5,2" ix="10" t="p"/>
+    <n a="170,5,3" ix="11" t="p"/>
+    <n a="170,5,4" ix="12" t="p"/>
+    <n a="170,5,5" ix="13" t="p"/>
+    <n a="170,5,6" ix="14" t="p"/>
+    <n a="170,3,9" ix="15" t="p"/>
+    <n a="170,3,10" ix="16" t="p"/>
+    <n a="170,3,11" ix="17" t="p"/>
+    <n a="171,7,2" ix="18" t="p"/>
+    <n a="171,7,3" ix="19" t="p"/>
+    <n a="171,7,4" ix="20" t="p"/>
+    <n a="171,7,5" ix="21" t="p"/>
+    <n a="171,7,6" ix="22" t="p"/>
+    <n a="171,8,12" ix="23" t="p"/>
+    <n a="171,9,13" ix="24" t="p"/>
+    <n a="171,6,14" ix="25" t="p"/>
+    <n a="171,6,15" ix="26" t="p"/>
+    <n a="171,6,16" ix="27" t="p"/>
+    <n a="171,6,17" ix="28" t="p"/>
+   </ppo-type-table>
+   <spo-type-table/>
+  </function>
+ </c-analysis>

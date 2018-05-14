@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:32">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_get_d">
+   <ppos>
+    <ppo id="22" ippo="22">
+     <d>
+      <invs>
+       <arg a="1" i="14"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="18" invs="43" ippo="18" s="g" ts="2018-05-02 13:04:44">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="19" invs="11" ippo="19" s="g" ts="2018-05-02 13:04:44">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="32" ids="1" invs="5" ippo="32" s="g" ts="2018-05-02 13:04:44">
+     <e txt="condition initialized(z-&gt;s) delegated to api"/>
+    </ppo>
+    <ppo deps="a" id="17" ids="2" invs="11" ippo="17" s="g" ts="2018-05-02 13:04:44">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="integer can safely be promoted to a floating point type"/>
+    </ppo>
+    <ppo deps="s" id="28" ippo="28" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="23" ippo="23">
+     <d>
+      <invs>
+       <arg a="1" i="14"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="25" ippo="25">
+     <d>
+      <invs>
+       <arg a="4" i="21,37"/>
+       <arg a="3" i="14"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (memref-1_25_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="a" id="4" ids="2" invs="7" ippo="4" s="g" ts="2018-05-02 13:04:44">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="5" invs="42" ippo="5" s="g" ts="2018-05-02 13:04:44">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_2_)#init"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="30" invs="36" ippo="30" s="g" ts="2018-05-02 13:04:44">
+     <e txt="assignedAt#1914_xx_assignedAt#1918"/>
+    </ppo>
+    <ppo deps="s" id="16" ippo="16" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo id="24" ippo="24">
+     <d>
+      <invs>
+       <arg a="4" i="21,37"/>
+       <arg a="3" i="14"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="14" ippo="14"/>
+    <ppo deps="f" id="21" invs="37" ippo="21" s="g" ts="2018-05-02 13:04:44">
+     <e txt="assignedAt#1917"/>
+    </ppo>
+    <ppo deps="s" id="33" ippo="33" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="37" invs="12" ippo="37" s="g" ts="2018-05-02 13:04:44">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="36" invs="12" ippo="36" s="g" ts="2018-05-02 13:04:44">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="6" invs="7" ippo="6" s="g" ts="2018-05-02 13:04:44">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="15" ids="3" invs="5" ippo="15" s="g" ts="2018-05-02 13:04:44">
+     <e txt="condition initialized(z-&gt;d) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="27" ippo="27" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="26" ippo="26" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="f" id="38" invs="39" ippo="38" s="g" ts="2018-05-02 13:04:44">
+     <e txt="assignedAt#1914_xx_assignedAt#1918"/>
+    </ppo>
+    <ppo deps="s" id="11" ippo="11" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="9" invs="33" ippo="9" s="g" ts="2018-05-02 13:04:44">
+     <e txt="assignedAt#1915_xx_assignedAt#1917"/>
+    </ppo>
+    <ppo deps="s" id="31" ippo="31" s="g">
+     <e txt="integer can safely be promoted to a floating point type"/>
+    </ppo>
+    <ppo deps="f" id="12" invs="40" ippo="12" s="g" ts="2018-05-02 13:04:44">
+     <e txt="assignedAt#1917"/>
+    </ppo>
+    <ppo deps="s" id="13" ippo="13" s="g">
+     <e txt="integer can safely be promoted to a floating point type"/>
+    </ppo>
+    <ppo deps="f" id="39" invs="30" ippo="39" s="g" ts="2018-05-02 13:04:44">
+     <e txt="assignedAt#1914_xx_assignedAt#1918_xx_assignedAt#1920"/>
+    </ppo>
+    <ppo deps="f" id="7" invs="7" ippo="7" s="g" ts="2018-05-02 13:04:44">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="34" ids="2" invs="12" ippo="34" s="g" ts="2018-05-02 13:04:44">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="8" invs="38" ippo="8" s="g" ts="2018-05-02 13:04:44">
+     <e txt="assignedAt#1915_xx_assignedAt#1917"/>
+    </ppo>
+    <ppo deps="f" id="35" invs="44" ippo="35" s="g" ts="2018-05-02 13:04:44">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_2_)#init"/>
+    </ppo>
+    <ppo deps="s" id="29" ippo="29" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="2" ids="4" invs="5" ippo="2" s="g" ts="2018-05-02 13:04:44">
+     <e txt="condition initialized(z-&gt;l) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="20" invs="11" ippo="20" s="g" ts="2018-05-02 13:04:44">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

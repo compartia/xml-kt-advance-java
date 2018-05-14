@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:32">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_get_d">
+   <inv-dictionary>
+    <non-relational-value-table>
+     <n a="1" ix="1" t="sx"/>
+     <n a="2" ix="2" t="sx"/>
+     <n a="3" ix="3" t="sx"/>
+     <n a="4" ix="4" t="sx"/>
+     <n a="5" ix="5" t="sx"/>
+     <n a="1,1" ix="6" t="iv"/>
+     <n a="2,2" ix="7" t="iv"/>
+     <n a="3,3" ix="8" t="iv"/>
+     <n a="1" ix="9" t="sb,UB"/>
+     <n a="2" ix="10" t="sb,UB"/>
+     <n a="3" ix="11" t="sb,UB"/>
+     <n a="5,2,2,1" ix="12" t="bv,x"/>
+     <n a="28,29" ix="13" t="iz"/>
+     <n a="30,31,32" ix="14" t="iz"/>
+     <n a="29" ix="15" t="iz"/>
+     <n a="30,31" ix="16" t="iz"/>
+     <n a="30" ix="17" t="iz"/>
+     <n a="36,37" ix="18" t="rs"/>
+    </non-relational-value-table>
+    <invariant-fact-table>
+     <n a="2,1" ix="1" t="nrv"/>
+     <n a="5,2" ix="2" t="nrv"/>
+     <n a="4,3" ix="3" t="nrv"/>
+     <n a="3,4" ix="4" t="nrv"/>
+     <n a="1,5" ix="5" t="nrv"/>
+     <n a="11,6" ix="6" t="nrv"/>
+     <n a="12,5" ix="7" t="nrv"/>
+     <n a="13,7" ix="8" t="nrv"/>
+     <n a="14,7" ix="9" t="nrv"/>
+     <n a="15,8" ix="10" t="nrv"/>
+     <n a="16,5" ix="11" t="nrv"/>
+     <n a="17,5" ix="12" t="nrv"/>
+     <n a="18,3" ix="13" t="nrv"/>
+     <n a="19,1" ix="14" t="nrv"/>
+     <n a="20,2" ix="15" t="nrv"/>
+     <n a="21,9" ix="16" t="nrv"/>
+     <n a="22,10" ix="17" t="nrv"/>
+     <n a="23,9" ix="18" t="nrv"/>
+     <n a="22,9" ix="19" t="nrv"/>
+     <n a="24,11" ix="20" t="nrv"/>
+     <n a="25,10" ix="21" t="nrv"/>
+     <n a="26,9" ix="22" t="nrv"/>
+     <n a="27,9" ix="23" t="nrv"/>
+     <n a="1,12" ix="24" t="nrv"/>
+     <n a="12,12" ix="25" t="nrv"/>
+     <n a="16,12" ix="26" t="nrv"/>
+     <n a="17,12" ix="27" t="nrv"/>
+     <n a="29,13" ix="28" t="nrv"/>
+     <n a="30,14" ix="29" t="nrv"/>
+     <n a="31,14" ix="30" t="nrv"/>
+     <n a="32,15" ix="31" t="nrv"/>
+     <n a="30,16" ix="32" t="nrv"/>
+     <n a="33,13" ix="33" t="nrv"/>
+     <n a="30,17" ix="34" t="nrv"/>
+     <n a="29,15" ix="35" t="nrv"/>
+     <n a="34,16" ix="36" t="nrv"/>
+     <n a="35,15" ix="37" t="nrv"/>
+     <n a="36,13" ix="38" t="nrv"/>
+     <n a="37,16" ix="39" t="nrv"/>
+     <n a="38,15" ix="40" t="nrv"/>
+     <n a="28,18" ix="41" t="nrv"/>
+     <n a="39,18" ix="42" t="nrv"/>
+     <n a="40,18" ix="43" t="nrv"/>
+     <n a="41,18" ix="44" t="nrv"/>
+    </invariant-fact-table>
+   </inv-dictionary>
+   <location-invariants>
+    <loc ictxt="4324" ifacts="1,2,3,4,5,6,16,18,19,24,28,31,32,33,41"/>
+    <loc ictxt="4326" ifacts="1,2,3,4,5,16,17,24,28,32,39,41"/>
+    <loc ictxt="4325" ifacts="1,2,3,4,5,10,11,14,16,17,20,21,24,26,31,32,35,36,37,41,43"/>
+    <loc ictxt="4323" ifacts="1,2,3,4,5,19,22,24,28,32,38,41"/>
+    <loc ictxt="2224" ifacts="1,2,3,4,5,16,17,23,24,31,32,35,40,41"/>
+    <loc ictxt="2236" ifacts="1,2,3,4,5,16,17,24,28,29,30,41"/>
+    <loc ictxt="4322" ifacts="1,2,3,4,5,7,8,13,24,25,34,41,42"/>
+    <loc ictxt="4321" ifacts="1,2,3,4,5,9,24,41"/>
+    <loc ictxt="2233" ifacts="1,2,3,4,5,12,15,16,17,24,27,28,32,41,44"/>
+   </location-invariants>
+  </function>
+ </c-analysis>

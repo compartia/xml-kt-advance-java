@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:22">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_cmpabsi_raw">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="1484,1485" ictxt="667" iloc="1359" ivinfo="55">
+       <api-conditions>
+        <api-c iapi="1288">
+         <po deps="a" id="1" ids="1" invs="10" ispo="1" s="g">
+          <e txt="condition initialized(a-&gt;l) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="1294">
+         <po id="3" ispo="3"/>
+        </api-c>
+        <api-c iapi="1316">
+         <po id="6" ispo="6"/>
+        </api-c>
+        <api-c iapi="1290">
+         <po deps="a" id="2" ids="2" invs="44" ispo="2" s="g">
+          <e txt="condition not-null(a) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="1306">
+         <po deps="a" id="5" ids="3" invs="10" ispo="5" s="g">
+          <e txt="condition initialized(a-&gt;d) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="1296">
+         <po deps="s" id="4" ispo="4" s="g">
+          <e txt="address of variable b"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="670" iexp="1486" iloc="1359">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

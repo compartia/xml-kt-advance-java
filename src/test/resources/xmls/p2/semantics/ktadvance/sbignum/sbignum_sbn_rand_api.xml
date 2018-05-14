@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:18">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="sbn_rand">
+   <api>
+    <api-assumptions/>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees>
+     <gg iipc="1"/>
+    </postcondition-guarantees>
+    <library-calls/>
+    <missing-summaries/>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

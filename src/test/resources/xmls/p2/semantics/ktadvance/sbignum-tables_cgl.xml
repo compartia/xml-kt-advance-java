@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:13">
+   <application file="sbignum-tables.c"/>
+  </header>
+  <assignment-dictionary>
+   <function-name-table/>
+   <assignment-table>
+    <n a="327,1" ix="1" t="init,cset"/>
+    <n a="328,39" ix="2" t="init,r_cset"/>
+    <n a="329,40" ix="3" t="init,bitstable"/>
+    <n a="330,77" ix="4" t="init,basetable"/>
+    <n a="331,157" ix="5" t="init,basepowtable"/>
+   </assignment-table>
+   <global-value-table/>
+  </assignment-dictionary>
+ </c-analysis>

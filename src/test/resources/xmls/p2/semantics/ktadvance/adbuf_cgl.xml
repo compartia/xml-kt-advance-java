@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:30">
+   <application file="adbuf.c"/>
+  </header>
+  <assignment-dictionary>
+   <function-name-table>
+    <n ix="1" t="adbuf_free"/>
+    <n ix="2" t="adbuf_add_long"/>
+    <n ix="3" t="adbuf_addchar"/>
+    <n ix="4" t="adbuf_add_ulong"/>
+    <n ix="5" t="adbuf_printf"/>
+    <n ix="6" t="adbuf_cut"/>
+    <n ix="7" t="adbuf_init"/>
+    <n ix="8" t="adbuf_add"/>
+    <n ix="9" t="adbuf_ltrim"/>
+   </function-name-table>
+   <assignment-table>
+    <n a="38,1,116,238,171,6" ix="1" t="f,buf"/>
+    <n a="2,46,12,62,21" ix="2" t="u"/>
+    <n a="2,49,103,67,33" ix="3" t="u"/>
+    <n a="2,51,109,71,46" ix="4" t="u"/>
+    <n a="3,96,195,134,72" ix="5" t="u"/>
+    <n a="3,98,197,135,76" ix="6" t="u"/>
+    <n a="38,3,93,198,136,80" ix="7" t="f,left"/>
+    <n a="4,35,12,46,111" ix="8" t="u"/>
+    <n a="4,37,77,48,121" ix="9" t="u"/>
+    <n a="5,18,12,21,174" ix="10" t="u"/>
+    <n a="6,80,12,113,241" ix="11" t="u"/>
+    <n a="38,6,73,163,114,247" ix="12" t="f,buf"/>
+    <n a="38,6,75,156,115,250" ix="13" t="f,size"/>
+    <n a="38,6,74,148,116,253" ix="14" t="f,left"/>
+    <n a="38,7,119,241,176,258" ix="15" t="f,buf"/>
+    <n a="7,120,12,179,268" ix="16" t="u"/>
+    <n a="38,7,121,148,180,273" ix="17" t="f,size"/>
+    <n a="38,7,122,148,181,276" ix="18" t="f,left"/>
+    <n a="38,8,103,221,156,328" ix="19" t="f,buf"/>
+    <n a="38,8,105,223,157,332" ix="20" t="f,left"/>
+    <n a="38,8,107,216,158,339" ix="21" t="f,size"/>
+    <n a="8,111,12,161,355" ix="22" t="u"/>
+    <n a="38,8,105,231,162,367" ix="23" t="f,left"/>
+    <n a="9,71,12,95,427" ix="24" t="u"/>
+    <n a="38,9,61,139,97,435" ix="25" t="f,buf"/>
+    <n a="38,9,64,136,98,438" ix="26" t="f,size"/>
+    <n a="38,9,63,148,99,442" ix="27" t="f,left"/>
+   </assignment-table>
+   <global-value-table/>
+  </assignment-dictionary>
+ </c-analysis>

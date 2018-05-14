@@ -17,7 +17,7 @@ public class JsonExportTest {
     @Test
     public void testJsonExport() throws JAXBException {
 
-        final File basedir = new File(getClass().getClassLoader().getResource("xmls/p1").getFile());
+        final File basedir = new File(getClass().getClassLoader().getResource("xmls/p2").getFile());
 
         //Create a  file system abstraction
         final FsAbstraction fsAbstraction = new FsAbstractionImpl(basedir);

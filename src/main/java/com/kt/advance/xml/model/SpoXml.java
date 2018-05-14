@@ -54,9 +54,32 @@ public final class SpoXml extends FunctionLevelAnalysisXml {
         @XmlElement(name = "ic")
         public List<SPOCall> indirectCalls = new ArrayList<>();
 
-        @XmlElementWrapper(name = "returnsites")
-        @XmlElement(name = "rs")
-        public List<SPOCall> returnSites = new ArrayList<>();
+    }
+
+    /**
+     * <rs ictxt="26" iexp="26" iloc="8">
+     *
+     */
+    public static class RSElement {
+
+        @XmlAttribute(name = "iexp")
+        public Integer iexp;
+
+        @XmlAttribute(name = "iloc")
+        public Integer iloc;
+
+        @XmlElementWrapper(name = "postconditions")
+        @XmlElement(name = "pc")
+        public List<PCElement> postconditions = new ArrayList<>();
+
+    }
+
+    /**
+     * <pc iipc="1">
+     */
+    public static class PCElement {
+        @XmlElement(name = "po")
+        public PPONode proofObligation;
     }
 
     //<dc iargs="43" ictxt="44" iloc="56" ivinfo="7">
@@ -114,6 +137,11 @@ public final class SpoXml extends FunctionLevelAnalysisXml {
     public static class SposWrapper {
         @XmlElement(name = "callsites")
         public CallsitesWrapper callsites;
+
+        @XmlElementWrapper(name = "returnsites")
+        @XmlElement(name = "rs")
+        public List<RSElement> returnSites = new ArrayList<>();
+
     }
 
     @XmlElement(name = "function")
@@ -124,6 +152,10 @@ public final class SpoXml extends FunctionLevelAnalysisXml {
      */
     public CallsitesWrapper getCallsites() {
         return this.function.spos.callsites;
+    }
+
+    public List<RSElement> getReturnsites() {
+        return this.function.spos.returnSites;
     }
 
     @Override

@@ -34,9 +34,9 @@ import kt.advance.model.PredicatesFactory.CPOPredicate;
 
 public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
     public static abstract class CPOPredicate extends Indexed implements Bindable {
+        public final Definitions.PredicateType type;
         private Integer[] args;
         private String[] tags;
-        public final Definitions.PredicateType type;
 
         public CPOPredicate(IndexedTableNode node) {
             super(node);
@@ -48,8 +48,6 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
         }
 
-        public abstract String express();
-
         @Override
         public void bind(CFileImpl cfile) {
             this.bindImpl(cfile, tags, args);
@@ -59,6 +57,8 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         public abstract void bindImpl(CFileImpl cfile, String[] tags, Integer[] args);
+
+        public abstract String express();
 
         @Override
         public final String toString() {
@@ -77,16 +77,6 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
-        public String express() {
-            if (binop == null) {
-                return ERR_VALUE;
-            }
-
-            final String op = String.format(ExpFactory.OP_MAP.get(binop), exp1, exp2);
-            return op + ", typ:" + typ;
-        }
-
-        @Override
         public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
             this.exp1 = cfile.getExression(args[1]);
             this.exp2 = cfile.getExression(args[2]);
@@ -95,6 +85,16 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
             this.binop = tags[1];
 
+        }
+
+        @Override
+        public String express() {
+            if (binop == null) {
+                return ERR_VALUE;
+            }
+
+            final String op = String.format(ExpFactory.OP_MAP.get(binop), exp1, exp2);
+            return op + ", typ:" + typ;
         }
     }
 
@@ -107,17 +107,17 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
-        public final String express() {
-            return this.exp + ",from:"
-                    + fromType
-                    + ",to:" + targetType;
-        }
-
-        @Override
         public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
             this.exp = cfile.getExression(args[2]);
             this.fromType = cfile.getType(args[0]);
             this.targetType = cfile.getType(args[1]);
+        }
+
+        @Override
+        public final String express() {
+            return this.exp + ",from:"
+                    + fromType
+                    + ",to:" + targetType;
         }
 
     }
@@ -131,15 +131,15 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
-        public String express() {
-            return exp1 + ", " + exp2;
-        }
-
-        @Override
         public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
             this.exp1 = cfile.getExression(args[0]);
             this.exp2 = cfile.getExression(args[1]);
 
+        }
+
+        @Override
+        public String express() {
+            return exp1 + ", " + exp2;
         }
     }
 
@@ -153,6 +153,13 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
+        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
+
+            exp = cfile.getExression(args[1]);
+            ctype = cfile.getType(args[0]);
+        }
+
+        @Override
         public String express() {
             //            def __str__(self):
             //                return (self.get_tag() + '(' + str(self.get_type()) + ','
@@ -160,13 +167,6 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
             return type + ", " + exp;
 
-        }
-
-        @Override
-        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
-
-            exp = cfile.getExression(args[1]);
-            ctype = cfile.getType(args[0]);
         }
 
     }
@@ -179,17 +179,15 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
-        public String express() {
-            return "predicate:" + exp;
-        }
-
-        @Override
         public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
             this.exp = cfile.getExression(args[0]);
         }
-    }
 
-    private static final String ERR_VALUE = "-=ERR=-";
+        @Override
+        public String express() {
+            return "predicate:" + exp;
+        }
+    }
 
     static class CPOInitialized extends CPOPredicate {
 
@@ -200,17 +198,17 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
+        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
+            this.lvalue = cfile.getLValue(args[0]);
+
+        }
+
+        @Override
         public String express() {
             if (lvalue == null) {
                 return ERR_VALUE;
             }
             return lvalue.toString();
-        }
-
-        @Override
-        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
-            this.lvalue = cfile.getLValue(args[0]);
-
         }
     }
 
@@ -220,6 +218,14 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
         public CPOInitializedRange(IndexedTableNode node) {
             super(node);
+        }
+
+        @Override
+        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
+
+            this.exp = cfile.getExression(args[0]);
+            this.len = cfile.getExression(args[1]);
+
         }
 
         @Override
@@ -235,14 +241,6 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
             return exp.toString() + ", len:" + len.toString();
         }
 
-        @Override
-        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
-
-            this.exp = cfile.getExression(args[0]);
-            this.len = cfile.getExression(args[1]);
-
-        }
-
     }
 
     static class CPOIntOverflow extends CPOPredicate {
@@ -252,6 +250,15 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
         public CPOIntOverflow(IndexedTableNode node) {
             super(node);
+        }
+
+        @Override
+        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
+
+            this.binop = tags[1];
+            this.kind = tags[2];
+            exp1 = cfile.getExression(args[0]);
+            exp2 = cfile.getExression(args[1]);
         }
 
         @Override
@@ -266,15 +273,6 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
                 exp2);
             return op + ", ikind:" + kind;
 
-        }
-
-        @Override
-        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
-
-            this.binop = tags[1];
-            this.kind = tags[2];
-            exp1 = cfile.getExression(args[0]);
-            exp2 = cfile.getExression(args[1]);
         }
 
     }
@@ -337,6 +335,13 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
+        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
+            this.exp = cfile.getExression(args[0]);
+            fromKind = tags[1];
+            targetKind = tags[2];
+        }
+
+        @Override
         public String express() {
 
             if (exp == null) {
@@ -346,13 +351,6 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
             return exp.toString()
                     + ",from:" + fromKind
                     + ",to:" + targetKind;
-        }
-
-        @Override
-        public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
-            this.exp = cfile.getExression(args[0]);
-            fromKind = tags[1];
-            targetKind = tags[2];
         }
     }
 
@@ -373,17 +371,19 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         }
 
         @Override
-        public String express() {
-            return exp + ", kind:" + kind;
-        }
-
-        @Override
         public void bindImpl(CFileImpl cfile, String[] tags, Integer[] args) {
             this.exp = cfile.getExression(args[0]);
             this.kind = tags[1];
 
         }
+
+        @Override
+        public String express() {
+            return exp + ", kind:" + kind;
+        }
     }
+
+    private static final String ERR_VALUE = "-=ERR=-";
 
     public ExpFactory expressionsFactory = new ExpFactory();
 

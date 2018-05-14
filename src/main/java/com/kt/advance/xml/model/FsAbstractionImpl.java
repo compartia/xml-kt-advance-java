@@ -150,7 +150,7 @@ public class FsAbstractionImpl implements FsAbstraction {
             TrueFileFilter.INSTANCE)
                 .stream()
                 .sorted()
-                .collect(Collectors.toSet());
+                .collect(Collectors.toList());
     }
 
     @Override

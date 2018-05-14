@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:14:12">
+   <application file="cksum.c"/>
+  </header>
+  <cfile>
+   <c-dictionary>
+    <string-table/>
+    <attrparam-table/>
+    <attribute-table>
+     <n ix="1" t="volatile"/>
+    </attribute-table>
+    <attributes-table>
+     <n ix="1"/>
+     <n a="1" ix="2"/>
+    </attributes-table>
+    <constant-table>
+     <n ix="1" t="int,0,iint"/>
+     <n ix="2" t="int,1,iint"/>
+     <n ix="3" t="int,2,iint"/>
+     <n ix="4" t="int,65535,iuint"/>
+     <n ix="5" t="int,16,iint"/>
+     <n ix="6" t="int,21845,iuint"/>
+     <n ix="7" t="int,400,iint"/>
+    </constant-table>
+    <exp-table>
+     <n a="1" ix="1" t="const"/>
+     <n a="5,1" ix="2" t="caste"/>
+     <n a="2" ix="3" t="const"/>
+     <n a="2" ix="4" t="lval"/>
+     <n a="4,3,3" ix="5" t="binop,gt"/>
+     <n a="4" ix="6" t="lval"/>
+     <n a="6,3,2" ix="7" t="binop,pluspi"/>
+     <n a="3" ix="8" t="lval"/>
+     <n a="5" ix="9" t="lval"/>
+     <n a="5,9" ix="10" t="caste"/>
+     <n a="1" ix="11" t="lval"/>
+     <n a="11,10,5" ix="12" t="binop,plusa"/>
+     <n a="3" ix="13" t="const"/>
+     <n a="4,13,3" ix="14" t="binop,minusa"/>
+     <n a="4,3,3" ix="15" t="binop,eq"/>
+     <n a="7,6" ix="16" t="caste"/>
+     <n a="6" ix="17" t="lval"/>
+     <n a="5,17" ix="18" t="caste"/>
+     <n a="11,18,5" ix="19" t="binop,plusa"/>
+     <n a="4" ix="20" t="const"/>
+     <n a="11,20,8" ix="21" t="binop,band"/>
+     <n a="5" ix="22" t="const"/>
+     <n a="11,22,5" ix="23" t="binop,shiftrt"/>
+     <n a="23,21,5" ix="24" t="binop,plusa"/>
+     <n a="11,23,5" ix="25" t="binop,plusa"/>
+     <n a="7" ix="26" t="lval"/>
+     <n a="6" ix="27" t="const"/>
+     <n a="11,27,8" ix="28" t="binop,bxor"/>
+     <n a="11,5" ix="29" t="unop,bnot"/>
+     <n a="1,29" ix="30" t="caste"/>
+     <n a="7" ix="31" t="const"/>
+    </exp-table>
+    <funarg-table>
+     <n a="2,1" ix="1" t="buf"/>
+     <n a="3,1" ix="2" t="nbytes"/>
+    </funarg-table>
+    <funargs-table>
+     <n a="1,2" ix="1"/>
+    </funargs-table>
+    <lhost-table>
+     <n a="1903" ix="1" t="var,sum"/>
+     <n a="1902" ix="2" t="var,nbytes"/>
+     <n a="1904" ix="3" t="var,tmp"/>
+     <n a="1901" ix="4" t="var,buf"/>
+     <n a="8" ix="5" t="mem"/>
+     <n a="16" ix="6" t="mem"/>
+     <n a="854" ix="7" t="var,opt_badcksum"/>
+    </lhost-table>
+    <lval-table>
+     <n a="1,1" ix="1"/>
+     <n a="2,1" ix="2"/>
+     <n a="3,1" ix="3"/>
+     <n a="4,1" ix="4"/>
+     <n a="5,1" ix="5"/>
+     <n a="6,1" ix="6"/>
+     <n a="7,1" ix="7"/>
+    </lval-table>
+    <offset-table>
+     <n ix="1" t="n"/>
+    </offset-table>
+    <typ-table>
+     <n ix="1" t="tnamed,u_int16_t"/>
+     <n a="1" ix="2" t="tptr"/>
+     <n ix="3" t="tint,iint"/>
+     <n a="1,1,0" ix="4" t="tfun"/>
+     <n ix="5" t="tnamed,u_int32_t"/>
+     <n ix="6" t="tnamed,u_int8_t"/>
+     <n a="6" ix="7" t="tptr"/>
+     <n ix="8" t="tint,iuint"/>
+     <n ix="9" t="tint,ilong"/>
+     <n ix="10" t="tnamed,__time_t"/>
+     <n ix="11" t="tint,iuchar"/>
+     <n ix="12" t="tint,iushort"/>
+     <n ix="13" t="tnamed,time_t"/>
+     <n a="51,2" ix="14" t="tcomp"/>
+     <n a="14,31" ix="15" t="tarray"/>
+     <n a="12" ix="16" t="tptr"/>
+     <n a="11" ix="17" t="tptr"/>
+    </typ-table>
+    <typsig-table/>
+    <typsiglist-table/>
+   </c-dictionary>
+   <c-declarations>
+    <location-table>
+     <n a="1,54269,9" ix="1"/>
+     <n a="1,54295,9" ix="2"/>
+     <n a="1,54305,9" ix="3"/>
+     <n a="1,54326,11" ix="4"/>
+     <n a="1,54333,13" ix="5"/>
+     <n a="1,54343,14" ix="6"/>
+     <n a="1,54366,15" ix="7"/>
+     <n a="1,54383,16" ix="8"/>
+     <n a="1,54422,20" ix="9"/>
+     <n a="1,54401,19" ix="10"/>
+     <n a="1,54453,23" ix="11"/>
+     <n a="1,54490,24" ix="12"/>
+     <n a="1,54531,27" ix="13"/>
+     <n a="1,54513,27" ix="14"/>
+     <n a="1,54548,29" ix="15"/>
+     <n a="2,2426,139" ix="16"/>
+     <n a="3,4092,75" ix="17"/>
+     <n a="4,4944,200" ix="18"/>
+     <n a="4,5011,201" ix="19"/>
+     <n a="4,5079,202" ix="20"/>
+     <n a="5,27792,353" ix="21"/>
+     <n a="5,27802,354" ix="22"/>
+     <n a="5,27815,355" ix="23"/>
+     <n a="5,27828,356" ix="24"/>
+     <n a="5,27839,357" ix="25"/>
+     <n a="5,27759,352" ix="26"/>
+     <n a="5,27886,360" ix="27"/>
+     <n a="5,27851,360" ix="28"/>
+     <n a="5,28902,395" ix="29"/>
+     <n a="6,31004,78" ix="30"/>
+     <n a="6,30415,40" ix="31"/>
+    </location-table>
+    <initinfo-table/>
+    <offset-init-table/>
+    <typeinfo-table>
+     <n a="9" ix="1" t="__time_t"/>
+     <n a="10" ix="2" t="time_t"/>
+     <n a="11" ix="3" t="u_int8_t"/>
+     <n a="12" ix="4" t="u_int16_t"/>
+     <n a="8" ix="5" t="u_int32_t"/>
+    </typeinfo-table>
+    <varinfo-table>
+     <n a="659,4,1,1,0,1,0,0" ix="1" t="cksum,n"/>
+     <n a="537,15,1,1,0,27,0,0" ix="2" t="delaytable,n"/>
+     <n a="854,3,1,1,0,30,0,0" ix="3" t="opt_badcksum,x"/>
+    </varinfo-table>
+    <fieldinfo-table>
+     <n a="51,3,-1,1,21" ix="1" t="seq"/>
+     <n a="51,3,-1,1,22" ix="2" t="src"/>
+     <n a="51,13,-1,1,23" ix="3" t="sec"/>
+     <n a="51,13,-1,1,24" ix="4" t="usec"/>
+     <n a="51,3,-1,1,25" ix="5" t="status"/>
+    </fieldinfo-table>
+    <compinfo-table>
+     <n a="51,1,1,1,2,3,4,5" ix="1" t="delaytable_element"/>
+    </compinfo-table>
+    <enumitem-table/>
+    <enuminfo-table/>
+    <filename-table>
+     <n ix="1" len="7" v="cksum.c"/>
+     <n ix="2" len="42" v="/usr/include/x86_64-linux-gnu/bits/types.h"/>
+     <n ix="3" len="19" v="/usr/include/time.h"/>
+     <n ix="4" len="41" v="/usr/include/x86_64-linux-gnu/sys/types.h"/>
+     <n ix="5" len="8" v="hping2.h"/>
+     <n ix="6" len="9" v="globals.h"/>
+    </filename-table>
+   </c-declarations>
+  </cfile>
+ </c-analysis>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:16:08">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_divi_r_raw">
+   <api xlst="12">
+    <api-assumptions>
+     <aa ipr="2896" ppos="198,179,16" spos="16,13,12,9"/>
+     <aa ipr="2897" ppos="83,229,283,99,300,134,273,45,200,175,119,194,27,63,181,246,219,18" spos="17,14,5,7"/>
+     <aa ipr="2901" ppos="43,97,173,61,132,81,25,281,117,227" spos="18,15,6,4"/>
+     <aa ipr="2931" ppos="148" spos="3"/>
+     <aa ipr="2932" ppos="150" spos="2"/>
+     <aa ipr="2958" ppos="217,271" spos="19,11"/>
+     <aa ipr="3202" spos="1"/>
+     <aa ipr="3203" spos="8"/>
+     <aa ipr="3377" spos="10"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees>
+     <gg iipc="1"/>
+    </postcondition-guarantees>
+    <library-calls/>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="2885"/>
+     <uu po-id="2904"/>
+     <uu po-id="2933"/>
+     <uu po-id="2957"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

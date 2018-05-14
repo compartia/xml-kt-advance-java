@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:31">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_normalize_sign">
+   <assumption-table>
+    <n a="1499" ix="1" t="aa"/>
+    <n a="1501" ix="2" t="aa"/>
+   </assumption-table>
+   <ppo-type-table>
+    <n a="1524,1898,1499" ix="1" t="p"/>
+    <n a="1524,1899,1500" ix="2" t="p"/>
+    <n a="1524,1899,1501" ix="3" t="p"/>
+    <n a="1524,1899,1502" ix="4" t="p"/>
+    <n a="1524,1899,1503" ix="5" t="p"/>
+    <n a="1524,1899,1504" ix="6" t="p"/>
+    <n a="1523,1901,1500" ix="7" t="p"/>
+    <n a="1523,1901,1501" ix="8" t="p"/>
+    <n a="1523,1901,1502" ix="9" t="p"/>
+    <n a="1523,1901,1503" ix="10" t="p"/>
+    <n a="1523,1901,1504" ix="11" t="p"/>
+    <n a="1523,1902,4" ix="12" t="p"/>
+   </ppo-type-table>
+   <spo-type-table/>
+  </function>
+ </c-analysis>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:29">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_reset">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="233" ictxt="10" iloc="166" ivinfo="13">
+       <api-conditions>
+        <api-c iapi="1">
+         <po deps="a" id="1" ids="1" invs="8" ispo="1" s="g">
+          <e txt="condition initialized(b-&gt;buf) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="3">
+         <po deps="a" id="2" ids="2" invs="23" ispo="2" s="g">
+          <e txt="condition not-null(b) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="233" ictxt="12" iloc="167" ivinfo="14">
+       <api-conditions>
+        <api-c iapi="306">
+         <po deps="a" id="4" ids="1" invs="8" ispo="4" s="g">
+          <e txt="condition initialized(b-&gt;buf) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="295">
+         <po deps="a" id="3" ids="2" invs="25" ispo="3" s="g">
+          <e txt="condition not-null(b) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="14" iexp="234" iloc="167">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

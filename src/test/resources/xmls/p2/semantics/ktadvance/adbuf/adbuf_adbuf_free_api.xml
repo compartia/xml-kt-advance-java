@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:29">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_free">
+   <api xlst="3">
+    <api-assumptions>
+     <aa ipr="1" ppos="9,1"/>
+     <aa ipr="3" ppos="3,11,19"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="free" h="stdlib"/>
+    </library-calls>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="7"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

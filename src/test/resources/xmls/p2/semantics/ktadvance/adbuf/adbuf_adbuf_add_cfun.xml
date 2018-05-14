@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="adbuf" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:44" version="CP1.00"/>
+  </header>
+  <function filename="adbuf">
+   <svar ivinfo="11"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="1719,2,1,0,0,143,0,1" ix="1" t="b,n"/>
+     <n a="1720,13,1,0,0,144,0,2" ix="2" t="data,n"/>
+     <n a="1721,10,1,0,0,145,0,3" ix="3" t="len,n"/>
+     <n a="1722,10,1,0,0,146,0,0" ix="4" t="newsz,n"/>
+     <n a="1723,13,1,0,0,147,0,0" ix="5" t="t,n"/>
+     <n a="1724,13,1,0,0,-1,0,0" ix="6" t="tmp,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="11">
+      <skind iexp="205" iloc="149" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="12">
+          <skind iexp="26" iloc="148" stag="return"/>
+          <succs/>
+          <preds r="11"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="12,13"/>
+      <preds/>
+     </stmt>
+     <stmt sid="13">
+      <skind iexp="207" iloc="151" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="14">
+          <skind iexp="31" iloc="150" stag="return"/>
+          <succs/>
+          <preds r="13"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="14,15"/>
+      <preds r="11"/>
+     </stmt>
+     <stmt sid="15">
+      <skind iexp="210" iloc="159" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="16">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="214" iloc="152" ilval="106" itag="set"/>
+            <instr iexp="159" iloc="153" ilval="108" itag="call">
+             <args>
+              <exp iexp="215"/>
+              <exp iexp="216"/>
+             </args>
+            </instr>
+            <instr iexp="217" iloc="153" ilval="109" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="17"/>
+          <preds r="15"/>
+         </stmt>
+         <stmt sid="17">
+          <skind iexp="220" iloc="155" stag="if">
+           <thenblock>
+            <bstmts>
+             <stmt sid="18">
+              <skind iexp="26" iloc="154" stag="return"/>
+              <succs/>
+              <preds r="17"/>
+             </stmt>
+            </bstmts>
+           </thenblock>
+           <elseblock>
+            <bstmts/>
+           </elseblock>
+          </skind>
+          <succs r="18,19"/>
+          <preds r="16"/>
+         </stmt>
+         <stmt sid="19">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="221" iloc="156" ilval="103" itag="set"/>
+            <instr iexp="223" iloc="157" ilval="105" itag="set"/>
+            <instr iexp="216" iloc="158" ilval="107" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="20"/>
+          <preds r="17"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="16,20"/>
+      <preds r="13"/>
+     </stmt>
+     <stmt sid="20">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="142" iloc="160" itag="call">
+         <args>
+          <exp iexp="226"/>
+          <exp iexp="228"/>
+          <exp iexp="206"/>
+         </args>
+        </instr>
+        <instr iexp="12" iloc="161" ilval="111" itag="set"/>
+        <instr iexp="231" iloc="162" ilval="105" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="21"/>
+      <preds r="19,15"/>
+     </stmt>
+     <stmt sid="21">
+      <skind iexp="31" iloc="163" stag="return"/>
+      <succs/>
+      <preds r="20"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

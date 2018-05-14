@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="apd" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:51" version="CP1.00"/>
+  </header>
+  <c-file filename="apd">
+   <global-type-definitions>
+    <gtype iloc="887" itinfo="1"/>
+    <gtype iloc="888" itinfo="2"/>
+    <gtype iloc="889" itinfo="3"/>
+    <gtype iloc="890" itinfo="4"/>
+    <gtype iloc="891" itinfo="5"/>
+    <gtype iloc="892" itinfo="6"/>
+    <gtype iloc="893" itinfo="7"/>
+    <gtype iloc="894" itinfo="8"/>
+   </global-type-definitions>
+   <global-comptag-definitions>
+    <gcomptag icinfo="1" iloc="906"/>
+    <gcomptag icinfo="2" iloc="911"/>
+    <gcomptag icinfo="3" iloc="911"/>
+    <gcomptag icinfo="4" iloc="911"/>
+    <gcomptag icinfo="5" iloc="911"/>
+    <gcomptag icinfo="6" iloc="911"/>
+    <gcomptag icinfo="7" iloc="911"/>
+    <gcomptag icinfo="8" iloc="911"/>
+    <gcomptag icinfo="9" iloc="932"/>
+    <gcomptag icinfo="10" iloc="943"/>
+    <gcomptag icinfo="11" iloc="945"/>
+    <gcomptag icinfo="12" iloc="945"/>
+    <gcomptag icinfo="13" iloc="945"/>
+    <gcomptag icinfo="14" iloc="945"/>
+    <gcomptag icinfo="15" iloc="945"/>
+    <gcomptag icinfo="16" iloc="945"/>
+    <gcomptag icinfo="17" iloc="945"/>
+    <gcomptag icinfo="18" iloc="962"/>
+    <gcomptag icinfo="19" iloc="962"/>
+    <gcomptag icinfo="20" iloc="962"/>
+    <gcomptag icinfo="21" iloc="977"/>
+    <gcomptag icinfo="22" iloc="985"/>
+    <gcomptag icinfo="23" iloc="991"/>
+    <gcomptag icinfo="24" iloc="999"/>
+    <gcomptag icinfo="25" iloc="1004"/>
+   </global-comptag-definitions>
+   <global-comptag-declarations>
+    <gcomptagdecl icinfo="24" iloc="1005"/>
+   </global-comptag-declarations>
+   <global-enumtag-definitions/>
+   <global-enumtag-declarations/>
+   <global-var-definitions>
+    <gvar iinit="94" iloc="1007" ivinfo="28"/>
+    <gvar iloc="1009" ivinfo="29"/>
+    <gvar iinit="2" iloc="1011" ivinfo="30"/>
+    <gvar iinit="95" iloc="1013" ivinfo="31"/>
+   </global-var-definitions>
+   <global-var-declarations>
+    <gvardecl iloc="1014" ivinfo="32"/>
+    <gvardecl iloc="1016" ivinfo="33"/>
+    <gvardecl iloc="1018" ivinfo="34"/>
+    <gvardecl iloc="1020" ivinfo="35"/>
+    <gvardecl iloc="1022" ivinfo="36"/>
+    <gvardecl iloc="1024" ivinfo="37"/>
+    <gvardecl iloc="1026" ivinfo="38"/>
+    <gvardecl iloc="1028" ivinfo="39"/>
+    <gvardecl iloc="1030" ivinfo="40"/>
+    <gvardecl iloc="1032" ivinfo="41"/>
+    <gvardecl iloc="1034" ivinfo="42"/>
+    <gvardecl iloc="1036" ivinfo="43"/>
+    <gvardecl iloc="1038" ivinfo="44"/>
+    <gvardecl iloc="1040" ivinfo="45"/>
+    <gvardecl iloc="1042" ivinfo="46"/>
+    <gvardecl iloc="1044" ivinfo="47"/>
+    <gvardecl iloc="1046" ivinfo="48"/>
+    <gvardecl iloc="1048" ivinfo="49"/>
+    <gvardecl iloc="1050" ivinfo="50"/>
+    <gvardecl iloc="1052" ivinfo="51"/>
+    <gvardecl iloc="1054" ivinfo="52"/>
+    <gvardecl iloc="1056" ivinfo="53"/>
+    <gvardecl iloc="1058" ivinfo="54"/>
+    <gvardecl iloc="1060" ivinfo="55"/>
+    <gvardecl iloc="1062" ivinfo="56"/>
+    <gvardecl iloc="1064" ivinfo="57"/>
+    <gvardecl iloc="1066" ivinfo="58"/>
+    <gvardecl iloc="1068" ivinfo="59"/>
+    <gvardecl iloc="1070" ivinfo="60"/>
+    <gvardecl iloc="1072" ivinfo="61"/>
+    <gvardecl iloc="1073" ivinfo="1"/>
+    <gvardecl iloc="1075" ivinfo="62"/>
+    <gvardecl iloc="1077" ivinfo="63"/>
+    <gvardecl iloc="1079" ivinfo="64"/>
+    <gvardecl iloc="1081" ivinfo="65"/>
+    <gvardecl iloc="1082" ivinfo="23"/>
+    <gvardecl iloc="1083" ivinfo="17"/>
+    <gvardecl iloc="1084" ivinfo="16"/>
+    <gvardecl iloc="1085" ivinfo="10"/>
+    <gvardecl iloc="1086" ivinfo="2"/>
+    <gvardecl iloc="1087" ivinfo="22"/>
+    <gvardecl iloc="1088" ivinfo="21"/>
+    <gvardecl iloc="1089" ivinfo="20"/>
+    <gvardecl iloc="1090" ivinfo="19"/>
+    <gvardecl iloc="1091" ivinfo="18"/>
+    <gvardecl iloc="1092" ivinfo="15"/>
+    <gvardecl iloc="1093" ivinfo="14"/>
+    <gvardecl iloc="1094" ivinfo="13"/>
+    <gvardecl iloc="1095" ivinfo="11"/>
+    <gvardecl iloc="1096" ivinfo="12"/>
+    <gvardecl iloc="1097" ivinfo="9"/>
+    <gvardecl iloc="1098" ivinfo="6"/>
+   </global-var-declarations>
+   <functions>
+    <gfun iloc="860" ivinfo="27"/>
+    <gfun iloc="854" ivinfo="26"/>
+    <gfun iloc="846" ivinfo="25"/>
+    <gfun iloc="829" ivinfo="24"/>
+    <gfun iloc="768" ivinfo="23"/>
+    <gfun iloc="725" ivinfo="22"/>
+    <gfun iloc="644" ivinfo="21"/>
+    <gfun iloc="625" ivinfo="20"/>
+    <gfun iloc="590" ivinfo="19"/>
+    <gfun iloc="573" ivinfo="18"/>
+    <gfun iloc="548" ivinfo="17"/>
+    <gfun iloc="495" ivinfo="16"/>
+    <gfun iloc="476" ivinfo="15"/>
+    <gfun iloc="457" ivinfo="14"/>
+    <gfun iloc="414" ivinfo="13"/>
+    <gfun iloc="397" ivinfo="12"/>
+    <gfun iloc="376" ivinfo="11"/>
+    <gfun iloc="346" ivinfo="10"/>
+    <gfun iloc="310" ivinfo="9"/>
+    <gfun iloc="286" ivinfo="8"/>
+    <gfun iloc="277" ivinfo="7"/>
+    <gfun iloc="244" ivinfo="6"/>
+    <gfun iloc="224" ivinfo="5"/>
+    <gfun iloc="194" ivinfo="4"/>
+    <gfun iloc="170" ivinfo="3"/>
+    <gfun iloc="91" ivinfo="2"/>
+    <gfun iloc="1" ivinfo="1"/>
+   </functions>
+   <global-assembly-statements/>
+   <global-pragmas/>
+   <global-text/>
+  </c-file>
+ </c-analysis>

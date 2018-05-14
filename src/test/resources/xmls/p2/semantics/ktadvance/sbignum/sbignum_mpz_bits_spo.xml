@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:32">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_bits">
+   <spos>
+    <callsites>
+     <direct-calls/>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="2217" iexp="1685" iloc="1501">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

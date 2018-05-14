@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:30">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_mod">
+   <api xlst="13">
+    <api-assumptions>
+     <aa ipr="1366" ppos="88,10,33,44,55,78"/>
+     <aa ipr="1408" ppos="42,109" spos="29,31,21,19,11"/>
+     <aa ipr="1409" ppos="111" spos="23,28,13,18,7"/>
+     <aa ipr="1410" ppos="115" spos="32"/>
+     <aa ipr="1411" ppos="117" spos="3"/>
+     <aa ipr="3021" ppos="31" spos="22,12,10"/>
+     <aa ipr="3022" ppos="86,53,8" spos="9"/>
+     <aa ipr="3023" ppos="76" spos="36,35,30,20,8"/>
+     <aa ipr="3406" spos="33"/>
+     <aa ipr="3407" spos="34"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="memcpy" h="string"/>
+     <lc c="2" f="__builtin_alloca" h="builtins"/>
+    </library-calls>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="1366"/>
+     <uu po-id="1373"/>
+     <uu po-id="1387"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

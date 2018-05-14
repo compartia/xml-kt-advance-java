@@ -36,7 +36,9 @@ class AssumptionType extends Indexed {
         /** ATPostconditionType */
         pc,
         /** ATUserAssumptionType */
-        ua
+        ua,
+        /** Global Assumption */
+        ga
     }
 
     public Integer postRequestIndex;
@@ -65,6 +67,8 @@ class AssumptionType extends Indexed {
             this.postRequestIndex = args[0];
             break;
         }
+
+        //TODO: support GA
 
     }
 

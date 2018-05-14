@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="sbignum" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:48" version="CP1.00"/>
+  </header>
+  <function filename="sbignum">
+   <svar ivinfo="65"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="2243,1,1,0,0,1493,0,1" ix="1" t="z,n"/>
+     <n a="2244,4,1,0,0,1494,0,0" ix="2" t="bits,n"/>
+     <n a="2245,5,1,0,0,1495,0,0" ix="3" t="x,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="42">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="1680" iloc="1496" ilval="912" itag="set"/>
+        <instr iexp="1683" iloc="1497" ilval="915" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="43"/>
+      <preds/>
+     </stmt>
+     <stmt sid="43">
+      <skind breakstmtid="47" continuestmtid="43" iloc="1498" stag="loop">
+       <block>
+        <bstmts>
+         <stmt sid="44">
+          <skind iexp="1684" iloc="1498" stag="if">
+           <thenblock>
+            <bstmts/>
+           </thenblock>
+           <elseblock>
+            <bstmts>
+             <stmt sid="45">
+              <skind iloc="1498" stag="break"/>
+              <succs r="47"/>
+              <preds r="44"/>
+             </stmt>
+            </bstmts>
+           </elseblock>
+          </skind>
+          <succs r="46,45"/>
+          <preds r="43"/>
+         </stmt>
+         <stmt sid="46">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="1686" iloc="1499" ilval="912" itag="set"/>
+            <instr iexp="1687" iloc="1500" ilval="915" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="43"/>
+          <preds r="44"/>
+         </stmt>
+        </bstmts>
+       </block>
+      </skind>
+      <succs r="44"/>
+      <preds r="46,42"/>
+     </stmt>
+     <stmt sid="47">
+      <skind iexp="1685" iloc="1501" stag="return"/>
+      <succs/>
+      <preds r="45"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

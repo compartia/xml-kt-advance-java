@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:59">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_sqrt">
+   <api xlst="4">
+    <api-assumptions>
+     <aa ipr="2271" ppos="36,114,81"/>
+     <aa ipr="2272" spos="21"/>
+     <aa ipr="2285" ppos="59"/>
+     <aa ipr="2286" ppos="70" spos="20"/>
+     <aa ipr="2299" ppos="104" spos="22"/>
+     <aa ipr="2357" ppos="300,316" spos="42"/>
+     <aa ipr="2358" ppos="83,61,106,72,318,340,38,348,116,302" spos="41"/>
+     <aa ipr="2371" ppos="338" spos="40"/>
+     <aa ipr="3374" spos="43"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="memcpy" h="string"/>
+     <lc c="2" f="__builtin_alloca" h="builtins"/>
+    </library-calls>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="2244"/>
+     <uu po-id="2247"/>
+     <uu po-id="2272"/>
+     <uu po-id="2276"/>
+     <uu po-id="2290"/>
+     <uu po-id="2360"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

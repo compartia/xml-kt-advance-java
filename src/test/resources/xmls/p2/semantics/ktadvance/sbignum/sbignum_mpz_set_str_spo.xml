@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:16:02">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_set_str">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="167" ictxt="3421" iloc="112" ivinfo="72">
+       <api-conditions>
+        <api-c iapi="2990">
+         <po deps="s" id="1" ispo="1" s="g">
+          <e txt="address of variable toadd"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="166" ictxt="3471" iloc="131" ivinfo="68">
+       <api-conditions>
+        <api-c iapi="1164">
+         <po id="2" ispo="2"/>
+        </api-c>
+        <api-c iapi="1166">
+         <po deps="s" id="3" ispo="3" s="g">
+          <e txt="address of variable pow"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="167,167,166" ictxt="3449" iloc="122" ivinfo="41">
+       <api-conditions>
+        <api-c iapi="3146">
+         <po id="31" ispo="31"/>
+        </api-c>
+        <api-c iapi="2234">
+         <po id="9" ispo="9"/>
+        </api-c>
+        <api-c iapi="3149">
+         <po id="33" ispo="33"/>
+        </api-c>
+        <api-c iapi="2230">
+         <po deps="s" id="8" ispo="8" s="g">
+          <e txt="address of variable pow"/>
+         </po>
+        </api-c>
+        <api-c iapi="2224">
+         <po deps="s" id="6" ispo="6" s="g">
+          <e txt="address of variable toadd"/>
+         </po>
+        </api-c>
+        <api-c iapi="2222">
+         <po id="5" ispo="5"/>
+        </api-c>
+        <api-c iapi="2238">
+         <po id="10" ispo="10"/>
+        </api-c>
+        <api-c iapi="3145">
+         <po id="30" ispo="30"/>
+        </api-c>
+        <api-c iapi="2218">
+         <po deps="s" id="4" ispo="4" s="g">
+          <e txt="address of variable toadd"/>
+         </po>
+        </api-c>
+        <api-c iapi="2228">
+         <po id="7" ispo="7"/>
+        </api-c>
+        <api-c iapi="3148">
+         <po id="32" ispo="32"/>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="167" ictxt="3473" iloc="132" ivinfo="68">
+       <api-conditions>
+        <api-c iapi="1164">
+         <po id="11" ispo="11"/>
+        </api-c>
+        <api-c iapi="1166">
+         <po deps="s" id="12" ispo="12" s="g">
+          <e txt="address of variable toadd"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="166,166,185" ictxt="3459" iloc="126" ivinfo="40">
+       <api-conditions>
+        <api-c iapi="3150">
+         <po id="34" ispo="34"/>
+        </api-c>
+        <api-c iapi="2631">
+         <po deps="s" id="13" ispo="13" s="g">
+          <e txt="address of variable pow"/>
+         </po>
+        </api-c>
+        <api-c iapi="3154">
+         <po id="37" ispo="37"/>
+        </api-c>
+        <api-c iapi="2635">
+         <po id="14" ispo="14"/>
+        </api-c>
+        <api-c iapi="2637">
+         <po deps="s" id="15" ispo="15" s="g">
+          <e txt="address of variable pow"/>
+         </po>
+        </api-c>
+        <api-c iapi="3153">
+         <po id="36" ispo="36"/>
+        </api-c>
+        <api-c iapi="3151">
+         <po id="35" ispo="35"/>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="166,171" ictxt="3425" iloc="114" ivinfo="19">
+       <api-conditions>
+        <api-c iapi="3293">
+         <po deps="s" id="39" ispo="39" s="g">
+          <e txt="address of variable pow"/>
+         </po>
+        </api-c>
+        <api-c iapi="3292">
+         <po id="38" ispo="38"/>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="169" ictxt="3423" iloc="113" ivinfo="66">
+       <api-conditions>
+        <api-c iapi="2144">
+         <po deps="a" id="16" ids="7" invs="20" ispo="16" s="g">
+          <e txt="condition initialized(z-&gt;l) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="2146">
+         <po deps="a" id="17" ids="5" invs="344" ispo="17" s="g">
+          <e txt="condition not-null(z) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="2153">
+         <po deps="a" id="18" ids="8" invs="20" ispo="18" s="g">
+          <e txt="condition initialized(z-&gt;d) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="169,169,167" ictxt="3454" iloc="124" ivinfo="47">
+       <api-conditions>
+        <api-c iapi="1239">
+         <po deps="a" id="19" ids="9" invs="20" ispo="19" s="g">
+          <e txt="condition initialized(z-&gt;s) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="1247">
+         <po id="23" ispo="23"/>
+        </api-c>
+        <api-c iapi="1256">
+         <po deps="a" id="27" ids="8" invs="20" ispo="27" s="g">
+          <e txt="condition initialized(z-&gt;d) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="3105">
+         <po deps="a" id="40" ids="8" invs="20" ispo="40" s="g" ts="2018-05-02 13:16:02">
+          <e txt="condition initialized(z-&gt;d) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="1252">
+         <po deps="a" id="25" ids="5" invs="340" ispo="25" s="g">
+          <e txt="condition not-null(z) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="1241">
+         <po id="21" ispo="21"/>
+        </api-c>
+        <api-c iapi="1242">
+         <po deps="s" id="22" ispo="22" s="g">
+          <e txt="address of variable toadd"/>
+         </po>
+        </api-c>
+        <api-c iapi="1251">
+         <po id="24" ispo="24"/>
+        </api-c>
+        <api-c iapi="1240">
+         <po deps="a" id="20" ids="5" invs="340" ispo="20" s="g">
+          <e txt="condition not-null(z) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="1260">
+         <po deps="a" id="28" ids="7" invs="20" ispo="28" s="g">
+          <e txt="condition initialized(z-&gt;l) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="1255">
+         <po deps="a" id="26" ids="7" invs="20" ispo="26" s="g">
+          <e txt="condition initialized(z-&gt;l) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="166" ictxt="3419" iloc="111" ivinfo="72">
+       <api-conditions>
+        <api-c iapi="2990">
+         <po deps="s" id="29" ispo="29" s="g">
+          <e txt="address of variable pow"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="167,181" ictxt="3445" iloc="121" ivinfo="19">
+       <api-conditions>
+        <api-c iapi="3293">
+         <po deps="s" id="42" ispo="42" s="g">
+          <e txt="address of variable toadd"/>
+         </po>
+        </api-c>
+        <api-c iapi="3292">
+         <po id="41" ispo="41"/>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="3401" iexp="148" iloc="107">
+      <postconditions/>
+     </rs>
+     <rs ictxt="3475" iexp="172" iloc="134">
+      <postconditions/>
+     </rs>
+     <rs ictxt="3403" iexp="148" iloc="107">
+      <postconditions/>
+     </rs>
+     <rs ictxt="3429" iexp="172" iloc="115">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

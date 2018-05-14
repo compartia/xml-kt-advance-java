@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:29">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_reset">
+   <api>
+    <api-assumptions>
+     <aa ipr="478" spos="4,1"/>
+     <aa ipr="479" spos="3,2"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls/>
+    <missing-summaries/>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

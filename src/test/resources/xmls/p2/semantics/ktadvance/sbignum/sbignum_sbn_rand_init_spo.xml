@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:16:08">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="sbn_rand_init">
+   <spos>
+    <callsites>
+     <direct-calls/>
+     <indirect-calls/>
+    </callsites>
+    <returnsites/>
+   </spos>
+  </function>
+ </c-analysis>

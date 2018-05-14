@@ -44,7 +44,7 @@ import com.kt.advance.api.CAnalysisImpl;
 import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
-import com.kt.advance.api.CFunctionCallsiteSPOs;
+import com.kt.advance.api.CFunctionSiteSPOs;
 import com.kt.advance.api.Definitions;
 import com.kt.advance.api.FsAbstraction;
 import com.kt.advance.api.PPO;
@@ -137,7 +137,7 @@ public class XmlValidator {
 
                 }
 
-                for (final CFunctionCallsiteSPOs callsite : cfunciton.getCallsites()) {
+                for (final CFunctionSiteSPOs callsite : cfunciton.getCallsites()) {
 
                     for (final SPO spo : callsite.getSpos()) {
 
@@ -156,7 +156,7 @@ public class XmlValidator {
 
                         funcStats.inc(cfile.getName(), SPO_ + statusCode.label, 1);
 
-                        assertNotNull(spo.getLocation());
+                        //                        assertNotNull(spo.getLocation());
 
                     }
 
@@ -214,7 +214,7 @@ public class XmlValidator {
 
         for (final CFile cfile : app.getCfiles()) {
             for (final CFunction cfunciton : cfile.getCFunctions()) {
-                for (final CFunctionCallsiteSPOs callsite : cfunciton.getCallsites()) {
+                for (final CFunctionSiteSPOs callsite : cfunciton.getCallsites()) {
 
                     for (final SPO spo : callsite.getSpos()) {
                         final CPOPredicate predicate = spo.getPredicate();

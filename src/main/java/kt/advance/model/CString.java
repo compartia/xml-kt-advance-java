@@ -23,26 +23,17 @@
  */
 package kt.advance.model;
 
-import com.kt.advance.xml.model.IndexedTableNode;
+import com.kt.advance.xml.model.IndexedStrignTable;
 
 public class CString {
 
     public final Integer id;
-    public final Integer stringLength;
+
     private final String val;
 
-    public CString(IndexedTableNode node) {
+    public CString(IndexedStrignTable node) {
         this.id = node.index;
-        final String[] tags = node.getTagsSplit();
-        final Integer[] args = node.getArguments();
-
-        stringLength = args[0];
-
-        if (tags.length > 0) {
-            val = tags[0];
-        } else {
-            val = "";
-        }
+        this.val = node.value;
 
     }
 

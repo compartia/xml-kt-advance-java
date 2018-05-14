@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:16:08">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_zero_realloc">
+   <assumption-table>
+    <n a="3040" ix="1" t="aa"/>
+    <n a="3041" ix="2" t="aa"/>
+    <n a="3042" ix="3" t="aa"/>
+    <n a="3043" ix="4" t="aa"/>
+   </assumption-table>
+   <ppo-type-table>
+    <n a="1513,3921,2999" ix="1" t="p"/>
+    <n a="1513,3921,3000" ix="2" t="p"/>
+    <n a="1513,3921,3001" ix="3" t="p"/>
+    <n a="1513,3921,3002" ix="4" t="p"/>
+    <n a="1513,3922,3003" ix="5" t="p"/>
+    <n a="1513,3923,3004" ix="6" t="p"/>
+    <n a="1514,3924,3004" ix="7" t="p"/>
+    <n a="1515,3926,2999" ix="8" t="p"/>
+    <n a="1515,3926,3000" ix="9" t="p"/>
+    <n a="1515,3926,3001" ix="10" t="p"/>
+    <n a="1515,3926,3002" ix="11" t="p"/>
+   </ppo-type-table>
+   <spo-type-table>
+    <n a="1515,3925,3040,2144" ix="1" t="cs"/>
+    <n a="1515,3925,3041,2146" ix="2" t="cs"/>
+    <n a="1515,3925,3042,2153" ix="3" t="cs"/>
+    <n a="1513,3920,3043,2110" ix="4" t="cs"/>
+    <n a="1513,3920,3041,2112" ix="5" t="cs"/>
+    <n a="1513,3920,3042,2118" ix="6" t="cs"/>
+   </spo-type-table>
+  </function>
+ </c-analysis>

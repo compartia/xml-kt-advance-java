@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:30">
+   <application file="adbuf.c"/>
+  </header>
+  <interface-dictionary>
+   <api-parameter-table/>
+   <s-term-table/>
+   <precondition-table/>
+   <postcondition-table/>
+   <postrequest-table/>
+   <sideeffect-table/>
+   <lv-property-table/>
+   <library-variable-table/>
+  </interface-dictionary>
+ </c-analysis>
