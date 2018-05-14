@@ -24,8 +24,6 @@
 package kt.advance.model;
 
 import com.google.common.base.Preconditions;
-import com.kt.advance.POPrinter;
-import com.kt.advance.api.CLocation;
 import com.kt.advance.api.Definitions;
 import com.kt.advance.api.Definitions.POLevel;
 import com.kt.advance.api.Definitions.POStatus;
@@ -81,11 +79,6 @@ abstract class POImpl implements PO {
     public abstract POLevel getLevel();
 
     @Override
-    public CLocation getLocation() {
-        return getType().location;
-    }
-
-    @Override
     public CPOPredicate getPredicate() {
         return getType().getPredicate();
     }
@@ -93,11 +86,6 @@ abstract class POImpl implements PO {
     @Override
     public boolean isSafe() {
         return getStatus() == POStatus.discharged;
-    }
-
-    @Override
-    public String toString() {
-        return POPrinter.toString(this);
     }
 
     @Override

@@ -35,10 +35,12 @@ import java.util.HashMap;
 
 import javax.xml.bind.JAXBException;
 
-import org.junit.Test;
+import org.junit.Before;
+import org.junit.Ignore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.kt.TestMode;
 import com.kt.advance.MapCounterInt;
 import com.kt.advance.api.CAnalysisImpl;
 import com.kt.advance.api.CApplication;
@@ -76,8 +78,13 @@ public class XmlValidator {
         assertNotNull("no file attr in <application> tag: " + message, xml.header.application.file);
     }
 
-    //    @Ignore
-    @Test
+    @Before
+    public void init() {
+        TestMode.testMode = true;
+    }
+
+    @Ignore
+    //   @Test
     public void testAllPod2PpoCorrespondence() throws JAXBException {
 
         final CAnalysisImpl an = new CAnalysisImpl(fileSystem);

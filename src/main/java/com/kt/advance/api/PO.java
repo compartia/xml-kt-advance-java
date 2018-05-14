@@ -10,8 +10,6 @@ public interface PO {
 
     POLevel getLevel();
 
-    CLocation getLocation();
-
     CPOPredicate getPredicate();
 
     boolean isSafe();

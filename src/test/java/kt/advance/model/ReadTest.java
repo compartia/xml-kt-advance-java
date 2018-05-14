@@ -12,7 +12,7 @@ import javax.xml.bind.JAXBException;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.kt.UNTTEST;
+import com.kt.TestMode;
 import com.kt.advance.MapCounterInt;
 import com.kt.advance.api.CAnalysis;
 import com.kt.advance.api.CAnalysisImpl;
@@ -27,13 +27,9 @@ import com.kt.advance.xml.model.FsAbstractionImpl;
 
 public class ReadTest {
 
-    String relativize(FsAbstraction fsAbstraction, File f) {
-        return fsAbstraction.getBaseDir().toPath().relativize(f.toPath()).toString();
-    }
-
     @Before
     public void init() {
-        UNTTEST.TEST = true;
+        TestMode.testMode = true;
     }
 
     @Test
@@ -41,7 +37,6 @@ public class ReadTest {
 
         final ClassLoader classLoader = getClass().getClassLoader();
 
-        //        final File basedir = new File("/Users/artem/work/KestrelTechnology/IN/naim-0.11.8.3.1");
         final File basedir = new File(classLoader.getResource("xmls/p2").getFile());
 
         //Create a  file system abstraction
@@ -71,6 +66,48 @@ public class ReadTest {
         validateCFiles(cAnalysis);
         validatePONumber(cAnalysis);
 
+    }
+
+    private void checkPO(PPO ppo) {
+        assertNotNull(ppo.toString());
+        assertNotNull(ppo.getLevel());
+        assertNotNull(ppo.getPredicate());
+        assertNotNull(ppo.getStatus());
+        assertNotNull(ppo.getId());
+        assertNotNull(ppo.getType());
+
+        assertNotNull(ppo.getLocation());
+        if (ppo.getLocation().getFilename().endsWith(".c")) {
+            assertNotNull(ppo.getLocation().getFilename(), ppo.getLocation().getCfile());
+            assertNotNull(ppo.getLocation().getCfile().getName());
+        }
+    }
+
+    private void checkPO(SPO ppo) {
+        assertNotNull(ppo.toString());
+        assertNotNull(ppo.getLevel());
+        assertNotNull(ppo.getPredicate());
+        assertNotNull(ppo.getStatus());
+        assertNotNull(ppo.getId());
+        assertNotNull(ppo.getType());
+
+        assertNotNull(ppo.getSite());
+
+    }
+
+    private void validateCFiles(final CAnalysis cAnalysis) {
+        for (final CApplication app : cAnalysis.getApps()) {
+
+            //iterate CFiles
+            for (final CFile cfile : app.getCfiles()) {
+                System.err.println(cfile.getName());
+
+                final File cSourceFile = new File(app.getSourceDir(), cfile.getName());
+                System.out.println(cSourceFile.getAbsolutePath());
+
+                assertTrue(cSourceFile.exists());
+            }
+        }
     }
 
     private MapCounterInt<String> validatePONumber(final CAnalysis cAnalysis) {
@@ -116,6 +153,19 @@ public class ReadTest {
                                     /* do smth */});
                     }
 
+                    for (final CFunctionSiteSPOs callsite : function.getReturnsites()) {
+                        // Iterate SPOs
+                        callsite.getSpos().stream()
+                                .forEach(spo -> {
+
+                                    checkPO(spo);
+
+                                    stats.inc("total", "SPO", 1);
+                                    stats.inc(spo.getSite().getLocation().getFilename(), "SPO", 1);
+
+                                    /* do smth */});
+                    }
+
                 }
             }
         }
@@ -127,45 +177,7 @@ public class ReadTest {
         return stats;
     }
 
-    private void checkPO(PPO ppo) {
-        assertNotNull(ppo.toString());
-        assertNotNull(ppo.getLevel());
-        assertNotNull(ppo.getPredicate());
-        assertNotNull(ppo.getStatus());
-        assertNotNull(ppo.getId());
-        assertNotNull(ppo.getType());
-
-        assertNotNull(ppo.getLocation());
-        if (ppo.getLocation().getFilename().endsWith(".c")) {
-            assertNotNull(ppo.getLocation().getFilename(), ppo.getLocation().getCfile());
-            assertNotNull(ppo.getLocation().getCfile().getName());
-        }
-    }
-
-    private void checkPO(SPO ppo) {
-        assertNotNull(ppo.toString());
-        assertNotNull(ppo.getLevel());
-        assertNotNull(ppo.getPredicate());
-        assertNotNull(ppo.getStatus());
-        assertNotNull(ppo.getId());
-        assertNotNull(ppo.getType());
-
-        assertNotNull(ppo.getSite());
-
-    }
-
-    private void validateCFiles(final CAnalysis cAnalysis) {
-        for (final CApplication app : cAnalysis.getApps()) {
-
-            //iterate CFiles
-            for (final CFile cfile : app.getCfiles()) {
-                System.err.println(cfile.getName());
-
-                final File cSourceFile = new File(app.getSourceDir(), cfile.getName());
-                System.out.println(cSourceFile.getAbsolutePath());
-
-                assertTrue(cSourceFile.exists());
-            }
-        }
+    String relativize(FsAbstraction fsAbstraction, File f) {
+        return fsAbstraction.getBaseDir().toPath().relativize(f.toPath()).toString();
     }
 }

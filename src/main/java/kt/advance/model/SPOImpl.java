@@ -23,9 +23,9 @@
  */
 package kt.advance.model;
 
+import com.kt.advance.POPrinter;
 import com.kt.advance.api.CFunction;
 import com.kt.advance.api.CFunctionSiteSPOs;
-import com.kt.advance.api.CLocation;
 import com.kt.advance.api.Definitions.POLevel;
 import com.kt.advance.api.SPO;
 import com.kt.advance.xml.model.SpoXml.ApiCondition;
@@ -36,8 +36,14 @@ import com.kt.advance.xml.model.SpoXml.PCElement;
  *
  */
 class SPOImpl extends POImpl implements SPO {
+    @Override
+    public String toString() {
+        return POPrinter.toString(this);
+    }
+
     private final CFunctionSiteSPOs site;
 
+    @Override
     public CFunctionSiteSPOs getSite() {
         return site;
     }
@@ -56,14 +62,6 @@ class SPOImpl extends POImpl implements SPO {
     @Override
     public POLevel getLevel() {
         return POLevel.SECONDARY;
-    }
-
-    @Override
-    public CLocation getLocation() {
-        /**
-         * location is known by site;
-         */
-        return null;
     }
 
 }
