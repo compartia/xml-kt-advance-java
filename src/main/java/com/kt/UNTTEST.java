@@ -1,8 +1,8 @@
-package com.kt.advance.tests;
+package com.kt;
 
 public class UNTTEST {
     /**
-     * true in case of jsunt
+     * true in case of JUnit
      */
     public static boolean TEST = false;
 }

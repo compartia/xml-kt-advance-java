@@ -39,12 +39,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Preconditions;
+import com.kt.UNTTEST;
 import com.kt.advance.ErrorsBundle;
 import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
 import com.kt.advance.api.FsAbstraction;
-import com.kt.advance.tests.UNTTEST;
 import com.kt.advance.xml.XMLFileType;
 import com.kt.advance.xml.model.AnalysisXml;
 import com.kt.advance.xml.model.ApiXml;

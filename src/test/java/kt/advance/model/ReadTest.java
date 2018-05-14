@@ -9,8 +9,10 @@ import java.util.Set;
 
 import javax.xml.bind.JAXBException;
 
+import org.junit.Before;
 import org.junit.Test;
 
+import com.kt.UNTTEST;
 import com.kt.advance.MapCounterInt;
 import com.kt.advance.api.CAnalysis;
 import com.kt.advance.api.CAnalysisImpl;
@@ -21,7 +23,6 @@ import com.kt.advance.api.CFunctionSiteSPOs;
 import com.kt.advance.api.FsAbstraction;
 import com.kt.advance.api.PPO;
 import com.kt.advance.api.SPO;
-import com.kt.advance.tests.UNTTEST;
 import com.kt.advance.xml.model.FsAbstractionImpl;
 
 public class ReadTest {
@@ -30,9 +31,13 @@ public class ReadTest {
         return fsAbstraction.getBaseDir().toPath().relativize(f.toPath()).toString();
     }
 
+    @Before
+    public void init() {
+        UNTTEST.TEST = true;
+    }
+
     @Test
     public void readP2() throws JAXBException {
-        UNTTEST.TEST = true;
 
         final ClassLoader classLoader = getClass().getClassLoader();
 
