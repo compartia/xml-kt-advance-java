@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="global-xrefs" name="global-xrefs" time="2018-05-02 13:02:30.867572"/>
+  <global-xrefs>
+    <compinfo-xrefs>
+      <cxref ckey="38" gckey="1"/>
+    </compinfo-xrefs>
+    <varinfo-xrefs>
+      <vxref gvid="1" vid="526"/>
+      <vxref gvid="2" vid="867"/>
+      <vxref gvid="3" vid="1028"/>
+      <vxref gvid="4" vid="1337"/>
+      <vxref gvid="5" vid="1347"/>
+      <vxref gvid="6" vid="1350"/>
+      <vxref gvid="7" vid="1640"/>
+      <vxref gvid="8" vid="1643"/>
+      <vxref gvid="9" vid="1646"/>
+      <vxref gvid="10" vid="1653"/>
+      <vxref gvid="11" vid="1658"/>
+      <vxref gvid="12" vid="1663"/>
+      <vxref gvid="13" vid="1668"/>
+      <vxref gvid="14" vid="1673"/>
+      <vxref gvid="15" vid="1678"/>
+      <vxref gvid="16" vid="1683"/>
+      <vxref gvid="17" vid="1688"/>
+      <vxref gvid="18" vid="1693"/>
+      <vxref gvid="19" vid="1698"/>
+      <vxref gvid="20" vid="1703"/>
+    </varinfo-xrefs>
+  </global-xrefs>
+</c-analysis>

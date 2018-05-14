@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:30">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_cut">
+   <spos>
+    <callsites>
+     <direct-calls/>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="227" iexp="31" iloc="107">
+      <postconditions/>
+     </rs>
+     <rs ictxt="240" iexp="26" iloc="111">
+      <postconditions/>
+     </rs>
+     <rs ictxt="256" iexp="31" iloc="117">
+      <postconditions/>
+     </rs>
+     <rs ictxt="220" iexp="26" iloc="105">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

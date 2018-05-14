@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="sbignum" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:48" version="CP1.00"/>
+  </header>
+  <function filename="sbignum">
+   <svar ivinfo="14"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="2846,1,1,0,0,341,0,1" ix="1" t="d,n"/>
+     <n a="2847,1,1,0,0,342,0,2" ix="2" t="s,n"/>
+     <n a="2848,8,1,0,0,343,0,0" ix="3" t="err,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="871">
+      <skind iexp="483" iloc="344" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="872">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="234" iloc="344" ilval="209" itag="call">
+             <args>
+              <exp iexp="481"/>
+              <exp iexp="479"/>
+             </args>
+            </instr>
+           </instrs>
+          </skind>
+          <succs r="873"/>
+          <preds r="871"/>
+         </stmt>
+         <stmt sid="873">
+          <skind iexp="485" iloc="344" stag="if">
+           <thenblock>
+            <bstmts>
+             <stmt sid="874">
+              <skind iexp="484" iloc="345" stag="return"/>
+              <succs/>
+              <preds r="873"/>
+             </stmt>
+            </bstmts>
+           </thenblock>
+           <elseblock>
+            <bstmts/>
+           </elseblock>
+          </skind>
+          <succs r="874,875"/>
+          <preds r="872"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="872,875"/>
+      <preds/>
+     </stmt>
+     <stmt sid="875">
+      <skind breakstmtid="878" continuestmtid="875" iloc="347" stag="loop">
+       <block>
+        <bstmts>
+         <stmt sid="876">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="55" iloc="346" ilval="210" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="877"/>
+          <preds r="875"/>
+         </stmt>
+         <stmt sid="877">
+          <skind iloc="347" stag="break"/>
+          <succs r="878"/>
+          <preds r="876"/>
+         </stmt>
+        </bstmts>
+       </block>
+      </skind>
+      <succs r="876"/>
+      <preds r="873,871"/>
+     </stmt>
+     <stmt sid="878">
+      <skind iexp="1" iloc="348" stag="return"/>
+      <succs/>
+      <preds r="877"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

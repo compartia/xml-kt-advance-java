@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:16:08">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_zero_realloc">
+   <inv-dictionary>
+    <non-relational-value-table>
+     <n a="1" ix="1" t="sx"/>
+     <n a="2" ix="2" t="sx"/>
+     <n a="3" ix="3" t="sx"/>
+     <n a="4" ix="4" t="sx"/>
+     <n a="5" ix="5" t="sx"/>
+     <n a="6" ix="6" t="sx"/>
+     <n a="7" ix="7" t="sx"/>
+     <n a="8" ix="8" t="sx"/>
+     <n a="1,1" ix="9" t="iv"/>
+     <n a="9" ix="10" t="sx"/>
+     <n a="8,1,1,1" ix="11" t="bv,x"/>
+     <n a="25" ix="12" t="iz"/>
+     <n a="26,27" ix="13" t="rs"/>
+    </non-relational-value-table>
+    <invariant-fact-table>
+     <n a="8,1" ix="1" t="nrv"/>
+     <n a="7,2" ix="2" t="nrv"/>
+     <n a="6,3" ix="3" t="nrv"/>
+     <n a="4,4" ix="4" t="nrv"/>
+     <n a="5,5" ix="5" t="nrv"/>
+     <n a="15,6" ix="6" t="nrv"/>
+     <n a="2,6" ix="7" t="nrv"/>
+     <n a="3,7" ix="8" t="nrv"/>
+     <n a="18,8" ix="9" t="nrv"/>
+     <n a="1,8" ix="10" t="nrv"/>
+     <n a="19,8" ix="11" t="nrv"/>
+     <n a="20,9" ix="12" t="nrv"/>
+     <n a="20,10" ix="13" t="nrv"/>
+     <n a="22,10" ix="14" t="nrv"/>
+     <n a="22,9" ix="15" t="nrv"/>
+     <n a="23,10" ix="16" t="nrv"/>
+     <n a="24,10" ix="17" t="nrv"/>
+     <n a="1,11" ix="18" t="nrv"/>
+     <n a="18,11" ix="19" t="nrv"/>
+     <n a="19,11" ix="20" t="nrv"/>
+     <n a="27,12" ix="21" t="nrv"/>
+     <n a="28,12" ix="22" t="nrv"/>
+     <n a="29,12" ix="23" t="nrv"/>
+     <n a="25,13" ix="24" t="nrv"/>
+     <n a="30,13" ix="25" t="nrv"/>
+     <n a="31,13" ix="26" t="nrv"/>
+     <n a="33,5" ix="27" t="nrv"/>
+     <n a="34,3" ix="28" t="nrv"/>
+     <n a="35,8" ix="29" t="nrv"/>
+     <n a="36,5" ix="30" t="nrv"/>
+     <n a="37,2" ix="31" t="nrv"/>
+     <n a="38,8" ix="32" t="nrv"/>
+     <n a="35,11" ix="33" t="nrv"/>
+     <n a="38,11" ix="34" t="nrv"/>
+     <n a="39,13" ix="35" t="nrv"/>
+     <n a="40,13" ix="36" t="nrv"/>
+    </invariant-fact-table>
+   </inv-dictionary>
+   <location-invariants>
+    <loc ictxt="3924" ifacts="1,2,3,4,5,7,8,10,13,14,17,18,21,23,24"/>
+    <loc ictxt="3927" ifacts="1,2,3,4,5,7,8,10,12,13,15,18,21,24"/>
+    <loc ictxt="3925" ifacts="1,2,3,4,5,7,8,10,11,12,13,18,20,21,24,26,30,31,32,34,36"/>
+    <loc ictxt="3920" ifacts="1,2,3,4,5,6,7,8,9,10,18,19,24,25,27,28,29,33,35"/>
+    <loc ictxt="4558" ifacts="1,2,3,4,5,7,8,10,13,16,18,21,22,24"/>
+   </location-invariants>
+  </function>
+ </c-analysis>

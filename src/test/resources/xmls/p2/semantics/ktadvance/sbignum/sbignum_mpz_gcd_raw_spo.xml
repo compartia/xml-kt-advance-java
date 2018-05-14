@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:46">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_gcd_raw">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="298,427" ictxt="2616" iloc="299" ivinfo="55">
+       <api-conditions>
+        <api-c iapi="1288">
+         <po id="1" ispo="1">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="unknown if location pointed to by return value from __builtin_alloca is initialized"/>
+            <msg t="function return value: __builtin_alloca"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="1294">
+         <po id="3" ispo="3"/>
+        </api-c>
+        <api-c iapi="1316">
+         <po id="6" ispo="6"/>
+        </api-c>
+        <api-c iapi="1290">
+         <po id="2" ispo="2">
+          <d>
+           <invs>
+            <arg a="1" i="636,652,657,673"/>
+           </invs>
+           <msgs>
+            <msg t="unable to exclude null return value from __builtin_alloca"/>
+           </msgs>
+           <amsgs>
+            <arg a="1">
+             <msg t="[1]:function return value from: __builtin_alloca"/>
+            </arg>
+           </amsgs>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="1306">
+         <po id="5" ispo="5">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="unknown if location pointed to by return value from __builtin_alloca is initialized"/>
+            <msg t="function return value: __builtin_alloca"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="1296">
+         <po deps="s" id="4" ispo="4" s="g">
+          <e txt="address of variable B"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="329,330" ictxt="2310" iloc="256" ivinfo="67">
+       <api-conditions>
+        <api-c iapi="3040">
+         <po deps="a" id="29" ids="8" invs="15" ispo="29" s="g" ts="2018-05-02 13:15:46">
+          <e txt="condition initialized(g-&gt;l) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="3042">
+         <po deps="a" id="31" ids="3" invs="15" ispo="31" s="g" ts="2018-05-02 13:15:46">
+          <e txt="condition initialized(g-&gt;d) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="3041">
+         <po deps="a" id="30" ids="2" invs="682" ispo="30" s="g" ts="2018-05-02 13:15:46">
+          <e txt="condition not-null(g) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="3043">
+         <po deps="a" id="32" ids="11" invs="15" ispo="32" s="g" ts="2018-05-02 13:15:46">
+          <e txt="condition initialized(g-&gt;a) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="336,427,317,299" ictxt="2703" iloc="313" ivinfo="46">
+       <api-conditions>
+        <api-c iapi="3110">
+         <po id="35" ispo="35"/>
+        </api-c>
+        <api-c iapi="991">
+         <po id="7" ispo="7"/>
+        </api-c>
+        <api-c iapi="1047">
+         <po id="11" ispo="11"/>
+        </api-c>
+        <api-c iapi="3108">
+         <po id="33" ispo="33"/>
+        </api-c>
+        <api-c iapi="1073">
+         <po id="12" ispo="12"/>
+        </api-c>
+        <api-c iapi="1032">
+         <po deps="s" id="10" ispo="10" s="g">
+          <e txt="address of variable B"/>
+         </po>
+        </api-c>
+        <api-c iapi="993">
+         <po deps="s" id="8" ispo="8" s="g">
+          <e txt="address of variable t"/>
+         </po>
+        </api-c>
+        <api-c iapi="3109">
+         <po id="34" ispo="34"/>
+        </api-c>
+        <api-c iapi="1031">
+         <po id="9" ispo="9"/>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="329,329,324,364" ictxt="2786" iloc="326" ivinfo="42">
+       <api-conditions>
+        <api-c iapi="360">
+         <po deps="a" id="14" ids="2" invs="634" ispo="14" s="g">
+          <e txt="condition not-null(g) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="358">
+         <po deps="a" id="13" ids="8" invs="15" ispo="13" s="g">
+          <e txt="condition initialized(g-&gt;l) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="374">
+         <po deps="a" id="15" ids="3" invs="15" ispo="15" s="g">
+          <e txt="condition initialized(g-&gt;d) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="419">
+         <po id="17" ispo="17">
+          <d>
+           <invs>
+            <arg a="1" i="655"/>
+           </invs>
+           <msgs/>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="375">
+         <po deps="a" id="16" ids="2" invs="634" ispo="16" s="g">
+          <e txt="condition not-null(g) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="429">
+         <po deps="a" id="18" ids="3" invs="15" ispo="18" s="g">
+          <e txt="condition initialized(g-&gt;d) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="3018">
+         <po deps="a" id="19" ids="10" invs="15" ispo="19" s="g">
+          <e txt="condition initialized(g-&gt;s) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="336" ictxt="2323" iloc="260" ivinfo="72">
+       <api-conditions>
+        <api-c iapi="2990">
+         <po deps="s" id="20" ispo="20" s="g">
+          <e txt="address of variable t"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="336" ictxt="2793" iloc="328" ivinfo="68">
+       <api-conditions>
+        <api-c iapi="1164">
+         <po id="21" ispo="21"/>
+        </api-c>
+        <api-c iapi="1166">
+         <po deps="s" id="22" ispo="22" s="g">
+          <e txt="address of variable t"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="336,298,324,364" ictxt="2620" iloc="300" ivinfo="46">
+       <api-conditions>
+        <api-c iapi="3110">
+         <po id="38" ispo="38"/>
+        </api-c>
+        <api-c iapi="991">
+         <po id="23" ispo="23"/>
+        </api-c>
+        <api-c iapi="1047">
+         <po id="27" ispo="27">
+          <d>
+           <invs>
+            <arg a="1" i="658"/>
+           </invs>
+           <msgs/>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="3108">
+         <po id="36" ispo="36">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="unknown if location pointed to by return value from __builtin_alloca is initialized"/>
+            <msg t="function return value: __builtin_alloca"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="1073">
+         <po id="28" ispo="28">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="unknown if location pointed to by return value from __builtin_alloca is initialized"/>
+            <msg t="function return value: __builtin_alloca"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="1032">
+         <po id="26" ispo="26">
+          <d>
+           <invs>
+            <arg a="1" i="642,653,659,678"/>
+           </invs>
+           <msgs>
+            <msg t="unable to exclude null return value from __builtin_alloca"/>
+           </msgs>
+           <amsgs>
+            <arg a="1">
+             <msg t="[1]:function return value from: __builtin_alloca"/>
+            </arg>
+           </amsgs>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="993">
+         <po deps="s" id="24" ispo="24" s="g">
+          <e txt="address of variable t"/>
+         </po>
+        </api-c>
+        <api-c iapi="3109">
+         <po id="37" ispo="37"/>
+        </api-c>
+        <api-c iapi="1031">
+         <po id="25" ispo="25">
+          <d>
+           <invs/>
+           <msgs>
+            <msg t="unknown if location pointed to by return value from __builtin_alloca is initialized"/>
+            <msg t="function return value: __builtin_alloca"/>
+           </msgs>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="2314" iexp="331" iloc="257">
+      <postconditions/>
+     </rs>
+     <rs ictxt="2795" iexp="331" iloc="330">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

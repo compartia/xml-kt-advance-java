@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="adbuf" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:44" version="CP1.00"/>
+  </header>
+  <c-file filename="adbuf">
+   <global-type-definitions>
+    <gtype iloc="183" itinfo="1"/>
+    <gtype iloc="184" itinfo="2"/>
+    <gtype iloc="185" itinfo="3"/>
+   </global-type-definitions>
+   <global-comptag-definitions>
+    <gcomptag icinfo="1" iloc="189"/>
+   </global-comptag-definitions>
+   <global-comptag-declarations/>
+   <global-enumtag-definitions/>
+   <global-enumtag-declarations/>
+   <global-var-definitions/>
+   <global-var-declarations>
+    <gvardecl iloc="190" ivinfo="15"/>
+    <gvardecl iloc="190" ivinfo="16"/>
+    <gvardecl iloc="192" ivinfo="17"/>
+    <gvardecl iloc="194" ivinfo="18"/>
+    <gvardecl iloc="196" ivinfo="19"/>
+    <gvardecl iloc="198" ivinfo="20"/>
+    <gvardecl iloc="200" ivinfo="21"/>
+    <gvardecl iloc="202" ivinfo="22"/>
+    <gvardecl iloc="203" ivinfo="14"/>
+    <gvardecl iloc="204" ivinfo="13"/>
+    <gvardecl iloc="205" ivinfo="12"/>
+    <gvardecl iloc="206" ivinfo="11"/>
+    <gvardecl iloc="207" ivinfo="10"/>
+    <gvardecl iloc="208" ivinfo="9"/>
+    <gvardecl iloc="209" ivinfo="8"/>
+    <gvardecl iloc="210" ivinfo="7"/>
+    <gvardecl iloc="211" ivinfo="6"/>
+    <gvardecl iloc="212" ivinfo="5"/>
+    <gvardecl iloc="213" ivinfo="4"/>
+    <gvardecl iloc="214" ivinfo="3"/>
+    <gvardecl iloc="215" ivinfo="2"/>
+    <gvardecl iloc="216" ivinfo="1"/>
+   </global-var-declarations>
+   <functions>
+    <gfun iloc="174" ivinfo="14"/>
+    <gfun iloc="168" ivinfo="13"/>
+    <gfun iloc="164" ivinfo="12"/>
+    <gfun iloc="142" ivinfo="11"/>
+    <gfun iloc="126" ivinfo="10"/>
+    <gfun iloc="122" ivinfo="9"/>
+    <gfun iloc="118" ivinfo="8"/>
+    <gfun iloc="101" ivinfo="7"/>
+    <gfun iloc="79" ivinfo="6"/>
+    <gfun iloc="75" ivinfo="5"/>
+    <gfun iloc="54" ivinfo="4"/>
+    <gfun iloc="40" ivinfo="3"/>
+    <gfun iloc="32" ivinfo="2"/>
+    <gfun iloc="1" ivinfo="1"/>
+   </functions>
+   <global-assembly-statements/>
+   <global-pragmas/>
+   <global-text/>
+  </c-file>
+ </c-analysis>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:29">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_tdiv_q_ui">
+   <ppos>
+    <ppo deps="s" id="22" ippo="22" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="s" id="18" ippo="18" s="g">
+     <e txt="index value 0 is non-negative"/>
+    </ppo>
+    <ppo deps="s" id="19" ippo="19" s="g">
+     <e txt="index value 0 is less than bound 1"/>
+    </ppo>
+    <ppo deps="s" id="32" ippo="32" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="17" ippo="17" s="g">
+     <e txt="constant value 0 fits in type unsigned int"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="constant value 0 fits in type unsigned int"/>
+    </ppo>
+    <ppo deps="f" id="28" invs="59" ippo="28" s="g" ts="2018-05-02 13:04:41">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_2_)#init"/>
+    </ppo>
+    <ppo deps="s" id="23" ippo="23" s="g">
+     <e txt="q is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="25" invs="36" ippo="25" s="g" ts="2018-05-02 13:04:41">
+     <e txt="initial value of parameter q satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="u is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="5" invs="50" ippo="5" s="g" ts="2018-05-02 13:04:41">
+     <e txt="assignedAt#1354"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="index value 0 is less than bound 1"/>
+    </ppo>
+    <ppo deps="f" id="30" invs="37" ippo="30" s="g" ts="2018-05-02 13:04:41">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="16" ippo="16" s="g">
+     <e txt="index value 0 is less than bound 1"/>
+    </ppo>
+    <ppo deps="f" id="24" invs="58" ippo="24" s="g" ts="2018-05-02 13:04:41">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(q_6_)#init"/>
+    </ppo>
+    <ppo deps="f" id="14" invs="48" ippo="14" s="g" ts="2018-05-02 13:04:41">
+     <e txt="assignedAt#1354"/>
+    </ppo>
+    <ppo deps="s" id="21" ippo="21" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="33" ippo="33" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="index value 0 is non-negative"/>
+    </ppo>
+    <ppo deps="s" id="15" ippo="15" s="g">
+     <e txt="index value 0 is non-negative"/>
+    </ppo>
+    <ppo deps="s" id="27" ippo="27" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="index value 0 is less than bound 1"/>
+    </ppo>
+    <ppo deps="f" id="26" invs="36" ippo="26" s="g" ts="2018-05-02 13:04:41">
+     <e txt="upper-bound value is initial value of parameter q satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="11" invs="49" ippo="11" s="g" ts="2018-05-02 13:04:41">
+     <e txt="assignedAt#1354"/>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="index value 0 is non-negative"/>
+    </ppo>
+    <ppo deps="s" id="31" ippo="31" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="s" id="12" ippo="12" s="g">
+     <e txt="index value 0 is non-negative"/>
+    </ppo>
+    <ppo deps="s" id="13" ippo="13" s="g">
+     <e txt="index value 0 is less than bound 1"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="index value 0 is less than bound 1"/>
+    </ppo>
+    <ppo deps="f" id="34" invs="55" ippo="34" s="g" ts="2018-05-02 13:04:41">
+     <e txt="assignedAt#1356(rv:mpz_tdiv_r)"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="constant value 1 fits in type unsigned int"/>
+    </ppo>
+    <ppo deps="f" id="29" invs="37" ippo="29" s="g" ts="2018-05-02 13:04:41">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="index value 0 is non-negative"/>
+    </ppo>
+    <ppo deps="s" id="20" ippo="20" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

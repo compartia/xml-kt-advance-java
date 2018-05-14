@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:28">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_normalize">
+   <api xlst="2">
+    <api-assumptions>
+     <aa ipr="1094" ppos="8,1"/>
+     <aa ipr="1096" ppos="20,10,37,3,52,47"/>
+     <aa ipr="1105" ppos="18"/>
+     <aa ipr="1119" ppos="45"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls/>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="1100"/>
+     <uu po-id="1106"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

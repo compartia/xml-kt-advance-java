@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="sbignum" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:48" version="CP1.00"/>
+  </header>
+  <function filename="sbignum">
+   <svar ivinfo="26"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="2740,1,1,0,0,522,0,1" ix="1" t="q,n"/>
+     <n a="2741,1,1,0,0,523,0,2" ix="2" t="z,n"/>
+     <n a="2742,1,1,0,0,524,0,3" ix="3" t="d,n"/>
+     <n a="2743,8,1,0,0,525,0,0" ix="4" t="err,n"/>
+     <n a="2744,22,1,0,0,526,1,0" ix="5" t="r,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="761">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="165" iloc="527" itag="call">
+         <args>
+          <exp iexp="641"/>
+         </args>
+        </instr>
+        <instr iexp="642" iloc="528" ilval="331" itag="call">
+         <args>
+          <exp iexp="643"/>
+          <exp iexp="641"/>
+          <exp iexp="644"/>
+          <exp iexp="645"/>
+         </args>
+        </instr>
+        <instr iexp="188" iloc="529" itag="call">
+         <args>
+          <exp iexp="641"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="762"/>
+      <preds/>
+     </stmt>
+     <stmt sid="762">
+      <skind iexp="646" iloc="530" stag="return"/>
+      <succs/>
+      <preds r="761"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

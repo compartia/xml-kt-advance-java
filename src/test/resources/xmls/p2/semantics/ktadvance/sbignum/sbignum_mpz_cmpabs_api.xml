@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:29">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_cmpabs">
+   <api xlst="1">
+    <api-assumptions>
+     <aa ipr="1288" ppos="13,26,1"/>
+     <aa ipr="1290" ppos="72,3,28,15,40"/>
+     <aa ipr="1294" ppos="7,19"/>
+     <aa ipr="1296" ppos="88,9,21,56"/>
+     <aa ipr="1306" ppos="70,38"/>
+     <aa ipr="1316" ppos="86,54"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls/>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="1300"/>
+     <uu po-id="1307"/>
+     <uu po-id="1317"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

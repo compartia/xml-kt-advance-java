@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:27">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_set_d">
+   <api xlst="7">
+    <api-assumptions>
+     <aa ipr="930" ppos="2,48,24" spos="2"/>
+     <aa ipr="940" ppos="22" spos="3"/>
+     <aa ipr="3296" spos="1"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls/>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="942"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

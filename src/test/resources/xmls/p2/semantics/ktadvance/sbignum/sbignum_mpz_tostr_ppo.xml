@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:31">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_tostr">
+   <ppos>
+    <ppo deps="f" id="18" invs="198" ippo="18" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1696"/>
+    </ppo>
+    <ppo deps="s" id="129" ippo="129" s="g">
+     <e txt="s is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="50" ippo="50" s="g">
+     <e txt="l is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="80" ippo="80" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="108" ippo="108" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="a" id="166" ids="1" invs="86" ippo="166" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition not-null(s) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="104" invs="173" ippo="104" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1687_xx_assignedAt#1696(c)_xx_assignedAt#1711(c)"/>
+    </ppo>
+    <ppo deps="s" id="130" ippo="130" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="25" ippo="25" s="g">
+     <e txt="basepowtable is global"/>
+    </ppo>
+    <ppo deps="s" id="49" ippo="49" s="g">
+     <e txt="index value 0 is less than bound 1"/>
+    </ppo>
+    <ppo deps="s" id="52" ippo="52" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="b is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="30" ippo="30" s="g">
+     <e txt="basepowtable is global"/>
+    </ppo>
+    <ppo deps="s" id="62" ippo="62" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="f" id="103" invs="52" ippo="103" s="g" ts="2018-05-02 13:04:43">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="102" invs="52" ippo="102" s="g" ts="2018-05-02 13:04:43">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="106" ids="1" invs="65" ippo="106" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition not-null(s) delegated to api"/>
+    </ppo>
+    <ppo deps="a" id="14" ids="1" invs="17" ippo="14" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition not-null(s) delegated to api"/>
+    </ppo>
+    <ppo deps="a" id="111" ids="1" invs="101" ippo="111" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition not-null(s) delegated to api"/>
+    </ppo>
+    <ppo id="145" ippo="145">
+     <d>
+      <invs>
+       <arg a="1" i="95,133,193,274"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:mpz_clear @1717 r:1,freed(by:mpz_set @1705 r:1"/>
+        <msg t="[1]:potential frees not excluded: freed(by:_mpz_selfdiv1_qr_raw @1709 r:1,freed(by:mpz_clear @1717 r:1,freed(by:mpz_init @1704 r:1,freed(by:mpz_set @1705 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="15" invs="210" ippo="15" s="g" ts="2018-05-02 13:04:43">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(s_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="82" invs="176" ippo="82" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1709(rv:_mpz_selfdiv1_qr_raw)_xx_assignedAt#1712"/>
+    </ppo>
+    <ppo deps="f" id="133" invs="188" ippo="133" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1722(c)_xx_assignedAt#1731(c)"/>
+    </ppo>
+    <ppo deps="s" id="89" ippo="89" s="g">
+     <e txt="index value 0 is non-negative"/>
+    </ppo>
+    <ppo deps="f" id="56" invs="194" ippo="56" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1701"/>
+    </ppo>
+    <ppo deps="s" id="79" ippo="79" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="s" id="164" ippo="164" s="g">
+     <e txt="subtract positive number:  value is 1"/>
+    </ppo>
+    <ppo deps="s" id="31" ippo="31" s="g">
+     <e txt="unsigned value is always non-negative"/>
+    </ppo>
+    <ppo deps="s" id="121" ippo="121" s="g">
+     <e txt="subtract positive number:  value is 1"/>
+    </ppo>
+    <ppo deps="f" id="12" invs="196" ippo="12" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1687"/>
+    </ppo>
+    <ppo deps="f" id="141" invs="88" ippo="141" s="g" ts="2018-05-02 13:04:43">
+     <e txt="initial value of parameter s satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="101" invs="234" ippo="101" s="g" ts="2018-05-02 13:04:43">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_4_)#init"/>
+    </ppo>
+    <ppo deps="s" id="168" ippo="168" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo id="69" ippo="69"/>
+    <ppo deps="f" id="152" invs="96" ippo="152" s="g" ts="2018-05-02 13:04:43">
+     <e txt="initial value of parameter s plus non-negative offset 1 satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="8" ids="2" invs="47" ippo="8" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="160" invs="199" ippo="160" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1722(c)_xx_assignedAt#1731(c)"/>
+    </ppo>
+    <ppo deps="s" id="96" ippo="96" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="f" id="45" invs="58" ippo="45" s="g" ts="2018-05-02 13:04:43">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="54" invs="178" ippo="54" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1702"/>
+    </ppo>
+    <ppo deps="s" id="78" ippo="78" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo id="124" ippo="124">
+     <d>
+      <invs>
+       <arg a="1" i="90,126,185,268"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:mpz_clear @1717 r:1,freed(by:mpz_set @1705 r:1"/>
+        <msg t="[1]:potential frees not excluded: freed(by:_mpz_selfdiv1_qr_raw @1709 r:1,freed(by:mpz_clear @1717 r:1,freed(by:mpz_init @1704 r:1,freed(by:mpz_set @1705 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="a" id="118" ids="1" invs="91" ippo="118" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition not-null(s) delegated to api"/>
+    </ppo>
+    <ppo id="140" ippo="140">
+     <d>
+      <invs>
+       <arg a="1" i="88,123,182,266"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:mpz_clear @1717 r:1,freed(by:mpz_set @1705 r:1"/>
+        <msg t="[1]:potential frees not excluded: freed(by:_mpz_selfdiv1_qr_raw @1709 r:1,freed(by:mpz_clear @1717 r:1,freed(by:mpz_init @1704 r:1,freed(by:mpz_set @1705 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="cast to character type"/>
+    </ppo>
+    <ppo deps="s" id="81" ippo="81" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="128" ippo="128" s="g">
+     <e txt="cast to character type"/>
+    </ppo>
+    <ppo deps="s" id="23" ippo="23" s="g">
+     <e txt="casting constant value 48 to char"/>
+    </ppo>
+    <ppo id="77" ippo="77">
+     <d>
+      <invs>
+       <arg a="3" i="21"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="70" ippo="70" s="g">
+     <e txt="cset is global"/>
+    </ppo>
+    <ppo deps="f" id="159" invs="172" ippo="159" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1728"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="b is a function parameter"/>
+    </ppo>
+    <ppo deps="a" id="134" ids="1" invs="92" ippo="134" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition not-null(s) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="16" ippo="16" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo id="24" ippo="24"/>
+    <ppo deps="f" id="21" invs="54" ippo="21" s="g" ts="2018-05-02 13:04:43">
+     <e txt="initial value of parameter s satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="94" ippo="94" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo id="109" ippo="109">
+     <d>
+      <invs>
+       <arg a="4" i="1"/>
+       <arg a="3" i="65,106,152,254"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="167" ippo="167">
+     <d>
+      <invs>
+       <arg a="1" i="86,122,181,265"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:mpz_clear @1717 r:1,freed(by:mpz_set @1705 r:1"/>
+        <msg t="[1]:potential frees not excluded: freed(by:_mpz_selfdiv1_qr_raw @1709 r:1,freed(by:mpz_clear @1717 r:1,freed(by:mpz_init @1704 r:1,freed(by:mpz_set @1705 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="36" ippo="36" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="76" ippo="76">
+     <d>
+      <invs>
+       <arg a="3" i="21"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="131" invs="189" ippo="131" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1724_xx_assignedAt#1732(c)"/>
+    </ppo>
+    <ppo deps="s" id="57" ippo="57" s="g">
+     <e txt="l is a function parameter"/>
+    </ppo>
+    <ppo id="68" ippo="68">
+     <d>
+      <invs>
+       <arg a="2" i="73,112,163,258"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:base variable: s"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="156" ippo="156">
+     <d>
+      <invs>
+       <arg a="1" i="79,117,171,262"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:mpz_clear @1717 r:1,freed(by:mpz_set @1705 r:1"/>
+        <msg t="[1]:potential frees not excluded: freed(by:_mpz_selfdiv1_qr_raw @1709 r:1,freed(by:mpz_clear @1717 r:1,freed(by:mpz_init @1704 r:1,freed(by:mpz_set @1705 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="122" invs="185" ippo="122" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1722"/>
+    </ppo>
+    <ppo deps="s" id="85" ippo="85" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="a" id="100" ids="2" invs="52" ippo="100" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="26" ippo="26" s="g">
+     <e txt="unsigned value is always non-negative"/>
+    </ppo>
+    <ppo deps="a" id="98" ids="3" invs="14" ippo="98" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition initialized(z-&gt;s) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="105" invs="152" ippo="105" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1687_xx_assignedAt#1696(c)_xx_assignedAt#1711(c)"/>
+    </ppo>
+    <ppo deps="f" id="11" invs="47" ippo="11" s="g" ts="2018-05-02 13:04:43">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="9" invs="229" ippo="9" s="g" ts="2018-05-02 13:04:43">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_4_)#init"/>
+    </ppo>
+    <ppo deps="f" id="135" invs="188" ippo="135" s="g" ts="2018-05-02 13:04:43">
+     <e txt="pointer is assigned a compound value at all dominating assignments: #1722,#1731"/>
+    </ppo>
+    <ppo deps="f" id="13" invs="155" ippo="13" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1687"/>
+    </ppo>
+    <ppo id="63" ippo="63">
+     <d>
+      <invs>
+       <arg a="4" i="24"/>
+       <arg a="3" i="78,113,166,259"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="51" ippo="51" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo id="107" ippo="107">
+     <d>
+      <invs>
+       <arg a="1" i="65,106,152,254"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:mpz_clear @1717 r:1,freed(by:mpz_set @1705 r:1"/>
+        <msg t="[1]:potential frees not excluded: freed(by:_mpz_selfdiv1_qr_raw @1709 r:1,freed(by:mpz_clear @1717 r:1,freed(by:mpz_init @1704 r:1,freed(by:mpz_set @1705 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="146" invs="95" ippo="146" s="g" ts="2018-05-02 13:04:43">
+     <e txt="initial value of parameter s satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="125" invs="90" ippo="125" s="g" ts="2018-05-02 13:04:43">
+     <e txt="initial value of parameter s satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="143" invs="193" ippo="143" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1724_xx_assignedAt#1732(c)"/>
+    </ppo>
+    <ppo deps="a" id="19" ids="1" invs="54" ippo="19" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition not-null(s) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="32" invs="146" ippo="32" s="g" ts="2018-05-02 13:04:43">
+     <e txt="upper bound of index value: 36, is less than length: 37"/>
+    </ppo>
+    <ppo deps="a" id="17" ids="4" invs="17,15" ippo="17" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition ptr-upperbound-deref(((s +i 1):char) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="90" ippo="90" s="g">
+     <e txt="index value 0 is less than bound 1"/>
+    </ppo>
+    <ppo deps="s" id="40" ippo="40" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="f" id="67" invs="73" ippo="67" s="g" ts="2018-05-02 13:04:43">
+     <e txt="initial value of parameter s satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="55" invs="195" ippo="55" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1710"/>
+    </ppo>
+    <ppo deps="f" id="117" invs="187" ippo="117" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1687_xx_assignedAt#1696(c)_xx_assignedAt#1711(c)_xx_assignedAt#1721(c)"/>
+    </ppo>
+    <ppo deps="s" id="132" ippo="132" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="110" invs="201" ippo="110" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1721"/>
+    </ppo>
+    <ppo deps="a" id="60" ids="1" invs="78" ippo="60" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition not-null(s) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="150" invs="96" ippo="150" s="g" ts="2018-05-02 13:04:43">
+     <e txt="value of d is a compound value: ((s_2_)#init + 1)"/>
+    </ppo>
+    <ppo deps="f" id="59" invs="166" ippo="59" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1687_xx_assignedAt#1711(c)"/>
+    </ppo>
+    <ppo deps="f" id="165" invs="181" ippo="165" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1724_xx_assignedAt#1732(c)"/>
+    </ppo>
+    <ppo deps="f" id="161" invs="100" ippo="161" s="g" ts="2018-05-02 13:04:43">
+     <e txt="value of d is a compound value: ((s_2_)#init + 1)"/>
+    </ppo>
+    <ppo deps="a" id="6" ids="5" invs="14" ippo="6" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition initialized(z-&gt;l) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="155" invs="79" ippo="155" s="g" ts="2018-05-02 13:04:43">
+     <e txt="value of d is a compound value: ((s_2_)#init + 1)"/>
+    </ppo>
+    <ppo id="142" ippo="142">
+     <d>
+      <invs>
+       <arg a="2" i="88,123,182,266"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:base variable: s"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="a" id="144" ids="1" invs="95" ippo="144" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition not-null(s) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="116" invs="190" ippo="116" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1687_xx_assignedAt#1696(c)_xx_assignedAt#1711(c)_xx_assignedAt#1721(c)"/>
+    </ppo>
+    <ppo id="137" ippo="137"/>
+    <ppo deps="f" id="27" invs="147" ippo="27" s="g" ts="2018-05-02 13:04:43">
+     <e txt="upper bound of index value: 36, is less than length: 37"/>
+    </ppo>
+    <ppo deps="f" id="154" invs="171" ippo="154" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1722(c)_xx_assignedAt#1731(c)"/>
+    </ppo>
+    <ppo id="151" ippo="151">
+     <d>
+      <invs>
+       <arg a="1" i="96,132,192,273"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:mpz_clear @1717 r:1,freed(by:mpz_set @1705 r:1"/>
+        <msg t="[1]:potential frees not excluded: freed(by:_mpz_selfdiv1_qr_raw @1709 r:1,freed(by:mpz_clear @1717 r:1,freed(by:mpz_init @1704 r:1,freed(by:mpz_set @1705 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="157" invs="79" ippo="157" s="g" ts="2018-05-02 13:04:43">
+     <e txt="initial value of parameter s plus non-negative offset 1 satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="38" ippo="38" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo id="61" ippo="61">
+     <d>
+      <invs>
+       <arg a="1" i="78,113,166,259"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:mpz_set @1705 r:1"/>
+        <msg t="[1]:potential frees not excluded: freed(by:_mpz_selfdiv1_qr_raw @1709 r:1,freed(by:mpz_init @1704 r:1,freed(by:mpz_set @1705 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo id="158" ippo="158">
+     <d>
+      <invs>
+       <arg a="2" i="79,117,171,262"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:base variable: s"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="87" invs="184" ippo="87" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1712"/>
+    </ppo>
+    <ppo deps="f" id="113" invs="101" ippo="113" s="g" ts="2018-05-02 13:04:43">
+     <e txt="initial value of parameter s satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="138" invs="182" ippo="138" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1724_xx_assignedAt#1732(c)"/>
+    </ppo>
+    <ppo deps="f" id="58" invs="179" ippo="58" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1687_xx_assignedAt#1711(c)"/>
+    </ppo>
+    <ppo deps="s" id="84" ippo="84" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="34" ippo="34" s="g">
+     <e txt="l is a function parameter"/>
+    </ppo>
+    <ppo deps="a" id="74" ids="6" invs="21" ippo="74" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition not-null(cset) delegated to global analysis"/>
+    </ppo>
+    <ppo id="112" ippo="112">
+     <d>
+      <invs>
+       <arg a="1" i="101,140,201,277"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:mpz_clear @1717 r:1,freed(by:mpz_set @1705 r:1"/>
+        <msg t="[1]:potential frees not excluded: freed(by:_mpz_selfdiv1_qr_raw @1709 r:1,freed(by:mpz_clear @1717 r:1,freed(by:mpz_init @1704 r:1,freed(by:mpz_set @1705 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="75" ippo="75" s="g">
+     <e txt="valid by inductive hypothesis (checked at each assignment)"/>
+    </ppo>
+    <ppo deps="a" id="123" ids="1" invs="90" ippo="123" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition not-null(s) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="48" ippo="48" s="g">
+     <e txt="index value 0 is non-negative"/>
+    </ppo>
+    <ppo id="169" ippo="169">
+     <d>
+      <invs>
+       <arg a="4" i="39"/>
+       <arg a="3" i="86,122,181,265"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="127" ippo="127" s="g">
+     <e txt="casting constant value 0 to char"/>
+    </ppo>
+    <ppo deps="a" id="139" ids="1" invs="88" ippo="139" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition not-null(s) delegated to api"/>
+    </ppo>
+    <ppo id="147" ippo="147">
+     <d>
+      <invs>
+       <arg a="2" i="95,133,193,274"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:base variable: s"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="71" invs="164" ippo="71" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1709(rv:_mpz_selfdiv1_qr_raw)_xx_assignedAt#1712"/>
+    </ppo>
+    <ppo deps="f" id="22" invs="54" ippo="22" s="g" ts="2018-05-02 13:04:43">
+     <e txt="upper-bound value is initial value of parameter s satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="28" ippo="28" s="g">
+     <e txt="b is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="53" ippo="53" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo id="148" ippo="148"/>
+    <ppo deps="a" id="65" ids="1" invs="73" ippo="65" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition not-null(s) delegated to api"/>
+    </ppo>
+    <ppo id="47" ippo="47"/>
+    <ppo deps="a" id="73" ids="7" invs="22" ippo="73" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition b != 0 delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="44" invs="238" ippo="44" s="g" ts="2018-05-02 13:04:43">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_4_)#init"/>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="l is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="91" invs="175" ippo="91" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1710"/>
+    </ppo>
+    <ppo deps="a" id="120" ids="8" invs="91,42" ippo="120" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition ptr-lowerbound(((s -i 1):char) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="97" ippo="97" s="g">
+     <e txt="l is a function parameter"/>
+    </ppo>
+    <ppo id="162" ippo="162">
+     <d>
+      <invs>
+       <arg a="1" i="100,139,199,276"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:mpz_clear @1717 r:1,freed(by:mpz_set @1705 r:1"/>
+        <msg t="[1]:potential frees not excluded: freed(by:_mpz_selfdiv1_qr_raw @1709 r:1,freed(by:mpz_clear @1717 r:1,freed(by:mpz_init @1704 r:1,freed(by:mpz_set @1705 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="a" id="163" ids="9" invs="100,59" ippo="163" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition ptr-lowerbound(((((s + 1):(void*) -i 1):char) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="72" ippo="72" s="g">
+     <e txt="b is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="99" ippo="99" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo id="114" ippo="114">
+     <d>
+      <invs>
+       <arg a="2" i="101,140,201,277"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:base variable: s"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="33" ippo="33" s="g">
+     <e txt="b is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="37" ippo="37" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="f" id="64" invs="163" ippo="64" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1711"/>
+    </ppo>
+    <ppo deps="s" id="93" ippo="93" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="119" ippo="119">
+     <d>
+      <invs>
+       <arg a="1" i="91,127,187,269"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:mpz_clear @1717 r:1,freed(by:mpz_set @1705 r:1"/>
+        <msg t="[1]:potential frees not excluded: freed(by:_mpz_selfdiv1_qr_raw @1709 r:1,freed(by:mpz_clear @1717 r:1,freed(by:mpz_init @1704 r:1,freed(by:mpz_set @1705 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="41" ippo="41" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="s" id="95" ippo="95" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="f" id="149" invs="192" ippo="149" s="g" ts="2018-05-02 13:04:43">
+     <e txt="assignedAt#1722(c)_xx_assignedAt#1731(c)"/>
+    </ppo>
+    <ppo deps="s" id="92" ippo="92" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="115" ippo="115" s="g">
+     <e txt="casting constant value 45 to char"/>
+    </ppo>
+    <ppo deps="f" id="10" invs="47" ippo="10" s="g" ts="2018-05-02 13:04:43">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="42" ippo="42" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo deps="f" id="136" invs="228,227" ippo="136" s="g" ts="2018-05-02 13:04:43">
+     <e txt="both variables point at addr_in_(s_2_)#init_1_"/>
+    </ppo>
+    <ppo deps="f" id="46" invs="58" ippo="46" s="g" ts="2018-05-02 13:04:43">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="153" ippo="153">
+     <d>
+      <invs>
+       <arg a="2" i="96,132,192,273"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:base variable: s"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="39" ippo="39" s="g">
+     <e txt="address of a variable"/>
+    </ppo>
+    <ppo id="66" ippo="66">
+     <d>
+      <invs>
+       <arg a="1" i="73,112,163,258"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:potential frees not excluded: freed(by:mpz_set @1705 r:1"/>
+        <msg t="[1]:potential frees not excluded: freed(by:_mpz_selfdiv1_qr_raw @1709 r:1,freed(by:mpz_init @1704 r:1,freed(by:mpz_set @1705 r:1"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="83" ippo="83" s="g">
+     <e txt="b is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo id="88" ippo="88"/>
+    <ppo deps="s" id="35" ippo="35" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="29" ippo="29"/>
+    <ppo id="126" ippo="126">
+     <d>
+      <invs>
+       <arg a="2" i="90,126,185,268"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:base variable: s"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="43" ippo="43" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="a" id="86" ids="7" invs="28" ippo="86" s="g" ts="2018-05-02 13:04:43">
+     <e txt="condition b != 0 delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="s is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="20" invs="235" ippo="20" s="g" ts="2018-05-02 13:04:43">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(s_2_)#init"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

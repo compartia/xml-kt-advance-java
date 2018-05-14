@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:28">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_clear">
+   <spos>
+    <callsites>
+     <direct-calls/>
+     <indirect-calls/>
+    </callsites>
+    <returnsites/>
+   </spos>
+  </function>
+ </c-analysis>

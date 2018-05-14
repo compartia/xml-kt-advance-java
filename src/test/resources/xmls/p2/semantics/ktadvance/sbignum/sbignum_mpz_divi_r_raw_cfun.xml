@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="sbignum" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:48" version="CP1.00"/>
+  </header>
+  <function filename="sbignum">
+   <svar ivinfo="33"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="2624,1,1,0,0,699,0,1" ix="1" t="r,n"/>
+     <n a="2625,1,1,0,0,700,0,2" ix="2" t="z,n"/>
+     <n a="2626,6,1,0,0,701,0,3" ix="3" t="d,n"/>
+     <n a="2627,4,1,0,0,702,0,4" ix="4" t="l,n"/>
+     <n a="2628,8,1,0,0,703,0,0" ix="5" t="bit,n"/>
+     <n a="2629,4,1,0,0,-1,0,0" ix="6" t="tmp,n"/>
+     <n a="2630,7,1,0,0,704,0,0" ix="7" t="j,n"/>
+     <n a="2632,7,1,0,0,705,0,0" ix="8" t="j___0,n"/>
+     <n a="2634,7,1,0,0,-1,0,0" ix="9" t="tmp___0,n"/>
+     <n a="2636,7,1,0,0,706,0,0" ix="10" t="j___1,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="625">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="790" iloc="707" ilval="450" itag="call">
+         <args>
+          <exp iexp="791"/>
+         </args>
+        </instr>
+        <instr iexp="794" iloc="707" ilval="451" itag="set"/>
+        <instr iexp="328" iloc="708" itag="call">
+         <args>
+          <exp iexp="795"/>
+          <exp iexp="796"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="626"/>
+      <preds/>
+     </stmt>
+     <stmt sid="626">
+      <skind breakstmtid="653" continuestmtid="626" iloc="709" stag="loop">
+       <block>
+        <bstmts>
+         <stmt sid="627">
+          <skind iexp="798" iloc="709" stag="if">
+           <thenblock>
+            <bstmts/>
+           </thenblock>
+           <elseblock>
+            <bstmts>
+             <stmt sid="628">
+              <skind iloc="709" stag="break"/>
+              <succs r="653"/>
+              <preds r="627"/>
+             </stmt>
+            </bstmts>
+           </elseblock>
+          </skind>
+          <succs r="629,628"/>
+          <preds r="626"/>
+         </stmt>
+         <stmt sid="629">
+          <skind breakstmtid="639" continuestmtid="629" iloc="716" stag="loop">
+           <block>
+            <bstmts>
+             <stmt sid="630">
+              <skind stag="instr">
+               <instrs>
+                <instr iexp="801" iloc="710" ilval="454" itag="set"/>
+               </instrs>
+              </skind>
+              <succs r="631"/>
+              <preds r="629"/>
+             </stmt>
+             <stmt sid="631">
+              <skind breakstmtid="635" continuestmtid="631" iloc="710" stag="loop">
+               <block>
+                <bstmts>
+                 <stmt sid="632">
+                  <skind iexp="803" iloc="710" stag="if">
+                   <thenblock>
+                    <bstmts/>
+                   </thenblock>
+                   <elseblock>
+                    <bstmts>
+                     <stmt sid="633">
+                      <skind iloc="710" stag="break"/>
+                      <succs r="635"/>
+                      <preds r="632"/>
+                     </stmt>
+                    </bstmts>
+                   </elseblock>
+                  </skind>
+                  <succs r="634,633"/>
+                  <preds r="631"/>
+                 </stmt>
+                 <stmt sid="634">
+                  <skind stag="instr">
+                   <instrs>
+                    <instr iexp="812" iloc="711" ilval="457" itag="set"/>
+                    <instr iexp="813" iloc="712" ilval="458" itag="set"/>
+                    <instr iexp="814" iloc="710" ilval="454" itag="set"/>
+                   </instrs>
+                  </skind>
+                  <succs r="631"/>
+                  <preds r="632"/>
+                 </stmt>
+                </bstmts>
+               </block>
+              </skind>
+              <succs r="632"/>
+              <preds r="634,630"/>
+             </stmt>
+             <stmt sid="635">
+              <skind stag="instr">
+               <instrs>
+                <instr iexp="829" iloc="713" ilval="459" itag="set"/>
+               </instrs>
+              </skind>
+              <succs r="636"/>
+              <preds r="633"/>
+             </stmt>
+             <stmt sid="636">
+              <skind iexp="831" iloc="715" stag="if">
+               <thenblock>
+                <bstmts>
+                 <stmt sid="637">
+                  <skind stag="instr">
+                   <instrs>
+                    <instr iexp="832" iloc="714" ilval="455" itag="set"/>
+                   </instrs>
+                  </skind>
+                  <succs r="638"/>
+                  <preds r="636"/>
+                 </stmt>
+                </bstmts>
+               </thenblock>
+               <elseblock>
+                <bstmts/>
+               </elseblock>
+              </skind>
+              <succs r="637,638"/>
+              <preds r="635"/>
+             </stmt>
+             <stmt sid="638">
+              <skind iloc="716" stag="break"/>
+              <succs r="639"/>
+              <preds r="637,636"/>
+             </stmt>
+            </bstmts>
+           </block>
+          </skind>
+          <succs r="630"/>
+          <preds r="627"/>
+         </stmt>
+         <stmt sid="639">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="833" iloc="717" ilval="465" itag="call">
+             <args>
+              <exp iexp="795"/>
+              <exp iexp="834"/>
+              <exp iexp="796"/>
+             </args>
+            </instr>
+           </instrs>
+          </skind>
+          <succs r="640"/>
+          <preds r="638"/>
+         </stmt>
+         <stmt sid="640">
+          <skind iexp="836" iloc="717" stag="if">
+           <thenblock>
+            <bstmts>
+             <stmt sid="641">
+              <skind breakstmtid="651" continuestmtid="641" iloc="722" stag="loop">
+               <block>
+                <bstmts>
+                 <stmt sid="642">
+                  <skind stag="instr">
+                   <instrs>
+                    <instr iexp="839" iloc="718" ilval="466" itag="set"/>
+                   </instrs>
+                  </skind>
+                  <succs r="643"/>
+                  <preds r="641"/>
+                 </stmt>
+                 <stmt sid="643">
+                  <skind breakstmtid="649" continuestmtid="643" iloc="719" stag="loop">
+                   <block>
+                    <bstmts>
+                     <stmt sid="644">
+                      <skind iexp="841" iloc="719" stag="if">
+                       <thenblock>
+                        <bstmts>
+                         <stmt sid="645">
+                          <skind iexp="844" iloc="719" stag="if">
+                           <thenblock>
+                            <bstmts/>
+                           </thenblock>
+                           <elseblock>
+                            <bstmts>
+                             <stmt sid="646">
+                              <skind iloc="719" stag="break"/>
+                              <succs r="649"/>
+                              <preds r="645"/>
+                             </stmt>
+                            </bstmts>
+                           </elseblock>
+                          </skind>
+                          <succs r="648,646"/>
+                          <preds r="644"/>
+                         </stmt>
+                        </bstmts>
+                       </thenblock>
+                       <elseblock>
+                        <bstmts>
+                         <stmt sid="647">
+                          <skind iloc="719" stag="break"/>
+                          <succs r="649"/>
+                          <preds r="644"/>
+                         </stmt>
+                        </bstmts>
+                       </elseblock>
+                      </skind>
+                      <succs r="645,647"/>
+                      <preds r="643"/>
+                     </stmt>
+                     <stmt sid="648">
+                      <skind stag="instr">
+                       <instrs>
+                        <instr iexp="845" iloc="720" ilval="466" itag="set"/>
+                       </instrs>
+                      </skind>
+                      <succs r="643"/>
+                      <preds r="645"/>
+                     </stmt>
+                    </bstmts>
+                   </block>
+                  </skind>
+                  <succs r="644"/>
+                  <preds r="648,642"/>
+                 </stmt>
+                 <stmt sid="649">
+                  <skind stag="instr">
+                   <instrs>
+                    <instr iexp="847" iloc="721" ilval="455" itag="set"/>
+                   </instrs>
+                  </skind>
+                  <succs r="650"/>
+                  <preds r="647,646"/>
+                 </stmt>
+                 <stmt sid="650">
+                  <skind iloc="722" stag="break"/>
+                  <succs r="651"/>
+                  <preds r="649"/>
+                 </stmt>
+                </bstmts>
+               </block>
+              </skind>
+              <succs r="642"/>
+              <preds r="640"/>
+             </stmt>
+             <stmt sid="651">
+              <skind stag="instr">
+               <instrs>
+                <instr iexp="430" iloc="723" itag="call">
+                 <args>
+                  <exp iexp="795"/>
+                  <exp iexp="795"/>
+                  <exp iexp="834"/>
+                  <exp iexp="796"/>
+                 </args>
+                </instr>
+               </instrs>
+              </skind>
+              <succs r="652"/>
+              <preds r="650"/>
+             </stmt>
+            </bstmts>
+           </thenblock>
+           <elseblock>
+            <bstmts/>
+           </elseblock>
+          </skind>
+          <succs r="641,652"/>
+          <preds r="639"/>
+         </stmt>
+         <stmt sid="652">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="848" iloc="724" ilval="451" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="626"/>
+          <preds r="651,640"/>
+         </stmt>
+        </bstmts>
+       </block>
+      </skind>
+      <succs r="627"/>
+      <preds r="652,625"/>
+     </stmt>
+     <stmt sid="653">
+      <skind breakstmtid="663" continuestmtid="653" iloc="729" stag="loop">
+       <block>
+        <bstmts>
+         <stmt sid="654">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="839" iloc="725" ilval="469" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="655"/>
+          <preds r="653"/>
+         </stmt>
+         <stmt sid="655">
+          <skind breakstmtid="661" continuestmtid="655" iloc="726" stag="loop">
+           <block>
+            <bstmts>
+             <stmt sid="656">
+              <skind iexp="850" iloc="726" stag="if">
+               <thenblock>
+                <bstmts>
+                 <stmt sid="657">
+                  <skind iexp="853" iloc="726" stag="if">
+                   <thenblock>
+                    <bstmts/>
+                   </thenblock>
+                   <elseblock>
+                    <bstmts>
+                     <stmt sid="658">
+                      <skind iloc="726" stag="break"/>
+                      <succs r="661"/>
+                      <preds r="657"/>
+                     </stmt>
+                    </bstmts>
+                   </elseblock>
+                  </skind>
+                  <succs r="660,658"/>
+                  <preds r="656"/>
+                 </stmt>
+                </bstmts>
+               </thenblock>
+               <elseblock>
+                <bstmts>
+                 <stmt sid="659">
+                  <skind iloc="726" stag="break"/>
+                  <succs r="661"/>
+                  <preds r="656"/>
+                 </stmt>
+                </bstmts>
+               </elseblock>
+              </skind>
+              <succs r="657,659"/>
+              <preds r="655"/>
+             </stmt>
+             <stmt sid="660">
+              <skind stag="instr">
+               <instrs>
+                <instr iexp="854" iloc="727" ilval="469" itag="set"/>
+               </instrs>
+              </skind>
+              <succs r="655"/>
+              <preds r="657"/>
+             </stmt>
+            </bstmts>
+           </block>
+          </skind>
+          <succs r="656"/>
+          <preds r="660,654"/>
+         </stmt>
+         <stmt sid="661">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="856" iloc="728" ilval="455" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="662"/>
+          <preds r="659,658"/>
+         </stmt>
+         <stmt sid="662">
+          <skind iloc="729" stag="break"/>
+          <succs r="663"/>
+          <preds r="661"/>
+         </stmt>
+        </bstmts>
+       </block>
+      </skind>
+      <succs r="654"/>
+      <preds r="628"/>
+     </stmt>
+     <stmt sid="663">
+      <skind iexp="1" iloc="730" stag="return"/>
+      <succs/>
+      <preds r="662"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

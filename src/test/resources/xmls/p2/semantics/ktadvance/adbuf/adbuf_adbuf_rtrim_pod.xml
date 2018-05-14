@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:30">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_rtrim">
+   <assumption-table>
+    <n a="120" ix="1" t="aa"/>
+    <n a="118" ix="2" t="aa"/>
+    <n a="119" ix="3" t="aa"/>
+    <n a="491" ix="4" t="aa"/>
+   </assumption-table>
+   <ppo-type-table>
+    <n a="78,96,114" ix="1" t="p"/>
+    <n a="78,96,115" ix="2" t="p"/>
+    <n a="78,96,116" ix="3" t="p"/>
+    <n a="78,96,117" ix="4" t="p"/>
+    <n a="78,97,118" ix="5" t="p"/>
+    <n a="78,98,114" ix="6" t="p"/>
+    <n a="78,98,119" ix="7" t="p"/>
+    <n a="78,98,115" ix="8" t="p"/>
+    <n a="78,98,116" ix="9" t="p"/>
+    <n a="78,98,117" ix="10" t="p"/>
+    <n a="78,99,120" ix="11" t="p"/>
+    <n a="78,100,114" ix="12" t="p"/>
+    <n a="78,100,119" ix="13" t="p"/>
+    <n a="78,100,115" ix="14" t="p"/>
+    <n a="78,100,116" ix="15" t="p"/>
+    <n a="78,100,117" ix="16" t="p"/>
+    <n a="78,101,121" ix="17" t="p"/>
+    <n a="78,101,122" ix="18" t="p"/>
+    <n a="78,102,123" ix="19" t="p"/>
+    <n a="78,103,124" ix="20" t="p"/>
+    <n a="78,103,125" ix="21" t="p"/>
+    <n a="78,104,126" ix="22" t="p"/>
+   </ppo-type-table>
+   <spo-type-table>
+    <n a="78,95,491,259" ix="1" t="cs"/>
+    <n a="78,95,119,261" ix="2" t="cs"/>
+    <n a="78,95,118,266" ix="3" t="cs"/>
+    <n a="78,95,120,267" ix="4" t="cs"/>
+   </spo-type-table>
+  </function>
+ </c-analysis>

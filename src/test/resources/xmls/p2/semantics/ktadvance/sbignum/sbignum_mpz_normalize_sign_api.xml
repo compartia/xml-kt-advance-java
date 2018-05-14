@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:31">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_normalize_sign">
+   <api>
+    <api-assumptions>
+     <aa ipr="1499" ppos="1"/>
+     <aa ipr="1501" ppos="8,3"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls/>
+    <missing-summaries/>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

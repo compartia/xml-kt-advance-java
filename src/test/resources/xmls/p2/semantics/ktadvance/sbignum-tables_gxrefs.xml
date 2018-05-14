@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c-analysis>
+  <header info="global-xrefs" name="global-xrefs" time="2018-05-02 13:02:30.893171"/>
+  <global-xrefs>
+    <compinfo-xrefs>
+      <cxref ckey="19" gckey="51"/>
+    </compinfo-xrefs>
+    <varinfo-xrefs>
+      <vxref gvid="476" vid="327"/>
+      <vxref gvid="477" vid="328"/>
+      <vxref gvid="478" vid="329"/>
+      <vxref gvid="479" vid="330"/>
+      <vxref gvid="480" vid="331"/>
+    </varinfo-xrefs>
+  </global-xrefs>
+</c-analysis>

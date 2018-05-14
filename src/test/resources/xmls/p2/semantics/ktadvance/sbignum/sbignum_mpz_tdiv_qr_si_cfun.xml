@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="sbignum" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:48" version="CP1.00"/>
+  </header>
+  <function filename="sbignum">
+   <svar ivinfo="30"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="2678,1,1,0,0,609,0,1" ix="1" t="q,n"/>
+     <n a="2679,1,1,0,0,610,0,2" ix="2" t="r,n"/>
+     <n a="2680,1,1,0,0,611,0,3" ix="3" t="z,n"/>
+     <n a="2681,7,1,0,0,612,0,4" ix="4" t="s,n"/>
+     <n a="2682,22,1,0,0,613,1,0" ix="5" t="mpz,n"/>
+     <n a="2683,4,1,0,0,614,0,0" ix="6" t="u,n"/>
+     <n a="2684,7,1,0,0,-1,0,0" ix="7" t="tmp,n"/>
+     <n a="2685,41,1,0,0,615,1,0" ix="8" t="t,n"/>
+     <n a="2686,4,1,0,0,616,0,0" ix="9" t="l,n"/>
+     <n a="2688,8,1,0,0,-1,0,0" ix="10" t="tmp___0,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="707">
+      <skind iexp="716" iloc="617" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="708">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="715" iloc="617" ilval="389" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="710"/>
+          <preds r="707"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts>
+         <stmt sid="709">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="717" iloc="617" ilval="389" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="710"/>
+          <preds r="707"/>
+         </stmt>
+        </bstmts>
+       </elseblock>
+      </skind>
+      <succs r="708,709"/>
+      <preds/>
+     </stmt>
+     <stmt sid="710">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="719" iloc="617" ilval="390" itag="set"/>
+        <instr iexp="55" iloc="618" ilval="391" itag="set"/>
+        <instr iexp="720" iloc="619" ilval="392" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="711"/>
+      <preds r="709,708"/>
+     </stmt>
+     <stmt sid="711">
+      <skind iexp="721" iloc="621" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="712">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="171" iloc="620" ilval="391" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="713"/>
+          <preds r="711"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="712,713"/>
+      <preds r="710"/>
+     </stmt>
+     <stmt sid="713">
+      <skind breakstmtid="716" continuestmtid="713" iloc="626" stag="loop">
+       <block>
+        <bstmts>
+         <stmt sid="714">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="722" iloc="622" ilval="393" itag="set"/>
+            <instr iexp="722" iloc="623" ilval="394" itag="set"/>
+            <instr iexp="55" iloc="624" ilval="395" itag="set"/>
+            <instr iexp="723" iloc="625" ilval="396" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="715"/>
+          <preds r="713"/>
+         </stmt>
+         <stmt sid="715">
+          <skind iloc="626" stag="break"/>
+          <succs r="716"/>
+          <preds r="714"/>
+         </stmt>
+        </bstmts>
+       </block>
+      </skind>
+      <succs r="714"/>
+      <preds r="712,711"/>
+     </stmt>
+     <stmt sid="716">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="725" iloc="627" ilval="395" itag="set"/>
+        <instr iexp="642" iloc="628" ilval="402" itag="call">
+         <args>
+          <exp iexp="726"/>
+          <exp iexp="727"/>
+          <exp iexp="728"/>
+          <exp iexp="729"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="717"/>
+      <preds r="715"/>
+     </stmt>
+     <stmt sid="717">
+      <skind iexp="730" iloc="628" stag="return"/>
+      <succs/>
+      <preds r="716"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

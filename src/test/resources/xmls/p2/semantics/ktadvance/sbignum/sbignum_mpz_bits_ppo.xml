@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:32">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_bits">
+   <ppos>
+    <ppo deps="f" id="22" invs="8" ippo="22" s="g" ts="2018-05-02 13:04:44">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="18" ids="1" invs="6" ippo="18" s="g" ts="2018-05-02 13:04:44">
+     <e txt="condition initialized(z-&gt;l) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="19" ippo="19" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="32" ippo="32" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="17" invs="8" ippo="17" s="g" ts="2018-05-02 13:04:44">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="1" ids="1" invs="6" ippo="1" s="g" ts="2018-05-02 13:04:44">
+     <e txt="condition initialized(z-&gt;l) delegated to api"/>
+    </ppo>
+    <ppo id="28" ippo="28">
+     <d>
+      <invs>
+       <arg a="4" i="13"/>
+       <arg a="3" i="14"/>
+      </invs>
+      <msgs>
+       <msg t="remaining constraint: (((memref-3_28_)#init - 1) &gt;= 0) (--&gt; ((memref-3_28_)#init &gt;= 1))"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="23" invs="8" ippo="23" s="g" ts="2018-05-02 13:04:44">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="25" ippo="25" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="40" ippo="40" s="g">
+     <e txt="value 1 is less than minimum word size (32)"/>
+    </ppo>
+    <ppo deps="f" id="4" invs="38" ippo="4" s="g" ts="2018-05-02 13:04:44">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="5" invs="11" ippo="5" s="g" ts="2018-05-02 13:04:44">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="3" ids="2" invs="11" ippo="3" s="g" ts="2018-05-02 13:04:44">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="30" ippo="30" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="f" id="16" invs="8" ippo="16" s="g" ts="2018-05-02 13:04:44">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="24" ippo="24" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="a" id="14" ids="2" invs="8" ippo="14" s="g" ts="2018-05-02 13:04:44">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="21" invs="37" ippo="21" s="g" ts="2018-05-02 13:04:44">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_2_)#init"/>
+    </ppo>
+    <ppo deps="s" id="33" ippo="33" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="37" ippo="37" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="36" ippo="36" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="6" invs="11" ippo="6" s="g" ts="2018-05-02 13:04:44">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="15" invs="37" ippo="15" s="g" ts="2018-05-02 13:04:44">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="41" invs="33" ippo="41" s="g" ts="2018-05-02 13:04:44">
+     <e txt="assignedAt#330_xx_assignedAt#333"/>
+    </ppo>
+    <ppo id="27" ippo="27">
+     <d>
+      <invs>
+       <arg a="1" i="14"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo id="26" ippo="26">
+     <d>
+      <invs>
+       <arg a="1" i="14"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="38" invs="35" ippo="38" s="g" ts="2018-05-02 13:04:44">
+     <e txt="assignedAt#331_xx_assignedAt#334"/>
+    </ppo>
+    <ppo id="11" ippo="11"/>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="31" ippo="31" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="a" id="12" ids="3" invs="6" ippo="12" s="g" ts="2018-05-02 13:04:44">
+     <e txt="condition initialized(z-&gt;d) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="13" ippo="13" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="39" ippo="39" s="g">
+     <e txt=" value is 1"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="34" invs="31" ippo="34" s="g" ts="2018-05-02 13:04:44">
+     <e txt="assignedAt#331_xx_assignedAt#334"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="35" invs="30" ippo="35" s="g" ts="2018-05-02 13:04:44">
+     <e txt="assignedAt#330_xx_assignedAt#333"/>
+    </ppo>
+    <ppo id="29" ippo="29">
+     <d>
+      <invs>
+       <arg a="4" i="13"/>
+       <arg a="3" i="14"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (memref-1_24_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="a" id="20" ids="2" invs="8" ippo="20" s="g" ts="2018-05-02 13:04:44">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>
