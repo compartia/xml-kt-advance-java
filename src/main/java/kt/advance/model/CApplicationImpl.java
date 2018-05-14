@@ -153,12 +153,13 @@ public class CApplicationImpl implements CApplication {
     private void runInHandler(UnsafeProc proc, AnalysisXml ppos) {
 
         try {
-
             proc.run();
         } catch (final NullPointerException ex) {
+
             throw new RuntimeException(ex);
+
         } catch (final Exception ex) {
-            ex.printStackTrace();
+
             if (errors != null) {
                 errors.addError(ppos.getRelativeOrigin(), ex.getLocalizedMessage());
             } else {
