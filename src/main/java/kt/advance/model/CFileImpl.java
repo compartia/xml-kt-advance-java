@@ -242,14 +242,12 @@ class CFileImpl implements CFile {
                 .stream()
                 .map(CLval::new)
                 .collect(Collectors.toMap(node -> node.id, node -> node));
-        try {
-            strings = cdict.cfile.cDictionary.strings
-                    .stream()
-                    .map(CString::new)
-                    .collect(Collectors.toMap(node -> node.id, node -> node));
-        } catch (final Exception ex) {
-            ex.printStackTrace();
-        }
+
+        strings = cdict.cfile.cDictionary.strings
+                .stream()
+                .map(CString::new)
+                .collect(Collectors.toMap(node -> node.id, node -> node));
+
         constants = cdict.cfile.cDictionary.constants
                 .stream()
                 .map(node -> new CConst(node, this))

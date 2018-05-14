@@ -29,7 +29,7 @@ public class ReadTest {
 
     @Before
     public void init() {
-        TestMode.testMode = true;
+        TestMode.inTestMode = true;
     }
 
     @Test

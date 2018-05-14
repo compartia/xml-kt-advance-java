@@ -80,7 +80,7 @@ public class XmlValidator {
 
     @Before
     public void init() {
-        TestMode.testMode = true;
+        TestMode.inTestMode = true;
     }
 
     @Ignore

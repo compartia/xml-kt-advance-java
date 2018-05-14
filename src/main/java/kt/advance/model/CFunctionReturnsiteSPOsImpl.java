@@ -66,7 +66,6 @@ class CFunctionReturnsiteSPOsImpl implements CFunctionSiteSPOs {
 
             if (postcondition.proofObligation != null) {
                 final SPOImpl spo = new SPOImpl(postcondition, cfunc, this);
-                //            putUniq(spos, apiCondition.iapi, spo);
                 putUniq(spos, spo.id, spo);
             }
 

@@ -8,8 +8,4 @@ public class IndexedStrignTable {
 
     @XmlAttribute(name = "ix")
     public Integer index;
-
-    //    @XmlAttribute(name = "len")
-    //    public String len;
-
 }

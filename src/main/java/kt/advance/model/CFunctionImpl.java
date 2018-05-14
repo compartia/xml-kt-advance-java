@@ -164,15 +164,12 @@ class CFunctionImpl implements CFunction {
 
         Preconditions.checkState(spoTypes != null, "ppoTypes map is null for " + this.getName());
 
-        final CallsitesWrapper callsites = pposXml.getCallsites();
+        final CallsitesWrapper callsitesWrapper = pposXml.getCallsites();
 
-        //        List<CFunctionCallsiteSPO>
+        addCalls(callsitesWrapper.directCalls, "dc");
+        addCalls(callsitesWrapper.indirectCalls, "ic");
 
-        addCalls(callsites.directCalls, "dc");
-        addCalls(callsites.indirectCalls, "ic");
         addReturnsites(pposXml.getReturnsites(), "rs");
-
-        //XXX: add callsite-type to CFunctionCallsiteSPO
 
     }
 
