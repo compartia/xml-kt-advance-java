@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:30">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_ltrim">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="121" ictxt="399" iloc="88" ivinfo="12">
+       <api-conditions>
+        <api-c iapi="478">
+         <po deps="a" id="1" ids="4" invs="12" ispo="1" s="g" ts="2018-05-02 13:13:30">
+          <e txt="condition initialized(b-&gt;buf) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="479">
+         <po deps="a" id="2" ids="2" invs="132" ispo="2" s="g" ts="2018-05-02 13:13:30">
+          <e txt="condition not-null(b) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="392" iexp="31" iloc="86">
+      <postconditions/>
+     </rs>
+     <rs ictxt="417" iexp="26" iloc="92">
+      <postconditions/>
+     </rs>
+     <rs ictxt="445" iexp="31" iloc="100">
+      <postconditions/>
+     </rs>
+     <rs ictxt="390" iexp="26" iloc="84">
+      <postconditions/>
+     </rs>
+     <rs ictxt="401" iexp="132" iloc="88">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

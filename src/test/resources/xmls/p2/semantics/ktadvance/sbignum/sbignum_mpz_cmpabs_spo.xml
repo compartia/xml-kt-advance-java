@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:29">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_cmpabs">
+   <spos>
+    <callsites>
+     <direct-calls/>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="1667" iexp="22" iloc="1340">
+      <postconditions/>
+     </rs>
+     <rs ictxt="1701" iexp="1455" iloc="1348">
+      <postconditions/>
+     </rs>
+     <rs ictxt="1690" iexp="22" iloc="1346">
+      <postconditions/>
+     </rs>
+     <rs ictxt="1672" iexp="1455" iloc="1342">
+      <postconditions/>
+     </rs>
+     <rs ictxt="1702" iexp="1" iloc="1350">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

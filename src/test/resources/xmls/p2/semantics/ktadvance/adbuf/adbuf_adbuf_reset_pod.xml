@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:29">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_reset">
+   <assumption-table>
+    <n a="478" ix="1" t="aa"/>
+    <n a="479" ix="2" t="aa"/>
+   </assumption-table>
+   <ppo-type-table>
+    <n a="166,11,18" ix="1" t="p"/>
+    <n a="166,11,19" ix="2" t="p"/>
+    <n a="166,11,20" ix="3" t="p"/>
+    <n a="166,11,21" ix="4" t="p"/>
+    <n a="167,13,18" ix="5" t="p"/>
+    <n a="167,13,19" ix="6" t="p"/>
+    <n a="167,13,20" ix="7" t="p"/>
+    <n a="167,13,21" ix="8" t="p"/>
+    <n a="167,14,22" ix="9" t="p"/>
+   </ppo-type-table>
+   <spo-type-table>
+    <n a="166,10,478,1" ix="1" t="cs"/>
+    <n a="166,10,479,3" ix="2" t="cs"/>
+    <n a="167,12,479,295" ix="3" t="cs"/>
+    <n a="167,12,478,306" ix="4" t="cs"/>
+   </spo-type-table>
+  </function>
+ </c-analysis>

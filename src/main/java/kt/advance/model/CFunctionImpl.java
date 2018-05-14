@@ -15,6 +15,7 @@ import com.kt.advance.api.ApiAssumption;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
 import com.kt.advance.api.CFunctionCallsiteSPOs;
+import com.kt.advance.api.CFunctionSiteSPOs;
 import com.kt.advance.api.CLocation;
 import com.kt.advance.api.PPO;
 import com.kt.advance.xml.model.ApiXml;
@@ -23,6 +24,7 @@ import com.kt.advance.xml.model.PodXml;
 import com.kt.advance.xml.model.PpoXml;
 import com.kt.advance.xml.model.SpoXml;
 import com.kt.advance.xml.model.SpoXml.CallsitesWrapper;
+import com.kt.advance.xml.model.SpoXml.RSElement;
 import com.kt.advance.xml.model.SpoXml.SPOCall;
 
 class CFunctionImpl implements CFunction {
@@ -40,7 +42,8 @@ class CFunctionImpl implements CFunction {
         return requireValue(assumptionsTypesMap, typeKey, "AssumptionType ");
     }
 
-    private final List<CFunctionCallsiteSPOs> calls = new ArrayList<>();
+    private final List<CFunctionCallsiteSPOs> callsites = new ArrayList<>();
+    private final List<CFunctionSiteSPOs> returnsites = new ArrayList<>();
 
     private Map<Integer, PPOImpl> ppos = new HashMap<>();
 
@@ -89,7 +92,12 @@ class CFunctionImpl implements CFunction {
 
     @Override
     public Collection<CFunctionCallsiteSPOs> getCallsites() {
-        return this.calls;
+        return this.callsites;
+    }
+
+    @Override
+    public Collection<CFunctionSiteSPOs> getReturnsites() {
+        return this.returnsites;
     }
 
     /*
@@ -156,26 +164,37 @@ class CFunctionImpl implements CFunction {
 
         Preconditions.checkState(spoTypes != null, "ppoTypes map is null for " + this.getName());
 
-        final CallsitesWrapper callsites = pposXml.getCallsites();
+        final CallsitesWrapper callsitesWrapper = pposXml.getCallsites();
 
-        //        List<CFunctionCallsiteSPO>
+        addCalls(callsitesWrapper.directCalls, "dc");
+        addCalls(callsitesWrapper.indirectCalls, "ic");
 
-        addCalls(callsites.directCalls, "dc");
-        addCalls(callsites.indirectCalls, "ic");
-        addCalls(callsites.returnSites, "rs");
-
-        //XXX: add callsite-type to CFunctionCallsiteSPO
+        addReturnsites(pposXml.getReturnsites(), "rs");
 
     }
 
-    private void addCalls(List<SPOCall> collection, String callsType) {
+    private void addReturnsites(List<RSElement> collection, String callsType) {
 
-        final List<CFunctionCallsiteSPOsImpl> c = collection.stream()
-                .map(x -> new CFunctionCallsiteSPOsImpl(x, callsType, this))
+        final List<CFunctionReturnsiteSPOsImpl> c = collection
+                .stream()
+                .map(x -> new CFunctionReturnsiteSPOsImpl(x, callsType, this))
                 .collect(Collectors.toList());
 
         if (!c.isEmpty()) {
-            calls.addAll(c);
+            returnsites.addAll(c);
+        }
+
+    }
+
+    private void addCalls(List<SPOCall> calls, String callsType) {
+
+        final List<CFunctionCallsiteSPOsImpl> callsImpl = calls
+                .stream()
+                .map(call -> new CFunctionCallsiteSPOsImpl(call, callsType, this))
+                .collect(Collectors.toList());
+
+        if (!callsImpl.isEmpty()) {
+            callsites.addAll(callsImpl);
         }
 
     }

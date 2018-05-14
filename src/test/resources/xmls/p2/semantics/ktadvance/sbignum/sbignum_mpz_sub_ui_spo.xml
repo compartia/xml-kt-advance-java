@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:13">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_sub_ui">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="1266,1267,1268" ictxt="49" iloc="1103" ivinfo="45">
+       <api-conditions>
+        <api-c iapi="585">
+         <po deps="a" id="7" ids="1" invs="66" ispo="7" s="g">
+          <e txt="condition not-null(r) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="580">
+         <po id="5" ispo="5"/>
+        </api-c>
+        <api-c iapi="589">
+         <po deps="a" id="9" ids="2" invs="10" ispo="9" s="g">
+          <e txt="condition initialized(z-&gt;d) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="588">
+         <po deps="a" id="8" ids="3" invs="14" ispo="8" s="g">
+          <e txt="condition initialized(r-&gt;l) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="572">
+         <po deps="a" id="1" ids="4" invs="10" ispo="1" s="g">
+          <e txt="condition initialized(z-&gt;s) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="573">
+         <po deps="a" id="2" ids="5" invs="65" ispo="2" s="g">
+          <e txt="condition not-null(z) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="575">
+         <po deps="s" id="4" ispo="4" s="g">
+          <e txt="address of variable mpz"/>
+         </po>
+        </api-c>
+        <api-c iapi="584">
+         <po id="6" ispo="6"/>
+        </api-c>
+        <api-c iapi="574">
+         <po id="3" ispo="3"/>
+        </api-c>
+        <api-c iapi="593">
+         <po deps="a" id="10" ids="6" invs="10" ispo="10" s="g">
+          <e txt="condition initialized(z-&gt;l) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="3111">
+         <po deps="a" id="11" ids="7" invs="14" ispo="11" s="g" ts="2018-05-02 13:15:13">
+          <e txt="condition initialized(r-&gt;d) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="53" iexp="1269" iloc="1103">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

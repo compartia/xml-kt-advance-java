@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:29">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_sizeinbase">
+   <spos>
+    <callsites>
+     <direct-calls/>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="1706" iexp="272" iloc="194">
+      <postconditions/>
+     </rs>
+     <rs ictxt="1704" iexp="272" iloc="194">
+      <postconditions/>
+     </rs>
+     <rs ictxt="1714" iexp="284" iloc="197">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

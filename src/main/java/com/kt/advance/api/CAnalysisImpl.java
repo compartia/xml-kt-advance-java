@@ -10,6 +10,7 @@ import javax.xml.bind.JAXBException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.common.base.Preconditions;
 import com.kt.advance.ErrorsBundle;
 
 import kt.advance.model.CApplicationImpl;
@@ -20,20 +21,16 @@ public class CAnalysisImpl implements CAnalysis {
 
     private Map<File, CApplication> apps;
 
-    @Override
-    public CApplication getAppByBaseDir(File baseDir) {
-        return apps.get(baseDir);
-    }
-
-    ErrorsBundle errors;
+    private ErrorsBundle errors;
 
     public CAnalysisImpl(FsAbstraction fs) {
+        Preconditions.checkNotNull(fs);
         this.fs = fs;
     }
 
     @Override
-    public String relativize(File f) {
-        return fs.getBaseDir().toPath().relativize(f.toPath()).toString();
+    public CApplication getAppByBaseDir(File baseDir) {
+        return apps.get(baseDir);
     }
 
     @Override
@@ -49,6 +46,11 @@ public class CAnalysisImpl implements CAnalysis {
     public void read() throws JAXBException {
         scanForCApps();
         getApps().forEach(CApplication::read);
+    }
+
+    @Override
+    public String relativize(File f) {
+        return fs.getBaseDir().toPath().relativize(f.toPath()).toString();
     }
 
     @Override

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:29">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_reset">
+   <var-dictionary>
+    <allocated-region-data-table/>
+    <memory-base-table>
+     <n a="24" ix="1" t="bv"/>
+     <n a="1" ix="2" t="null"/>
+     <n a="-1" ix="3" t="null"/>
+     <n a="166,1" ix="4" t="fr,adbuf_free"/>
+     <n a="167,1" ix="5" t="fr,adbuf_init"/>
+     <n a="15" ix="6" t="bv"/>
+     <n ix="7" t="ui,b-&gt;buf"/>
+    </memory-base-table>
+    <memory-reference-data-table>
+     <n a="6,3,2" ix="1"/>
+     <n a="6,5,2" ix="2"/>
+     <n a="6,4,2" ix="3"/>
+     <n a="1,3,2" ix="4"/>
+    </memory-reference-data-table>
+    <constant-value-variable-table>
+     <n a="1,2" ix="1" t="iv"/>
+     <n a="2,33" ix="2" t="iv"/>
+     <n a="3,34" ix="3" t="iv"/>
+     <n a="166,1643,-1" ix="4" t="frv"/>
+     <n a="167,1640,-1" ix="5" t="frv"/>
+     <n a="4,11" ix="6" t="iv"/>
+     <n a="5,10" ix="7" t="iv"/>
+     <n a="6,10" ix="8" t="iv"/>
+     <n a="19,2" ix="9" t="iv"/>
+    </constant-value-variable-table>
+    <c-variable-denotation-table>
+     <n a="5" ix="1" t="rv"/>
+     <n a="1713,1" ix="2" t="lv"/>
+     <n a="1" ix="3" t="av"/>
+     <n a="1640,1" ix="4" t="gv"/>
+     <n a="2" ix="5" t="av"/>
+     <n a="1643,1" ix="6" t="gv"/>
+     <n a="3" ix="7" t="av"/>
+     <n a="2,1,1,1,1,2,1,1,3,2,1,4,2" ix="8" t="cv"/>
+     <n a="4" ix="9" t="av"/>
+     <n a="2,1,5,1,1,6,1,1,7,2,1,8,2" ix="10" t="cv"/>
+     <n a="5" ix="11" t="av"/>
+     <n a="1714,1" ix="12" t="lv"/>
+     <n a="5,1,9,1" ix="13" t="cv"/>
+     <n a="1" ix="14" t="mv"/>
+     <n a="6" ix="15" t="av"/>
+     <n a="2" ix="16" t="mv"/>
+     <n a="7" ix="17" t="av"/>
+     <n a="3" ix="18" t="mv"/>
+     <n a="8" ix="19" t="av"/>
+     <n a="9" ix="20" t="av"/>
+     <n a="2,0,2,1,1,1,1,1,2,1,1,3,2,1,4,2" ix="21" t="cv"/>
+     <n a="11,0,1,1" ix="22" t="cv"/>
+     <n a="2,0,3,1,1,5,1,1,6,1,1,7,2,1,8,2" ix="23" t="cv"/>
+     <n a="11,0,4,1" ix="24" t="cv"/>
+     <n a="4" ix="25" t="mv"/>
+    </c-variable-denotation-table>
+    <xpr-dictionary>
+     <numerical-table>
+      <n ix="1" t="0"/>
+     </numerical-table>
+     <symbol-table>
+      <n a="2" ix="1" t="b"/>
+      <n a="4" ix="2" t="adbuf_init"/>
+      <n a="6" ix="3" t="adbuf_free"/>
+      <n a="14" ix="4" t="memref-1"/>
+      <n a="16" ix="5" t="memref-2"/>
+      <n a="18" ix="6" t="memref-3"/>
+      <n a="19" ix="7" t="(memref-3_18_)#init"/>
+      <n a="17" ix="8" t="(memref-2_16_)#init"/>
+      <n a="15" ix="9" t="(memref-1_14_)#init"/>
+      <n a="11" ix="10" t="(adbuf_init(_)#return"/>
+      <n a="13" ix="11" t="check_(ppo:9:1)"/>
+      <n a="12" ix="12" t="tmp"/>
+      <n a="7" ix="13" t="(adbuf_free_6_)#init"/>
+      <n a="5" ix="14" t="(adbuf_init_4_)#init"/>
+      <n a="3" ix="15" t="(b_2_)#init"/>
+      <n a="1" ix="16" t="return"/>
+      <n a="8" ix="17" t="check_(ppo:1:1)_(ppo:2:1)_(ppo:3:2)_(ppo:4:2)"/>
+      <n a="10" ix="18" t="check_(ppo:5:1)_(ppo:6:1)_(ppo:7:2)_(ppo:8:2)"/>
+      <n a="-1" ix="19" t="assignedAt#96,rv:,adbuf_init"/>
+      <n a="2" ix="20" t="NULL(1)"/>
+      <n a="1" ix="21" t="addr_in_(b_2_)#init"/>
+      <n a="4" ix="22" t="freed(by:adbuf_free @95 r:1"/>
+      <n a="5" ix="23" t="freed(by:adbuf_init @96 r:1"/>
+      <n a="20" ix="24" t="(b_2_)#init"/>
+      <n a="22" ix="25" t="check_(spo:1:1)"/>
+      <n a="21" ix="26" t="check_(spo:2:1)_(ppo:1:1)_(ppo:2:1)_(ppo:3:2)_(ppo:4:2)"/>
+      <n a="24" ix="27" t="check_(spo:4:1)"/>
+      <n a="23" ix="28" t="check_(spo:3:1)_(ppo:5:1)_(ppo:6:1)_(ppo:7:2)_(ppo:8:2)"/>
+     </symbol-table>
+     <variable-table>
+      <n a="1" ix="1" t="nv"/>
+      <n a="2" ix="2" t="nv"/>
+      <n a="3" ix="3" t="nv"/>
+      <n a="4" ix="4" t="nv"/>
+      <n a="5" ix="5" t="nv"/>
+      <n a="6" ix="6" t="nv"/>
+      <n a="7" ix="7" t="nv"/>
+      <n a="8" ix="8" t="nv"/>
+      <n a="9" ix="9" t="nv"/>
+      <n a="10" ix="10" t="nv"/>
+      <n a="11" ix="11" t="nv"/>
+      <n a="12" ix="12" t="nv"/>
+      <n a="13" ix="13" t="nv"/>
+      <n a="14" ix="14" t="nv"/>
+      <n a="15" ix="15" t="nv"/>
+      <n a="16" ix="16" t="nv"/>
+      <n a="17" ix="17" t="nv"/>
+      <n a="18" ix="18" t="nv"/>
+      <n a="1" ix="19" t="sv"/>
+      <n a="12" ix="20" t="sv"/>
+      <n a="11" ix="21" t="sv"/>
+      <n a="17" ix="22" t="sv"/>
+      <n a="18" ix="23" t="sv"/>
+      <n a="24" ix="24" t="sv"/>
+      <n a="25" ix="25" t="nv"/>
+      <n a="26" ix="26" t="nv"/>
+      <n a="27" ix="27" t="nv"/>
+      <n a="28" ix="28" t="nv"/>
+      <n a="26" ix="29" t="sv"/>
+      <n a="28" ix="30" t="sv"/>
+     </variable-table>
+     <xcst-table/>
+     <xpr-table>
+      <n a="7" ix="1" t="v"/>
+      <n a="8" ix="2" t="v"/>
+      <n a="9" ix="3" t="v"/>
+      <n a="10" ix="4" t="v"/>
+      <n a="13" ix="5" t="v"/>
+      <n a="14" ix="6" t="v"/>
+      <n a="15" ix="7" t="v"/>
+     </xpr-table>
+     <xpr-list-table/>
+     <xpr-list-list-table/>
+    </xpr-dictionary>
+   </var-dictionary>
+   <allocated-regions size="1"/>
+   <memory-regions size="7">
+    <region imb="1" index="1"/>
+    <region imb="2" index="2"/>
+    <region imb="3" index="3"/>
+    <region imb="4" index="4"/>
+    <region imb="5" index="5"/>
+    <region imb="7" index="6"/>
+   </memory-regions>
+   <memory-references size="5">
+    <reference imrd="1" index="1"/>
+    <reference imrd="2" index="2"/>
+    <reference imrd="3" index="3"/>
+    <reference imrd="4" index="4"/>
+   </memory-references>
+  </function>
+ </c-analysis>

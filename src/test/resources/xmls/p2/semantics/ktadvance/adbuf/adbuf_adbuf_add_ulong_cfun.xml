@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="adbuf" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:44" version="CP1.00"/>
+  </header>
+  <function filename="adbuf">
+   <svar ivinfo="3"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="1788,2,1,0,0,41,0,1" ix="1" t="b,n"/>
+     <n a="1789,16,1,0,0,42,0,2" ix="2" t="l,n"/>
+     <n a="1790,19,1,0,0,43,1,0" ix="3" t="s,n"/>
+     <n a="1791,11,1,0,0,44,0,0" ix="4" t="p,n"/>
+     <n a="1792,11,1,0,0,-1,0,0" ix="5" t="tmp,n"/>
+     <n a="1794,11,1,0,0,-1,0,0" ix="6" t="tmp___0,n"/>
+     <n a="1796,5,1,0,0,-1,0,0" ix="7" t="tmp___1,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="70">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="64" iloc="45" ilval="32" itag="set"/>
+        <instr iexp="65" iloc="46" ilval="34" itag="set"/>
+        <instr iexp="66" iloc="46" ilval="32" itag="set"/>
+        <instr iexp="12" iloc="46" ilval="35" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="71"/>
+      <preds/>
+     </stmt>
+     <stmt sid="71">
+      <skind breakstmtid="77" continuestmtid="71" iloc="47" stag="loop">
+       <block>
+        <bstmts>
+         <stmt sid="72">
+          <skind iexp="70" iloc="47" stag="if">
+           <thenblock>
+            <bstmts/>
+           </thenblock>
+           <elseblock>
+            <bstmts>
+             <stmt sid="73">
+              <skind iloc="47" stag="break"/>
+              <succs r="77"/>
+              <preds r="72"/>
+             </stmt>
+            </bstmts>
+           </elseblock>
+          </skind>
+          <succs r="74,73"/>
+          <preds r="71"/>
+         </stmt>
+         <stmt sid="74">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="65" iloc="48" ilval="36" itag="set"/>
+            <instr iexp="66" iloc="48" ilval="32" itag="set"/>
+            <instr iexp="77" iloc="48" ilval="37" itag="set"/>
+            <instr iexp="78" iloc="49" ilval="38" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="75"/>
+          <preds r="72"/>
+         </stmt>
+         <stmt sid="75">
+          <skind iexp="80" iloc="51" stag="if">
+           <thenblock>
+            <bstmts>
+             <stmt sid="76">
+              <skind iloc="50" stag="break"/>
+              <succs r="77"/>
+              <preds r="75"/>
+             </stmt>
+            </bstmts>
+           </thenblock>
+           <elseblock>
+            <bstmts/>
+           </elseblock>
+          </skind>
+          <succs r="76,71"/>
+          <preds r="74"/>
+         </stmt>
+        </bstmts>
+       </block>
+      </skind>
+      <succs r="72"/>
+      <preds r="75,70"/>
+     </stmt>
+     <stmt sid="77">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="81" iloc="52" ilval="32" itag="set"/>
+        <instr iexp="82" iloc="53" ilval="41" itag="call">
+         <args>
+          <exp iexp="83"/>
+          <exp iexp="65"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="78"/>
+      <preds r="76,73"/>
+     </stmt>
+     <stmt sid="78">
+      <skind iexp="84" iloc="53" stag="return"/>
+      <succs/>
+      <preds r="77"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

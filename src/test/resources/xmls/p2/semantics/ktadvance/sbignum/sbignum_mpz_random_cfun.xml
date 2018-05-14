@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="sbignum" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:48" version="CP1.00"/>
+  </header>
+  <function filename="sbignum">
+   <svar ivinfo="2"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="3000,1,1,0,0,13,0,1" ix="1" t="z,n"/>
+     <n a="3001,7,1,0,0,14,0,2" ix="2" t="len,n"/>
+     <n a="3003,8,1,0,0,15,0,0" ix="3" t="i___0,n"/>
+     <n a="3004,8,1,0,0,16,0,0" ix="4" t="err,n"/>
+     <n a="3005,8,1,0,0,17,0,0" ix="5" t="sign,n"/>
+     <n a="3006,8,1,0,0,-1,0,0" ix="6" t="tmp,n"/>
+     <n a="3008,4,1,0,0,-1,0,0" ix="7" t="tmp___0,n"/>
+     <n a="3010,7,1,0,0,18,0,0" ix="8" t="j___0,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="1162">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="1" iloc="19" ilval="9" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="1163"/>
+      <preds/>
+     </stmt>
+     <stmt sid="1163">
+      <skind iexp="21" iloc="22" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="1164">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="22" iloc="20" ilval="9" itag="set"/>
+            <instr iexp="23" iloc="21" ilval="10" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="1165"/>
+          <preds r="1163"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="1164,1165"/>
+      <preds r="1162"/>
+     </stmt>
+     <stmt sid="1165">
+      <skind iexp="24" iloc="24" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="1166">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="25" iloc="23" ilval="13" itag="call">
+             <args>
+              <exp iexp="26"/>
+             </args>
+            </instr>
+           </instrs>
+          </skind>
+          <succs r="1167"/>
+          <preds r="1165"/>
+         </stmt>
+         <stmt sid="1167">
+          <skind iexp="27" iloc="23" stag="return"/>
+          <succs/>
+          <preds r="1166"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="1166,1168"/>
+      <preds r="1164,1163"/>
+     </stmt>
+     <stmt sid="1168">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="28" iloc="25" ilval="15" itag="call">
+         <args>
+          <exp iexp="26"/>
+          <exp iexp="30"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="1169"/>
+      <preds r="1165"/>
+     </stmt>
+     <stmt sid="1169">
+      <skind iexp="32" iloc="25" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="1170">
+          <skind iexp="31" iloc="26" stag="return"/>
+          <succs/>
+          <preds r="1169"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="1170,1171"/>
+      <preds r="1168"/>
+     </stmt>
+     <stmt sid="1171">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="1" iloc="27" ilval="16" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="1172"/>
+      <preds r="1169"/>
+     </stmt>
+     <stmt sid="1172">
+      <skind breakstmtid="1176" continuestmtid="1172" iloc="27" stag="loop">
+       <block>
+        <bstmts>
+         <stmt sid="1173">
+          <skind iexp="34" iloc="27" stag="if">
+           <thenblock>
+            <bstmts/>
+           </thenblock>
+           <elseblock>
+            <bstmts>
+             <stmt sid="1174">
+              <skind iloc="27" stag="break"/>
+              <succs r="1176"/>
+              <preds r="1173"/>
+             </stmt>
+            </bstmts>
+           </elseblock>
+          </skind>
+          <succs r="1175,1174"/>
+          <preds r="1172"/>
+         </stmt>
+         <stmt sid="1175">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="35" iloc="28" ilval="18" itag="call">
+             <args/>
+            </instr>
+            <instr iexp="40" iloc="28" ilval="20" itag="set"/>
+            <instr iexp="41" iloc="27" ilval="16" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="1172"/>
+          <preds r="1173"/>
+         </stmt>
+        </bstmts>
+       </block>
+      </skind>
+      <succs r="1173"/>
+      <preds r="1175,1171"/>
+     </stmt>
+     <stmt sid="1176">
+      <skind breakstmtid="1186" continuestmtid="1176" iloc="33" stag="loop">
+       <block>
+        <bstmts>
+         <stmt sid="1177">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="44" iloc="29" ilval="21" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="1178"/>
+          <preds r="1176"/>
+         </stmt>
+         <stmt sid="1178">
+          <skind breakstmtid="1184" continuestmtid="1178" iloc="30" stag="loop">
+           <block>
+            <bstmts>
+             <stmt sid="1179">
+              <skind iexp="46" iloc="30" stag="if">
+               <thenblock>
+                <bstmts>
+                 <stmt sid="1180">
+                  <skind iexp="49" iloc="30" stag="if">
+                   <thenblock>
+                    <bstmts/>
+                   </thenblock>
+                   <elseblock>
+                    <bstmts>
+                     <stmt sid="1181">
+                      <skind iloc="30" stag="break"/>
+                      <succs r="1184"/>
+                      <preds r="1180"/>
+                     </stmt>
+                    </bstmts>
+                   </elseblock>
+                  </skind>
+                  <succs r="1183,1181"/>
+                  <preds r="1179"/>
+                 </stmt>
+                </bstmts>
+               </thenblock>
+               <elseblock>
+                <bstmts>
+                 <stmt sid="1182">
+                  <skind iloc="30" stag="break"/>
+                  <succs r="1184"/>
+                  <preds r="1179"/>
+                 </stmt>
+                </bstmts>
+               </elseblock>
+              </skind>
+              <succs r="1180,1182"/>
+              <preds r="1178"/>
+             </stmt>
+             <stmt sid="1183">
+              <skind stag="instr">
+               <instrs>
+                <instr iexp="50" iloc="31" ilval="21" itag="set"/>
+               </instrs>
+              </skind>
+              <succs r="1178"/>
+              <preds r="1180"/>
+             </stmt>
+            </bstmts>
+           </block>
+          </skind>
+          <succs r="1179"/>
+          <preds r="1183,1177"/>
+         </stmt>
+         <stmt sid="1184">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="52" iloc="32" ilval="24" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="1185"/>
+          <preds r="1182,1181"/>
+         </stmt>
+         <stmt sid="1185">
+          <skind iloc="33" stag="break"/>
+          <succs r="1186"/>
+          <preds r="1184"/>
+         </stmt>
+        </bstmts>
+       </block>
+      </skind>
+      <succs r="1177"/>
+      <preds r="1174"/>
+     </stmt>
+     <stmt sid="1186">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="54" iloc="34" ilval="25" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="1187"/>
+      <preds r="1185"/>
+     </stmt>
+     <stmt sid="1187">
+      <skind iexp="1" iloc="35" stag="return"/>
+      <succs/>
+      <preds r="1186"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

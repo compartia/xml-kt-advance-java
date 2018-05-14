@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:16:08">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="sbn_rand_init">
+   <assumption-table/>
+   <ppo-type-table>
+    <n a="69,3929,3005" ix="1" t="p"/>
+    <n a="70,3931,3006" ix="2" t="p"/>
+    <n a="70,3931,3007" ix="3" t="p"/>
+    <n a="70,3932,3005" ix="4" t="p"/>
+    <n a="70,3933,3008" ix="5" t="p"/>
+    <n a="70,3934,3005" ix="6" t="p"/>
+    <n a="69,3935,3005" ix="7" t="p"/>
+    <n a="69,3936,3009" ix="8" t="p"/>
+    <n a="69,3936,3010" ix="9" t="p"/>
+   </ppo-type-table>
+   <spo-type-table/>
+  </function>
+ </c-analysis>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:29">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_sizeinbase">
+   <ppos>
+    <ppo deps="f" id="15" invs="15" ippo="15" s="g" ts="2018-05-02 13:04:41">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="18" invs="27" ippo="18" s="g" ts="2018-05-02 13:04:41">
+     <e txt="assignedAt#1662"/>
+    </ppo>
+    <ppo id="17" ippo="17">
+     <d>
+      <invs>
+       <arg a="3" i="27"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="b is a function parameter"/>
+    </ppo>
+    <ppo deps="a" id="10" ids="1" invs="7" ippo="10" s="g" ts="2018-05-02 13:04:41">
+     <e txt="condition initialized(z-&gt;l) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="11" ippo="11" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="integer can safely be promoted to a floating point type"/>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="constant value 2 fits in type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="basetable is global"/>
+    </ppo>
+    <ppo deps="a" id="12" ids="2" invs="15" ippo="12" s="g" ts="2018-05-02 13:04:41">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="13" invs="29" ippo="13" s="g" ts="2018-05-02 13:04:41">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_4_)#init"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="b is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="7" invs="25" ippo="7" s="g" ts="2018-05-02 13:04:41">
+     <e txt="upper bound of index value: 36, is less than length: 37"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="b is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="16" ippo="16" s="g">
+     <e txt="integer can safely be promoted to a floating point type"/>
+    </ppo>
+    <ppo deps="f" id="14" invs="15" ippo="14" s="g" ts="2018-05-02 13:04:41">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="constant value 2 fits in type unsigned long"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="unsigned value is always non-negative"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

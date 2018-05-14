@@ -277,14 +277,16 @@ public class CTypeFactory extends AbstractFactory<CType> {
     public CTypeFactory() {
         super();
 
-        reg("tvoid", node -> new CTypVoid(node));
-        reg("tptr", node -> new CTypePtr(node));
-        reg("tcomp", node -> new CTypComp(node));
+        reg("tvoid", CTypVoid::new);
+        reg("tptr", CTypePtr::new);
+        reg("tcomp", CTypComp::new);
 
-        reg("tint", node -> new CTypInt(node));
-        reg("tfloat", node -> new CTypFloat(node));
+        reg("tint", CTypInt::new);
+        reg("tfloat", CTypFloat::new);
 
-        reg("tnamed", node -> new CTypNamed(node));
+        reg("tnamed", CTypNamed::new);
+
+        reg("tfun", CTypFun::new);
 
     }
 

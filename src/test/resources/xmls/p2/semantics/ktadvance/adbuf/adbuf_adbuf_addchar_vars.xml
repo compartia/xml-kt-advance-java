@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:30">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_addchar">
+   <var-dictionary>
+    <allocated-region-data-table/>
+    <memory-base-table>
+     <n a="63" ix="1" t="bv"/>
+     <n a="1" ix="2" t="null"/>
+     <n a="-1" ix="3" t="null"/>
+     <n ix="4" t="ui,b-&gt;buf"/>
+     <n a="64" ix="5" t="sa"/>
+     <n a="139,1" ix="6" t="fr,adbuf_add"/>
+     <n a="12" ix="7" t="bv"/>
+     <n a="65" ix="8" t="sa"/>
+    </memory-base-table>
+    <memory-reference-data-table>
+     <n a="7,4,2" ix="1"/>
+     <n a="8,1,44" ix="2"/>
+     <n a="7,3,2" ix="3"/>
+     <n a="7,5,2" ix="4"/>
+     <n a="1,3,2" ix="5"/>
+     <n a="1,4,2" ix="6"/>
+     <n a="1,5,2" ix="7"/>
+    </memory-reference-data-table>
+    <constant-value-variable-table>
+     <n a="1,5" ix="1" t="iv"/>
+     <n a="2,2" ix="2" t="iv"/>
+     <n a="3,32" ix="3" t="iv"/>
+     <n a="2" ix="4" t="ma"/>
+     <n a="139,1653,-1,-1,1" ix="5" t="frv"/>
+     <n a="4,11" ix="6" t="iv"/>
+     <n a="5,10" ix="7" t="iv"/>
+     <n a="6,10" ix="8" t="iv"/>
+     <n a="48,5" ix="9" t="iv"/>
+     <n a="49,2" ix="10" t="iv"/>
+    </constant-value-variable-table>
+    <c-variable-denotation-table>
+     <n a="5" ix="1" t="rv"/>
+     <n a="1729,1" ix="2" t="lv"/>
+     <n a="1" ix="3" t="av"/>
+     <n a="1728,1" ix="4" t="lv"/>
+     <n a="2" ix="5" t="av"/>
+     <n a="1653,1" ix="6" t="gv"/>
+     <n a="3" ix="7" t="av"/>
+     <n a="5,1,9,3" ix="8" t="cv"/>
+     <n a="2,1,3,1,1,4,1,1,5,1,1,6,2,1,7,2" ix="9" t="cv"/>
+     <n a="11,1,1,3,1,2,1" ix="10" t="cv"/>
+     <n a="13,1,8,3" ix="11" t="cv"/>
+     <n a="2,1,11,1,1,12,1,1,13,1,1,14,2,1,15,2" ix="12" t="cv"/>
+     <n a="16,1,10,1" ix="13" t="cv"/>
+     <n a="2,1,18,1,1,19,1,1,20,1,1,21,2,1,22,2,1,24,1,1,25,1,1,26,1,1,27,2,1,28,2,1,30,1,1,31,1,1,32,1,1,33,2,1,34,2" ix="14" t="cv"/>
+     <n a="11,1,16,3,1,17,1" ix="15" t="cv"/>
+     <n a="16,1,29,1,1,35,3,1,36,3" ix="16" t="cv"/>
+     <n a="16,1,23,1,1,35,2,1,36,2" ix="17" t="cv"/>
+     <n a="16,1,39,4,1,40,4" ix="18" t="cv"/>
+     <n a="30,1,37,1,1,38,1,1,39,3,1,40,3" ix="19" t="cv"/>
+     <n a="1730,1" ix="20" t="lv"/>
+     <n a="5,1,46,3,1,47,1" ix="21" t="cv"/>
+     <n a="30,1,41,1,1,42,1,1,43,1,1,44,2,1,45,2" ix="22" t="cv"/>
+     <n a="5,1,51,4,1,52,4" ix="23" t="cv"/>
+     <n a="5,1,57,3" ix="24" t="cv"/>
+     <n a="30,1,48,1,1,49,1,1,50,1,1,51,3,1,52,3" ix="25" t="cv"/>
+     <n a="30,1,53,1,1,54,1,1,55,2,1,56,2" ix="26" t="cv"/>
+     <n a="16,1,69,3,1,70,3" ix="27" t="cv"/>
+     <n a="2,1,58,1,1,59,1,1,60,1,1,61,2,1,62,2,1,64,1,1,65,1,1,66,1,1,67,2,1,68,2" ix="28" t="cv"/>
+     <n a="16,1,63,1,1,69,2,1,70,2" ix="29" t="cv"/>
+     <n a="1" ix="30" t="mv"/>
+     <n a="5,1,71,1,1,72,1" ix="31" t="cv"/>
+     <n a="5,1,72,2" ix="32" t="cv"/>
+     <n a="5,1,73,3,1,74,1" ix="33" t="cv"/>
+     <n a="1731,6" ix="34" t="lv"/>
+     <n a="5,1,83,3" ix="35" t="cv"/>
+     <n a="2,1,75,1,1,76,1,1,77,2,1,78,2" ix="36" t="cv"/>
+     <n a="13,1,80,1,1,81,2,1,82,2" ix="37" t="cv"/>
+     <n a="1731,1" ix="38" t="lv"/>
+     <n a="4" ix="39" t="av"/>
+     <n a="44,1,79,3" ix="40" t="cv"/>
+     <n a="5" ix="41" t="av"/>
+     <n a="1732,1" ix="42" t="lv"/>
+     <n a="5,1,84,1" ix="43" t="cv"/>
+     <n a="3" ix="44" t="mv"/>
+     <n a="6" ix="45" t="av"/>
+     <n a="4" ix="46" t="mv"/>
+     <n a="7" ix="47" t="av"/>
+     <n a="8" ix="48" t="av"/>
+     <n a="9" ix="49" t="av"/>
+     <n a="10" ix="50" t="av"/>
+     <n a="5" ix="51" t="mv"/>
+     <n a="6" ix="52" t="mv"/>
+     <n a="7" ix="53" t="mv"/>
+     <n a="2,0,2,1,1,75,1,1,76,1,1,77,2,1,78,2" ix="54" t="cv"/>
+     <n a="11,0,1,1" ix="55" t="cv"/>
+     <n a="16,0,3,1" ix="56" t="cv"/>
+     <n a="16,0,4,1" ix="57" t="cv"/>
+     <n a="13,0,5,1,1,80,1,1,81,2,1,82,2" ix="58" t="cv"/>
+    </c-variable-denotation-table>
+    <xpr-dictionary>
+     <numerical-table>
+      <n ix="1" t="1"/>
+      <n ix="2" t="0"/>
+      <n ix="3" t="2"/>
+     </numerical-table>
+     <symbol-table>
+      <n a="2" ix="1" t="c"/>
+      <n a="4" ix="2" t="b"/>
+      <n a="6" ix="3" t="adbuf_add"/>
+      <n a="44" ix="4" t="memref-3"/>
+      <n a="46" ix="5" t="memref-4"/>
+      <n a="30" ix="6" t="memref-1"/>
+      <n a="1" ix="7" t="return"/>
+      <n a="47" ix="8" t="(memref-4_46_)#init"/>
+      <n a="45" ix="9" t="(memref-3_44_)#init"/>
+      <n a="48" ix="10" t="(memref-1_30_)#init"/>
+      <n a="7" ix="11" t="(adbuf_add_6_)#init"/>
+      <n a="5" ix="12" t="(b_4_)#init"/>
+      <n a="3" ix="13" t="(c_2_)#init"/>
+      <n a="23" ix="14" t="check_(ppo:51:4)_(ppo:52:4)"/>
+      <n a="24" ix="15" t="check_(ppo:57:3)"/>
+      <n a="14" ix="16" t="check_(ppo:18:1)_(ppo:19:1)_(ppo:20:1)_(ppo:21:2)_(ppo:22:2)_(ppo:24:1)_(ppo:25:1)_(ppo:26:1)_(ppo:27:2)_(ppo:28:2)_(ppo:30:1)_(ppo:31:1)_(ppo:32:1)_(ppo:33:2)_(ppo:34:2)"/>
+      <n a="41" ix="17" t="(adbuf_add(_^_^1)#return"/>
+      <n a="42" ix="18" t="tmp"/>
+      <n a="34" ix="19" t="t[0]"/>
+      <n a="9" ix="20" t="check_(ppo:3:1)_(ppo:4:1)_(ppo:5:1)_(ppo:6:2)_(ppo:7:2)"/>
+      <n a="11" ix="21" t="check_(ppo:8:3)"/>
+      <n a="8" ix="22" t="check_(ppo:9:3)"/>
+      <n a="27" ix="23" t="check_(ppo:69:3)_(ppo:70:3)"/>
+      <n a="28" ix="24" t="check_(ppo:58:1)_(ppo:59:1)_(ppo:60:1)_(ppo:61:2)_(ppo:62:2)_(ppo:64:1)_(ppo:65:1)_(ppo:66:1)_(ppo:67:2)_(ppo:68:2)"/>
+      <n a="35" ix="25" t="check_(ppo:83:3)"/>
+      <n a="39" ix="26" t="(2)address"/>
+      <n a="40" ix="27" t="check_(ppo:79:3)"/>
+      <n a="37" ix="28" t="check_(ppo:80:1)_(ppo:81:2)_(ppo:82:2)"/>
+      <n a="36" ix="29" t="check_(ppo:75:1)_(ppo:76:1)_(ppo:77:2)_(ppo:78:2)"/>
+      <n a="21" ix="30" t="check_(ppo:46:3)_(ppo:47:1)"/>
+      <n a="32" ix="31" t="check_(ppo:72:2)"/>
+      <n a="33" ix="32" t="check_(ppo:73:3)_(ppo:74:1)"/>
+      <n a="31" ix="33" t="check_(ppo:71:1)_(ppo:72:1)"/>
+      <n a="12" ix="34" t="check_(ppo:11:1)_(ppo:12:1)_(ppo:13:1)_(ppo:14:2)_(ppo:15:2)"/>
+      <n a="43" ix="35" t="check_(ppo:84:1)"/>
+      <n a="19" ix="36" t="check_(ppo:37:1)_(ppo:38:1)_(ppo:39:3)_(ppo:40:3)"/>
+      <n a="17" ix="37" t="check_(ppo:23:1)_(ppo:35:2)_(ppo:36:2)"/>
+      <n a="16" ix="38" t="check_(ppo:29:1)_(ppo:35:3)_(ppo:36:3)"/>
+      <n a="15" ix="39" t="check_(ppo:16:3)_(ppo:17:1)"/>
+      <n a="10" ix="40" t="check_(ppo:1:3)_(ppo:2:1)"/>
+      <n a="29" ix="41" t="check_(ppo:63:1)_(ppo:69:2)_(ppo:70:2)"/>
+      <n a="13" ix="42" t="check_(ppo:10:1)"/>
+      <n a="26" ix="43" t="check_(ppo:53:1)_(ppo:54:1)_(ppo:55:2)_(ppo:56:2)"/>
+      <n a="25" ix="44" t="check_(ppo:48:1)_(ppo:49:1)_(ppo:50:1)_(ppo:51:3)_(ppo:52:3)"/>
+      <n a="20" ix="45" t="p"/>
+      <n a="18" ix="46" t="check_(ppo:39:4)_(ppo:40:4)"/>
+      <n a="22" ix="47" t="check_(ppo:41:1)_(ppo:42:1)_(ppo:43:1)_(ppo:44:2)_(ppo:45:2)"/>
+      <n a="-1" ix="48" t="assignedAt#130,c"/>
+      <n a="-1" ix="49" t="assignedAt#139"/>
+      <n a="-1" ix="50" t="assignedAt#140,rv:,adbuf_add"/>
+      <n a="-1" ix="51" t="assignedAt#134"/>
+      <n a="52" ix="52" t="memref-6"/>
+      <n a="2" ix="53" t="NULL(1)"/>
+      <n a="1" ix="54" t="addr_in_(b_4_)#init"/>
+      <n a="4" ix="55" t="uninterpreted_b-&gt;buf"/>
+      <n a="6" ix="56" t="freed(by:adbuf_add @140 r:1"/>
+      <n a="50" ix="57" t="(b_4_)#init"/>
+      <n a="38" ix="58" t="t"/>
+      <n a="58" ix="59" t="check_(spo:5:1)_(ppo:80:1)_(ppo:81:2)_(ppo:82:2)"/>
+      <n a="56" ix="60" t="check_(spo:3:1)"/>
+      <n a="55" ix="61" t="check_(spo:1:1)"/>
+      <n a="57" ix="62" t="check_(spo:4:1)"/>
+      <n a="54" ix="63" t="check_(spo:2:1)_(ppo:75:1)_(ppo:76:1)_(ppo:77:2)_(ppo:78:2)"/>
+     </symbol-table>
+     <variable-table>
+      <n a="1" ix="1" t="nv"/>
+      <n a="2" ix="2" t="nv"/>
+      <n a="3" ix="3" t="nv"/>
+      <n a="4" ix="4" t="nv"/>
+      <n a="5" ix="5" t="nv"/>
+      <n a="6" ix="6" t="nv"/>
+      <n a="7" ix="7" t="nv"/>
+      <n a="8" ix="8" t="nv"/>
+      <n a="9" ix="9" t="nv"/>
+      <n a="10" ix="10" t="nv"/>
+      <n a="11" ix="11" t="nv"/>
+      <n a="12" ix="12" t="nv"/>
+      <n a="13" ix="13" t="nv"/>
+      <n a="14" ix="14" t="nv"/>
+      <n a="15" ix="15" t="nv"/>
+      <n a="16" ix="16" t="nv"/>
+      <n a="17" ix="17" t="nv"/>
+      <n a="18" ix="18" t="nv"/>
+      <n a="19" ix="19" t="nv"/>
+      <n a="20" ix="20" t="nv"/>
+      <n a="21" ix="21" t="nv"/>
+      <n a="22" ix="22" t="nv"/>
+      <n a="23" ix="23" t="nv"/>
+      <n a="24" ix="24" t="nv"/>
+      <n a="25" ix="25" t="nv"/>
+      <n a="26" ix="26" t="nv"/>
+      <n a="27" ix="27" t="nv"/>
+      <n a="28" ix="28" t="nv"/>
+      <n a="29" ix="29" t="nv"/>
+      <n a="30" ix="30" t="nv"/>
+      <n a="31" ix="31" t="nv"/>
+      <n a="32" ix="32" t="nv"/>
+      <n a="33" ix="33" t="nv"/>
+      <n a="34" ix="34" t="nv"/>
+      <n a="35" ix="35" t="nv"/>
+      <n a="36" ix="36" t="nv"/>
+      <n a="37" ix="37" t="nv"/>
+      <n a="38" ix="38" t="nv"/>
+      <n a="39" ix="39" t="nv"/>
+      <n a="40" ix="40" t="nv"/>
+      <n a="41" ix="41" t="nv"/>
+      <n a="42" ix="42" t="nv"/>
+      <n a="43" ix="43" t="nv"/>
+      <n a="44" ix="44" t="nv"/>
+      <n a="45" ix="45" t="nv"/>
+      <n a="46" ix="46" t="nv"/>
+      <n a="47" ix="47" t="nv"/>
+      <n a="1" ix="48" t="sv"/>
+      <n a="2" ix="49" t="sv"/>
+      <n a="45" ix="50" t="sv"/>
+      <n a="44" ix="51" t="sv"/>
+      <n a="19" ix="52" t="sv"/>
+      <n a="18" ix="53" t="sv"/>
+      <n a="52" ix="54" t="sv"/>
+      <n a="47" ix="55" t="sv"/>
+      <n a="35" ix="56" t="sv"/>
+      <n a="43" ix="57" t="sv"/>
+      <n a="16" ix="58" t="sv"/>
+      <n a="20" ix="59" t="sv"/>
+      <n a="24" ix="60" t="sv"/>
+      <n a="29" ix="61" t="sv"/>
+      <n a="34" ix="62" t="sv"/>
+      <n a="57" ix="63" t="sv"/>
+      <n a="58" ix="64" t="sv"/>
+      <n a="58" ix="65" t="nv"/>
+      <n a="59" ix="66" t="nv"/>
+      <n a="60" ix="67" t="nv"/>
+      <n a="61" ix="68" t="nv"/>
+      <n a="62" ix="69" t="nv"/>
+      <n a="63" ix="70" t="nv"/>
+      <n a="63" ix="71" t="sv"/>
+     </variable-table>
+     <xcst-table>
+      <n a="1" ix="1" t="ic"/>
+      <n a="3" ix="2" t="ic"/>
+      <n a="2" ix="3" t="ic"/>
+     </xcst-table>
+     <xpr-table>
+      <n a="1" ix="1" t="c"/>
+      <n a="8" ix="2" t="v"/>
+      <n a="9" ix="3" t="v"/>
+      <n a="10" ix="4" t="v"/>
+      <n a="11" ix="5" t="v"/>
+      <n a="12" ix="6" t="v"/>
+      <n a="13" ix="7" t="v"/>
+      <n a="17" ix="8" t="v"/>
+      <n a="26" ix="9" t="v"/>
+      <n a="4,1" ix="10" t="x,minus"/>
+      <n a="2,3" ix="11" t="x,plus"/>
+      <n a="11,4" ix="12" t="x,minus"/>
+      <n a="12,1" ix="13" t="x,plus"/>
+      <n a="2" ix="14" t="c"/>
+      <n a="4,14" ix="15" t="x,minus"/>
+      <n a="3" ix="16" t="c"/>
+      <n a="15,16" ix="17" t="x,ge"/>
+      <n a="2,4" ix="18" t="x,minus"/>
+      <n a="1,4" ix="19" t="x,minus"/>
+      <n a="19,16" ix="20" t="x,ge"/>
+     </xpr-table>
+     <xpr-list-table/>
+     <xpr-list-list-table/>
+    </xpr-dictionary>
+   </var-dictionary>
+   <allocated-regions size="1"/>
+   <memory-regions size="7">
+    <region imb="1" index="1"/>
+    <region imb="2" index="2"/>
+    <region imb="3" index="3"/>
+    <region imb="4" index="4"/>
+    <region imb="5" index="5"/>
+    <region imb="6" index="6"/>
+   </memory-regions>
+   <memory-references size="8">
+    <reference imrd="1" index="1"/>
+    <reference imrd="2" index="2"/>
+    <reference imrd="3" index="3"/>
+    <reference imrd="4" index="4"/>
+    <reference imrd="5" index="5"/>
+    <reference imrd="6" index="6"/>
+    <reference imrd="7" index="7"/>
+   </memory-references>
+  </function>
+ </c-analysis>

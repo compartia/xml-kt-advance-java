@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:27">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_set_d">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="530,516" ictxt="1217" iloc="410" ivinfo="71">
+       <api-conditions>
+        <api-c iapi="2118">
+         <po deps="a" id="3" ids="1" invs="7" ispo="3" s="g">
+          <e txt="condition initialized(z-&gt;d) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="2110">
+         <po deps="a" id="1" ids="3" invs="7" ispo="1" s="g">
+          <e txt="condition initialized(z-&gt;a) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="2112">
+         <po deps="a" id="2" ids="2" invs="75" ispo="2" s="g">
+          <e txt="condition not-null(z) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="1239" iexp="1" iloc="417">
+      <postconditions/>
+     </rs>
+     <rs ictxt="1221" iexp="22" iloc="411">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

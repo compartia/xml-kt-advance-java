@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:23">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_set_ui64">
+   <ppos>
+    <ppo id="22" ippo="22">
+     <d>
+      <invs>
+       <arg a="1" i="24"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="45" invs="48" ippo="45" s="g" ts="2018-05-02 13:04:36">
+     <e txt="assignedAt#1482_xx_assignedAt#1490"/>
+    </ppo>
+    <ppo deps="f" id="18" invs="16" ippo="18" s="g" ts="2018-05-02 13:04:36">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="19" invs="16" ippo="19" s="g" ts="2018-05-02 13:04:36">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="32" ippo="32" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="17" invs="54" ippo="17" s="g" ts="2018-05-02 13:04:36">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_4_)#init"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="28" ippo="28" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="23" invs="28" ippo="23" s="g" ts="2018-05-02 13:04:36">
+     <e txt="non-negative pointer increment: lower bound for i is 0"/>
+    </ppo>
+    <ppo deps="s" id="25" ippo="25" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="a" id="40" ids="1" invs="18" ippo="40" s="g" ts="2018-05-02 13:04:36">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="44" invs="29" ippo="44" s="g" ts="2018-05-02 13:04:36">
+     <e txt="value 0 is non-negative and target type maximum value is larger than or equal to source type maximum value"/>
+    </ppo>
+    <ppo deps="f" id="4" invs="12" ippo="4" s="g" ts="2018-05-02 13:04:36">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="5" invs="12" ippo="5" s="g" ts="2018-05-02 13:04:36">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="3" invs="53" ippo="3" s="g" ts="2018-05-02 13:04:36">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_4_)#init"/>
+    </ppo>
+    <ppo deps="s" id="30" ippo="30" s="g">
+     <e txt="u is a function parameter"/>
+    </ppo>
+    <ppo deps="a" id="16" ids="1" invs="16" ippo="16" s="g" ts="2018-05-02 13:04:36">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo id="24" ippo="24">
+     <d>
+      <invs>
+       <arg a="4" i="28,38,47"/>
+       <arg a="3" i="24"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (memref-3_33_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="a" id="14" ids="2" invs="7" ippo="14" s="g" ts="2018-05-02 13:04:36">
+     <e txt="condition initialized(z-&gt;d) delegated to api"/>
+    </ppo>
+    <ppo id="21" ippo="21">
+     <d>
+      <invs>
+       <arg a="1" i="24"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="33" ippo="33" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="37" ippo="37" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="f" id="36" invs="46" ippo="36" s="g" ts="2018-05-02 13:04:36">
+     <e txt="assignedAt#1482_xx_assignedAt#1490"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="constant value 0 fits in type unsigned int"/>
+    </ppo>
+    <ppo deps="s" id="15" ippo="15" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="41" invs="55" ippo="41" s="g" ts="2018-05-02 13:04:36">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_4_)#init"/>
+    </ppo>
+    <ppo deps="s" id="27" ippo="27" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="10" invs="6" ippo="10" s="g" ts="2018-05-02 13:04:36">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="26" ippo="26" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo id="38" ippo="38">
+     <d>
+      <invs>
+       <arg a="3" i="14"/>
+       <arg a="2" i="25,36,46"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="42" invs="18" ippo="42" s="g" ts="2018-05-02 13:04:36">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="11" ippo="11" s="g">
+     <e txt="constant value 8 fits in type unsigned int"/>
+    </ppo>
+    <ppo deps="f" id="9" invs="6" ippo="9" s="g" ts="2018-05-02 13:04:36">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="31" ippo="31" s="g">
+     <e txt="u is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="12" invs="50" ippo="12" s="g" ts="2018-05-02 13:04:36">
+     <e txt="assignedAt#1485(rv:mpz_realloc)"/>
+    </ppo>
+    <ppo deps="s" id="13" ippo="13" s="g">
+     <e txt="u is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="39" ippo="39" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="34" ippo="34" s="g">
+     <e txt="unsigned type: unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="8" invs="52" ippo="8" s="g" ts="2018-05-02 13:04:36">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_4_)#init"/>
+    </ppo>
+    <ppo deps="s" id="35" ippo="35" s="g">
+     <e txt="value 32 requires a minimum word size of 64"/>
+    </ppo>
+    <ppo deps="s" id="29" ippo="29" s="g">
+     <e txt="casting expression  and expr with constant 4294967295 in range [0; 4294967295] to unsigned int"/>
+    </ppo>
+    <ppo deps="f" id="43" invs="18" ippo="43" s="g" ts="2018-05-02 13:04:36">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="2" ids="1" invs="12" ippo="2" s="g" ts="2018-05-02 13:04:36">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="20" invs="47" ippo="20" s="g" ts="2018-05-02 13:04:36">
+     <e txt="assignedAt#1482_xx_assignedAt#1490"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

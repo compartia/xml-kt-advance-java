@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="sbignum" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:48" version="CP1.00"/>
+  </header>
+  <function filename="sbignum">
+   <svar ivinfo="60"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="2277,1,1,0,0,1432,0,1" ix="1" t="r,n"/>
+     <n a="2278,4,1,0,0,1433,0,2" ix="2" t="i,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="73">
+      <skind iexp="1599" iloc="1435" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="74">
+          <skind iexp="1" iloc="1434" stag="return"/>
+          <succs/>
+          <preds r="73"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="74,75"/>
+      <preds/>
+     </stmt>
+     <stmt sid="75">
+      <skind iexp="1602" iloc="1438" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="76">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="168" iloc="1436" itag="call">
+             <args>
+              <exp iexp="1600"/>
+             </args>
+            </instr>
+           </instrs>
+          </skind>
+          <succs r="77"/>
+          <preds r="75"/>
+         </stmt>
+         <stmt sid="77">
+          <skind iexp="1" iloc="1437" stag="return"/>
+          <succs/>
+          <preds r="76"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="76,78"/>
+      <preds r="73"/>
+     </stmt>
+     <stmt sid="78">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="1603" iloc="1439" itag="call">
+         <args>
+          <exp iexp="1605"/>
+          <exp iexp="1607"/>
+          <exp iexp="1610"/>
+         </args>
+        </instr>
+        <instr iexp="1608" iloc="1440" ilval="882" itag="set"/>
+        <instr iexp="1511" iloc="1441" itag="call">
+         <args>
+          <exp iexp="1612"/>
+          <exp iexp="1"/>
+          <exp iexp="1613"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="79"/>
+      <preds r="75"/>
+     </stmt>
+     <stmt sid="79">
+      <skind iexp="1" iloc="1442" stag="return"/>
+      <succs/>
+      <preds r="78"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

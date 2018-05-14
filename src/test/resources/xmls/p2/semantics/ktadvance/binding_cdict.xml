@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:14:11">
+   <application file="binding.c"/>
+  </header>
+  <cfile>
+   <c-dictionary>
+    <string-table>
+     <n ix="1" len="34" v="guaranteed by the operating system"/>
+     <n ix="2" len="18" v="080808080808080808"/>
+     <n ix="3" len="3" v="%d:"/>
+    </string-table>
+    <attrparam-table/>
+    <attribute-table>
+     <n ix="1" t="restrict"/>
+     <n ix="2" t="const"/>
+     <n ix="3" t="volatile"/>
+     <n ix="4" t="nothrow"/>
+     <n ix="5" t="leaf"/>
+     <n ix="6" t="aconst"/>
+    </attribute-table>
+    <attributes-table>
+     <n ix="1"/>
+     <n a="1" ix="2"/>
+     <n a="2" ix="3"/>
+     <n a="3" ix="4"/>
+     <n a="4" ix="5"/>
+     <n a="5" ix="6"/>
+     <n a="6,4" ix="7"/>
+    </attributes-table>
+    <constant-table>
+     <n ix="1" t="int,1,iint"/>
+     <n ix="2" t="int,2,iint"/>
+     <n a="1" ix="3" t="str"/>
+     <n ix="4" t="int,0,iint"/>
+     <n ix="5" t="int,200000,ilong"/>
+     <n a="2" ix="6" t="str"/>
+     <n a="3" ix="7" t="str"/>
+     <n ix="8" t="int,20,iint"/>
+     <n ix="9" t="int,4,iulong"/>
+     <n ix="10" t="int,15,iulong"/>
+     <n ix="11" t="int,400,iint"/>
+     <n ix="12" t="int,0,ilong"/>
+    </constant-table>
+    <exp-table>
+     <n a="1" ix="1" t="lval"/>
+     <n a="2" ix="2" t="lval"/>
+     <n a="4" ix="3" t="lval"/>
+     <n a="5" ix="4" t="lval"/>
+     <n a="7" ix="5" t="addrof"/>
+     <n a="1" ix="6" t="const"/>
+     <n a="8" ix="7" t="addrof"/>
+     <n a="2" ix="8" t="const"/>
+     <n a="9" ix="9" t="lval"/>
+     <n a="3" ix="10" t="const"/>
+     <n a="7,10" ix="11" t="caste"/>
+     <n a="10" ix="12" t="lval"/>
+     <n a="4" ix="13" t="const"/>
+     <n a="8,13" ix="14" t="caste"/>
+     <n a="9,14" ix="15" t="caste"/>
+     <n a="12" ix="16" t="lval"/>
+     <n a="11" ix="17" t="lval"/>
+     <n a="17,16,1" ix="18" t="binop,eq"/>
+     <n a="13" ix="19" t="lval"/>
+     <n a="5" ix="20" t="const"/>
+     <n a="15" ix="21" t="lval"/>
+     <n a="14" ix="22" t="lval"/>
+     <n a="22,21,5" ix="23" t="binop,minusa"/>
+     <n a="23,20,1" ix="24" t="binop,lt"/>
+     <n a="6" ix="25" t="lval"/>
+     <n a="16" ix="26" t="lval"/>
+     <n a="26,13,1" ix="27" t="binop,gt"/>
+     <n a="26,8,1" ix="28" t="binop,minusa"/>
+     <n a="26,13,1" ix="29" t="binop,lt"/>
+     <n a="26,6,1" ix="30" t="binop,plusa"/>
+     <n a="6" ix="31" t="const"/>
+     <n a="7,31" ix="32" t="caste"/>
+     <n a="7" ix="33" t="const"/>
+     <n a="7,33" ix="34" t="caste"/>
+     <n a="17" ix="35" t="lval"/>
+     <n a="18" ix="36" t="lval"/>
+     <n a="19" ix="37" t="lval"/>
+     <n a="8" ix="38" t="const"/>
+     <n a="20" ix="39" t="addrof"/>
+     <n a="21" ix="40" t="lval"/>
+     <n a="3" ix="41" t="lval"/>
+     <n a="28" ix="42" t="sizeof"/>
+     <n a="8" ix="43" t="sizeof"/>
+     <n a="9" ix="44" t="const"/>
+     <n a="44,43,10" ix="45" t="binop,mult"/>
+     <n a="1" ix="46" t="sizeof"/>
+     <n a="10" ix="47" t="const"/>
+     <n a="47,46,10" ix="48" t="binop,mult"/>
+     <n a="48,45,10" ix="49" t="binop,minusa"/>
+     <n a="49,42,10" ix="50" t="binop,minusa"/>
+     <n a="11" ix="51" t="const"/>
+     <n a="12" ix="52" t="const"/>
+     <n a="1,11" ix="53" t="cnapp,ntp"/>
+     <n a="1,32" ix="54" t="cnapp,ntp"/>
+     <n a="1,34" ix="55" t="cnapp,ntp"/>
+    </exp-table>
+    <funarg-table>
+     <n a="1,1" ix="1" t="sid"/>
+     <n a="1,1" ix="2" t="$par$1"/>
+     <n a="33,1" ix="3" t="__stream"/>
+     <n a="7,1" ix="4" t="__format"/>
+     <n a="9,1" ix="5" t="__timer"/>
+     <n a="1,1" ix="6" t="__sig"/>
+     <n a="15,1" ix="7" t="__handler"/>
+    </funarg-table>
+    <funargs-table>
+     <n a="1" ix="1"/>
+     <n a="2" ix="2"/>
+     <n a="3" ix="3"/>
+     <n a="4" ix="4"/>
+     <n a="5" ix="5"/>
+     <n a="6,7" ix="6"/>
+     <n ix="7"/>
+    </funargs-table>
+    <lhost-table>
+     <n a="1147" ix="1" t="var,__errno_location"/>
+     <n a="2235" ix="2" t="var,tmp"/>
+     <n a="2234" ix="3" t="var,errno_save"/>
+     <n a="2" ix="4" t="mem"/>
+     <n a="1744" ix="5" t="var,ctrlzbind"/>
+     <n a="2233" ix="6" t="var,p"/>
+     <n a="1737" ix="7" t="var,dst_port"/>
+     <n a="1734" ix="8" t="var,src_ttl"/>
+     <n a="486" ix="9" t="var,printf"/>
+     <n a="823" ix="10" t="var,time"/>
+     <n a="2237" ix="11" t="var,tmp___0"/>
+     <n a="2231" ix="12" t="var,sec"/>
+     <n a="1512" ix="13" t="var,get_usec"/>
+     <n a="2239" ix="14" t="var,tmp___1"/>
+     <n a="2232" ix="15" t="var,usec"/>
+     <n a="25" ix="16" t="mem"/>
+     <n a="422" ix="17" t="var,fflush"/>
+     <n a="384" ix="18" t="var,stdout"/>
+     <n a="997" ix="19" t="var,signal"/>
+     <n a="1526" ix="20" t="var,inc_destparm"/>
+     <n a="2241" ix="21" t="var,tmp___2"/>
+     <n a="40" ix="22" t="mem"/>
+     <n a="36" ix="23" t="mem"/>
+     <n a="39" ix="24" t="mem"/>
+    </lhost-table>
+    <lval-table>
+     <n a="1,1" ix="1"/>
+     <n a="2,1" ix="2"/>
+     <n a="3,1" ix="3"/>
+     <n a="4,1" ix="4"/>
+     <n a="5,1" ix="5"/>
+     <n a="6,1" ix="6"/>
+     <n a="7,1" ix="7"/>
+     <n a="8,1" ix="8"/>
+     <n a="9,1" ix="9"/>
+     <n a="10,1" ix="10"/>
+     <n a="11,1" ix="11"/>
+     <n a="12,1" ix="12"/>
+     <n a="13,1" ix="13"/>
+     <n a="14,1" ix="14"/>
+     <n a="15,1" ix="15"/>
+     <n a="16,1" ix="16"/>
+     <n a="17,1" ix="17"/>
+     <n a="18,1" ix="18"/>
+     <n a="19,1" ix="19"/>
+     <n a="20,1" ix="20"/>
+     <n a="21,1" ix="21"/>
+     <n a="22,1" ix="22"/>
+     <n a="23,1" ix="23"/>
+     <n a="24,1" ix="24"/>
+    </lval-table>
+    <offset-table>
+     <n ix="1" t="n"/>
+    </offset-table>
+    <typ-table>
+     <n ix="1" t="tint,iint"/>
+     <n ix="2" t="tvoid"/>
+     <n a="2,1,0" ix="3" t="tfun"/>
+     <n a="1" ix="4" t="tptr"/>
+     <n ix="5" t="tnamed,time_t"/>
+     <n a="3" ix="6" t="tint,ichar"/>
+     <n a="6,2" ix="7" t="tptr"/>
+     <n a="2" ix="8" t="tptr"/>
+     <n a="5" ix="9" t="tptr"/>
+     <n ix="10" t="tint,iulong"/>
+     <n ix="11" t="tint,ilong"/>
+     <n a="2" ix="12" t="tcomp"/>
+     <n ix="13" t="tnamed,__time_t"/>
+     <n a="2,2,0" ix="14" t="tfun"/>
+     <n a="14" ix="15" t="tptr"/>
+     <n a="8" ix="16" t="tcomp"/>
+     <n a="16" ix="17" t="tptr"/>
+     <n a="12" ix="18" t="tptr"/>
+     <n ix="19" t="tint,ichar"/>
+     <n a="19" ix="20" t="tptr"/>
+     <n ix="21" t="tnamed,__off_t"/>
+     <n ix="22" t="tint,iushort"/>
+     <n ix="23" t="tint,ischar"/>
+     <n a="19,6" ix="24" t="tarray"/>
+     <n ix="25" t="tnamed,_IO_lock_t"/>
+     <n a="25" ix="26" t="tptr"/>
+     <n ix="27" t="tnamed,__off64_t"/>
+     <n ix="28" t="tnamed,size_t"/>
+     <n a="19,50" ix="29" t="tarray"/>
+     <n a="96,4" ix="30" t="tcomp"/>
+     <n a="30,51" ix="31" t="tarray"/>
+     <n ix="32" t="tnamed,FILE"/>
+     <n a="32" ix="33" t="tptr"/>
+     <n a="1,3,0" ix="34" t="tfun"/>
+     <n a="1,4,1" ix="35" t="tfun"/>
+     <n a="5,5,0,6" ix="36" t="tfun"/>
+     <n ix="37" t="tnamed,__sighandler_t"/>
+     <n a="37,6,0,6" ix="38" t="tfun"/>
+     <n a="4,7,0,6" ix="39" t="tfun"/>
+     <n a="5,7,0" ix="40" t="tfun"/>
+     <n a="11" ix="41" t="tptr"/>
+     <n a="3" ix="42" t="tptr"/>
+    </typ-table>
+    <typsig-table/>
+    <typsiglist-table/>
+   </c-dictionary>
+   <c-declarations>
+    <location-table>
+     <n a="1,71398,21" ix="1"/>
+     <n a="1,71420,21" ix="2"/>
+     <n a="1,71477,25" ix="3"/>
+     <n a="1,71486,26" ix="4"/>
+     <n a="1,71482,26" ix="5"/>
+     <n a="1,71636,30" ix="6"/>
+     <n a="1,71626,29" ix="7"/>
+     <n a="1,71653,31" ix="8"/>
+     <n a="1,71671,33" ix="9"/>
+     <n a="1,71661,32" ix="10"/>
+     <n a="1,71687,34" ix="11"/>
+     <n a="1,71706,36" ix="12"/>
+     <n a="1,71695,35" ix="13"/>
+     <n a="1,71743,38" ix="14"/>
+     <n a="1,71604,28" ix="15"/>
+     <n a="1,71756,41" ix="16"/>
+     <n a="1,71910,43" ix="17"/>
+     <n a="1,71894,42" ix="18"/>
+     <n a="1,71935,45" ix="19"/>
+     <n a="1,71920,44" ix="20"/>
+     <n a="1,71952,47" ix="21"/>
+     <n a="1,71961,49" ix="22"/>
+     <n a="1,71992,50" ix="23"/>
+     <n a="1,72013,51" ix="24"/>
+     <n a="1,72091,53" ix="25"/>
+     <n a="1,72183,54" ix="26"/>
+     <n a="1,72203,55" ix="27"/>
+     <n a="1,72314,56" ix="28"/>
+     <n a="1,72374,57" ix="29"/>
+     <n a="2,1113,216" ix="30"/>
+     <n a="3,2300,131" ix="31"/>
+     <n a="3,2326,132" ix="32"/>
+     <n a="3,2549,139" ix="33"/>
+     <n a="4,3389,48" ix="34"/>
+     <n a="5,4465,150" ix="35"/>
+     <n a="6,17460,75" ix="36"/>
+     <n a="7,25980,85" ix="37"/>
+     <n a="5,4535,157" ix="38"/>
+     <n a="5,4561,158" ix="39"/>
+     <n a="5,4578,162" ix="40"/>
+     <n a="5,4495,156" ix="41"/>
+     <n a="5,4781,242" ix="42"/>
+     <n a="5,4799,247" ix="43"/>
+     <n a="5,4821,248" ix="44"/>
+     <n a="5,4843,249" ix="45"/>
+     <n a="5,4866,250" ix="46"/>
+     <n a="5,4890,251" ix="47"/>
+     <n a="5,4913,252" ix="48"/>
+     <n a="5,4936,253" ix="49"/>
+     <n a="5,4958,254" ix="50"/>
+     <n a="5,4981,256" ix="51"/>
+     <n a="5,5004,257" ix="52"/>
+     <n a="5,5029,258" ix="53"/>
+     <n a="5,5065,260" ix="54"/>
+     <n a="5,5095,262" ix="55"/>
+     <n a="5,5111,264" ix="56"/>
+     <n a="5,5129,268" ix="57"/>
+     <n a="5,5149,270" ix="58"/>
+     <n a="5,5182,274" ix="59"/>
+     <n a="5,5209,275" ix="60"/>
+     <n a="5,5232,276" ix="61"/>
+     <n a="5,5262,280" ix="62"/>
+     <n a="5,5315,289" ix="63"/>
+     <n a="5,5338,297" ix="64"/>
+     <n a="5,5354,298" ix="65"/>
+     <n a="5,5370,299" ix="66"/>
+     <n a="5,5386,300" ix="67"/>
+     <n a="5,5405,302" ix="68"/>
+     <n a="5,5419,303" ix="69"/>
+     <n a="5,5434,305" ix="70"/>
+     <n a="5,4757,241" ix="71"/>
+     <n a="8,58875,353" ix="72"/>
+     <n a="8,58885,354" ix="73"/>
+     <n a="8,58898,355" ix="74"/>
+     <n a="8,58911,356" ix="75"/>
+     <n a="8,58922,357" ix="76"/>
+     <n a="8,58842,352" ix="77"/>
+     <n a="4,3369,44" ix="78"/>
+     <n a="8,58969,360" ix="79"/>
+     <n a="8,58934,360" ix="80"/>
+     <n a="1,71440,23" ix="81"/>
+     <n a="1,71428,23" ix="82"/>
+     <n a="1,71462,24" ix="83"/>
+     <n a="1,71450,24" ix="84"/>
+     <n a="4,7714,169" ix="85"/>
+     <n a="4,7691,169" ix="86"/>
+     <n a="4,8542,242" ix="87"/>
+     <n a="4,8531,242" ix="88"/>
+     <n a="4,9949,362" ix="89"/>
+     <n a="4,9938,362" ix="90"/>
+     <n a="6,18191,192" ix="91"/>
+     <n a="6,18177,192" ix="92"/>
+     <n a="7,26201,102" ix="93"/>
+     <n a="7,26179,102" ix="94"/>
+     <n a="9,37415,50" ix="95"/>
+     <n a="9,37404,50" ix="96"/>
+     <n a="8,59917,391" ix="97"/>
+     <n a="8,59910,391" ix="98"/>
+     <n a="8,60030,396" ix="99"/>
+     <n a="10,62402,94" ix="100"/>
+     <n a="10,61501,40" ix="101"/>
+     <n a="10,62440,97" ix="102"/>
+     <n a="10,62526,104" ix="103"/>
+    </location-table>
+    <initinfo-table>
+     <n a="52" ix="1" t="single"/>
+    </initinfo-table>
+    <offset-init-table/>
+    <typeinfo-table>
+     <n a="10" ix="1" t="size_t"/>
+     <n a="11" ix="2" t="__off_t"/>
+     <n a="11" ix="3" t="__off64_t"/>
+     <n a="11" ix="4" t="__time_t"/>
+     <n a="12" ix="5" t="FILE"/>
+     <n a="2" ix="6" t="_IO_lock_t"/>
+     <n a="13" ix="7" t="time_t"/>
+     <n a="15" ix="8" t="__sighandler_t"/>
+    </typeinfo-table>
+    <varinfo-table>
+     <n a="1526,3,1,1,0,1,1,0" ix="1" t="inc_destparm,n"/>
+     <n a="1401,31,1,1,0,79,0,0" ix="2" t="delaytable,n"/>
+     <n a="2231,11,1,1,0,81,0,0,1" ix="3" t="sec,s"/>
+     <n a="2232,11,1,1,0,83,0,0,1" ix="4" t="usec,s"/>
+     <n a="384,18,1,1,0,85,0,0" ix="5" t="stdout,x"/>
+     <n a="422,34,1,1,0,87,0,0" ix="6" t="fflush,x"/>
+     <n a="486,35,1,1,0,89,0,0" ix="7" t="printf,x"/>
+     <n a="823,36,5,1,0,91,0,0" ix="8" t="time,x"/>
+     <n a="997,38,5,1,0,93,0,0" ix="9" t="signal,x"/>
+     <n a="1147,39,7,1,0,95,0,0" ix="10" t="__errno_location,x"/>
+     <n a="1512,40,1,1,0,97,0,0" ix="11" t="get_usec,x"/>
+     <n a="1734,1,1,1,0,100,1,0" ix="12" t="src_ttl,x"/>
+     <n a="1737,1,1,1,0,102,1,0" ix="13" t="dst_port,x"/>
+     <n a="1744,1,1,1,0,103,0,0" ix="14" t="ctrlzbind,x"/>
+    </varinfo-table>
+    <fieldinfo-table>
+     <n a="8,17,-1,1,38" ix="1" t="_next"/>
+     <n a="8,18,-1,1,39" ix="2" t="_sbuf"/>
+     <n a="8,1,-1,1,40" ix="3" t="_pos"/>
+     <n a="2,1,-1,1,42" ix="4" t="_flags"/>
+     <n a="2,20,-1,1,43" ix="5" t="_IO_read_ptr"/>
+     <n a="2,20,-1,1,44" ix="6" t="_IO_read_end"/>
+     <n a="2,20,-1,1,45" ix="7" t="_IO_read_base"/>
+     <n a="2,20,-1,1,46" ix="8" t="_IO_write_base"/>
+     <n a="2,20,-1,1,47" ix="9" t="_IO_write_ptr"/>
+     <n a="2,20,-1,1,48" ix="10" t="_IO_write_end"/>
+     <n a="2,20,-1,1,49" ix="11" t="_IO_buf_base"/>
+     <n a="2,20,-1,1,50" ix="12" t="_IO_buf_end"/>
+     <n a="2,20,-1,1,51" ix="13" t="_IO_save_base"/>
+     <n a="2,20,-1,1,52" ix="14" t="_IO_backup_base"/>
+     <n a="2,20,-1,1,53" ix="15" t="_IO_save_end"/>
+     <n a="2,17,-1,1,54" ix="16" t="_markers"/>
+     <n a="2,18,-1,1,55" ix="17" t="_chain"/>
+     <n a="2,1,-1,1,56" ix="18" t="_fileno"/>
+     <n a="2,1,-1,1,57" ix="19" t="_flags2"/>
+     <n a="2,21,-1,1,58" ix="20" t="_old_offset"/>
+     <n a="2,22,-1,1,59" ix="21" t="_cur_column"/>
+     <n a="2,23,-1,1,60" ix="22" t="_vtable_offset"/>
+     <n a="2,24,-1,1,61" ix="23" t="_shortbuf"/>
+     <n a="2,26,-1,1,62" ix="24" t="_lock"/>
+     <n a="2,27,-1,1,63" ix="25" t="_offset"/>
+     <n a="2,8,-1,1,64" ix="26" t="__pad1"/>
+     <n a="2,8,-1,1,65" ix="27" t="__pad2"/>
+     <n a="2,8,-1,1,66" ix="28" t="__pad3"/>
+     <n a="2,8,-1,1,67" ix="29" t="__pad4"/>
+     <n a="2,28,-1,1,68" ix="30" t="__pad5"/>
+     <n a="2,1,-1,1,69" ix="31" t="_mode"/>
+     <n a="2,29,-1,1,70" ix="32" t="_unused2"/>
+     <n a="96,1,-1,1,72" ix="33" t="seq"/>
+     <n a="96,1,-1,1,73" ix="34" t="src"/>
+     <n a="96,5,-1,1,74" ix="35" t="sec"/>
+     <n a="96,5,-1,1,75" ix="36" t="usec"/>
+     <n a="96,1,-1,1,76" ix="37" t="status"/>
+    </fieldinfo-table>
+    <compinfo-table>
+     <n a="8,1,1,1,2,3" ix="1" t="_IO_marker"/>
+     <n a="2,1,1,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32" ix="2" t="_IO_FILE"/>
+     <n a="96,1,1,33,34,35,36,37" ix="3" t="delaytable_element"/>
+    </compinfo-table>
+    <enumitem-table/>
+    <enuminfo-table/>
+    <filename-table>
+     <n ix="1" len="9" v="binding.c"/>
+     <n ix="2" len="48" v="/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h"/>
+     <n ix="3" len="42" v="/usr/include/x86_64-linux-gnu/bits/types.h"/>
+     <n ix="4" len="20" v="/usr/include/stdio.h"/>
+     <n ix="5" len="20" v="/usr/include/libio.h"/>
+     <n ix="6" len="19" v="/usr/include/time.h"/>
+     <n ix="7" len="21" v="/usr/include/signal.h"/>
+     <n ix="8" len="8" v="hping2.h"/>
+     <n ix="9" len="42" v="/usr/include/x86_64-linux-gnu/bits/errno.h"/>
+     <n ix="10" len="9" v="globals.h"/>
+    </filename-table>
+   </c-declarations>
+  </cfile>
+ </c-analysis>

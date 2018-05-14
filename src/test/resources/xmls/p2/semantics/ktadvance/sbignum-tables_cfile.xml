@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="sbignum-tables" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:42" version="CP1.00"/>
+  </header>
+  <c-file filename="sbignum-tables">
+   <global-type-definitions>
+    <gtype iloc="1" itinfo="1"/>
+   </global-type-definitions>
+   <global-comptag-definitions>
+    <gcomptag icinfo="1" iloc="4"/>
+   </global-comptag-definitions>
+   <global-comptag-declarations/>
+   <global-enumtag-definitions/>
+   <global-enumtag-declarations/>
+   <global-var-definitions>
+    <gvar iinit="1" iloc="6" ivinfo="1"/>
+    <gvar iinit="39" iloc="8" ivinfo="2"/>
+    <gvar iinit="40" iloc="10" ivinfo="3"/>
+    <gvar iinit="77" iloc="12" ivinfo="4"/>
+    <gvar iinit="157" iloc="14" ivinfo="5"/>
+   </global-var-definitions>
+   <global-var-declarations>
+    <gvardecl iloc="15" ivinfo="1"/>
+    <gvardecl iloc="16" ivinfo="2"/>
+    <gvardecl iloc="17" ivinfo="3"/>
+    <gvardecl iloc="18" ivinfo="4"/>
+    <gvardecl iloc="19" ivinfo="5"/>
+   </global-var-declarations>
+   <functions/>
+   <global-assembly-statements/>
+   <global-pragmas/>
+   <global-text/>
+  </c-file>
+ </c-analysis>

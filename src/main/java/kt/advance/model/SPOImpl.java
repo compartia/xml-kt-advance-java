@@ -23,20 +23,40 @@
  */
 package kt.advance.model;
 
+import com.kt.advance.POPrinter;
 import com.kt.advance.api.CFunction;
+import com.kt.advance.api.CFunctionSiteSPOs;
 import com.kt.advance.api.Definitions.POLevel;
 import com.kt.advance.api.SPO;
 import com.kt.advance.xml.model.SpoXml.ApiCondition;
+import com.kt.advance.xml.model.SpoXml.PCElement;
 
 /**
  * Represents a secondary proof obligation associated with a call site.
  *
  */
 class SPOImpl extends POImpl implements SPO {
+    @Override
+    public String toString() {
+        return POPrinter.toString(this);
+    }
 
-    public SPOImpl(ApiCondition call, CFunction host) {
+    private final CFunctionSiteSPOs site;
 
+    @Override
+    public CFunctionSiteSPOs getSite() {
+        return site;
+    }
+
+    public SPOImpl(ApiCondition call, CFunction host, CFunctionSiteSPOs site) {
         super(call.proofObligation, host.getSPOTypeRef(call.proofObligation.id));
+        this.site = site;
+    }
+
+    public SPOImpl(PCElement postcondition, CFunction host, CFunctionSiteSPOs site) {
+
+        super(postcondition.proofObligation, host.getSPOTypeRef(postcondition.proofObligation.id));
+        this.site = site;
     }
 
     @Override

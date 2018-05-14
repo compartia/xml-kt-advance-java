@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:17">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="_mpz_selfdiv1_qr_raw">
+   <spos>
+    <callsites>
+     <direct-calls/>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="301" iexp="617" iloc="483">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

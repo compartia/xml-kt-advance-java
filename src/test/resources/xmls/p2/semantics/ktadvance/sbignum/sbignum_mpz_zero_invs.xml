@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:46">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_zero">
+   <inv-dictionary>
+    <non-relational-value-table>
+     <n a="2,2" ix="1" t="iv"/>
+     <n a="2" ix="2" t="sx"/>
+     <n a="3" ix="3" t="sx"/>
+     <n a="4" ix="4" t="sx"/>
+     <n a="5" ix="5" t="sx"/>
+     <n a="6" ix="6" t="sx"/>
+     <n a="7" ix="7" t="sx"/>
+     <n a="1,1" ix="8" t="iv"/>
+     <n a="9" ix="9" t="sx"/>
+     <n a="6,1,1,1" ix="10" t="bv,x"/>
+     <n a="24,25" ix="11" t="rs"/>
+    </non-relational-value-table>
+    <invariant-fact-table>
+     <n a="7,1" ix="1" t="nrv"/>
+     <n a="4,2" ix="2" t="nrv"/>
+     <n a="3,3" ix="3" t="nrv"/>
+     <n a="5,4" ix="4" t="nrv"/>
+     <n a="2,5" ix="5" t="nrv"/>
+     <n a="13,6" ix="6" t="nrv"/>
+     <n a="1,6" ix="7" t="nrv"/>
+     <n a="6,7" ix="8" t="nrv"/>
+     <n a="15,6" ix="9" t="nrv"/>
+     <n a="16,8" ix="10" t="nrv"/>
+     <n a="17,6" ix="11" t="nrv"/>
+     <n a="18,3" ix="12" t="nrv"/>
+     <n a="19,4" ix="13" t="nrv"/>
+     <n a="20,4" ix="14" t="nrv"/>
+     <n a="21,3" ix="15" t="nrv"/>
+     <n a="22,4" ix="16" t="nrv"/>
+     <n a="23,9" ix="17" t="nrv"/>
+     <n a="1,10" ix="18" t="nrv"/>
+     <n a="13,10" ix="19" t="nrv"/>
+     <n a="15,10" ix="20" t="nrv"/>
+     <n a="17,10" ix="21" t="nrv"/>
+     <n a="24,11" ix="22" t="nrv"/>
+     <n a="25,11" ix="23" t="nrv"/>
+     <n a="26,11" ix="24" t="nrv"/>
+     <n a="27,11" ix="25" t="nrv"/>
+    </invariant-fact-table>
+   </inv-dictionary>
+   <location-invariants>
+    <loc ictxt="2857" ifacts="2,3,4,5,7,8,9,10,18,20,22,24"/>
+    <loc ictxt="4389" ifacts="1,2,3,4,5,6,7,8,12,13,14,15,17,18,19,22,23"/>
+    <loc ictxt="4388" ifacts="2,3,4,5,7,8,11,16,18,21,22,25"/>
+   </location-invariants>
+  </function>
+ </c-analysis>

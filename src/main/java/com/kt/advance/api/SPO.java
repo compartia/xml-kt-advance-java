@@ -7,4 +7,6 @@ public interface SPO extends PO {
     @Override
     POLevel getLevel();
 
+    CFunctionSiteSPOs getSite();
+
 }

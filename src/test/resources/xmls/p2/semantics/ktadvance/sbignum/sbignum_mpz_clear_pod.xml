@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:28">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_clear">
+   <assumption-table>
+    <n a="1166" ix="1" t="aa"/>
+    <n a="1164" ix="2" t="aa"/>
+   </assumption-table>
+   <ppo-type-table>
+    <n a="1519,1492,1162" ix="1" t="p"/>
+    <n a="1519,1492,1163" ix="2" t="p"/>
+    <n a="1519,1493,1164" ix="3" t="p"/>
+    <n a="1519,1494,1165" ix="4" t="p"/>
+    <n a="1519,1494,1166" ix="5" t="p"/>
+    <n a="1519,1494,1167" ix="6" t="p"/>
+    <n a="1519,1494,1168" ix="7" t="p"/>
+    <n a="1519,1494,1169" ix="8" t="p"/>
+    <n a="1519,1492,1170" ix="9" t="p"/>
+    <n a="1519,1492,1171" ix="10" t="p"/>
+    <n a="1519,1492,1172" ix="11" t="p"/>
+   </ppo-type-table>
+   <spo-type-table/>
+  </function>
+ </c-analysis>

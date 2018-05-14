@@ -33,11 +33,13 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.StreamSupport;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Preconditions;
+import com.kt.TestMode;
 import com.kt.advance.ErrorsBundle;
 import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
@@ -64,18 +66,13 @@ public class CApplicationImpl implements CApplication {
 
     static final Logger LOG = LoggerFactory.getLogger(CApplicationImpl.class.getName());
 
+    public final PredicatesFactory predicatesFactory = new PredicatesFactory();
+
     private final Map<String, CFileImpl> cfiles = new HashMap<>();
 
     private ErrorsBundle errors = new ErrorsBundle();
 
     private final FsAbstraction fs;
-
-    @Override
-    public File getBaseDir() {
-        return this.fs.getBaseDir();
-    }
-
-    public final PredicatesFactory predicatesFactory = new PredicatesFactory();
 
     private File sourceDir;
 
@@ -97,12 +94,15 @@ public class CApplicationImpl implements CApplication {
     }
 
     @Override
-    public File getSourceDir() {
-        return sourceDir;
+    public File getBaseDir() {
+        return this.fs.getBaseDir();
     }
 
-    CFileImpl getCFileOrMakeNew(String name) {
-        return cfiles.computeIfAbsent(name, n -> new CFileImpl(name, this));
+    @Override
+    public Collection<CFile> getCfiles() {
+        final List<CFile> files = new ArrayList<>();
+        files.addAll(cfiles.values());
+        return files;
     }
 
     @Override
@@ -115,13 +115,13 @@ public class CApplicationImpl implements CApplication {
         return cfile.getCFunctionStrictly(f.getFunctionName());
     }
 
-    CFunctionImpl getCFunctionImpl(FunctionLevelAnalysisXml f) {
-        final CFileImpl cfile = getCFileStrictly(f.getSourceFilename());
-        return cfile.getCFunctionImpl(f.getFunctionName());
-    }
-
     public ErrorsBundle getErrors() {
         return errors;
+    }
+
+    @Override
+    public File getSourceDir() {
+        return sourceDir;
     }
 
     @Override
@@ -153,11 +153,13 @@ public class CApplicationImpl implements CApplication {
     private void runInHandler(UnsafeProc proc, AnalysisXml ppos) {
 
         try {
-
             proc.run();
         } catch (final NullPointerException ex) {
+
             throw new RuntimeException(ex);
+
         } catch (final Exception ex) {
+
             if (errors != null) {
                 errors.addError(ppos.getRelativeOrigin(), ex.getLocalizedMessage());
             } else {
@@ -166,12 +168,22 @@ public class CApplicationImpl implements CApplication {
         }
     }
 
+    CFileImpl getCFileOrMakeNew(String name) {
+        return cfiles.computeIfAbsent(name, n -> new CFileImpl(name, this));
+    }
+
+    CFunctionImpl getCFunctionImpl(FunctionLevelAnalysisXml f) {
+        final CFileImpl cfile = getCFileStrictly(f.getSourceFilename());
+        return cfile.getCFunctionImpl(f.getFunctionName());
+    }
+
     void readAllApiXmls(Collection<File> apiFiles) {
 
         LOG.info("reading {} {} files", apiFiles.size(), FsAbstraction.API_SUFFIX);
         final XMLFileType<ApiXml> reader = XMLFileType.getReader(ApiXml.class);
 
-        apiFiles.parallelStream()
+        StreamSupport.stream(apiFiles.spliterator(), !TestMode.inTestMode)
+
                 .map(xml -> reader.readXml(xml, fs.getBaseDir()))
                 .sequential()
                 .forEach(xmlObj -> runInHandler(() -> {
@@ -182,13 +194,33 @@ public class CApplicationImpl implements CApplication {
 
     }
 
+    void readAllCdictXmls(Collection<File> cdictFiles) {
+        LOG.info("reading {} {} files", cdictFiles.size(), FsAbstraction.CDICT_SUFFIX);
+
+        final XMLFileType<CdictXml> reader = XMLFileType.getReader(CdictXml.class);
+
+        StreamSupport.stream(cdictFiles.spliterator(), !TestMode.inTestMode)
+
+                .map(file -> reader.readXml(file, fs.getBaseDir()))
+                .sequential()
+                .forEach(
+                    xmlObj -> runInHandler(() -> {
+                        final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                        cfile.readCDictFile(xmlObj, predicatesFactory.expressionsFactory);
+                    }, xmlObj)
+
+        );
+
+    }
+
     void readAllCfileXmls(Collection<File> cdictFiles) {
         final Instant start = Instant.now();
         LOG.info("reading {} {} files", cdictFiles.size(), FsAbstraction.CFILE_SUFFIX);
 
         final XMLFileType<CfileXml> reader = XMLFileType.getReader(CfileXml.class);
 
-        cdictFiles.parallelStream()
+        StreamSupport.stream(cdictFiles.spliterator(), !TestMode.inTestMode)
+
                 .map(file -> reader.readXml(file, fs.getBaseDir()))
                 .sequential()
                 .forEach(
@@ -204,21 +236,21 @@ public class CApplicationImpl implements CApplication {
 
     }
 
-    void readAllCdictXmls(Collection<File> cdictFiles) {
-        LOG.info("reading {} {} files", cdictFiles.size(), FsAbstraction.CDICT_SUFFIX);
+    void readAllCfuncsXmls(Collection<File> files) {
 
-        final XMLFileType<CdictXml> reader = XMLFileType.getReader(CdictXml.class);
+        LOG.info("reading {} {} files", files.size(), FsAbstraction.CFUN_SUFFIX);
 
-        cdictFiles.parallelStream()
-                .map(file -> reader.readXml(file, fs.getBaseDir()))
-                .sequential()
-                .forEach(
-                    xmlObj -> runInHandler(() -> {
-                        final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                        cfile.readCDictFile(xmlObj, predicatesFactory.expressionsFactory);
-                    }, xmlObj)
+        final XMLFileType<CFunXml> reader = XMLFileType.getReader(CFunXml.class);
 
-        );
+        StreamSupport.stream(files.spliterator(), !TestMode.inTestMode)
+
+                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
+                .forEach(xmlObj -> runInHandler(() -> {
+
+                    final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                    cfile.getCFunctionOrMakeNew(xmlObj);
+
+                }, xmlObj));
 
     }
 
@@ -227,7 +259,7 @@ public class CApplicationImpl implements CApplication {
         LOG.info("reading {} {} files", pods.size(), FsAbstraction.POD_SUFFIX);
         final XMLFileType<PodXml> reader = XMLFileType.getReader(PodXml.class);
 
-        pods.parallelStream()
+        StreamSupport.stream(pods.spliterator(), !TestMode.inTestMode)
                 .map(xml -> reader.readXml(xml, fs.getBaseDir()))
                 .sequential()
                 .forEach(xmlObj -> runInHandler(() -> {
@@ -243,29 +275,13 @@ public class CApplicationImpl implements CApplication {
 
         final XMLFileType<PpoXml> reader = XMLFileType.getReader(PpoXml.class);
 
-        ppoFiles.parallelStream()
+        StreamSupport.stream(ppoFiles.spliterator(), !TestMode.inTestMode)
+
                 .map(xml -> reader.readXml(xml, fs.getBaseDir()))
                 .sequential()
                 .forEach(xmlObj -> runInHandler(() -> {
                     final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
                     cFunction.readPpoFile(xmlObj, errors);
-                }, xmlObj));
-
-    }
-
-    void readAllCfuncsXmls(Collection<File> files) {
-
-        LOG.info("reading {} {} files", files.size(), FsAbstraction.CFUN_SUFFIX);
-
-        final XMLFileType<CFunXml> reader = XMLFileType.getReader(CFunXml.class);
-
-        files.parallelStream()
-                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                .forEach(xmlObj -> runInHandler(() -> {
-
-                    final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                    cfile.getCFunctionOrMakeNew(xmlObj);
-
                 }, xmlObj));
 
     }
@@ -276,7 +292,8 @@ public class CApplicationImpl implements CApplication {
 
         final XMLFileType<PrdXml> reader = XMLFileType.getReader(PrdXml.class);
 
-        predicatesFiles.parallelStream()
+        StreamSupport.stream(predicatesFiles.spliterator(), !TestMode.inTestMode)
+
                 .map(xml -> reader.readXml(xml, fs.getBaseDir()))
                 .sequential()
                 .forEach(xmlObj -> runInHandler(() -> {
@@ -290,20 +307,14 @@ public class CApplicationImpl implements CApplication {
         LOG.info("reading {} {} files", spoFiles.size(), FsAbstraction.SPO_SUFFIX);
         final XMLFileType<SpoXml> reader = XMLFileType.getReader(SpoXml.class);
 
-        spoFiles.parallelStream()
+        StreamSupport.stream(spoFiles.spliterator(), !TestMode.inTestMode)
+
                 .map(xml -> reader.readXml(xml, fs.getBaseDir()))
                 .sequential()
                 .forEach(xmlObj -> runInHandler(() -> {
                     final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
                     cFunction.readSpoFile(xmlObj, errors);
                 }, xmlObj));
-    }
-
-    @Override
-    public Collection<CFile> getCfiles() {
-        final List<CFile> files = new ArrayList<>();
-        files.addAll(cfiles.values());
-        return files;
     }
 
 }
