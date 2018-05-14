@@ -27,7 +27,9 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.kt.advance.POPrinter;
 import com.kt.advance.api.CFunction;
+import com.kt.advance.api.CLocation;
 import com.kt.advance.api.Definitions.POLevel;
 import com.kt.advance.api.PPO;
 import com.kt.advance.api.SPO;
@@ -36,6 +38,10 @@ import com.kt.advance.xml.model.PpoXml.PPONode;
 import kt.advance.model.AssumptionType.AssumptionTypeCode;
 
 class PPOImpl extends POImpl implements PPO {
+    @Override
+    public String toString() {
+        return POPrinter.toString(this);
+    }
 
     public PPOImpl(PPONode ppoNode, CFunction cfun) {
         super(ppoNode, cfun.getPPOTypeRef(ppoNode.ippo));
@@ -44,6 +50,11 @@ class PPOImpl extends POImpl implements PPO {
     @Override
     public POLevel getLevel() {
         return POLevel.PRIMARY;
+    }
+
+    @Override
+    public CLocation getLocation() {
+        return getType().location;
     }
 
     @Override
