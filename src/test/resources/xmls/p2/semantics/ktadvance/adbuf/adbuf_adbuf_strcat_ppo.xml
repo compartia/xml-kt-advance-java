@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:30">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_strcat">
+   <ppos>
+    <ppo deps="s" id="15" ippo="15" s="g">
+     <e txt="string is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="18" invs="8" ippo="18" s="g" ts="2018-05-02 13:02:47">
+     <e txt="upper-bound value is initial value of parameter string satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="19" invs="30" ippo="19" s="g" ts="2018-05-02 13:02:47">
+     <e txt="assignedAt#148(rv:strlen)"/>
+    </ppo>
+    <ppo deps="f" id="17" invs="8" ippo="17" s="g" ts="2018-05-02 13:02:47">
+     <e txt="initial value of parameter string satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="1" ids="1" invs="16" ippo="1" s="g" ts="2018-05-02 13:02:47">
+     <e txt="condition not-null(string) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="b is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="11" invs="35" ippo="11" s="g" ts="2018-05-02 13:02:47">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(b_2_)#init"/>
+    </ppo>
+    <ppo deps="f" id="9" invs="16" ippo="9" s="g" ts="2018-05-02 13:02:47">
+     <e txt="upper-bound value is initial value of parameter string satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="4" ippo="4">
+     <d>
+      <invs>
+       <arg a="1" i="16,26,41"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="source and target type are the same"/>
+    </ppo>
+    <ppo deps="f" id="12" invs="12" ippo="12" s="g" ts="2018-05-02 13:02:47">
+     <e txt="initial value of parameter b satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="13" invs="12" ippo="13" s="g" ts="2018-05-02 13:02:47">
+     <e txt="upper-bound value is initial value of parameter b satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="null-termination within bounds is checked separately"/>
+    </ppo>
+    <ppo deps="f" id="7" invs="41" ippo="7" s="g" ts="2018-05-02 13:02:47">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(string_4_)#init"/>
+    </ppo>
+    <ppo deps="f" id="8" invs="16" ippo="8" s="g" ts="2018-05-02 13:02:47">
+     <e txt="initial value of parameter string satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="16" invs="37" ippo="16" s="g" ts="2018-05-02 13:02:47">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(string_4_)#init"/>
+    </ppo>
+    <ppo deps="s" id="14" ippo="14" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo id="2" ippo="2">
+     <d>
+      <invs>
+       <arg a="1" i="16,26,41"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="string is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="20" invs="32" ippo="20" s="g" ts="2018-05-02 13:02:47">
+     <e txt="assignedAt#148(rv:adbuf_add)"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

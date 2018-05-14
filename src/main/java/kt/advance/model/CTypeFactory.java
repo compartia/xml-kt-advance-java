@@ -286,6 +286,8 @@ public class CTypeFactory extends AbstractFactory<CType> {
 
         reg("tnamed", node -> new CTypNamed(node));
 
+        reg("tfun", node -> new CTypFun(node));
+
     }
 
     @Override

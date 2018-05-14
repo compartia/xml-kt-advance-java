@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:16:08">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_zero_realloc">
+   <api>
+    <api-assumptions>
+     <aa ipr="3040" spos="1"/>
+     <aa ipr="3041" spos="5,2"/>
+     <aa ipr="3042" spos="6,3"/>
+     <aa ipr="3043" spos="4"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls/>
+    <missing-summaries/>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

@@ -1,4 +1,5 @@
 /* -------------------------------------------------------------------
+
  * Access to the C Analyzer Analysis Results
  * Author: Artem Zaborskiy
  * -------------------------------------------------------------------
@@ -27,12 +28,15 @@ package kt.advance.model;
 import com.kt.advance.api.CLocation;
 import com.kt.advance.xml.model.IndexedTableNode;
 
+import kt.advance.model.CTypeFactory.CType;
+
 public class CVarInfo extends Indexed implements Bindable {
     public String name;
 
     public CLocation location;
 
-    int locId;
+    int locId, vtypeId;
+    public CType type;
 
     public CVarInfo(IndexedTableNode node) {
         super(node);
@@ -43,6 +47,7 @@ public class CVarInfo extends Indexed implements Bindable {
         if (locId != -1) {//global locations are not yet supported
             location = cfile.getLocation(locId);
         }
+        this.type = cfile.getType(vtypeId);
 
     }
 
@@ -57,6 +62,7 @@ public class CVarInfo extends Indexed implements Bindable {
     @Override
     protected void init(Integer[] args, String[] tags) {
         this.name = tags[0];
+        this.vtypeId = args[1];
         this.locId = args[5];
     }
 

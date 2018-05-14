@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="sbignum" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:48" version="CP1.00"/>
+  </header>
+  <function filename="sbignum">
+   <svar ivinfo="48"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="2402,1,1,0,0,1197,0,1" ix="1" t="r,n"/>
+     <n a="2403,1,1,0,0,1198,0,2" ix="2" t="z,n"/>
+     <n a="2404,7,1,0,0,1199,0,3" ix="3" t="s,n"/>
+     <n a="2405,22,1,0,0,1200,1,0" ix="4" t="mpz,n"/>
+     <n a="2406,4,1,0,0,1201,0,0" ix="5" t="u,n"/>
+     <n a="2407,7,1,0,0,-1,0,0" ix="6" t="tmp,n"/>
+     <n a="2408,41,1,0,0,1202,1,0" ix="7" t="t,n"/>
+     <n a="2409,4,1,0,0,1203,0,0" ix="8" t="l,n"/>
+     <n a="2411,8,1,0,0,-1,0,0" ix="9" t="tmp___0,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="237">
+      <skind iexp="1349" iloc="1204" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="238">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="1348" iloc="1204" ilval="727" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="240"/>
+          <preds r="237"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts>
+         <stmt sid="239">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="1350" iloc="1204" ilval="727" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="240"/>
+          <preds r="237"/>
+         </stmt>
+        </bstmts>
+       </elseblock>
+      </skind>
+      <succs r="238,239"/>
+      <preds/>
+     </stmt>
+     <stmt sid="240">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="1352" iloc="1204" ilval="728" itag="set"/>
+        <instr iexp="55" iloc="1205" ilval="729" itag="set"/>
+        <instr iexp="1353" iloc="1206" ilval="730" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="241"/>
+      <preds r="239,238"/>
+     </stmt>
+     <stmt sid="241">
+      <skind iexp="1354" iloc="1208" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="242">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="171" iloc="1207" ilval="729" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="243"/>
+          <preds r="241"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="242,243"/>
+      <preds r="240"/>
+     </stmt>
+     <stmt sid="243">
+      <skind breakstmtid="246" continuestmtid="243" iloc="1213" stag="loop">
+       <block>
+        <bstmts>
+         <stmt sid="244">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="1355" iloc="1209" ilval="731" itag="set"/>
+            <instr iexp="1355" iloc="1210" ilval="732" itag="set"/>
+            <instr iexp="55" iloc="1211" ilval="733" itag="set"/>
+            <instr iexp="1356" iloc="1212" ilval="734" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="245"/>
+          <preds r="243"/>
+         </stmt>
+         <stmt sid="245">
+          <skind iloc="1213" stag="break"/>
+          <succs r="246"/>
+          <preds r="244"/>
+         </stmt>
+        </bstmts>
+       </block>
+      </skind>
+      <succs r="244"/>
+      <preds r="242,241"/>
+     </stmt>
+     <stmt sid="246">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="1358" iloc="1214" ilval="733" itag="set"/>
+        <instr iexp="183" iloc="1215" ilval="739" itag="call">
+         <args>
+          <exp iexp="1359"/>
+          <exp iexp="1360"/>
+          <exp iexp="1361"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="247"/>
+      <preds r="245"/>
+     </stmt>
+     <stmt sid="247">
+      <skind iexp="1362" iloc="1215" stag="return"/>
+      <succs/>
+      <preds r="246"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

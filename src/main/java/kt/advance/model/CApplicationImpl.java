@@ -33,11 +33,13 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.StreamSupport;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Preconditions;
+import com.kt.UNTTEST;
 import com.kt.advance.ErrorsBundle;
 import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
@@ -172,7 +174,8 @@ public class CApplicationImpl implements CApplication {
         LOG.info("reading {} {} files", apiFiles.size(), FsAbstraction.API_SUFFIX);
         final XMLFileType<ApiXml> reader = XMLFileType.getReader(ApiXml.class);
 
-        apiFiles.parallelStream()
+        StreamSupport.stream(apiFiles.spliterator(), !UNTTEST.TEST)
+
                 .map(xml -> reader.readXml(xml, fs.getBaseDir()))
                 .sequential()
                 .forEach(xmlObj -> runInHandler(() -> {
@@ -189,7 +192,8 @@ public class CApplicationImpl implements CApplication {
 
         final XMLFileType<CfileXml> reader = XMLFileType.getReader(CfileXml.class);
 
-        cdictFiles.parallelStream()
+        StreamSupport.stream(cdictFiles.spliterator(), !UNTTEST.TEST)
+
                 .map(file -> reader.readXml(file, fs.getBaseDir()))
                 .sequential()
                 .forEach(
@@ -210,7 +214,8 @@ public class CApplicationImpl implements CApplication {
 
         final XMLFileType<CdictXml> reader = XMLFileType.getReader(CdictXml.class);
 
-        cdictFiles.parallelStream()
+        StreamSupport.stream(cdictFiles.spliterator(), !UNTTEST.TEST)
+
                 .map(file -> reader.readXml(file, fs.getBaseDir()))
                 .sequential()
                 .forEach(
@@ -228,7 +233,7 @@ public class CApplicationImpl implements CApplication {
         LOG.info("reading {} {} files", pods.size(), FsAbstraction.POD_SUFFIX);
         final XMLFileType<PodXml> reader = XMLFileType.getReader(PodXml.class);
 
-        pods.parallelStream()
+        StreamSupport.stream(pods.spliterator(), !UNTTEST.TEST)
                 .map(xml -> reader.readXml(xml, fs.getBaseDir()))
                 .sequential()
                 .forEach(xmlObj -> runInHandler(() -> {
@@ -244,7 +249,8 @@ public class CApplicationImpl implements CApplication {
 
         final XMLFileType<PpoXml> reader = XMLFileType.getReader(PpoXml.class);
 
-        ppoFiles.parallelStream()
+        StreamSupport.stream(ppoFiles.spliterator(), !UNTTEST.TEST)
+
                 .map(xml -> reader.readXml(xml, fs.getBaseDir()))
                 .sequential()
                 .forEach(xmlObj -> runInHandler(() -> {
@@ -260,7 +266,8 @@ public class CApplicationImpl implements CApplication {
 
         final XMLFileType<CFunXml> reader = XMLFileType.getReader(CFunXml.class);
 
-        files.parallelStream()
+        StreamSupport.stream(files.spliterator(), !UNTTEST.TEST)
+
                 .map(xml -> reader.readXml(xml, fs.getBaseDir()))
                 .forEach(xmlObj -> runInHandler(() -> {
 
@@ -277,7 +284,8 @@ public class CApplicationImpl implements CApplication {
 
         final XMLFileType<PrdXml> reader = XMLFileType.getReader(PrdXml.class);
 
-        predicatesFiles.parallelStream()
+        StreamSupport.stream(predicatesFiles.spliterator(), !UNTTEST.TEST)
+
                 .map(xml -> reader.readXml(xml, fs.getBaseDir()))
                 .sequential()
                 .forEach(xmlObj -> runInHandler(() -> {
@@ -291,7 +299,8 @@ public class CApplicationImpl implements CApplication {
         LOG.info("reading {} {} files", spoFiles.size(), FsAbstraction.SPO_SUFFIX);
         final XMLFileType<SpoXml> reader = XMLFileType.getReader(SpoXml.class);
 
-        spoFiles.parallelStream()
+        StreamSupport.stream(spoFiles.spliterator(), !UNTTEST.TEST)
+
                 .map(xml -> reader.readXml(xml, fs.getBaseDir()))
                 .sequential()
                 .forEach(xmlObj -> runInHandler(() -> {

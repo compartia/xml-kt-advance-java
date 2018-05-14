@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="sbignum" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:48" version="CP1.00"/>
+  </header>
+  <function filename="sbignum">
+   <svar ivinfo="27"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="2726,1,1,0,0,532,0,1" ix="1" t="r,n"/>
+     <n a="2727,1,1,0,0,533,0,2" ix="2" t="z,n"/>
+     <n a="2728,7,1,0,0,534,0,3" ix="3" t="s,n"/>
+     <n a="2729,22,1,0,0,535,1,0" ix="4" t="mpz,n"/>
+     <n a="2730,4,1,0,0,536,0,0" ix="5" t="u,n"/>
+     <n a="2731,7,1,0,0,-1,0,0" ix="6" t="tmp,n"/>
+     <n a="2732,41,1,0,0,537,1,0" ix="7" t="t,n"/>
+     <n a="2733,4,1,0,0,538,0,0" ix="8" t="l,n"/>
+     <n a="2735,8,1,0,0,-1,0,0" ix="9" t="tmp___0,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="750">
+      <skind iexp="648" iloc="539" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="751">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="647" iloc="539" ilval="333" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="753"/>
+          <preds r="750"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts>
+         <stmt sid="752">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="649" iloc="539" ilval="333" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="753"/>
+          <preds r="750"/>
+         </stmt>
+        </bstmts>
+       </elseblock>
+      </skind>
+      <succs r="751,752"/>
+      <preds/>
+     </stmt>
+     <stmt sid="753">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="651" iloc="539" ilval="334" itag="set"/>
+        <instr iexp="55" iloc="540" ilval="335" itag="set"/>
+        <instr iexp="652" iloc="541" ilval="336" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="754"/>
+      <preds r="752,751"/>
+     </stmt>
+     <stmt sid="754">
+      <skind iexp="653" iloc="543" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="755">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="171" iloc="542" ilval="335" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="756"/>
+          <preds r="754"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="755,756"/>
+      <preds r="753"/>
+     </stmt>
+     <stmt sid="756">
+      <skind breakstmtid="759" continuestmtid="756" iloc="548" stag="loop">
+       <block>
+        <bstmts>
+         <stmt sid="757">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="654" iloc="544" ilval="337" itag="set"/>
+            <instr iexp="654" iloc="545" ilval="338" itag="set"/>
+            <instr iexp="55" iloc="546" ilval="339" itag="set"/>
+            <instr iexp="655" iloc="547" ilval="340" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="758"/>
+          <preds r="756"/>
+         </stmt>
+         <stmt sid="758">
+          <skind iloc="548" stag="break"/>
+          <succs r="759"/>
+          <preds r="757"/>
+         </stmt>
+        </bstmts>
+       </block>
+      </skind>
+      <succs r="757"/>
+      <preds r="755,754"/>
+     </stmt>
+     <stmt sid="759">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="657" iloc="549" ilval="339" itag="set"/>
+        <instr iexp="586" iloc="550" ilval="345" itag="call">
+         <args>
+          <exp iexp="658"/>
+          <exp iexp="659"/>
+          <exp iexp="660"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="760"/>
+      <preds r="758"/>
+     </stmt>
+     <stmt sid="760">
+      <skind iexp="661" iloc="550" stag="return"/>
+      <succs/>
+      <preds r="759"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

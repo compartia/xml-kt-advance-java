@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:28">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_set_ui">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="550,551" ictxt="1488" iloc="433" ivinfo="20">
+       <api-conditions>
+        <api-c iapi="647">
+         <po id="6" ispo="6"/>
+        </api-c>
+        <api-c iapi="622">
+         <po deps="s" id="2" ispo="2" s="g">
+          <e txt="address of variable mpz"/>
+         </po>
+        </api-c>
+        <api-c iapi="640">
+         <po id="5" ispo="5"/>
+        </api-c>
+        <api-c iapi="635">
+         <po deps="a" id="4" ids="1" invs="52" ispo="4" s="g">
+          <e txt="condition not-null(z) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="634">
+         <po deps="a" id="3" ids="2" invs="10" ispo="3" s="g">
+          <e txt="condition initialized(z-&gt;d) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="620">
+         <po id="1" ispo="1"/>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="1491" iexp="552" iloc="433">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

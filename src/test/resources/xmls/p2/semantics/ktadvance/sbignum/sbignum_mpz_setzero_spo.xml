@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:25">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_setzero">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="565,55" ictxt="947" iloc="447" ivinfo="67">
+       <api-conditions>
+        <api-c iapi="3040">
+         <po deps="a" id="1" ids="2" invs="6" ispo="1" s="g" ts="2018-05-02 13:15:25">
+          <e txt="condition initialized(z-&gt;l) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="3042">
+         <po deps="a" id="3" ids="3" invs="6" ispo="3" s="g" ts="2018-05-02 13:15:25">
+          <e txt="condition initialized(z-&gt;d) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="3041">
+         <po deps="a" id="2" ids="1" invs="27" ispo="2" s="g" ts="2018-05-02 13:15:25">
+          <e txt="condition not-null(z) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="3043">
+         <po deps="a" id="4" ids="4" invs="6" ispo="4" s="g" ts="2018-05-02 13:15:25">
+          <e txt="condition initialized(z-&gt;a) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="950" iexp="566" iloc="447">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

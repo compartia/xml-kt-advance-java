@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:30">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_add_long">
+   <ppos>
+    <ppo deps="f" id="18" invs="34" ippo="18" s="g" ts="2018-05-02 13:02:46">
+     <e txt="lower bound value is address of stack variable s with non-negative offset 28"/>
+    </ppo>
+    <ppo deps="f" id="19" invs="34" ippo="19" s="g" ts="2018-05-02 13:02:46">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:stack variable s; size (in bytes): (32 * 1) and offset 28"/>
+        <msg t="[2]:array variable s with size 32"/>
+        <msg t="[2]:memory address: (1)address"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="offset size 28 is less than the size of s ((32 * 1))"/>
+    </ppo>
+    <ppo deps="f" id="32" invs="118" ippo="32" s="g" ts="2018-05-02 13:02:46">
+     <e txt="all memory regions potentially pointed at are valid: addrof_localvar_s_12"/>
+    </ppo>
+    <ppo deps="f" id="17" invs="121" ippo="17" s="g" ts="2018-05-02 13:02:46">
+     <e txt="all memory regions potentially pointed at are valid: addrof_localvar_s_12"/>
+    </ppo>
+    <ppo deps="f" id="50" invs="93" ippo="50" s="g" ts="2018-05-02 13:02:46">
+     <e txt="assignedAt#218_xx_assignedAt#224"/>
+    </ppo>
+    <ppo deps="s" id="25" ippo="25" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo id="40" ippo="40"/>
+    <ppo deps="s" id="49" ippo="49" s="g">
+     <e txt="l is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="52" invs="75" ippo="52" s="g" ts="2018-05-02 13:02:46">
+     <e txt="assignedAt#222(c)_xx_assignedAt#228(c)"/>
+    </ppo>
+    <ppo deps="f" id="67" invs="53" ippo="67" s="g" ts="2018-05-02 13:02:46">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="4">
+        <msg t="[4]:increment is 1"/>
+       </arg>
+       <arg a="3">
+        <msg t="[3]:index size of s is (32 * 1) with offset 20"/>
+        <msg t="[3]:stack variable s; size (in bytes): (32 * 1) and offset 20"/>
+        <msg t="[3]:array variable s with size 32"/>
+        <msg t="[3]:memory address: (1)address"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="increment is less than the size of s; satisfies (((20 + 1) * 1) &lt; (32 * 1))"/>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="r">
+     <e txt="adding 32 to the start of an array of length 32 violates the upperbound"/>
+    </ppo>
+    <ppo id="55" ippo="55">
+     <d>
+      <invs>
+       <arg a="4" i="1"/>
+       <arg a="3" i="36,35,75,105"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:lower-bound xpr: ((1)address - 3)"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="30" invs="96" ippo="30" s="g" ts="2018-05-02 13:02:46">
+     <e txt="assignedAt#222(c)_xx_assignedAt#228(c)"/>
+    </ppo>
+    <ppo deps="s" id="62" ippo="62" s="g">
+     <e txt="casting constant value 45 to char"/>
+    </ppo>
+    <ppo id="60" ippo="60">
+     <d>
+      <invs>
+       <arg a="2" i="66,65,99,120"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:lower-bound value is unknown expr: ((1)address - 3); none of which are known to satisfy the lower-bound property"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="14" ippo="14" s="g">
+     <e txt="subtract positive number:  value is 1"/>
+    </ppo>
+    <ppo deps="f" id="59" invs="120" ippo="59" s="g" ts="2018-05-02 13:02:46">
+     <e txt="all memory regions potentially pointed at are valid: addrof_localvar_s_12"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="f" id="15" invs="100" ippo="15" s="g" ts="2018-05-02 13:02:46">
+     <e txt="assignedAt#222"/>
+    </ppo>
+    <ppo deps="s" id="27" ippo="27" s="g">
+     <e txt="address of variable s"/>
+    </ppo>
+    <ppo deps="f" id="38" invs="59" ippo="38" s="g" ts="2018-05-02 13:02:46">
+     <e txt="lower bound value is address of stack variable s with non-negative offset 1"/>
+    </ppo>
+    <ppo deps="s" id="56" ippo="56" s="g">
+     <e txt="subtract positive number:  value is 1"/>
+    </ppo>
+    <ppo deps="f" id="61" invs="65" ippo="61" s="g" ts="2018-05-02 13:02:46">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:stack variable s; size (in bytes): (32 * 1) and offset 20"/>
+        <msg t="[2]:array variable s with size 32"/>
+        <msg t="[2]:memory address: (1)address"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="offset size 20 is less than the size of s ((32 * 1))"/>
+    </ppo>
+    <ppo deps="f" id="31" invs="64" ippo="31" s="g" ts="2018-05-02 13:02:46">
+     <e txt="value of p is a compound value: ((1)address + 1)"/>
+    </ppo>
+    <ppo deps="f" id="12" invs="117" ippo="12" s="g" ts="2018-05-02 13:02:46">
+     <e txt="all memory regions potentially pointed at are valid: addrof_localvar_s_12"/>
+    </ppo>
+    <ppo deps="f" id="58" invs="120" ippo="58" s="g" ts="2018-05-02 13:02:46">
+     <e txt="all targets are non-null: [stack variable s]"/>
+    </ppo>
+    <ppo deps="s" id="34" ippo="34" s="g">
+     <e txt="subtract positive number:  value is 1"/>
+    </ppo>
+    <ppo deps="f" id="69" invs="115" ippo="69" s="g" ts="2018-05-02 13:02:46">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(b_2_)#init"/>
+    </ppo>
+    <ppo id="74" ippo="74">
+     <d>
+      <invs>
+       <arg a="2" i="61,60,92,116,123,122,124,125"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:lower-bound value is unknown expr: ((1)address - 6); none of which are known to satisfy the lower-bound property"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="subtract positive number:  value is 1"/>
+    </ppo>
+    <ppo deps="f" id="75" invs="60" ippo="75" s="g" ts="2018-05-02 13:02:46">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:stack variable s; size (in bytes): (32 * 1) and offset 21"/>
+        <msg t="[2]:array variable s with size 32"/>
+        <msg t="[2]:memory address: (1)address"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="offset size 21 is less than the size of s ((32 * 1))"/>
+    </ppo>
+    <ppo deps="s" id="48" ippo="48" s="g">
+     <e txt="value is 10"/>
+    </ppo>
+    <ppo deps="f" id="71" invs="21" ippo="71" s="g" ts="2018-05-02 13:02:46">
+     <e txt="upper-bound value is initial value of parameter b satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="22" ippo="22" s="g">
+     <e txt="l is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="45" ippo="45" s="g">
+     <e txt="l is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="54" invs="105" ippo="54" s="g" ts="2018-05-02 13:02:46">
+     <e txt="all memory regions potentially pointed at are valid: addrof_localvar_s_12"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="address of variable s"/>
+    </ppo>
+    <ppo deps="f" id="28" invs="111,15" ippo="28" s="g" ts="2018-05-02 13:02:46">
+     <e txt="both variables point at memory region addrof_localvar_s_12"/>
+    </ppo>
+    <ppo deps="f" id="53" invs="75" ippo="53" s="g" ts="2018-05-02 13:02:46">
+     <e txt="pointer is assigned a compound value at all dominating assignments: #222,#228"/>
+    </ppo>
+    <ppo deps="s" id="23" ippo="23" s="g">
+     <e txt="casting a pointer to integer type unsigned long"/>
+    </ppo>
+    <ppo deps="f" id="65" invs="112" ippo="65" s="g" ts="2018-05-02 13:02:46">
+     <e txt="all memory regions potentially pointed at are valid: addrof_localvar_s_12"/>
+    </ppo>
+    <ppo deps="s" id="47" ippo="47" s="g">
+     <e txt="divide by positive number:  value is 10"/>
+    </ppo>
+    <ppo deps="f" id="73" invs="116" ippo="73" s="g" ts="2018-05-02 13:02:46">
+     <e txt="all memory regions potentially pointed at are valid: addrof_localvar_s_12"/>
+    </ppo>
+    <ppo id="44" ippo="44">
+     <d>
+      <invs>
+       <arg a="2" i="17"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="f" id="70" invs="21" ippo="70" s="g" ts="2018-05-02 13:02:46">
+     <e txt="initial value of parameter b satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="add non-negative number:  value is 32"/>
+    </ppo>
+    <ppo deps="f" id="16" invs="34" ippo="16" s="g" ts="2018-05-02 13:02:46">
+     <e txt="value of tmp is a compound value: ((1)address + 28)"/>
+    </ppo>
+    <ppo deps="f" id="24" invs="86" ippo="24" s="g" ts="2018-05-02 13:02:46">
+     <e txt="assignedAt#222(c)_xx_assignedAt#228(c)"/>
+    </ppo>
+    <ppo deps="f" id="72" invs="92" ippo="72" s="g" ts="2018-05-02 13:02:46">
+     <e txt="assignedAt#235(c)"/>
+    </ppo>
+    <ppo deps="s" id="21" ippo="21" s="g">
+     <e txt="l is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="33" invs="64,30" ippo="33" s="g" ts="2018-05-02 13:02:46">
+     <e txt="sum of offset and decrement: (1 - 1) is greater than or equal to zero"/>
+    </ppo>
+    <ppo deps="f" id="37" invs="114" ippo="37" s="g" ts="2018-05-02 13:02:46">
+     <e txt="all memory regions potentially pointed at are valid: addrof_localvar_s_12"/>
+    </ppo>
+    <ppo deps="f" id="64" invs="88" ippo="64" s="g" ts="2018-05-02 13:02:46">
+     <e txt="pointer is assigned a compound value at all dominating assignments: #222,#228,#234"/>
+    </ppo>
+    <ppo deps="f" id="36" invs="59" ippo="36" s="g" ts="2018-05-02 13:02:46">
+     <e txt="value of tmp___0 is a compound value: ((1)address + 1)"/>
+    </ppo>
+    <ppo deps="f" id="76" invs="81" ippo="76" s="g" ts="2018-05-02 13:02:46">
+     <e txt="assignedAt#236(rv:adbuf_strcat)"/>
+    </ppo>
+    <ppo deps="s" id="41" ippo="41" s="g">
+     <e txt="l is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="57" invs="99" ippo="57" s="g" ts="2018-05-02 13:02:46">
+     <e txt="assignedAt#234"/>
+    </ppo>
+    <ppo deps="s" id="68" ippo="68" s="g">
+     <e txt="b is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="10" invs="95" ippo="10" s="g" ts="2018-05-02 13:02:46">
+     <e txt="assignedAt#220(c)"/>
+    </ppo>
+    <ppo deps="f" id="26" invs="86" ippo="26" s="g" ts="2018-05-02 13:02:46">
+     <e txt="pointer is assigned a compound value at all dominating assignments: #222,#228"/>
+    </ppo>
+    <ppo deps="s" id="42" ippo="42" s="g">
+     <e txt="value is 10"/>
+    </ppo>
+    <ppo deps="f" id="11" invs="24" ippo="11" s="g" ts="2018-05-02 13:02:46">
+     <e txt="value of p is a compound value: ((1)address + 28)"/>
+    </ppo>
+    <ppo deps="f" id="9" invs="97" ippo="9" s="g" ts="2018-05-02 13:02:46">
+     <e txt="assignedAt#220(c)"/>
+    </ppo>
+    <ppo deps="s" id="46" ippo="46" s="g">
+     <e txt="divide by positive number:  value is 10"/>
+    </ppo>
+    <ppo deps="f" id="13" invs="24,23" ippo="13" s="g" ts="2018-05-02 13:02:46">
+     <e txt="sum of offset and decrement: (28 - 1) is greater than or equal to zero"/>
+    </ppo>
+    <ppo deps="f" id="39" invs="58" ippo="39" s="g" ts="2018-05-02 13:02:46">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="2">
+        <msg t="[2]:stack variable s; size (in bytes): (32 * 1) and offset 24"/>
+        <msg t="[2]:array variable s with size 32"/>
+        <msg t="[2]:memory address: (1)address"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="offset size 24 is less than the size of s ((32 * 1))"/>
+    </ppo>
+    <ppo deps="f" id="63" invs="88" ippo="63" s="g" ts="2018-05-02 13:02:46">
+     <e txt="assignedAt#222(c)_xx_assignedAt#228(c)_xx_assignedAt#234(c)"/>
+    </ppo>
+    <ppo deps="s" id="66" ippo="66" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="f" id="7" invs="29,27" ippo="7" s="g" ts="2018-05-02 13:02:46">
+     <e txt="sum of offset and decrement: (32 - 1) is greater than or equal to zero"/>
+    </ppo>
+    <ppo deps="f" id="35" invs="90" ippo="35" s="g" ts="2018-05-02 13:02:46">
+     <e txt="assignedAt#228"/>
+    </ppo>
+    <ppo deps="f" id="51" invs="89" ippo="51" s="g" ts="2018-05-02 13:02:46">
+     <e txt="assignedAt#222(c)_xx_assignedAt#228(c)"/>
+    </ppo>
+    <ppo deps="f" id="29" invs="76" ippo="29" s="g" ts="2018-05-02 13:02:46">
+     <e txt="assignedAt#222(c)_xx_assignedAt#228(c)"/>
+    </ppo>
+    <ppo deps="s" id="43" ippo="43" s="g">
+     <e txt="add non-negative number:  value is 48"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="address of a variable is a valid memory region"/>
+    </ppo>
+    <ppo deps="s" id="20" ippo="20" s="g">
+     <e txt="casting constant value 0 to char"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

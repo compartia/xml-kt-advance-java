@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:16:06">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_tdiv_r_ui">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="666,667,668" ictxt="3727" iloc="567" ivinfo="29">
+       <api-conditions>
+        <api-c iapi="2449">
+         <po deps="a" id="3" ids="1" invs="60" ispo="3" s="g">
+          <e txt="condition not-null(z) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="2483">
+         <po id="4" ispo="4"/>
+        </api-c>
+        <api-c iapi="2426">
+         <po id="1" ispo="1"/>
+        </api-c>
+        <api-c iapi="2463">
+         <po deps="a" id="13" ids="7" invs="3" ispo="13" s="g" ts="2018-05-02 13:16:06">
+          <e txt="condition initialized(z-&gt;l) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="3034">
+         <po deps="a" id="10" ids="2" invs="4" ispo="10" s="g">
+          <e txt="condition initialized(r-&gt;s) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="2428">
+         <po deps="s" id="2" ispo="2" s="g">
+          <e txt="address of variable mpz"/>
+         </po>
+        </api-c>
+        <api-c iapi="2509">
+         <po id="6" ispo="6"/>
+        </api-c>
+        <api-c iapi="3032">
+         <po deps="a" id="8" ids="3" invs="4" ispo="8" s="g">
+          <e txt="condition initialized(r-&gt;d) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="2476">
+         <po deps="a" id="14" ids="8" invs="3" ispo="14" s="g" ts="2018-05-02 13:16:06">
+          <e txt="condition initialized(z-&gt;d) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="2462">
+         <po deps="a" id="12" ids="9" invs="3" ispo="12" s="g" ts="2018-05-02 13:16:06">
+          <e txt="condition initialized(z-&gt;s) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="2496">
+         <po id="5" ispo="5"/>
+        </api-c>
+        <api-c iapi="3033">
+         <po deps="a" id="9" ids="4" invs="4" ispo="9" s="g">
+          <e txt="condition initialized(r-&gt;a) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="2513">
+         <po deps="a" id="7" ids="5" invs="61" ispo="7" s="g">
+          <e txt="condition not-null(r) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="3035">
+         <po deps="a" id="11" ids="6" invs="4" ispo="11" s="g">
+          <e txt="condition initialized(r-&gt;l) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="3731" iexp="669" iloc="567">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

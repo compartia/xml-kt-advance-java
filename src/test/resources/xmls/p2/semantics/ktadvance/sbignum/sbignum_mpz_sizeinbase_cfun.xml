@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="sbignum" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:48" version="CP1.00"/>
+  </header>
+  <function filename="sbignum">
+   <svar ivinfo="9"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="2911,1,1,0,0,191,0,1" ix="1" t="z,n"/>
+     <n a="2912,4,1,0,0,192,0,2" ix="2" t="b,n"/>
+     <n a="2913,2,1,0,0,193,0,0" ix="3" t="len,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="1020">
+      <skind iexp="271" iloc="195" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="1021">
+          <skind iexp="272" iloc="194" stag="return"/>
+          <succs/>
+          <preds r="1020"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts>
+         <stmt sid="1022">
+          <skind iexp="273" iloc="195" stag="if">
+           <thenblock>
+            <bstmts>
+             <stmt sid="1023">
+              <skind iexp="272" iloc="194" stag="return"/>
+              <succs/>
+              <preds r="1022"/>
+             </stmt>
+            </bstmts>
+           </thenblock>
+           <elseblock>
+            <bstmts/>
+           </elseblock>
+          </skind>
+          <succs r="1023,1024"/>
+          <preds r="1020"/>
+         </stmt>
+        </bstmts>
+       </elseblock>
+      </skind>
+      <succs r="1021,1022"/>
+      <preds/>
+     </stmt>
+     <stmt sid="1024">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="282" iloc="196" ilval="123" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="1025"/>
+      <preds r="1022"/>
+     </stmt>
+     <stmt sid="1025">
+      <skind iexp="284" iloc="197" stag="return"/>
+      <succs/>
+      <preds r="1024"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

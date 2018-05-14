@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:29">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_free">
+   <inv-dictionary>
+    <non-relational-value-table>
+     <n a="1" ix="1" t="sx"/>
+     <n a="2" ix="2" t="sx"/>
+     <n a="3" ix="3" t="sx"/>
+     <n a="4" ix="4" t="sx"/>
+     <n a="5" ix="5" t="sx"/>
+     <n a="1,1" ix="6" t="iv"/>
+     <n a="5,1,1,1" ix="7" t="bv,x"/>
+     <n a="20,21" ix="8" t="rs"/>
+    </non-relational-value-table>
+    <invariant-fact-table>
+     <n a="5,1" ix="1" t="nrv"/>
+     <n a="4,2" ix="2" t="nrv"/>
+     <n a="3,3" ix="3" t="nrv"/>
+     <n a="2,4" ix="4" t="nrv"/>
+     <n a="11,5" ix="5" t="nrv"/>
+     <n a="1,5" ix="6" t="nrv"/>
+     <n a="12,5" ix="7" t="nrv"/>
+     <n a="13,6" ix="8" t="nrv"/>
+     <n a="14,6" ix="9" t="nrv"/>
+     <n a="15,6" ix="10" t="nrv"/>
+     <n a="16,5" ix="11" t="nrv"/>
+     <n a="17,3" ix="12" t="nrv"/>
+     <n a="18,3" ix="13" t="nrv"/>
+     <n a="19,3" ix="14" t="nrv"/>
+     <n a="1,7" ix="15" t="nrv"/>
+     <n a="11,7" ix="16" t="nrv"/>
+     <n a="12,7" ix="17" t="nrv"/>
+     <n a="16,7" ix="18" t="nrv"/>
+     <n a="20,8" ix="19" t="nrv"/>
+     <n a="21,8" ix="20" t="nrv"/>
+     <n a="22,8" ix="21" t="nrv"/>
+     <n a="23,8" ix="22" t="nrv"/>
+    </invariant-fact-table>
+   </inv-dictionary>
+   <location-invariants>
+    <loc ictxt="6" ifacts="1,2,3,4,6,7,8,9,10,15,17,19,21"/>
+    <loc ictxt="446" ifacts="1,2,3,4,5,6,12,13,15,16,19,20"/>
+    <loc ictxt="1" ifacts="1,2,3,4,6,11,14,15,18,19,22"/>
+   </location-invariants>
+  </function>
+ </c-analysis>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="adbuf" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:44" version="CP1.00"/>
+  </header>
+  <function filename="adbuf">
+   <svar ivinfo="1"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="1808,2,1,0,0,2,0,1" ix="1" t="dst,n"/>
+     <n a="1809,4,1,0,0,3,0,2" ix="2" t="fmt,n"/>
+     <n a="1810,8,1,0,0,4,1,0" ix="3" t="buf,n"/>
+     <n a="1811,5,1,0,0,5,0,0" ix="4" t="retval,n"/>
+     <n a="1812,9,1,0,0,6,0,0" ix="5" t="ap,n"/>
+     <n a="1813,10,1,0,0,-1,0,0" ix="6" t="tmp,n"/>
+     <n a="1815,5,1,0,0,-1,0,0" ix="7" t="tmp___0,n"/>
+     <n a="1816,11,1,0,0,7,0,0" ix="8" t="dynbuf,n"/>
+     <n a="1817,5,1,0,0,8,0,0" ix="9" t="newretval,n"/>
+     <n a="1819,13,1,0,0,-1,0,0" ix="10" t="tmp___1,n"/>
+     <n a="1820,5,1,0,0,9,0,0" ix="11" t="rv,n"/>
+     <n a="1822,5,1,0,0,10,0,0" ix="12" t="rv___0,n"/>
+     <n a="1824,10,1,0,0,-1,0,0" ix="13" t="tmp___2,n"/>
+     <n a="1826,5,1,0,0,-1,0,0" ix="14" t="tmp___3,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="86">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="2" iloc="11" itag="call">
+         <args>
+          <exp iexp="3"/>
+         </args>
+        </instr>
+        <instr iexp="4" iloc="12" ilval="6" itag="call">
+         <args>
+          <exp iexp="6"/>
+          <exp iexp="7"/>
+          <exp iexp="9"/>
+          <exp iexp="3"/>
+         </args>
+        </instr>
+        <instr iexp="12" iloc="13" ilval="7" itag="set"/>
+        <instr iexp="13" iloc="14" itag="call">
+         <args>
+          <exp iexp="3"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="87"/>
+      <preds/>
+     </stmt>
+     <stmt sid="87">
+      <skind iexp="16" iloc="16" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="88">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="17" iloc="15" ilval="10" itag="call">
+             <args>
+              <exp iexp="18"/>
+             </args>
+            </instr>
+            <instr iexp="19" iloc="15" ilval="13" itag="call">
+             <args>
+              <exp iexp="20"/>
+              <exp iexp="21"/>
+              <exp iexp="22"/>
+             </args>
+            </instr>
+           </instrs>
+          </skind>
+          <succs r="89"/>
+          <preds r="87"/>
+         </stmt>
+         <stmt sid="89">
+          <skind iexp="23" iloc="15" stag="return"/>
+          <succs/>
+          <preds r="88"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="88,90"/>
+      <preds r="86"/>
+     </stmt>
+     <stmt sid="90">
+      <skind iexp="24" iloc="31" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="91">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="25" iloc="17" ilval="15" itag="call">
+             <args>
+              <exp iexp="28"/>
+             </args>
+            </instr>
+            <instr iexp="30" iloc="17" ilval="16" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="92"/>
+          <preds r="90"/>
+         </stmt>
+         <stmt sid="92">
+          <skind iexp="36" iloc="17" stag="if">
+           <thenblock>
+            <bstmts>
+             <stmt sid="93">
+              <skind iexp="26" iloc="18" stag="return"/>
+              <succs/>
+              <preds r="92"/>
+             </stmt>
+            </bstmts>
+           </thenblock>
+           <elseblock>
+            <bstmts/>
+           </elseblock>
+          </skind>
+          <succs r="93,94"/>
+          <preds r="91"/>
+         </stmt>
+         <stmt sid="94">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="2" iloc="19" itag="call">
+             <args>
+              <exp iexp="3"/>
+             </args>
+            </instr>
+            <instr iexp="4" iloc="20" ilval="17" itag="call">
+             <args>
+              <exp iexp="37"/>
+              <exp iexp="28"/>
+              <exp iexp="9"/>
+              <exp iexp="3"/>
+             </args>
+            </instr>
+            <instr iexp="12" iloc="21" ilval="18" itag="set"/>
+            <instr iexp="13" iloc="22" itag="call">
+             <args>
+              <exp iexp="3"/>
+             </args>
+            </instr>
+           </instrs>
+          </skind>
+          <succs r="95"/>
+          <preds r="92"/>
+         </stmt>
+         <stmt sid="95">
+          <skind iexp="40" iloc="29" stag="if">
+           <thenblock>
+            <bstmts>
+             <stmt sid="96">
+              <skind stag="instr">
+               <instrs>
+                <instr iexp="19" iloc="23" ilval="19" itag="call">
+                 <args>
+                  <exp iexp="20"/>
+                  <exp iexp="41"/>
+                  <exp iexp="42"/>
+                 </args>
+                </instr>
+                <instr iexp="43" iloc="24" itag="call">
+                 <args>
+                  <exp iexp="41"/>
+                 </args>
+                </instr>
+               </instrs>
+              </skind>
+              <succs r="97"/>
+              <preds r="95"/>
+             </stmt>
+             <stmt sid="97">
+              <skind iexp="44" iloc="25" stag="return"/>
+              <succs/>
+              <preds r="96"/>
+             </stmt>
+            </bstmts>
+           </thenblock>
+           <elseblock>
+            <bstmts>
+             <stmt sid="98">
+              <skind stag="instr">
+               <instrs>
+                <instr iexp="17" iloc="26" ilval="21" itag="call">
+                 <args>
+                  <exp iexp="45"/>
+                 </args>
+                </instr>
+                <instr iexp="19" iloc="26" ilval="22" itag="call">
+                 <args>
+                  <exp iexp="20"/>
+                  <exp iexp="41"/>
+                  <exp iexp="46"/>
+                 </args>
+                </instr>
+                <instr iexp="43" iloc="27" itag="call">
+                 <args>
+                  <exp iexp="41"/>
+                 </args>
+                </instr>
+               </instrs>
+              </skind>
+              <succs r="99"/>
+              <preds r="95"/>
+             </stmt>
+             <stmt sid="99">
+              <skind iexp="47" iloc="28" stag="return"/>
+              <succs/>
+              <preds r="98"/>
+             </stmt>
+            </bstmts>
+           </elseblock>
+          </skind>
+          <succs r="96,98"/>
+          <preds r="94"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts>
+         <stmt sid="100">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="19" iloc="30" ilval="23" itag="call">
+             <args>
+              <exp iexp="20"/>
+              <exp iexp="21"/>
+              <exp iexp="42"/>
+             </args>
+            </instr>
+           </instrs>
+          </skind>
+          <succs r="101"/>
+          <preds r="90"/>
+         </stmt>
+         <stmt sid="101">
+          <skind iexp="48" iloc="30" stag="return"/>
+          <succs/>
+          <preds r="100"/>
+         </stmt>
+        </bstmts>
+       </elseblock>
+      </skind>
+      <succs r="91,100"/>
+      <preds r="87"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

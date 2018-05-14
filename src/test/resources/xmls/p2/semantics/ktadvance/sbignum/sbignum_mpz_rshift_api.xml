@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:26">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_rshift">
+   <api xlst="8">
+    <api-assumptions>
+     <aa ipr="876" ppos="33,73,168,189" spos="1"/>
+     <aa ipr="877" ppos="35,83,41,191,75,170,142,122,164,56,185,103" spos="7,2"/>
+     <aa ipr="878" ppos="39,162,120,81,140,54,101" spos="6,3"/>
+     <aa ipr="3052" spos="4"/>
+     <aa ipr="3053" spos="5"/>
+     <aa ipr="3054" spos="8"/>
+     <aa ipr="3055" spos="9"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls/>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="879"/>
+     <uu po-id="923"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

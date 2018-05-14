@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="adbuf" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:44" version="CP1.00"/>
+  </header>
+  <function filename="adbuf">
+   <svar ivinfo="14"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="1706,2,1,0,0,175,0,1" ix="1" t="b,n"/>
+     <n a="1707,13,1,0,0,-1,0,0" ix="2" t="tmp,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="1">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="25" iloc="176" ilval="117" itag="call">
+         <args>
+          <exp iexp="148"/>
+         </args>
+        </instr>
+        <instr iexp="241" iloc="176" ilval="119" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="2"/>
+      <preds/>
+     </stmt>
+     <stmt sid="2">
+      <skind iexp="244" iloc="178" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="3">
+          <skind iexp="26" iloc="177" stag="return"/>
+          <succs/>
+          <preds r="2"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="3,4"/>
+      <preds r="1"/>
+     </stmt>
+     <stmt sid="4">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="12" iloc="179" ilval="120" itag="set"/>
+        <instr iexp="148" iloc="180" ilval="121" itag="set"/>
+        <instr iexp="148" iloc="181" ilval="122" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="5"/>
+      <preds r="2"/>
+     </stmt>
+     <stmt sid="5">
+      <skind iexp="31" iloc="182" stag="return"/>
+      <succs/>
+      <preds r="4"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

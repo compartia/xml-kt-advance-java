@@ -9,17 +9,19 @@ import java.util.Set;
 
 import javax.xml.bind.JAXBException;
 
+import org.junit.Before;
 import org.junit.Test;
 
+import com.kt.UNTTEST;
 import com.kt.advance.MapCounterInt;
 import com.kt.advance.api.CAnalysis;
 import com.kt.advance.api.CAnalysisImpl;
 import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
-import com.kt.advance.api.CFunctionCallsiteSPOs;
+import com.kt.advance.api.CFunctionSiteSPOs;
 import com.kt.advance.api.FsAbstraction;
-import com.kt.advance.api.PO;
+import com.kt.advance.api.PPO;
 import com.kt.advance.api.SPO;
 import com.kt.advance.xml.model.FsAbstractionImpl;
 
@@ -29,13 +31,18 @@ public class ReadTest {
         return fsAbstraction.getBaseDir().toPath().relativize(f.toPath()).toString();
     }
 
+    @Before
+    public void init() {
+        UNTTEST.TEST = true;
+    }
+
     @Test
-    public void readP1() throws JAXBException {
+    public void readP2() throws JAXBException {
 
         final ClassLoader classLoader = getClass().getClassLoader();
 
         //        final File basedir = new File("/Users/artem/work/KestrelTechnology/IN/naim-0.11.8.3.1");
-        final File basedir = new File(classLoader.getResource("xmls/p1").getFile());
+        final File basedir = new File(classLoader.getResource("xmls/p2").getFile());
 
         //Create a  file system abstraction
         final FsAbstraction fsAbstraction = new FsAbstractionImpl(basedir);
@@ -96,7 +103,7 @@ public class ReadTest {
                         });
 
                     // Iterate callsites
-                    for (final CFunctionCallsiteSPOs callsite : function.getCallsites()) {
+                    for (final CFunctionSiteSPOs callsite : function.getCallsites()) {
                         // Iterate SPOs
                         callsite.getSpos().stream()
                                 .forEach(spo -> {
@@ -104,7 +111,7 @@ public class ReadTest {
                                     checkPO(spo);
 
                                     stats.inc("total", "SPO", 1);
-                                    stats.inc(spo.getLocation().getFilename(), "SPO", 1);
+                                    stats.inc(spo.getSite().getLocation().getFilename(), "SPO", 1);
 
                                     /* do smth */});
                     }
@@ -113,14 +120,14 @@ public class ReadTest {
             }
         }
 
-        assertEquals(23447, (int) stats.get("total", 0));
-        assertEquals(861, (int) stats.get("total", 1));
+        assertEquals(9160, (int) stats.get("total", 0));
+        assertEquals(967, (int) stats.get("total", 1));
 
         System.out.println(stats.toTsv());
         return stats;
     }
 
-    private void checkPO(PO ppo) {
+    private void checkPO(PPO ppo) {
         assertNotNull(ppo.toString());
         assertNotNull(ppo.getLevel());
         assertNotNull(ppo.getPredicate());
@@ -133,6 +140,18 @@ public class ReadTest {
             assertNotNull(ppo.getLocation().getFilename(), ppo.getLocation().getCfile());
             assertNotNull(ppo.getLocation().getCfile().getName());
         }
+    }
+
+    private void checkPO(SPO ppo) {
+        assertNotNull(ppo.toString());
+        assertNotNull(ppo.getLevel());
+        assertNotNull(ppo.getPredicate());
+        assertNotNull(ppo.getStatus());
+        assertNotNull(ppo.getId());
+        assertNotNull(ppo.getType());
+
+        assertNotNull(ppo.getSite());
+
     }
 
     private void validateCFiles(final CAnalysis cAnalysis) {

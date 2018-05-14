@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:28">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_clear">
+   <inv-dictionary>
+    <non-relational-value-table>
+     <n a="1" ix="1" t="sx"/>
+     <n a="2" ix="2" t="sx"/>
+     <n a="3" ix="3" t="sx"/>
+     <n a="4" ix="4" t="sx"/>
+     <n a="5" ix="5" t="sx"/>
+     <n a="6" ix="6" t="sx"/>
+     <n a="6,1,1,1" ix="7" t="bv,x"/>
+     <n a="16,17" ix="8" t="rs"/>
+    </non-relational-value-table>
+    <invariant-fact-table>
+     <n a="6,1" ix="1" t="nrv"/>
+     <n a="5,2" ix="2" t="nrv"/>
+     <n a="4,3" ix="3" t="nrv"/>
+     <n a="3,4" ix="4" t="nrv"/>
+     <n a="2,5" ix="5" t="nrv"/>
+     <n a="13,6" ix="6" t="nrv"/>
+     <n a="1,6" ix="7" t="nrv"/>
+     <n a="14,4" ix="8" t="nrv"/>
+     <n a="15,4" ix="9" t="nrv"/>
+     <n a="1,7" ix="10" t="nrv"/>
+     <n a="13,7" ix="11" t="nrv"/>
+     <n a="16,8" ix="12" t="nrv"/>
+     <n a="17,8" ix="13" t="nrv"/>
+    </invariant-fact-table>
+   </inv-dictionary>
+   <location-invariants>
+    <loc ictxt="4180" ifacts="1,2,3,4,5,6,7,8,9,10,11,12,13"/>
+   </location-invariants>
+  </function>
+ </c-analysis>

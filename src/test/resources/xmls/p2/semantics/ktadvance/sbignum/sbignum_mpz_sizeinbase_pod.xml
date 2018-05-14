@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:29">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_sizeinbase">
+   <assumption-table>
+    <n a="1331" ix="1" t="aa"/>
+    <n a="1333" ix="2" t="aa"/>
+   </assumption-table>
+   <ppo-type-table>
+    <n a="195,1703,1325" ix="1" t="p"/>
+    <n a="194,1704,1326" ix="2" t="p"/>
+    <n a="195,1705,1325" ix="3" t="p"/>
+    <n a="194,1706,1326" ix="4" t="p"/>
+    <n a="196,1707,1327" ix="5" t="p"/>
+    <n a="196,1708,1328" ix="6" t="p"/>
+    <n a="196,1708,1329" ix="7" t="p"/>
+    <n a="196,1709,1325" ix="8" t="p"/>
+    <n a="196,1710,1330" ix="9" t="p"/>
+    <n a="196,1711,1331" ix="10" t="p"/>
+    <n a="196,1712,1332" ix="11" t="p"/>
+    <n a="196,1712,1333" ix="12" t="p"/>
+    <n a="196,1712,1334" ix="13" t="p"/>
+    <n a="196,1712,1335" ix="14" t="p"/>
+    <n a="196,1712,1336" ix="15" t="p"/>
+    <n a="196,1713,1337" ix="16" t="p"/>
+    <n a="197,1714,1338" ix="17" t="p"/>
+    <n a="197,1715,1339" ix="18" t="p"/>
+   </ppo-type-table>
+   <spo-type-table/>
+  </function>
+ </c-analysis>

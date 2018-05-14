@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="adbuf" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:44" version="CP1.00"/>
+  </header>
+  <function filename="adbuf">
+   <svar ivinfo="10"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="1728,2,1,0,0,127,0,1" ix="1" t="b,n"/>
+     <n a="1729,5,1,0,0,128,0,2" ix="2" t="c,n"/>
+     <n a="1730,30,1,0,0,129,0,0" ix="3" t="p,n"/>
+     <n a="1731,31,1,0,0,130,1,0" ix="4" t="t,n"/>
+     <n a="1732,5,1,0,0,-1,0,0" ix="5" t="tmp,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="22">
+      <skind iexp="185" iloc="132" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="23">
+          <skind iexp="26" iloc="131" stag="return"/>
+          <succs/>
+          <preds r="22"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="23,24"/>
+      <preds/>
+     </stmt>
+     <stmt sid="24">
+      <skind iexp="188" iloc="140" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="25">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="192" iloc="133" ilval="94" itag="set"/>
+            <instr iexp="195" iloc="134" ilval="96" itag="set"/>
+            <instr iexp="197" iloc="135" ilval="98" itag="set"/>
+            <instr iexp="198" iloc="136" ilval="93" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="26"/>
+          <preds r="24"/>
+         </stmt>
+         <stmt sid="26">
+          <skind iexp="31" iloc="137" stag="return"/>
+          <succs/>
+          <preds r="25"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts>
+         <stmt sid="27">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="195" iloc="138" ilval="99" itag="set"/>
+            <instr iexp="19" iloc="139" ilval="101" itag="call">
+             <args>
+              <exp iexp="182"/>
+              <exp iexp="200"/>
+              <exp iexp="148"/>
+             </args>
+            </instr>
+           </instrs>
+          </skind>
+          <succs r="28"/>
+          <preds r="24"/>
+         </stmt>
+         <stmt sid="28">
+          <skind iexp="201" iloc="139" stag="return"/>
+          <succs/>
+          <preds r="27"/>
+         </stmt>
+        </bstmts>
+       </elseblock>
+      </skind>
+      <succs r="25,27"/>
+      <preds r="22"/>
+     </stmt>
+     <stmt sid="29">
+      <skind iexp="31" iloc="141" stag="return"/>
+      <succs/>
+      <preds/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>

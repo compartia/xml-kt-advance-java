@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:16:06">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_tdiv_qr_si">
+   <api>
+    <api-assumptions>
+     <aa ipr="3038" ppos="4"/>
+     <aa ipr="3223" spos="3"/>
+     <aa ipr="3224" spos="4"/>
+     <aa ipr="3225" spos="5"/>
+     <aa ipr="3226" spos="6"/>
+     <aa ipr="3227" spos="7"/>
+     <aa ipr="3231" spos="11"/>
+     <aa ipr="3232" spos="12"/>
+     <aa ipr="3384" spos="13"/>
+     <aa ipr="3385" spos="14"/>
+     <aa ipr="3386" spos="15"/>
+     <aa ipr="3387" spos="16"/>
+     <aa ipr="3388" spos="17"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls/>
+    <missing-summaries/>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

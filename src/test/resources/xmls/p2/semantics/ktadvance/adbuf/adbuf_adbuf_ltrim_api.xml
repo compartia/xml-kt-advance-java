@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:30">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_ltrim">
+   <api xlst="10">
+    <api-assumptions>
+     <aa ipr="421" ppos="2,97,69" spos="1"/>
+     <aa ipr="423" ppos="20,39,33,99,71,117,125,107,14,4" spos="2"/>
+     <aa ipr="428" ppos="12,31"/>
+     <aa ipr="429" ppos="37,18"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="memcpy" h="string"/>
+     <lc c="1" f="malloc" h="stdlib"/>
+     <lc c="1" f="free" h="stdlib"/>
+    </library-calls>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="442"/>
+     <uu po-id="453"/>
+     <uu po-id="455"/>
+     <uu po-id="459"/>
+     <uu po-id="462"/>
+     <uu po-id="468"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

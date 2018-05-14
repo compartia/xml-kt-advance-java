@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:46">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_mul">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="1175,1178,1181,1182" ictxt="2948" iloc="1009" ivinfo="42">
+       <api-conditions>
+        <api-c iapi="360">
+         <po deps="a" id="2" ids="5" invs="58" ispo="2" s="g">
+          <e txt="condition not-null(z) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="358">
+         <po deps="a" id="1" ids="8" invs="17" ispo="1" s="g">
+          <e txt="condition initialized(z-&gt;l) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="374">
+         <po deps="a" id="3" ids="9" invs="19" ispo="3" s="g">
+          <e txt="condition initialized(r-&gt;d) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="419">
+         <po id="5" ispo="5">
+          <d>
+           <invs>
+            <arg a="1" i="57"/>
+           </invs>
+           <msgs/>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+        <api-c iapi="375">
+         <po deps="a" id="4" ids="7" invs="59" ispo="4" s="g">
+          <e txt="condition not-null(r) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="429">
+         <po deps="a" id="6" ids="10" invs="17" ispo="6" s="g">
+          <e txt="condition initialized(z-&gt;d) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="3018">
+         <po deps="a" id="7" ids="11" invs="19" ispo="7" s="g">
+          <e txt="condition initialized(r-&gt;s) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="2955" iexp="1183" iloc="1009">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

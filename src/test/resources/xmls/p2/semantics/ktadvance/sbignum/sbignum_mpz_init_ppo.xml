@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:16:08">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_init">
+   <ppos>
+    <ppo deps="f" id="15" invs="15" ippo="15" s="g" ts="2018-05-02 13:05:18">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="22" invs="12" ippo="22" s="g" ts="2018-05-02 13:05:18">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="18" invs="31" ippo="18" s="g" ts="2018-05-02 13:05:18">
+     <e txt="assignedAt#182"/>
+    </ppo>
+    <ppo deps="s" id="19" ippo="19" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="27" invs="38" ippo="27" s="g" ts="2018-05-02 13:05:18">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_1_)#init"/>
+    </ppo>
+    <ppo deps="f" id="17" invs="36" ippo="17" s="g" ts="2018-05-02 13:05:18">
+     <e txt="assignedAt#182"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="absolute address in memory: 0x00000000"/>
+    </ppo>
+    <ppo deps="a" id="26" ids="1" invs="8" ippo="26" s="g" ts="2018-05-02 13:05:18">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="28" invs="8" ippo="28" s="g" ts="2018-05-02 13:05:18">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="11" ippo="11" s="g">
+     <e txt="constant value 0 fits in type unsigned int"/>
+    </ppo>
+    <ppo deps="f" id="23" invs="12" ippo="23" s="g" ts="2018-05-02 13:05:18">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="25" ippo="25" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="absolute address in memory: 0x00000000"/>
+    </ppo>
+    <ppo deps="f" id="4" invs="19" ippo="4" s="g" ts="2018-05-02 13:05:18">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="5" invs="19" ippo="5" s="g" ts="2018-05-02 13:05:18">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="12" ippo="12" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="a" id="13" ids="1" invs="15" ippo="13" s="g" ts="2018-05-02 13:05:18">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="3" invs="41" ippo="3" s="g" ts="2018-05-02 13:05:18">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_1_)#init"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="null-pointer cast"/>
+    </ppo>
+    <ppo deps="f" id="30" invs="34" ippo="30" s="g" ts="2018-05-02 13:05:18">
+     <e txt="assignedAt#182"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="absolute address in memory: 0x00000000"/>
+    </ppo>
+    <ppo deps="f" id="16" invs="15" ippo="16" s="g" ts="2018-05-02 13:05:18">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="24" invs="35" ippo="24" s="g" ts="2018-05-02 13:05:18">
+     <e txt="assignedAt#182"/>
+    </ppo>
+    <ppo deps="f" id="14" invs="40" ippo="14" s="g" ts="2018-05-02 13:05:18">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_1_)#init"/>
+    </ppo>
+    <ppo deps="f" id="21" invs="39" ippo="21" s="g" ts="2018-05-02 13:05:18">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_1_)#init"/>
+    </ppo>
+    <ppo deps="f" id="29" invs="8" ippo="29" s="g" ts="2018-05-02 13:05:18">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="a" id="2" ids="1" invs="19" ippo="2" s="g" ts="2018-05-02 13:05:18">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="cast of null-pointer"/>
+    </ppo>
+    <ppo deps="a" id="20" ids="1" invs="12" ippo="20" s="g" ts="2018-05-02 13:05:18">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

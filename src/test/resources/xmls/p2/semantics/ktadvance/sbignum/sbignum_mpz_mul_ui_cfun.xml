@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header>
+   <created file="sbignum" project-directory="/home/henny/CCode/sate6/hping/hping-master" time="04/25/2018 22:51:48" version="CP1.00"/>
+  </header>
+  <function filename="sbignum">
+   <svar ivinfo="40"/>
+   <declarations>
+    <local-varinfo-table>
+     <n a="2505,1,1,0,0,993,0,1" ix="1" t="r,n"/>
+     <n a="2506,1,1,0,0,994,0,2" ix="2" t="z,n"/>
+     <n a="2507,4,1,0,0,995,0,3" ix="3" t="u,n"/>
+     <n a="2508,41,1,0,0,996,1,0" ix="4" t="t,n"/>
+     <n a="2509,4,1,0,0,997,0,0" ix="5" t="l,n"/>
+     <n a="2510,8,1,0,0,-1,0,0" ix="6" t="tmp,n"/>
+    </local-varinfo-table>
+   </declarations>
+   <sbody>
+    <bstmts>
+     <stmt sid="381">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="55" iloc="998" ilval="610" itag="set"/>
+        <instr iexp="1167" iloc="999" ilval="611" itag="set"/>
+       </instrs>
+      </skind>
+      <succs r="382"/>
+      <preds/>
+     </stmt>
+     <stmt sid="382">
+      <skind iexp="1168" iloc="1001" stag="if">
+       <thenblock>
+        <bstmts>
+         <stmt sid="383">
+          <skind stag="instr">
+           <instrs>
+            <instr iexp="171" iloc="1000" ilval="610" itag="set"/>
+           </instrs>
+          </skind>
+          <succs r="384"/>
+          <preds r="382"/>
+         </stmt>
+        </bstmts>
+       </thenblock>
+       <elseblock>
+        <bstmts/>
+       </elseblock>
+      </skind>
+      <succs r="383,384"/>
+      <preds r="381"/>
+     </stmt>
+     <stmt sid="384">
+      <skind stag="instr">
+       <instrs>
+        <instr iexp="1171" iloc="1002" ilval="614" itag="set"/>
+        <instr iexp="469" iloc="1003" ilval="618" itag="call">
+         <args>
+          <exp iexp="1169"/>
+          <exp iexp="1170"/>
+          <exp iexp="1172"/>
+          <exp iexp="1173"/>
+         </args>
+        </instr>
+       </instrs>
+      </skind>
+      <succs r="385"/>
+      <preds r="383,382"/>
+     </stmt>
+     <stmt sid="385">
+      <skind iexp="1174" iloc="1003" stag="return"/>
+      <succs/>
+      <preds r="384"/>
+     </stmt>
+    </bstmts>
+   </sbody>
+  </function>
+ </c-analysis>
