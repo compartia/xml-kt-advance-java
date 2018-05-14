@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:16:00">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_tdiv_r">
+   <api xlst="6,10">
+    <api-assumptions>
+     <aa ipr="2426" ppos="177,1" spos="3"/>
+     <aa ipr="2428" ppos="223,190,179,213,3,168,145" spos="4"/>
+     <aa ipr="2449" ppos="74,51,96,129,119,85" spos="16,2"/>
+     <aa ipr="2462" spos="20"/>
+     <aa ipr="2463" spos="15,1"/>
+     <aa ipr="2476" spos="19,5"/>
+     <aa ipr="2483" ppos="143,221,188"/>
+     <aa ipr="2496" ppos="166"/>
+     <aa ipr="2509" ppos="211" spos="6"/>
+     <aa ipr="2513" ppos="231" spos="18,14,9,7"/>
+     <aa ipr="3032" ppos="117" spos="17,10"/>
+     <aa ipr="3033" ppos="94,49,127" spos="13"/>
+     <aa ipr="3034" ppos="72"/>
+     <aa ipr="3035" ppos="83" spos="8"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="2" f="memcpy" h="string"/>
+     <lc c="4" f="__builtin_alloca" h="builtins"/>
+    </library-calls>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="2428"/>
+     <uu po-id="2449"/>
+     <uu po-id="2453"/>
+     <uu po-id="2467"/>
+     <uu po-id="2487"/>
+     <uu po-id="2500"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

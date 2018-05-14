@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:16:02">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_mul_ui">
+   <inv-dictionary>
+    <non-relational-value-table>
+     <n a="1,1" ix="1" t="iv"/>
+     <n a="1" ix="2" t="sx"/>
+     <n a="2" ix="3" t="sx"/>
+     <n a="3" ix="4" t="sx"/>
+     <n a="4" ix="5" t="sx"/>
+     <n a="5" ix="6" t="sx"/>
+     <n a="6" ix="7" t="sx"/>
+     <n a="7" ix="8" t="sx"/>
+     <n a="8" ix="9" t="sx"/>
+     <n a="9" ix="10" t="sx"/>
+     <n a="10" ix="11" t="sx"/>
+     <n a="11" ix="12" t="sx"/>
+     <n a="12" ix="13" t="sx"/>
+     <n a="2,2" ix="14" t="iv"/>
+     <n a="13" ix="15" t="sx"/>
+     <n a="14" ix="16" t="sx"/>
+     <n a="2,1" ix="17" t="iv"/>
+     <n a="12,2,2,1" ix="18" t="bv,x"/>
+     <n a="11,2,2,1" ix="19" t="bv,x"/>
+     <n a="47" ix="20" t="iz"/>
+     <n a="48" ix="21" t="iz"/>
+     <n a="49" ix="22" t="iz"/>
+     <n a="51,52" ix="23" t="rs"/>
+     <n a="53,54" ix="24" t="rs"/>
+    </non-relational-value-table>
+    <invariant-fact-table>
+     <n a="13,1" ix="1" t="nrv"/>
+     <n a="11,2" ix="2" t="nrv"/>
+     <n a="10,3" ix="3" t="nrv"/>
+     <n a="9,4" ix="4" t="nrv"/>
+     <n a="8,5" ix="5" t="nrv"/>
+     <n a="7,6" ix="6" t="nrv"/>
+     <n a="3,7" ix="7" t="nrv"/>
+     <n a="12,8" ix="8" t="nrv"/>
+     <n a="4,9" ix="9" t="nrv"/>
+     <n a="6,10" ix="10" t="nrv"/>
+     <n a="5,11" ix="11" t="nrv"/>
+     <n a="2,12" ix="12" t="nrv"/>
+     <n a="25,7" ix="13" t="nrv"/>
+     <n a="26,7" ix="14" t="nrv"/>
+     <n a="1,13" ix="15" t="nrv"/>
+     <n a="28,14" ix="16" t="nrv"/>
+     <n a="29,14" ix="17" t="nrv"/>
+     <n a="30,1" ix="18" t="nrv"/>
+     <n a="31,7" ix="19" t="nrv"/>
+     <n a="32,14" ix="20" t="nrv"/>
+     <n a="34,15" ix="21" t="nrv"/>
+     <n a="35,15" ix="22" t="nrv"/>
+     <n a="36,15" ix="23" t="nrv"/>
+     <n a="37,14" ix="24" t="nrv"/>
+     <n a="39,16" ix="25" t="nrv"/>
+     <n a="40,12" ix="26" t="nrv"/>
+     <n a="41,13" ix="27" t="nrv"/>
+     <n a="42,12" ix="28" t="nrv"/>
+     <n a="43,13" ix="29" t="nrv"/>
+     <n a="44,1" ix="30" t="nrv"/>
+     <n a="12,5" ix="31" t="nrv"/>
+     <n a="45,5" ix="32" t="nrv"/>
+     <n a="29,17" ix="33" t="nrv"/>
+     <n a="46,17" ix="34" t="nrv"/>
+     <n a="1,18" ix="35" t="nrv"/>
+     <n a="2,19" ix="36" t="nrv"/>
+     <n a="40,19" ix="37" t="nrv"/>
+     <n a="41,18" ix="38" t="nrv"/>
+     <n a="42,19" ix="39" t="nrv"/>
+     <n a="43,18" ix="40" t="nrv"/>
+     <n a="50,20" ix="41" t="nrv"/>
+     <n a="51,20" ix="42" t="nrv"/>
+     <n a="52,20" ix="43" t="nrv"/>
+     <n a="53,21" ix="44" t="nrv"/>
+     <n a="54,22" ix="45" t="nrv"/>
+     <n a="55,21" ix="46" t="nrv"/>
+     <n a="56,20" ix="47" t="nrv"/>
+     <n a="47,23" ix="48" t="nrv"/>
+     <n a="48,24" ix="49" t="nrv"/>
+     <n a="57,24" ix="50" t="nrv"/>
+     <n a="58,23" ix="51" t="nrv"/>
+     <n a="59,24" ix="52" t="nrv"/>
+     <n a="60,23" ix="53" t="nrv"/>
+     <n a="65,6" ix="54" t="nrv"/>
+     <n a="66,5" ix="55" t="nrv"/>
+     <n a="67,4" ix="56" t="nrv"/>
+     <n a="68,16" ix="57" t="nrv"/>
+     <n a="69,11" ix="58" t="nrv"/>
+     <n a="70,12" ix="59" t="nrv"/>
+     <n a="71,13" ix="60" t="nrv"/>
+     <n a="70,19" ix="61" t="nrv"/>
+     <n a="71,18" ix="62" t="nrv"/>
+     <n a="72,22" ix="63" t="nrv"/>
+     <n a="73,24" ix="64" t="nrv"/>
+     <n a="74,23" ix="65" t="nrv"/>
+    </invariant-fact-table>
+   </inv-dictionary>
+   <location-invariants>
+    <loc ictxt="4496" ifacts="2,3,4,5,6,7,8,9,10,11,12,14,15,17,30,35,36,41,42,48,49"/>
+    <loc ictxt="3512" ifacts="2,3,4,5,6,7,9,10,11,12,14,15,21,22,23,31,33,35,36,41,42,44,45,46,48,49"/>
+    <loc ictxt="3507" ifacts="2,3,4,5,6,7,9,10,11,12,14,15,25,26,27,31,33,34,35,36,37,38,41,42,45,47,48,49,50,51,54,55,56,57,58,59,60,61,62,63,64,65"/>
+    <loc ictxt="4495" ifacts="2,3,4,5,6,7,8,9,10,11,12,15,17,18,19,20,35,36,41,48,49"/>
+    <loc ictxt="3503" ifacts="2,3,4,5,6,7,8,9,10,11,12,14,15,28,29,32,33,35,36,39,40,41,42,48,49,52,53"/>
+    <loc ictxt="4494" ifacts="2,3,4,5,6,7,8,9,10,11,12,15,24,35,36,48,49"/>
+    <loc ictxt="3500" ifacts="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,35,36,41,42,43,48,49"/>
+   </location-invariants>
+  </function>
+ </c-analysis>

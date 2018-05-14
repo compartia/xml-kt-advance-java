@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:18">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="sbn_rand">
+   <ppos>
+    <ppo deps="s" id="22" ippo="22" s="g">
+     <e txt="unsigned value is always non-negative"/>
+    </ppo>
+    <ppo deps="s" id="45" ippo="45" s="g">
+     <e txt="index value is masked with 255 which is less than the size of the array: 256"/>
+    </ppo>
+    <ppo deps="s" id="18" ippo="18" s="g">
+     <e txt="rc4_sbox is global"/>
+    </ppo>
+    <ppo deps="s" id="19" ippo="19" s="g">
+     <e txt="unsigned value is always non-negative"/>
+    </ppo>
+    <ppo deps="f" id="32" invs="41" ippo="32" s="g" ts="2018-05-02 13:04:32">
+     <e txt="assignedAt#1870_xx_assignedAt#1885(c)"/>
+    </ppo>
+    <ppo deps="s" id="17" ippo="17" s="g">
+     <e txt="casting from unsigned char to unsigned int is safe"/>
+    </ppo>
+    <ppo deps="f" id="50" invs="44" ippo="50" s="g" ts="2018-05-02 13:04:32">
+     <e txt="assignedAt#1878"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="constant value 0 fits in type unsigned int"/>
+    </ppo>
+    <ppo id="28" ippo="28">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="array length is: 256; no index upper-bound value found for j; invariants: {assignedAt#1881}; "/>
+       <msg t="array length is: 256; no index upper-bound value found for j; invariants: {assignedAt#1881};"/>
+       <msg t="array length is: 256; no index upper-bound value found for j; invariants: {assignedAt#1881};"/>
+       <msg t="array length is: 256; no index upper-bound value found for j; invariants: {assignedAt#1881};"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="53" invs="46" ippo="53" s="g" ts="2018-05-02 13:04:32">
+     <e txt="assignedAt#1869"/>
+    </ppo>
+    <ppo id="23" ippo="23">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="array length is: 256; no index upper-bound value found for i; invariants: {assignedAt#1879}; "/>
+       <msg t="array length is: 256; no index upper-bound value found for i; invariants: {assignedAt#1879};"/>
+       <msg t="array length is: 256; no index upper-bound value found for i; invariants: {assignedAt#1879};"/>
+       <msg t="array length is: 256; no index upper-bound value found for i; invariants: {assignedAt#1879};"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="25" ippo="25">
+     <d>
+      <invs>
+       <arg a="3" i="58"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="40" invs="31" ippo="40" s="g" ts="2018-05-02 13:04:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:memory base: addrof_localvar_r_13"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="address of stack variable r is pointing to valid memory"/>
+    </ppo>
+    <ppo deps="f" id="47" invs="50" ippo="47" s="g" ts="2018-05-02 13:04:32">
+     <e txt="assignedAt#1882"/>
+    </ppo>
+    <ppo deps="s" id="44" ippo="44" s="g">
+     <e txt="unsigned value is always non-negative"/>
+    </ppo>
+    <ppo deps="s" id="49" ippo="49" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="52" ippo="52" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="4" invs="47" ippo="4" s="g" ts="2018-05-02 13:04:32">
+     <e txt="assignedAt#1878"/>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="i is global"/>
+    </ppo>
+    <ppo deps="s" id="3" ippo="3" s="g">
+     <e txt="rc4_seedflag is global"/>
+    </ppo>
+    <ppo id="30" ippo="30">
+     <d>
+      <invs>
+       <arg a="3" i="54"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="16" ippo="16" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="24" ippo="24" s="g">
+     <e txt="i is global"/>
+    </ppo>
+    <ppo deps="f" id="14" invs="55" ippo="14" s="g" ts="2018-05-02 13:04:32">
+     <e txt="assignedAt#1880"/>
+    </ppo>
+    <ppo deps="s" id="21" ippo="21" s="g">
+     <e txt="j is global"/>
+    </ppo>
+    <ppo deps="f" id="33" invs="45" ippo="33" s="g" ts="2018-05-02 13:04:32">
+     <e txt="assignedAt#1870_xx_assignedAt#1885(c)"/>
+    </ppo>
+    <ppo id="37" ippo="37">
+     <d>
+      <invs>
+       <arg a="4" i="7"/>
+       <arg a="3" i="28,45,62"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="36" ippo="36" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="15" ippo="15" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="41" invs="31" ippo="41" s="g" ts="2018-05-02 13:04:32">
+     <e txt="lower-bound value is address of stack variable r"/>
+    </ppo>
+    <ppo deps="s" id="27" ippo="27" s="g">
+     <e txt="unsigned value is always non-negative"/>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="unsigned value is always non-negative"/>
+    </ppo>
+    <ppo deps="f" id="26" invs="58" ippo="26" s="g" ts="2018-05-02 13:04:32">
+     <e txt="assignedAt#1882"/>
+    </ppo>
+    <ppo deps="f" id="38" invs="51" ippo="38" s="g" ts="2018-05-02 13:04:32">
+     <e txt="assignedAt#1885"/>
+    </ppo>
+    <ppo id="42" ippo="42">
+     <d>
+      <invs>
+       <arg a="2" i="31,51,63"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo id="11" ippo="11">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="array length is: 256; no index upper-bound value found for i; invariants: {assignedAt#1879}; "/>
+       <msg t="array length is: 256; no index upper-bound value found for i; invariants: {assignedAt#1879};"/>
+       <msg t="array length is: 256; no index upper-bound value found for i; invariants: {assignedAt#1879};"/>
+       <msg t="array length is: 256; no index upper-bound value found for i; invariants: {assignedAt#1879};"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="9" ippo="9" s="g">
+     <e txt="rc4_sbox is global"/>
+    </ppo>
+    <ppo deps="f" id="31" invs="54" ippo="31" s="g" ts="2018-05-02 13:04:32">
+     <e txt="assignedAt#1880"/>
+    </ppo>
+    <ppo deps="s" id="12" ippo="12" s="g">
+     <e txt="i is global"/>
+    </ppo>
+    <ppo deps="f" id="46" invs="49" ippo="46" s="g" ts="2018-05-02 13:04:32">
+     <e txt="assignedAt#1880"/>
+    </ppo>
+    <ppo deps="s" id="13" ippo="13" s="g">
+     <e txt="j is global"/>
+    </ppo>
+    <ppo deps="f" id="39" invs="31" ippo="39" s="g" ts="2018-05-02 13:04:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:memory base: addrof_localvar_r_13"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="address of stack variable r is not null"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="overflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="f" id="34" invs="28" ippo="34" s="g" ts="2018-05-02 13:04:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:memory base: addrof_localvar_r_13"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="address of stack variable r is not null"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="casting from unsigned char to unsigned int is safe"/>
+    </ppo>
+    <ppo deps="f" id="35" invs="28" ippo="35" s="g" ts="2018-05-02 13:04:32">
+     <d>
+      <invs/>
+      <msgs/>
+      <amsgs>
+       <arg a="1">
+        <msg t="[1]:memory base: addrof_localvar_r_13"/>
+       </arg>
+      </amsgs>
+     </d>
+     <e txt="address of stack variable r is pointing to valid memory"/>
+    </ppo>
+    <ppo deps="s" id="51" ippo="51" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="48" ippo="48" s="g">
+     <e txt="underflow is well defined for unsigned types"/>
+    </ppo>
+    <ppo deps="s" id="29" ippo="29" s="g">
+     <e txt="j is global"/>
+    </ppo>
+    <ppo deps="s" id="43" ippo="43" s="g">
+     <e txt="rc4_sbox is global"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="cast to character type"/>
+    </ppo>
+    <ppo id="20" ippo="20">
+     <d>
+      <invs/>
+      <msgs>
+       <msg t="array length is: 256; no index upper-bound value found for j; invariants: {assignedAt#1881}; "/>
+       <msg t="array length is: 256; no index upper-bound value found for j; invariants: {assignedAt#1881};"/>
+       <msg t="array length is: 256; no index upper-bound value found for j; invariants: {assignedAt#1881};"/>
+       <msg t="array length is: 256; no index upper-bound value found for j; invariants: {assignedAt#1881};"/>
+      </msgs>
+      <amsgs/>
+     </d>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

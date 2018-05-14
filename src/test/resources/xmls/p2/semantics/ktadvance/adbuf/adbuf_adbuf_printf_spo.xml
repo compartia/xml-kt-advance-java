@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:30">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_printf">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="6,7,9,3" ictxt="137" iloc="12" ivinfo="17">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="20,41,42" ictxt="182" iloc="23" ivinfo="11">
+       <api-conditions>
+        <api-c iapi="339">
+         <po deps="a" id="2" ids="1" invs="260" ispo="2" s="g">
+          <e txt="condition not-null(dst) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="337">
+         <po deps="a" id="1" ids="2" invs="18" ispo="1" s="g">
+          <e txt="condition initialized(dst-&gt;buf) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="346">
+         <po deps="a" id="3" ids="3" invs="18" ispo="3" s="g">
+          <e txt="condition initialized(dst-&gt;left) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="347">
+         <po deps="a" id="4" ids="4" invs="18" ispo="4" s="g">
+          <e txt="condition initialized(dst-&gt;size) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="477">
+         <po deps="f" id="5" invs="274" ispo="5" s="g">
+          <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="20,21,22" ictxt="148" iloc="15" ivinfo="11">
+       <api-conditions>
+        <api-c iapi="339">
+         <po deps="a" id="7" ids="1" invs="271" ispo="7" s="g">
+          <e txt="condition not-null(dst) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="337">
+         <po deps="a" id="6" ids="2" invs="18" ispo="6" s="g">
+          <e txt="condition initialized(dst-&gt;buf) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="346">
+         <po deps="a" id="8" ids="3" invs="18" ispo="8" s="g">
+          <e txt="condition initialized(dst-&gt;left) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="347">
+         <po deps="a" id="9" ids="4" invs="18" ispo="9" s="g">
+          <e txt="condition initialized(dst-&gt;size) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="477">
+         <po deps="f" id="10" invs="267" ispo="10" s="g">
+          <e txt="address of stack variable buf is not null"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="20,41,46" ictxt="193" iloc="26" ivinfo="11">
+       <api-conditions>
+        <api-c iapi="339">
+         <po deps="a" id="12" ids="1" invs="265" ispo="12" s="g">
+          <e txt="condition not-null(dst) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="337">
+         <po deps="a" id="11" ids="2" invs="18" ispo="11" s="g">
+          <e txt="condition initialized(dst-&gt;buf) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="346">
+         <po deps="a" id="13" ids="3" invs="18" ispo="13" s="g">
+          <e txt="condition initialized(dst-&gt;left) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="347">
+         <po deps="a" id="14" ids="4" invs="18" ispo="14" s="g">
+          <e txt="condition initialized(dst-&gt;size) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="477">
+         <po deps="f" id="15" invs="276" ispo="15" s="g">
+          <e txt="null has been explicitly excluded (either by assignment or by checking)"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="20,21,42" ictxt="201" iloc="30" ivinfo="11">
+       <api-conditions>
+        <api-c iapi="339">
+         <po deps="a" id="17" ids="1" invs="256" ispo="17" s="g">
+          <e txt="condition not-null(dst) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="337">
+         <po deps="a" id="16" ids="2" invs="18" ispo="16" s="g">
+          <e txt="condition initialized(dst-&gt;buf) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="346">
+         <po deps="a" id="18" ids="3" invs="18" ispo="18" s="g">
+          <e txt="condition initialized(dst-&gt;left) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="347">
+         <po deps="a" id="19" ids="4" invs="18" ispo="19" s="g">
+          <e txt="condition initialized(dst-&gt;size) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="477">
+         <po deps="f" id="20" invs="252" ispo="20" s="g">
+          <e txt="address of stack variable buf is not null"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+      <dc iargs="37,28,9,3" ictxt="165" iloc="20" ivinfo="17">
+       <api-conditions/>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="200" iexp="47" iloc="28">
+      <postconditions/>
+     </rs>
+     <rs ictxt="152" iexp="23" iloc="15">
+      <postconditions/>
+     </rs>
+     <rs ictxt="163" iexp="26" iloc="18">
+      <postconditions/>
+     </rs>
+     <rs ictxt="206" iexp="48" iloc="30">
+      <postconditions/>
+     </rs>
+     <rs ictxt="190" iexp="44" iloc="25">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

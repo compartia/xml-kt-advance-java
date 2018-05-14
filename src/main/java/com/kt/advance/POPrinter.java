@@ -18,9 +18,12 @@ public class POPrinter {
         }
 
         sb.append(RL).append("@");
-
-        sb.append(po.getLocation().toString());
-
+        if (po.getLocation() != null) {
+            //PPO;
+            sb.append(po.getLocation().toString());
+        } else {
+            //SPO
+        }
         sb.append(RL).append(po.getDeps().toString());
         return sb.toString();
     }

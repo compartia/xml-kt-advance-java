@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:28">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_clear">
+   <ppos>
+    <ppo id="1" ippo="1"/>
+    <ppo deps="f" id="10" invs="8" ippo="10" s="g" ts="2018-05-02 13:04:41">
+     <e txt="initial value of parameter memref-1 satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="11" invs="8" ippo="11" s="g" ts="2018-05-02 13:04:41">
+     <e txt="upper-bound value is initial value of parameter memref-1 satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo id="9" ippo="9">
+     <d>
+      <invs>
+       <arg a="1" i="8"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="s" id="4" ippo="4" s="g">
+     <e txt="z is a function parameter"/>
+    </ppo>
+    <ppo deps="a" id="5" ids="1" invs="6" ippo="5" s="g" ts="2018-05-02 13:04:41">
+     <e txt="condition not-null(z) delegated to api"/>
+    </ppo>
+    <ppo deps="a" id="3" ids="2" invs="7" ippo="3" s="g" ts="2018-05-02 13:04:41">
+     <e txt="condition initialized(z-&gt;d) delegated to api"/>
+    </ppo>
+    <ppo deps="f" id="7" invs="6" ippo="7" s="g" ts="2018-05-02 13:04:41">
+     <e txt="initial value of parameter z satisfies lower bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="8" invs="6" ippo="8" s="g" ts="2018-05-02 13:04:41">
+     <e txt="upper-bound value is initial value of parameter z satisfies upper bound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="cast to void pointer"/>
+    </ppo>
+    <ppo deps="f" id="6" invs="13" ippo="6" s="g" ts="2018-05-02 13:04:41">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(z_1_)#init"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

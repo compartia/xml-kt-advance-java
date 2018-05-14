@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:16:05">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_divi_qr_raw">
+   <api xlst="10">
+    <api-assumptions>
+     <aa ipr="2658" ppos="13" spos="1"/>
+     <aa ipr="2659" ppos="165,15" spos="2"/>
+     <aa ipr="2671" ppos="31,194,213" spos="23,18,14,9"/>
+     <aa ipr="2672" ppos="42,149,368,114,234,196,98,190,134,78,209,33,261,215,395,244,60,378" spos="19,15,5,7"/>
+     <aa ipr="2676" ppos="147,112,58,132,40,76,96,376,242,188" spos="20,16,6,4"/>
+     <aa ipr="2706" ppos="163" spos="3"/>
+     <aa ipr="2732" ppos="232,366" spos="22,17"/>
+     <aa ipr="2749" ppos="338,286,302" spos="12"/>
+     <aa ipr="2750" ppos="340,304,288,330,357" spos="11"/>
+     <aa ipr="2764" ppos="328" spos="13"/>
+     <aa ipr="3201" spos="8"/>
+     <aa ipr="3375" spos="10"/>
+     <aa ipr="3376" spos="21"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees>
+     <gg iipc="1"/>
+    </postcondition-guarantees>
+    <library-calls/>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="2650"/>
+     <uu po-id="2679"/>
+     <uu po-id="2707"/>
+     <uu po-id="2731"/>
+     <uu po-id="2752"/>
+     <uu po-id="2763"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

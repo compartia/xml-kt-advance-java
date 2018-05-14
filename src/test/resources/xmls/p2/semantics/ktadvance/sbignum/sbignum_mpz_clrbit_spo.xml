@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:18">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_clrbit">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="1648" ictxt="375" iloc="1475" ivinfo="70">
+       <api-conditions>
+        <api-c iapi="1119">
+         <po deps="a" id="4" ids="3" invs="7" ispo="4" s="g">
+          <e txt="condition initialized(z-&gt;l) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="1096">
+         <po deps="a" id="2" ids="1" invs="49" ispo="2" s="g">
+          <e txt="condition not-null(z) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="1094">
+         <po deps="a" id="1" ids="4" invs="7" ispo="1" s="g">
+          <e txt="condition initialized(z-&gt;a) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="1105">
+         <po deps="a" id="3" ids="2" invs="7" ispo="3" s="g">
+          <e txt="condition initialized(z-&gt;d) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="358" iexp="1" iloc="1472">
+      <postconditions/>
+     </rs>
+     <rs ictxt="377" iexp="1" iloc="1477">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

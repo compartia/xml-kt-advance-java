@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:32">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_gcd_ui">
+   <assumption-table/>
+   <ppo-type-table>
+    <n a="202,2200,4" ix="1" t="p"/>
+   </ppo-type-table>
+   <spo-type-table/>
+  </function>
+ </c-analysis>

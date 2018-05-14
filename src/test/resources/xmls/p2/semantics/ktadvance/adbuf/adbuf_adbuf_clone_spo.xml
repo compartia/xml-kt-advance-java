@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:13:30">
+   <application file="adbuf.c"/>
+  </header>
+  <function fname="adbuf_clone">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="54" ictxt="286" iloc="37" ivinfo="14">
+       <api-conditions>
+        <api-c iapi="306">
+         <po deps="a" id="2" ids="5" invs="12" ispo="2" s="g">
+          <e txt="condition initialized(dst-&gt;buf) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="295">
+         <po deps="a" id="1" ids="6" invs="56" ispo="1" s="g">
+          <e txt="condition not-null(dst) delegated to api"/>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="no"/>
+      </dc>
+      <dc iargs="54,56,59" ictxt="290" iloc="39" ivinfo="11">
+       <api-conditions>
+        <api-c iapi="339">
+         <po deps="a" id="4" ids="6" invs="54" ispo="4" s="g">
+          <e txt="condition not-null(dst) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="337">
+         <po deps="a" id="3" ids="5" invs="12" ispo="3" s="g">
+          <e txt="condition initialized(dst-&gt;buf) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="346">
+         <po deps="a" id="5" ids="7" invs="12" ispo="5" s="g">
+          <e txt="condition initialized(dst-&gt;left) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="347">
+         <po deps="a" id="6" ids="8" invs="12" ispo="6" s="g">
+          <e txt="condition initialized(dst-&gt;size) delegated to api"/>
+         </po>
+        </api-c>
+        <api-c iapi="477">
+         <po id="7" ispo="7">
+          <d>
+           <invs>
+            <arg a="1" i="53"/>
+           </invs>
+           <msgs/>
+           <amsgs/>
+          </d>
+         </po>
+        </api-c>
+       </api-conditions>
+       <post-guarantees/>
+       <frees v="yes"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites>
+     <rs ictxt="300" iexp="60" iloc="39">
+      <postconditions/>
+     </rs>
+     <rs ictxt="289" iexp="26" iloc="38">
+      <postconditions/>
+     </rs>
+     <rs ictxt="285" iexp="26" iloc="35">
+      <postconditions/>
+     </rs>
+    </returnsites>
+   </spos>
+  </function>
+ </c-analysis>

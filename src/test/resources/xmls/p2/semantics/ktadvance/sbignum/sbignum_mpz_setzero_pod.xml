@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:25">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_setzero">
+   <assumption-table>
+    <n a="736" ix="1" t="aa"/>
+    <n a="3408" ix="2" t="aa"/>
+    <n a="3409" ix="3" t="aa"/>
+    <n a="3410" ix="4" t="aa"/>
+   </assumption-table>
+   <ppo-type-table>
+    <n a="446,945,735" ix="1" t="p"/>
+    <n a="446,945,736" ix="2" t="p"/>
+    <n a="446,945,737" ix="3" t="p"/>
+    <n a="446,945,738" ix="4" t="p"/>
+    <n a="446,945,739" ix="5" t="p"/>
+    <n a="446,946,4" ix="6" t="p"/>
+    <n a="447,948,735" ix="7" t="p"/>
+    <n a="447,948,737" ix="8" t="p"/>
+    <n a="447,948,738" ix="9" t="p"/>
+    <n a="447,948,739" ix="10" t="p"/>
+    <n a="447,949,4" ix="11" t="p"/>
+    <n a="447,950,740" ix="12" t="p"/>
+   </ppo-type-table>
+   <spo-type-table>
+    <n a="447,947,3408,3040" ix="1" t="cs"/>
+    <n a="447,947,736,3041" ix="2" t="cs"/>
+    <n a="447,947,3409,3042" ix="3" t="cs"/>
+    <n a="447,947,3410,3043" ix="4" t="cs"/>
+   </spo-type-table>
+  </function>
+ </c-analysis>

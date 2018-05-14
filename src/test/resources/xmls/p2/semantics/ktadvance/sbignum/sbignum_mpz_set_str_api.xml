@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:16:02">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_set_str">
+   <api xlst="17">
+    <api-assumptions>
+     <aa ipr="2529" ppos="183,84,38,132,67,51,13,237,23,1,79,62,188"/>
+     <aa ipr="2611" ppos="242" spos="20,25,17"/>
+     <aa ipr="3036" ppos="239"/>
+     <aa ipr="3037" ppos="160"/>
+     <aa ipr="3347" spos="26,28,16"/>
+     <aa ipr="3348" spos="40,27,18"/>
+     <aa ipr="3349" spos="19"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests>
+     <rr iipr="1" ppos="195"/>
+     <rr iipr="2" ppos="194"/>
+    </postcondition-requests>
+    <postcondition-guarantees/>
+    <library-calls>
+     <lc c="1" f="strlen" h="string"/>
+     <lc c="3" f="tolower" h="ctype"/>
+     <lc c="2" f="__ctype_b_loc" h="ctype"/>
+    </library-calls>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="2535"/>
+     <uu po-id="2581"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

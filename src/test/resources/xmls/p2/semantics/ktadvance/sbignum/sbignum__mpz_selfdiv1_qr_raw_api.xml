@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:17">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="_mpz_selfdiv1_qr_raw">
+   <api xlst="4">
+    <api-assumptions>
+     <aa ipr="179" ppos="93,72,3"/>
+     <aa ipr="181" ppos="95,68,21,5,74,38,89"/>
+     <aa ipr="195" ppos="66,36,19"/>
+     <aa ipr="3016" ppos="57,61"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls/>
+    <missing-summaries/>
+    <unevaluated>
+     <uu po-id="178"/>
+     <uu po-id="196"/>
+     <uu po-id="216"/>
+    </unevaluated>
+   </api>
+  </function>
+ </c-analysis>

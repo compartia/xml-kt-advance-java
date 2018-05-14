@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:25">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="mpz_setzero">
+   <api>
+    <api-assumptions>
+     <aa ipr="736" ppos="2" spos="2"/>
+     <aa ipr="3408" spos="1"/>
+     <aa ipr="3409" spos="3"/>
+     <aa ipr="3410" spos="4"/>
+    </api-assumptions>
+    <global-assumptions/>
+    <postcondition-requests/>
+    <postcondition-guarantees/>
+    <library-calls/>
+    <missing-summaries/>
+    <unevaluated/>
+   </api>
+  </function>
+ </c-analysis>

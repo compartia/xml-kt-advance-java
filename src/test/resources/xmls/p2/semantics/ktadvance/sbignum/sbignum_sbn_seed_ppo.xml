@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:27">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="sbn_seed">
+   <ppos>
+    <ppo id="22" ippo="22">
+     <d>
+      <invs>
+       <arg a="4" i="17,16,33,42"/>
+       <arg a="3" i="8,30,43,52"/>
+      </invs>
+      <msgs/>
+      <amsgs>
+       <arg a="3">
+        <msg t="[3]:upper-bound expr: (seed_3_)#init"/>
+       </arg>
+      </amsgs>
+     </d>
+    </ppo>
+    <ppo deps="f" id="18" invs="42" ippo="18" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1859"/>
+    </ppo>
+    <ppo deps="a" id="19" ids="1" invs="8" ippo="19" s="g" ts="2018-05-02 13:04:39">
+     <e txt="condition not-null(seed) delegated to api"/>
+    </ppo>
+    <ppo deps="s" id="32" ippo="32" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="f" id="17" invs="43" ippo="17" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1857"/>
+    </ppo>
+    <ppo deps="s" id="1" ippo="1" s="g">
+     <e txt="cast to character type"/>
+    </ppo>
+    <ppo deps="s" id="28" ippo="28" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="s" id="23" ippo="23" s="g">
+     <e txt="arguments of pointer arithmetic are checked for null"/>
+    </ppo>
+    <ppo deps="s" id="25" ippo="25" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy lowerbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="f" id="4" invs="47" ippo="4" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1859"/>
+    </ppo>
+    <ppo deps="s" id="5" ippo="5" s="g">
+     <e txt="len is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="3" invs="26" ippo="3" s="g" ts="2018-05-02 13:04:39">
+     <e txt="value 0 is non-negative and target type maximum value is larger than or equal to source type maximum value"/>
+    </ppo>
+    <ppo deps="f" id="30" invs="46" ippo="30" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1862"/>
+    </ppo>
+    <ppo id="16" ippo="16"/>
+    <ppo deps="s" id="24" ippo="24" s="g">
+     <e txt="pointer arithmetic stays within memory region"/>
+    </ppo>
+    <ppo deps="f" id="14" invs="42" ippo="14" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1859"/>
+    </ppo>
+    <ppo deps="f" id="21" invs="17" ippo="21" s="g" ts="2018-05-02 13:04:39">
+     <e txt="non-negative pointer increment: lower bound for i is 0"/>
+    </ppo>
+    <ppo deps="f" id="33" invs="12,1" ippo="33" s="g" ts="2018-05-02 13:04:39">
+     <e txt="result of addition is less than MAX: satisfies((31 + 1) &lt; 2147483647)"/>
+    </ppo>
+    <ppo deps="s" id="6" ippo="6" s="g">
+     <e txt="index value is masked with a non-negative number: 255"/>
+    </ppo>
+    <ppo deps="s" id="15" ippo="15" s="g">
+     <e txt="cast from unsigned char to int is safe"/>
+    </ppo>
+    <ppo deps="f" id="27" invs="45" ippo="27" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1859"/>
+    </ppo>
+    <ppo deps="s" id="10" ippo="10" s="g">
+     <e txt="cast from unsigned char to int is safe"/>
+    </ppo>
+    <ppo deps="s" id="26" ippo="26" s="g">
+     <e txt="result of pointer arithmetic is guaranteed to satisfy upperbound by inductive hypothesis"/>
+    </ppo>
+    <ppo deps="s" id="11" ippo="11" s="g">
+     <e txt="rc4_sbox is global"/>
+    </ppo>
+    <ppo id="9" ippo="9"/>
+    <ppo deps="f" id="31" invs="40" ippo="31" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1862"/>
+    </ppo>
+    <ppo deps="s" id="12" ippo="12" s="g">
+     <e txt="index value is masked with a non-negative number: 255"/>
+    </ppo>
+    <ppo deps="s" id="13" ippo="13" s="g">
+     <e txt="index value is masked with 255 which is less than the size of the array: 256"/>
+    </ppo>
+    <ppo deps="s" id="7" ippo="7" s="g">
+     <e txt="index value is masked with 255 which is less than the size of the array: 256"/>
+    </ppo>
+    <ppo deps="f" id="8" invs="42" ippo="8" s="g" ts="2018-05-02 13:04:39">
+     <e txt="assignedAt#1859"/>
+    </ppo>
+    <ppo deps="f" id="29" invs="21,9" ippo="29" s="g" ts="2018-05-02 13:04:39">
+     <e txt="result of addition is equal to external value: (((len_1_)#init - 1) + 1) = (len_1_)#init"/>
+    </ppo>
+    <ppo deps="s" id="2" ippo="2" s="g">
+     <e txt="seed is a function parameter"/>
+    </ppo>
+    <ppo deps="f" id="20" invs="52" ippo="20" s="g" ts="2018-05-02 13:04:39">
+     <e txt="all memory regions potentially pointed at are valid: addr_in_(seed_3_)#init"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:15:27">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="sbn_seed">
+   <spos>
+    <callsites>
+     <direct-calls>
+      <dc iargs="" ictxt="1261" iloc="64" ivinfo="3">
+       <api-conditions/>
+       <post-guarantees>
+        <pg iipc="1"/>
+       </post-guarantees>
+       <frees v="no"/>
+      </dc>
+     </direct-calls>
+     <indirect-calls/>
+    </callsites>
+    <returnsites/>
+   </spos>
+  </function>
+ </c-analysis>

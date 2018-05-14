@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <c-analysis>
+  <header time="2018-05-02 13:16:08">
+   <application file="sbignum.c"/>
+  </header>
+  <function fname="sbn_rand_init">
+   <ppos>
+    <ppo deps="f" id="1" invs="15" ippo="1" s="g" ts="2018-05-02 13:05:18">
+     <e txt="assignedAt#1849"/>
+    </ppo>
+    <ppo deps="f" id="9" invs="5,2" ippo="9" s="g" ts="2018-05-02 13:05:18">
+     <e txt="result of addition is less than MAX: satisfies((255 + 1) &lt; 2147483647)"/>
+    </ppo>
+    <ppo deps="f" id="4" invs="14" ippo="4" s="g" ts="2018-05-02 13:05:18">
+     <e txt="assignedAt#1849"/>
+    </ppo>
+    <ppo id="5" ippo="5">
+     <d>
+      <invs>
+       <arg a="3" i="7,14"/>
+      </invs>
+      <msgs/>
+      <amsgs/>
+     </d>
+    </ppo>
+    <ppo deps="f" id="3" invs="7" ippo="3" s="g" ts="2018-05-02 13:05:18">
+     <e txt="upper bound of index value: 255, is less than length: 256"/>
+    </ppo>
+    <ppo deps="f" id="7" invs="13" ippo="7" s="g" ts="2018-05-02 13:05:18">
+     <e txt="assignedAt#1849"/>
+    </ppo>
+    <ppo deps="s" id="8" ippo="8" s="g">
+     <e txt="add non-negative number:  value is 1"/>
+    </ppo>
+    <ppo deps="f" id="2" invs="7" ippo="2" s="g" ts="2018-05-02 13:05:18">
+     <e txt="index value has non-negative lower bound: 0"/>
+    </ppo>
+    <ppo deps="f" id="6" invs="14" ippo="6" s="g" ts="2018-05-02 13:05:18">
+     <e txt="assignedAt#1849"/>
+    </ppo>
+   </ppos>
+  </function>
+ </c-analysis>
