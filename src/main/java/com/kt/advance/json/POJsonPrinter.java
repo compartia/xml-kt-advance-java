@@ -38,27 +38,6 @@ import kt.advance.model.CVarInfo;
 import kt.advance.model.ExpFactory.CExpression;
 
 public class POJsonPrinter {
-    private static final Logger LOG = LoggerFactory.getLogger(POJsonPrinter.class.getName());
-
-    public static void main(String[] args) throws JAXBException, IOException {
-
-        final long startTime = System.nanoTime();
-        //
-        final String basedir = args[0];
-        final FsAbstractionImpl fileSystem = new FsAbstractionImpl(new File(basedir));
-        final CAnalysisImpl an = new CAnalysisImpl(fileSystem);
-        an.read();
-
-        final File file = new File(an.fs.getBaseDir(), an.fs.getBaseDir().getName() + ".kt.analysis.json");
-        POJsonPrinter.toJson(an, file);
-
-        final long endTime = System.nanoTime();
-        final long durations = TimeUnit.NANOSECONDS.toSeconds(endTime - startTime);
-        LOG.info(
-            "TOOK {}  seconds; or {}  ms", durations, TimeUnit.NANOSECONDS.toMillis(endTime - startTime));
-
-    }
-
     static class JAnalysis implements Jsonable {
 
         public final List<JApp> apps;
@@ -80,13 +59,13 @@ public class POJsonPrinter {
     }
 
     static class JApiAssumption {
+        public final String exp;
+
         public final Integer id;
 
         @JsonInclude(Include.NON_EMPTY)
         public final Integer[] ppos;
-
         public final String prd;
-        public final String exp;
 
         @JsonInclude(Include.NON_EMPTY)
         public final Integer[] spos;
@@ -120,12 +99,12 @@ public class POJsonPrinter {
         public JVarInfo callee;
 
         public String exp;
-        public final String type;
-
         public final JLocation loc;
 
         @JsonInclude(Include.NON_EMPTY)
         public List<JPO> spos = new ArrayList<>();
+
+        public final String type;
 
         public JCalliste(CFunctionSiteSPOs site) {
 
@@ -173,9 +152,6 @@ public class POJsonPrinter {
         @JsonInclude(Include.NON_EMPTY)
         public List<JCalliste> callsites = new ArrayList<>();
 
-        @JsonInclude(Include.NON_EMPTY)
-        public List<JCalliste> returnsites = new ArrayList<>();
-
         public JLocation loc;
 
         public String name;
@@ -183,10 +159,13 @@ public class POJsonPrinter {
         @JsonInclude(Include.NON_EMPTY)
         public List<JPO> ppos = new ArrayList<>();
 
+        @JsonInclude(Include.NON_EMPTY)
+        public List<JCalliste> returnsites = new ArrayList<>();
+
         public JFunc(CFunction cfunction) {
             this.name = cfunction.getName();
 
-            this.loc = new JLocation(cfunction.getLocation());//.getLine();
+            this.loc = new JLocation(cfunction.getLocation());
 
             /*
              * API
@@ -227,7 +206,7 @@ public class POJsonPrinter {
             for (final CFunctionSiteSPOs returnsite : cfunction.getReturnsites()) {
                 final JCalliste jsite = new JCalliste(returnsite);
                 if (!jsite.spos.isEmpty()) {
-                    //TODO: this must pe configurable
+                    //TODO: this must be configurable
                     this.returnsites.add(jsite);
                 }
             }
@@ -277,6 +256,18 @@ public class POJsonPrinter {
 
         public String sts;
 
+        public JPO(PPO po) {
+            init(po);
+            this.line = po.getLocation().getLine();
+
+        }
+
+        public JPO(SPO po) {
+            init(po);
+            /* SPO location defined by call-site or return-site */
+            this.line = null;
+        }
+
         private void init(PO po) {
 
             this.id = po.getId();
@@ -288,18 +279,14 @@ public class POJsonPrinter {
             this.dep = po.getDeps().level.name();
 
         }
+    }
 
-        public JPO(SPO po) {
-            init(po);
-            /* SPO location defined by call-site or return-site */
-            this.line = null;
-        }
-
-        public JPO(PPO po) {
-            init(po);
-            this.line = po.getLocation().getLine();
-
-        }
+    /**
+     *
+     * just a marker interface
+     *
+     */
+    interface Jsonable {
     }
 
     static class JVarInfo implements Jsonable {
@@ -316,46 +303,33 @@ public class POJsonPrinter {
 
     }
 
-    /**
-     *
-     * just a marker interface
-     *
-     */
-    interface Jsonable {
-    }
+    private static final Logger LOG = LoggerFactory.getLogger(POJsonPrinter.class.getName());
 
     static final String RL = "\n\t\t----> ";
 
-    public static void toJson(CAnalysis an, File file) throws IOException {
-        final JAnalysis jAnalysis = new JAnalysis(an);
-        //        jGenerator.writeObject(jAnalysis);
+    public static void main(String[] args) throws JAXBException, IOException {
 
-        System.out.println("writing json to:" + file.getAbsolutePath());
-
-        LOG.info("writing json to {}", file.getAbsolutePath());
-        final PrintWriter writer = new PrintWriter(file, "UTF-8");
-
-        final JsonFactory jfactory = new JsonFactory();
-        final JsonGenerator jGenerator = jfactory.createGenerator(writer);
-        final ObjectMapper objectMapper = new ObjectMapper();
-
-        //      final SimpleModule simpleModule = new SimpleModule("SimpleModule", new Version(1, 0, 0, null));
+        final long startTime = System.nanoTime();
         //
-        //      objectMapper.registerModule(simpleModule);
+        final String basedir = args[0];
+        final FsAbstractionImpl fileSystem = new FsAbstractionImpl(new File(basedir));
+        final CAnalysisImpl an = new CAnalysisImpl(fileSystem);
+        an.read();
 
-        final ObjectWriter ow = objectMapper.writer().withDefaultPrettyPrinter();
-        ow.writeValue(jGenerator, jAnalysis);
-        writer.close();
+        final File file = new File(an.fs.getBaseDir(), an.fs.getBaseDir().getName() + ".kt.analysis.json");
+        POJsonPrinter.toJson(an, file);
+
+        final long endTime = System.nanoTime();
+        final long durations = TimeUnit.NANOSECONDS.toSeconds(endTime - startTime);
+        LOG.info(
+            "TOOK {}  seconds; or {}  ms", durations, TimeUnit.NANOSECONDS.toMillis(endTime - startTime));
+
     }
 
     public static String toJson(CAnalysis an) {
         final JAnalysis jAnalysis = new JAnalysis(an);
 
         final ObjectMapper objectMapper = new ObjectMapper();
-
-        //        final SimpleModule simpleModule = new SimpleModule("SimpleModule", new Version(1, 0, 0, null));
-        //
-        //        objectMapper.registerModule(simpleModule);
 
         final ObjectWriter ow = objectMapper.writer().withDefaultPrettyPrinter();
 
@@ -366,6 +340,21 @@ public class POJsonPrinter {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public static void toJson(CAnalysis an, File file) throws IOException {
+        final JAnalysis jAnalysis = new JAnalysis(an);
+
+        LOG.info("writing json to {}", file.getAbsolutePath());
+        final PrintWriter writer = new PrintWriter(file, "UTF-8");
+
+        final JsonFactory jfactory = new JsonFactory();
+        final JsonGenerator jGenerator = jfactory.createGenerator(writer);
+        final ObjectMapper objectMapper = new ObjectMapper();
+
+        final ObjectWriter ow = objectMapper.writer().withDefaultPrettyPrinter();
+        ow.writeValue(jGenerator, jAnalysis);
+        writer.close();
     }
 
 }
