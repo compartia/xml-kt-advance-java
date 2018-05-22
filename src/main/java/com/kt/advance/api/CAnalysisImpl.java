@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Preconditions;
 import com.kt.advance.ErrorsBundle;
+import com.kt.advance.ProgressTracker;
 
 import kt.advance.model.CApplicationImpl;
 
@@ -43,9 +44,16 @@ public class CAnalysisImpl implements CAnalysis {
     }
 
     @Override
-    public void read() throws JAXBException {
+    public void read(ProgressTracker tracker) throws JAXBException {
+
+        tracker.addProgress(0, "Scanning for C-apps");
         scanForCApps();
-        getApps().forEach(CApplication::read);
+        tracker.addProgress(5, "Scanning for C-apps");
+
+        final float inc = 95f / getApps().size();
+        getApps().forEach(app -> {
+            app.read(tracker.getSubtaskTracker(inc, "reading " + app.toString()));
+        });
     }
 
     @Override

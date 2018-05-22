@@ -21,6 +21,7 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import com.kt.advance.ProgressTracker;
 import com.kt.advance.api.ApiAssumption;
 import com.kt.advance.api.CAnalysis;
 import com.kt.advance.api.CAnalysisImpl;
@@ -314,7 +315,9 @@ public class POJsonPrinter {
         final String basedir = args[0];
         final FsAbstractionImpl fileSystem = new FsAbstractionImpl(new File(basedir));
         final CAnalysisImpl an = new CAnalysisImpl(fileSystem);
-        an.read();
+
+        final ProgressTracker tracker = new ProgressTracker();
+        an.read(tracker);
 
         final File file = new File(an.fs.getBaseDir(), an.fs.getBaseDir().getName() + ".kt.analysis.json");
         POJsonPrinter.toJson(an, file);

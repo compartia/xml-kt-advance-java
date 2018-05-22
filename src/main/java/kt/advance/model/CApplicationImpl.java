@@ -41,6 +41,7 @@ import org.slf4j.LoggerFactory;
 import com.google.common.base.Preconditions;
 import com.kt.TestMode;
 import com.kt.advance.ErrorsBundle;
+import com.kt.advance.ProgressTracker;
 import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
@@ -125,20 +126,24 @@ public class CApplicationImpl implements CApplication {
     }
 
     @Override
-    public void read() {
+    public void read(ProgressTracker tr) {
 
         LOG.info("reading APP DIR: " + fs.getBaseDir());
 
-        readAllCfileXmls(fs.listXMLs(FsAbstraction.CFILE_SUFFIX));
-        readAllCdictXmls(fs.listXMLs(FsAbstraction.CDICT_SUFFIX));
+        readAllCfileXmls(fs.listXMLs(FsAbstraction.CFILE_SUFFIX), tr.getSubtaskTracker(5, "reading cfiles"));
+        readAllCdictXmls(fs.listXMLs(FsAbstraction.CDICT_SUFFIX), tr.getSubtaskTracker(10, "reading cdict files"));
+        readAllCfuncsXmls(fs.listXMLs(FsAbstraction.CFUN_SUFFIX), tr.getSubtaskTracker(5, "reading cfun files"));
 
-        readAllCfuncsXmls(fs.listXMLs(FsAbstraction.CFUN_SUFFIX));
+        readAllPrdXmls(fs.listXMLs(FsAbstraction.PRD_SUFFIX), tr.getSubtaskTracker(10, "reading prd files"));
 
-        readAllPrdXmls(fs.listXMLs(FsAbstraction.PRD_SUFFIX));
-        readAllPodXmls(fs.listXMLs(FsAbstraction.POD_SUFFIX));
-        readAllPpoXmls(fs.listXMLs(FsAbstraction.PPO_SUFFIX));
-        readAllSpoXmls(fs.listXMLs(FsAbstraction.SPO_SUFFIX));
-        readAllApiXmls(fs.listXMLs(FsAbstraction.API_SUFFIX));
+        readAllPodXmls(fs.listXMLs(FsAbstraction.POD_SUFFIX), tr.getSubtaskTracker(10, "reading pod files"));
+
+        readAllPpoXmls(fs.listXMLs(FsAbstraction.PPO_SUFFIX), tr.getSubtaskTracker(20, "reading ppo files"));
+
+        readAllSpoXmls(fs.listXMLs(FsAbstraction.SPO_SUFFIX), tr.getSubtaskTracker(20, "reading spo files"));
+
+        readAllApiXmls(fs.listXMLs(FsAbstraction.API_SUFFIX), tr.getSubtaskTracker(20, "reading api files"));
+        //        tracker.addProgress(70);
 
     }
 
@@ -177,9 +182,10 @@ public class CApplicationImpl implements CApplication {
         return cfile.getCFunctionImpl(f.getFunctionName());
     }
 
-    void readAllApiXmls(Collection<File> apiFiles) {
+    void readAllApiXmls(Collection<File> apiFiles, ProgressTracker tracker) {
 
         LOG.info("reading {} {} files", apiFiles.size(), FsAbstraction.API_SUFFIX);
+        final float progressInc = 100f / apiFiles.size();
         final XMLFileType<ApiXml> reader = XMLFileType.getReader(ApiXml.class);
 
         StreamSupport.stream(apiFiles.spliterator(), !TestMode.inTestMode)
@@ -189,13 +195,14 @@ public class CApplicationImpl implements CApplication {
                 .forEach(xmlObj -> runInHandler(() -> {
                     final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
                     cFunction.readApiFile(xmlObj);
-
+                    tracker.addProgress(progressInc);
                 }, xmlObj));
 
     }
 
-    void readAllCdictXmls(Collection<File> cdictFiles) {
+    void readAllCdictXmls(Collection<File> cdictFiles, ProgressTracker tracker) {
         LOG.info("reading {} {} files", cdictFiles.size(), FsAbstraction.CDICT_SUFFIX);
+        final float progressInc = 100f / cdictFiles.size();
 
         final XMLFileType<CdictXml> reader = XMLFileType.getReader(CdictXml.class);
 
@@ -207,15 +214,17 @@ public class CApplicationImpl implements CApplication {
                     xmlObj -> runInHandler(() -> {
                         final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
                         cfile.readCDictFile(xmlObj, predicatesFactory.expressionsFactory);
+                        tracker.addProgress(progressInc);
                     }, xmlObj)
 
         );
 
     }
 
-    void readAllCfileXmls(Collection<File> cdictFiles) {
+    void readAllCfileXmls(Collection<File> cdictFiles, ProgressTracker tracker) {
         final Instant start = Instant.now();
         LOG.info("reading {} {} files", cdictFiles.size(), FsAbstraction.CFILE_SUFFIX);
+        final float progressInc = 100f / cdictFiles.size();
 
         final XMLFileType<CfileXml> reader = XMLFileType.getReader(CfileXml.class);
 
@@ -227,6 +236,7 @@ public class CApplicationImpl implements CApplication {
                     xmlObj -> runInHandler(() -> {
                         final CFileImpl cfile = getCFileOrMakeNew(xmlObj.getSourceFilename());
                         cfile.readCFileXml(xmlObj);
+                        tracker.addProgress(progressInc);
                     }, xmlObj)
 
         );
@@ -236,9 +246,10 @@ public class CApplicationImpl implements CApplication {
 
     }
 
-    void readAllCfuncsXmls(Collection<File> files) {
+    void readAllCfuncsXmls(Collection<File> files, ProgressTracker tracker) {
 
         LOG.info("reading {} {} files", files.size(), FsAbstraction.CFUN_SUFFIX);
+        final float progressInc = 100f / files.size();
 
         final XMLFileType<CFunXml> reader = XMLFileType.getReader(CFunXml.class);
 
@@ -249,14 +260,15 @@ public class CApplicationImpl implements CApplication {
 
                     final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
                     cfile.getCFunctionOrMakeNew(xmlObj);
-
+                    tracker.addProgress(progressInc);
                 }, xmlObj));
 
     }
 
-    void readAllPodXmls(Collection<File> pods) {
+    void readAllPodXmls(Collection<File> pods, ProgressTracker tracker) {
 
         LOG.info("reading {} {} files", pods.size(), FsAbstraction.POD_SUFFIX);
+        final float progressInc = 100f / pods.size();
         final XMLFileType<PodXml> reader = XMLFileType.getReader(PodXml.class);
 
         StreamSupport.stream(pods.spliterator(), !TestMode.inTestMode)
@@ -266,13 +278,14 @@ public class CApplicationImpl implements CApplication {
                     final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
                     final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
                     cFunction.readPodFile(xmlObj, cfile);
+                    tracker.addProgress(progressInc);
                 }, xmlObj));
 
     }
 
-    void readAllPpoXmls(Collection<File> ppoFiles) {
+    void readAllPpoXmls(Collection<File> ppoFiles, ProgressTracker tracker) {
         LOG.info("reading {} {} files", ppoFiles.size(), FsAbstraction.PPO_SUFFIX);
-
+        final float progressInc = 100f / ppoFiles.size();
         final XMLFileType<PpoXml> reader = XMLFileType.getReader(PpoXml.class);
 
         StreamSupport.stream(ppoFiles.spliterator(), !TestMode.inTestMode)
@@ -282,13 +295,15 @@ public class CApplicationImpl implements CApplication {
                 .forEach(xmlObj -> runInHandler(() -> {
                     final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
                     cFunction.readPpoFile(xmlObj, errors);
+                    tracker.addProgress(progressInc);
                 }, xmlObj));
 
     }
 
-    void readAllPrdXmls(Collection<File> predicatesFiles) {
+    void readAllPrdXmls(Collection<File> predicatesFiles, ProgressTracker tracker) {
 
         LOG.info("reading {} {} files", predicatesFiles.size(), FsAbstraction.PRD_SUFFIX);
+        final float progressInc = 100f / predicatesFiles.size();
 
         final XMLFileType<PrdXml> reader = XMLFileType.getReader(PrdXml.class);
 
@@ -299,12 +314,14 @@ public class CApplicationImpl implements CApplication {
                 .forEach(xmlObj -> runInHandler(() -> {
                     final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
                     cfile.readPrdFile(xmlObj, predicatesFactory);
+                    tracker.addProgress(progressInc);
                 }, xmlObj));
     }
 
-    void readAllSpoXmls(Collection<File> spoFiles) {
+    void readAllSpoXmls(Collection<File> spoFiles, ProgressTracker tracker) {
 
         LOG.info("reading {} {} files", spoFiles.size(), FsAbstraction.SPO_SUFFIX);
+        final float progressInc = 100f / spoFiles.size();
         final XMLFileType<SpoXml> reader = XMLFileType.getReader(SpoXml.class);
 
         StreamSupport.stream(spoFiles.spliterator(), !TestMode.inTestMode)
@@ -314,6 +331,7 @@ public class CApplicationImpl implements CApplication {
                 .forEach(xmlObj -> runInHandler(() -> {
                     final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
                     cFunction.readSpoFile(xmlObj, errors);
+                    tracker.addProgress(progressInc);
                 }, xmlObj));
     }
 

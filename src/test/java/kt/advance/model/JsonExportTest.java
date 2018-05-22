@@ -6,6 +6,7 @@ import javax.xml.bind.JAXBException;
 
 import org.junit.Test;
 
+import com.kt.advance.ProgressTracker;
 import com.kt.advance.api.CAnalysis;
 import com.kt.advance.api.CAnalysisImpl;
 import com.kt.advance.api.FsAbstraction;
@@ -26,7 +27,7 @@ public class JsonExportTest {
         final CAnalysis cAnalysis = new CAnalysisImpl(fsAbstraction);
 
         //force it to read ALL XMLs
-        cAnalysis.read();
+        cAnalysis.read(new ProgressTracker());
 
         POJsonPrinter.toJson(cAnalysis);
 
