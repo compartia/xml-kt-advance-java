@@ -291,15 +291,18 @@ public class CApplicationImpl implements CApplication {
         LOG.info("reading {} {} files", predicatesFiles.size(), FsAbstraction.PRD_SUFFIX);
 
         final XMLFileType<PrdXml> reader = XMLFileType.getReader(PrdXml.class);
+        try {
+            StreamSupport.stream(predicatesFiles.spliterator(), !TestMode.inTestMode)
 
-        StreamSupport.stream(predicatesFiles.spliterator(), !TestMode.inTestMode)
-
-                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                .sequential()
-                .forEach(xmlObj -> runInHandler(() -> {
-                    final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                    cfile.readPrdFile(xmlObj, predicatesFactory);
-                }, xmlObj));
+                    .map(xml -> reader.readXml(xml, fs.getBaseDir()))
+                    .sequential()
+                    .forEach(xmlObj -> runInHandler(() -> {
+                        final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                        cfile.readPrdFile(xmlObj, predicatesFactory);
+                    }, xmlObj));
+        } catch (final Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     void readAllSpoXmls(Collection<File> spoFiles) {

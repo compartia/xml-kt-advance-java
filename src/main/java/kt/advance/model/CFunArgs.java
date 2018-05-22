@@ -65,6 +65,12 @@ class CFunArgs extends Indexed implements Bindable {
     List<CFunArg> cFunArgs;
     Integer[] args;
 
+    private CFunArgs() {
+        super(null);
+    }
+
+    public final static CFunArgs NO_ARGS = new CFunArgs();
+
     public CFunArgs(IndexedTableNode node) {
         super(node);
         args = node.getArguments();
@@ -82,6 +88,6 @@ class CFunArgs extends Indexed implements Bindable {
 
     @Override
     public String toString() {
-        return StringUtils.join(cFunArgs, ", ");
+        return cFunArgs != null ? StringUtils.join(cFunArgs, ", ") : "";
     }
 }

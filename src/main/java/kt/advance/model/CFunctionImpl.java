@@ -111,6 +111,8 @@ class CFunctionImpl implements CFunction {
     }
 
     public void readApiFile(final ApiXml apiXml) {
+
+        Preconditions.checkNotNull(cfile.predicates, "predicates map is null; " + cfile.getName());
         //XXX: read library-calls
         // TODO: read postcondition-guarantees
         //TODO: read postcondition-requests

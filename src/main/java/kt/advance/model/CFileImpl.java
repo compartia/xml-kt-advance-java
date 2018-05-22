@@ -6,6 +6,7 @@ import java.io.File;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
@@ -64,6 +65,9 @@ class CFileImpl implements CFile {
     Map<Integer, CCompInfo> compinfos;
 
     public CFunArgs getCFunArgs(Integer key) {
+        if (key == -1) {
+            return CFunArgs.NO_ARGS;
+        }
         Preconditions.checkState(this.funArgs != null, this.getName() + " has null or borken funArgs map");
         return requireValue(funArgs, key, "funArgs");
     }
@@ -243,10 +247,15 @@ class CFileImpl implements CFile {
                 .map(CLval::new)
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
+        final BinaryOperator<CString> mergeFunction = (a, b) -> {
+            System.err.println("duplicate string key in file " + this.getName() + " :" + a);
+            return a;
+        };
+
         strings = cdict.cfile.cDictionary.strings
                 .stream()
                 .map(CString::new)
-                .collect(Collectors.toMap(node -> node.id, node -> node));
+                .collect(Collectors.toConcurrentMap(node -> node.id, node -> node, mergeFunction));
 
         constants = cdict.cfile.cDictionary.constants
                 .stream()
