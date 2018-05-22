@@ -316,6 +316,7 @@ public class CApplicationImpl implements CApplication {
                     cfile.readPrdFile(xmlObj, predicatesFactory);
                     tracker.addProgress(progressInc);
                 }, xmlObj));
+
     }
 
     void readAllSpoXmls(Collection<File> spoFiles, ProgressTracker tracker) {
