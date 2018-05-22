@@ -314,7 +314,9 @@ public class CApplicationImpl implements CApplication {
                 .forEach(xmlObj -> runInHandler(() -> {
                     final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
                     cfile.readPrdFile(xmlObj, predicatesFactory);
+
                     tracker.addProgress(progressInc);
+
                 }, xmlObj));
 
     }
