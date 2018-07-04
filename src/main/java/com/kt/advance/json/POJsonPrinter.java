@@ -93,7 +93,7 @@ public class POJsonPrinter {
         }
     }
 
-    static class JCalliste implements Jsonable {
+    static class JCallsite implements Jsonable {
 
         @JsonInclude(Include.NON_EMPTY)
         public JVarInfo callee;
@@ -106,7 +106,7 @@ public class POJsonPrinter {
 
         public final String type;
 
-        public JCalliste(CFunctionSiteSPOs site) {
+        public JCallsite(CFunctionSiteSPOs site) {
 
             this.loc = new JLocation(site.getLocation());
 
@@ -150,7 +150,7 @@ public class POJsonPrinter {
         public JApi api = new JApi();
 
         @JsonInclude(Include.NON_EMPTY)
-        public List<JCalliste> callsites = new ArrayList<>();
+        public List<JCallsite> callsites = new ArrayList<>();
 
         public JLocation loc;
 
@@ -160,7 +160,7 @@ public class POJsonPrinter {
         public List<JPO> ppos = new ArrayList<>();
 
         @JsonInclude(Include.NON_EMPTY)
-        public List<JCalliste> returnsites = new ArrayList<>();
+        public List<JCallsite> returnsites = new ArrayList<>();
 
         public JFunc(CFunction cfunction) {
             this.name = cfunction.getName();
@@ -199,12 +199,12 @@ public class POJsonPrinter {
              * SPO: collecting callsites and secondary proof obligations
              */
             for (final CFunctionSiteSPOs callsite : cfunction.getCallsites()) {
-                final JCalliste jCallsite = new JCalliste(callsite);
+                final JCallsite jCallsite = new JCallsite(callsite);
                 this.callsites.add(jCallsite);
             }
 
             for (final CFunctionSiteSPOs returnsite : cfunction.getReturnsites()) {
-                final JCalliste jsite = new JCalliste(returnsite);
+                final JCallsite jsite = new JCallsite(returnsite);
                 if (!jsite.spos.isEmpty()) {
                     //TODO: this must be configurable
                     this.returnsites.add(jsite);
