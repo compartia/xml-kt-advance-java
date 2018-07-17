@@ -21,7 +21,8 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
-import com.kt.advance.api.ApiAssumption;
+import com.kt.advance.api.Assumption;
+import com.kt.advance.api.Assumption.AssumptionTypeCode;
 import com.kt.advance.api.CAnalysis;
 import com.kt.advance.api.CAnalysisImpl;
 import com.kt.advance.api.CApplication;
@@ -62,6 +63,7 @@ public class POJsonPrinter {
         public final String exp;
 
         public final Integer id;
+		public final AssumptionTypeCode type;
 
         @JsonInclude(Include.NON_EMPTY)
         public final Integer[] ppos;
@@ -70,7 +72,8 @@ public class POJsonPrinter {
         @JsonInclude(Include.NON_EMPTY)
         public final Integer[] spos;
 
-        public JApiAssumption(ApiAssumption mApiAssumption) {
+        public JApiAssumption(Assumption mApiAssumption) {
+			this.type = mApiAssumption.typeCode;
             this.id = mApiAssumption.index;
             this.prd = mApiAssumption.predicate.type.label;
             this.ppos = mApiAssumption.ppos;

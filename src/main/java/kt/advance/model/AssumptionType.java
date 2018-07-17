@@ -23,6 +23,7 @@
  */
 package kt.advance.model;
 
+import com.kt.advance.api.Assumption.AssumptionTypeCode;
 import com.kt.advance.api.CFile;
 import com.kt.advance.xml.model.IndexedTableNode;
 
@@ -30,19 +31,7 @@ import kt.advance.model.PredicatesFactory.CPOPredicate;
 
 class AssumptionType extends Indexed {
 
-    public enum AssumptionTypeCode {
-        /** ATApiAssumptionType */
-        aa,
 
-        /** ATPostconditionType */
-        pc,
-
-        /** ATUserAssumptionType */
-        ua,
-
-        /** Global Assumption */
-        ga
-    }
 
     public Integer postRequestIndex;
     public CPOPredicate predicate;
