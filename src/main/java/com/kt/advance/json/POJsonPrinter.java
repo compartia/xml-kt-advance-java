@@ -47,8 +47,24 @@ public class POJsonPrinter {
         public JAnalysis(CAnalysis an) {
 
             apps = an.getApps().parallelStream()
-                    .map(JApp::new)
-                    .collect(Collectors.toList());
+                     .map(JApp::new)
+                     .collect(Collectors.toList());
+        }
+    }
+
+    static class JApp implements Jsonable {
+
+        public final List<JFile> files;
+        public String            actualSourceDir;
+        public String            baseDir;
+
+        public JApp(CApplication app) {
+            this.actualSourceDir = app.getSourceDir().getAbsolutePath();
+            this.baseDir = app.getBaseDir().getAbsolutePath();
+
+            files = app.getCfiles().parallelStream()
+                       .map(JFile::new)
+                       .collect(Collectors.toList());
         }
     }
 
@@ -63,18 +79,18 @@ public class POJsonPrinter {
     static class JApiAssumption {
         public final String exp;
 
-        public final Integer id;
-		public final AssumptionTypeCode type;
+        public final Integer            id;
+        public final AssumptionTypeCode type;
 
         @JsonInclude(Include.NON_EMPTY)
         public final Integer[] ppos;
-        public final String prd;
+        public final String    prd;
 
         @JsonInclude(Include.NON_EMPTY)
         public final Integer[] spos;
 
         public JApiAssumption(Assumption mApiAssumption) {
-			this.type = mApiAssumption.typeCode;
+            this.type = mApiAssumption.typeCode;
             this.id = mApiAssumption.index;
             this.prd = mApiAssumption.predicate.type.label;
             this.ppos = mApiAssumption.ppos;
@@ -83,26 +99,12 @@ public class POJsonPrinter {
         }
     }
 
-    static class JApp implements Jsonable {
-
-        public final List<JFile> files;
-        public String sourceDir;
-
-        public JApp(CApplication app) {
-            this.sourceDir = app.getSourceDir().getAbsolutePath();
-
-            files = app.getCfiles().parallelStream()
-                    .map(JFile::new)
-                    .collect(Collectors.toList());
-        }
-    }
-
     static class JCallsite implements Jsonable {
 
         @JsonInclude(Include.NON_EMPTY)
         public JVarInfo callee;
 
-        public String exp;
+        public String          exp;
         public final JLocation loc;
 
         @JsonInclude(Include.NON_EMPTY)
@@ -138,8 +140,8 @@ public class POJsonPrinter {
             this.name = f.getName();
 
             functions = f.getCFunctions().parallelStream()
-                    .map(JFunc::new)
-                    .collect(Collectors.toList());
+                         .map(JFunc::new)
+                         .collect(Collectors.toList());
 
         }
     }
@@ -176,28 +178,28 @@ public class POJsonPrinter {
              */
             //
             this.api.aa = cfunction.getApiAssumptions().stream()
-                    .map(JApiAssumption::new)
-                    .collect(Collectors.toList());
+                                   .map(JApiAssumption::new)
+                                   .collect(Collectors.toList());
 
             /*
              * PPO: collecting primary proof obligations
              */
             this.ppos = cfunction.getPPOs().parallelStream()
-                    .map(ppo -> {
+                                 .map(ppo -> {
 
-                        final JPO poInfo = new JPO(ppo);
+                                     final JPO poInfo = new JPO(ppo);
 
-                        final Set<SPO> associatedSpos = ppo.getAssociatedSpos(cfunction);
+                                     final Set<SPO> associatedSpos = ppo.getAssociatedSpos(cfunction);
 
-                        poInfo.links = associatedSpos
-                                .stream()
-                                .map(spo -> new JLink(spo, cfunction))
-                                .collect(Collectors.toList());
+                                     poInfo.links = associatedSpos
+                                                                  .stream()
+                                                                  .map(spo -> new JLink(spo, cfunction))
+                                                                  .collect(Collectors.toList());
 
-                        return poInfo;
+                                     return poInfo;
 
-                    })
-                    .collect(Collectors.toList());
+                                 })
+                                 .collect(Collectors.toList());
 
             /*
              * SPO: collecting callsites and secondary proof obligations
@@ -210,7 +212,7 @@ public class POJsonPrinter {
             for (final CFunctionSiteSPOs returnsite : cfunction.getReturnsites()) {
                 final JCallsite jsite = new JCallsite(returnsite);
                 if (!jsite.spos.isEmpty()) {
-                    //TODO: this must be configurable
+                    // TODO: this must be configurable
                     this.returnsites.add(jsite);
                 }
             }
@@ -222,8 +224,8 @@ public class POJsonPrinter {
      * in JSON format, represents a link to Primary proof obligation;
      */
     static class JLink implements Jsonable {
-        public String file;
-        public String functionName;
+        public String  file;
+        public String  functionName;
         public Integer id;
 
         public JLink(PO po, CFunction fun) {
@@ -237,7 +239,7 @@ public class POJsonPrinter {
 
     static class JLocation implements Jsonable {
 
-        public final String file;
+        public final String  file;
         public final Integer line;
 
         public JLocation(CLocation loc) {
@@ -248,15 +250,15 @@ public class POJsonPrinter {
     }
 
     static class JPO implements Jsonable {
-        public String dep;
-        public String evl;
-        public String exp;
-        public Integer id;
+        public String      dep;
+        public String      evl;
+        public String      exp;
+        public Integer     id;
         @JsonInclude(Include.NON_EMPTY)
-        public Integer line;
+        public Integer     line;
         @JsonInclude(Include.NON_EMPTY)
         public List<JLink> links = new ArrayList<>();
-        public String prd;
+        public String      prd;
 
         public String sts;
 
@@ -295,8 +297,8 @@ public class POJsonPrinter {
 
     static class JVarInfo implements Jsonable {
         public JLocation loc;
-        public String name;
-        public String type;
+        public String    name;
+        public String    type;
 
         public JVarInfo(CVarInfo varInfo) {
             this.name = varInfo.name;
@@ -328,7 +330,7 @@ public class POJsonPrinter {
         final long endTime = System.nanoTime();
         final long durations = TimeUnit.NANOSECONDS.toSeconds(endTime - startTime);
         LOG.info(
-            "TOOK {}  seconds; or {}  ms", durations, TimeUnit.NANOSECONDS.toMillis(endTime - startTime));
+                 "TOOK {}  seconds; or {}  ms", durations, TimeUnit.NANOSECONDS.toMillis(endTime - startTime));
 
     }
 

@@ -71,21 +71,25 @@ public class CApplicationImpl implements CApplication {
 
     private final Map<String, CFileImpl> cfiles = new HashMap<>();
 
-    private ErrorsBundle errors = new ErrorsBundle();
+    private final ErrorsBundle errors;
 
     private final FsAbstraction fs;
 
     private File sourceDir;
 
     public CApplicationImpl(FsAbstraction fs, ErrorsBundle errors) {
+        this.errors = errors;
         Preconditions.checkNotNull(fs, "FileSystemAbstraction is required");
         Preconditions.checkNotNull(fs.getBaseDir(), "base dir is required");
 
         final File analysisDir = fs.getBaseDir().getParentFile();
-        final File sourceFile = new File(analysisDir, FsAbstraction.SOURCEFILES_DIR_NAME);
+        final File sourceDir = new File(analysisDir, FsAbstraction.SOURCEFILES_DIR_NAME);
 
-        if (sourceFile.isDirectory() && sourceFile.exists()) {
-            this.sourceDir = sourceFile;
+        LOG.info("analysisDir: {}", analysisDir);
+        LOG.info("sourceDir: {}", sourceDir);
+
+        if (sourceDir.isDirectory() && sourceDir.exists()) {
+            this.sourceDir = sourceDir;
         } else {
             this.sourceDir = null;
             LOG.error("no " + FsAbstraction.SOURCEFILES_DIR_NAME + " in   " + analysisDir);
@@ -96,7 +100,7 @@ public class CApplicationImpl implements CApplication {
 
     @Override
     public File getBaseDir() {
-        return this.fs.getBaseDir();
+        return this.fs.getBaseDir().getParentFile().getParentFile();
     }
 
     @Override
@@ -143,16 +147,8 @@ public class CApplicationImpl implements CApplication {
         readAllSpoXmls(fs.listXMLs(FsAbstraction.SPO_SUFFIX), tr.getSubtaskTracker(20, "reading spo files"));
 
         readAllApiXmls(fs.listXMLs(FsAbstraction.API_SUFFIX), tr.getSubtaskTracker(20, "reading api files"));
-        //        tracker.addProgress(70);
+        // tracker.addProgress(70);
 
-    }
-
-    public void resetErrors() {
-        this.errors = new ErrorsBundle();
-    }
-
-    public void setErrors(ErrorsBundle errors) {
-        this.errors = errors;
     }
 
     private void runInHandler(UnsafeProc proc, AnalysisXml ppos) {
@@ -184,23 +180,35 @@ public class CApplicationImpl implements CApplication {
 
     void readAllApiXmls(Collection<File> apiFiles, ProgressTracker tracker) {
 
+        if (apiFiles.size() == 0) {
+            errors.addError(this.getBaseDir().toString(), "no API files found");
+            tracker.addProgress(100);
+            return;
+        }
+
         LOG.info("reading {} {} files", apiFiles.size(), FsAbstraction.API_SUFFIX);
         final float progressInc = 100f / apiFiles.size();
         final XMLFileType<ApiXml> reader = XMLFileType.getReader(ApiXml.class);
 
         StreamSupport.stream(apiFiles.spliterator(), !TestMode.inTestMode)
 
-                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                .sequential()
-                .forEach(xmlObj -> runInHandler(() -> {
-                    final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
-                    cFunction.readApiFile(xmlObj);
-                    tracker.addProgress(progressInc);
-                }, xmlObj));
+                     .map(xml -> reader.readXml(xml, fs.getBaseDir()))
+                     .sequential()
+                     .forEach(xmlObj -> runInHandler(() -> {
+                         final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
+                         cFunction.readApiFile(xmlObj);
+                         tracker.addProgress(progressInc);
+                     }, xmlObj));
 
     }
 
     void readAllCdictXmls(Collection<File> cdictFiles, ProgressTracker tracker) {
+        if (cdictFiles.size() == 0) {
+            errors.addError(this.getBaseDir().toString(), "no CDICT files found");
+            tracker.addProgress(100);
+            return;
+        }
+
         LOG.info("reading {} {} files", cdictFiles.size(), FsAbstraction.CDICT_SUFFIX);
         final float progressInc = 100f / cdictFiles.size();
 
@@ -208,45 +216,58 @@ public class CApplicationImpl implements CApplication {
 
         StreamSupport.stream(cdictFiles.spliterator(), !TestMode.inTestMode)
 
-                .map(file -> reader.readXml(file, fs.getBaseDir()))
-                .sequential()
-                .forEach(
-                    xmlObj -> runInHandler(() -> {
-                        final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                        cfile.readCDictFile(xmlObj, predicatesFactory.expressionsFactory);
-                        tracker.addProgress(progressInc);
-                    }, xmlObj)
+                     .map(file -> reader.readXml(file, fs.getBaseDir()))
+                     .sequential()
+                     .forEach(
+                              xmlObj -> runInHandler(() -> {
+                                  final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                                  cfile.readCDictFile(xmlObj, predicatesFactory.expressionsFactory);
+                                  tracker.addProgress(progressInc);
+                              }, xmlObj)
 
         );
 
     }
 
-    void readAllCfileXmls(Collection<File> cdictFiles, ProgressTracker tracker) {
+    void readAllCfileXmls(Collection<File> cFileFiles, ProgressTracker tracker) {
+
+        if (cFileFiles.size() == 0) {
+            errors.addError(this.getBaseDir().toString(), "no CFILE files found");
+            tracker.addProgress(100);
+            return;
+        }
+
         final Instant start = Instant.now();
-        LOG.info("reading {} {} files", cdictFiles.size(), FsAbstraction.CFILE_SUFFIX);
-        final float progressInc = 100f / cdictFiles.size();
+        LOG.info("reading {} {} files", cFileFiles.size(), FsAbstraction.CFILE_SUFFIX);
+        final float progressInc = 100f / cFileFiles.size();
 
         final XMLFileType<CfileXml> reader = XMLFileType.getReader(CfileXml.class);
 
-        StreamSupport.stream(cdictFiles.spliterator(), !TestMode.inTestMode)
+        StreamSupport.stream(cFileFiles.spliterator(), !TestMode.inTestMode)
 
-                .map(file -> reader.readXml(file, fs.getBaseDir()))
-                .sequential()
-                .forEach(
-                    xmlObj -> runInHandler(() -> {
-                        final CFileImpl cfile = getCFileOrMakeNew(xmlObj.getSourceFilename());
-                        cfile.readCFileXml(xmlObj);
-                        tracker.addProgress(progressInc);
-                    }, xmlObj)
+                     .map(file -> reader.readXml(file, fs.getBaseDir()))
+                     .sequential()
+                     .forEach(
+                              xmlObj -> runInHandler(() -> {
+                                  final CFileImpl cfile = getCFileOrMakeNew(xmlObj.getSourceFilename());
+                                  cfile.readCFileXml(xmlObj);
+                                  tracker.addProgress(progressInc);
+                              }, xmlObj)
 
         );
         final Instant end = Instant.now();
-        LOG.info("Time elapsed for reading {} {} files is {}", cdictFiles.size(), FsAbstraction.CFILE_SUFFIX,
-            Duration.between(start, end));
+        LOG.info("Time elapsed for reading {} {} files is {}", cFileFiles.size(), FsAbstraction.CFILE_SUFFIX,
+                 Duration.between(start, end));
 
     }
 
     void readAllCfuncsXmls(Collection<File> files, ProgressTracker tracker) {
+
+        if (files.size() == 0) {
+            errors.addError(this.getBaseDir().toString(), "no CFUN files found");
+            tracker.addProgress(100);
+            return;
+        }
 
         LOG.info("reading {} {} files", files.size(), FsAbstraction.CFUN_SUFFIX);
         final float progressInc = 100f / files.size();
@@ -255,52 +276,71 @@ public class CApplicationImpl implements CApplication {
 
         StreamSupport.stream(files.spliterator(), !TestMode.inTestMode)
 
-                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                .forEach(xmlObj -> runInHandler(() -> {
+                     .map(xml -> reader.readXml(xml, fs.getBaseDir()))
+                     .forEach(xmlObj -> runInHandler(() -> {
 
-                    final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                    cfile.getCFunctionOrMakeNew(xmlObj);
-                    tracker.addProgress(progressInc);
-                }, xmlObj));
+                         final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                         cfile.getCFunctionOrMakeNew(xmlObj);
+                         tracker.addProgress(progressInc);
+                     }, xmlObj));
 
     }
 
     void readAllPodXmls(Collection<File> pods, ProgressTracker tracker) {
+
+        if (pods.size() == 0) {
+            errors.addError(this.getBaseDir().toString(), "no POD files found");
+            tracker.addProgress(100);
+            return;
+        }
 
         LOG.info("reading {} {} files", pods.size(), FsAbstraction.POD_SUFFIX);
         final float progressInc = 100f / pods.size();
         final XMLFileType<PodXml> reader = XMLFileType.getReader(PodXml.class);
 
         StreamSupport.stream(pods.spliterator(), !TestMode.inTestMode)
-                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                .sequential()
-                .forEach(xmlObj -> runInHandler(() -> {
-                    final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                    final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
-                    cFunction.readPodFile(xmlObj, cfile);
-                    tracker.addProgress(progressInc);
-                }, xmlObj));
+
+                     .map(xml -> reader.readXml(xml, fs.getBaseDir()))
+                     .sequential()
+                     .forEach(xmlObj -> runInHandler(() -> {
+                         final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                         final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
+                         cFunction.readPodFile(xmlObj, cfile);
+                         tracker.addProgress(progressInc);
+                     }, xmlObj));
 
     }
 
     void readAllPpoXmls(Collection<File> ppoFiles, ProgressTracker tracker) {
+
+        if (ppoFiles.size() == 0) {
+            errors.addError(this.getBaseDir().toString(), "no PPO files found");
+            tracker.addProgress(100);
+            return;
+        }
+
         LOG.info("reading {} {} files", ppoFiles.size(), FsAbstraction.PPO_SUFFIX);
         final float progressInc = 100f / ppoFiles.size();
         final XMLFileType<PpoXml> reader = XMLFileType.getReader(PpoXml.class);
 
         StreamSupport.stream(ppoFiles.spliterator(), !TestMode.inTestMode)
 
-                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                .sequential()
-                .forEach(xmlObj -> runInHandler(() -> {
-                    final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
-                    cFunction.readPpoFile(xmlObj, errors);
-                    tracker.addProgress(progressInc);
-                }, xmlObj));
+                     .map(xml -> reader.readXml(xml, fs.getBaseDir()))
+                     .sequential()
+                     .forEach(xmlObj -> runInHandler(() -> {
+                         final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
+                         cFunction.readPpoFile(xmlObj, errors);
+                         tracker.addProgress(progressInc);
+                     }, xmlObj));
 
     }
 
     void readAllPrdXmls(Collection<File> predicatesFiles, ProgressTracker tracker) {
+        if (predicatesFiles.size() == 0) {
+            errors.addError(this.getBaseDir().toString(), "no PRD files found");
+            tracker.addProgress(100);
+            return;
+        }
 
         LOG.info("reading {} {} files", predicatesFiles.size(), FsAbstraction.PRD_SUFFIX);
         final float progressInc = 100f / predicatesFiles.size();
@@ -309,19 +349,25 @@ public class CApplicationImpl implements CApplication {
 
         StreamSupport.stream(predicatesFiles.spliterator(), !TestMode.inTestMode)
 
-                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                .sequential()
-                .forEach(xmlObj -> runInHandler(() -> {
-                    final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                    cfile.readPrdFile(xmlObj, predicatesFactory);
+                     .map(xml -> reader.readXml(xml, fs.getBaseDir()))
+                     .sequential()
+                     .forEach(xmlObj -> runInHandler(() -> {
+                         final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                         cfile.readPrdFile(xmlObj, predicatesFactory);
 
-                    tracker.addProgress(progressInc);
+                         tracker.addProgress(progressInc);
 
-                }, xmlObj));
+                     }, xmlObj));
 
     }
 
     void readAllSpoXmls(Collection<File> spoFiles, ProgressTracker tracker) {
+
+        if (spoFiles.size() == 0) {
+            errors.addError(this.getBaseDir().toString(), "no SPO files found");
+            tracker.addProgress(100);
+            return;
+        }
 
         LOG.info("reading {} {} files", spoFiles.size(), FsAbstraction.SPO_SUFFIX);
         final float progressInc = 100f / spoFiles.size();
@@ -329,13 +375,14 @@ public class CApplicationImpl implements CApplication {
 
         StreamSupport.stream(spoFiles.spliterator(), !TestMode.inTestMode)
 
-                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                .sequential()
-                .forEach(xmlObj -> runInHandler(() -> {
-                    final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
-                    cFunction.readSpoFile(xmlObj, errors);
-                    tracker.addProgress(progressInc);
-                }, xmlObj));
+                     .map(xml -> reader.readXml(xml, fs.getBaseDir()))
+                     .sequential()
+                     .forEach(xmlObj -> runInHandler(() -> {
+                         final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
+                         cFunction.readSpoFile(xmlObj, errors);
+                         tracker.addProgress(progressInc);
+                     }, xmlObj));
+
     }
 
 }

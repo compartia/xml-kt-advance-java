@@ -3,11 +3,20 @@
 <log4j:configuration
 	xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
 
+	<appender name="consoleErrorAppender"
+		class="org.apache.log4j.ConsoleAppender">
+		<param name="target" value="System.err" />
+		<param name="Threshold" value="ERROR" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%-5p %t [%-40.40c] %x - %m%n" />
+		</layout>
+	</appender>
+
 	<appender name="consoleAppender"
 		class="org.apache.log4j.ConsoleAppender">
-		<param name="Threshold" value="WARN" />
-		<param name="target" value="System.out"/>	
-		
+		<param name="target" value="System.out" />
+		<param name="Threshold" value="INFO" />
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern"
 				value="%-5p %t [%-40.40c] %x - %m%n" />
@@ -16,7 +25,7 @@
 
 	<!-- general application log -->
 	<appender name="Kt2JsonLogFile"
-		class="org.apache.log4j.FileAppender">
+		class="org.apache.log4j.RollingFileAppender">
 		<param name="File" value="kt-ch_analysis.log" />
 		<param name="Threshold" value="DEBUG" />
 		<layout class="org.apache.log4j.PatternLayout">
@@ -24,20 +33,24 @@
 		</layout>
 	</appender>
 
-	<logger name="kt.advance">
-		<level value="DEBUG" />
-		<appender-ref ref="Kt2JsonLogFile" />
-	</logger>
 
-	<logger name="com.kt.advance">
-		<level value="DEBUG" />
-		<appender-ref ref="Kt2JsonLogFile" />
+ 
+
+	<logger name="com.kt.advance.ErrorsBundle">
+		<appender-ref ref="consoleErrorAppender" />
+		<appender-ref ref="Kt2JsonLogFile" /> 	 	
 	</logger>
 
 	<logger name="kt">
-		<level value="WARN" />
-		<appender-ref ref="consoleAppender" />
+		<appender-ref ref="consoleErrorAppender" />
+		<appender-ref ref="Kt2JsonLogFile" /> 	 	
 	</logger>
+
+ 
+	 <logger name="com.kt"> 
+	 	<appender-ref ref="Kt2JsonLogFile" /> 	 	
+	 	<appender-ref ref="consoleAppender" />
+	 </logger>  
 
 	<root>
 		<priority value="info" />
