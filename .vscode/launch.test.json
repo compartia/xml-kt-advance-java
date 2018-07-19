@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "kt-advance-xml",
+                "projectName": "kt-advance-xml",
+                "workingDirectory": "/Users/artem/work/KT/xml-kt-advance-java",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "kt-advance-xml",
+                "projectName": "kt-advance-xml",
+                "workingDirectory": "/Users/artem/work/KT/xml-kt-advance-java",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
