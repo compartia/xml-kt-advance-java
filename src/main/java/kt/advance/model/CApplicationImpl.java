@@ -82,10 +82,13 @@ public class CApplicationImpl implements CApplication {
         Preconditions.checkNotNull(fs.getBaseDir(), "base dir is required");
 
         final File analysisDir = fs.getBaseDir().getParentFile();
-        final File sourceFile = new File(analysisDir, FsAbstraction.SOURCEFILES_DIR_NAME);
+        final File sourceDir = new File(analysisDir, FsAbstraction.SOURCEFILES_DIR_NAME);
 
-        if (sourceFile.isDirectory() && sourceFile.exists()) {
-            this.sourceDir = sourceFile;
+        LOG.info("analysisDir: {}", analysisDir);
+        LOG.info("sourceDir: {}", sourceDir);
+
+        if (sourceDir.isDirectory() && sourceDir.exists()) {
+            this.sourceDir = sourceDir;
         } else {
             this.sourceDir = null;
             LOG.error("no " + FsAbstraction.SOURCEFILES_DIR_NAME + " in   " + analysisDir);
