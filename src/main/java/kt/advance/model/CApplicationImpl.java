@@ -99,7 +99,7 @@ public class CApplicationImpl implements CApplication {
 
     @Override
     public File getBaseDir() {
-        return this.fs.getBaseDir();
+        return this.fs.getBaseDir().getParentFile().getParentFile();
     }
 
     @Override
