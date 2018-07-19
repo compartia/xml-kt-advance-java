@@ -27,14 +27,35 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 
 public abstract class AnalysisXml extends AbstractHasOriginImpl {
+
+    @Deprecated
     public static class HeaderApp {
         @XmlAttribute
         public String file;
     }
 
+    public static class Created {
+
+        @XmlAttribute(name = "file")
+        public String file;
+
+        @XmlAttribute(name = "time")
+        public String time;
+
+        @XmlAttribute(name = "project-directory")
+        public String projectDirectory;
+
+        @XmlAttribute(name = "version")
+        public String version;
+    }
+
     public static class PoHeader {
+        @Deprecated
         @XmlElement(name = "application")
         public HeaderApp application;
+
+        @XmlElement(name = "created")
+        public Created created;
 
         @XmlElement(name = "info")
         public String info;

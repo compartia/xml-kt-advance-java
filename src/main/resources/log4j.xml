@@ -6,7 +6,7 @@
 	<appender name="consoleAppender"
 		class="org.apache.log4j.ConsoleAppender">
 		<param name="Threshold" value="WARN" />
-		<param name="target" value="System.out"/>	
+		<param name="target" value="System.err"/>	
 		
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern"
@@ -36,6 +36,10 @@
 
 	<logger name="kt">
 		<level value="WARN" />
+		<appender-ref ref="consoleAppender" />
+	</logger>
+	
+	<logger name="com.kt">
 		<appender-ref ref="consoleAppender" />
 	</logger>
 
