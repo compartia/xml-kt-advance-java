@@ -42,6 +42,7 @@ import org.slf4j.LoggerFactory;
 
 import com.kt.TestMode;
 import com.kt.advance.MapCounterInt;
+import com.kt.advance.ProgressTracker;
 import com.kt.advance.api.CAnalysisImpl;
 import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
@@ -88,7 +89,7 @@ public class XmlValidator {
     public void testAllPod2PpoCorrespondence() throws JAXBException {
 
         final CAnalysisImpl an = new CAnalysisImpl(fileSystem);
-        an.read();
+        an.read(new ProgressTracker());
 
         an.getApps().stream().forEach((app) -> testAllPod2PpoCorrespondence(app));
 

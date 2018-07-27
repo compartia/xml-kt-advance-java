@@ -14,6 +14,7 @@ import org.junit.Test;
 
 import com.kt.TestMode;
 import com.kt.advance.MapCounterInt;
+import com.kt.advance.ProgressTracker;
 import com.kt.advance.api.CAnalysis;
 import com.kt.advance.api.CAnalysisImpl;
 import com.kt.advance.api.CApplication;
@@ -46,7 +47,7 @@ public class ReadTest {
         final CAnalysis cAnalysis = new CAnalysisImpl(fsAbstraction);
 
         //force it to read ALL XMLs
-        cAnalysis.read();
+        cAnalysis.read(new ProgressTracker());
 
         for (final CApplication app : cAnalysis.getApps()) {
 
