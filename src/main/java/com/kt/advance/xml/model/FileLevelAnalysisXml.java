@@ -33,6 +33,8 @@ public abstract class FileLevelAnalysisXml extends AnalysisXml {
     public String getSourceFilename() {
         if (this.header.created != null) {
             return fixExtension(this.header.created.file);
+        } else {
+            LOG.warn("no <header><created> tag in " + this.getRelativeOrigin());
         }
 
         if (this.header.application == null) {

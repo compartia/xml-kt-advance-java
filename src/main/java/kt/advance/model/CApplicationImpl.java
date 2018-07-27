@@ -196,7 +196,12 @@ public class CApplicationImpl implements CApplication {
                      .sequential()
                      .forEach(xmlObj -> runInHandler(() -> {
                          final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
-                         cFunction.readApiFile(xmlObj);
+                         if (cFunction == null) {
+                             LOG.error("cannot get cFunction");
+                         } else {
+                             cFunction.readApiFile(xmlObj);
+                         }
+
                          tracker.addProgress(progressInc);
                      }, xmlObj));
 

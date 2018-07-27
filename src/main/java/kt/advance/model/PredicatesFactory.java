@@ -35,8 +35,8 @@ import kt.advance.model.PredicatesFactory.CPOPredicate;
 public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
     public static abstract class CPOPredicate extends Indexed implements Bindable {
         public final Definitions.PredicateType type;
-        private Integer[] args;
-        private String[] tags;
+        private Integer[]                      args;
+        private String[]                       tags;
 
         public CPOPredicate(IndexedTableNode node) {
             super(node);
@@ -67,10 +67,10 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
     }
 
     static class _CPOBinOp extends CPOPredicate {
-        private String binop;
+        private String      binop;
         private CExpression exp1;
         private CExpression exp2;
-        private CType typ;
+        private CType       typ;
 
         public _CPOBinOp(IndexedTableNode node) {
             super(node);
@@ -100,7 +100,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
     static class _CPOCast extends CPOPredicate {
         private CExpression exp;
-        private CType fromType, targetType;
+        private CType       fromType, targetType;
 
         public _CPOCast(IndexedTableNode node) {
             super(node);
@@ -161,9 +161,9 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
         @Override
         public String express() {
-            //            def __str__(self):
-            //                return (self.get_tag() + '(' + str(self.get_type()) + ','
-            //                        + str(self.get_exp()) + ')')
+            // def __str__(self):
+            // return (self.get_tag() + '(' + str(self.get_type()) + ','
+            // + str(self.get_exp()) + ')')
 
             return type + ", " + exp;
 
@@ -230,9 +230,9 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
         @Override
         public String express() {
-            //            def __str__(self):
-            //                return (self.get_tag() + '(' + str(self.get_exp())
-            //                        + ',len:' + str(self.get_length()) + ')')
+            // def __str__(self):
+            // return (self.get_tag() + '(' + str(self.get_exp())
+            // + ',len:' + str(self.get_length()) + ')')
 
             if (exp == null || len == null) {
                 return ERR_VALUE;
@@ -270,7 +270,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
             final String string = ExpFactory.OP_MAP.get(binop);
             Preconditions.checkNotNull(string, "unnkown %s", binop);
             final String op = String.format(string, exp1,
-                exp2);
+                                            exp2);
             return op + ", ikind:" + kind;
 
         }
@@ -328,7 +328,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
     static class CPOUnsignedToSignedCast extends CPOPredicate {
         private CExpression exp;
-        private String fromKind, targetKind;
+        private String      fromKind, targetKind;
 
         public CPOUnsignedToSignedCast(IndexedTableNode node) {
             super(node);
@@ -364,7 +364,7 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
 
     static class CPOWidthOverflow extends CPOPredicate {
         private CExpression exp;
-        private String kind;
+        private String      kind;
 
         public CPOWidthOverflow(IndexedTableNode node) {
             super(node);
@@ -437,6 +437,8 @@ public class PredicatesFactory extends AbstractFactory<CPOPredicate> {
         reg("vc", CPOValueConstraint::new);
         reg("pre", CPOExp0::new);
         reg("no", _CPOTwoExpressions::new);
+
+        reg("is", CPOSimpleExpression::new);
 
     }
 

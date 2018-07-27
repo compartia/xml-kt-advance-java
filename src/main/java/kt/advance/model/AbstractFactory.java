@@ -26,10 +26,16 @@ package kt.advance.model;
 import java.util.Collection;
 import java.util.HashMap;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.google.common.base.Preconditions;
 import com.kt.advance.xml.model.IndexedTableNode;
 
 public abstract class AbstractFactory<T> {
+
+    static final Logger LOG = LoggerFactory.getLogger(AbstractFactory.class.getName());
+
     @FunctionalInterface
     public interface Builder<X> {
         X build(IndexedTableNode node);
@@ -58,10 +64,12 @@ public abstract class AbstractFactory<T> {
         final Builder<? extends T> builder = getBuilder(type);
 
         if (builder == null) {
+            LOG.error("cannot create predicate for " + type + "; tags: " + node.tags);
             return fallBackValueSingleton;
         }
 
         final T exp = builder.build(node);
+
         return exp;
     }
 
