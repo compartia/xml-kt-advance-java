@@ -14,8 +14,8 @@ public class ErrorsBundle {
 
     public String file;
 
-    private final Map<String, List<String>> errors = new HashMap<>();
-    private int errorsCount = 0;
+    private final Map<String, List<String>> errors      = new HashMap<>();
+    private int                             errorsCount = 0;
 
     public void addError(String key, String error) {
 

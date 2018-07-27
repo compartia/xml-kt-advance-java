@@ -20,7 +20,7 @@ public interface CFunction {
 
     Collection<? extends PPO> getPPOs();
 
-    Collection<ApiAssumption> getApiAssumptions();
+    Collection<Assumption> getApiAssumptions();
 
     CLocation getLocation();
 

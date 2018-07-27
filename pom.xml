@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>kt-advance-xml</artifactId>
 	<groupId>kt.advance</groupId>
 	<packaging>jar</packaging>
-	<version>2.3</version>
+	<version>2.6</version>
 
 	<name>KT Advance analyzis XML parser</name>
 	<description>KT Advance analyzis XML parser for KT Advance Memory Safety Analyzer for C</description>
@@ -125,12 +126,48 @@
 			<version>1.2.17</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-jsonSchema -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.module</groupId>
+			<artifactId>jackson-module-jsonSchema</artifactId>
+			<version>2.5.2</version>
+		</dependency>
+
+
+
 
 	</dependencies>
 
 	<build>
 		<testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
 		<plugins>
+
+
+			<plugin>
+				<groupId>cz.habarta.typescript-generator</groupId>
+				<artifactId>typescript-generator-maven-plugin</artifactId>
+				<version>2.0.400</version>
+				<executions>
+					<execution>
+						<id>generate</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<phase>process-classes</phase>
+					</execution>
+				</executions>
+				<configuration>
+					<jsonLibrary>jackson2</jsonLibrary>
+					<classes>
+						<class>com.kt.advance.json.POJsonPrinter$JAnalysis</class>
+					</classes>
+					<outputKind>module</outputKind>
+					<outputFile>${project.build.outputDirectory}/kt-json.d.ts</outputFile>
+				</configuration>
+			</plugin>
+
+
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -144,7 +181,7 @@
 							<archive>
 								<manifest>
 									<mainClass>
-										com.kt.advance.test.RunTests
+										com.kt.advance.json.POJsonPrinter
 									</mainClass>
 								</manifest>
 							</archive>

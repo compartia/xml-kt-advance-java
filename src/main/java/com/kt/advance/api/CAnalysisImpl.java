@@ -16,7 +16,7 @@ import com.kt.advance.ErrorsBundle;
 import kt.advance.model.CApplicationImpl;
 
 public class CAnalysisImpl implements CAnalysis {
-    static final Logger LOG = LoggerFactory.getLogger(CApplication.class.getName());
+    static final Logger        LOG = LoggerFactory.getLogger(CApplication.class.getName());
     public final FsAbstraction fs;
 
     private Map<File, CApplication> apps;
@@ -46,6 +46,8 @@ public class CAnalysisImpl implements CAnalysis {
     public void read() throws JAXBException {
         scanForCApps();
         getApps().forEach(CApplication::read);
+
+        errors.print();
     }
 
     @Override
@@ -60,8 +62,8 @@ public class CAnalysisImpl implements CAnalysis {
         final Collection<File> targetFiles = fs.listSubdirsRecursively(FsAbstraction.ANALYSIS_DIR_NAME);
 
         apps = targetFiles.stream()
-                .map(appDir -> new CApplicationImpl(fs.instance(appDir), errors))
-                .collect(Collectors.toMap(CApplication::getBaseDir, app -> app));
+                          .map(appDir -> new CApplicationImpl(fs.instance(appDir), errors))
+                          .collect(Collectors.toMap(CApplication::getBaseDir, app -> app));
 
         return apps;
     }
