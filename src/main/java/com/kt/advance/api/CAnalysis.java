@@ -18,5 +18,5 @@ public interface CAnalysis {
 
     Map<File, CApplication> scanForCApps();
 
-    CApplication getAppByBaseDir(File baseDir);
+    // CApplication getAppByBaseDir(File baseDir);
 }

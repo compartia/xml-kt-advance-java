@@ -29,10 +29,10 @@ public class CAnalysisImpl implements CAnalysis {
         this.fs = fs;
     }
 
-    @Override
-    public CApplication getAppByBaseDir(File baseDir) {
-        return apps.get(baseDir);
-    }
+    // @Override
+    // public CApplication getAppByBaseDir(File baseDir) {
+    // return apps.get(baseDir);
+    // }
 
     @Override
     public Collection<CApplication> getApps() {
@@ -71,7 +71,7 @@ public class CAnalysisImpl implements CAnalysis {
 
         apps = targetFiles.stream()
                           .map(appDir -> new CApplicationImpl(fs.instance(appDir), errors))
-                          .collect(Collectors.toMap(CApplication::getBaseDir, app -> app));
+                          .collect(Collectors.toMap(CApplication::getSourceDir, app -> app));
 
         return apps;
     }

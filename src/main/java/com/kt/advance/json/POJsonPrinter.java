@@ -321,16 +321,19 @@ public class POJsonPrinter {
         final FsAbstractionImpl fileSystem = new FsAbstractionImpl(new File(basedir));
         final CAnalysisImpl an = new CAnalysisImpl(fileSystem);
 
+        final File file = new File(an.fs.getBaseDir(), an.fs.getBaseDir().getName() + ".kt.analysis.json");
+        System.out.print("RESULT_JSON:" + file.getAbsolutePath());
+        System.out.println();
+
         final ProgressTracker tracker = new ProgressTracker();
         an.read(tracker);
 
-        final File file = new File(an.fs.getBaseDir(), an.fs.getBaseDir().getName() + ".kt.analysis.json");
         POJsonPrinter.toJson(an, file);
 
         final long endTime = System.nanoTime();
         final long durations = TimeUnit.NANOSECONDS.toSeconds(endTime - startTime);
-        LOG.info(
-                 "TOOK {}  seconds; or {}  ms", durations, TimeUnit.NANOSECONDS.toMillis(endTime - startTime));
+        LOG.info("TOOK {}  seconds; or {}  ms",
+                 durations, TimeUnit.NANOSECONDS.toMillis(endTime - startTime));
 
     }
 
