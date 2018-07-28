@@ -81,6 +81,7 @@ public class POJsonPrinter {
 
         public final Integer            id;
         public final AssumptionTypeCode type;
+ 
 
         @JsonInclude(Include.NON_EMPTY)
         public final Integer[] ppos;
@@ -99,6 +100,22 @@ public class POJsonPrinter {
         }
     }
 
+ 
+    static class JApp implements Jsonable {
+
+        public final List<JFile> files;
+        public String sourceDir;
+
+        public JApp(CApplication app) {
+            this.sourceDir = app.getSourceDir().getAbsolutePath();
+
+            files = app.getCfiles().parallelStream()
+                    .map(JFile::new)
+                    .collect(Collectors.toList());
+        }
+    }
+
+ 
     static class JCallsite implements Jsonable {
 
         @JsonInclude(Include.NON_EMPTY)

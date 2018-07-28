@@ -139,7 +139,6 @@ class CFunctionImpl implements CFunction {
 
             apiAssumptions.putAll(gAssumptions);
         }
-
     }
 
     public void readPodFile(PodXml dict, CFileImpl cfile) {

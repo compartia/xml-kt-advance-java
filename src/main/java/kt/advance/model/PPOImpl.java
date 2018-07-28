@@ -54,7 +54,7 @@ class PPOImpl extends POImpl implements PPO {
     @Override
     public CLocation getLocation() {
         return getType().location;
-    }
+	}
 
     @Override
     public Set<SPO> getAssociatedSpos(CFunction cfunIn) {
