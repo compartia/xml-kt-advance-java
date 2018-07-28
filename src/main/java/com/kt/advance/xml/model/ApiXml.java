@@ -79,10 +79,6 @@ public class ApiXml extends FunctionLevelAnalysisXml {
         return this.function.api.globalAssumptions;
     }
 
-    public List<ApiAssumptionNode> getGlobalAssumptions() {
-        return this.function.api.globalAssumptions;
-    }
-
     @Override
     public String getFunctionName() {
         return this.function.name;
