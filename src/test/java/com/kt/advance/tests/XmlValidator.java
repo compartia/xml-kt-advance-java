@@ -280,7 +280,6 @@ public class XmlValidator {
         assertNotNull(filename + "-" + ppos.toString() + " has no function", ppos.function);
         assertNotNull(ppos.function.name);
         for (final PPONode po : ppos.function.proofObligations) {
-            assertNotNull(po.id);
             assertNotNull(po.ippo);
 
             if (po.status != null) {

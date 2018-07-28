@@ -33,8 +33,8 @@ import kt.advance.model.CTypeFactory.CType;
 
 public class CTypeFactory extends AbstractFactory<CType> {
     public static class CCompInfo extends Indexed {
-        final String name;
-        final Boolean isStruct;
+        final String         name;
+        final Boolean        isStruct;
         public final Integer ckey;
 
         public CCompInfo(IndexedTableNode node) {
@@ -48,7 +48,7 @@ public class CTypeFactory extends AbstractFactory<CType> {
     }
 
     public static class CTypComp extends CType {
-        Integer ckey;
+        Integer   ckey;
         CCompInfo struct;
 
         public CTypComp(IndexedTableNode node) {
@@ -71,7 +71,7 @@ public class CTypeFactory extends AbstractFactory<CType> {
 
     public static abstract class CType extends Indexed implements Bindable {
         private Integer[] args;
-        private String[] tags;
+        private String[]  tags;
 
         public CType(IndexedTableNode node) {
             super(node);
@@ -123,7 +123,7 @@ public class CTypeFactory extends AbstractFactory<CType> {
      */
     public static class CTypFun extends CType {
 
-        CType returnType;
+        CType    returnType;
         CFunArgs funArgs;
 
         public CTypFun(IndexedTableNode node) {
@@ -164,21 +164,23 @@ public class CTypeFactory extends AbstractFactory<CType> {
 
     public static class CTypInt extends CType {
 
-        static final Map<String, String> integernames = new ImmutableMap.Builder<String, String>()
-                .put("ichar", "char")
-                .put("ischar", "signed char")
-                .put("iuchar", "unsigned char")
-                .put("ibool", "bool")
-                .put("iint", "int")
-                .put("iuint", "unsigned int")
-                .put("ishort", "short")
-                .put("iushort", "unsigned short")
-                .put("ilong", "long")
-                .put("iulong", "unsigned long")
-                .put("ilonglong", "long long")
-                .put("iulonglong", "unsigned long long")
+        static final Map<String, String> //
+        integernames = //
+                new ImmutableMap.Builder<String, String>()
+                        .put("ichar", "char")
+                        .put("ischar", "signed char")
+                        .put("iuchar", "unsigned char")
+                        .put("ibool", "bool")
+                        .put("iint", "int")
+                        .put("iuint", "unsigned int")
+                        .put("ishort", "short")
+                        .put("iushort", "unsigned short")
+                        .put("ilong", "long")
+                        .put("iulong", "unsigned long")
+                        .put("ilonglong", "long long")
+                        .put("iulonglong", "unsigned long long")
 
-                .build();
+                        .build();
 
         String kind;
 
@@ -189,7 +191,7 @@ public class CTypeFactory extends AbstractFactory<CType> {
         @Override
         public String toString() {
             // TODO add attributes
-            return kind;//(integernames[self.get_kind()] + '[' + str(self.get_attributes()) + ']')
+            return kind;// (integernames[self.get_kind()] + '[' + str(self.get_attributes()) + ']')
         }
 
         @Override
@@ -218,7 +220,7 @@ public class CTypeFactory extends AbstractFactory<CType> {
         @Override
         public String toString() {
             // TODO add attributes
-            return kind;//(integernames[self.get_kind()] + '[' + str(self.get_attributes()) + ']')
+            return kind;// (integernames[self.get_kind()] + '[' + str(self.get_attributes()) + ']')
         }
 
         @Override
@@ -288,10 +290,17 @@ public class CTypeFactory extends AbstractFactory<CType> {
 
         reg("tfun", CTypFun::new);
 
+        // TODO: fix it!
+        reg("tarray", CTypeUnknown::new);
+        reg("tenum", CTypeUnknown::new);
+        reg("tbuiltin-va-list", CTypeUnknown::new);
+        reg("tbuiltinvaargs", CTypeUnknown::new);
+
     }
 
     @Override
     public CType build(IndexedTableNode node) {
-        return super.buildImpl(node, node.getTagsSplit()[0], new CTypeUnknown(node));
+        return super.buildImpl(node, node.getTagsSplit()[0], new CTypeUnknown(
+            node));
     }
 }

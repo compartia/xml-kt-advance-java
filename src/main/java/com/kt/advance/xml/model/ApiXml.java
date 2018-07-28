@@ -58,9 +58,9 @@ public class ApiXml extends FunctionLevelAnalysisXml {
         @XmlElementWrapper(name = "api-assumptions")
         public List<ApiAssumptionNode> apiAssumptions;
 
-		@XmlElement(name = "hh")
-		@XmlElementWrapper(name = "global-assumptions")
-		public List<ApiAssumptionNode> globalAssumptions;
+        @XmlElement(name = "hh")
+        @XmlElementWrapper(name = "global-assumptions")
+        public List<ApiAssumptionNode> globalAssumptions;
     }
 
     @XmlElement(name = "function")
@@ -75,9 +75,9 @@ public class ApiXml extends FunctionLevelAnalysisXml {
         return this.function.api.apiAssumptions;
     }
 
-	public List<ApiAssumptionNode> getGlobalAssumptions() {
-		return this.function.api.globalAssumptions;
-	}
+    public List<ApiAssumptionNode> getGlobalAssumptions() {
+        return this.function.api.globalAssumptions;
+    }
 
     @Override
     public String getFunctionName() {

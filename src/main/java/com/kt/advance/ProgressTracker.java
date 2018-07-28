@@ -1,9 +1,11 @@
 package com.kt.advance;
 
+import java.io.PrintStream;
+
 public class ProgressTracker {
 
     private final ProgressTracker parent;
-    private final float impactOnTotalProgress;
+    private final float           impactOnTotalProgress;
 
     float progress = 0;
 
@@ -13,6 +15,8 @@ public class ProgressTracker {
 
     private String msg = "";
 
+    private PrintStream out = System.out;
+
     public void addProgress(float progress) {
         this.addProgress(progress, this.msg);
     }
@@ -21,15 +25,22 @@ public class ProgressTracker {
         this.msg = msg;
         if (parent == null) {
             this.progress += progressAdd;
-            System.out.println("PROGRESS:" + this.progress);
+            if (out != null) {
+                out.println("PROGRESS:" + this.progress);
+            }
         } else {
             this.parent.addProgress(progressAdd * (impactOnTotalProgress / 100f), msg);
         }
     }
 
-    public ProgressTracker() {
+    public ProgressTracker(PrintStream out) {
+        this.out = out;
         this.parent = null;
         this.impactOnTotalProgress = 100;
+    }
+
+    public ProgressTracker() {
+        this(System.out);
     }
 
     private ProgressTracker(ProgressTracker parent, final float impactOnTotalProgress, String subtaskMsg) {

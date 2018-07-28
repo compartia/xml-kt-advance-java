@@ -43,7 +43,7 @@ class PPOImpl extends POImpl implements PPO {
     }
 
     public PPOImpl(PPONode ppoNode, CFunction cfun) {
-        super(ppoNode, cfun.getPPOTypeRef(ppoNode.ippo));
+        super(ppoNode.ippo, ppoNode, cfun.getPPOTypeRef(ppoNode.ippo));
     }
 
     @Override
@@ -54,13 +54,13 @@ class PPOImpl extends POImpl implements PPO {
     @Override
     public CLocation getLocation() {
         return getType().location;
-	}
+    }
 
     @Override
     public Set<SPO> getAssociatedSpos(CFunction cfunIn) {
         final Set<SPO> collected = new HashSet<>();
 
-        final CFunctionImpl cfun = (CFunctionImpl) cfunIn;///XXX: do something about this cast!!
+        final CFunctionImpl cfun = (CFunctionImpl) cfunIn; // XXX: do something about this cast!!
 
         final Set<Integer> assumptionTypeIds = this.getDeps().ids
                 .stream()
@@ -70,18 +70,17 @@ class PPOImpl extends POImpl implements PPO {
                 .collect(Collectors.toSet());
 
         if (!assumptionTypeIds.isEmpty()) {
-            cfun.getCallsites()        //TODO: probably missing deps from other functions
+            cfun.getCallsites() // TODO: probably missing deps from other functions
                     .stream()
-                    .forEach(
-                        callsite -> {
-                            final Set<SPO> associatedSpos = callsite.getSpos()
-                                    .stream()
-                                    .filter(spo -> assumptionTypeIds.contains(spo.getType().getExternalId()))
-                                    .collect(Collectors.toSet());
+                    .forEach(callsite -> {
+                        final Set<SPO> associatedSpos = callsite.getSpos()
+                                .stream()
+                                .filter(spo -> assumptionTypeIds.contains(spo.getType().getExternalId()))
+                                .collect(Collectors.toSet());
 
-                            collected.addAll(associatedSpos);
+                        collected.addAll(associatedSpos);
 
-                        });
+                    });
         }
 
         return collected;

@@ -34,6 +34,9 @@ public abstract class FileLevelAnalysisXml extends AnalysisXml {
         if (this.header.created != null) {
             return fixExtension(this.header.created.file);
         }
+        else {
+            LOG.warn("no <header><created> tag in " + this.getRelativeOrigin());
+        }
 
         if (this.header.application == null) {
             return fetchNameFromOldHeader();
@@ -56,7 +59,8 @@ public abstract class FileLevelAnalysisXml extends AnalysisXml {
     private static String fixExtension(String name) {
         if (!name.endsWith(".c")) {
             return name + ".c";
-        } else {
+        }
+        else {
             return name;
         }
     }

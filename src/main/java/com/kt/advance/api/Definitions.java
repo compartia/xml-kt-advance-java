@@ -2,8 +2,11 @@ package com.kt.advance.api;
 
 public class Definitions {
     public enum DepsLevel {
-        a("dependent on other functions"), f("dependent on context"), i(
-                "unknown"), s("dependent on itself"), x("dead code");
+        a("dependent on other functions"),
+        f("dependent on context"),
+        i("unknown"),
+        s("dependent on itself"),
+        x("dead code");
 
         private final String label;
 
@@ -44,11 +47,14 @@ public class Definitions {
 
             if ("r".equals(status)) {
                 return violation;
-            } else if ("o".equals(status)) {
+            }
+            else if ("o".equals(status)) {
                 return open;
-            } else if ("g".equals(status)) {
+            }
+            else if ("g".equals(status)) {
                 return discharged;
-            } else if ("x".equals(status)) {
+            }
+            else if ("x".equals(status)) {
                 return dead;
             }
 
@@ -77,39 +83,44 @@ public class Definitions {
 
     public enum PredicateType {
 
-        _ab("Allocation Base"),//
-        _c("Cast"),//
-        _cb("Common Base"), //
-        _cbt("Common Base Type"),//
-        _csu("Signed To Unsigned Cast"),//
-        _cus("Unsigned To Signed Cast"),//
-        _ft("Format String"),//
-        _gm("Global Mem"), //
-        _i("Initialized"),//
-        _ilb("Index Lower Bound"),//
-        _io("Int Overflow"), //
-        _ir("Initialized Range"),//
-        _iu("Int Underflow"),//
-        _iub("Index Upper Bound"),//
-        _lb("Lower Bound"),//
-        _nn("Not Null"),//
-        _nneg("Non Negative"),//
-        _no("No Overlap"),//
-        _nt("Null Terminated"),//
-        _null("Null"),//
-        _pc("Pointer Cast"),//
-        _plb("Ptr Lower Bound"),//
+        _ab("Allocation Base"),
+        _c("Cast"),
+        _cb("Common Base"),
+        _cbt("Common Base Type"),
+        _csu("Signed To Unsigned Cast"),
+        _cus("Unsigned To Signed Cast"),
+        _ft("Format String"),
+        _gm("Global Mem"),
+        _i("Initialized"),
+        _ilb("Index Lower Bound"),
+        _io("Int Overflow"),
+        _ir("Initialized Range"),
+        _iu("Int Underflow"),
+        _iub("Index Upper Bound"),
+        _lb("Lower Bound"),
+        _nn("Not Null"),
+        _nneg("Non Negative"),
+        _no("No Overlap"),
+        _nt("Null Terminated"),
+        _null("Null"),
+        _pc("Pointer Cast"),
+        _plb("Ptr Lower Bound"),
 
-        _pre("Predicate"),//
-        _pub("Ptr Upper Bound"),//
+        _pre("Predicate"),
+        _pub("Ptr Upper Bound"),
 
-        _pubd("Ptr Upper Bound Deref"),//
-        _tao("Type At Offset"),//
-        _ub("Upper Bound"),//
-        _vc("Value Constraint"),//
-        _vm("Valid Mem"),//
-        _w("Width Overflow"),//
-        _z("Not Zero");
+        _pubd("Ptr Upper Bound Deref"),
+        _tao("Type At Offset"),
+        _ub("Upper Bound"),
+        _vc("Value Constraint"),
+        _vm("Valid Mem"),
+        _w("Width Overflow"),
+        _z("Not Zero"),
+
+        _is("In scope"),
+        _prm("Preserved All Memory"),
+        _cls("Can Leave Scope"),
+        _pv("Preserved Value");
 
         public String label;
 
@@ -129,7 +140,7 @@ public class Definitions {
         @Deprecated
         public double defaultEffortValue() {
             return 1.0;
-            //XXX: configure by predicate;
+            // XXX: configure by predicate;
         }
     }
 

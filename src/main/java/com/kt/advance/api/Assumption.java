@@ -7,19 +7,21 @@ import kt.advance.model.PredicatesFactory.CPOPredicate;
 
 public class Assumption {
 
-	public enum AssumptionTypeCode {
-		/** ATApiAssumptionType */
-		aa,
+    public enum AssumptionTypeCode {
+        /** ATApiAssumptionType */
+        aa,
 
-		/** ATPostconditionType */
-		pc,
+        /** ATPostconditionType */
+        pc,
 
-		/** ATUserAssumptionType */
-		ua,
+        /** ATUserAssumptionType */
+        ua,
 
-		/** Global Assumption */
-		ga
-	}
+        /** Global Assumption */
+        ga,
+
+        ca// ??????
+    }
 
     public final Integer index;
 
@@ -28,9 +30,9 @@ public class Assumption {
     public final Integer[] ppos;
     public final Integer[] spos;
 
-	public final AssumptionTypeCode typeCode;
+    public final AssumptionTypeCode typeCode;
 
-	public Assumption(ApiAssumptionNode node, CFunction fun, AssumptionTypeCode code) {
+    public Assumption(ApiAssumptionNode node, CFunction fun, AssumptionTypeCode code) {
 
         this.ppos = Util.splitStringIntoIntegers(node.ppos);
         this.spos = Util.splitStringIntoIntegers(node.spos);
@@ -39,7 +41,7 @@ public class Assumption {
 
         this.index = node.predicateIndex;
 
-		this.typeCode = code;
+        this.typeCode = code;
 
     }
 }
