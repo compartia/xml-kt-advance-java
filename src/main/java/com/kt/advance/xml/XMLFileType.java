@@ -25,21 +25,24 @@ public class XMLFileType<T> {
      * lazy JAXBContext & Unmarshaller cache
      */
     public static final Map<Class<?>, XMLFileType<?>> xmlTypes = new HashMap<>();
-    static final Logger LOG = LoggerFactory.getLogger(XMLFileType.class.getName());
-    final JAXBContext ppoJaxbContext;
+    static final Logger                               LOG      = LoggerFactory.getLogger(XMLFileType.class.getName());
+    final JAXBContext                                 ppoJaxbContext;
 
     public XMLFileType(Class<T> classesToBeBound) {
         try {
             ppoJaxbContext = JAXBContext.newInstance(classesToBeBound);
         } catch (final JAXBException e) {
-            throw new XmlReadFailedException(null, e);
+            throw new XmlReadFailedException(
+                null,
+                e);
         }
     }
 
     public static <X, T> XMLFileType<X> getReader(Class<X> clazz) {
         XMLFileType xmlType = XMLFileType.xmlTypes.get(clazz);
         if (xmlType == null) {
-            xmlType = new XMLFileType<X>(clazz);
+            xmlType = new XMLFileType<X>(
+                clazz);
             XMLFileType.xmlTypes.put(clazz, xmlType);
         }
         return xmlType;
@@ -70,9 +73,13 @@ public class XMLFileType<T> {
             }
             return obj;
         } catch (final JAXBException e) {
-            throw new XmlReadFailedException(file, e);
+            throw new XmlReadFailedException(
+                file,
+                e);
         } catch (final NullPointerException e) {
-            throw new XmlReadFailedException(file, e);
+            throw new XmlReadFailedException(
+                file,
+                e);
         }
 
     }

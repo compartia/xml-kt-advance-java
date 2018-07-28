@@ -62,7 +62,8 @@ public abstract class AbstractHasOriginImpl implements HasOriginFile {
 
     @Override
     public String getTime() {
-        throw new IllegalStateException("not yet implemented");
+        throw new IllegalStateException(
+            "not yet implemented");
     }
 
     @Override

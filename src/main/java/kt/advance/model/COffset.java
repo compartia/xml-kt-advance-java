@@ -29,9 +29,9 @@ import kt.advance.model.ExpFactory.CExpression;
 
 class COffset extends Indexed implements Bindable {
     CExpression exp;
-    Integer expId, offsetId;
+    Integer     expId, offsetId;
 
-    String fieldname;
+    String  fieldname;
     boolean noOffset = false;
     COffset offset;
 
@@ -44,16 +44,19 @@ class COffset extends Indexed implements Bindable {
         if ("i".equals(kind)) {
             expId = args[0];
             offsetId = args[1];
-        } else if ("f".equals(kind)) {
+        }
+        else if ("f".equals(kind)) {
             fieldname = tags[1];
             offsetId = args[1];
-        } else if ("n".equals(kind)) {
-            //no offset
+        }
+        else if ("n".equals(kind)) {
+            // no offset
             noOffset = true;
         }
 
         else {
-            throw new IllegalArgumentException("unknown type of offset:" + kind);
+            throw new IllegalArgumentException(
+                "unknown type of offset:" + kind);
         }
     }
 
@@ -76,7 +79,8 @@ class COffset extends Indexed implements Bindable {
         if (fieldname != null) {
             final String o = offset != null ? offset.toString() : "";
             return "." + fieldname + o;
-        } else {
+        }
+        else {
             return "[" + exp.toString() + "]";
         }
     }

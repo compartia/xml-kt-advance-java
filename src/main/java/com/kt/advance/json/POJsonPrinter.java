@@ -47,8 +47,8 @@ public class POJsonPrinter {
         public JAnalysis(CAnalysis an) {
 
             apps = an.getApps().parallelStream()
-                     .map(JApp::new)
-                     .collect(Collectors.toList());
+                    .map(JApp::new)
+                    .collect(Collectors.toList());
         }
     }
 
@@ -63,8 +63,8 @@ public class POJsonPrinter {
             this.baseDir = app.getBaseDir().getAbsolutePath();
 
             files = app.getCfiles().parallelStream()
-                       .map(JFile::new)
-                       .collect(Collectors.toList());
+                    .map(JFile::new)
+                    .collect(Collectors.toList());
         }
     }
 
@@ -81,7 +81,6 @@ public class POJsonPrinter {
 
         public final Integer            id;
         public final AssumptionTypeCode type;
- 
 
         @JsonInclude(Include.NON_EMPTY)
         public final Integer[] ppos;
@@ -100,11 +99,10 @@ public class POJsonPrinter {
         }
     }
 
- 
     static class JApp implements Jsonable {
 
         public final List<JFile> files;
-        public String sourceDir;
+        public String            sourceDir;
 
         public JApp(CApplication app) {
             this.sourceDir = app.getSourceDir().getAbsolutePath();
@@ -115,7 +113,6 @@ public class POJsonPrinter {
         }
     }
 
- 
     static class JCallsite implements Jsonable {
 
         @JsonInclude(Include.NON_EMPTY)
@@ -131,18 +128,21 @@ public class POJsonPrinter {
 
         public JCallsite(CFunctionSiteSPOs site) {
 
-            this.loc = new JLocation(site.getLocation());
+            this.loc = new JLocation(
+                site.getLocation());
 
             this.type = site.getType();
             final CExpression exp2 = site.getExp();
             this.exp = exp2 != null ? exp2.toString() : null;
 
             if (site.getCallee() != null) {
-                this.callee = new JVarInfo(site.getCallee());
+                this.callee = new JVarInfo(
+                    site.getCallee());
             }
 
             for (final SPO spo : site.getSpos()) {
-                spos.add(new JPO(spo));
+                spos.add(new JPO(
+                    spo));
             }
         }
     }
@@ -157,8 +157,8 @@ public class POJsonPrinter {
             this.name = f.getName();
 
             functions = f.getCFunctions().parallelStream()
-                         .map(JFunc::new)
-                         .collect(Collectors.toList());
+                    .map(JFunc::new)
+                    .collect(Collectors.toList());
 
         }
     }
@@ -188,46 +188,52 @@ public class POJsonPrinter {
         public JFunc(CFunction cfunction) {
             this.name = cfunction.getName();
 
-            this.loc = new JLocation(cfunction.getLocation());
+            this.loc = new JLocation(
+                cfunction.getLocation());
 
             /*
              * API
              */
             //
             this.api.aa = cfunction.getApiAssumptions().stream()
-                                   .map(JApiAssumption::new)
-                                   .collect(Collectors.toList());
+                    .map(JApiAssumption::new)
+                    .collect(Collectors.toList());
 
             /*
              * PPO: collecting primary proof obligations
              */
             this.ppos = cfunction.getPPOs().parallelStream()
-                                 .map(ppo -> {
+                    .map(ppo -> {
 
-                                     final JPO poInfo = new JPO(ppo);
+                        final JPO poInfo = new JPO(
+                            ppo);
 
-                                     final Set<SPO> associatedSpos = ppo.getAssociatedSpos(cfunction);
+                        final Set<SPO> associatedSpos = ppo.getAssociatedSpos(cfunction);
 
-                                     poInfo.links = associatedSpos
-                                                                  .stream()
-                                                                  .map(spo -> new JLink(spo, cfunction))
-                                                                  .collect(Collectors.toList());
+                        poInfo.links = associatedSpos
+                                .stream()
+                                .map(spo -> new JLink(
+                                    spo,
+                                    cfunction))
+                                .collect(Collectors.toList());
 
-                                     return poInfo;
+                        return poInfo;
 
-                                 })
-                                 .collect(Collectors.toList());
+                    })
+                    .collect(Collectors.toList());
 
             /*
              * SPO: collecting callsites and secondary proof obligations
              */
             for (final CFunctionSiteSPOs callsite : cfunction.getCallsites()) {
-                final JCallsite jCallsite = new JCallsite(callsite);
+                final JCallsite jCallsite = new JCallsite(
+                    callsite);
                 this.callsites.add(jCallsite);
             }
 
             for (final CFunctionSiteSPOs returnsite : cfunction.getReturnsites()) {
-                final JCallsite jsite = new JCallsite(returnsite);
+                final JCallsite jsite = new JCallsite(
+                    returnsite);
                 if (!jsite.spos.isEmpty()) {
                     // TODO: this must be configurable
                     this.returnsites.add(jsite);
@@ -309,8 +315,7 @@ public class POJsonPrinter {
      * just a marker interface
      *
      */
-    interface Jsonable {
-    }
+    interface Jsonable {}
 
     static class JVarInfo implements Jsonable {
         public JLocation loc;
@@ -319,7 +324,9 @@ public class POJsonPrinter {
 
         public JVarInfo(CVarInfo varInfo) {
             this.name = varInfo.name;
-            this.loc = varInfo.location == null ? null : new JLocation(varInfo.location);
+            this.loc = varInfo.location == null ? null
+                    : new JLocation(
+                        varInfo.location);
             this.type = varInfo.type.toString();
 
         }
@@ -335,10 +342,15 @@ public class POJsonPrinter {
         final long startTime = System.nanoTime();
         //
         final String basedir = args[0];
-        final FsAbstractionImpl fileSystem = new FsAbstractionImpl(new File(basedir));
-        final CAnalysisImpl an = new CAnalysisImpl(fileSystem);
+        final FsAbstractionImpl fileSystem = new FsAbstractionImpl(
+            new File(
+                basedir));
+        final CAnalysisImpl an = new CAnalysisImpl(
+            fileSystem);
 
-        final File file = new File(an.fs.getBaseDir(), an.fs.getBaseDir().getName() + ".kt.analysis.json");
+        final File file = new File(
+            an.fs.getBaseDir(),
+            an.fs.getBaseDir().getName() + ".kt.analysis.json");
         System.out.print("RESULT_JSON:" + file.getAbsolutePath());
         System.out.println();
 
@@ -355,7 +367,8 @@ public class POJsonPrinter {
     }
 
     public static String toJson(CAnalysis an) {
-        final JAnalysis jAnalysis = new JAnalysis(an);
+        final JAnalysis jAnalysis = new JAnalysis(
+            an);
 
         final ObjectMapper objectMapper = new ObjectMapper();
 
@@ -365,16 +378,20 @@ public class POJsonPrinter {
             final String json = ow.writeValueAsString(jAnalysis);
             return json;
         } catch (final JsonProcessingException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException(
+                e);
         }
 
     }
 
     public static void toJson(CAnalysis an, File file) throws IOException {
-        final JAnalysis jAnalysis = new JAnalysis(an);
+        final JAnalysis jAnalysis = new JAnalysis(
+            an);
 
         LOG.info("writing json to {}", file.getAbsolutePath());
-        final PrintWriter writer = new PrintWriter(file, "UTF-8");
+        final PrintWriter writer = new PrintWriter(
+            file,
+            "UTF-8");
 
         final JsonFactory jfactory = new JsonFactory();
         final JsonGenerator jGenerator = jfactory.createGenerator(writer);

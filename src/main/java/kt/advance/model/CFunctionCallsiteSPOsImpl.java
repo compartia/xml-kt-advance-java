@@ -40,8 +40,8 @@ import kt.advance.model.ExpFactory.CExpression;
 
 class CFunctionCallsiteSPOsImpl implements CFunctionCallsiteSPOs {
 
-    private final CExpression exp;
-    private final CLocation location;
+    private final CExpression       exp;
+    private final CLocation         location;
     private final Map<Integer, SPO> spos = new HashMap<>();
 
     private final CVarInfo callee;
@@ -65,7 +65,8 @@ class CFunctionCallsiteSPOsImpl implements CFunctionCallsiteSPOs {
 
         if (call.iexp != null) {
             exp = cfunc.getCfile().getExression(call.iexp);
-        } else {
+        }
+        else {
             exp = null;
         }
 
@@ -73,8 +74,11 @@ class CFunctionCallsiteSPOsImpl implements CFunctionCallsiteSPOs {
 
         for (final ApiCondition apiCondition : call.apiConditions) {
 
-            final SPOImpl spo = new SPOImpl(apiCondition, cfunc, this);
-            //            putUniq(spos, apiCondition.iapi, spo);
+            final SPOImpl spo = new SPOImpl(
+                apiCondition,
+                cfunc,
+                this);
+            // putUniq(spos, apiCondition.iapi, spo);
             putUniq(spos, spo.id, spo);
 
         }

@@ -83,14 +83,17 @@ public class CApplicationImpl implements CApplication {
         Preconditions.checkNotNull(fs.getBaseDir(), "base dir is required");
 
         final File analysisDir = fs.getBaseDir().getParentFile();
-        final File sourceDir = new File(analysisDir, FsAbstraction.SOURCEFILES_DIR_NAME);
+        final File sourceDir = new File(
+            analysisDir,
+            FsAbstraction.SOURCEFILES_DIR_NAME);
 
         LOG.info("analysisDir: {}", analysisDir);
         LOG.info("sourceDir: {}", sourceDir);
 
         if (sourceDir.isDirectory() && sourceDir.exists()) {
             this.sourceDir = sourceDir;
-        } else {
+        }
+        else {
             this.sourceDir = null;
             LOG.error("no " + FsAbstraction.SOURCEFILES_DIR_NAME + " in   " + analysisDir);
         }
@@ -157,20 +160,24 @@ public class CApplicationImpl implements CApplication {
             proc.run();
         } catch (final NullPointerException ex) {
 
-            throw new RuntimeException(ex);
+            throw new RuntimeException(
+                ex);
 
         } catch (final Exception ex) {
 
             if (errors != null) {
                 errors.addError(ppos.getRelativeOrigin(), ex.getLocalizedMessage());
-            } else {
+            }
+            else {
                 LOG.error(ppos.getRelativeOrigin() + ":" + ex.getLocalizedMessage());
             }
         }
     }
 
     CFileImpl getCFileOrMakeNew(String name) {
-        return cfiles.computeIfAbsent(name, n -> new CFileImpl(name, this));
+        return cfiles.computeIfAbsent(name, n -> new CFileImpl(
+            name,
+            this));
     }
 
     CFunctionImpl getCFunctionImpl(FunctionLevelAnalysisXml f) {
@@ -192,18 +199,19 @@ public class CApplicationImpl implements CApplication {
 
         StreamSupport.stream(apiFiles.spliterator(), !TestMode.inTestMode)
 
-                     .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                     .sequential()
-                     .forEach(xmlObj -> runInHandler(() -> {
-                         final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
-                         if (cFunction == null) {
-                             LOG.error("cannot get cFunction");
-                         } else {
-                             cFunction.readApiFile(xmlObj);
-                         }
+                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
+                .sequential()
+                .forEach(xmlObj -> runInHandler(() -> {
+                    final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
+                    if (cFunction == null) {
+                        LOG.error("cannot get cFunction");
+                    }
+                    else {
+                        cFunction.readApiFile(xmlObj);
+                    }
 
-                         tracker.addProgress(progressInc);
-                     }, xmlObj));
+                    tracker.addProgress(progressInc);
+                }, xmlObj));
 
     }
 
@@ -221,14 +229,14 @@ public class CApplicationImpl implements CApplication {
 
         StreamSupport.stream(cdictFiles.spliterator(), !TestMode.inTestMode)
 
-                     .map(file -> reader.readXml(file, fs.getBaseDir()))
-                     .sequential()
-                     .forEach(
-                              xmlObj -> runInHandler(() -> {
-                                  final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                                  cfile.readCDictFile(xmlObj, predicatesFactory.expressionsFactory);
-                                  tracker.addProgress(progressInc);
-                              }, xmlObj)
+                .map(file -> reader.readXml(file, fs.getBaseDir()))
+                .sequential()
+                .forEach(
+                         xmlObj -> runInHandler(() -> {
+                             final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                             cfile.readCDictFile(xmlObj, predicatesFactory.expressionsFactory);
+                             tracker.addProgress(progressInc);
+                         }, xmlObj)
 
         );
 
@@ -250,14 +258,14 @@ public class CApplicationImpl implements CApplication {
 
         StreamSupport.stream(cFileFiles.spliterator(), !TestMode.inTestMode)
 
-                     .map(file -> reader.readXml(file, fs.getBaseDir()))
-                     .sequential()
-                     .forEach(
-                              xmlObj -> runInHandler(() -> {
-                                  final CFileImpl cfile = getCFileOrMakeNew(xmlObj.getSourceFilename());
-                                  cfile.readCFileXml(xmlObj);
-                                  tracker.addProgress(progressInc);
-                              }, xmlObj)
+                .map(file -> reader.readXml(file, fs.getBaseDir()))
+                .sequential()
+                .forEach(
+                         xmlObj -> runInHandler(() -> {
+                             final CFileImpl cfile = getCFileOrMakeNew(xmlObj.getSourceFilename());
+                             cfile.readCFileXml(xmlObj);
+                             tracker.addProgress(progressInc);
+                         }, xmlObj)
 
         );
         final Instant end = Instant.now();
@@ -281,13 +289,13 @@ public class CApplicationImpl implements CApplication {
 
         StreamSupport.stream(files.spliterator(), !TestMode.inTestMode)
 
-                     .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                     .forEach(xmlObj -> runInHandler(() -> {
+                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
+                .forEach(xmlObj -> runInHandler(() -> {
 
-                         final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                         cfile.getCFunctionOrMakeNew(xmlObj);
-                         tracker.addProgress(progressInc);
-                     }, xmlObj));
+                    final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                    cfile.getCFunctionOrMakeNew(xmlObj);
+                    tracker.addProgress(progressInc);
+                }, xmlObj));
 
     }
 
@@ -305,14 +313,14 @@ public class CApplicationImpl implements CApplication {
 
         StreamSupport.stream(pods.spliterator(), !TestMode.inTestMode)
 
-                     .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                     .sequential()
-                     .forEach(xmlObj -> runInHandler(() -> {
-                         final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                         final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
-                         cFunction.readPodFile(xmlObj, cfile);
-                         tracker.addProgress(progressInc);
-                     }, xmlObj));
+                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
+                .sequential()
+                .forEach(xmlObj -> runInHandler(() -> {
+                    final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                    final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
+                    cFunction.readPodFile(xmlObj, cfile);
+                    tracker.addProgress(progressInc);
+                }, xmlObj));
 
     }
 
@@ -330,13 +338,13 @@ public class CApplicationImpl implements CApplication {
 
         StreamSupport.stream(ppoFiles.spliterator(), !TestMode.inTestMode)
 
-                     .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                     .sequential()
-                     .forEach(xmlObj -> runInHandler(() -> {
-                         final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
-                         cFunction.readPpoFile(xmlObj, errors);
-                         tracker.addProgress(progressInc);
-                     }, xmlObj));
+                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
+                .sequential()
+                .forEach(xmlObj -> runInHandler(() -> {
+                    final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
+                    cFunction.readPpoFile(xmlObj, errors);
+                    tracker.addProgress(progressInc);
+                }, xmlObj));
 
     }
 
@@ -354,15 +362,15 @@ public class CApplicationImpl implements CApplication {
 
         StreamSupport.stream(predicatesFiles.spliterator(), !TestMode.inTestMode)
 
-                     .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                     .sequential()
-                     .forEach(xmlObj -> runInHandler(() -> {
-                         final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                         cfile.readPrdFile(xmlObj, predicatesFactory);
+                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
+                .sequential()
+                .forEach(xmlObj -> runInHandler(() -> {
+                    final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                    cfile.readPrdFile(xmlObj, predicatesFactory);
 
-                         tracker.addProgress(progressInc);
+                    tracker.addProgress(progressInc);
 
-                     }, xmlObj));
+                }, xmlObj));
 
     }
 
@@ -380,13 +388,13 @@ public class CApplicationImpl implements CApplication {
 
         StreamSupport.stream(spoFiles.spliterator(), !TestMode.inTestMode)
 
-                     .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                     .sequential()
-                     .forEach(xmlObj -> runInHandler(() -> {
-                         final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
-                         cFunction.readSpoFile(xmlObj, errors);
-                         tracker.addProgress(progressInc);
-                     }, xmlObj));
+                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
+                .sequential()
+                .forEach(xmlObj -> runInHandler(() -> {
+                    final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
+                    cFunction.readSpoFile(xmlObj, errors);
+                    tracker.addProgress(progressInc);
+                }, xmlObj));
 
     }
 

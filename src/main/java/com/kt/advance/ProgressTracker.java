@@ -28,7 +28,8 @@ public class ProgressTracker {
             if (out != null) {
                 out.println("PROGRESS:" + this.progress);
             }
-        } else {
+        }
+        else {
             this.parent.addProgress(progressAdd * (impactOnTotalProgress / 100f), msg);
         }
     }
@@ -49,7 +50,10 @@ public class ProgressTracker {
     }
 
     public ProgressTracker getSubtaskTracker(final float _impactOnTotalProgress, String subtaskMsg) {
-        return new ProgressTracker(this, _impactOnTotalProgress, subtaskMsg);
+        return new ProgressTracker(
+            this,
+            _impactOnTotalProgress,
+            subtaskMsg);
     }
 
 }

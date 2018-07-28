@@ -22,7 +22,6 @@ public class Assumption {
 
         ca// ??????
     }
- 
 
     public final Integer index;
 
@@ -31,11 +30,9 @@ public class Assumption {
     public final Integer[] ppos;
     public final Integer[] spos;
 
- 
     public final AssumptionTypeCode typeCode;
 
     public Assumption(ApiAssumptionNode node, CFunction fun, AssumptionTypeCode code) {
- 
 
         this.ppos = Util.splitStringIntoIntegers(node.ppos);
         this.spos = Util.splitStringIntoIntegers(node.spos);
@@ -48,4 +45,3 @@ public class Assumption {
 
     }
 }
- 

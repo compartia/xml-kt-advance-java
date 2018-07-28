@@ -44,10 +44,10 @@ import org.xml.sax.SAXException;
 public class XmlParser {
 
     /** Valid character mask. */
-    public static final int MASK_VALID = 0x01;
+    public static final int     MASK_VALID        = 0x01;
     private static final String CAN_NOT_PARSE_XML = "can not parse xml : ";
     /** Character flags. */
-    private static final byte[] CHARS = new byte[1 << 16];
+    private static final byte[] CHARS             = new byte[1 << 16];
 
     static {
 
@@ -677,8 +677,8 @@ public class XmlParser {
     }
 
     private DocumentBuilder builder;
-    private Document doc = null;
-    private Element root = null;
+    private Document        doc  = null;
+    private Element         root = null;
 
     public XmlParser() {
         final DocumentBuilderFactory bf = DocumentBuilderFactory.newInstance();
@@ -688,7 +688,9 @@ public class XmlParser {
             bf.setValidating(false);
             builder = bf.newDocumentBuilder();
         } catch (final ParserConfigurationException e) {
-            throw new XmlParserException("can not create a XML parser", e);
+            throw new XmlParserException(
+                "can not create a XML parser",
+                e);
         }
     }
 
@@ -725,13 +727,19 @@ public class XmlParser {
 
     public void parse(final File file) {
         if (file == null || !file.exists()) {
-            throw new XmlParserException("File not found : " + file);
+            throw new XmlParserException(
+                "File not found : " + file);
         }
 
-        try (BufferedReader buffer = new BufferedReader(new FileReader(file))) {
+        try (BufferedReader buffer = new BufferedReader(
+            new FileReader(
+                file))) {
             parse(buffer);
         } catch (final IOException e) {
-            throw new XmlReadFailedException(file, "can not parse the file ", e);
+            throw new XmlReadFailedException(
+                file,
+                "can not parse the file ",
+                e);
 
         }
     }
@@ -741,10 +749,13 @@ public class XmlParser {
         try {
             fixed = fixUnicodeChar(xml);
             fixed = removeInvalidChars(fixed);
-            doc = builder.parse(new ByteArrayInputStream(fixed.getBytes()));
+            doc = builder.parse(new ByteArrayInputStream(
+                fixed.getBytes()));
 
         } catch (SAXException | IOException e) {
-            throw new XmlParserException(CAN_NOT_PARSE_XML + fixed, e);
+            throw new XmlParserException(
+                CAN_NOT_PARSE_XML + fixed,
+                e);
         }
     }
 
@@ -768,7 +779,8 @@ public class XmlParser {
      */
     protected String fixUnicodeChar(String text) {
         final String unicode = "&u";
-        final StringBuilder replace = new StringBuilder(text);
+        final StringBuilder replace = new StringBuilder(
+            text);
         if (text.indexOf(unicode) >= 0) {
             final Pattern p = Pattern.compile("&u([0-9a-fA-F]{1,4});");
             final Matcher m = p.matcher(replace.toString());

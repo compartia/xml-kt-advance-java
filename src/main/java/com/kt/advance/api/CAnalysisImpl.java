@@ -70,8 +70,10 @@ public class CAnalysisImpl implements CAnalysis {
         final Collection<File> targetFiles = fs.listSubdirsRecursively(FsAbstraction.ANALYSIS_DIR_NAME);
 
         apps = targetFiles.stream()
-                          .map(appDir -> new CApplicationImpl(fs.instance(appDir), errors))
-                          .collect(Collectors.toMap(CApplication::getSourceDir, app -> app));
+                .map(appDir -> new CApplicationImpl(
+                    fs.instance(appDir),
+                    errors))
+                .collect(Collectors.toMap(CApplication::getSourceDir, app -> app));
 
         return apps;
     }

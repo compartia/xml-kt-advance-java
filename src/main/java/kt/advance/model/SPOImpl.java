@@ -36,33 +36,33 @@ import com.kt.advance.xml.model.SpoXml.PCElement;
  *
  */
 class SPOImpl extends POImpl implements SPO {
-	@Override
-	public String toString() {
-		return POPrinter.toString(this);
-	}
+    @Override
+    public String toString() {
+        return POPrinter.toString(this);
+    }
 
-	private final CFunctionSiteSPOs site;
+    private final CFunctionSiteSPOs site;
 
-	@Override
-	public CFunctionSiteSPOs getSite() {
-		return site;
-	}
+    @Override
+    public CFunctionSiteSPOs getSite() {
+        return site;
+    }
 
-	public SPOImpl(ApiCondition call, CFunction host, CFunctionSiteSPOs site) {
-		super(call.proofObligation.ispo, call.proofObligation, host.getSPOTypeRef(call.proofObligation.ispo));
-		this.site = site;
-	}
+    public SPOImpl(ApiCondition call, CFunction host, CFunctionSiteSPOs site) {
+        super(call.proofObligation.ispo, call.proofObligation, host.getSPOTypeRef(call.proofObligation.ispo));
+        this.site = site;
+    }
 
-	public SPOImpl(PCElement postcondition, CFunction host, CFunctionSiteSPOs site) {
+    public SPOImpl(PCElement postcondition, CFunction host, CFunctionSiteSPOs site) {
 
-		super(postcondition.proofObligation.ispo,
-		      postcondition.proofObligation, host.getSPOTypeRef(postcondition.proofObligation.ispo));
-		this.site = site;
-	}
+        super(postcondition.proofObligation.ispo,
+              postcondition.proofObligation, host.getSPOTypeRef(postcondition.proofObligation.ispo));
+        this.site = site;
+    }
 
-	@Override
-	public POLevel getLevel() {
-		return POLevel.SECONDARY;
-	}
+    @Override
+    public POLevel getLevel() {
+        return POLevel.SECONDARY;
+    }
 
 }

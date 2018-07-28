@@ -57,10 +57,10 @@ public class FsAbstractionImpl implements FsAbstraction {
     static synchronized IOFileFilter getSuffixFilter(String suffix) {
 
         return filters.computeIfAbsent(
-            suffix,
-            sfx -> new SuffixFileFilter(
-                    XmlNamesUtils.xmlSuffix(sfx),
-                    IOCase.SENSITIVE));
+                                       suffix,
+                                       sfx -> new SuffixFileFilter(
+                                           XmlNamesUtils.xmlSuffix(sfx),
+                                           IOCase.SENSITIVE));
 
     }
 
@@ -77,7 +77,8 @@ public class FsAbstractionImpl implements FsAbstraction {
 
     @Override
     public FsAbstraction instance(File baseDir) {
-        return new FsAbstractionImpl(baseDir);
+        return new FsAbstractionImpl(
+            baseDir);
     }
 
     @Override
@@ -119,12 +120,12 @@ public class FsAbstractionImpl implements FsAbstraction {
     @Override
     public Collection<File> listSubdirsRecursively(String dirname) {
         final NameFileFilter dirFilter = new NameFileFilter(
-                dirname,
-                IOCase.INSENSITIVE);
+            dirname,
+            IOCase.INSENSITIVE);
 
         final Collection<File> dirs = FileUtils.listFilesAndDirs(getBaseDir(),
-            dirFilter,
-            TrueFileFilter.INSTANCE);
+                                                                 dirFilter,
+                                                                 TrueFileFilter.INSTANCE);
 
         final Set<File> targetDirs = dirs.stream()
                 .filter(x -> x.isDirectory() && x.getName().equals(dirname))
@@ -146,8 +147,8 @@ public class FsAbstractionImpl implements FsAbstraction {
     @Override
     public Collection<File> listXMLs(String suffix) {
         return FileUtils.listFiles(getBaseDir(),
-            getSuffixFilter(suffix),
-            TrueFileFilter.INSTANCE)
+                                   getSuffixFilter(suffix),
+                                   TrueFileFilter.INSTANCE)
                 .stream()
                 .sorted()
                 .collect(Collectors.toList());
@@ -157,12 +158,12 @@ public class FsAbstractionImpl implements FsAbstraction {
     public Collection<File> listFilesRecursively(String suffix) {
 
         final IOFileFilter suffixFilter = new SuffixFileFilter(
-                suffix,
-                IOCase.SENSITIVE);
+            suffix,
+            IOCase.SENSITIVE);
 
         return FileUtils.listFiles(getBaseDir(),
-            suffixFilter,
-            TrueFileFilter.INSTANCE)
+                                   suffixFilter,
+                                   TrueFileFilter.INSTANCE)
                 .stream()
                 .sorted()
                 .collect(Collectors.toSet());

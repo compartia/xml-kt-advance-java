@@ -35,7 +35,7 @@ public class CVarInfo extends Indexed implements Bindable {
 
     public CLocation location;
 
-    int locId, vtypeId;
+    int          locId, vtypeId;
     public CType type;
 
     public CVarInfo(IndexedTableNode node) {
@@ -44,7 +44,7 @@ public class CVarInfo extends Indexed implements Bindable {
 
     @Override
     public void bind(CFileImpl cfile) {
-        if (locId != -1) {//global locations are not yet supported
+        if (locId != -1) {// global locations are not yet supported
             location = cfile.getLocation(locId);
         }
         this.type = cfile.getType(vtypeId);
@@ -54,7 +54,8 @@ public class CVarInfo extends Indexed implements Bindable {
     public int getLineNumber() {
         if (this.location != null) {
             return this.location.getLine();
-        } else {
+        }
+        else {
             return 0;
         }
     }

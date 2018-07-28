@@ -31,9 +31,7 @@ import kt.advance.model.PredicatesFactory.CPOPredicate;
 
 class AssumptionType extends Indexed {
 
-
-
-    public Integer postRequestIndex;
+    public Integer      postRequestIndex;
     public CPOPredicate predicate;
 
     public Integer apiId;
@@ -49,22 +47,22 @@ class AssumptionType extends Indexed {
 
         this.type = AssumptionTypeCode.valueOf(tags[0]);
         switch (type) {
-        case aa:
-        case ua:
-        case ga:
-            this.apiId = args[0];
-            final Integer predicateIndex = args[0];
-            this.predicate = cfile.getPredicate(predicateIndex);
-            break;
-        case pc:
-            this.postRequestIndex = args[0];
-            break;
+            case aa:
+            case ua:
+            case ga:
+                this.apiId = args[0];
+                final Integer predicateIndex = args[0];
+                this.predicate = cfile.getPredicate(predicateIndex);
+                break;
+            case pc:
+                this.postRequestIndex = args[0];
+                break;
         }
 
     }
 
-    public boolean isGlobal(){
-        return this.type==AssumptionTypeCode.ga;
+    public boolean isGlobal() {
+        return this.type == AssumptionTypeCode.ga;
     }
 
     @Override
