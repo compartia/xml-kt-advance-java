@@ -4,6 +4,7 @@ import static com.kt.advance.Util.requireValue;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,7 +12,8 @@ import java.util.stream.Collectors;
 
 import com.google.common.base.Preconditions;
 import com.kt.advance.ErrorsBundle;
-import com.kt.advance.api.ApiAssumption;
+import com.kt.advance.api.Assumption;
+import com.kt.advance.api.Assumption.AssumptionTypeCode;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
 import com.kt.advance.api.CFunctionCallsiteSPOs;
@@ -29,11 +31,11 @@ import com.kt.advance.xml.model.SpoXml.SPOCall;
 
 class CFunctionImpl implements CFunction {
 
-    private Map<Integer, ApiAssumption> apiAssumptions;
+    private Map<Integer, Assumption> apiAssumptions;
 
     @Override
-    public Collection<ApiAssumption> getApiAssumptions() {
-        return this.apiAssumptions.values();
+    public Collection<Assumption> getApiAssumptions() {
+		return this.apiAssumptions != null ? this.apiAssumptions.values() : Collections.emptyList();
     }
 
     private Map<Integer, AssumptionType> assumptionsTypesMap;
@@ -116,10 +118,16 @@ class CFunctionImpl implements CFunction {
         //XXX: read library-calls
         // TODO: read postcondition-guarantees
         //TODO: read postcondition-requests
-        apiAssumptions = apiXml.getAssumptions()
+        apiAssumptions = apiXml.getApiAssumptions()
                 .stream()
-                .map(apiNode -> new ApiAssumption(apiNode, this))
-                .collect(Collectors.toMap(aa -> aa.index, aa -> aa));
+				.map(apiNode -> new Assumption(apiNode, this, AssumptionTypeCode.aa))
+				.collect(Collectors.toMap(a -> a.index, a -> a));
+
+		Map<Integer, Assumption> gAssumptions = apiXml.getGlobalAssumptions().stream()
+				.map(apiNode -> new Assumption(apiNode, this, AssumptionTypeCode.ga))
+				.collect(Collectors.toMap(a -> a.index, a -> a));
+
+		apiAssumptions.putAll(gAssumptions);
 
     }
 
