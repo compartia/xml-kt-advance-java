@@ -87,8 +87,8 @@ public class PpoXml extends FunctionLevelAnalysisXml {
 
     /**
      *
-     * @author artem <ppo deps="f" id="15" invs="50" ippo="15" s="g" ts=
-     *         "2018-01-02 20:23:19">
+     * @author artem <ppo deps="f" id="15" invs="50" ippo="15" s="g" ts= "2018-01-02
+     *         20:23:19">
      */
     public static class PPONode extends PONodeBase {
         @XmlElement(name = "d")
@@ -112,12 +112,14 @@ public class PpoXml extends FunctionLevelAnalysisXml {
         @XmlAttribute(name = "ippo", required = true)
         public Integer ippo;
 
+        @XmlAttribute(name = "ispo", required = true)
+        public Integer ispo;
+
         @XmlAttribute(name = "deps", required = true)
         public String level;
 
         /**
-         * po_status = { 'g': 'safe', 'o': 'open', 'r': 'violation', 'x':
-         * 'dead-code' }
+         * po_status = { 'g': 'safe', 'o': 'open', 'r': 'violation', 'x': 'dead-code' }
          *
          * -- refer CFunctionPPOs.py
          */
@@ -134,15 +136,13 @@ public class PpoXml extends FunctionLevelAnalysisXml {
 
         @Override
         public String toString() {
-            return "PPONode [deps=" + level + ", invs=" + invsString + ", ippo=" + ippo + ", id=" + id
+            return "PPONode [deps=" + level + ", invs=" + invsString + ", ippo=" + ippo + ", id=" + ippo
                     + ", timeStamp=" + timeStamp + "]";
         }
 
     }
 
     static abstract class PONodeBase {
-        @XmlAttribute(name = "id", required = true)
-        public Integer id;
 
         @XmlAttribute(name = "ts", required = true)
         public String timeStamp;

@@ -16,3 +16,4 @@ src/test/java/com/kt/advance/tests/ApiXmlReadingTests.java
  
 
 src/test/java/com/kt/advance/tests/FsTest.java
+/target/

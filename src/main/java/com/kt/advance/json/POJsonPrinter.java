@@ -21,6 +21,7 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import com.kt.advance.ProgressTracker;
 import com.kt.advance.api.Assumption;
 import com.kt.advance.api.Assumption.AssumptionTypeCode;
 import com.kt.advance.api.CAnalysis;
@@ -51,6 +52,22 @@ public class POJsonPrinter {
         }
     }
 
+    static class JApp implements Jsonable {
+
+        public final List<JFile> files;
+        public String            actualSourceDir;
+        public String            baseDir;
+
+        public JApp(CApplication app) {
+            this.actualSourceDir = app.getSourceDir().getAbsolutePath();
+            this.baseDir = app.getBaseDir().getAbsolutePath();
+
+            files = app.getCfiles().parallelStream()
+                    .map(JFile::new)
+                    .collect(Collectors.toList());
+        }
+    }
+
     static class JApi {
         /**
          * aa is for Api-assumption
@@ -62,18 +79,18 @@ public class POJsonPrinter {
     static class JApiAssumption {
         public final String exp;
 
-        public final Integer id;
-		public final AssumptionTypeCode type;
+        public final Integer            id;
+        public final AssumptionTypeCode type;
 
         @JsonInclude(Include.NON_EMPTY)
         public final Integer[] ppos;
-        public final String prd;
+        public final String    prd;
 
         @JsonInclude(Include.NON_EMPTY)
         public final Integer[] spos;
 
         public JApiAssumption(Assumption mApiAssumption) {
-			this.type = mApiAssumption.typeCode;
+            this.type = mApiAssumption.typeCode;
             this.id = mApiAssumption.index;
             this.prd = mApiAssumption.predicate.type.label;
             this.ppos = mApiAssumption.ppos;
@@ -82,26 +99,12 @@ public class POJsonPrinter {
         }
     }
 
-    static class JApp implements Jsonable {
-
-        public final List<JFile> files;
-        public String sourceDir;
-
-        public JApp(CApplication app) {
-            this.sourceDir = app.getSourceDir().getAbsolutePath();
-
-            files = app.getCfiles().parallelStream()
-                    .map(JFile::new)
-                    .collect(Collectors.toList());
-        }
-    }
-
     static class JCallsite implements Jsonable {
 
         @JsonInclude(Include.NON_EMPTY)
         public JVarInfo callee;
 
-        public String exp;
+        public String          exp;
         public final JLocation loc;
 
         @JsonInclude(Include.NON_EMPTY)
@@ -111,18 +114,21 @@ public class POJsonPrinter {
 
         public JCallsite(CFunctionSiteSPOs site) {
 
-            this.loc = new JLocation(site.getLocation());
+            this.loc = new JLocation(
+                site.getLocation());
 
             this.type = site.getType();
             final CExpression exp2 = site.getExp();
             this.exp = exp2 != null ? exp2.toString() : null;
 
             if (site.getCallee() != null) {
-                this.callee = new JVarInfo(site.getCallee());
+                this.callee = new JVarInfo(
+                    site.getCallee());
             }
 
             for (final SPO spo : site.getSpos()) {
-                spos.add(new JPO(spo));
+                spos.add(new JPO(
+                    spo));
             }
         }
     }
@@ -168,7 +174,8 @@ public class POJsonPrinter {
         public JFunc(CFunction cfunction) {
             this.name = cfunction.getName();
 
-            this.loc = new JLocation(cfunction.getLocation());
+            this.loc = new JLocation(
+                cfunction.getLocation());
 
             /*
              * API
@@ -184,13 +191,16 @@ public class POJsonPrinter {
             this.ppos = cfunction.getPPOs().parallelStream()
                     .map(ppo -> {
 
-                        final JPO poInfo = new JPO(ppo);
+                        final JPO poInfo = new JPO(
+                            ppo);
 
                         final Set<SPO> associatedSpos = ppo.getAssociatedSpos(cfunction);
 
                         poInfo.links = associatedSpos
                                 .stream()
-                                .map(spo -> new JLink(spo, cfunction))
+                                .map(spo -> new JLink(
+                                    spo,
+                                    cfunction))
                                 .collect(Collectors.toList());
 
                         return poInfo;
@@ -202,14 +212,16 @@ public class POJsonPrinter {
              * SPO: collecting callsites and secondary proof obligations
              */
             for (final CFunctionSiteSPOs callsite : cfunction.getCallsites()) {
-                final JCallsite jCallsite = new JCallsite(callsite);
+                final JCallsite jCallsite = new JCallsite(
+                    callsite);
                 this.callsites.add(jCallsite);
             }
 
             for (final CFunctionSiteSPOs returnsite : cfunction.getReturnsites()) {
-                final JCallsite jsite = new JCallsite(returnsite);
+                final JCallsite jsite = new JCallsite(
+                    returnsite);
                 if (!jsite.spos.isEmpty()) {
-                    //TODO: this must be configurable
+                    // TODO: this must be configurable
                     this.returnsites.add(jsite);
                 }
             }
@@ -221,8 +233,8 @@ public class POJsonPrinter {
      * in JSON format, represents a link to Primary proof obligation;
      */
     static class JLink implements Jsonable {
-        public String file;
-        public String functionName;
+        public String  file;
+        public String  functionName;
         public Integer id;
 
         public JLink(PO po, CFunction fun) {
@@ -236,7 +248,7 @@ public class POJsonPrinter {
 
     static class JLocation implements Jsonable {
 
-        public final String file;
+        public final String  file;
         public final Integer line;
 
         public JLocation(CLocation loc) {
@@ -247,15 +259,15 @@ public class POJsonPrinter {
     }
 
     static class JPO implements Jsonable {
-        public String dep;
-        public String evl;
-        public String exp;
-        public Integer id;
+        public String      dep;
+        public String      evl;
+        public String      exp;
+        public Integer     id;
         @JsonInclude(Include.NON_EMPTY)
-        public Integer line;
+        public Integer     line;
         @JsonInclude(Include.NON_EMPTY)
         public List<JLink> links = new ArrayList<>();
-        public String prd;
+        public String      prd;
 
         public String sts;
 
@@ -289,17 +301,18 @@ public class POJsonPrinter {
      * just a marker interface
      *
      */
-    interface Jsonable {
-    }
+    interface Jsonable {}
 
     static class JVarInfo implements Jsonable {
         public JLocation loc;
-        public String name;
-        public String type;
+        public String    name;
+        public String    type;
 
         public JVarInfo(CVarInfo varInfo) {
             this.name = varInfo.name;
-            this.loc = varInfo.location == null ? null : new JLocation(varInfo.location);
+            this.loc = varInfo.location == null ? null
+                    : new JLocation(
+                        varInfo.location);
             this.type = varInfo.type.toString();
 
         }
@@ -315,22 +328,33 @@ public class POJsonPrinter {
         final long startTime = System.nanoTime();
         //
         final String basedir = args[0];
-        final FsAbstractionImpl fileSystem = new FsAbstractionImpl(new File(basedir));
-        final CAnalysisImpl an = new CAnalysisImpl(fileSystem);
-        an.read();
+        final FsAbstractionImpl fileSystem = new FsAbstractionImpl(
+            new File(
+                basedir));
+        final CAnalysisImpl an = new CAnalysisImpl(
+            fileSystem);
 
-        final File file = new File(an.fs.getBaseDir(), an.fs.getBaseDir().getName() + ".kt.analysis.json");
+        final File file = new File(
+            an.fs.getBaseDir(),
+            an.fs.getBaseDir().getName() + ".kt.analysis.json");
+        System.out.print("RESULT_JSON:" + file.getAbsolutePath());
+        System.out.println();
+
+        final ProgressTracker tracker = new ProgressTracker();
+        an.read(tracker);
+
         POJsonPrinter.toJson(an, file);
 
         final long endTime = System.nanoTime();
         final long durations = TimeUnit.NANOSECONDS.toSeconds(endTime - startTime);
-        LOG.info(
-            "TOOK {}  seconds; or {}  ms", durations, TimeUnit.NANOSECONDS.toMillis(endTime - startTime));
+        LOG.info("TOOK {}  seconds; or {}  ms",
+                 durations, TimeUnit.NANOSECONDS.toMillis(endTime - startTime));
 
     }
 
     public static String toJson(CAnalysis an) {
-        final JAnalysis jAnalysis = new JAnalysis(an);
+        final JAnalysis jAnalysis = new JAnalysis(
+            an);
 
         final ObjectMapper objectMapper = new ObjectMapper();
 
@@ -340,16 +364,20 @@ public class POJsonPrinter {
             final String json = ow.writeValueAsString(jAnalysis);
             return json;
         } catch (final JsonProcessingException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException(
+                e);
         }
 
     }
 
     public static void toJson(CAnalysis an, File file) throws IOException {
-        final JAnalysis jAnalysis = new JAnalysis(an);
+        final JAnalysis jAnalysis = new JAnalysis(
+            an);
 
         LOG.info("writing json to {}", file.getAbsolutePath());
-        final PrintWriter writer = new PrintWriter(file, "UTF-8");
+        final PrintWriter writer = new PrintWriter(
+            file,
+            "UTF-8");
 
         final JsonFactory jfactory = new JsonFactory();
         final JsonGenerator jGenerator = jfactory.createGenerator(writer);

@@ -34,7 +34,7 @@ import com.kt.advance.xml.model.PpoXml.PPONode;
 import kt.advance.model.PredicatesFactory.CPOPredicate;
 
 abstract class POImpl implements PO {
-    final Integer id;
+    final Integer                    id;
     private final CProofDependencies deps;
 
     private final String explaination;
@@ -50,10 +50,11 @@ abstract class POImpl implements PO {
         return false;
     }
 
-    public POImpl(PPONode ppoNode, PoTypeRef type) {
+    public POImpl(Integer id, PPONode ppoNode, PoTypeRef type) {
         Preconditions.checkNotNull(type, "PO type must not be null");
+        Preconditions.checkNotNull(id, "PO  must have id");
 
-        this.id = ppoNode.id;
+        this.id = id;
         this.type = type;
 
         this.status = Definitions.POStatus.forString(ppoNode.status);
@@ -62,7 +63,8 @@ abstract class POImpl implements PO {
 
         if (explNode != null) {
             explaination = explNode.text;
-        } else {
+        }
+        else {
             explaination = null;
         }
 
@@ -71,7 +73,10 @@ abstract class POImpl implements PO {
 
         final String level = ppoNode.deps;
 
-        this.deps = new CProofDependencies(ids, invs, level);
+        this.deps = new CProofDependencies(
+            ids,
+            invs,
+            level);
 
     }
 

@@ -31,6 +31,13 @@ public abstract class FileLevelAnalysisXml extends AnalysisXml {
 
     @Override
     public String getSourceFilename() {
+        if (this.header.created != null) {
+            return fixExtension(this.header.created.file);
+        }
+        else {
+            LOG.warn("no <header><created> tag in " + this.getRelativeOrigin());
+        }
+
         if (this.header.application == null) {
             return fetchNameFromOldHeader();
         }
@@ -45,8 +52,16 @@ public abstract class FileLevelAnalysisXml extends AnalysisXml {
         final Integer id = relativeOrigin.lastIndexOf("_");
         final String name = relativeOrigin.substring(0, id);
         LOG.warn("no header.application.file in " + relativeOrigin + ", subst. with " + name);
-        return name + ".c";
+        return fixExtension(name);
 
     }
 
+    private static String fixExtension(String name) {
+        if (!name.endsWith(".c")) {
+            return name + ".c";
+        }
+        else {
+            return name;
+        }
+    }
 }

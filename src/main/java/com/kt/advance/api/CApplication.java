@@ -26,9 +26,11 @@ package com.kt.advance.api;
 import java.io.File;
 import java.util.Collection;
 
+import com.kt.advance.ProgressTracker;
+
 public interface CApplication {
 
-    void read();
+    void read(ProgressTracker tracker);
 
     Collection<CFile> getCfiles();
 

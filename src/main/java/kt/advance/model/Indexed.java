@@ -33,7 +33,8 @@ public abstract class Indexed {
         if (node != null) {
             this.id = node.index;
             this.init(node.getArguments(), node.getTagsSplit());
-        } else {
+        }
+        else {
             this.id = -1;
         }
     }

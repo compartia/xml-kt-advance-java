@@ -27,7 +27,8 @@ public class Util {
 
         if (map.containsKey(key)) {
             final String msg = "non unique key " + key + "[ value:" + val + "]";
-            throw new IllegalStateException(msg);
+            throw new IllegalStateException(
+                msg);
         }
         map.put(key, val);
         return val;
@@ -54,9 +55,11 @@ public class Util {
 
         final V val = map.get(key);
         if (val == null) {
-            final String keys = StringUtils.join(map.keySet(), ",");
+            // final String keys = StringUtils.join(map.keySet(), ",");
             throw new IllegalStateException(
-                    "no " + name + " in map for the key " + key + " ; available keys are:" + keys);
+                "no " + name + " in map for the key " + key /*
+                                                             * + " ; available keys are:" + keys
+                                                             */);
         }
         return val;
     }

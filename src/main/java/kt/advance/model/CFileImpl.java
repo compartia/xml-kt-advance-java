@@ -43,20 +43,20 @@ class CFileImpl implements CFile {
 
     public Map<Integer, CPOPredicate> predicates;
 
-    private final String name;
-    Map<Integer, CConst> constants;
+    private final String              name;
+    Map<Integer, CConst>              constants;
     private Map<Integer, CExpression> expressions;
-    Map<Integer, CLHost> lhosts;
-    Map<Integer, CLocationImpl> locations;
+    Map<Integer, CLHost>              lhosts;
+    Map<Integer, CLocationImpl>       locations;
 
-    Map<Integer, CLval> lvalues;
+    Map<Integer, CLval>   lvalues;
     Map<Integer, COffset> offsets;
 
-    Map<Integer, CString> strings;
-    Map<Integer, CType> types;
+    Map<Integer, CString>  strings;
+    Map<Integer, CType>    types;
     Map<Integer, CVarInfo> varinfos;
 
-    Map<Integer, CFunArg> funArg;
+    Map<Integer, CFunArg>  funArg;
     Map<Integer, CFunArgs> funArgs;
 
     Map<Integer, CCompInfo> globalComptagDefinitions;
@@ -87,7 +87,7 @@ class CFileImpl implements CFile {
         }
 
         throw new IllegalStateException(
-                "no GCompTagDecl the key " + key);
+            "no GCompTagDecl the key " + key);
 
     }
 
@@ -108,7 +108,9 @@ class CFileImpl implements CFile {
         final String functionName = node.getFunctionName();
         CFunctionImpl f = cfunctions.get(functionName);
         if (f == null) {
-            f = new CFunctionImpl(node, this);
+            f = new CFunctionImpl(
+                node,
+                this);
             cfunctions.put(f.getName(), f);
         }
         return f;
@@ -165,10 +167,12 @@ class CFileImpl implements CFile {
 
     @Override
     public File getSourceFile() {
-        return new File(getApplication().getSourceDir(), getName());
+        return new File(
+            getApplication().getSourceDir(),
+            getName());
     }
 
-    //    @Override
+    // @Override
     public COffset getOffest(Integer key) {
         return requireValue(offsets, key, "type");
     }
@@ -208,12 +212,14 @@ class CFileImpl implements CFile {
         globalComptagDeclarations = cfileXmlCached.cfile.gcomptagdecl
                 .stream()
                 .map(x -> compinfos.get(x.icinfo))
-                .collect(Collectors.toMap(node -> node.ckey, node -> node));
+                .collect(Collectors.toMap(node -> node.ckey,
+                                          node -> node));
 
         globalComptagDefinitions = cfileXmlCached.cfile.gcomptag
                 .stream()
                 .map(x -> compinfos.get(x.icinfo))
-                .collect(Collectors.toMap(node -> node.ckey, node -> node));
+                .collect(Collectors.toMap(node -> node.ckey,
+                                          node -> node));
 
         cfileXmlCached = null;
 
@@ -255,11 +261,14 @@ class CFileImpl implements CFile {
         strings = cdict.cfile.cDictionary.strings
                 .stream()
                 .map(CString::new)
-                .collect(Collectors.toConcurrentMap(node -> node.id, node -> node, mergeFunction));
+                .collect(Collectors.toConcurrentMap(node -> node.id, node -> node,
+                                                    mergeFunction));
 
         constants = cdict.cfile.cDictionary.constants
                 .stream()
-                .map(node -> new CConst(node, this))
+                .map(node -> new CConst(
+                    node,
+                    this))
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         expressions = cdict.cfile.cDictionary.expressions
@@ -272,7 +281,7 @@ class CFileImpl implements CFile {
                 .map(CLHost::new)
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
-        //        binding
+        // binding
         bind(types.values());
         bind(constants.values());
         bind(offsets.values());
@@ -288,10 +297,13 @@ class CFileImpl implements CFile {
             filenamesIndex.put(node.index, node.value);
         }
 
-        //      parsing locations
+        // parsing locations
         locations = cdict.cfile.cDeclarations.locations
                 .stream()
-                .map(node -> new CLocationImpl(node, this, this.application))
+                .map(node -> new CLocationImpl(
+                    node,
+                    this,
+                    this.application))
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         bind(varinfos.values());
@@ -310,11 +322,19 @@ class CFileImpl implements CFile {
             final Integer pk = node.index;
 
             if (predicates.containsKey(pk)) {
-                throw new XmlReadFailedException(prdXml.getOrigin(), pk + " is already in the map ");
+                throw new XmlReadFailedException(
+                    prdXml.getOrigin(),
+                    pk + " is already in the map ");
             }
 
             final CPOPredicate prd = pf.build(node);
-            predicates.put(pk, prd);
+            if (prd == null) {
+                LOG.error("cannot create predicate for " + node.arguments + " " + node.tags);
+            }
+            else {
+                predicates.put(pk, prd);
+            }
+
         }
         bind(predicates.values());
 

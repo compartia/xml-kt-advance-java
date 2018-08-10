@@ -77,9 +77,10 @@ public class PoTypeRef extends Indexed {
 
         if (Definitions.POType.rs == proofObligationType) {
             this.postconditionId = args[3];
-            this.externalId = args[3];//XXX: args len is only 4
+            this.externalId = args[3];// XXX: args len is only 4
 
-        } else if (Definitions.POType.cs == proofObligationType) {
+        }
+        else if (Definitions.POType.cs == proofObligationType) {
             this.externalId = args[3];
         }
     }

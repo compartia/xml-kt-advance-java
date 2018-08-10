@@ -51,7 +51,8 @@ public class CFunXml extends FunctionLevelAnalysisXml {
         final String fname = this.function.filename;
         if (fname.endsWith(".c")) {
             return fname;
-        } else {
+        }
+        else {
             return fname + ".c";
         }
 

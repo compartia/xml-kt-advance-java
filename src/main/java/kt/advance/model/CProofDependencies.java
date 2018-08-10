@@ -42,7 +42,8 @@ public class CProofDependencies {
         sb.append("dependencies:");
         if (level == Definitions.DepsLevel.i) {
             sb.append("no");
-        } else {
+        }
+        else {
             sb.append(level).append(" ");
             if (level == Definitions.DepsLevel.a) {
                 sb.append("ids:").append("[").append(StringUtils.join(this.ids, ",")).append("] ");

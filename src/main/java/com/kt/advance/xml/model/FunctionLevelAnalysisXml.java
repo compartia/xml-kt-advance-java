@@ -38,7 +38,8 @@ public abstract class FunctionLevelAnalysisXml extends AnalysisXml implements Ha
 
     @Deprecated
     private String fetchNameFromOldHeader() {
-        final File ff = new File(header.name);
+        final File ff = new File(
+            header.name);
         final String parent = ff.getParent();
 
         final String[] split = parent.split("ktadvance");
@@ -48,10 +49,12 @@ public abstract class FunctionLevelAnalysisXml extends AnalysisXml implements Ha
 
     @Override
     public String getFunctionName() {
-        final File f = new File(getSourceFilename());
+        final File f = new File(
+            getSourceFilename());
         final String nameNoExt = f.getName().substring(0, f.getName().lastIndexOf('.'));
 
-        final String relativeOrigin = new File(this.getRelativeOrigin()).getName();
+        final String relativeOrigin = new File(
+            this.getRelativeOrigin()).getName();
 
         return relativeOrigin.substring(nameNoExt.length() + 1, relativeOrigin.lastIndexOf('_'));
     }

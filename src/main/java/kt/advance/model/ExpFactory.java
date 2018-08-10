@@ -61,7 +61,8 @@ public class ExpFactory extends AbstractFactory<CExpression> {
         public String toString() {
             if (ExpFactory.OP_MAP.containsKey(binop)) {
                 return String.format(ExpFactory.OP_MAP.get(binop), exp1, exp2);
-            } else {
+            }
+            else {
                 return String.format("UNKNOWN(%s,%s)", exp1, exp2);
             }
 
@@ -109,7 +110,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
     static class CExpCastE extends CExpression {
         private CExpression exp;
-        private CType type;
+        private CType       type;
 
         public CExpCastE(IndexedTableNode node) {
             super(node);
@@ -132,9 +133,9 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
     static class CExpCnApp extends CExpression {
         @SuppressWarnings("unused")
-        private CType ctype;
+        private CType         ctype;
         private CExpression[] exps;
-        private String name;
+        private String        name;
 
         public CExpCnApp(IndexedTableNode node) {
             super(node);
@@ -256,9 +257,9 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
     static class CExpUnOp extends CExpression {
         @SuppressWarnings("unused")
-        private CType ctype;
+        private CType       ctype;
         private CExpression exp;
-        private String op;
+        private String      op;
 
         public CExpUnOp(IndexedTableNode node) {
             super(node);
@@ -276,7 +277,8 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
             if (ExpFactory.UN_OP_MAP.containsKey(op)) {
                 return String.format(ExpFactory.UN_OP_MAP.get(op), exp);
-            } else {
+            }
+            else {
                 return String.format("UNKNOWN(%s)", exp);
             }
         }
@@ -419,6 +421,7 @@ public class ExpFactory extends AbstractFactory<CExpression> {
 
     @Override
     public CExpression build(IndexedTableNode node) {
-        return super.buildImpl(node, node.getTagsSplit()[0], new CExpBase(node));
+        return super.buildImpl(node, node.getTagsSplit()[0], new CExpBase(
+            node));
     }
 }
