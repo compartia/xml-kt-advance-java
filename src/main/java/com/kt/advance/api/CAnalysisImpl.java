@@ -22,10 +22,11 @@ public class CAnalysisImpl implements CAnalysis {
 
     private Map<File, CApplication> apps;
 
-    private ErrorsBundle errors;
+    private final ErrorsBundle errors;
 
-    public CAnalysisImpl(FsAbstraction fs) {
+    public CAnalysisImpl(FsAbstraction fs, ErrorsBundle errors) {
         Preconditions.checkNotNull(fs);
+        this.errors = errors;
         this.fs = fs;
     }
 
@@ -39,6 +40,7 @@ public class CAnalysisImpl implements CAnalysis {
         return apps.values();
     }
 
+    @Override
     public ErrorsBundle getErrors() {
         return errors;
     }
@@ -65,21 +67,17 @@ public class CAnalysisImpl implements CAnalysis {
 
     @Override
     public Map<File, CApplication> scanForCApps() {
-        errors = new ErrorsBundle();
+        this.errors.reset();
 
         final Collection<File> targetFiles = fs.listSubdirsRecursively(FsAbstraction.ANALYSIS_DIR_NAME);
 
         apps = targetFiles.stream()
                 .map(appDir -> new CApplicationImpl(
-                    fs.instance(appDir),
-                    errors))
+                        fs.instance(appDir),
+                        errors))
                 .collect(Collectors.toMap(CApplication::getSourceDir, app -> app));
 
         return apps;
-    }
-
-    public void setErrors(ErrorsBundle errors) {
-        this.errors = errors;
     }
 
 }

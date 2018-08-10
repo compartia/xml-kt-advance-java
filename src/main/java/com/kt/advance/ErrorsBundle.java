@@ -12,10 +12,23 @@ public class ErrorsBundle {
 
     static final Logger LOG = LoggerFactory.getLogger(ErrorsBundle.class.getName());
 
-    public String file;
+    public void setVerbose(boolean verbose) {
+        this.verbose = verbose;
+    }
 
-    private final Map<String, List<String>> errors      = new HashMap<>();
-    private int                             errorsCount = 0;
+    private boolean verbose = true;
+
+    private Map<String, List<String>> errors = new HashMap<>();
+
+    public Map<String, List<String>> getErrors() {
+        return errors;
+    }
+
+    private int errorsCount = 0;
+
+    public void reset() {
+        this.errors = new HashMap<>();
+    }
 
     public void addError(String key, String error) {
 
@@ -34,6 +47,9 @@ public class ErrorsBundle {
     }
 
     public void print() {
+        if (!verbose) {
+            return;
+        }
 
         errors.forEach((key, list) -> {
             LOG.error("{}  \t errors: {}", key, list.size());
