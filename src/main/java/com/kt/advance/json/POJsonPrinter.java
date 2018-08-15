@@ -2,6 +2,8 @@ package com.kt.advance.json;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +13,13 @@ import java.util.stream.Collectors;
 
 import javax.xml.bind.JAXBException;
 
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.DefaultParser;
+import org.apache.commons.cli.HelpFormatter;
+import org.apache.commons.cli.Option;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,6 +30,7 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import com.kt.advance.ErrorsBundle;
 import com.kt.advance.ProgressTracker;
 import com.kt.advance.api.Assumption;
 import com.kt.advance.api.Assumption.AssumptionTypeCode;
@@ -43,13 +53,29 @@ public class POJsonPrinter {
     static class JAnalysis implements Jsonable {
 
         public final List<JApp> apps;
+        public List<JError>     errors;
 
         public JAnalysis(CAnalysis an) {
 
-            apps = an.getApps().parallelStream()
+            this.apps = an.getApps().parallelStream()
                     .map(JApp::new)
                     .collect(Collectors.toList());
+
+            this.errors = new ArrayList<>();
+            an.getErrors().getErrors().forEach((key, list) -> {
+
+                final JError mJError = new JError();
+                mJError.file = key;
+                mJError.messages = list;
+                errors.add(mJError);
+            });
         }
+    }
+
+    static class JError implements Jsonable {
+        public String       file;
+        public List<String> messages;
+
     }
 
     static class JApp implements Jsonable {
@@ -115,7 +141,7 @@ public class POJsonPrinter {
         public JCallsite(CFunctionSiteSPOs site) {
 
             this.loc = new JLocation(
-                site.getLocation());
+                    site.getLocation());
 
             this.type = site.getType();
             final CExpression exp2 = site.getExp();
@@ -123,12 +149,12 @@ public class POJsonPrinter {
 
             if (site.getCallee() != null) {
                 this.callee = new JVarInfo(
-                    site.getCallee());
+                        site.getCallee());
             }
 
             for (final SPO spo : site.getSpos()) {
                 spos.add(new JPO(
-                    spo));
+                        spo));
             }
         }
     }
@@ -175,7 +201,7 @@ public class POJsonPrinter {
             this.name = cfunction.getName();
 
             this.loc = new JLocation(
-                cfunction.getLocation());
+                    cfunction.getLocation());
 
             /*
              * API
@@ -192,15 +218,15 @@ public class POJsonPrinter {
                     .map(ppo -> {
 
                         final JPO poInfo = new JPO(
-                            ppo);
+                                ppo);
 
                         final Set<SPO> associatedSpos = ppo.getAssociatedSpos(cfunction);
 
                         poInfo.links = associatedSpos
                                 .stream()
                                 .map(spo -> new JLink(
-                                    spo,
-                                    cfunction))
+                                        spo,
+                                        cfunction))
                                 .collect(Collectors.toList());
 
                         return poInfo;
@@ -213,13 +239,13 @@ public class POJsonPrinter {
              */
             for (final CFunctionSiteSPOs callsite : cfunction.getCallsites()) {
                 final JCallsite jCallsite = new JCallsite(
-                    callsite);
+                        callsite);
                 this.callsites.add(jCallsite);
             }
 
             for (final CFunctionSiteSPOs returnsite : cfunction.getReturnsites()) {
                 final JCallsite jsite = new JCallsite(
-                    returnsite);
+                        returnsite);
                 if (!jsite.spos.isEmpty()) {
                     // TODO: this must be configurable
                     this.returnsites.add(jsite);
@@ -312,7 +338,7 @@ public class POJsonPrinter {
             this.name = varInfo.name;
             this.loc = varInfo.location == null ? null
                     : new JLocation(
-                        varInfo.location);
+                            varInfo.location);
             this.type = varInfo.type.toString();
 
         }
@@ -323,27 +349,70 @@ public class POJsonPrinter {
 
     static final String RL = "\n\t\t----> ";
 
-    public static void main(String[] args) throws JAXBException, IOException {
+    public static void main(String[] cmd_args) throws JAXBException, IOException {
 
         final long startTime = System.nanoTime();
-        //
-        final String basedir = args[0];
-        final FsAbstractionImpl fileSystem = new FsAbstractionImpl(
-            new File(
-                basedir));
-        final CAnalysisImpl an = new CAnalysisImpl(
-            fileSystem);
 
-        final File file = new File(
-            an.fs.getBaseDir(),
-            an.fs.getBaseDir().getName() + ".kt.analysis.json");
-        System.out.print("RESULT_JSON:" + file.getAbsolutePath());
-        System.out.println();
+        final Options options = new Options();
 
-        final ProgressTracker tracker = new ProgressTracker();
-        an.read(tracker);
+        final Option input = new Option("i", "input", true, "input directory path");
+        input.setRequired(true);
+        options.addOption(input);
 
-        POJsonPrinter.toJson(an, file);
+        final Option printErrors = new Option("ne", "no-errors", false, "do not print parsing errors to console/log");
+        options.addOption(printErrors);
+
+        final Option printProgressOpt = new Option("p", "progress", false, "print progress to console");
+        options.addOption(printProgressOpt);
+
+        final CommandLineParser parser = new DefaultParser();
+
+        try {
+            final CommandLine cmd = parser.parse(options, cmd_args);
+
+            //
+            final String basedir = cmd.getOptionValue("i");
+            final boolean printProgress = cmd.hasOption("p");
+            final boolean printNoErrors = cmd.hasOption("ne");
+
+            final FsAbstractionImpl fileSystem = new FsAbstractionImpl(
+                    new File(basedir));
+
+            final ErrorsBundle errors = new ErrorsBundle();
+            errors.setVerbose(!printNoErrors);
+            final CAnalysisImpl mCAnalysisImpl = new CAnalysisImpl(fileSystem, errors);
+
+            final File file = new File(
+                    mCAnalysisImpl.fs.getBaseDir(),
+                    mCAnalysisImpl.fs.getBaseDir().getName() + ".kt.analysis.json");
+            System.out.print("RESULT_JSON:" + file.getAbsolutePath());
+            System.out.println();
+
+            final ProgressTracker tracker;
+            if (printProgress) {
+                tracker = new ProgressTracker();
+            }
+            else {
+                final PrintStream dummyStream = new PrintStream(new OutputStream() {
+                    @Override
+                    public void write(int b) {
+                        // NO-OP
+                    }
+                });
+
+                tracker = new ProgressTracker(dummyStream);
+            }
+            mCAnalysisImpl.read(tracker);
+
+            POJsonPrinter.toJson(mCAnalysisImpl, file);
+
+        } catch (final ParseException e) {
+            System.out.println(e.getMessage());
+            final HelpFormatter formatter = new HelpFormatter();
+            formatter.printHelp("KT XML Parser ", options);
+
+            System.exit(1);
+        }
 
         final long endTime = System.nanoTime();
         final long durations = TimeUnit.NANOSECONDS.toSeconds(endTime - startTime);
@@ -353,8 +422,7 @@ public class POJsonPrinter {
     }
 
     public static String toJson(CAnalysis an) {
-        final JAnalysis jAnalysis = new JAnalysis(
-            an);
+        final JAnalysis jAnalysis = new JAnalysis(an);
 
         final ObjectMapper objectMapper = new ObjectMapper();
 
@@ -364,20 +432,19 @@ public class POJsonPrinter {
             final String json = ow.writeValueAsString(jAnalysis);
             return json;
         } catch (final JsonProcessingException e) {
-            throw new RuntimeException(
-                e);
+            throw new RuntimeException(e);
         }
 
     }
 
     public static void toJson(CAnalysis an, File file) throws IOException {
         final JAnalysis jAnalysis = new JAnalysis(
-            an);
+                an);
 
         LOG.info("writing json to {}", file.getAbsolutePath());
         final PrintWriter writer = new PrintWriter(
-            file,
-            "UTF-8");
+                file,
+                "UTF-8");
 
         final JsonFactory jfactory = new JsonFactory();
         final JsonGenerator jGenerator = jfactory.createGenerator(writer);

@@ -41,6 +41,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.kt.TestMode;
+import com.kt.advance.ErrorsBundle;
 import com.kt.advance.MapCounterInt;
 import com.kt.advance.ProgressTracker;
 import com.kt.advance.api.CAnalysisImpl;
@@ -85,10 +86,10 @@ public class XmlValidator {
     }
 
     @Ignore
-    //   @Test
+    // @Test
     public void testAllPod2PpoCorrespondence() throws JAXBException {
-
-        final CAnalysisImpl an = new CAnalysisImpl(fileSystem);
+        final ErrorsBundle errors = new ErrorsBundle();
+        final CAnalysisImpl an = new CAnalysisImpl(fileSystem, errors);
         an.read(new ProgressTracker());
 
         an.getApps().stream().forEach((app) -> testAllPod2PpoCorrespondence(app));
@@ -114,11 +115,11 @@ public class XmlValidator {
 
         ///////////////////////
 
-        //        final int validFiles = 0;
+        // final int validFiles = 0;
         final MapCounterInt<String> stats = makeStatsTable();
         final MapCounterInt<String> funcStats = new MapCounterInt<>(3 + 2 * Definitions.POStatus.values().length);
         final int cnt = 0;
-        //        building stats
+        // building stats
         for (final CFile cfile : app.getCfiles()) {
             for (final CFunction cfunciton : cfile.getCFunctions()) {
                 funcStats.inc(cfile.getName(), "functions", cfile.getCFunctions().size());
@@ -164,7 +165,7 @@ public class XmlValidator {
 
                         funcStats.inc(cfile.getName(), SPO_ + statusCode.label, 1);
 
-                        //                        assertNotNull(spo.getLocation());
+                        // assertNotNull(spo.getLocation());
 
                     }
 

@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.xml.bind.JAXBException;
 
+import com.kt.advance.ErrorsBundle;
 import com.kt.advance.ProgressTracker;
 
 public interface CAnalysis {
@@ -18,5 +19,6 @@ public interface CAnalysis {
 
     Map<File, CApplication> scanForCApps();
 
-    // CApplication getAppByBaseDir(File baseDir);
+    ErrorsBundle getErrors();
+
 }

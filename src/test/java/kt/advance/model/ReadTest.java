@@ -13,6 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.kt.TestMode;
+import com.kt.advance.ErrorsBundle;
 import com.kt.advance.MapCounterInt;
 import com.kt.advance.ProgressTracker;
 import com.kt.advance.api.CAnalysis;
@@ -40,18 +41,18 @@ public class ReadTest {
 
         final File basedir = new File(classLoader.getResource("xmls/p2").getFile());
 
-        //Create a  file system abstraction
+        // Create a file system abstraction
         final FsAbstraction fsAbstraction = new FsAbstractionImpl(basedir);
 
-        //create CAnalysis
-        final CAnalysis cAnalysis = new CAnalysisImpl(fsAbstraction);
+        // create CAnalysis
+        final CAnalysis cAnalysis = new CAnalysisImpl(fsAbstraction, new ErrorsBundle());
 
-        //force it to read ALL XMLs
+        // force it to read ALL XMLs
         cAnalysis.read(new ProgressTracker());
 
         for (final CApplication app : cAnalysis.getApps()) {
 
-            //iterate CFiles
+            // iterate CFiles
             for (final CFile cfile : app.getCfiles()) {
                 System.err.println(cfile.getName());
 
@@ -99,7 +100,7 @@ public class ReadTest {
     private void validateCFiles(final CAnalysis cAnalysis) {
         for (final CApplication app : cAnalysis.getApps()) {
 
-            //iterate CFiles
+            // iterate CFiles
             for (final CFile cfile : app.getCfiles()) {
                 System.err.println(cfile.getName());
 
@@ -117,28 +118,29 @@ public class ReadTest {
         stats.inc("total", "PPO", 0);
         stats.inc("total", "SPO", 0);
 
-        //Iterate CApplications
+        // Iterate CApplications
         for (final CApplication app : cAnalysis.getApps()) {
 
-            //iterate CFiles
+            // iterate CFiles
             for (final CFile file : app.getCfiles()) {
 
-                //iterate CFunctions
+                // iterate CFunctions
                 for (final CFunction function : file.getCFunctions()) {
 
                     // Iterate PPOs
                     function.getPPOs().stream().forEach(
-                        /* do smth about ppo */
+                                                        /* do smth about ppo */
 
-                        ppo -> {
-                            stats.inc("total", "PPO", 1);
-                            checkPO(ppo);
+                                                        ppo -> {
+                                                            stats.inc("total", "PPO", 1);
+                                                            checkPO(ppo);
 
-                            stats.inc(ppo.getLocation().getFilename(), "PPO", 1);
+                                                            stats.inc(ppo.getLocation().getFilename(), "PPO", 1);
 
-                            //iterate over associated SPOs
-                            final Set<SPO> associatedSpos = ppo.getAssociatedSpos(function);
-                        });
+                                                            // iterate over associated SPOs
+                                                            final Set<SPO> associatedSpos = ppo
+                                                                    .getAssociatedSpos(function);
+                                                        });
 
                     // Iterate callsites
                     for (final CFunctionSiteSPOs callsite : function.getCallsites()) {
