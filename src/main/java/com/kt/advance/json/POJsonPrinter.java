@@ -2,8 +2,6 @@ package com.kt.advance.json;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -349,78 +347,6 @@ public class POJsonPrinter {
 
     static final String RL = "\n\t\t----> ";
 
-    public static void main(String[] cmd_args) throws JAXBException, IOException {
-
-        final long startTime = System.nanoTime();
-
-        final Options options = new Options();
-
-        final Option input = new Option("i", "input", true, "input directory path");
-        input.setRequired(true);
-        options.addOption(input);
-
-        final Option printErrors = new Option("ne", "no-errors", false, "do not print parsing errors to console/log");
-        options.addOption(printErrors);
-
-        final Option printProgressOpt = new Option("p", "progress", false, "print progress to console");
-        options.addOption(printProgressOpt);
-
-        final CommandLineParser parser = new DefaultParser();
-
-        try {
-            final CommandLine cmd = parser.parse(options, cmd_args);
-
-            //
-            final String basedir = cmd.getOptionValue("i");
-            final boolean printProgress = cmd.hasOption("p");
-            final boolean printNoErrors = cmd.hasOption("ne");
-
-            final FsAbstractionImpl fileSystem = new FsAbstractionImpl(
-                    new File(basedir));
-
-            final ErrorsBundle errors = new ErrorsBundle();
-            errors.setVerbose(!printNoErrors);
-            final CAnalysisImpl mCAnalysisImpl = new CAnalysisImpl(fileSystem, errors);
-
-            final File file = new File(
-                    mCAnalysisImpl.fs.getBaseDir(),
-                    mCAnalysisImpl.fs.getBaseDir().getName() + ".kt.analysis.json");
-            System.out.print("RESULT_JSON:" + file.getAbsolutePath());
-            System.out.println();
-
-            final ProgressTracker tracker;
-            if (printProgress) {
-                tracker = new ProgressTracker();
-            }
-            else {
-                final PrintStream dummyStream = new PrintStream(new OutputStream() {
-                    @Override
-                    public void write(int b) {
-                        // NO-OP
-                    }
-                });
-
-                tracker = new ProgressTracker(dummyStream);
-            }
-            mCAnalysisImpl.read(tracker);
-
-            POJsonPrinter.toJson(mCAnalysisImpl, file);
-
-        } catch (final ParseException e) {
-            System.out.println(e.getMessage());
-            final HelpFormatter formatter = new HelpFormatter();
-            formatter.printHelp("KT XML Parser ", options);
-
-            System.exit(1);
-        }
-
-        final long endTime = System.nanoTime();
-        final long durations = TimeUnit.NANOSECONDS.toSeconds(endTime - startTime);
-        LOG.info("TOOK {}  seconds; or {}  ms",
-                 durations, TimeUnit.NANOSECONDS.toMillis(endTime - startTime));
-
-    }
-
     public static String toJson(CAnalysis an) {
         final JAnalysis jAnalysis = new JAnalysis(an);
 
@@ -453,6 +379,74 @@ public class POJsonPrinter {
         final ObjectWriter ow = objectMapper.writer().withDefaultPrettyPrinter();
         ow.writeValue(jGenerator, jAnalysis);
         writer.close();
+    }
+
+    public static void main(String[] cmd_args) throws JAXBException, IOException {
+
+        final long startTime = System.nanoTime();
+
+        final Options options = new Options();
+
+        final Option input = new Option("i", "input", true, "input directory path");
+        input.setRequired(true);
+        options.addOption(input);
+
+        final Option printErrors = new Option("ne", "no-errors", false, "do not print parsing errors to console/log");
+        options.addOption(printErrors);
+
+        final Option printProgressOpt = new Option("p", "progress", false, "print progress to console");
+        options.addOption(printProgressOpt);
+
+        final Option extractSemanticsOpt = new Option("x", "extract-semantics", false, "extract semantics file");
+        options.addOption(extractSemanticsOpt);
+
+        final CommandLineParser parser = new DefaultParser();
+
+        try {
+            final CommandLine cmd = parser.parse(options, cmd_args);
+
+            //
+            final String basedir = cmd.getOptionValue("i");
+            final boolean printProgress = cmd.hasOption("p");
+            final boolean printNoErrors = cmd.hasOption("ne");
+            final boolean extractSemantics = cmd.hasOption("x");
+
+            final FsAbstractionImpl fileSystem = new FsAbstractionImpl(
+                    new File(basedir));
+
+            if (extractSemantics) {
+                fileSystem.extractSemantics();
+            }
+
+            final ErrorsBundle errors = new ErrorsBundle();
+            errors.setVerbose(!printNoErrors);
+            final CAnalysisImpl mCAnalysisImpl = new CAnalysisImpl(fileSystem, errors);
+
+            final File file = new File(
+                    mCAnalysisImpl.fs.getBaseDir(),
+                    mCAnalysisImpl.fs.getBaseDir().getName() + ".kt.analysis.json");
+            System.out.print("RESULT_JSON:" + file.getAbsolutePath());
+            System.out.println();
+
+            final ProgressTracker tracker = new ProgressTracker(printProgress ? System.out : ProgressTracker.NO_OP);
+
+            mCAnalysisImpl.read(tracker);
+
+            POJsonPrinter.toJson(mCAnalysisImpl, file);
+
+        } catch (final ParseException e) {
+            System.out.println(e.getMessage());
+            final HelpFormatter formatter = new HelpFormatter();
+            formatter.printHelp("KT XML Parser ", options);
+
+            System.exit(1);
+        }
+
+        final long endTime = System.nanoTime();
+        final long durations = TimeUnit.NANOSECONDS.toSeconds(endTime - startTime);
+        LOG.info("TOOK {}  seconds; or {}  ms",
+                 durations, TimeUnit.NANOSECONDS.toMillis(endTime - startTime));
+
     }
 
 }

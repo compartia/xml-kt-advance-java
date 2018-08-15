@@ -1,8 +1,16 @@
 package com.kt.advance;
 
+import java.io.OutputStream;
 import java.io.PrintStream;
 
 public class ProgressTracker {
+
+    public static final PrintStream NO_OP = new PrintStream(new OutputStream() {
+        @Override
+        public void write(int b) {
+            // NO-OP
+        }
+    });
 
     private final ProgressTracker parent;
     private final float           impactOnTotalProgress;
@@ -41,7 +49,7 @@ public class ProgressTracker {
     }
 
     public ProgressTracker() {
-        this(System.out);
+        this(NO_OP);
     }
 
     private ProgressTracker(ProgressTracker parent, final float impactOnTotalProgress, String subtaskMsg) {
@@ -51,9 +59,9 @@ public class ProgressTracker {
 
     public ProgressTracker getSubtaskTracker(final float _impactOnTotalProgress, String subtaskMsg) {
         return new ProgressTracker(
-            this,
-            _impactOnTotalProgress,
-            subtaskMsg);
+                this,
+                _impactOnTotalProgress,
+                subtaskMsg);
     }
 
 }
