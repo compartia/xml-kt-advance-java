@@ -12,40 +12,52 @@ import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Preconditions;
 import com.kt.advance.ErrorsBundle;
+import com.kt.advance.ProgressTracker;
 
 import kt.advance.model.CApplicationImpl;
 
 public class CAnalysisImpl implements CAnalysis {
-    static final Logger LOG = LoggerFactory.getLogger(CApplication.class.getName());
+    static final Logger        LOG = LoggerFactory.getLogger(CApplication.class.getName());
     public final FsAbstraction fs;
 
     private Map<File, CApplication> apps;
 
-    private ErrorsBundle errors;
+    private final ErrorsBundle errors;
 
-    public CAnalysisImpl(FsAbstraction fs) {
+    public CAnalysisImpl(FsAbstraction fs, ErrorsBundle errors) {
         Preconditions.checkNotNull(fs);
+        this.errors = errors;
         this.fs = fs;
     }
 
-    @Override
-    public CApplication getAppByBaseDir(File baseDir) {
-        return apps.get(baseDir);
-    }
+    // @Override
+    // public CApplication getAppByBaseDir(File baseDir) {
+    // return apps.get(baseDir);
+    // }
 
     @Override
     public Collection<CApplication> getApps() {
         return apps.values();
     }
 
+    @Override
     public ErrorsBundle getErrors() {
         return errors;
     }
 
     @Override
-    public void read() throws JAXBException {
+    public void read(ProgressTracker tracker) throws JAXBException {
+
+        tracker.addProgress(0, "Scanning for C-apps");
         scanForCApps();
-        getApps().forEach(CApplication::read);
+
+        final float inc = 95f / getApps().size();
+        getApps().forEach(app -> {
+            app.read(tracker.getSubtaskTracker(inc, "reading " + app.toString()));
+        });
+
+        errors.print();
+
     }
 
     @Override
@@ -55,19 +67,17 @@ public class CAnalysisImpl implements CAnalysis {
 
     @Override
     public Map<File, CApplication> scanForCApps() {
-        errors = new ErrorsBundle();
+        this.errors.reset();
 
         final Collection<File> targetFiles = fs.listSubdirsRecursively(FsAbstraction.ANALYSIS_DIR_NAME);
 
         apps = targetFiles.stream()
-                .map(appDir -> new CApplicationImpl(fs.instance(appDir), errors))
-                .collect(Collectors.toMap(CApplication::getBaseDir, app -> app));
+                .map(appDir -> new CApplicationImpl(
+                        fs.instance(appDir),
+                        errors))
+                .collect(Collectors.toMap(CApplication::getSourceDir, app -> app));
 
         return apps;
-    }
-
-    public void setErrors(ErrorsBundle errors) {
-        this.errors = errors;
     }
 
 }

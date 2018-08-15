@@ -31,7 +31,7 @@ import org.apache.commons.lang.StringUtils;
 
 public class MapCounterInt<K> {
     private final Map<String, Integer> columnNamesReverse = new HashMap<>();
-    private final String[] columns;
+    private final String[]             columns;
 
     private final Map<K, Integer[]> map = new HashMap<>();
 
@@ -46,7 +46,8 @@ public class MapCounterInt<K> {
     public static String fillWithChars(int desiredLen, String str, String charr) {
         if (str.length() >= desiredLen) {
             return str;
-        } else {
+        }
+        else {
             final StringBuilder sb = new StringBuilder();
             sb.append(str);
             for (int f = 0; f < desiredLen - str.length(); f++) {
@@ -65,7 +66,8 @@ public class MapCounterInt<K> {
 
         if (null == val) {
             return defaultVal;
-        } else {
+        }
+        else {
             return val[col];
         }
     }
@@ -111,7 +113,8 @@ public class MapCounterInt<K> {
         final StringBuilder sb = new StringBuilder();
         sb.append("[");
 
-        final SortedSet<K> set = new TreeSet<>(keySet());
+        final SortedSet<K> set = new TreeSet<>(
+            keySet());
         final Iterator<K> iterator = set.iterator();
         while (iterator.hasNext()) {
 
@@ -139,7 +142,8 @@ public class MapCounterInt<K> {
         sb.append(fillWithChars(30, "", " ")).append(separator);
         sb.append(StringUtils.join(this.columns, separator)).append("\n");
 
-        final SortedSet<K> set = new TreeSet<>(keySet());
+        final SortedSet<K> set = new TreeSet<>(
+            keySet());
         final Iterator<K> iterator = set.iterator();
         while (iterator.hasNext()) {
 

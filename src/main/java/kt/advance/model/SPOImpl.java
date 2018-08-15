@@ -49,13 +49,14 @@ class SPOImpl extends POImpl implements SPO {
     }
 
     public SPOImpl(ApiCondition call, CFunction host, CFunctionSiteSPOs site) {
-        super(call.proofObligation, host.getSPOTypeRef(call.proofObligation.id));
+        super(call.proofObligation.ispo, call.proofObligation, host.getSPOTypeRef(call.proofObligation.ispo));
         this.site = site;
     }
 
     public SPOImpl(PCElement postcondition, CFunction host, CFunctionSiteSPOs site) {
 
-        super(postcondition.proofObligation, host.getSPOTypeRef(postcondition.proofObligation.id));
+        super(postcondition.proofObligation.ispo,
+              postcondition.proofObligation, host.getSPOTypeRef(postcondition.proofObligation.ispo));
         this.site = site;
     }
 

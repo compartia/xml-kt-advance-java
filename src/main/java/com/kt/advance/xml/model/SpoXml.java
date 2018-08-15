@@ -82,19 +82,19 @@ public final class SpoXml extends FunctionLevelAnalysisXml {
         public PPONode proofObligation;
     }
 
-    //<dc iargs="43" ictxt="44" iloc="56" ivinfo="7">
-    //        <api-conditions>
-    //        <api-c iapi="247">
-    //          <po deps="s" id="2" ispo="2" s="g">
-    //            <e txt="string literal"/>
-    //          </po>
-    //        </api-c>
-    //      </api-conditions>
-    //      <post-guarantees/>
-    //      <frees v="no"/>
+    // <dc iargs="43" ictxt="44" iloc="56" ivinfo="7">
+    // <api-conditions>
+    // <api-c iapi="247">
+    // <po deps="s" id="2" ispo="2" s="g">
+    // <e txt="string literal"/>
+    // </po>
+    // </api-c>
+    // </api-conditions>
+    // <post-guarantees/>
+    // <frees v="no"/>
     public static class SPOCall {
 
-        //Api-conditions
+        // Api-conditions
 
         @XmlElementWrapper(name = "api-conditions")
         @XmlElement(name = "api-c")

@@ -1,12 +1,25 @@
 package com.kt.advance;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Map;
 
+import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
+import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
+import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
+import org.apache.commons.compress.utils.IOUtils;
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Preconditions;
 
 public class Util {
+
+    static final Logger LOG = LoggerFactory.getLogger(Util.class.getName());
+
     public static String bra(String exp) {
         return '(' + exp + ')';
     }
@@ -27,7 +40,8 @@ public class Util {
 
         if (map.containsKey(key)) {
             final String msg = "non unique key " + key + "[ value:" + val + "]";
-            throw new IllegalStateException(msg);
+            throw new IllegalStateException(
+                    msg);
         }
         map.put(key, val);
         return val;
@@ -54,9 +68,11 @@ public class Util {
 
         final V val = map.get(key);
         if (val == null) {
-            final String keys = StringUtils.join(map.keySet(), ",");
+            // final String keys = StringUtils.join(map.keySet(), ",");
             throw new IllegalStateException(
-                    "no " + name + " in map for the key " + key + " ; available keys are:" + keys);
+                    "no " + name + " in map for the key " + key /*
+                                                                 * + " ; available keys are:" + keys
+                                                                 */);
         }
         return val;
     }
@@ -80,5 +96,36 @@ public class Util {
             ret[x] = Integer.parseInt(split[x]);
         }
         return ret;
+    }
+
+    public static final void unzipSemanticsTarGz(File in) throws IOException {
+        LOG.info("unzipping {}", in);
+        boolean withWarnings = false;
+        final File unzipToDir = in.getParentFile();
+        try (TarArchiveInputStream fin = new TarArchiveInputStream(
+                new GzipCompressorInputStream(new FileInputStream(in)))) {
+            TarArchiveEntry entry;
+            while ((entry = fin.getNextTarEntry()) != null) {
+                if (entry.isDirectory()) {
+                    continue;
+                }
+
+                final File curfile = new File(unzipToDir, entry.getName());
+                final File parent = curfile.getParentFile();
+                if (!parent.exists()) {
+                    parent.mkdirs();
+
+                }
+                if (curfile.exists()) {
+                    LOG.warn("unzipSemanticsTarGz: {} already exists, skipping", curfile);
+                    withWarnings = true;
+                }
+                else {
+                    IOUtils.copy(fin, new FileOutputStream(curfile));
+                }
+
+            }
+        }
+        LOG.info("successfully unzipped {}{}", in, withWarnings ? " [with warnings]" : "");
     }
 }

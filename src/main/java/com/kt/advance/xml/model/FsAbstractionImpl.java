@@ -24,6 +24,7 @@
 package com.kt.advance.xml.model;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,6 +40,7 @@ import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.kt.advance.Util;
 import com.kt.advance.api.FsAbstraction;
 import com.kt.advance.xml.XmlNamesUtils;
 
@@ -54,14 +56,24 @@ public class FsAbstractionImpl implements FsAbstraction {
         this.baseDir = baseDir;
     }
 
+    public void extractSemantics() {
+        final Collection<File> files = listSemanticsArchives();
+
+        files.forEach(tarGzFile -> {
+            try {
+                Util.unzipSemanticsTarGz(tarGzFile);
+            } catch (final IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+    }
+
     static synchronized IOFileFilter getSuffixFilter(String suffix) {
-
-        return filters.computeIfAbsent(
-            suffix,
-            sfx -> new SuffixFileFilter(
-                    XmlNamesUtils.xmlSuffix(sfx),
-                    IOCase.SENSITIVE));
-
+        return filters.computeIfAbsent(suffix,
+                                       sfx -> new SuffixFileFilter(
+                                               XmlNamesUtils.xmlSuffix(sfx),
+                                               IOCase.SENSITIVE));
     }
 
     @Override
@@ -123,8 +135,8 @@ public class FsAbstractionImpl implements FsAbstraction {
                 IOCase.INSENSITIVE);
 
         final Collection<File> dirs = FileUtils.listFilesAndDirs(getBaseDir(),
-            dirFilter,
-            TrueFileFilter.INSTANCE);
+                                                                 dirFilter,
+                                                                 TrueFileFilter.INSTANCE);
 
         final Set<File> targetDirs = dirs.stream()
                 .filter(x -> x.isDirectory() && x.getName().equals(dirname))
@@ -140,14 +152,13 @@ public class FsAbstractionImpl implements FsAbstraction {
     @Override
     public Collection<File> listTargetFiles() {
         return listSubdirsRecursively(ANALYSIS_DIR_NAME);
-
     }
 
     @Override
     public Collection<File> listXMLs(String suffix) {
         return FileUtils.listFiles(getBaseDir(),
-            getSuffixFilter(suffix),
-            TrueFileFilter.INSTANCE)
+                                   getSuffixFilter(suffix),
+                                   TrueFileFilter.INSTANCE)
                 .stream()
                 .sorted()
                 .collect(Collectors.toList());
@@ -161,11 +172,25 @@ public class FsAbstractionImpl implements FsAbstraction {
                 IOCase.SENSITIVE);
 
         return FileUtils.listFiles(getBaseDir(),
-            suffixFilter,
-            TrueFileFilter.INSTANCE)
+                                   suffixFilter,
+                                   TrueFileFilter.INSTANCE)
                 .stream()
                 .sorted()
-                .collect(Collectors.toSet());
+                .collect(Collectors.toList());
+    }
+
+    public Collection<File> listSemanticsArchives() {
+
+        final NameFileFilter filter = new NameFileFilter(
+                SEMANTICS_ARCHIVE_NAME,
+                IOCase.INSENSITIVE);
+
+        return FileUtils.listFiles(getBaseDir(),
+                                   filter,
+                                   TrueFileFilter.INSTANCE)
+                .stream()
+                .sorted()
+                .collect(Collectors.toList());
     }
 
 }

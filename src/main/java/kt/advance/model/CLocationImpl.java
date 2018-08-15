@@ -53,10 +53,10 @@ import com.kt.advance.xml.model.IndexedTableNode;
  */
 class CLocationImpl extends Indexed implements CLocation {
     public final Integer byteNo;
-    private CFile cfile;
+    private CFile        cfile;
 
     private final Integer line;
-    private String filename;
+    private String        filename;
 
     public CLocationImpl(IndexedTableNode node, CFile cfile, CApplication app) {
         super(node);
@@ -69,7 +69,7 @@ class CLocationImpl extends Indexed implements CLocation {
             this.setCfile(app.getCFileStrictly(fn));
             this.setFilename(null);
         } catch (final IllegalStateException ex) {
-            //dealing with external .h files.
+            // dealing with external .h files.
             this.setFilename(fn);
         }
     }
@@ -83,7 +83,8 @@ class CLocationImpl extends Indexed implements CLocation {
     public String getFilename() {
         if (this.cfile == null) {
             return filename;
-        } else {
+        }
+        else {
             return this.cfile.getName();
         }
     }

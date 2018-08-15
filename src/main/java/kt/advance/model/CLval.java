@@ -28,8 +28,8 @@ import com.kt.advance.xml.model.IndexedTableNode;
 public class CLval extends Indexed implements Bindable {
 
     public CLHost lhost;
-    final int lhostId;
-    COffset offset;
+    final int     lhostId;
+    COffset       offset;
 
     final int offsetId;
 

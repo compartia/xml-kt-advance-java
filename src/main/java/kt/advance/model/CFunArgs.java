@@ -35,7 +35,7 @@ import kt.advance.model.CTypeFactory.CType;
 class CFunArgs extends Indexed implements Bindable {
 
     public static class CFunArg extends Indexed implements Bindable {
-        private String name;
+        private String  name;
         private Integer typeId;
 
         CType type;
@@ -63,7 +63,13 @@ class CFunArgs extends Indexed implements Bindable {
     }
 
     List<CFunArg> cFunArgs;
-    Integer[] args;
+    Integer[]     args;
+
+    private CFunArgs() {
+        super(null);
+    }
+
+    public final static CFunArgs NO_ARGS = new CFunArgs();
 
     public CFunArgs(IndexedTableNode node) {
         super(node);
@@ -76,12 +82,12 @@ class CFunArgs extends Indexed implements Bindable {
         for (int i = 1; i < args.length; i++) {
             cFunArgs.add(cfile.getCFunArg(args[i]));
         }
-        //clean-up
+        // clean-up
         this.args = null;
     }
 
     @Override
     public String toString() {
-        return StringUtils.join(cFunArgs, ", ");
+        return cFunArgs != null ? StringUtils.join(cFunArgs, ", ") : "";
     }
 }

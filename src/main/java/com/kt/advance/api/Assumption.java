@@ -5,7 +5,23 @@ import com.kt.advance.xml.model.ApiXml.ApiAssumptionNode;
 
 import kt.advance.model.PredicatesFactory.CPOPredicate;
 
-public class ApiAssumption {
+public class Assumption {
+
+    public enum AssumptionTypeCode {
+        /** ATApiAssumptionType */
+        aa,
+
+        /** ATPostconditionType */
+        pc,
+
+        /** ATUserAssumptionType */
+        ua,
+
+        /** Global Assumption */
+        ga,
+
+        ca// ??????
+    }
 
     public final Integer index;
 
@@ -14,7 +30,9 @@ public class ApiAssumption {
     public final Integer[] ppos;
     public final Integer[] spos;
 
-    public ApiAssumption(ApiAssumptionNode node, CFunction fun) {
+    public final AssumptionTypeCode typeCode;
+
+    public Assumption(ApiAssumptionNode node, CFunction fun, AssumptionTypeCode code) {
 
         this.ppos = Util.splitStringIntoIntegers(node.ppos);
         this.spos = Util.splitStringIntoIntegers(node.spos);
@@ -22,6 +40,8 @@ public class ApiAssumption {
         this.predicate = fun.getCfile().getPredicate(node.predicateIndex);
 
         this.index = node.predicateIndex;
+
+        this.typeCode = code;
 
     }
 }

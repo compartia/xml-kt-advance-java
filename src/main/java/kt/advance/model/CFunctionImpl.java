@@ -4,6 +4,7 @@ import static com.kt.advance.Util.requireValue;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,7 +12,8 @@ import java.util.stream.Collectors;
 
 import com.google.common.base.Preconditions;
 import com.kt.advance.ErrorsBundle;
-import com.kt.advance.api.ApiAssumption;
+import com.kt.advance.api.Assumption;
+import com.kt.advance.api.Assumption.AssumptionTypeCode;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
 import com.kt.advance.api.CFunctionCallsiteSPOs;
@@ -19,6 +21,7 @@ import com.kt.advance.api.CFunctionSiteSPOs;
 import com.kt.advance.api.CLocation;
 import com.kt.advance.api.PPO;
 import com.kt.advance.xml.model.ApiXml;
+import com.kt.advance.xml.model.ApiXml.ApiAssumptionNode;
 import com.kt.advance.xml.model.CFunXml;
 import com.kt.advance.xml.model.PodXml;
 import com.kt.advance.xml.model.PpoXml;
@@ -29,11 +32,11 @@ import com.kt.advance.xml.model.SpoXml.SPOCall;
 
 class CFunctionImpl implements CFunction {
 
-    private Map<Integer, ApiAssumption> apiAssumptions;
+    private Map<Integer, Assumption> apiAssumptions;
 
     @Override
-    public Collection<ApiAssumption> getApiAssumptions() {
-        return this.apiAssumptions.values();
+    public Collection<Assumption> getApiAssumptions() {
+        return this.apiAssumptions != null ? this.apiAssumptions.values() : Collections.emptyList();
     }
 
     private Map<Integer, AssumptionType> assumptionsTypesMap;
@@ -42,8 +45,8 @@ class CFunctionImpl implements CFunction {
         return requireValue(assumptionsTypesMap, typeKey, "AssumptionType ");
     }
 
-    private final List<CFunctionCallsiteSPOs> callsites = new ArrayList<>();
-    private final List<CFunctionSiteSPOs> returnsites = new ArrayList<>();
+    private final List<CFunctionCallsiteSPOs> callsites   = new ArrayList<>();
+    private final List<CFunctionSiteSPOs>     returnsites = new ArrayList<>();
 
     private Map<Integer, PPOImpl> ppos = new HashMap<>();
 
@@ -52,8 +55,8 @@ class CFunctionImpl implements CFunction {
     private Map<Integer, PoTypeRef> spoTypes;
 
     private final CFileImpl cfile;
-    private final String name;
-    public final CVarInfo varInfo;
+    private final String    name;
+    public final CVarInfo   varInfo;
 
     public CFunctionImpl(CFunXml cfunXml, CFileImpl cfile) {
         Preconditions.checkNotNull(cfunXml, "cfunXml is null");
@@ -111,14 +114,31 @@ class CFunctionImpl implements CFunction {
     }
 
     public void readApiFile(final ApiXml apiXml) {
-        //XXX: read library-calls
-        // TODO: read postcondition-guarantees
-        //TODO: read postcondition-requests
-        apiAssumptions = apiXml.getAssumptions()
-                .stream()
-                .map(apiNode -> new ApiAssumption(apiNode, this))
-                .collect(Collectors.toMap(aa -> aa.index, aa -> aa));
 
+        Preconditions.checkNotNull(cfile.predicates, "predicates map is null; " + cfile.getName());
+        // XXX: read library-calls
+        // TODO: read postcondition-guarantees
+        // TODO: read postcondition-requests
+        apiAssumptions = apiXml.getApiAssumptions()
+                .stream()
+                .map(apiNode -> new Assumption(
+                    apiNode,
+                    this,
+                    AssumptionTypeCode.aa))
+                .collect(Collectors.toMap(a -> a.index, a -> a));
+
+        final List<ApiAssumptionNode> globalAssumptions = apiXml.getGlobalAssumptions();
+        if (globalAssumptions != null) {
+            final Map<Integer, Assumption> gAssumptions = globalAssumptions.stream()
+                    .map(apiNode -> new Assumption(
+                        apiNode,
+                        this,
+                        AssumptionTypeCode.ga))
+                    .collect(Collectors.toMap(a -> a.index,
+                                              a -> a));
+
+            apiAssumptions.putAll(gAssumptions);
+        }
     }
 
     public void readPodFile(PodXml dict, CFileImpl cfile) {
@@ -127,18 +147,25 @@ class CFunctionImpl implements CFunction {
 
         ppoTypes = dict.function.ppoTypes
                 .stream()
-                .map((x) -> new PoTypeRef(x, cfile))
+                .map((x) -> new PoTypeRef(
+                    x,
+                    cfile))
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         spoTypes = dict.function.spoTypes
                 .stream()
-                .map((x) -> new PoTypeRef(x, cfile))
+                .map((x) -> new PoTypeRef(
+                    x,
+                    cfile))
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         assumptionsTypesMap = dict.function.assumptionTypeTable
                 .stream()
-                .map((x) -> new AssumptionType(x, cfile))
-                .collect(Collectors.toMap(node -> node.id, node -> node));
+                .map((x) -> new AssumptionType(
+                    x,
+                    cfile))
+                .collect(Collectors.toMap(node -> node.id,
+                                          node -> node));
 
     }
 
@@ -148,21 +175,23 @@ class CFunctionImpl implements CFunction {
 
         ppos = pposXml.function.proofObligations
                 .stream()
-                .map(x -> new PPOImpl(x, this))
+                .map(x -> new PPOImpl(
+                    x,
+                    this))
                 .collect(Collectors.toMap(node -> node.getId(), node -> node));
 
     }
 
-    //   <callsites>
-    //    <direct-calls>
-    //     <dc iargs="122" ictxt="45" iloc="62" ivinfo="4">
-    //      <api-conditions>
-    //       <api-c iapi="525">
-    //        <po deps="f" id="1" invs="313" ispo="1" s="g">
-    //          ..
+    // <callsites>
+    // <direct-calls>
+    // <dc iargs="122" ictxt="45" iloc="62" ivinfo="4">
+    // <api-conditions>
+    // <api-c iapi="525">
+    // <po deps="f" id="1" invs="313" ispo="1" s="g">
+    // ..
     public void readSpoFile(SpoXml pposXml, ErrorsBundle ee) {
 
-        Preconditions.checkState(spoTypes != null, "ppoTypes map is null for " + this.getName());
+        Preconditions.checkState(spoTypes != null, "spoTypes map is null for " + this.getName());
 
         final CallsitesWrapper callsitesWrapper = pposXml.getCallsites();
 
@@ -177,7 +206,10 @@ class CFunctionImpl implements CFunction {
 
         final List<CFunctionReturnsiteSPOsImpl> c = collection
                 .stream()
-                .map(x -> new CFunctionReturnsiteSPOsImpl(x, callsType, this))
+                .map(x -> new CFunctionReturnsiteSPOsImpl(
+                    x,
+                    callsType,
+                    this))
                 .collect(Collectors.toList());
 
         if (!c.isEmpty()) {
@@ -190,7 +222,10 @@ class CFunctionImpl implements CFunction {
 
         final List<CFunctionCallsiteSPOsImpl> callsImpl = calls
                 .stream()
-                .map(call -> new CFunctionCallsiteSPOsImpl(call, callsType, this))
+                .map(call -> new CFunctionCallsiteSPOsImpl(
+                    call,
+                    callsType,
+                    this))
                 .collect(Collectors.toList());
 
         if (!callsImpl.isEmpty()) {

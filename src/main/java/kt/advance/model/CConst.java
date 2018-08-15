@@ -39,9 +39,9 @@ class CConst implements Bindable {
     }
 
     public final Integer id;
-    private String val;
-    final ConstType kind;
-    Integer stringIndex;
+    private String       val;
+    final ConstType      kind;
+    Integer              stringIndex;
 
     public CConst(IndexedTableNode node, CFile file) {
         this.id = node.index;
@@ -51,27 +51,27 @@ class CConst implements Bindable {
         kind = ConstType.valueOf("_" + tags[0]);
 
         switch (kind) {
-        case _int:
-        case _real:
-            this.val = tags[1];
-            break;
-        case _str:
-            this.stringIndex = args[0];
-            this.val = "-=UNBOUND=-";
-            //Util.quote(file.getString(args[0]));
-            break;
-        case _wstr:
-            final List<String> substrings = new ArrayList<>();
-            for (int tg = 1; tg < tags.length; tg++) {
-                substrings.add(tags[tg]);
-            }
-            this.val = Util.call("wstr", StringUtils.join(substrings, '-'));
-            break;
-        case _chr:
-            this.val = Util.call("chr", Util.quoteS(args[0]));
-            break;
-        default:
-            this.val = "-=" + kind + "=-";
+            case _int:
+            case _real:
+                this.val = tags[1];
+                break;
+            case _str:
+                this.stringIndex = args[0];
+                this.val = "-=UNBOUND=-";
+                // Util.quote(file.getString(args[0]));
+                break;
+            case _wstr:
+                final List<String> substrings = new ArrayList<>();
+                for (int tg = 1; tg < tags.length; tg++) {
+                    substrings.add(tags[tg]);
+                }
+                this.val = Util.call("wstr", StringUtils.join(substrings, '-'));
+                break;
+            case _chr:
+                this.val = Util.call("chr", Util.quoteS(args[0]));
+                break;
+            default:
+                this.val = "-=" + kind + "=-";
         }
 
     }

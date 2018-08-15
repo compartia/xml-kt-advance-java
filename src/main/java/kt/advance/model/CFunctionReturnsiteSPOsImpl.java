@@ -40,8 +40,8 @@ import kt.advance.model.ExpFactory.CExpression;
 
 class CFunctionReturnsiteSPOsImpl implements CFunctionSiteSPOs {
 
-    private final CExpression exp;
-    private final CLocation location;
+    private final CExpression       exp;
+    private final CLocation         location;
     private final Map<Integer, SPO> spos = new HashMap<>();
 
     private final String type;
@@ -58,14 +58,18 @@ class CFunctionReturnsiteSPOsImpl implements CFunctionSiteSPOs {
 
         if (rs.iexp != null) {
             exp = cfunc.getCfile().getExression(rs.iexp);
-        } else {
+        }
+        else {
             exp = null;
         }
 
         for (final PCElement postcondition : rs.postconditions) {
 
             if (postcondition.proofObligation != null) {
-                final SPOImpl spo = new SPOImpl(postcondition, cfunc, this);
+                final SPOImpl spo = new SPOImpl(
+                    postcondition,
+                    cfunc,
+                    this);
                 putUniq(spos, spo.id, spo);
             }
 

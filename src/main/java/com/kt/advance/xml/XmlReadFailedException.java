@@ -28,7 +28,7 @@ import java.io.File;
 public class XmlReadFailedException extends RuntimeException {
 
     private static final long serialVersionUID = 2327369355708203774L;
-    private final File file;
+    private final File        file;
 
     public XmlReadFailedException(File file, String message) {
         super(message);

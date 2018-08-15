@@ -30,7 +30,7 @@ import kt.advance.model.ExpFactory.CExpression;
 
 class CLHost extends Indexed implements Bindable {
     public CExpression exp;
-    public Integer varId, expId;
+    public Integer     varId, expId;
 
     public String varName;
 
@@ -43,11 +43,14 @@ class CLHost extends Indexed implements Bindable {
 
         if ("mem".equals(kind)) {
             expId = args[0];
-        } else if ("var".equals(kind)) {
+        }
+        else if ("var".equals(kind)) {
             varId = args[0];
             varName = tags[1];
-        } else {
-            throw new IllegalArgumentException("unknown lhost type " + kind);
+        }
+        else {
+            throw new IllegalArgumentException(
+                "unknown lhost type " + kind);
         }
 
     }
@@ -63,7 +66,8 @@ class CLHost extends Indexed implements Bindable {
     public String toString() {
         if (exp != null) {
             return Util.bra("*" + exp);
-        } else {
+        }
+        else {
             return varName;
         }
     }
