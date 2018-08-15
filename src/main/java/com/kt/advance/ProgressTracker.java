@@ -49,7 +49,7 @@ public class ProgressTracker {
     }
 
     public ProgressTracker() {
-        this(System.out);
+        this(NO_OP);
     }
 
     private ProgressTracker(ProgressTracker parent, final float impactOnTotalProgress, String subtaskMsg) {
