@@ -5,8 +5,9 @@ import java.util.Collection;
 
 public interface FsAbstraction {
 
-    public static final String ANALYSIS_DIR_NAME    = "ktadvance";
-    public static final String SOURCEFILES_DIR_NAME = "sourcefiles";
+    public static final String ANALYSIS_DIR_NAME      = "ktadvance";
+    public static final String SEMANTICS_ARCHIVE_NAME = "semantics_linux.tar.gz";
+    public static final String SOURCEFILES_DIR_NAME   = "sourcefiles";
 
     public static final String API_SUFFIX    = "_api";
     public static final String CDICT_SUFFIX  = "_cdict";

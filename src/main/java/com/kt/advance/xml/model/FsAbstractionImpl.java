@@ -55,13 +55,10 @@ public class FsAbstractionImpl implements FsAbstraction {
     }
 
     static synchronized IOFileFilter getSuffixFilter(String suffix) {
-
-        return filters.computeIfAbsent(
-                                       suffix,
+        return filters.computeIfAbsent(suffix,
                                        sfx -> new SuffixFileFilter(
-                                           XmlNamesUtils.xmlSuffix(sfx),
-                                           IOCase.SENSITIVE));
-
+                                               XmlNamesUtils.xmlSuffix(sfx),
+                                               IOCase.SENSITIVE));
     }
 
     @Override
@@ -77,8 +74,7 @@ public class FsAbstractionImpl implements FsAbstraction {
 
     @Override
     public FsAbstraction instance(File baseDir) {
-        return new FsAbstractionImpl(
-            baseDir);
+        return new FsAbstractionImpl(baseDir);
     }
 
     @Override
@@ -120,8 +116,8 @@ public class FsAbstractionImpl implements FsAbstraction {
     @Override
     public Collection<File> listSubdirsRecursively(String dirname) {
         final NameFileFilter dirFilter = new NameFileFilter(
-            dirname,
-            IOCase.INSENSITIVE);
+                dirname,
+                IOCase.INSENSITIVE);
 
         final Collection<File> dirs = FileUtils.listFilesAndDirs(getBaseDir(),
                                                                  dirFilter,
@@ -141,7 +137,6 @@ public class FsAbstractionImpl implements FsAbstraction {
     @Override
     public Collection<File> listTargetFiles() {
         return listSubdirsRecursively(ANALYSIS_DIR_NAME);
-
     }
 
     @Override
@@ -158,15 +153,29 @@ public class FsAbstractionImpl implements FsAbstraction {
     public Collection<File> listFilesRecursively(String suffix) {
 
         final IOFileFilter suffixFilter = new SuffixFileFilter(
-            suffix,
-            IOCase.SENSITIVE);
+                suffix,
+                IOCase.SENSITIVE);
 
         return FileUtils.listFiles(getBaseDir(),
                                    suffixFilter,
                                    TrueFileFilter.INSTANCE)
                 .stream()
                 .sorted()
-                .collect(Collectors.toSet());
+                .collect(Collectors.toList());
+    }
+
+    public Collection<File> listSemanticsArchives() {
+
+        final NameFileFilter filter = new NameFileFilter(
+                SEMANTICS_ARCHIVE_NAME,
+                IOCase.INSENSITIVE);
+
+        return FileUtils.listFiles(getBaseDir(),
+                                   filter,
+                                   TrueFileFilter.INSTANCE)
+                .stream()
+                .sorted()
+                .collect(Collectors.toList());
     }
 
 }

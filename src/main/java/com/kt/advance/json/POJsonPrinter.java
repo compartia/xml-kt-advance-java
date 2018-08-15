@@ -2,8 +2,6 @@ package com.kt.advance.json;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -365,6 +363,9 @@ public class POJsonPrinter {
         final Option printProgressOpt = new Option("p", "progress", false, "print progress to console");
         options.addOption(printProgressOpt);
 
+        final Option extractSemanticsOpt = new Option("x", "extract-semantics", false, "extract semantics file");
+        options.addOption(extractSemanticsOpt);
+
         final CommandLineParser parser = new DefaultParser();
 
         try {
@@ -374,6 +375,7 @@ public class POJsonPrinter {
             final String basedir = cmd.getOptionValue("i");
             final boolean printProgress = cmd.hasOption("p");
             final boolean printNoErrors = cmd.hasOption("ne");
+            final boolean extractSemantics = cmd.hasOption("x");
 
             final FsAbstractionImpl fileSystem = new FsAbstractionImpl(
                     new File(basedir));
@@ -388,20 +390,8 @@ public class POJsonPrinter {
             System.out.print("RESULT_JSON:" + file.getAbsolutePath());
             System.out.println();
 
-            final ProgressTracker tracker;
-            if (printProgress) {
-                tracker = new ProgressTracker();
-            }
-            else {
-                final PrintStream dummyStream = new PrintStream(new OutputStream() {
-                    @Override
-                    public void write(int b) {
-                        // NO-OP
-                    }
-                });
+            final ProgressTracker tracker = new ProgressTracker(printProgress ? System.out : ProgressTracker.NO_OP);
 
-                tracker = new ProgressTracker(dummyStream);
-            }
             mCAnalysisImpl.read(tracker);
 
             POJsonPrinter.toJson(mCAnalysisImpl, file);
