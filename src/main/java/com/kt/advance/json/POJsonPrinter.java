@@ -347,6 +347,40 @@ public class POJsonPrinter {
 
     static final String RL = "\n\t\t----> ";
 
+    public static String toJson(CAnalysis an) {
+        final JAnalysis jAnalysis = new JAnalysis(an);
+
+        final ObjectMapper objectMapper = new ObjectMapper();
+
+        final ObjectWriter ow = objectMapper.writer().withDefaultPrettyPrinter();
+
+        try {
+            final String json = ow.writeValueAsString(jAnalysis);
+            return json;
+        } catch (final JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public static void toJson(CAnalysis an, File file) throws IOException {
+        final JAnalysis jAnalysis = new JAnalysis(
+                an);
+
+        LOG.info("writing json to {}", file.getAbsolutePath());
+        final PrintWriter writer = new PrintWriter(
+                file,
+                "UTF-8");
+
+        final JsonFactory jfactory = new JsonFactory();
+        final JsonGenerator jGenerator = jfactory.createGenerator(writer);
+        final ObjectMapper objectMapper = new ObjectMapper();
+
+        final ObjectWriter ow = objectMapper.writer().withDefaultPrettyPrinter();
+        ow.writeValue(jGenerator, jAnalysis);
+        writer.close();
+    }
+
     public static void main(String[] cmd_args) throws JAXBException, IOException {
 
         final long startTime = System.nanoTime();
@@ -380,6 +414,10 @@ public class POJsonPrinter {
             final FsAbstractionImpl fileSystem = new FsAbstractionImpl(
                     new File(basedir));
 
+            if (extractSemantics) {
+                fileSystem.extractSemantics();
+            }
+
             final ErrorsBundle errors = new ErrorsBundle();
             errors.setVerbose(!printNoErrors);
             final CAnalysisImpl mCAnalysisImpl = new CAnalysisImpl(fileSystem, errors);
@@ -409,40 +447,6 @@ public class POJsonPrinter {
         LOG.info("TOOK {}  seconds; or {}  ms",
                  durations, TimeUnit.NANOSECONDS.toMillis(endTime - startTime));
 
-    }
-
-    public static String toJson(CAnalysis an) {
-        final JAnalysis jAnalysis = new JAnalysis(an);
-
-        final ObjectMapper objectMapper = new ObjectMapper();
-
-        final ObjectWriter ow = objectMapper.writer().withDefaultPrettyPrinter();
-
-        try {
-            final String json = ow.writeValueAsString(jAnalysis);
-            return json;
-        } catch (final JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
-
-    public static void toJson(CAnalysis an, File file) throws IOException {
-        final JAnalysis jAnalysis = new JAnalysis(
-                an);
-
-        LOG.info("writing json to {}", file.getAbsolutePath());
-        final PrintWriter writer = new PrintWriter(
-                file,
-                "UTF-8");
-
-        final JsonFactory jfactory = new JsonFactory();
-        final JsonGenerator jGenerator = jfactory.createGenerator(writer);
-        final ObjectMapper objectMapper = new ObjectMapper();
-
-        final ObjectWriter ow = objectMapper.writer().withDefaultPrettyPrinter();
-        ow.writeValue(jGenerator, jAnalysis);
-        writer.close();
     }
 
 }

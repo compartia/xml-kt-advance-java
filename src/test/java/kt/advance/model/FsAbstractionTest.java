@@ -62,4 +62,15 @@ public class FsAbstractionTest {
         Util.unzipSemanticsTarGz(inFile);
     }
 
+    @Test
+    public void testExtractAllSemanticsArchives() throws IOException {
+
+        final File basedir = new File(getClass().getClassLoader().getResource("xmls/p1").getFile());
+
+        // Create a file system abstraction
+        final FsAbstractionImpl fsAbstraction = new FsAbstractionImpl(basedir);
+
+        fsAbstraction.extractSemantics();
+    }
+
 }

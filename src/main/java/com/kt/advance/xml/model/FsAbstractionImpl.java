@@ -24,6 +24,7 @@
 package com.kt.advance.xml.model;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,6 +40,7 @@ import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.kt.advance.Util;
 import com.kt.advance.api.FsAbstraction;
 import com.kt.advance.xml.XmlNamesUtils;
 
@@ -52,6 +54,19 @@ public class FsAbstractionImpl implements FsAbstraction {
 
     public FsAbstractionImpl(File baseDir) {
         this.baseDir = baseDir;
+    }
+
+    public void extractSemantics() {
+        final Collection<File> files = listSemanticsArchives();
+
+        files.forEach(tarGzFile -> {
+            try {
+                Util.unzipSemanticsTarGz(tarGzFile);
+            } catch (final IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
     }
 
     static synchronized IOFileFilter getSuffixFilter(String suffix) {
