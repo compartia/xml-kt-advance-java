@@ -83,19 +83,19 @@ public class CApplicationImpl implements CApplication {
         Preconditions.checkNotNull(fs.getBaseDir(), "base dir is required");
 
         final File analysisDir = fs.getBaseDir().getParentFile();
-        final File sourceDir = new File(
-            analysisDir,
-            FsAbstraction.SOURCEFILES_DIR_NAME);
+        final File tSourceDir = new File(
+                analysisDir,
+                FsAbstraction.SOURCEFILES_DIR_NAME);
 
         LOG.info("analysisDir: {}", analysisDir);
-        LOG.info("sourceDir: {}", sourceDir);
+        LOG.info("sourceDir: {}", tSourceDir);
 
-        if (sourceDir.isDirectory() && sourceDir.exists()) {
-            this.sourceDir = sourceDir;
+        if (tSourceDir.isDirectory() && tSourceDir.exists()) {
+            this.sourceDir = tSourceDir;
         }
         else {
             this.sourceDir = null;
-            LOG.error("no " + FsAbstraction.SOURCEFILES_DIR_NAME + " in   " + analysisDir);
+            LOG.error("No {} in {}", FsAbstraction.SOURCEFILES_DIR_NAME, analysisDir);
         }
 
         this.fs = fs;
@@ -135,7 +135,7 @@ public class CApplicationImpl implements CApplication {
     @Override
     public void read(ProgressTracker tr) {
 
-        LOG.info("reading APP DIR: " + fs.getBaseDir());
+        LOG.info("reading APP DIR: {}", fs.getBaseDir());
 
         readAllCfileXmls(fs.listXMLs(FsAbstraction.CFILE_SUFFIX), tr.getSubtaskTracker(5, "reading cfiles"));
         readAllCdictXmls(fs.listXMLs(FsAbstraction.CDICT_SUFFIX), tr.getSubtaskTracker(10, "reading cdict files"));
@@ -150,7 +150,6 @@ public class CApplicationImpl implements CApplication {
         readAllSpoXmls(fs.listXMLs(FsAbstraction.SPO_SUFFIX), tr.getSubtaskTracker(20, "reading spo files"));
 
         readAllApiXmls(fs.listXMLs(FsAbstraction.API_SUFFIX), tr.getSubtaskTracker(20, "reading api files"));
-        // tracker.addProgress(70);
 
     }
 
@@ -161,7 +160,7 @@ public class CApplicationImpl implements CApplication {
         } catch (final NullPointerException ex) {
 
             throw new RuntimeException(
-                ex);
+                    ex);
 
         } catch (final Exception ex) {
 
@@ -169,15 +168,15 @@ public class CApplicationImpl implements CApplication {
                 errors.addError(ppos.getRelativeOrigin(), ex.getLocalizedMessage());
             }
             else {
-                LOG.error(ppos.getRelativeOrigin() + ":" + ex.getLocalizedMessage());
+                LOG.error("{}:{}", ppos.getRelativeOrigin(), ex.getLocalizedMessage());
             }
         }
     }
 
     CFileImpl getCFileOrMakeNew(String name) {
         return cfiles.computeIfAbsent(name, n -> new CFileImpl(
-            name,
-            this));
+                name,
+                this));
     }
 
     CFunctionImpl getCFunctionImpl(FunctionLevelAnalysisXml f) {
@@ -187,7 +186,7 @@ public class CApplicationImpl implements CApplication {
 
     void readAllApiXmls(Collection<File> apiFiles, ProgressTracker tracker) {
 
-        if (apiFiles.size() == 0) {
+        if (apiFiles.isEmpty()) {
             errors.addError(this.getBaseDir().toString(), "no API files found");
             tracker.addProgress(100);
             return;
@@ -216,7 +215,7 @@ public class CApplicationImpl implements CApplication {
     }
 
     void readAllCdictXmls(Collection<File> cdictFiles, ProgressTracker tracker) {
-        if (cdictFiles.size() == 0) {
+        if (cdictFiles.isEmpty()) {
             errors.addError(this.getBaseDir().toString(), "no CDICT files found");
             tracker.addProgress(100);
             return;
@@ -244,7 +243,7 @@ public class CApplicationImpl implements CApplication {
 
     void readAllCfileXmls(Collection<File> cFileFiles, ProgressTracker tracker) {
 
-        if (cFileFiles.size() == 0) {
+        if (cFileFiles.isEmpty()) {
             errors.addError(this.getBaseDir().toString(), "no CFILE files found");
             tracker.addProgress(100);
             return;
@@ -301,7 +300,7 @@ public class CApplicationImpl implements CApplication {
 
     void readAllPodXmls(Collection<File> pods, ProgressTracker tracker) {
 
-        if (pods.size() == 0) {
+        if (pods.isEmpty()) {
             errors.addError(this.getBaseDir().toString(), "no POD files found");
             tracker.addProgress(100);
             return;
@@ -326,7 +325,7 @@ public class CApplicationImpl implements CApplication {
 
     void readAllPpoXmls(Collection<File> ppoFiles, ProgressTracker tracker) {
 
-        if (ppoFiles.size() == 0) {
+        if (ppoFiles.isEmpty()) {
             errors.addError(this.getBaseDir().toString(), "no PPO files found");
             tracker.addProgress(100);
             return;
@@ -349,7 +348,7 @@ public class CApplicationImpl implements CApplication {
     }
 
     void readAllPrdXmls(Collection<File> predicatesFiles, ProgressTracker tracker) {
-        if (predicatesFiles.size() == 0) {
+        if (predicatesFiles.isEmpty()) {
             errors.addError(this.getBaseDir().toString(), "no PRD files found");
             tracker.addProgress(100);
             return;
@@ -376,7 +375,7 @@ public class CApplicationImpl implements CApplication {
 
     void readAllSpoXmls(Collection<File> spoFiles, ProgressTracker tracker) {
 
-        if (spoFiles.size() == 0) {
+        if (spoFiles.isEmpty()) {
             errors.addError(this.getBaseDir().toString(), "no SPO files found");
             tracker.addProgress(100);
             return;
