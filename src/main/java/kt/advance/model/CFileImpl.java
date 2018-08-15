@@ -87,7 +87,7 @@ class CFileImpl implements CFile {
         }
 
         throw new IllegalStateException(
-            "no GCompTagDecl the key " + key);
+                "no GCompTagDecl the key " + key);
 
     }
 
@@ -109,8 +109,8 @@ class CFileImpl implements CFile {
         CFunctionImpl f = cfunctions.get(functionName);
         if (f == null) {
             f = new CFunctionImpl(
-                node,
-                this);
+                    node,
+                    this);
             cfunctions.put(f.getName(), f);
         }
         return f;
@@ -168,8 +168,8 @@ class CFileImpl implements CFile {
     @Override
     public File getSourceFile() {
         return new File(
-            getApplication().getSourceDir(),
-            getName());
+                getApplication().getSourceDir(),
+                getName());
     }
 
     // @Override
@@ -230,7 +230,7 @@ class CFileImpl implements CFile {
 
         types = cdict.cfile.cDictionary.types
                 .stream()
-                .map(node -> cTypeFactory.build(node))
+                .map(cTypeFactory::build)
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         funArg = cdict.cfile.cDictionary.funArg
@@ -254,7 +254,7 @@ class CFileImpl implements CFile {
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         final BinaryOperator<CString> mergeFunction = (a, b) -> {
-            System.err.println("duplicate string key in file " + this.getName() + " :" + a);
+            LOG.error("duplicate string key in file {} : {}", this.getName(), a);
             return a;
         };
 
@@ -267,8 +267,8 @@ class CFileImpl implements CFile {
         constants = cdict.cfile.cDictionary.constants
                 .stream()
                 .map(node -> new CConst(
-                    node,
-                    this))
+                        node,
+                        this))
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         expressions = cdict.cfile.cDictionary.expressions
@@ -301,9 +301,9 @@ class CFileImpl implements CFile {
         locations = cdict.cfile.cDeclarations.locations
                 .stream()
                 .map(node -> new CLocationImpl(
-                    node,
-                    this,
-                    this.application))
+                        node,
+                        this,
+                        this.application))
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         bind(varinfos.values());
@@ -314,7 +314,8 @@ class CFileImpl implements CFile {
 
     public void readPrdFile(PrdXml prdXml, PredicatesFactory pf) {
         LOG.debug("reading {}", prdXml.getOrigin());
-        Preconditions.checkState(null != expressions, "expressions map is null for " + prdXml.getOrigin());
+        Preconditions.checkState(null != expressions,
+                                 "expressions map is null for " + prdXml.getOrigin());
 
         predicates = new HashMap<>();
 
@@ -323,13 +324,13 @@ class CFileImpl implements CFile {
 
             if (predicates.containsKey(pk)) {
                 throw new XmlReadFailedException(
-                    prdXml.getOrigin(),
-                    pk + " is already in the map ");
+                        prdXml.getOrigin(),
+                        pk + " is already in the map ");
             }
 
             final CPOPredicate prd = pf.build(node);
             if (prd == null) {
-                LOG.error("cannot create predicate for " + node.arguments + " " + node.tags);
+                LOG.error("cannot create predicate for {} {}", node.arguments, node.tags);
             }
             else {
                 predicates.put(pk, prd);
