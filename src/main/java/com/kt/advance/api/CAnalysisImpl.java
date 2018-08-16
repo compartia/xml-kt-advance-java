@@ -13,8 +13,7 @@ import org.slf4j.LoggerFactory;
 import com.google.common.base.Preconditions;
 import com.kt.advance.ErrorsBundle;
 import com.kt.advance.ProgressTracker;
-
-import kt.advance.model.CApplicationImpl;
+import com.kt.advance.model.CApplicationImpl;
 
 public class CAnalysisImpl implements CAnalysis {
     static final Logger        LOG = LoggerFactory.getLogger(CApplication.class.getName());

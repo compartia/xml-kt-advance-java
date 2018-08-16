@@ -54,11 +54,10 @@ import com.kt.advance.api.FsAbstraction;
 import com.kt.advance.api.PPO;
 import com.kt.advance.api.SPO;
 import com.kt.advance.json.POJsonPrinter;
+import com.kt.advance.model.PredicatesFactory.CPOPredicate;
 import com.kt.advance.xml.model.AnalysisXml;
 import com.kt.advance.xml.model.PpoXml;
 import com.kt.advance.xml.model.PpoXml.PPONode;
-
-import kt.advance.model.PredicatesFactory.CPOPredicate;
 
 public class XmlValidator {
     public static FsAbstraction fileSystem;

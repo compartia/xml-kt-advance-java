@@ -1,4 +1,5 @@
 /* -------------------------------------------------------------------
+
  * Access to the C Analyzer Analysis Results
  * Author: Artem Zaborskiy
  * -------------------------------------------------------------------
@@ -21,58 +22,48 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02
  * -------------------------------------------------------------------
  */
-package com.kt.advance.xml.model;
 
-import java.io.File;
+package com.kt.advance.model;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlTransient;
+import com.kt.advance.api.CLocation;
+import com.kt.advance.model.CTypeFactory.CType;
+import com.kt.advance.xml.model.IndexedTableNode;
 
-public abstract class AbstractHasOriginImpl implements HasOriginFile {
-    public static class HeaderApp {
-        @XmlAttribute
-        public String file;
-    }
+public class CVarInfo extends Indexed implements Bindable {
+    public String name;
 
-    private File baseDir;
+    public CLocation location;
 
-    @XmlTransient
-    private File origin;
+    int          locId, vtypeId;
+    public CType type;
 
-    @Override
-    public final File getBaseDir() {
-        return baseDir;
+    public CVarInfo(IndexedTableNode node) {
+        super(node);
     }
 
     @Override
-    public final File getOrigin() {
-        return origin;
+    public void bind(CFileImpl cfile) {
+        if (locId != -1) {// global locations are not yet supported
+            location = cfile.getLocation(locId);
+        }
+        this.type = cfile.getType(vtypeId);
+
+    }
+
+    public int getLineNumber() {
+        if (this.location != null) {
+            return this.location.getLine();
+        }
+        else {
+            return 0;
+        }
     }
 
     @Override
-    public File getOriginAnalysisDir() {
-        return getOrigin().getParentFile().getParentFile();
-    }
-
-    public final String getRelativeOrigin() {
-        final String relative = baseDir
-                .toURI().relativize(getOrigin().toURI()).getPath();
-        return relative;
-    }
-
-    @Override
-    public String getTime() {
-        throw new IllegalStateException("not yet implemented");
-    }
-
-    @Override
-    public final void setBaseDir(File baseDir) {
-        this.baseDir = baseDir;
-    }
-
-    @Override
-    public final void setOrigin(File origin) {
-        this.origin = origin;
+    protected void init(Integer[] args, String[] tags) {
+        this.name = tags[0];
+        this.vtypeId = args[1];
+        this.locId = args[5];
     }
 
 }

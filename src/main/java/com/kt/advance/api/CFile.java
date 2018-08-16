@@ -3,12 +3,12 @@ package com.kt.advance.api;
 import java.io.File;
 import java.util.Collection;
 
-import kt.advance.model.CLval;
-import kt.advance.model.CString;
-import kt.advance.model.CTypeFactory.CType;
-import kt.advance.model.CVarInfo;
-import kt.advance.model.ExpFactory.CExpression;
-import kt.advance.model.PredicatesFactory.CPOPredicate;
+import com.kt.advance.model.CLval;
+import com.kt.advance.model.CString;
+import com.kt.advance.model.CVarInfo;
+import com.kt.advance.model.CTypeFactory.CType;
+import com.kt.advance.model.ExpFactory.CExpression;
+import com.kt.advance.model.PredicatesFactory.CPOPredicate;
 
 public interface CFile {
 

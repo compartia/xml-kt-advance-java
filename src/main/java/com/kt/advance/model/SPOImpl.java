@@ -21,58 +21,48 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02
  * -------------------------------------------------------------------
  */
-package com.kt.advance.xml.model;
+package com.kt.advance.model;
 
-import java.io.File;
+import com.kt.advance.POPrinter;
+import com.kt.advance.api.CFunction;
+import com.kt.advance.api.CFunctionSiteSPOs;
+import com.kt.advance.api.Definitions.POLevel;
+import com.kt.advance.api.SPO;
+import com.kt.advance.xml.model.SpoXml.ApiCondition;
+import com.kt.advance.xml.model.SpoXml.PCElement;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlTransient;
-
-public abstract class AbstractHasOriginImpl implements HasOriginFile {
-    public static class HeaderApp {
-        @XmlAttribute
-        public String file;
+/**
+ * Represents a secondary proof obligation associated with a call site.
+ *
+ */
+class SPOImpl extends POImpl implements SPO {
+    @Override
+    public String toString() {
+        return POPrinter.toString(this);
     }
 
-    private File baseDir;
-
-    @XmlTransient
-    private File origin;
+    private final CFunctionSiteSPOs site;
 
     @Override
-    public final File getBaseDir() {
-        return baseDir;
+    public CFunctionSiteSPOs getSite() {
+        return site;
     }
 
-    @Override
-    public final File getOrigin() {
-        return origin;
+    public SPOImpl(ApiCondition call, CFunction host, CFunctionSiteSPOs site) {
+        super(call.proofObligation.ispo, call.proofObligation, host.getSPOTypeRef(call.proofObligation.ispo));
+        this.site = site;
     }
 
-    @Override
-    public File getOriginAnalysisDir() {
-        return getOrigin().getParentFile().getParentFile();
-    }
+    public SPOImpl(PCElement postcondition, CFunction host, CFunctionSiteSPOs site) {
 
-    public final String getRelativeOrigin() {
-        final String relative = baseDir
-                .toURI().relativize(getOrigin().toURI()).getPath();
-        return relative;
-    }
-
-    @Override
-    public String getTime() {
-        throw new IllegalStateException("not yet implemented");
+        super(postcondition.proofObligation.ispo,
+              postcondition.proofObligation, host.getSPOTypeRef(postcondition.proofObligation.ispo));
+        this.site = site;
     }
 
     @Override
-    public final void setBaseDir(File baseDir) {
-        this.baseDir = baseDir;
-    }
-
-    @Override
-    public final void setOrigin(File origin) {
-        this.origin = origin;
+    public POLevel getLevel() {
+        return POLevel.SECONDARY;
     }
 
 }

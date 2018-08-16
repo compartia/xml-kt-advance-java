@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
@@ -32,6 +31,8 @@ import com.kt.advance.ErrorsBundle;
 import com.kt.advance.ProgressTracker;
 import com.kt.advance.api.Assumption;
 import com.kt.advance.api.Assumption.AssumptionTypeCode;
+import com.kt.advance.model.CVarInfo;
+import com.kt.advance.model.ExpFactory.CExpression;
 import com.kt.advance.api.CAnalysis;
 import com.kt.advance.api.CAnalysisImpl;
 import com.kt.advance.api.CApplication;
@@ -43,9 +44,6 @@ import com.kt.advance.api.PO;
 import com.kt.advance.api.PPO;
 import com.kt.advance.api.SPO;
 import com.kt.advance.xml.model.FsAbstractionImpl;
-
-import kt.advance.model.CVarInfo;
-import kt.advance.model.ExpFactory.CExpression;
 
 public class POJsonPrinter {
     static class JAnalysis implements Jsonable {
@@ -213,23 +211,7 @@ public class POJsonPrinter {
              * PPO: collecting primary proof obligations
              */
             this.ppos = cfunction.getPPOs().parallelStream()
-                    .map(ppo -> {
-
-                        final JPO poInfo = new JPO(
-                                ppo);
-
-                        final Set<SPO> associatedSpos = ppo.getAssociatedSpos(cfunction);
-
-                        poInfo.links = associatedSpos
-                                .stream()
-                                .map(spo -> new JLink(
-                                        spo,
-                                        cfunction))
-                                .collect(Collectors.toList());
-
-                        return poInfo;
-
-                    })
+                    .map(JPO::new)
                     .collect(Collectors.toList());
 
             /*
@@ -253,23 +235,6 @@ public class POJsonPrinter {
         }
     }
 
-    /**
-     * in JSON format, represents a link to Primary proof obligation;
-     */
-    static class JLink implements Jsonable {
-        public String  file;
-        public String  functionName;
-        public Integer id;
-
-        public JLink(PO po, CFunction fun) {
-
-            this.file = fun.getCfile().getName();
-            this.functionName = fun.getName();
-            this.id = po.getId();
-        }
-
-    }
-
     static class JLocation implements Jsonable {
 
         public final String  file;
@@ -283,15 +248,14 @@ public class POJsonPrinter {
     }
 
     static class JPO implements Jsonable {
-        public String      dep;
-        public String      evl;
-        public String      exp;
-        public Integer     id;
+        public String  dep;
+        public String  evl;
+        public String  exp;
+        public Integer id;
         @JsonInclude(Include.NON_EMPTY)
-        public Integer     line;
-        @JsonInclude(Include.NON_EMPTY)
-        public List<JLink> links = new ArrayList<>();
-        public String      prd;
+        public Integer line;
+
+        public String prd;
 
         public String sts;
 

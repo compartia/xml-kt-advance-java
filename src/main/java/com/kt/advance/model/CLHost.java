@@ -21,58 +21,54 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02
  * -------------------------------------------------------------------
  */
-package com.kt.advance.xml.model;
+package com.kt.advance.model;
 
-import java.io.File;
+import com.kt.advance.Util;
+import com.kt.advance.model.ExpFactory.CExpression;
+import com.kt.advance.xml.model.IndexedTableNode;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlTransient;
+class CLHost extends Indexed implements Bindable {
+    public CExpression exp;
+    public Integer     varId, expId;
 
-public abstract class AbstractHasOriginImpl implements HasOriginFile {
-    public static class HeaderApp {
-        @XmlAttribute
-        public String file;
-    }
+    public String varName;
 
-    private File baseDir;
+    public CLHost(IndexedTableNode node) {
+        super(node);
 
-    @XmlTransient
-    private File origin;
+        final Integer[] args = node.getArguments();
+        final String[] tags = node.getTagsSplit();
+        final String kind = tags[0];
 
-    @Override
-    public final File getBaseDir() {
-        return baseDir;
-    }
+        if ("mem".equals(kind)) {
+            expId = args[0];
+        }
+        else if ("var".equals(kind)) {
+            varId = args[0];
+            varName = tags[1];
+        }
+        else {
+            throw new IllegalArgumentException(
+                "unknown lhost type " + kind);
+        }
 
-    @Override
-    public final File getOrigin() {
-        return origin;
-    }
-
-    @Override
-    public File getOriginAnalysisDir() {
-        return getOrigin().getParentFile().getParentFile();
-    }
-
-    public final String getRelativeOrigin() {
-        final String relative = baseDir
-                .toURI().relativize(getOrigin().toURI()).getPath();
-        return relative;
     }
 
     @Override
-    public String getTime() {
-        throw new IllegalStateException("not yet implemented");
+    public void bind(CFileImpl cfile) {
+        if (expId != null) {
+            this.exp = cfile.getExression(expId);
+        }
     }
 
     @Override
-    public final void setBaseDir(File baseDir) {
-        this.baseDir = baseDir;
-    }
-
-    @Override
-    public final void setOrigin(File origin) {
-        this.origin = origin;
+    public String toString() {
+        if (exp != null) {
+            return Util.bra("*" + exp);
+        }
+        else {
+            return varName;
+        }
     }
 
 }

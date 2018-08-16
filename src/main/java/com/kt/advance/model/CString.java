@@ -21,58 +21,25 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02
  * -------------------------------------------------------------------
  */
-package com.kt.advance.xml.model;
+package com.kt.advance.model;
 
-import java.io.File;
+import com.kt.advance.xml.model.IndexedStrignTable;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlTransient;
+public class CString {
 
-public abstract class AbstractHasOriginImpl implements HasOriginFile {
-    public static class HeaderApp {
-        @XmlAttribute
-        public String file;
-    }
+    public final Integer id;
 
-    private File baseDir;
+    private final String val;
 
-    @XmlTransient
-    private File origin;
+    public CString(IndexedStrignTable node) {
+        this.id = node.index;
+        this.val = node.value;
 
-    @Override
-    public final File getBaseDir() {
-        return baseDir;
     }
 
     @Override
-    public final File getOrigin() {
-        return origin;
-    }
-
-    @Override
-    public File getOriginAnalysisDir() {
-        return getOrigin().getParentFile().getParentFile();
-    }
-
-    public final String getRelativeOrigin() {
-        final String relative = baseDir
-                .toURI().relativize(getOrigin().toURI()).getPath();
-        return relative;
-    }
-
-    @Override
-    public String getTime() {
-        throw new IllegalStateException("not yet implemented");
-    }
-
-    @Override
-    public final void setBaseDir(File baseDir) {
-        this.baseDir = baseDir;
-    }
-
-    @Override
-    public final void setOrigin(File origin) {
-        this.origin = origin;
+    public String toString() {
+        return val;
     }
 
 }
