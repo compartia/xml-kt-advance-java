@@ -2,8 +2,8 @@ package com.kt.advance.api;
 
 import java.util.Collection;
 
-import kt.advance.model.CVarInfo;
-import kt.advance.model.ExpFactory.CExpression;
+import com.kt.advance.model.CVarInfo;
+import com.kt.advance.model.ExpFactory.CExpression;
 
 public interface CFunctionSiteSPOs {
 

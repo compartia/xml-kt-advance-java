@@ -1,9 +1,8 @@
 package com.kt.advance.api;
 
 import com.kt.advance.Util;
+import com.kt.advance.model.PredicatesFactory.CPOPredicate;
 import com.kt.advance.xml.model.ApiXml.ApiAssumptionNode;
-
-import kt.advance.model.PredicatesFactory.CPOPredicate;
 
 public class Assumption {
 

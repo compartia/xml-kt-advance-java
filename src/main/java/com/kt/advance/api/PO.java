@@ -1,10 +1,9 @@
 package com.kt.advance.api;
 
 import com.kt.advance.api.Definitions.POLevel;
-
-import kt.advance.model.CProofDependencies;
-import kt.advance.model.PoTypeRef;
-import kt.advance.model.PredicatesFactory.CPOPredicate;
+import com.kt.advance.model.CProofDependencies;
+import com.kt.advance.model.PoTypeRef;
+import com.kt.advance.model.PredicatesFactory.CPOPredicate;
 
 public interface PO {
 

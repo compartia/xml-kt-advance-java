@@ -31,6 +31,8 @@ import com.kt.advance.ErrorsBundle;
 import com.kt.advance.ProgressTracker;
 import com.kt.advance.api.Assumption;
 import com.kt.advance.api.Assumption.AssumptionTypeCode;
+import com.kt.advance.model.CVarInfo;
+import com.kt.advance.model.ExpFactory.CExpression;
 import com.kt.advance.api.CAnalysis;
 import com.kt.advance.api.CAnalysisImpl;
 import com.kt.advance.api.CApplication;
@@ -42,9 +44,6 @@ import com.kt.advance.api.PO;
 import com.kt.advance.api.PPO;
 import com.kt.advance.api.SPO;
 import com.kt.advance.xml.model.FsAbstractionImpl;
-
-import kt.advance.model.CVarInfo;
-import kt.advance.model.ExpFactory.CExpression;
 
 public class POJsonPrinter {
     static class JAnalysis implements Jsonable {

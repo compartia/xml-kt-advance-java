@@ -2,7 +2,7 @@ package com.kt.advance.api;
 
 import java.util.Collection;
 
-import kt.advance.model.PoTypeRef;
+import com.kt.advance.model.PoTypeRef;
 
 public interface CFunction {
 
