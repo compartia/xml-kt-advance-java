@@ -90,7 +90,7 @@ class CFunctionImpl implements CFunction {
 
     @Override
     public PoTypeRef getPPOTypeRef(int typeKey) {
-        return requireValue(ppoTypes, typeKey, "ppo type ref");
+        return requireValue(ppoTypes, typeKey, "PPO type ref");
     }
 
     @Override
@@ -110,7 +110,7 @@ class CFunctionImpl implements CFunction {
      */
     @Override
     public PoTypeRef getSPOTypeRef(int typeKey) {
-        return requireValue(spoTypes, typeKey, "spo type ref");
+        return requireValue(spoTypes, typeKey, "SPO type ref");
     }
 
     public void readApiFile(final ApiXml apiXml) {
@@ -122,18 +122,18 @@ class CFunctionImpl implements CFunction {
         apiAssumptions = apiXml.getApiAssumptions()
                 .stream()
                 .map(apiNode -> new Assumption(
-                    apiNode,
-                    this,
-                    AssumptionTypeCode.aa))
+                        apiNode,
+                        this,
+                        AssumptionTypeCode.aa))
                 .collect(Collectors.toMap(a -> a.index, a -> a));
 
         final List<ApiAssumptionNode> globalAssumptions = apiXml.getGlobalAssumptions();
         if (globalAssumptions != null) {
             final Map<Integer, Assumption> gAssumptions = globalAssumptions.stream()
                     .map(apiNode -> new Assumption(
-                        apiNode,
-                        this,
-                        AssumptionTypeCode.ga))
+                            apiNode,
+                            this,
+                            AssumptionTypeCode.ga))
                     .collect(Collectors.toMap(a -> a.index,
                                               a -> a));
 
@@ -148,22 +148,22 @@ class CFunctionImpl implements CFunction {
         ppoTypes = dict.function.ppoTypes
                 .stream()
                 .map((x) -> new PoTypeRef(
-                    x,
-                    cfile))
+                        x,
+                        cfile))
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         spoTypes = dict.function.spoTypes
                 .stream()
                 .map((x) -> new PoTypeRef(
-                    x,
-                    cfile))
+                        x,
+                        cfile))
                 .collect(Collectors.toMap(node -> node.id, node -> node));
 
         assumptionsTypesMap = dict.function.assumptionTypeTable
                 .stream()
                 .map((x) -> new AssumptionType(
-                    x,
-                    cfile))
+                        x,
+                        cfile))
                 .collect(Collectors.toMap(node -> node.id,
                                           node -> node));
 
@@ -176,8 +176,8 @@ class CFunctionImpl implements CFunction {
         ppos = pposXml.function.proofObligations
                 .stream()
                 .map(x -> new PPOImpl(
-                    x,
-                    this))
+                        x,
+                        this))
                 .collect(Collectors.toMap(node -> node.getId(), node -> node));
 
     }
@@ -207,9 +207,9 @@ class CFunctionImpl implements CFunction {
         final List<CFunctionReturnsiteSPOsImpl> c = collection
                 .stream()
                 .map(x -> new CFunctionReturnsiteSPOsImpl(
-                    x,
-                    callsType,
-                    this))
+                        x,
+                        callsType,
+                        this))
                 .collect(Collectors.toList());
 
         if (!c.isEmpty()) {
@@ -223,9 +223,9 @@ class CFunctionImpl implements CFunction {
         final List<CFunctionCallsiteSPOsImpl> callsImpl = calls
                 .stream()
                 .map(call -> new CFunctionCallsiteSPOsImpl(
-                    call,
-                    callsType,
-                    this))
+                        call,
+                        callsType,
+                        this))
                 .collect(Collectors.toList());
 
         if (!callsImpl.isEmpty()) {

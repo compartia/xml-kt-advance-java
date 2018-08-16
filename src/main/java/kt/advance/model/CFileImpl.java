@@ -137,7 +137,7 @@ class CFileImpl implements CFile {
     }
 
     CLHost getLHost(Integer key) {
-        return requireValue(lhosts, key, "exp");
+        return requireValue(lhosts, key, "lhost");
     }
 
     @Override
@@ -152,7 +152,7 @@ class CFileImpl implements CFile {
 
     @Override
     public CLval getLValue(Integer key) {
-        return requireValue(lvalues, key, "exp");
+        return requireValue(lvalues, key, "lvalue");
     }
 
     @Override
@@ -174,7 +174,7 @@ class CFileImpl implements CFile {
 
     // @Override
     public COffset getOffest(Integer key) {
-        return requireValue(offsets, key, "type");
+        return requireValue(offsets, key, "offset");
     }
 
     @Override
