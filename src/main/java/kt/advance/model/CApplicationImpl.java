@@ -65,6 +65,11 @@ public class CApplicationImpl implements CApplication {
         void run();
     }
 
+    @FunctionalInterface
+    interface UnsafeProcAction<X> {
+        void run(X arg);
+    }
+
     static final Logger LOG = LoggerFactory.getLogger(CApplicationImpl.class.getName());
 
     public final PredicatesFactory predicatesFactory = new PredicatesFactory();
@@ -178,205 +183,124 @@ public class CApplicationImpl implements CApplication {
         return cfile.getCFunctionImpl(f.getFunctionName());
     }
 
-    void readAllApiXmls(Collection<File> apiFiles, ProgressTracker tracker) {
+    <T extends AnalysisXml> void forEachXmlFile(
+            Collection<File> xmlFiles,
+            String suffix,
+            Class<T> clazz,
+            ProgressTracker tracker,
+            UnsafeProcAction<T> action) {
 
-        if (apiFiles.isEmpty()) {
-            errors.addError(this.getBaseDir().toString(), "no API files found");
-            tracker.addProgress(100);
-            return;
-        }
-
-        LOG.info("reading {} {} files", apiFiles.size(), FsAbstraction.API_SUFFIX);
-        final float progressInc = 100f / apiFiles.size();
-        final XMLFileType<ApiXml> reader = XMLFileType.getReader(ApiXml.class);
-
-        StreamSupport.stream(apiFiles.spliterator(), !TestMode.inTestMode)
-
-                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                .sequential()
-                .forEach(xmlObj -> runInHandler(() -> {
-                    final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
-                    cFunction.readApiFile(xmlObj);
-
-                }, xmlObj, tracker, progressInc));
-
-    }
-
-    void readAllCdictXmls(Collection<File> cdictFiles, ProgressTracker tracker) {
-        if (cdictFiles.isEmpty()) {
-            errors.addError(this.getBaseDir().toString(), "no CDICT files found");
-            tracker.addProgress(100);
-            return;
-        }
-
-        LOG.info("reading {} {} files", cdictFiles.size(), FsAbstraction.CDICT_SUFFIX);
-        final float progressInc = 100f / cdictFiles.size();
-
-        final XMLFileType<CdictXml> reader = XMLFileType.getReader(CdictXml.class);
-
-        StreamSupport.stream(cdictFiles.spliterator(), !TestMode.inTestMode)
-
-                .map(file -> reader.readXml(file, fs.getBaseDir()))
-                .sequential()
-                .forEach(xmlObj -> runInHandler(() -> {
-                    final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                    cfile.readCDictFile(xmlObj, predicatesFactory.expressionsFactory);
-                }, xmlObj, tracker, progressInc)
-
-        );
-
-    }
-
-    void readAllCfileXmls(Collection<File> cFileFiles, ProgressTracker tracker) {
-
-        if (cFileFiles.isEmpty()) {
-            errors.addError(this.getBaseDir().toString(), "no CFILE files found");
+        if (xmlFiles.isEmpty()) {
+            errors.addError(this.getBaseDir().toString(), "no *" + suffix + " files found");
             tracker.addProgress(100);
             return;
         }
 
         final Instant start = Instant.now();
-        LOG.info("reading {} {} files", cFileFiles.size(), FsAbstraction.CFILE_SUFFIX);
-        final float progressInc = 100f / cFileFiles.size();
 
-        final XMLFileType<CfileXml> reader = XMLFileType.getReader(CfileXml.class);
+        LOG.info("reading {} {} files", xmlFiles.size(), suffix);
+        final float progressInc = 100f / xmlFiles.size();
 
-        StreamSupport.stream(cFileFiles.spliterator(), !TestMode.inTestMode)
+        final XMLFileType<T> reader = XMLFileType.getReader(clazz);
+
+        StreamSupport.stream(xmlFiles.spliterator(), !TestMode.inTestMode)
 
                 .map(file -> reader.readXml(file, fs.getBaseDir()))
                 .sequential()
-                .forEach(xmlObj -> runInHandler(() -> {
-                    final CFileImpl cfile = getCFileOrMakeNew(xmlObj.getSourceFilename());
-                    cfile.readCFileXml(xmlObj);
+                .forEach(xmlObj -> {
 
-                }, xmlObj, tracker, progressInc)
+                    final UnsafeProc proc = () -> {
+                        action.run(xmlObj);
+                    };
+
+                    runInHandler(proc, xmlObj, tracker, progressInc);
+                }
 
         );
         final Instant end = Instant.now();
-        LOG.info("Time elapsed for reading {} {} files is {}", cFileFiles.size(), FsAbstraction.CFILE_SUFFIX,
+        LOG.info("Time elapsed for reading {} {} files is {}", xmlFiles.size(), suffix,
                  Duration.between(start, end));
+
+    }
+
+    void readAllApiXmls(Collection<File> apiFiles, ProgressTracker tracker) {
+
+        this.forEachXmlFile(apiFiles, FsAbstraction.API_SUFFIX, ApiXml.class, tracker,
+                            (xmlObj) -> {
+                                final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
+                                cFunction.readApiFile(xmlObj);
+                            });
+
+    }
+
+    void readAllCdictXmls(Collection<File> cdictFiles, ProgressTracker tracker) {
+
+        this.forEachXmlFile(cdictFiles, FsAbstraction.CDICT_SUFFIX, CdictXml.class, tracker,
+                            (xmlObj) -> {
+                                final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                                cfile.readCDictFile(xmlObj, predicatesFactory.expressionsFactory);
+                            });
+
+    }
+
+    void readAllCfileXmls(Collection<File> cFileFiles, ProgressTracker tracker) {
+
+        this.forEachXmlFile(cFileFiles, FsAbstraction.CFILE_SUFFIX, CfileXml.class, tracker,
+                            (xmlO) -> {
+                                final CFileImpl cfile = getCFileOrMakeNew(xmlO.getSourceFilename());
+                                cfile.readCFileXml(xmlO);
+                            });
 
     }
 
     void readAllCfuncsXmls(Collection<File> files, ProgressTracker tracker) {
 
-        if (files.size() == 0) {
-            errors.addError(this.getBaseDir().toString(), "no CFUN files found");
-            tracker.addProgress(100);
-            return;
-        }
-
-        LOG.info("reading {} {} files", files.size(), FsAbstraction.CFUN_SUFFIX);
-        final float progressInc = 100f / files.size();
-
-        final XMLFileType<CFunXml> reader = XMLFileType.getReader(CFunXml.class);
-
-        StreamSupport.stream(files.spliterator(), !TestMode.inTestMode)
-
-                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                .forEach(xmlObj -> runInHandler(() -> {
-
-                    final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                    cfile.getCFunctionOrMakeNew(xmlObj);
-
-                }, xmlObj, tracker, progressInc));
+        this.forEachXmlFile(files, FsAbstraction.CFUN_SUFFIX, CFunXml.class, tracker,
+                            (xmlObj) -> {
+                                getCFileStrictly(xmlObj.getSourceFilename()).getCFunctionOrMakeNew(xmlObj);
+                            });
 
     }
 
     void readAllPodXmls(Collection<File> pods, ProgressTracker tracker) {
 
-        if (pods.isEmpty()) {
-            errors.addError(this.getBaseDir().toString(), "no POD files found");
-            tracker.addProgress(100);
-            return;
-        }
-
-        LOG.info("reading {} {} files", pods.size(), FsAbstraction.POD_SUFFIX);
-        final float progressInc = 100f / pods.size();
-        final XMLFileType<PodXml> reader = XMLFileType.getReader(PodXml.class);
-
-        StreamSupport.stream(pods.spliterator(), !TestMode.inTestMode)
-
-                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                .sequential()
-                .forEach(xmlObj -> runInHandler(() -> {
-                    final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                    final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
-                    cFunction.readPodFile(xmlObj, cfile);
-
-                }, xmlObj, tracker, progressInc));
+        this.forEachXmlFile(pods, FsAbstraction.POD_SUFFIX, PodXml.class, tracker,
+                            (xmlObj) -> {
+                                getCFunctionImpl(xmlObj)
+                                        .readPodFile(
+                                                     xmlObj,
+                                                     getCFileStrictly(xmlObj.getSourceFilename()));
+                            });
 
     }
 
     void readAllPpoXmls(Collection<File> ppoFiles, ProgressTracker tracker) {
 
-        if (ppoFiles.isEmpty()) {
-            errors.addError(this.getBaseDir().toString(), "no PPO files found");
-            tracker.addProgress(100);
-            return;
-        }
-
-        LOG.info("reading {} {} files", ppoFiles.size(), FsAbstraction.PPO_SUFFIX);
-        final float progressInc = 100f / ppoFiles.size();
-        final XMLFileType<PpoXml> reader = XMLFileType.getReader(PpoXml.class);
-
-        StreamSupport.stream(ppoFiles.spliterator(), !TestMode.inTestMode)
-
-                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                .sequential()
-                .forEach(xmlObj -> runInHandler(() -> {
-                    final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
-                    cFunction.readPpoFile(xmlObj, errors);
-
-                }, xmlObj, tracker, progressInc));
+        this.forEachXmlFile(ppoFiles, FsAbstraction.PPO_SUFFIX, PpoXml.class, tracker,
+                            (xmlObj) -> {
+                                getCFunctionImpl(xmlObj)
+                                        .readPpoFile(xmlObj, errors);
+                            });
 
     }
 
     void readAllPrdXmls(Collection<File> predicatesFiles, ProgressTracker tracker) {
-        if (predicatesFiles.isEmpty()) {
-            errors.addError(this.getBaseDir().toString(), "no PRD files found");
-            tracker.addProgress(100);
-            return;
-        }
 
-        LOG.info("reading {} {} files", predicatesFiles.size(), FsAbstraction.PRD_SUFFIX);
-        final float progressInc = 100f / predicatesFiles.size();
-
-        final XMLFileType<PrdXml> reader = XMLFileType.getReader(PrdXml.class);
-
-        StreamSupport.stream(predicatesFiles.spliterator(), !TestMode.inTestMode)
-
-                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                .sequential()
-                .forEach(xmlObj -> runInHandler(() -> {
-                    final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                    cfile.readPrdFile(xmlObj, predicatesFactory);
-
-                }, xmlObj, tracker, progressInc));
+        this.forEachXmlFile(predicatesFiles, FsAbstraction.PRD_SUFFIX, PrdXml.class, tracker,
+                            (xmlObj) -> {
+                                getCFileStrictly(xmlObj.getSourceFilename())
+                                        .readPrdFile(xmlObj, predicatesFactory);
+                            });
 
     }
 
     void readAllSpoXmls(Collection<File> spoFiles, ProgressTracker tracker) {
 
-        if (spoFiles.isEmpty()) {
-            errors.addError(this.getBaseDir().toString(), "no SPO files found");
-            tracker.addProgress(100);
-            return;
-        }
-
-        LOG.info("reading {} {} files", spoFiles.size(), FsAbstraction.SPO_SUFFIX);
-        final float progressInc = 100f / spoFiles.size();
-        final XMLFileType<SpoXml> reader = XMLFileType.getReader(SpoXml.class);
-
-        StreamSupport.stream(spoFiles.spliterator(), !TestMode.inTestMode)
-
-                .map(xml -> reader.readXml(xml, fs.getBaseDir()))
-                .sequential()
-                .forEach(xmlObj -> runInHandler(() -> {
-                    final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
-                    cFunction.readSpoFile(xmlObj, errors);
-
-                }, xmlObj, tracker, progressInc));
+        this.forEachXmlFile(spoFiles, FsAbstraction.SPO_SUFFIX, SpoXml.class, tracker,
+                            (xmlObj) -> {
+                                getCFunctionImpl(xmlObj)
+                                        .readSpoFile(xmlObj, errors);
+                            });
 
     }
 
