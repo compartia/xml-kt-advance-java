@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Preconditions;
+import com.kt.advance.api.MissingKeyException;
 
 public class Util {
 
@@ -40,8 +41,7 @@ public class Util {
 
         if (map.containsKey(key)) {
             final String msg = "non unique key " + key + "[ value:" + val + "]";
-            throw new IllegalStateException(
-                    msg);
+            throw new IllegalStateException(msg);
         }
         map.put(key, val);
         return val;
@@ -63,13 +63,13 @@ public class Util {
         return quote(i, '\'', '\'');
     }
 
-    public static <K, V> V requireValue(Map<K, V> map, K key, String name) {
+    public static <K, V> V requireValue(Map<K, V> map, K key, String name) throws MissingKeyException {
         Preconditions.checkNotNull(map, name + " map is null; looking for key " + key);
 
         final V val = map.get(key);
         if (val == null) {
             // final String keys = StringUtils.join(map.keySet(), ",");
-            throw new IllegalStateException("No " + name + " in map for the key " + key);
+            throw new MissingKeyException("No " + name + " in map for the key " + key);
         }
         return val;
     }

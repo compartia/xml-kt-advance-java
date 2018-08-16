@@ -17,6 +17,7 @@ import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
 import com.kt.advance.api.CLocation;
+import com.kt.advance.api.MissingKeyException;
 import com.kt.advance.xml.XmlReadFailedException;
 import com.kt.advance.xml.model.CFunXml;
 import com.kt.advance.xml.model.CdictXml;
@@ -86,7 +87,7 @@ class CFileImpl implements CFile {
             return globalComptagDeclarations.get(key);
         }
 
-        throw new IllegalStateException(
+        throw new MissingKeyException(
                 "no GCompTagDecl the key " + key);
 
     }

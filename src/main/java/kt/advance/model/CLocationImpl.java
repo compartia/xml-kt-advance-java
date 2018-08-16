@@ -27,6 +27,7 @@ package kt.advance.model;
 import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CLocation;
+import com.kt.advance.api.MissingKeyException;
 import com.kt.advance.xml.model.IndexedTableNode;
 
 /**
@@ -68,7 +69,7 @@ class CLocationImpl extends Indexed implements CLocation {
         try {
             this.setCfile(app.getCFileStrictly(fn));
             this.setFilename(null);
-        } catch (final IllegalStateException ex) {
+        } catch (final MissingKeyException ex) {
             // dealing with external .h files.
             this.setFilename(fn);
         }

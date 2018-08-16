@@ -140,28 +140,20 @@ public class CApplicationImpl implements CApplication {
         readAllCfileXmls(fs.listXMLs(FsAbstraction.CFILE_SUFFIX), tr.getSubtaskTracker(5, "reading cfiles"));
         readAllCdictXmls(fs.listXMLs(FsAbstraction.CDICT_SUFFIX), tr.getSubtaskTracker(10, "reading cdict files"));
         readAllCfuncsXmls(fs.listXMLs(FsAbstraction.CFUN_SUFFIX), tr.getSubtaskTracker(5, "reading cfun files"));
-
         readAllPrdXmls(fs.listXMLs(FsAbstraction.PRD_SUFFIX), tr.getSubtaskTracker(10, "reading prd files"));
-
         readAllPodXmls(fs.listXMLs(FsAbstraction.POD_SUFFIX), tr.getSubtaskTracker(10, "reading pod files"));
-
         readAllPpoXmls(fs.listXMLs(FsAbstraction.PPO_SUFFIX), tr.getSubtaskTracker(20, "reading ppo files"));
-
         readAllSpoXmls(fs.listXMLs(FsAbstraction.SPO_SUFFIX), tr.getSubtaskTracker(20, "reading spo files"));
-
         readAllApiXmls(fs.listXMLs(FsAbstraction.API_SUFFIX), tr.getSubtaskTracker(20, "reading api files"));
 
     }
 
-    private void runInHandler(UnsafeProc proc, AnalysisXml ppos) {
+    private void runInHandler(UnsafeProc proc, AnalysisXml ppos, ProgressTracker tracker, float progress) {
 
         try {
             proc.run();
         } catch (final NullPointerException ex) {
-
-            throw new RuntimeException(
-                    ex);
-
+            throw new RuntimeException(ex);
         } catch (final Exception ex) {
 
             if (errors != null) {
@@ -170,6 +162,8 @@ public class CApplicationImpl implements CApplication {
             else {
                 LOG.error("{}:{}", ppos.getRelativeOrigin(), ex.getLocalizedMessage());
             }
+        } finally {
+            tracker.addProgress(progress);
         }
     }
 
@@ -202,15 +196,9 @@ public class CApplicationImpl implements CApplication {
                 .sequential()
                 .forEach(xmlObj -> runInHandler(() -> {
                     final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
-                    if (cFunction == null) {
-                        LOG.error("cannot get cFunction");
-                    }
-                    else {
-                        cFunction.readApiFile(xmlObj);
-                    }
+                    cFunction.readApiFile(xmlObj);
 
-                    tracker.addProgress(progressInc);
-                }, xmlObj));
+                }, xmlObj, tracker, progressInc));
 
     }
 
@@ -230,12 +218,10 @@ public class CApplicationImpl implements CApplication {
 
                 .map(file -> reader.readXml(file, fs.getBaseDir()))
                 .sequential()
-                .forEach(
-                         xmlObj -> runInHandler(() -> {
-                             final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                             cfile.readCDictFile(xmlObj, predicatesFactory.expressionsFactory);
-                             tracker.addProgress(progressInc);
-                         }, xmlObj)
+                .forEach(xmlObj -> runInHandler(() -> {
+                    final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
+                    cfile.readCDictFile(xmlObj, predicatesFactory.expressionsFactory);
+                }, xmlObj, tracker, progressInc)
 
         );
 
@@ -259,12 +245,11 @@ public class CApplicationImpl implements CApplication {
 
                 .map(file -> reader.readXml(file, fs.getBaseDir()))
                 .sequential()
-                .forEach(
-                         xmlObj -> runInHandler(() -> {
-                             final CFileImpl cfile = getCFileOrMakeNew(xmlObj.getSourceFilename());
-                             cfile.readCFileXml(xmlObj);
-                             tracker.addProgress(progressInc);
-                         }, xmlObj)
+                .forEach(xmlObj -> runInHandler(() -> {
+                    final CFileImpl cfile = getCFileOrMakeNew(xmlObj.getSourceFilename());
+                    cfile.readCFileXml(xmlObj);
+
+                }, xmlObj, tracker, progressInc)
 
         );
         final Instant end = Instant.now();
@@ -293,8 +278,8 @@ public class CApplicationImpl implements CApplication {
 
                     final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
                     cfile.getCFunctionOrMakeNew(xmlObj);
-                    tracker.addProgress(progressInc);
-                }, xmlObj));
+
+                }, xmlObj, tracker, progressInc));
 
     }
 
@@ -318,8 +303,8 @@ public class CApplicationImpl implements CApplication {
                     final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
                     final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
                     cFunction.readPodFile(xmlObj, cfile);
-                    tracker.addProgress(progressInc);
-                }, xmlObj));
+
+                }, xmlObj, tracker, progressInc));
 
     }
 
@@ -342,8 +327,8 @@ public class CApplicationImpl implements CApplication {
                 .forEach(xmlObj -> runInHandler(() -> {
                     final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
                     cFunction.readPpoFile(xmlObj, errors);
-                    tracker.addProgress(progressInc);
-                }, xmlObj));
+
+                }, xmlObj, tracker, progressInc));
 
     }
 
@@ -367,9 +352,7 @@ public class CApplicationImpl implements CApplication {
                     final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
                     cfile.readPrdFile(xmlObj, predicatesFactory);
 
-                    tracker.addProgress(progressInc);
-
-                }, xmlObj));
+                }, xmlObj, tracker, progressInc));
 
     }
 
@@ -392,8 +375,8 @@ public class CApplicationImpl implements CApplication {
                 .forEach(xmlObj -> runInHandler(() -> {
                     final CFunctionImpl cFunction = getCFunctionImpl(xmlObj);
                     cFunction.readSpoFile(xmlObj, errors);
-                    tracker.addProgress(progressInc);
-                }, xmlObj));
+
+                }, xmlObj, tracker, progressInc));
 
     }
 
