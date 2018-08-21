@@ -47,7 +47,7 @@ public class CdictXml extends FileLevelAnalysisXml {
 
         @XmlElementWrapper(name = "filename-table")
         @XmlElement(name = "n")
-        public List<IndexedStrignTable> filenames = new ArrayList<>();
+        public List<IndexedStringTable> filenames = new ArrayList<>();
 
         @XmlElementWrapper(name = "varinfo-table")
         @XmlElement(name = "n")
@@ -89,7 +89,7 @@ public class CdictXml extends FileLevelAnalysisXml {
 
         @XmlElementWrapper(name = "string-table")
         @XmlElement(name = "n")
-        public List<IndexedStrignTable> strings = new ArrayList<>();
+        public List<IndexedStringTable> strings = new ArrayList<>();
 
         @XmlElementWrapper(name = "typ-table")
         @XmlElement(name = "n")

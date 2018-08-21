@@ -23,7 +23,7 @@
  */
 package com.kt.advance.model;
 
-import com.kt.advance.xml.model.IndexedStrignTable;
+import com.kt.advance.xml.model.IndexedStringTable;
 
 public class CString {
 
@@ -31,7 +31,7 @@ public class CString {
 
     private final String val;
 
-    public CString(IndexedStrignTable node) {
+    public CString(IndexedStringTable node) {
         this.id = node.index;
         this.val = node.value;
 

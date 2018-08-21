@@ -31,8 +31,6 @@ import com.kt.advance.ErrorsBundle;
 import com.kt.advance.ProgressTracker;
 import com.kt.advance.api.Assumption;
 import com.kt.advance.api.Assumption.AssumptionTypeCode;
-import com.kt.advance.model.CVarInfo;
-import com.kt.advance.model.ExpFactory.CExpression;
 import com.kt.advance.api.CAnalysis;
 import com.kt.advance.api.CAnalysisImpl;
 import com.kt.advance.api.CApplication;
@@ -43,6 +41,8 @@ import com.kt.advance.api.CLocation;
 import com.kt.advance.api.PO;
 import com.kt.advance.api.PPO;
 import com.kt.advance.api.SPO;
+import com.kt.advance.model.CVarInfo;
+import com.kt.advance.model.ExpFactory.CExpression;
 import com.kt.advance.xml.model.FsAbstractionImpl;
 
 public class POJsonPrinter {
@@ -196,8 +196,7 @@ public class POJsonPrinter {
         public JFunc(CFunction cfunction) {
             this.name = cfunction.getName();
 
-            this.loc = new JLocation(
-                    cfunction.getLocation());
+            this.loc = new JLocation(cfunction.getLocation());
 
             /*
              * API

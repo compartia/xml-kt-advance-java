@@ -29,6 +29,10 @@ public abstract class Indexed {
 
     public final Integer id;
 
+    public Integer getId() {
+        return id;
+    }
+
     public Indexed(IndexedTableNode node) {
         if (node != null) {
             this.id = node.index;
