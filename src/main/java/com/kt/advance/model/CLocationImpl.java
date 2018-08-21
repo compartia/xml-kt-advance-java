@@ -95,7 +95,7 @@ class CLocationImpl extends Indexed implements CLocation {
             this.setFilename(null);
         } catch (final MissingKeyException ex) {
             // dealing with external .h files.
-            this.setFilename("-missing-" + args[0]);
+            this.setFilename(filename);
         }
     }
 

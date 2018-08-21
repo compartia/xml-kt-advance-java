@@ -300,7 +300,8 @@ class CFileImpl implements CFile {
             if (node.value == null) {
                 // fallback for older XMLs
                 filenamesIndex.put(node.index, node.old_tags);
-                errors.addError(cdict.getRelativeOrigin(), "has old format of  <filename-table>");
+                errors.addError(cdict.getRelativeOrigin(),
+                                "has old format of  <filename-table>, expected to be IndexedStringTable");
             }
             else {
                 filenamesIndex.put(node.index, node.value);
