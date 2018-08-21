@@ -238,7 +238,7 @@ public class CApplicationImpl implements CApplication {
         this.forEachXmlFile(cdictFiles, FsAbstraction.CDICT_SUFFIX, CdictXml.class, tracker,
                             (xmlObj) -> {
                                 final CFileImpl cfile = getCFileStrictly(xmlObj.getSourceFilename());
-                                cfile.readCDictFile(xmlObj, predicatesFactory.expressionsFactory);
+                                cfile.readCDictFile(xmlObj, predicatesFactory.expressionsFactory, this.errors);
                             });
 
     }

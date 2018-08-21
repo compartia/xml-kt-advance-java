@@ -8,4 +8,6 @@ public interface CLocation {
 
     Integer getLine();
 
+    Integer getId();
+
 }

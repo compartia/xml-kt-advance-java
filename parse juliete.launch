@@ -9,7 +9,7 @@
 <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
 <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.kt.advance.json.POJsonPrinter"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-ne -i /Users/artem/work/KT/ktadvance/tests/sard/juliet_v1.3"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-i /Users/artem/work/KT/ktadvance/tests/sard/juliet_v1.3/CWE121/s01/CWE129_listen_socket"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="xml-kt-advance-java"/>
 <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
 </launchConfiguration>

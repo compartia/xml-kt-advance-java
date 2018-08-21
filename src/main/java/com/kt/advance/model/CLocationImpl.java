@@ -59,19 +59,43 @@ class CLocationImpl extends Indexed implements CLocation {
     private final Integer line;
     private String        filename;
 
+    public static CLocation MISSING = new CLocation() {
+
+        @Override
+        public String getFilename() {
+            return "--missing--";
+        }
+
+        @Override
+        public CFile getCfile() {
+            return null;
+        }
+
+        @Override
+        public Integer getLine() {
+            return 0;
+        }
+
+        @Override
+        public Integer getId() {
+            return -1000;
+        }
+    };
+
     public CLocationImpl(IndexedTableNode node, CFile cfile, CApplication app) {
         super(node);
 
         final Integer[] args = node.getArguments();
         this.byteNo = args[1];
         this.line = args[2];
-        final String fn = cfile.getFilename(args[0]);
+        final String filename = cfile.getFilename(args[0]);
         try {
-            this.setCfile(app.getCFileStrictly(fn));
+
+            this.setCfile(app.getCFileStrictly(filename));
             this.setFilename(null);
         } catch (final MissingKeyException ex) {
             // dealing with external .h files.
-            this.setFilename(fn);
+            this.setFilename("-missing-" + args[0]);
         }
     }
 

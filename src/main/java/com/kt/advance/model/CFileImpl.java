@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Preconditions;
+import com.kt.advance.ErrorsBundle;
 import com.kt.advance.api.CApplication;
 import com.kt.advance.api.CFile;
 import com.kt.advance.api.CFunction;
@@ -24,10 +25,11 @@ import com.kt.advance.model.CTypeFactory.CType;
 import com.kt.advance.model.ExpFactory.CExpression;
 import com.kt.advance.model.PredicatesFactory.CPOPredicate;
 import com.kt.advance.xml.XmlReadFailedException;
+import com.kt.advance.xml.model.AnalysisXml;
 import com.kt.advance.xml.model.CFunXml;
 import com.kt.advance.xml.model.CdictXml;
 import com.kt.advance.xml.model.CfileXml;
-import com.kt.advance.xml.model.IndexedStrignTable;
+import com.kt.advance.xml.model.IndexedStringTable;
 import com.kt.advance.xml.model.IndexedTableNode;
 import com.kt.advance.xml.model.PrdXml;
 
@@ -47,7 +49,7 @@ class CFileImpl implements CFile {
     Map<Integer, CConst>              constants;
     private Map<Integer, CExpression> expressions;
     Map<Integer, CLHost>              lhosts;
-    Map<Integer, CLocationImpl>       locations;
+    Map<Integer, CLocation>           locations;
 
     Map<Integer, CLval>   lvalues;
     Map<Integer, COffset> offsets;
@@ -198,7 +200,8 @@ class CFileImpl implements CFile {
         this.cfileXmlCached = cfile;
     }
 
-    public void readCDictFile(CdictXml cdict, ExpFactory ef) {
+    public void readCDictFile(CdictXml cdict, ExpFactory ef, ErrorsBundle errors) {
+        assertVersion(cdict, errors);
 
         LOG.debug("Parsing ({}) {} ", this.getName(), cdict.getOrigin());
 
@@ -293,21 +296,54 @@ class CFileImpl implements CFile {
         bind(funArgs.values());
 
         filenamesIndex = new HashMap<>();
-        for (final IndexedStrignTable node : cdict.cfile.cDeclarations.filenames) {
-            filenamesIndex.put(node.index, node.value);
+        for (final IndexedStringTable node : cdict.cfile.cDeclarations.filenames) {
+            if (node.value == null) {
+                // fallback for older XMLs
+                filenamesIndex.put(node.index, node.old_tags);
+                errors.addError(cdict.getRelativeOrigin(), "has old format of  <filename-table>");
+            }
+            else {
+                filenamesIndex.put(node.index, node.value);
+            }
+
         }
 
         // parsing locations
+
         locations = cdict.cfile.cDeclarations.locations
                 .stream()
-                .map(node -> new CLocationImpl(
-                        node,
-                        this,
-                        this.application))
-                .collect(Collectors.toMap(node -> node.id, node -> node));
+                .map(node -> {
+                    try {
+                        final CLocation loc = new CLocationImpl(
+                                node,
+                                this,
+                                this.application);
+
+                        return loc;
+
+                    } catch (final MissingKeyException e) {
+                        errors.addError(this.getName(), e.toString());
+                        return CLocationImpl.MISSING;
+                    }
+                }
+
+                )
+                .collect(Collectors.toMap(node -> node.getId(), node -> node));
 
         bind(varinfos.values());
 
+    }
+
+    private void assertVersion(AnalysisXml cdict, ErrorsBundle errors) {
+        final String errorMsg = "Unsupported XML format version, CP1.00 is expected";
+        try {
+
+            if (!cdict.header.created.version.equals("CP1.00")) {
+                errors.addError(cdict.getRelativeOrigin(), errorMsg);
+            }
+        } catch (final NullPointerException e) {
+            errors.addError(cdict.getRelativeOrigin(), errorMsg);
+        }
     }
 
     HashMap<Integer, String> filenamesIndex;
